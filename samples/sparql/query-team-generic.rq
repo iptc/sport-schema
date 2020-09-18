@@ -1,0 +1,20 @@
+# filename: query-01.rq
+
+PREFIX sport: <http://www.iptc.org/ontologies/Sport#>
+PREFIX so:  <https://schema.org/>
+
+SELECT ?name ?score
+WHERE
+{{ 
+	?event a so:SportsEvent .
+	?event (so:awayTeam | so:homeTeam) ?team .
+	?team so:name ?name . }
+
+{	
+	?event sport:TeamPerformance ?teamstats .
+	?teamstats sport:performedBy ?team .
+	?teamstats sport:hasStatistic ?stats .
+	?stats sport:hasStatisticType <score> .
+	?stats sport:value ?score .
+	
+}}

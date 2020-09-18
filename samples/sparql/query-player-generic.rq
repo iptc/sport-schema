@@ -1,0 +1,24 @@
+# filename: query-01.rq
+
+PREFIX sport: <http://www.iptc.org/ontologies/Sport#>
+PREFIX so:  <https://schema.org/>
+
+SELECT (concat(?playerGiven,' ',?playerFamily) as ?playerName) ?goals
+WHERE
+{
+	{ 
+	?event a so:SportsEvent .
+	?event (so:awayTeam | so:homeTeam) ?team .
+	?team so:athlete ?player . 
+	?player so:givenName ?playerGiven . 
+	?player so:familyName ?playerFamily . 
+	}
+
+	{	
+	?event sport:PlayerPerformance ?playerstats .
+	?playerstats sport:performedBy ?player .
+	?playerstats sport:hasStatistic ?stats .
+	?stats sport:hasStatisticType <goalsTotal> .
+	?stats sport:value ?goals .
+	}
+}
