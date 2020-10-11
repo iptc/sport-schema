@@ -2,6 +2,7 @@
 
 PREFIX sport: <http://www.iptc.org/ontologies/Sport#>
 PREFIX so:  <https://schema.org/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
 SELECT (concat(?playerGiven,' ',?playerFamily) as ?playerName) ?goals
 WHERE
@@ -19,6 +20,7 @@ WHERE
 	?playerstats sport:performedBy ?player .
 	?playerstats sport:hasStatistic ?stats .
 	?stats sport:hasStatisticType <goalsTotal> .
-	?stats sport:value ?goals .
+	?stats sport:value ?goalString .
+	BIND (STRDT(str(?goalString),xsd:integer) as ?goals)
 	}
 }

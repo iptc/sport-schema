@@ -1,7 +1,8 @@
-# filename: query-01.rq
+# filename: query-team-generic.rq
 
 PREFIX sport: <http://www.iptc.org/ontologies/Sport#>
 PREFIX so:  <https://schema.org/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?name ?score
 WHERE
@@ -15,6 +16,6 @@ WHERE
 	?teamstats sport:performedBy ?team .
 	?teamstats sport:hasStatistic ?stats .
 	?stats sport:hasStatisticType <score> .
-	?stats sport:value ?score .
-	
+	?stats sport:value ?scoreString .
+	BIND (STRDT(str(?scoreString),xsd:integer) as ?score)
 }}
