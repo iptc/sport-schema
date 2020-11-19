@@ -8,17 +8,20 @@
         @prefix so: <https://schema.org/> . 
         @prefix soes: <https://schema.org/EventStatusType#> .
         @prefix mt: <http://cv.iptc.org/newscodes/mediatopic#> . 
+
+        @prefix ve: <http://sport.org/event/#> . 
+        @prefix vt: <http://sport.org/team/#> . 
+        @prefix vp: <http://sport.org/person/#> . 
         
-        
-                <vendevent:l.premierleague.com-2014-e.755363> so:homeTeam <vendteam:o.thefa.com-t.2>;
-            
-
-		<vendevent:l.premierleague.com-2014-e.755363-vendteam:o.thefa.com-t.2> so:eventOutcome <loss>;
-
-    
-                <vendevent:l.premierleague.com-2014-e.755363> so:awayTeam <vendteam:o.thefa.com-t.12>;
-            
-
-		<vendevent:l.premierleague.com-2014-e.755363-vendteam:o.thefa.com-t.12> so:eventOutcome <win>;
-
+        ve:E755363 a so:SportsEvent;
+        ve:E755363 so:homeTeam vt:T2;
+            ve:E755363 sport:TeamPerformance E755363-T2;
+                E755363-T2 sport:performedBy vt:T2;
+        E755363-T2 sport:score "0";
+    E755363-T2 sport:eventOutcome "loss";
+    ve:E755363 so:awayTeam vt:T12;
+            ve:E755363 sport:TeamPerformance E755363-T12;
+                E755363-T12 sport:performedBy vt:T12;
+        E755363-T12 sport:score "2";
+    E755363-T12 sport:eventOutcome "win";
     

@@ -4,6 +4,8 @@
     xmlns:newsml="http://iptc.org/std/nar/2006-10-01/" version="1.0">
 
     <xsl:output method="text" omit-xml-declaration="yes" indent="no"/>
+    <xsl:strip-space elements="*"/>
+
 
     <xsl:variable name="sport-key">
         <xsl:choose>
@@ -109,6 +111,10 @@
         @prefix so: &lt;https://schema.org/&gt; . 
         @prefix soes: &lt;https://schema.org/EventStatusType#&gt; .
         @prefix mt: &lt;http://cv.iptc.org/newscodes/mediatopic#&gt; . 
+
+        @prefix ve: &lt;http://sport.org/event/#&gt; . 
+        @prefix vt: &lt;http://sport.org/team/#&gt; . 
+        @prefix vp: &lt;http://sport.org/person/#&gt; . 
         
         <xsl:apply-templates/>
     </xsl:template>
@@ -116,6 +122,7 @@
     <xsl:template match="newsml:sports-event">
         <xsl:variable name="event-key"><xsl:value-of select="newsml:event-metadata/@key"
             /></xsl:variable>
+    	<xsl:value-of select="$event-key"/> a so:SportsEvent;
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
         </xsl:apply-templates> 
@@ -127,18 +134,24 @@
         <xsl:variable name="team-key"><xsl:value-of select="newsml:team-metadata/@key"
             /></xsl:variable> 
         
+        <xsl:if test="parent::newsml:sports-event">
+        
         <xsl:choose>
             <xsl:when test="newsml:team-metadata/@alignment='home'">
-                &lt;<xsl:value-of select="$event-key"/>&gt; so:homeTeam &lt;<xsl:value-of select="$team-key"/>&gt;;
+                <xsl:value-of select="$event-key"/> so:homeTeam <xsl:value-of select="$team-key"/>;
             </xsl:when>
             <xsl:otherwise>
-                &lt;<xsl:value-of select="$event-key"/>&gt; so:awayTeam &lt;<xsl:value-of select="$team-key"/>&gt;;
+                <xsl:value-of select="$event-key"/> so:awayTeam <xsl:value-of select="$team-key"/>;
             </xsl:otherwise>
         </xsl:choose>
+
+                <xsl:value-of select="$event-key"/> sport:TeamPerformance <xsl:value-of select="concat(substring-after($event-key,':'),'-',substring-after($team-key,':'))"/>;
+                <xsl:value-of select="concat(substring-after($event-key,':'),'-',substring-after($team-key,':'))"/> sport:performedBy <xsl:value-of select="$team-key"/>;
+        </xsl:if>
              
         <xsl:apply-templates>
-            <xsl:with-param name="event-key" select="$event-key"/>
-            <xsl:with-param name="team-key" select="$team-key"/>
+            <xsl:with-param name="event-key" select="substring-after($event-key,':')"/>
+            <xsl:with-param name="team-key" select="substring-after($team-key,':')"/>
         </xsl:apply-templates>
     </xsl:template>
     
@@ -168,9 +181,18 @@
             		<xsl:with-param name="name" select="name()"/>
 		        </xsl:call-template>
         </xsl:variable>
+		<xsl:value-of select="concat($event-key,'-',$team-key)"/> sport:eventOutcome "<xsl:value-of select="@value"/>";
+    </xsl:template>
 
-		&lt;<xsl:value-of select="concat($event-key,'-',$team-key)"/>&gt; so:eventOutcome &lt;<xsl:value-of select="@value"/>&gt;;
-
+    <xsl:template match="newsml:stat[@stat-type='spstat:score']">
+        <xsl:param name="event-key"/>
+        <xsl:param name="team-key"/>
+        <xsl:variable name="camel-converstion">
+                <xsl:call-template name="camel-conversion">
+            		<xsl:with-param name="name" select="name()"/>
+		        </xsl:call-template>
+        </xsl:variable>
+		<xsl:value-of select="concat($event-key,'-',$team-key)"/> sport:score "<xsl:value-of select="@value"/>";
     </xsl:template>
 
 </xsl:stylesheet>

@@ -20,10 +20,10 @@
 	sport:EventStatus spes:post-event ;
 	sport:EventStatus soes:EventCancelled ; # schema.org event status here to demo; needs sport additions
 	sport:EventOutcomeType speot:regular ;
-	sport:PlayerStatistic <EFBO1059986-PO201666>	;
-	sport:PlayerStatistic <EFBO1059986-PO101668>	;
-	sport:TeamStatistic <EFBO1059986-TFBB7>	;
-	sport:TeamStatistic <EFBO1059986-TFBB13> .
+	sport:PlayerPerformance <EFBO1059986-PO201666>	;
+	sport:PlayerPerformance <EFBO1059986-PO101668>	;
+	sport:TeamPerformance <EFBO1059986-TFBB7>	;
+	sport:TeamPerformance <EFBO1059986-TFBB13> .
 	
 <TFBB13> a so:SportsTeam ;
 	so:sport mt:soccer ;
@@ -43,14 +43,14 @@
 	so:givenName "Jamie" ;
 	so:familyName "Vardy" .
 
-<EFBO1059986-TFBB13> a sport:TeamStatistic ;
+<EFBO1059986-TFBB13> a sport:TeamPerformance ;
 	sport:performedBy <TFBB13> ;	
 	sport:EventOutcome speo:win ;
 	sport:Score "4"^^xsd:integer ;
 	sport:PeriodScore1 "1"^^xsd:integer ;
 	sport:PeriodScore2 "3"^^xsd:integer .
 
-<EFBO1059986-TFBB7> a sport:TeamStatistic ;
+<EFBO1059986-TFBB7> a sport:TeamPerformance ;
 	sport:performedBy <TFBB7> ;	
 	sport:EventOutcome speo:loss ;
 	sport:Score "0"^^xsd:integer ;
@@ -58,11 +58,11 @@
 	sport:PeriodScore1 "0"^^xsd:integer ;
 	sport:PeriodScore2 "0"^^xsd:integer .
 	
-<EFBO1059986-PO201666> a sport:PlayerStatistic ;
+<EFBO1059986-PO201666> a sport:PlayerPerformance ;
 	sport:performedBy <PO201666> ;	
 	sport:GoalsTotal "2"^^xsd:integer .
 	
-<EFBO1059986-PO101668> a sport:PlayerStatistic ;
+<EFBO1059986-PO101668> a sport:PlayerPerformance ;
 	sport:performedBy <PO101668> ;	
 	sport:GoalsTotal "2"^^xsd:integer .
 	
