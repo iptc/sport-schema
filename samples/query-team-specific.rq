@@ -5,13 +5,11 @@ PREFIX so:  <https://schema.org/>
 
 SELECT ?name ?score
 WHERE
-{{ 
+{
 	?event a so:SportsEvent .
 	?event (so:awayTeam | so:homeTeam) ?team .
-	?team so:name ?name . }
-	
-{	
-	?event sport:TeamStatistic ?teamstats .
+	?team so:name ?name . 
+	?event sport:TeamPerformance ?teamstats .
 	?teamstats sport:performedBy ?team .
 	?teamstats sport:Score ?score .
-}}
+}
