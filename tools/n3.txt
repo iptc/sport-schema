@@ -1,27 +1,12 @@
- 
-        @prefix sport: <http://www.iptc.org/ontologies/Sport#> . 
-        @prefix rdf: <http://www.w3.org/2000/01/rdf-schema#> . 
-        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
-        @prefix spes: <http://cv.iptc.org/newscodes/speventstatus#> . 
-        @prefix speo: <http://cv.iptc.org/newscodes/speventoutcome#> . 
-        @prefix speot: <http://cv.iptc.org/newscodes/speventoutcometype#> . 
-        @prefix so: <https://schema.org/> . 
-        @prefix soes: <https://schema.org/EventStatusType#> .
-        @prefix mt: <http://cv.iptc.org/newscodes/mediatopic#> . 
-
-        @prefix ve: <http://sport.org/event/#> . 
-        @prefix vt: <http://sport.org/team/#> . 
-        @prefix vp: <http://sport.org/person/#> . 
-        
-        ve:E755363 a so:SportsEvent;
-        ve:E755363 so:homeTeam vt:T2;
-            ve:E755363 sport:TeamPerformance E755363-T2;
-                E755363-T2 sport:performedBy vt:T2;
-        E755363-T2 sport:score "0";
-    E755363-T2 sport:eventOutcome "loss";
-    ve:E755363 so:awayTeam vt:T12;
-            ve:E755363 sport:TeamPerformance E755363-T12;
-                E755363-T12 sport:performedBy vt:T12;
-        E755363-T12 sport:score "2";
-    E755363-T12 sport:eventOutcome "win";
+<http://sport.org/event/E755363> <http://www.w3.org/2000/01/rdf-schema/type> <http://sport.org/event/SportsEvent> .
+        <http://sport.org/event/E755363> <https://schema.org/homeTeam> <http://sport.org/team/T2> .
+            <http://sport.org/event/E755363> <http://www.iptc.org/ontologies/Sport/TeamPerformance> <E755363-T2> .
+            <E755363-T2> <http://www.iptc.org/ontologies/Sport/performedBy> <http://sport.org/team/T2> .      
+        <E755363-T2> <http://www.iptc.org/ontologies/Sport/score> "0" .
+    <E755363-T2> <http://www.iptc.org/ontologies/Sport/eventOutcome> "loss" .
+    <http://sport.org/event/E755363> <https://schema.org/awayTeam> <http://sport.org/team/T12> .
+            <http://sport.org/event/E755363> <http://www.iptc.org/ontologies/Sport/TeamPerformance> <E755363-T12> .
+            <E755363-T12> <http://www.iptc.org/ontologies/Sport/performedBy> <http://sport.org/team/T12> .      
+        <E755363-T12> <http://www.iptc.org/ontologies/Sport/score> "2" .
+    <E755363-T12> <http://www.iptc.org/ontologies/Sport/eventOutcome> "win" .
     

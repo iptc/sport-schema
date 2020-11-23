@@ -6,5 +6,6 @@
         <xsl:output-character character="«" string="&lt;"/>   
         <xsl:output-character character="»" string="&gt;"/>
         <xsl:output-character character="±" string="&amp;"/>
+        <xsl:output-character character="^" string="&#160;"/>
     </xsl:character-map>
 </xsl:stylesheet>
