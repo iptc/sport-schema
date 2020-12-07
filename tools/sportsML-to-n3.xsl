@@ -191,7 +191,8 @@
     <xsl:template match="@foo"/>
 
 
-    <!-- templates for generic SportsML. Setting aside for now, 2020-12-07 -->
+    <!-- templates for generic SportsML. Setting aside for now (2020-12-07) but should be easy to build a general template
+     	similar to specific -->
     
     <xsl:template match="newsml:stats">
         <xsl:param name="performance-id"/>
