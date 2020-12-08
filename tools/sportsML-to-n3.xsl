@@ -27,7 +27,7 @@
         <xsl:variable name="event-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Event/',$event-key,'»')"/></xsl:variable>
 
     	<!-- declare sports event as a type -->
-        <xsl:value-of select="$event-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event''»')"/> .        
+        <xsl:value-of select="$event-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .        
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
@@ -48,7 +48,7 @@
 
         <xsl:if test="parent::newsml:sports-event">
 
-        <xsl:value-of select="$team-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Team''»')"/> .        
+        <xsl:value-of select="$team-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Team','»')"/> .        
         
         <xsl:choose>
             <xsl:when test="newsml:team-metadata/@alignment='home'">
