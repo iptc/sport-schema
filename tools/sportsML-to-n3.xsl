@@ -44,7 +44,7 @@
         <xsl:variable name="team-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$team-key,'»')"/></xsl:variable>
         <xsl:variable name="performance-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Performance/',$event-key,'-',$team-key,'»')"/></xsl:variable>
                 
-                <xsl:value-of select="$team-id"/> «https://schema.org/name» <xsl:value-of select="$name"/> .
+                <xsl:value-of select="$team-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
 
         <xsl:if test="parent::newsml:sports-event">
 
@@ -94,9 +94,9 @@
         <xsl:variable name="player-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Person/',$player-key,'»')"/></xsl:variable>
         <xsl:variable name="performance-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Performance/',$event-key,'-',$player-key,'»')"/></xsl:variable>
                 
-        <xsl:value-of select="$player-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete''»')"/> .        
+        <xsl:value-of select="$player-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .        
 
-       	<xsl:value-of select="$player-id"/> «https://schema.org/name» <xsl:value-of select="$name"/> .
+       	<xsl:value-of select="$player-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
 
         <xsl:if test="ancestor::newsml:sports-event">
         
