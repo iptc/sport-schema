@@ -14,7 +14,17 @@
 
 	<!-- global data variables -->
     <xsl:variable name="sport-vendor-ns">http://sport.org/</xsl:variable>
+    <xsl:variable name="newscode-ns">http://cv.iptc.org/newscodes/</xsl:variable>
     <xsl:variable name="sport-ontology-ns">http://www.iptc.org/ontologies/Sport/</xsl:variable>
+    <xsl:variable name="sport-code">
+            <xsl:choose>
+            <xsl:when test="newsml:newsItem/newsml:contentMeta/newsml:subject/newsml:broader/@qcode='subj:15000000'">
+				<xsl:value-of 
+select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml:broader/@qcode='subj:15000000']/@qcode,':')"/>
+            	</xsl:when>
+            <xsl:otherwise>15000000</xsl:otherwise>
+        </xsl:choose>
+	</xsl:variable>
     
     <xsl:template match="/"> 
         <xsl:apply-templates/>
@@ -42,8 +52,8 @@
 		<xsl:variable name="name" select="newsml:team-metadata/newsml:name[@role='nrol:full']"/>
         <xsl:variable name="team-key"><xsl:value-of select="substring-after(newsml:team-metadata/@key,':')"/></xsl:variable> 
         <xsl:variable name="team-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$team-key,'»')"/></xsl:variable>
-        <xsl:variable name="performance-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Performance/',$event-key,'-',$team-key,'»')"/></xsl:variable>
-                
+        <xsl:variable name="performance-id"><xsl:value-of
+        select="concat('«',$sport-vendor-ns,'Performance/',$event-key,'-',$team-key,'»')"/></xsl:variable>
                 <xsl:value-of select="$team-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
 
         <xsl:if test="parent::newsml:sports-event">
@@ -155,21 +165,34 @@
 		<xsl:variable name="name" select="name()"/>
 		<xsl:variable name="parent-element-name" select="name(parent::*)"/>
 		<xsl:variable name="value">
-        
         <xsl:choose>
 			<xsl:when test="contains(.,':')">
 			<xsl:variable name="prefix"><xsl:value-of select="substring-before(.,':')"/></xsl:variable>
 			<xsl:value-of select="concat('«http://cv.iptc.org/newscodes/',$prefix,'/',substring-after(.,':'),'»')"/>
 			</xsl:when>
-			
 			<xsl:otherwise>
 				<xsl:text>"</xsl:text><xsl:value-of select="."/><xsl:text>"</xsl:text>
 				</xsl:otherwise>
 		</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="cv-name">
+
+        <xsl:choose>
+
+            <xsl:when test="document('sport-concepts.xml')//newsml:concept[newsml:name=$name][contains(newsml:broader/@qcode,$sport-code)]/newsml:conceptId/@qcode">
+		<xsl:value-of select="substring-before(document('sport-concepts.xml')//newsml:concept[newsml:name=$name][contains(newsml:broader/@qcode,$sport-code)]/newsml:conceptId/@qcode,':')"/>	
+            	</xsl:when>
+            <xsl:otherwise>
+            
+            <!-- ISSUE: had to add the [1] predicate to this path because there are more than one vocab items with the same name eg. "A sequence of more than one item is not allowed as the first argument of substring-before() ("spstat:score", "spstreaktype:score", ...)" -->
+            		<xsl:value-of select="substring-before(document('sport-concepts.xml')//newsml:concept[newsml:name=$name][contains(newsml:broader/@qcode,'15000000')][1]/newsml:conceptId/@qcode,':')"/>	
+            </xsl:otherwise>
+		</xsl:choose>
+
 
 		</xsl:variable>
 
-        <xsl:value-of select="$performance-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,$name,'»')"/>^<xsl:value-of select="$value"/> .
+        <xsl:value-of select="$performance-id"/>^<xsl:value-of select="concat('«',$newscode-ns,$cv-name,'/',$name,'»')"/>^<xsl:value-of select="$value"/> .
     </xsl:template>
 
 
