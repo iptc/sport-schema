@@ -1,15 +1,18 @@
 # filename: query-01.rq
 
-PREFIX sport: <http://www.iptc.org/ontologies/Sport#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX so:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
 SELECT ?name ?score
 WHERE
 {
-	?event a so:SportsEvent .
+	?event rdfs:type  sport:Event .
 	?event (so:awayTeam | so:homeTeam) ?team .
 	?team so:name ?name . 
-	?event sport:TeamPerformance ?teamstats .
-	?teamstats sport:performedBy ?team .
-	?teamstats sport:Score ?score .
+	?event sport:performance ?teamperf .
+	?teamperf sport:performedBy ?team .
+	?teamperf spstat:score ?score .
 }

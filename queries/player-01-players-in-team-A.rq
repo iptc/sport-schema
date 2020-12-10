@@ -1,0 +1,26 @@
+# filename: queries/player-01-players-in-team.rq
+# Use case Player-01: Who are the players in a given team?
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+# In the sample data we don't have team rosters or lineups,
+# we just have "competitor" on the Event and "performedBy"
+# on Performance. Here we go via Event.
+# TODO: this returns all players against BOTH teams, incorrectly.
+# Am I missing something or is it impossible using just event?
+SELECT ?teamName ?playerName
+WHERE
+{
+	?team rdfs:type sport:Team .
+	?player rdfs:type  sport:Athlete .
+	?event rdfs:type sport:Event .
+	?event schemaorg:competitor ?player .
+	?event (schemaorg:awayTeam | schemaorg:homeTeam) ?team .
+	?team schemaorg:name ?teamName .
+	?player schemaorg:name ?playerName .
+}
+ORDER BY ?teamName ?playerName
