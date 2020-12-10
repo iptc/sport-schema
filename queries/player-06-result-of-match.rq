@@ -1,0 +1,19 @@
+# filename: queries/player-06-result-of-match.rq
+# Use case Player-06: What was the result of a particular match?
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+SELECT ?name ?score
+WHERE
+{
+	?event rdfs:type  sport:Event .
+	?event (schemaorg:awayTeam | schemaorg:homeTeam) ?team .
+	?team schemaorg:name ?name . 
+	?event sport:performance ?teamperf .
+	?teamperf sport:performedBy ?team .
+	?teamperf spstat:score ?score .
+}

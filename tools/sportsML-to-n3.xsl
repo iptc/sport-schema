@@ -102,16 +102,21 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 		<xsl:variable name="name" select="newsml:player-metadata/newsml:name[@role='nrol:full']"/>
         <xsl:variable name="player-key"><xsl:value-of select="substring-after(newsml:player-metadata/@key,':')"/></xsl:variable> 
         <xsl:variable name="player-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Person/',$player-key,'»')"/></xsl:variable>
+        <xsl:variable name="player-team-key"><xsl:value-of select="substring-after(ancestor::newsml:team/newsml:team-metadata/@key,':')"/></xsl:variable> 
+        <xsl:variable name="player-team-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$player-team-key,'»')"/></xsl:variable>
         <xsl:variable name="performance-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Performance/',$event-key,'-',$player-key,'»')"/></xsl:variable>
                 
         <xsl:value-of select="$player-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .        
 
        	<xsl:value-of select="$player-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
 
+       	<xsl:value-of select="$player-team-id"/> «https://schema.org/athlete» <xsl:value-of select="$player-id"/> .
+
         <xsl:if test="ancestor::newsml:sports-event">
         
        <xsl:value-of select="$event-id"/> «https://schema.org/competitor» <xsl:value-of select="$player-id"/> .
 
+       <xsl:value-of select="$event-id"/> «https://schema.org/competitor» <xsl:value-of select="$player-id"/> .
         <xsl:if test="newsml:player-stats">
             <xsl:value-of select="$event-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,'performance','»')"/>^<xsl:value-of select="$performance-id"/> .
             <xsl:value-of select="$performance-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,'performedBy','»')"/>^<xsl:value-of select="$player-id"/> .      
