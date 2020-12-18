@@ -1,0 +1,23 @@
+# filename: queries/player-05-match-qinner.rq
+# Use case Player-05: Who won a particular match?
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+SELECT ?name
+WHERE
+{
+	?event rdfs:type  sport:Event .
+	?event (schemaorg:awayTeam | schemaorg:homeTeam) ?team .
+	?team schemaorg:name ?name . 
+	?event sport:performance ?teamperf .
+	?teamperf sport:performedBy ?team .
+	?teamperf spstat:score ?score .
+	?teamperf spstat:score-opposing ?opposingScore .
+	FILTER (
+		?score > ?opposingScore
+	)
+}

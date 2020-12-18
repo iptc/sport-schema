@@ -3,6 +3,8 @@
 @prefix sport: <http://www.iptc.org/ontologies/Sport/> .
 @prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocposition: <http://cv.iptc.org/newscodes/spsocposition/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 
 <http://sport.org/Event/E755363>
   rdfs:type <http://www.iptc.org/ontologies/Sport/Event> ;
@@ -13,10 +15,10 @@
 
 <http://sport.org/Team/T2>
   schemaorg:name "Aston Villa" ;
-  rdfs:type sport:Team .
+  rdfs:type sport:Team ;
+  schemaorg:athlete <http://sport.org/Person/PO41705>, <http://sport.org/Person/PO15405>, <http://sport.org/Person/PO16854>, <http://sport.org/Person/PO52477>, <http://sport.org/Person/PO44354>, <http://sport.org/Person/PO43250>, <http://sport.org/Person/PO60551>, <http://sport.org/Person/PO41823>, <http://sport.org/Person/PO18737>, <http://sport.org/Person/PO80979>, <http://sport.org/Person/PO15073>, <http://sport.org/Person/PO58845>, <http://sport.org/Person/PO74297>, <http://sport.org/Person/PO10738>, <http://sport.org/Person/PO54861>, <http://sport.org/Person/PO42824>, <http://sport.org/Person/PO1822>, <http://sport.org/Person/PO114283> .
 
 <http://sport.org/Performance/E755363-T2>
-  rdfs:type sport:Performance;
   sport:performedBy <http://sport.org/Team/T2> ;
   spstat:score "0" ;
   spstat:score-opposing "2" ;
@@ -30,10 +32,13 @@
 
 <http://sport.org/Person/PO41705>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Brad Guzan" .
+  schemaorg:name "Brad Guzan" ;
+  # BQ added these manually - not sure how to get the XSLT to generate them!
+  sport:position-regular spsocposition:goalkeeper ;
+  sport:player-uniform-number "1" ;
+  sport:player-status spplayerstatus:starter .   # should this be on the Person or on the person's Performance?
 
 <http://sport.org/Performance/E755363-PO41705>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO41705> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -44,10 +49,14 @@
 
 <http://sport.org/Person/PO15405>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Alan Hutton" .
+  schemaorg:name "Alan Hutton" ;
+  # BQ added these manually - not sure how to get the XSLT to generate them!
+  sport:position-regular spsocposition:defender ;
+  sport:player-uniform-number "21" ;
+  sport:player-status spplayerstatus:starter .   # should this be on the Person or on the person's Performance?
+
 
 <http://sport.org/Performance/E755363-PO15405>
-  rdfs:type sport:Performance;
   sport:performedBy <http://sport.org/Person/PO15405> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -59,7 +68,6 @@
   schemaorg:name "Philippe Senderos" .
 
 <http://sport.org/Performance/E755363-PO16854>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO16854> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -71,7 +79,6 @@
   schemaorg:name "Nathan Baker" .
 
 <http://sport.org/Performance/E755363-PO52477>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO52477> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -83,7 +90,6 @@
   schemaorg:name "Aly Cissokho" .
 
 <http://sport.org/Performance/E755363-PO44354>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO44354> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -95,7 +101,6 @@
   schemaorg:name "Tom Cleverley" .
 
 <http://sport.org/Performance/E755363-PO43250>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO43250> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -108,7 +113,6 @@
   schemaorg:name "Ashley Westwood" .
 
 <http://sport.org/Performance/E755363-PO60551>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO60551> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -122,7 +126,6 @@
   schemaorg:name "Fabian Delph" .
 
 <http://sport.org/Performance/E755363-PO41823>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO41823> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -136,7 +139,6 @@
   schemaorg:name "Charles N'Zogbia" .
 
 <http://sport.org/Performance/E755363-PO18737>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO18737> ;
   spstat:events-started "1" ;
   spstat:time-played-total "71" ;
@@ -150,7 +152,6 @@
   schemaorg:name "Andreas Weimann" .
 
 <http://sport.org/Performance/E755363-PO80979>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO80979> ;
   spstat:events-started "1" ;
   spstat:time-played-total "61" ;
@@ -163,7 +164,6 @@
   schemaorg:name "Kieran Richardson" .
 
 <http://sport.org/Performance/E755363-PO15073>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO15073> ;
   spstat:events-started "1" ;
   spstat:time-played-total "71" ;
@@ -180,7 +180,6 @@
   schemaorg:name "Leandro Bacuna" .
 
 <http://sport.org/Performance/E755363-PO74297>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO74297> ;
   spstat:time-played-total "19" ;
   spsocstat:goals-against-total "2" .
@@ -194,7 +193,6 @@
   schemaorg:name "Christian Benteke" .
 
 <http://sport.org/Performance/E755363-PO54861>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO54861> ;
   spstat:time-played-total "29" ;
   spsocstat:goals-against-total "2" .
@@ -212,17 +210,16 @@
   schemaorg:name "Jack Grealish" .
 
 <http://sport.org/Performance/E755363-PO114283>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO114283> ;
   spstat:time-played-total "19" ;
   spsocstat:goals-against-total "2" .
 
 <http://sport.org/Team/T12>
   schemaorg:name "Manchester City" ;
-  rdfs:type sport:Team .
+  rdfs:type sport:Team ;
+  schemaorg:athlete <http://sport.org/Person/PO15749>, <http://sport.org/Person/PO20658>, <http://sport.org/Person/PO17476>, <http://sport.org/Person/PO57112>, <http://sport.org/Person/PO42593>, <http://sport.org/Person/PO15157>, <http://sport.org/Person/PO27789>, <http://sport.org/Person/PO14664>, <http://sport.org/Person/PO20664>, <http://sport.org/Person/PO42544>, <http://sport.org/Person/PO37572>, <http://sport.org/Person/PO37748>, <http://sport.org/Person/PO52538>, <http://sport.org/Person/PO20310>, <http://sport.org/Person/PO17740>, <http://sport.org/Person/PO2051>, <http://sport.org/Person/PO15312>, <http://sport.org/Person/PO50442> .
 
 <http://sport.org/Performance/E755363-T12>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Team/T12> ;
   spstat:score "2" ;
   spstat:score-opposing "0" ;
@@ -239,7 +236,6 @@
   schemaorg:name "Joe Hart" .
 
 <http://sport.org/Performance/E755363-PO15749>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO15749> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -254,7 +250,6 @@
   schemaorg:name "Pablo Zabaleta" .
 
 <http://sport.org/Performance/E755363-PO20658>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO20658> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -266,7 +261,6 @@
   schemaorg:name "Vincent Kompany" .
 
 <http://sport.org/Performance/E755363-PO17476>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO17476> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -278,7 +272,6 @@
   schemaorg:name "Eliaquim Mangala" .
 
 <http://sport.org/Performance/E755363-PO57112>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO57112> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -293,7 +286,6 @@
   schemaorg:name "Aleksandar Kolarov" .
 
 <http://sport.org/Performance/E755363-PO42593>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO42593> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -311,7 +303,6 @@
   schemaorg:name "James Milner" .
 
 <http://sport.org/Performance/E755363-PO15157>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO15157> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -325,7 +316,6 @@
   schemaorg:name "Fernando Luiz Rosa" .
 
 <http://sport.org/Performance/E755363-PO27789>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO27789> ;
   spstat:events-started "1" ;
   spstat:time-played-total "56" ;
@@ -339,7 +329,6 @@
   schemaorg:name "Gnegneri Yaya Touré" .
 
 <http://sport.org/Performance/E755363-PO14664>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO14664> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -354,7 +343,6 @@
   schemaorg:name "David Silva" .
 
 <http://sport.org/Performance/E755363-PO20664>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO20664> ;
   spstat:events-started "1" ;
   spstat:time-played-total "84" ;
@@ -370,7 +358,6 @@
   schemaorg:name "Edin Dzeko" .
 
 <http://sport.org/Performance/E755363-PO42544>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO42544> ;
   spstat:events-started "1" ;
   spstat:time-played-total "64" ;
@@ -384,7 +371,6 @@
   schemaorg:name "Sergio Agüero" .
 
 <http://sport.org/Performance/E755363-PO37572>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO37572> ;
   spstat:events-started "1" ;
   spstat:time-played-total "90" ;
@@ -404,7 +390,6 @@
   schemaorg:name "Fernando Francisco Reges" .
 
 <http://sport.org/Performance/E755363-PO52538>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO52538> ;
   spstat:time-played-total "26" ;
   spsocstat:assists-total "1" ;
@@ -419,7 +404,6 @@
   schemaorg:name "Jesús Navas" .
 
 <http://sport.org/Performance/E755363-PO17740>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO17740> ;
   spstat:time-played-total "6" ;
   spsocstat:goals-against-total "0" .
@@ -429,7 +413,6 @@
   schemaorg:name "Frank Lampard" .
 
 <http://sport.org/Performance/E755363-PO2051>
-  rdfs:type sport:Performance ;
   sport:performedBy <http://sport.org/Person/PO2051> ;
   spstat:time-played-total "34" ;
   spsocstat:shots-total "2" ;
