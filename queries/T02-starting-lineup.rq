@@ -1,6 +1,7 @@
-# filename: queries/player-02-starting-lineup.rq
-# Use case Player-02: Who are the actual starting XI players ("lineup") for a
+# filename: queries/T02-starting-lineup.rq
+# Use case Team-02: Who are the actual starting XI players ("lineup") for a
 # specific match plus substitutes (subs amounts can vary depending on competition)
+# https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
@@ -9,15 +10,20 @@ PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/>
 
-SELECT ?teamName ?playerName ?regularPosition
+SELECT ?teamName ?playerName ?playerPos
 WHERE
 {
+
     ?team rdfs:type sport:Team .
     ?player rdfs:type  sport:Athlete .
+	?event rdfs:type  sport:Event .
     ?team schemaorg:athlete ?player .
     ?team schemaorg:name ?teamName .
     ?player schemaorg:name ?playerName .
-    ?player sport:player-status spplayerstatus:starter .
-    ?player sport:position-regular ?regularPosition .
+    ?player sport:position-regular ?playerPos .
+	?event schemaorg:competitor ?player .
+	?performance sport:performedBy ?player .
+	?performance spstat:events-started "1"
+
 }
 ORDER BY ?teamName ?playerName

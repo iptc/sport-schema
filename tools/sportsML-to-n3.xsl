@@ -113,6 +113,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- <team> schema:athlete <player> -->
        	<xsl:value-of select="$player-team-id"/> «https://schema.org/athlete» <xsl:value-of select="$player-id"/> .
 
+        <!-- <player> sport:position-regular <soccer-position> -->
+        <xsl:value-of select="$player-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'position-regular','»')"/> <xsl:value-of select="concat('«',$newscode-ns,substring-before(newsml:player-metadata/@position-regular,':'),'/',substring-after(newsml:player-metadata/@position-regular,':'),'»')"/> .
+        
+
         <xsl:if test="ancestor::newsml:sports-event">
             <!-- <event> schema:competitor <player> -->
             <xsl:value-of select="$event-id"/> «https://schema.org/competitor» <xsl:value-of select="$player-id"/> .

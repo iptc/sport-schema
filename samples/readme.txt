@@ -10,6 +10,6 @@ https://jena.apache.org/documentation/query/
 
 Here are some sample query commands with arq:
 
-arq --data stats-generic.ttl --query query-team-generic.rq
+arq --data soccer-match.n3 --query ../queries/result-of-match.rq
 
-arq --data stats-specific.ttl --query query-team-specific.rq
+arq --data soccer-match-specific.ttl --query ../queries/result-of-match.rq
