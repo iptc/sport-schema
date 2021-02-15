@@ -1,0 +1,18 @@
+# Use case: Season / League / What are the current standings?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+SELECT ?name ?eventsPlayed
+WHERE
+{
+	?season rdfs:type sport:Season .
+	?season sport:performance ?teamperf . 
+	?teamperf sport:performedBy ?team .
+	?team schemaorg:name ?name .
+	?teamperf spstat:events-played ?eventsPlayed .
+}
