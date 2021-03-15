@@ -6,13 +6,29 @@ PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX schemaorg:  <https://schema.org/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 
-SELECT ?name ?eventsPlayed
+SELECT ?Team ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WAWAY ?WHOME
 WHERE
 {
 	?season rdfs:type sport:Season .
 	?season sport:performance ?teamperf . 
 	?teamperf sport:performedBy ?team .
-	?team schemaorg:name ?name .
-	?teamperf spstat:events-played ?eventsPlayed .
+	?team schemaorg:name ?Team .
+	?teamperf spstat:events-played ?GP .
+	?teamperf spstat:standing-points ?P .
+	?teamperf spstat:wins ?W .
+	?teamperf spstat:losses ?L .
+	?teamperf spstat:ties ?D .
+	?teamperf spstat:points-scored-for ?GF .
+	?teamperf spstat:points-scored-against ?GA .
+	?teamperf spstat:points-difference ?GD .
+	?teamperf sport:performanceSplit ?splithome .
+	?splithome sport:performanceSplitType spcompetitionscope:events-home .
+	?splithome spstat:wins ?WHOME .
+	?teamperf sport:performanceSplit ?splitaway .
+	?splitaway sport:performanceSplitType spcompetitionscope:events-away .
+	?splitaway spstat:wins ?WAWAY .
 }
+
+	ORDER BY DESC(?P) ?W

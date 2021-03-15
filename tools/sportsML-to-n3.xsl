@@ -139,6 +139,33 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:apply-templates>
     </xsl:template>
     
+    <xsl:template match="newsml:outcome-totals[@alignment-scope!='spcompetitionscope:events-all']">
+        <xsl:param name="performance-id"/>
+        <xsl:variable name="performance-suffix" select="substring-after(substring-before($performance-id,'»'),'Performance/')"/>
+        <xsl:variable name="performanceSplit-id" select="concat('«',$sport-vendor-ns,'PerformanceSplit/',$performance-suffix,'-',substring-after(@alignment-scope,':'),'»')"/>
+
+			<xsl:value-of select="$performance-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,'performanceSplit','»')"/>^<xsl:value-of
+        select="$performanceSplit-id"/> .
+
+			<xsl:value-of select="$performanceSplit-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,'performanceSplitType','»')"/>^<xsl:value-of select="concat('«',$newscode-ns,substring-before(@alignment-scope,':'),'/',substring-after(@alignment-scope,':'),'»')"/> .
+        
+        
+
+        <xsl:apply-templates select="@* | node()">
+            <xsl:with-param name="performanceSplit-id" select="$performanceSplit-id"/>
+            <xsl:with-param name="alignment-id" select="@alignment-id"/>
+        </xsl:apply-templates>
+    </xsl:template>
+    
+    <xsl:template match="newsml:outcome-totals[@alignment-scope='spcompetitionscope:events-all']">
+        <xsl:param name="performance-id"/>
+        
+        <xsl:apply-templates select="@* | node()">
+            <xsl:with-param name="performance-id" select="$performance-id"/>
+            <xsl:with-param name="alignment-id" select="@alignment-id"/>
+        </xsl:apply-templates>
+    </xsl:template>
+    
     <xsl:template match="newsml:team-stats-soccer">
         <xsl:param name="performance-id"/>
         <xsl:apply-templates select="@* | node()">
@@ -237,6 +264,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     
     <xsl:template match="@*">
         <xsl:param name="performance-id"/>
+        <xsl:param name="performanceSplit-id"/>
 		<xsl:variable name="name" select="name()"/>
 		<xsl:variable name="parent-element-name" select="name(parent::*)"/>
 		<xsl:variable name="value">
@@ -261,7 +289,19 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 </xsl:otherwise>
 		    </xsl:choose>
 		</xsl:variable>
-        <xsl:value-of select="$performance-id"/>^<xsl:value-of select="concat('«',$newscode-ns,$cv-name,'/',$name,'»')"/>^<xsl:value-of select="$value"/> .
+		
+		<xsl:choose>
+			<xsl:when test="string($performanceSplit-id)">
+		        <xsl:value-of select="$performanceSplit-id"/>^<xsl:value-of
+		     	select="concat('«',$newscode-ns,$cv-name,'/',$name,'»')"/>^<xsl:value-of select="$value"/> .				
+			</xsl:when>
+			<xsl:otherwise>
+		        <xsl:value-of select="$performance-id"/>^<xsl:value-of
+		     	select="concat('«',$newscode-ns,$cv-name,'/',$name,'»')"/>^<xsl:value-of select="$value"/> .
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		
     </xsl:template>
 
 	<!-- templates for element values and unwanted attributes -->
@@ -272,6 +312,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:headline"/>
     
     <xsl:template match="@team-coverage"/>
+    <xsl:template match="@alignment-scope"/>
     <xsl:template match="@temporal-unit-type"/>
     <xsl:template match="@foo"/>
     <xsl:template match="@foo"/>
