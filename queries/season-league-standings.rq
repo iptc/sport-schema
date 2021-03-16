@@ -1,4 +1,5 @@
 # Use case: Season / League / What are the current standings?
+# Use case: What is the team record broken down into home and away events?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
@@ -8,7 +9,7 @@ PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 
-SELECT ?Team ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WAWAY ?WHOME
+SELECT ?Team ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
 WHERE
 {
 	?season rdfs:type sport:Season .
@@ -26,6 +27,8 @@ WHERE
 	?teamperf sport:performanceSplit ?splithome .
 	?splithome sport:performanceSplitType spcompetitionscope:events-home .
 	?splithome spstat:wins ?WHOME .
+	?splithome spstat:losses ?LHOME .
+	# Does this need to repeat?
 	?teamperf sport:performanceSplit ?splitaway .
 	?splitaway sport:performanceSplitType spcompetitionscope:events-away .
 	?splitaway spstat:wins ?WAWAY .
