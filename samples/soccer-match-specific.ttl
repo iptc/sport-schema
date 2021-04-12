@@ -3,8 +3,6 @@
 @prefix sport: <http://www.iptc.org/ontologies/Sport/> .
 @prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spsocposition: <http://cv.iptc.org/newscodes/spsocposition/> .
-@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 
 <http://sport.org/Event/E755363>
   rdfs:type <http://www.iptc.org/ontologies/Sport/Event> ;
@@ -33,10 +31,7 @@
 <http://sport.org/Person/PO41705>
   rdfs:type sport:Athlete ;
   schemaorg:name "Brad Guzan" ;
-  # BQ added these manually - not sure how to get the XSLT to generate them!
-  sport:position-regular spsocposition:goalkeeper ;
-  sport:player-uniform-number "1" ;
-  sport:player-status spplayerstatus:starter .   # should this be on the Person or on the person's Performance?
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
 
 <http://sport.org/Performance/E755363-PO41705>
   sport:performedBy <http://sport.org/Person/PO41705> ;
@@ -50,11 +45,7 @@
 <http://sport.org/Person/PO15405>
   rdfs:type sport:Athlete ;
   schemaorg:name "Alan Hutton" ;
-  # BQ added these manually - not sure how to get the XSLT to generate them!
-  sport:position-regular spsocposition:defender ;
-  sport:player-uniform-number "21" ;
-  sport:player-status spplayerstatus:starter .   # should this be on the Person or on the person's Performance?
-
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO15405>
   sport:performedBy <http://sport.org/Person/PO15405> ;
@@ -65,7 +56,8 @@
 
 <http://sport.org/Person/PO16854>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Philippe Senderos" .
+  schemaorg:name "Philippe Senderos" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO16854>
   sport:performedBy <http://sport.org/Person/PO16854> ;
@@ -76,7 +68,8 @@
 
 <http://sport.org/Person/PO52477>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Nathan Baker" .
+  schemaorg:name "Nathan Baker" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO52477>
   sport:performedBy <http://sport.org/Person/PO52477> ;
@@ -87,7 +80,8 @@
 
 <http://sport.org/Person/PO44354>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Aly Cissokho" .
+  schemaorg:name "Aly Cissokho" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO44354>
   sport:performedBy <http://sport.org/Person/PO44354> ;
@@ -98,7 +92,8 @@
 
 <http://sport.org/Person/PO43250>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Tom Cleverley" .
+  schemaorg:name "Tom Cleverley" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO43250>
   sport:performedBy <http://sport.org/Person/PO43250> ;
@@ -110,7 +105,8 @@
 
 <http://sport.org/Person/PO60551>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Ashley Westwood" .
+  schemaorg:name "Ashley Westwood" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO60551>
   sport:performedBy <http://sport.org/Person/PO60551> ;
@@ -123,7 +119,8 @@
 
 <http://sport.org/Person/PO41823>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Fabian Delph" .
+  schemaorg:name "Fabian Delph" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO41823>
   sport:performedBy <http://sport.org/Person/PO41823> ;
@@ -136,7 +133,8 @@
 
 <http://sport.org/Person/PO18737>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Charles N'Zogbia" .
+  schemaorg:name "Charles N'Zogbia" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Performance/E755363-PO18737>
   sport:performedBy <http://sport.org/Person/PO18737> ;
@@ -149,7 +147,8 @@
 
 <http://sport.org/Person/PO80979>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Andreas Weimann" .
+  schemaorg:name "Andreas Weimann" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Performance/E755363-PO80979>
   sport:performedBy <http://sport.org/Person/PO80979> ;
@@ -161,7 +160,8 @@
 
 <http://sport.org/Person/PO15073>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Kieran Richardson" .
+  schemaorg:name "Kieran Richardson" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Performance/E755363-PO15073>
   sport:performedBy <http://sport.org/Person/PO15073> ;
@@ -173,11 +173,13 @@
 
 <http://sport.org/Person/PO58845>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Ciaran Clark" .
+  schemaorg:name "Ciaran Clark" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Person/PO74297>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Leandro Bacuna" .
+  schemaorg:name "Leandro Bacuna" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO74297>
   sport:performedBy <http://sport.org/Person/PO74297> ;
@@ -186,11 +188,13 @@
 
 <http://sport.org/Person/PO10738>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Darren Bent" .
+  schemaorg:name "Darren Bent" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Person/PO54861>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Christian Benteke" .
+  schemaorg:name "Christian Benteke" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO54861>
   sport:performedBy <http://sport.org/Person/PO54861> ;
@@ -199,15 +203,18 @@
 
 <http://sport.org/Person/PO42824>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Carlos Sánchez" .
+  schemaorg:name "Carlos Sánchez" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Person/PO1822>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Shay Given" .
+  schemaorg:name "Shay Given" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
 
 <http://sport.org/Person/PO114283>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Jack Grealish" .
+  schemaorg:name "Jack Grealish" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO114283>
   sport:performedBy <http://sport.org/Person/PO114283> ;
@@ -233,7 +240,8 @@
 
 <http://sport.org/Person/PO15749>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Joe Hart" .
+  schemaorg:name "Joe Hart" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
 
 <http://sport.org/Performance/E755363-PO15749>
   sport:performedBy <http://sport.org/Person/PO15749> ;
@@ -247,7 +255,8 @@
 
 <http://sport.org/Person/PO20658>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Pablo Zabaleta" .
+  schemaorg:name "Pablo Zabaleta" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO20658>
   sport:performedBy <http://sport.org/Person/PO20658> ;
@@ -258,7 +267,8 @@
 
 <http://sport.org/Person/PO17476>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Vincent Kompany" .
+  schemaorg:name "Vincent Kompany" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO17476>
   sport:performedBy <http://sport.org/Person/PO17476> ;
@@ -269,7 +279,8 @@
 
 <http://sport.org/Person/PO57112>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Eliaquim Mangala" .
+  schemaorg:name "Eliaquim Mangala" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO57112>
   sport:performedBy <http://sport.org/Person/PO57112> ;
@@ -283,7 +294,8 @@
 
 <http://sport.org/Person/PO42593>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Aleksandar Kolarov" .
+  schemaorg:name "Aleksandar Kolarov" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Performance/E755363-PO42593>
   sport:performedBy <http://sport.org/Person/PO42593> ;
@@ -300,7 +312,8 @@
 
 <http://sport.org/Person/PO15157>
   rdfs:type sport:Athlete ;
-  schemaorg:name "James Milner" .
+  schemaorg:name "James Milner" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO15157>
   sport:performedBy <http://sport.org/Person/PO15157> ;
@@ -313,7 +326,8 @@
 
 <http://sport.org/Person/PO27789>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Fernando Luiz Rosa" .
+  schemaorg:name "Fernando Luiz Rosa" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO27789>
   sport:performedBy <http://sport.org/Person/PO27789> ;
@@ -326,7 +340,8 @@
 
 <http://sport.org/Person/PO14664>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Gnegneri Yaya Touré" .
+  schemaorg:name "Gnegneri Yaya Touré" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO14664>
   sport:performedBy <http://sport.org/Person/PO14664> ;
@@ -340,7 +355,8 @@
 
 <http://sport.org/Person/PO20664>
   rdfs:type sport:Athlete ;
-  schemaorg:name "David Silva" .
+  schemaorg:name "David Silva" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO20664>
   sport:performedBy <http://sport.org/Person/PO20664> ;
@@ -355,7 +371,8 @@
 
 <http://sport.org/Person/PO42544>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Edin Dzeko" .
+  schemaorg:name "Edin Dzeko" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Performance/E755363-PO42544>
   sport:performedBy <http://sport.org/Person/PO42544> ;
@@ -368,7 +385,8 @@
 
 <http://sport.org/Person/PO37572>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Sergio Agüero" .
+  schemaorg:name "Sergio Agüero" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
 
 <http://sport.org/Performance/E755363-PO37572>
   sport:performedBy <http://sport.org/Person/PO37572> ;
@@ -383,11 +401,13 @@
 
 <http://sport.org/Person/PO37748>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Bacary Sagna" .
+  schemaorg:name "Bacary Sagna" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Person/PO52538>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Fernando Francisco Reges" .
+  schemaorg:name "Fernando Francisco Reges" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO52538>
   sport:performedBy <http://sport.org/Person/PO52538> ;
@@ -397,11 +417,13 @@
 
 <http://sport.org/Person/PO20310>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Willy Caballero" .
+  schemaorg:name "Willy Caballero" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
 
 <http://sport.org/Person/PO17740>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Jesús Navas" .
+  schemaorg:name "Jesús Navas" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO17740>
   sport:performedBy <http://sport.org/Person/PO17740> ;
@@ -410,7 +432,8 @@
 
 <http://sport.org/Person/PO2051>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Frank Lampard" .
+  schemaorg:name "Frank Lampard" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
 
 <http://sport.org/Performance/E755363-PO2051>
   sport:performedBy <http://sport.org/Person/PO2051> ;
@@ -422,8 +445,11 @@
 
 <http://sport.org/Person/PO15312>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Martín Demichelis" .
+  schemaorg:name "Martín Demichelis" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/defender> .
 
 <http://sport.org/Person/PO50442>
   rdfs:type sport:Athlete ;
-  schemaorg:name "Stevan Jovetic" .
+  schemaorg:name "Stevan Jovetic" ;
+  sport:position-regular <http://cv.iptc.org/newscodes/spsocposition/forward> .
+

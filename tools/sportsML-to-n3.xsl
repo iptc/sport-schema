@@ -188,7 +188,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- <player> rdfs:type Athlete -->
         <xsl:value-of select="$player-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .        
         <!-- <player> schema:name name -->
+        <xsl:if test="string($name)">
        	<xsl:value-of select="$player-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
+        </xsl:if>
+
         <!-- <team> schema:athlete <player> -->
        	<xsl:value-of select="$player-team-id"/> «https://schema.org/athlete» <xsl:value-of select="$player-id"/> .
 
@@ -203,7 +206,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:if>
         
         <!-- <player> sport:uniform-number <date> -->
-        <xsl:if test="newsml:player-metadata/@date-of-birth">
+        <xsl:if test="newsml:player-metadata/@uniform-number">
             <xsl:value-of select="$player-id"/>^<xsl:value-of select="concat('«',$sport-ontology-ns,'uniform-number','»')"/>^<xsl:value-of select="concat('&quot;',newsml:player-metadata/@uniform-number,'&quot;')"/> .
         </xsl:if>
         
