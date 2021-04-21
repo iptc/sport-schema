@@ -1,0 +1,152 @@
+@prefix iptcs: <http://www.iptc.org/ontologies/Sport/ontologies/sport/> . 
+@prefix iptcsc: <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+#######  Classes ##### 	
+
+
+
+iptcsc:SoccerTeamPerformance rdf:type owl:Class ;
+	rdfs:label "SoccerTeamPerformance"@en ;
+	rdfs:subClass iptcs:TeamParticipation ;
+	rdfs:comment "A soccer teams performance"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:SoccerIndividualPerformance rdf:type owl:Class ;
+	rdfs:label "SoccerIndividualPerformance"@en ;
+	rdfs:subClass iptcs:IndividualParticipation ;
+	rdfs:comment "A soccer players performance"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .	
+
+
+
+#######  Object properties ##### 
+
+
+
+#######  Data properties ##### 
+
+iptcsc:lineFormation rdf:type owl:DatatypeProperty ;
+	rdfs:label "lineFormation"@en ;
+	rdfs:comment "The teams formation"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shotsTotal rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsTotal"@en ;
+	rdfs:comment "The teams total number of shots"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shotsOnGoalTotal rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsOnGoalTotal"@en ;
+	rdfs:comment "The teams total number of shots on goal"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shotsOffGoalTotal rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsOffGoalTotal"@en ;
+	rdfs:comment "The teams total number of shots off goal"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:cornerKicks rdf:type owl:DatatypeProperty ;
+	rdfs:label "cornerKicks"@en ;
+	rdfs:comment "The teams total number of corner kicks"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .		
+
+iptcsc:goalsAgainstTotal rdf:type owl:DatatypeProperty ;
+	rdfs:label "goalsAgainstTotal"@en ;
+	rdfs:comment "The toal goals against the team"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:totalFoulsCommited rdf:type owl:DatatypeProperty ;
+	rdfs:label "totalFoulsCommited"@en ;
+	rdfs:comment "The teams total number of fouls commited by a team"@en ;
+	rdfs:domain iptcsc:SoccerTeamPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .	
+
+iptcsc:foulsCommited rdf:type owl:DatatypeProperty ;
+	rdfs:label "foulsCommited"@en ;
+	rdfs:comment "The teams total number of fouls commited by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .	
+
+iptcsc:saves rdf:type owl:DatatypeProperty ;
+	rdfs:label "saves"@en ;
+	rdfs:comment "The total number of saves made by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:savePercentage rdf:type owl:DatatypeProperty ;
+	rdfs:label "savePercentage"@en ;
+	rdfs:comment "The save percentage for an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:decimal ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:savePercentage rdf:type owl:DatatypeProperty ;
+	rdfs:label "savePercentage"@en ;
+	rdfs:comment "The save percentage for an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:decimal ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:foulsSuffered rdf:type owl:DatatypeProperty ;
+	rdfs:label "foulsSuffered"@en ;
+	rdfs:comment "The total number of fouls suffered by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:decimal ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:foulsCommitted rdf:type owl:DatatypeProperty ;
+	rdfs:label "foulsCommitted"@en ;
+	rdfs:comment "The total number of fouls committed by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:decimal ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:catchesPunches rdf:type owl:DatatypeProperty ;
+	rdfs:label "catchesPunches"@en ;
+	rdfs:comment "The total number of catches or punches by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:decimal ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shots rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsTotal"@en ;
+	rdfs:comment "The total number of shots by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shotsOnGoal rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsTotal"@en ;
+	rdfs:comment "The total number of shots on goal by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .
+
+iptcsc:shotsOffGoal rdf:type owl:DatatypeProperty ;
+	rdfs:label "shotsOffGoal"@en ;
+	rdfs:comment "The total number of shots off goal by an individual"@en ;
+	rdfs:domain iptcsc:SoccerIndividualPerformance ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/soccer/> .	
+
+ 			

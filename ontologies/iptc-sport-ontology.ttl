@@ -1,0 +1,86 @@
+@prefix iptcs: <http://www.iptc.org/ontologies/Sport/ontologies/sport/> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.iptc.org/ontologies/Sport/ontologies/sport> ; 
+    rdf:type owl:Ontology ;
+    dcterms:title "Sport ontology"@en ;
+    dcterms:created "20/04/2021"^^xsd:date ;
+    dcterms:creator "silver"@en ;   
+    dcterms:description "A high level model to describe the core elements of competitive sport."@en .
+
+
+#######  Classes ##### 	
+
+iptcs:Event rdf:type owl:Class ;
+	rdfs:label "Event"@en ;
+	rdfs:comment "An individual sport event. match, race etc."@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:Participation rdf:type owl:Class ;
+	rdfs:label "Participation"@en ;
+	rdfs:comment "An actor participating of an event."@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:TeamParticipation rdf:type owl:Class ;
+	rdfs:label "TeamParticipation"@en ;
+	rdfs:subClass iptcs:Participation ;
+	rdfs:comment "The participation of a team"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:IndividualParticipation rdf:type owl:Class ;
+	rdfs:label "IndividualParticipation"@en ;
+	rdfs:subClass iptcs:Participation ;
+	rdfs:comment "The participation of an individual"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:OfficialParticipation rdf:type owl:Class ;
+	rdfs:label "OfficialParticipation"@en ;
+	rdfs:subClass iptcs:Participation ;	
+	rdfs:comment "The participation of an event offcial"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:ManagerialParticipation rdf:type owl:Class ;
+	rdfs:label "ManagerialParticipation"@en ;
+	rdfs:subClass iptcs:Participation ;	
+	rdfs:comment "The particpation of a managerial individual"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:Agent rdf:type owl:Class ;
+	rdfs:label "Agent"@en ;
+	rdfs:comment "A participant of a sport event."@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .	
+
+iptcs:Team rdf:type owl:Class ;
+	rdfs:label "Team"@en ;
+	rdfs:subClassOf iptcs:Agent ;
+	rdfs:comment "A type of agent that is a team"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+iptcs:Person rdf:type owl:Class ;
+	rdfs:label "Person"@en ;
+	rdfs:subClassOf iptcs:Agent ;	
+	rdfs:comment "A type of agent that is a person"@en ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+#######  Object properties ##### 
+
+iptcs:hasParticipation rdf:type owl:ObjectProperty ;
+	rdfs:label "hasParticipation"@en ;
+	rdfs:comment "A participation by an agent in a event"@en ;
+	rdfs:domain iptcs:Event ;
+	rdfs:range iptcs:Participation ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
+#######  Data properties ##### 
+
+iptcs:score rdf:type owl:DatatypeProperty ;
+	rdfs:label "score"@en ;
+	rdfs:comment "A teams score"@en ;
+	rdfs:domain iptcs:TeamParticipation ;
+	rdfs:range xsd:integer ;
+	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+
