@@ -16,4 +16,8 @@ WHERE
 	?playerperf sport:participationBy ?player .
 	?player schemaorg:name ?playerName . 
 	?playerperf spsocstat:goals-total ?goals .
+	FILTER (
+		?goals > "0"
+	)
+
 }
