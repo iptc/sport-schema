@@ -10,13 +10,11 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 SELECT ?name
 WHERE
 {
-	?event rdfs:type  sport:Event .
-	?event (schemaorg:awayTeam | schemaorg:homeTeam) ?team .
+	?team rdfs:type sport:Team .
 	?team schemaorg:name ?name . 
-	?event sport:performance ?teamperf .
-	?teamperf sport:performedBy ?team .
-	?teamperf spstat:score ?score .
-	?teamperf spstat:score-opposing ?opposingScore .
+	?teamPartic sport:participationBy ?team .
+	?teamPartic spstat:score ?score .
+	?teamPartic spstat:score-opposing ?opposingScore .
 	FILTER (
 		?score > ?opposingScore
 	)

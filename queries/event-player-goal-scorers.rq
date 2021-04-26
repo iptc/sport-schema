@@ -10,16 +10,10 @@ PREFIX spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/>
 
 SELECT ?playerName ?goals
 WHERE
-{
 	{ 
 	?event rdfs:type sport:Event .
-	?event (schemaorg:awayTeam | schemaorg:homeTeam) ?team .
-	?team schemaorg:athlete ?player . 
+	?event sport:participation ?playerperf .
+	?playerperf sport:participationBy ?player .
 	?player schemaorg:name ?playerName . 
-	}
-
-{	
-	?event sport:performance ?playerperf .
-	?playerperf sport:performedBy ?player .
 	?playerperf spsocstat:goals-total ?goals .
-}}
+}

@@ -104,10 +104,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         
         <xsl:choose>
             <xsl:when test="newsml:team-metadata/@alignment='home'">
-                <xsl:value-of select="$event-id"/> «https://schema.org/homeTeam» <xsl:value-of select="$team-id"/> .
+                <xsl:value-of select="$participation-id"/> «http://www.iptc.org/ontologies/Sport/alignment» "home" .
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="$event-id"/> «https://schema.org/awayTeam» <xsl:value-of select="$team-id"/> .
+                <xsl:value-of select="$participation-id"/> «http://www.iptc.org/ontologies/Sport/alignment» "away" .
             </xsl:otherwise>
         </xsl:choose>
 

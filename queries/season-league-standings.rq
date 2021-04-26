@@ -13,24 +13,24 @@ SELECT ?Team ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
 WHERE
 {
 	?season rdfs:type sport:Season .
-	?season sport:performance ?teamperf . 
-	?teamperf sport:performedBy ?team .
+	?season sport:participation ?teampartic . 
+	?teampartic sport:participationBy ?team .
 	?team schemaorg:name ?Team .
-	?teamperf spstat:events-played ?GP .
-	?teamperf spstat:standing-points ?P .
-	?teamperf spstat:wins ?W .
-	?teamperf spstat:losses ?L .
-	?teamperf spstat:ties ?D .
-	?teamperf spstat:points-scored-for ?GF .
-	?teamperf spstat:points-scored-against ?GA .
-	?teamperf spstat:points-difference ?GD .
-	?teamperf sport:performanceSplit ?splithome .
-	?splithome sport:performanceSplitType spcompetitionscope:events-home .
+	?teampartic spstat:events-played ?GP .
+	?teampartic spstat:standing-points ?P .
+	?teampartic spstat:wins ?W .
+	?teampartic spstat:losses ?L .
+	?teampartic spstat:ties ?D .
+	?teampartic spstat:points-scored-for ?GF .
+	?teampartic spstat:points-scored-against ?GA .
+	?teampartic spstat:points-difference ?GD .
+	?teampartic sport:participationSplit ?splithome .
+	?splithome sport:participationSplitType spcompetitionscope:events-home .
 	?splithome spstat:wins ?WHOME .
 	?splithome spstat:losses ?LHOME .
 	# Does this need to repeat?
-	?teamperf sport:performanceSplit ?splitaway .
-	?splitaway sport:performanceSplitType spcompetitionscope:events-away .
+	?teampartic sport:participationSplit ?splitaway .
+	?splitaway sport:participationSplitType spcompetitionscope:events-away .
 	?splitaway spstat:wins ?WAWAY .
 }
 
