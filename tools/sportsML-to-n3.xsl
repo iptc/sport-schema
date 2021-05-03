@@ -30,7 +30,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:apply-templates/>
     </xsl:template>
 
-	<!-- top-level element: sports-event. This will contain all the data for reporting on a match/game -->
+	<!-- top-level element: sports-event. This will direct all the data for reporting on a match/game -->
     <xsl:template match="newsml:sports-event">
     	<!-- get the vendor event ID and convert to URI -->
         <xsl:variable name="event-key"><xsl:value-of select="substring-after(newsml:event-metadata/@key,':')"/></xsl:variable>
@@ -38,6 +38,28 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
     	<!-- declare sports event as a type -->
         <xsl:value-of select="$event-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .        
+        <xsl:apply-templates>
+            <xsl:with-param name="event-key" select="$event-key"/>
+            <xsl:with-param name="event-id" select="$event-id"/>
+        </xsl:apply-templates>         
+    </xsl:template>
+
+    <xsl:template match="newsml:event-metadata">
+        <xsl:param name="event-key"/>
+        <xsl:param name="event-id"/>
+
+        <xsl:value-of select="$event-id"/> «https://schema.org/startDate» <xsl:value-of select="concat('&quot;',@start-date-time,'&quot;')"/> .        
+        <xsl:value-of select="$event-id"/> ^<xsl:value-of select="concat('«',$sport-ontology-ns,'event-status','»')"/>^<xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-status,':'),'/',substring-after(@event-status,':'),'»')"/> .        
+        <xsl:value-of select="$event-id"/> ^<xsl:value-of select="concat('«',$sport-ontology-ns,'event-outcome-type','»')"/>^<xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-outcome-type,':'),'/',substring-after(@event-outcome-type,':'),'»')"/> .        
+
+		<!-- site info -->
+		<xsl:variable name="site-name" select="newsml:site/newsml:site-metadata/newsml:name[@role='nrol:full']"/>
+        <xsl:variable name="site-key"><xsl:value-of select="substring-after(newsml:site/newsml:site-metadata/@key,':')"/></xsl:variable> 
+        <xsl:variable name="site-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Site/',$site-key,'»')"/></xsl:variable>
+        <xsl:value-of select="$event-id"/> ^<xsl:value-of select="concat('«',$sport-ontology-ns,'site','»')"/>^<xsl:value-of select="$site-id"/> .        
+        <xsl:value-of select="$site-id"/> ^«https://schema.org/name» "<xsl:value-of select="$site-name"/>" .        
+
+
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
