@@ -1,0 +1,111 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "sport": "https://iptc.org/std-dev/SportsRDF/iptc-sport-ontology.jsonld"
+  },
+  "@graph": [
+    {
+      "@id": "sport:CollegeOrUniversity",
+      "@type": "owl:Ontology",
+      "rdfs:label": "IPTC Sport Ontology",
+      "rdfs:comment": "A high level model to describe the core elements of competitive sport."
+    },
+    {
+      "@id": "sport:Event",
+      "@type": "owl:Class",
+      "rdfs:label": "Event",
+      "rdfs:comment": "An individual sport event. match, race etc."
+    },
+    {
+      "@id": "sport:startdate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "startdate",
+      "rdfs:comment": "Start date of the event",
+      "rdfs:domain": "sport:Event",
+      "rdfs:range": "xsd:date"
+    },
+    {
+      "@id": "sport:enddate",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "enddate",
+      "rdfs:comment": "End date of the event",
+      "rdfs:domain": "sport:Event",
+      "rdfs:range": "xsd:date"
+    },
+    {
+      "@id": "sport:Participation",
+      "@type": "owl:Class",
+      "rdfs:label": "Participation",
+      "rdfs:comment": "An actor participating of an event."
+    },
+    {
+      "@id": "sport:TeamParticipation",
+      "@type": "owl:Class",
+      "rdfs:label": "TeamParticipation",
+      "rdfs:subClass": "sport:Participation",
+      "rdfs:comment": "The participation of a team"
+    },
+    {
+      "@id": "sport:IndividualParticipation",
+      "@type": "owl:Class",
+      "rdfs:label": "IndividualParticipation",
+      "rdfs:subClass": "sport:Participation",
+      "rdfs:comment": "The participation of an individual"
+    },
+    {
+      "@id": "sport:OfficialParticipation",
+      "@type": "owl:Class",
+      "rdfs:label": "OfficialParticipation",
+      "rdfs:subClass": "sport:Participation", 
+      "rdfs:comment": "The participation of an event offcial"
+    },
+    {
+      "@id": "sport:ManagerialParticipation",
+      "@type": "owl:Class",
+      "rdfs:label": "ManagerialParticipation",
+      "rdfs:subClass": "sport:Participation",
+      "rdfs:comment": "The particpation of a managerial individual"
+    },
+    {
+      "@id": "sport:Agent",
+      "@type": "owl:Class",
+      "rdfs:label": "Agent",
+      "rdfs:comment": "A participant of a sport event."
+    },
+    {
+      "@id": "sport:Team",
+      "@type": "owl:Class",
+      "rdfs:label": "Team",
+      "rdfs:subClassOf": "sport:Agent",
+      "rdfs:comment": "A type of agent that is a team"
+    },
+    {
+
+      "@id": "sport:Person",
+      "@type": "owl:Class",
+      "rdfs:label": "Person",
+      "rdfs:subClassOf": "sport:Agent",
+      "rdfs:comment": "A type of agent that is a person"
+    },
+    {
+      "@id": "sport:hasParticipation",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "hasParticipation",
+      "rdfs:comment": "A participation by an agent in a event",
+      "rdfs:domain": "sport:Event",
+      "rdfs:range": "sport:Participation"
+    },
+    {
+      "@id": "sport:score",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "score",
+      "rdfs:comment": "A teams score",
+      "rdfs:domain": "sport:TeamParticipation",
+      "rdfs:range": "xsd:integer"
+    }
+  ]
+}
