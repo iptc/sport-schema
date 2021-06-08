@@ -37,7 +37,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="event-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Event/',$event-key,'»')"/></xsl:variable>
 
     	<!-- declare sports event as a type -->
-        <xsl:value-of select="$event-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .        
+        <xsl:value-of select="$event-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .        
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
@@ -86,7 +86,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="season-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Season/',$season-key,'»')"/></xsl:variable>
 
     	<!-- declare sports season as a type -->
-        <xsl:value-of select="$season-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Season','»')"/> .        
+        <xsl:value-of select="$season-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Season','»')"/> .        
         <xsl:apply-templates>
             <xsl:with-param name="season-key" select="$season-key"/>
             <xsl:with-param name="season-id" select="$season-id"/>
@@ -118,7 +118,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:variable>
         
 		<!-- declare type (Team) -->
-        <xsl:value-of select="$team-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Team','»')"/> .        
+        <xsl:value-of select="$team-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Team','»')"/> .        
 		<!-- give name -->
         <xsl:value-of select="$team-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
 
@@ -208,7 +208,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="participation-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Participation/',$event-key,'-',$player-key,'»')"/></xsl:variable>
                 
         <!-- <player> rdfs:type Athlete -->
-        <xsl:value-of select="$player-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .        
+        <xsl:value-of select="$player-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .        
         <!-- <player> schema:name name -->
         <xsl:if test="string($name)">
        	<xsl:value-of select="$player-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
@@ -259,7 +259,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="participation-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Participation/',$event-key,'-',$associate-key,'»')"/></xsl:variable>
                 
         <!-- <associate> rdfs:type associate -->
-        <xsl:value-of select="$associate-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Associate','»')"/> .        
+        <xsl:value-of select="$associate-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Associate','»')"/> .        
         <!-- <associate> schema:name name -->
         <xsl:if test="string($name)">
        	<xsl:value-of select="$associate-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .
@@ -293,7 +293,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="participation-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Participation/',$event-key,'-',$official-key,'»')"/></xsl:variable>
                 
         <!-- <official> rdfs:type official -->
-        <xsl:value-of select="$official-id"/> «http://www.w3.org/2000/01/rdf-schema/type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Official','»')"/> .        
+        <xsl:value-of select="$official-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Official','»')"/> .        
         <!-- <official> schema:name name -->
         <xsl:if test="string($name)">
        	<xsl:value-of select="$official-id"/> «https://schema.org/name» "<xsl:value-of select="$name"/>" .

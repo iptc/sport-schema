@@ -14,13 +14,12 @@ WHERE
 
     ?team rdfs:type sport:Team .
     ?player rdfs:type  sport:Athlete .
-	?event rdfs:type  sport:Event .
+    ?event rdfs:type  sport:Event .
     ?team schemaorg:athlete ?player .
     ?team schemaorg:name ?teamName .
     ?player schemaorg:name ?playerName .
     ?player sport:position-regular ?playerPos .
 	?performance sport:participationBy ?player .
 	?performance spstat:events-started "1"
-
 }
 ORDER BY ?teamName ?playerName
