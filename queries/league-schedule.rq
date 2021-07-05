@@ -1,0 +1,15 @@
+# Use case: get all events for a competition/eague
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+
+SELECT ?date (COUNT(?event) AS ?events) (GROUP_CONCAT(DISTINCT ?event; SEPARATOR=", ") AS ?IDs)
+WHERE
+{
+	?event schemaorg:startDate ?date .
+}
+GROUP BY ?date
+ORDER BY ?date
