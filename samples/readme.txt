@@ -1,4 +1,4 @@
-This directory contains sports statistical data rendered in the turtle format (.ttl) of RDF and SPARQL files to query them (.rq)
+This directory contains sports statistical data rendered in various RDF formats.
 
 RDF: https://en.wikipedia.org/wiki/Resource_Description_Framework
 Turtle: https://en.wikipedia.org/wiki/Turtle_(syntax)
