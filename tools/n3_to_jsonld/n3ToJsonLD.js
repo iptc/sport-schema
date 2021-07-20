@@ -5,12 +5,13 @@ const jsonld = require('jsonld');
 const path = require("path");
 const fs = require('fs');
 
-const sampleDir = '../../samples/';
+const sampleDir = '../../samples/n3/';
 
-async function ntriplesToJSONLD(nquads, context, filename) {
+async function ntriplesToJSONLD(nquads, context, newfilename) {
     const toCompact = await jsonld.fromRDF(nquads,);
     let compacted = await jsonld.compact(toCompact, context, { 'processingMode': 'json-ld-1.1' });
-    fs.writeFileSync(sampleDir + filename + '.jsonld', JSON.stringify(compacted, null, 2));
+    let newDir = sampleDir.replace('/n3/', '/json-ld/');
+    fs.writeFileSync(newDir + newfilename, JSON.stringify(compacted, null, 2));
 }
 
 let samples = fs.readdirSync(sampleDir).filter(fn => fn.endsWith('.n3'));
@@ -26,6 +27,6 @@ samples.forEach(filename => {
     };
 
     (async function () {
-        await ntriplesToJSONLD(data, context, filename.replace('.n3', ''));
+        await ntriplesToJSONLD(data, context, filename.replace('.n3', '.jsonld'));
     })();
 });
