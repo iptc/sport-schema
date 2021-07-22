@@ -57,8 +57,13 @@ If you want to try converting an individual N3 file yourself, you can use Jena's
 
 ```bash
 riot --formatted=TURTLE tools/prefixes.ttl samples/n3/soccer-match-01.n3
-riot --formatted=JSON-LD tools/prefixes.ttl samples/n3/soccer-match-01.n3
+riot --formatted=JSON-LD samples/ttl/soccer-match-01.ttl
 ```
+
+Note that the JSON-LD files include the `@context` section at the bottom of the
+file, whereas most JSON-LD examples include `@context` at the top. This is an
+artefact of the Jena JSON-LD generator and doesn't affect the usefulness of the
+data files.
 
 ## Running example queries
 

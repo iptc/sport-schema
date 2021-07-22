@@ -157,11 +157,18 @@ sport:position-event rdf:type rdf:Property ;
     rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:uniform-number rdf:type rdf:Propery ;
+sport:uniform-number rdf:type rdf:Property ;
     rdfs:label "Uniform number"@en ;
     rdfs:comment "The number usually worn on a player's uniform (jersey etc.)"@en ;
     rdfs:domain sport:Athlete ;
     rdfs:range xsd:integer ;                 ## is uniform number always an integer?
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:startDate rdf:type rdf:Property ;
+    rdfs:label "startDate"@en ;
+    rdfs:comment "The date on which an event begins"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:date ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:alignment rdf:type rdf:Property ;
