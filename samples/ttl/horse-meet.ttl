@@ -1,256 +1,325 @@
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema/> .
 @prefix schemaorg: <https://schema.org/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix sport:     <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:    <http://cv.iptc.org/newscodes/spstat/> .
 
-<http://sport.org/Event/l.horse-racing.uk-2021-e.527912>
-  a <http://www.iptc.org/ontologies/Sport/Event> ;
-  schemaorg:startDate "2014-06-29T14:50:00+01:00" ;
-  sport:event-status <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-  sport:event-outcome-type <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
-  sport:site <http://sport.org/Site/Uttoxeter> ;
-  sport:participation <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2014359>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2014359>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.77406>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1965312>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1965312>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.31701>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1937042>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1937042>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1138364>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2039637>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2039637>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1141749>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1531310>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1531310>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1106000>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1712831>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1712831>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1139083>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2005646>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2005646>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.13961>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2026148>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2026148>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.22064>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2040519>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2040519>, <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.42108> .
-
-<http://sport.org/Site/Uttoxeter> schemaorg:name "Uttoxeter" .
 <http://sport.org/Team/t.2014359>
-  a sport:Team ;
-  schemaorg:name "Abbeygrey" ;
-  schemaorg:athlete <http://sport.org/Person/p.2014359>, <http://sport.org/Person/p.77406> ;
-  schemaorg:coach <http://sport.org/Person/12856> .
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.77406> , <http://sport.org/Person/p.2014359> ;
+        schemaorg:coach    <http://sport.org/Person/12856> ;
+        schemaorg:name     "Abbeygrey" .
 
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2014359>
-  sport:participationBy <http://sport.org/Team/t.2014359> ;
-  spstat:rank "6" .
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1138364>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1138364> .
 
-<http://sport.org/Person/p.2014359>
-  a sport:Athlete ;
-  schemaorg:name "Abbeygrey" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "1" .
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2039637>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.2039637> .
 
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2014359> sport:participationBy <http://sport.org/Person/p.2014359> .
-<http://sport.org/Person/p.77406>
-  a sport:Athlete ;
-  schemaorg:name "Adam Wedge" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.77406> sport:participationBy <http://sport.org/Person/p.77406> .
-<http://sport.org/Person/12856>
-  a sport:Associate ;
-  schemaorg:name "Evan Williams" .
-
-<http://sport.org/Team/t.1965312>
-  a sport:Team ;
-  schemaorg:name "Celtique Beau" ;
-  schemaorg:athlete <http://sport.org/Person/p.1965312>, <http://sport.org/Person/p.31701> ;
-  schemaorg:coach <http://sport.org/Person/14215> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1965312>
-  sport:participationBy <http://sport.org/Team/t.1965312> ;
-  spstat:rank "3" ;
-  spstat:outcome-result "show" .
-
-<http://sport.org/Person/p.1965312>
-  a sport:Athlete ;
-  schemaorg:name "Celtique Beau" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "2" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1965312> sport:participationBy <http://sport.org/Person/p.1965312> .
-<http://sport.org/Person/p.31701>
-  a sport:Athlete ;
-  schemaorg:name "A P Cawley" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.31701> sport:participationBy <http://sport.org/Person/p.31701> .
-<http://sport.org/Person/14215>
-  a sport:Associate ;
-  schemaorg:name "P J Gilligan" .
-
-<http://sport.org/Team/t.1937042>
-  a sport:Team ;
-  schemaorg:name "Deadly Sting" ;
-  schemaorg:athlete <http://sport.org/Person/p.1937042>, <http://sport.org/Person/p.1138364> ;
-  schemaorg:coach <http://sport.org/Person/110810> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1937042>
-  sport:participationBy <http://sport.org/Team/t.1937042> ;
-  spstat:rank "2" ;
-  spstat:outcome-result "place" .
-
-<http://sport.org/Person/p.1937042>
-  a sport:Athlete ;
-  schemaorg:name "Deadly Sting" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "3" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1937042> sport:participationBy <http://sport.org/Person/p.1937042> .
-<http://sport.org/Person/p.1138364>
-  a sport:Athlete ;
-  schemaorg:name "G Sheehan" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1138364> sport:participationBy <http://sport.org/Person/p.1138364> .
-<http://sport.org/Person/110810>
-  a sport:Associate ;
-  schemaorg:name "J Butler" .
-
-<http://sport.org/Team/t.2039637>
-  a sport:Team ;
-  schemaorg:name "Graphical" ;
-  schemaorg:athlete <http://sport.org/Person/p.2039637>, <http://sport.org/Person/p.1141749> ;
-  schemaorg:coach <http://sport.org/Person/118056> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2039637> sport:participationBy <http://sport.org/Team/t.2039637> .
-<http://sport.org/Person/p.2039637>
-  a sport:Athlete ;
-  schemaorg:name "Graphical" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "4" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2039637> sport:participationBy <http://sport.org/Person/p.2039637> .
-<http://sport.org/Person/p.1141749>
-  a sport:Athlete ;
-  schemaorg:name "Brendan Powell" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1141749> sport:participationBy <http://sport.org/Person/p.1141749> .
-<http://sport.org/Person/118056>
-  a sport:Associate ;
-  schemaorg:name "J Farrelly" .
-
-<http://sport.org/Team/t.1531310>
-  a sport:Team ;
-  schemaorg:name "Hawdyerwheesht" ;
-  schemaorg:athlete <http://sport.org/Person/p.1531310>, <http://sport.org/Person/p.1106000> ;
-  schemaorg:coach <http://sport.org/Person/46218> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1531310>
-  sport:participationBy <http://sport.org/Team/t.1531310> ;
-  spstat:rank "1" ;
-  spstat:outcome-result "win" .
-
-<http://sport.org/Person/p.1531310>
-  a sport:Athlete ;
-  schemaorg:name "Hawdyerwheesht" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "5" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1531310> sport:participationBy <http://sport.org/Person/p.1531310> .
-<http://sport.org/Person/p.1106000>
-  a sport:Athlete ;
-  schemaorg:name "Sam Twiston-Davies" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1106000> sport:participationBy <http://sport.org/Person/p.1106000> .
-<http://sport.org/Person/46218>
-  a sport:Associate ;
-  schemaorg:name "Dr R D P Newland" .
-
-<http://sport.org/Team/t.1712831>
-  a sport:Team ;
-  schemaorg:name "Presenting The Way" ;
-  schemaorg:athlete <http://sport.org/Person/p.1712831>, <http://sport.org/Person/p.1139083> ;
-  schemaorg:coach <http://sport.org/Person/114567> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1712831>
-  sport:participationBy <http://sport.org/Team/t.1712831> ;
-  spstat:rank "did-not-finish" .
-
-<http://sport.org/Person/p.1712831>
-  a sport:Athlete ;
-  schemaorg:name "Presenting The Way" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "6" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1712831> sport:participationBy <http://sport.org/Person/p.1712831> .
-<http://sport.org/Person/p.1139083>
-  a sport:Athlete ;
-  schemaorg:name "M J McIntyre" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1139083> sport:participationBy <http://sport.org/Person/p.1139083> .
-<http://sport.org/Person/114567>
-  a sport:Associate ;
-  schemaorg:name "H Fry" .
-
-<http://sport.org/Team/t.2005646>
-  a sport:Team ;
-  schemaorg:name "River Clare" ;
-  schemaorg:athlete <http://sport.org/Person/p.2005646>, <http://sport.org/Person/p.13961> ;
-  schemaorg:coach <http://sport.org/Person/2323> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2005646>
-  sport:participationBy <http://sport.org/Team/t.2005646> ;
-  spstat:rank "4" .
-
-<http://sport.org/Person/p.2005646>
-  a sport:Athlete ;
-  schemaorg:name "River Clare" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "7" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2005646> sport:participationBy <http://sport.org/Person/p.2005646> .
-<http://sport.org/Person/p.13961>
-  a sport:Athlete ;
-  schemaorg:name "R Johnson" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.13961> sport:participationBy <http://sport.org/Person/p.13961> .
-<http://sport.org/Person/2323>
-  a sport:Associate ;
-  schemaorg:name "J G M O'Shea" .
-
-<http://sport.org/Team/t.2026148>
-  a sport:Team ;
-  schemaorg:name "Sing Alone" ;
-  schemaorg:athlete <http://sport.org/Person/p.2026148>, <http://sport.org/Person/p.22064> ;
-  schemaorg:coach <http://sport.org/Person/12002> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2026148>
-  sport:participationBy <http://sport.org/Team/t.2026148> ;
-  spstat:rank "did-not-finish" .
-
-<http://sport.org/Person/p.2026148>
-  a sport:Athlete ;
-  schemaorg:name "Sing Alone" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "8" .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2026148> sport:participationBy <http://sport.org/Person/p.2026148> .
-<http://sport.org/Person/p.22064>
-  a sport:Athlete ;
-  schemaorg:name "D Crosse" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
-
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.22064> sport:participationBy <http://sport.org/Person/p.22064> .
-<http://sport.org/Person/12002>
-  a sport:Associate ;
-  schemaorg:name "C N Kellett" .
-
-<http://sport.org/Team/t.2040519>
-  a sport:Team ;
-  schemaorg:name "Brigstock Seabra" ;
-  schemaorg:athlete <http://sport.org/Person/p.2040519>, <http://sport.org/Person/p.42108> ;
-  schemaorg:coach <http://sport.org/Person/4993> .
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1531310>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1531310> .
 
 <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2040519>
-  sport:participationBy <http://sport.org/Team/t.2040519> ;
-  spstat:rank "5" .
+        rdf:type               sport:TeamParticipation ;
+        spstat:rank            "5" ;
+        sport:participationBy  <http://sport.org/Team/t.2040519> .
+
+<http://sport.org/Person/p.1712831>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "6" ;
+        schemaorg:name          "Presenting The Way" .
+
+<http://sport.org/Person/p.22064>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "D Crosse" .
+
+<http://sport.org/Site/Uttoxeter>
+        schemaorg:name  "Uttoxeter" .
+
+<http://sport.org/Person/14215>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "P J Gilligan" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1937042>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1937042> .
+
+<http://sport.org/Person/p.13961>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "R Johnson" .
+
+<http://sport.org/Person/12002>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "C N Kellett" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.42108>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.42108> .
+
+<http://sport.org/Person/p.1106000>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "Sam Twiston-Davies" .
+
+<http://sport.org/Team/t.2040519>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.42108> , <http://sport.org/Person/p.2040519> ;
+        schemaorg:coach    <http://sport.org/Person/4993> ;
+        schemaorg:name     "Brigstock Seabra" .
+
+<http://sport.org/Event/l.horse-racing.uk-2021-e.527912>
+        rdf:type                  sport:Event ;
+        sport:event-outcome-type  <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:event-status        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:participation       <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.31701> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2014359> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1106000> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.22064> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2005646> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.13961> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1531310> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1965312> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1937042> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1138364> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.42108> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2040519> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2026148> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2005646> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1712831> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2014359> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1141749> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2040519> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1712831> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2039637> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1139083> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2039637> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1531310> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.77406> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1965312> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2026148> , <http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1937042> ;
+        sport:site                <http://sport.org/Site/Uttoxeter> ;
+        schemaorg:startDate       "2014-06-29T14:50:00+01:00" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.31701>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.31701> .
+
+<http://sport.org/Person/p.2026148>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "8" ;
+        schemaorg:name          "Sing Alone" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2026148>
+        rdf:type               sport:TeamParticipation ;
+        spstat:rank            "did-not-finish" ;
+        sport:participationBy  <http://sport.org/Team/t.2026148> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2014359>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.2014359> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1139083>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1139083> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.22064>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.22064> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.13961>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.13961> .
+
+<http://sport.org/Person/118056>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "J Farrelly" .
+
+<http://sport.org/Person/p.31701>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "A P Cawley" .
+
+<http://sport.org/Person/p.2005646>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "7" ;
+        schemaorg:name          "River Clare" .
+
+<http://sport.org/Team/t.1965312>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.31701> , <http://sport.org/Person/p.1965312> ;
+        schemaorg:coach    <http://sport.org/Person/14215> ;
+        schemaorg:name     "Celtique Beau" .
+
+<http://sport.org/Person/46218>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "Dr R D P Newland" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1712831>
+        rdf:type               sport:TeamParticipation ;
+        spstat:rank            "did-not-finish" ;
+        sport:participationBy  <http://sport.org/Team/t.1712831> .
+
+<http://sport.org/Person/p.1138364>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "G Sheehan" .
+
+<http://sport.org/Person/p.2039637>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "4" ;
+        schemaorg:name          "Graphical" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2039637>
+        rdf:type               sport:TeamParticipation ;
+        sport:participationBy  <http://sport.org/Team/t.2039637> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2040519>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.2040519> .
+
+<http://sport.org/Person/p.1531310>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "5" ;
+        schemaorg:name          "Hawdyerwheesht" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1531310>
+        rdf:type               sport:TeamParticipation ;
+        spstat:outcome-result  "win" ;
+        spstat:rank            "1" ;
+        sport:participationBy  <http://sport.org/Team/t.1531310> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1141749>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1141749> .
+
+<http://sport.org/Person/110810>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "J Butler" .
+
+<http://sport.org/Person/p.1937042>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "3" ;
+        schemaorg:name          "Deadly Sting" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1937042>
+        rdf:type               sport:TeamParticipation ;
+        spstat:outcome-result  "place" ;
+        spstat:rank            "2" ;
+        sport:participationBy  <http://sport.org/Team/t.1937042> .
+
+<http://sport.org/Person/2323>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "J G M O'Shea" .
+
+<http://sport.org/Team/t.2026148>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.22064> , <http://sport.org/Person/p.2026148> ;
+        schemaorg:coach    <http://sport.org/Person/12002> ;
+        schemaorg:name     "Sing Alone" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1965312>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1965312> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2005646>
+        rdf:type               sport:TeamParticipation ;
+        spstat:rank            "4" ;
+        sport:participationBy  <http://sport.org/Team/t.2005646> .
+
+<http://sport.org/Person/p.2014359>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "1" ;
+        schemaorg:name          "Abbeygrey" .
+
+<http://sport.org/Person/p.1139083>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "M J McIntyre" .
+
+<http://sport.org/Person/114567>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "H Fry" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1712831>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1712831> .
+
+<http://sport.org/Team/t.1712831>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.1139083> , <http://sport.org/Person/p.1712831> ;
+        schemaorg:coach    <http://sport.org/Person/114567> ;
+        schemaorg:name     "Presenting The Way" .
+
+<http://sport.org/Team/t.2039637>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.1141749> , <http://sport.org/Person/p.2039637> ;
+        schemaorg:coach    <http://sport.org/Person/118056> ;
+        schemaorg:name     "Graphical" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.1106000>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.1106000> .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2026148>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.2026148> .
 
 <http://sport.org/Person/p.2040519>
-  a sport:Athlete ;
-  schemaorg:name "Brigstock Seabra" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/horse> ;
-  sport:uniform-number "9" .
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "9" ;
+        schemaorg:name          "Brigstock Seabra" .
 
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2040519> sport:participationBy <http://sport.org/Person/p.2040519> .
-<http://sport.org/Person/p.42108>
-  a sport:Athlete ;
-  schemaorg:name "T Messenger" ;
-  sport:position-regular <http://cv.iptc.org/newscodes/sphorpos/jockey> .
+<http://sport.org/Team/t.1531310>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.1106000> , <http://sport.org/Person/p.1531310> ;
+        schemaorg:coach    <http://sport.org/Person/46218> ;
+        schemaorg:name     "Hawdyerwheesht" .
 
-<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.42108> sport:participationBy <http://sport.org/Person/p.42108> .
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.77406>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.77406> .
+
+<http://sport.org/Team/t.1937042>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.1138364> , <http://sport.org/Person/p.1937042> ;
+        schemaorg:coach    <http://sport.org/Person/110810> ;
+        schemaorg:name     "Deadly Sting" .
+
+<http://sport.org/Person/12856>
+        rdf:type        sport:Associate ;
+        schemaorg:name  "Evan Williams" .
+
+<http://sport.org/Person/p.1141749>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "Brendan Powell" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.2014359>
+        rdf:type               sport:TeamParticipation ;
+        spstat:rank            "6" ;
+        sport:participationBy  <http://sport.org/Team/t.2014359> .
+
+<http://sport.org/Person/p.77406>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "Adam Wedge" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-p.2005646>
+        rdf:type               sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Person/p.2005646> .
+
+<http://sport.org/Team/t.2005646>
+        rdf:type           sport:Team ;
+        schemaorg:athlete  <http://sport.org/Person/p.13961> , <http://sport.org/Person/p.2005646> ;
+        schemaorg:coach    <http://sport.org/Person/2323> ;
+        schemaorg:name     "River Clare" .
+
 <http://sport.org/Person/4993>
-  a sport:Associate ;
-  schemaorg:name "Mrs Caroline Bailey" .
+        rdf:type        sport:Associate ;
+        schemaorg:name  "Mrs Caroline Bailey" .
 
+<http://sport.org/Person/p.1965312>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
+        sport:uniform-number    "2" ;
+        schemaorg:name          "Celtique Beau" .
+
+<http://sport.org/Participation/l.horse-racing.uk-2021-e.527912-t.1965312>
+        rdf:type               sport:TeamParticipation ;
+        spstat:outcome-result  "show" ;
+        spstat:rank            "3" ;
+        sport:participationBy  <http://sport.org/Team/t.1965312> .
+
+<http://sport.org/Person/p.42108>
+        rdf:type                sport:Athlete ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/sphorpos/jockey> ;
+        schemaorg:name          "T Messenger" .

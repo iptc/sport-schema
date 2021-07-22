@@ -1,21 +1,15 @@
 #!/bin/bash
 
-# Save the current working directory in an environment variable
-INITIAL_WORKING_DIRECTORY=$(pwd)
+INPUT_FILE=$1
 
-# Move to the folder containing this script
-cd "$(dirname "$0")"
+# Get the folder containing this script
+THISDIR="$(dirname "$0")"
 
 # This tool uses Saxon as the XSLT engine. Download the free, open source
 # Saxon-HE from https://sourceforge.net/projects/saxon/files/Saxon-HE/
 # This path will need to change based on your local setup.
-SAXON_PATH="../../../../saxon/saxon_java_he/saxon9he.jar"
+SAXON_PATH="$THISDIR/../../../saxon/saxon-he-10.5.jar"
 #
-XSLT=./sportsML-to-n3.xsl
-INPUT_FILE=../samples/sportsml/soccer-match-g2-specific.xml
+XSLT="$THISDIR/sportsML-to-n3.xsl"
 #
 java -cp $SAXON_PATH net.sf.saxon.Transform -s:$INPUT_FILE -xsl:$XSLT
-
-# Go back to where we were before changing into the
-# script directory
-cd $INITIAL_WORKING_DIRECTORY

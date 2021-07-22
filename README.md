@@ -11,26 +11,54 @@ https://github.com/iptc/sport-model/wiki/Use-Cases .
 We are creating an RDF model that represents schedules, statistics and results
 for all levels of all sports, for both human and machine consumption.
 
+## Project goals and principles
+
+We want the resulting data model and vocabulary to be:
+
+* **Comprehensive** - it should be able to handle schedules, results and
+statistics for many sports (team, individual and head-to-head)
+* **Easy to use** - should be approachable by non-experts in Semantic Web
+technologies, e.g. the JSON-LD versions should be simple enough to be parsed by
+any competent developer who is comfortable with handling JSON files.
+* **Easy to query** - for those who want to use the power of RDF features such
+as SPARQL, querying data should be as simple as possible.
+* **Compatible with schema.org** - we want this vocabulary to be self-contained
+but it should be possible to use it alongside schema.org in the future.
+
 ## Repository layout
 
 `queries`:
 
 Contains sample SPARQL queries exercising some of the use cases.
 
-`samples`:
+`samples/{n3|ttl|jsonld}/`:
 
-Contains data files in N3 and Turtle (`.ttl`) format.
+Contains example data files in RDF N3, Turtle (`.ttl`) and JSON-LD formats.
 
-`samples/sportsml`:
+`samples/xml/sportsml`:
 
 Examples in SportsML, to be converted to N3 using the XSLT script in `tools`.
 
 `tools`:
 
-The XSLT `tools/sportsML-to-n3.xsl` can be used to convert the XML examples
-in `samples/sportsml` into N3 triples. (The conversion from N3 to Turtle was
-performed manually using Nick Humfrey's https://www.easyrdf.org/converter,
-in the future we plan to replace this with a script)
+We have created a Bash script which uses the Saxon XSLT processor to convert
+SportsML example files in XML to N3 triples and then uses Apache Jena to convert
+the N3 to the more readable Turtle (TTL) and JSON-LD formats.
+
+This repository contains the converted files, but if you need to convert them
+again, simply run:
+
+```bash
+tools/convert-sportsml-to-rdf.sh
+```
+
+If you want to try converting an individual N3 file yourself, you can use Jena's
+`riot` tool directly:
+
+```bash
+riot --formatted=TURTLE tools/prefixes.ttl samples/n3/soccer-match-01.n3
+riot --formatted=JSON-LD tools/prefixes.ttl samples/n3/soccer-match-01.n3
+```
 
 ## Running example queries
 
