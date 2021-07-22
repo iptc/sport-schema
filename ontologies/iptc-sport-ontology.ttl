@@ -1,86 +1,179 @@
-@prefix iptcs: <http://www.iptc.org/ontologies/Sport/ontologies/sport/> . 
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://www.iptc.org/ontologies/Sport/ontologies/sport> ; 
+<http://www.iptc.org/ontologies/sport/> ;
     rdf:type owl:Ontology ;
-    dcterms:title "Sport ontology"@en ;
-    dcterms:created "20/04/2021"^^xsd:date ;
-    dcterms:creator "silver"@en ;   
-    dcterms:description "A high level model to describe the core elements of competitive sport."@en .
+    dcterms:title "IPTC Sport ontology"@en ;
+    dcterms:created "20/07/2021"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2021"@en ;
+    dcterms:description "A high level model to describe the core elements of competitive sport"@en .
+
+##### Classes #####
+
+sport:Event rdf:type rdfs:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "An individual sport event: a match, race etc."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Participation rdf:type rdfs:Class ;
+    rdfs:label "Participation"@en ;
+    rdfs:comment "The participation of an actor in an event."@en ;
+    rdfs:domain sport:Event ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:TeamParticipation rdf:type rdfs:Class ;
+    rdfs:label "TeamParticipation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of a team in an event"@en ;
+    rdfs:range sport:Team ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:IndividualParticipation rdf:type rdfs:Class ;
+    rdfs:label "IndividualParticipation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an individual in an event"@en ;
+    rdfs:range sport:Person ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:OfficialParticipation rdf:type rdfs:Class ;
+    rdfs:label "OfficialParticipation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an event offcial"@en ;
+    rdfs:range sport:Person ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:ManagerialParticipation rdf:type rdfs:Class ;
+    rdfs:label "ManagerialParticipation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The particpation of a managerial individual"@en ;
+    rdfs:range sport:Person ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Agent rdf:type rdfs:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "A participant of a sport event."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Team rdf:type rdfs:Class ;
+    rdfs:label "Team"@en ;
+    rdfs:subClassOfOf sport:Agent ;
+    rdfs:comment "A type of agent that is a team"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Person rdf:type rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:subClassOfOf sport:Agent ;
+    rdfs:comment "A type of agent that is a person"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+# would "Player" be a better name..?
+# currently "Athlete" includes horses!
+sport:Athlete rdf:type rdfs:Class ;
+    rdfs:label "Athlete"@en ;
+    rdfs:subClassOfOf sport:Person ;
+    rdfs:comment "A competitor in an individual event"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Associate rdf:type rdfs:Class ;
+    rdfs:label "Associate"@en ;
+    rdfs:subClassOfOf sport:Person ;
+    rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Site rdf:type rdfs:Class ;
+    rdfs:label "Site"@en ;
+    rdfs:comment "The location where an event takes place"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 
-#######  Classes ##### 	
+##### Object properties #####
 
-iptcs:Event rdf:type owl:Class ;
-	rdfs:label "Event"@en ;
-	rdfs:comment "An individual sport event. match, race etc."@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:participation rdf:type rdf:Property ;
+    rdfs:label "participation"@en ;
+    rdfs:comment "A participation by an agent in a event"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Participation ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:Participation rdf:type owl:Class ;
-	rdfs:label "Participation"@en ;
-	rdfs:comment "An actor participating of an event."@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:athlete rdf:type rdf:Property ;
+    rdfs:label "athlete"@en ;
+    rdfs:comment "A member of a team"@en ;
+    rdfs:domain sport:Team ;
+    rdfs:range sport:Athlete ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:TeamParticipation rdf:type owl:Class ;
-	rdfs:label "TeamParticipation"@en ;
-	rdfs:subClassOf iptcs:Participation ;
-	rdfs:comment "The participation of a team"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:coach rdf:type rdf:Property ;
+    rdfs:label "coach"@en ;
+    rdfs:comment "A coach or manager of a team or individual, trainer of a horse etc"@en ;
+    rdfs:domain sport:Team ;
+    rdfs:range sport:Associate ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:IndividualParticipation rdf:type owl:Class ;
-	rdfs:label "IndividualParticipation"@en ;
-	rdfs:subClassOf iptcs:Participation ;
-	rdfs:comment "The participation of an individual"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:site rdf:type rdf:Property ;
+    rdfs:label "Site"@en ;
+    rdfs:comment "The location where an event takes place"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Site ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:OfficialParticipation rdf:type owl:Class ;
-	rdfs:label "OfficialParticipation"@en ;
-	rdfs:subClassOf iptcs:Participation ;	
-	rdfs:comment "The participation of an event offcial"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+##### Data properties #####
 
-iptcs:ManagerialParticipation rdf:type owl:Class ;
-	rdfs:label "ManagerialParticipation"@en ;
-	rdfs:subClassOf iptcs:Participation ;	
-	rdfs:comment "The particpation of a managerial individual"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:name rdf:type rdf:Property ;
+    rdfs:label "Name"@en ;
+    rdfs:comment "The name of a team or player"@en ;
+    rdfs:domain sport:Team ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:Agent rdf:type owl:Class ;
-	rdfs:label "Agent"@en ;
-	rdfs:comment "A participant of a sport event."@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .	
+# we also have "spstat:score", do we need both? Is one for teams and the other for individuals?
+sport:score rdf:type rdf:Property ;
+    rdfs:label "Score"@en ;
+    rdfs:comment "A teams score"@en ;
+    rdfs:domain sport:TeamParticipation ;    ## but individuals can also score can't they..?
+    rdfs:range xsd:integer ;                 ## is a score always an integer?
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:Team rdf:type owl:Class ;
-	rdfs:label "Team"@en ;
-	rdfs:subClassOfOf iptcs:Agent ;
-	rdfs:comment "A type of agent that is a team"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:position-regular rdf:type rdf:Property ;
+    rdfs:label "Position (regular)"@en ;
+    rdfs:comment "The position in a team usually taken by a given player"@en ;
+    rdfs:domain sport:Person ;  # can apply to Athlete and Associate so we use the parent
+    # I don't think we can do this with rdfs:range, but is there something we can do
+    # in OWL or SHACL to show this range constraint?
+    rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:Person rdf:type owl:Class ;
-	rdfs:label "Person"@en ;
-	rdfs:subClassOfOf iptcs:Agent ;	
-	rdfs:comment "A type of agent that is a person"@en ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:position-event rdf:type rdf:Property ;
+    rdfs:label "Position (event)"@en ;
+    rdfs:comment "The position in a team taken for an individual event"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    # I don't think we can do this with rdfs:range, but is there something we can do
+    # in OWL or SHACL to show this range constraint?
+    rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-#######  Object properties ##### 
+sport:uniform-number rdf:type rdf:Propery ;
+    rdfs:label "Uniform number"@en ;
+    rdfs:comment "The number usually worn on a player's uniform (jersey etc.)"@en ;
+    rdfs:domain sport:Athlete ;
+    rdfs:range xsd:integer ;                 ## is uniform number always an integer?
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-iptcs:hasParticipation rdf:type owl:ObjectProperty ;
-	rdfs:label "hasParticipation"@en ;
-	rdfs:comment "A participation by an agent in a event"@en ;
-	rdfs:domain iptcs:Event ;
-	rdfs:range iptcs:Participation ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
+sport:alignment rdf:type rdf:Property ;
+    rdfs:label "alignment"@en ;
+    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"en ;
+    rdfs:domain sport:Athlete ;              ## sport:Athlete or sport:Team - use schema:domainIncludes?
+    rdfs:range xsd:string ;                  ## should this be an enumeration, or a link to a CV?
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-#######  Data properties ##### 
-
-iptcs:score rdf:type owl:DatatypeProperty ;
-	rdfs:label "score"@en ;
-	rdfs:comment "A teams score"@en ;
-	rdfs:domain iptcs:TeamParticipation ;
-	rdfs:range xsd:integer ;
-	rdf:isDefinedBy <http://www.iptc.org/ontologies/Sport/ontologies/sport/> .
-
+sport:participationBy rdf:type rdf:Property ;
+    rdfs:label "participationBy"@en ;
+    rdfs:comment "Participation by a person or a team"en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range xsd:string ;                  ## should this be an enumeration, or a link to a CV?
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
