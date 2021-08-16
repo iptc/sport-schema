@@ -2,6 +2,11 @@
 
 INPUT_FILE=$1
 
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <SportsML data file>"
+    exit 1
+fi
+
 # Get the folder containing this script
 THISDIR="$(dirname "$0")"
 
