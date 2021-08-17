@@ -1,9 +1,10 @@
-@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
 
 <http://www.iptc.org/ontologies/sport/> ;
     rdf:type owl:Ontology ;
@@ -64,9 +65,8 @@ sport:ParticipationSplit rdf:type rdfs:Class ;
     rdfs:label "Participation Split"@en ;
     rdfs:subClassOf sport:Participation ;  # ??? how does this work with TeamParticipation / IndividualParticipation?
     rdfs:comment "A representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
-    rdfs:domain sport:Event ;
+    rdfs:domain sport:Participation ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
-
 
 sport:Agent rdf:type rdfs:Class ;
     rdfs:label "Agent"@en ;
@@ -147,8 +147,8 @@ sport:participationSplit rdf:type rdf:Property ;
 
 sport:name rdf:type rdf:Property ;
     rdfs:label "Name"@en ;
-    rdfs:comment "The name of a team or player"@en ;
-    # rdfs:domain sport:Team ;
+    rdfs:comment "The name of an agent (team, player, official), or season"@en ;
+    schemaorg:domainIncludes sport:Agent, sport:Season ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
