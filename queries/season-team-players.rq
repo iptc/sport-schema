@@ -1,6 +1,7 @@
 # Use case: Season / Team / Who plays for the team? (Includes jersey number, position, etc.)
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX schemaorg:  <https://schema.org/>
@@ -10,11 +11,11 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 SELECT ?teamName ?playerName ?playerPos ?dob ?jersey
 WHERE
 {
-	?team rdfs:type sport:Team .
-	?player rdfs:type  sport:Athlete .
-	?team schemaorg:athlete ?player .
-	?team schemaorg:name ?teamName .
-	?player schemaorg:name ?playerName .
+	?team rdf:type sport:Team .
+	?player rdf:type  sport:Athlete .
+	?team sport:athlete ?player .
+	?team sport:name ?teamName .
+	?player sport:name ?playerName .
 	?player sport:position-regular ?playerPos .
 	?player sport:date-of-birth ?dob .
 	?player sport:uniform-number ?jersey .

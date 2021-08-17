@@ -2,6 +2,7 @@
 # Use case: What is the team record broken down into home and away events?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX schemaorg:  <https://schema.org/>
@@ -9,13 +10,15 @@ PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 
-SELECT ?Team ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
+SELECT ?teamName ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
 WHERE
 {
-	?season rdfs:type sport:Season .
+	?season rdf:type sport:Season .
 	?season sport:participation ?teampartic . 
+	?teampartic rdf:type sport:TeamParticipation .
 	?teampartic sport:participationBy ?team .
-	?team schemaorg:name ?Team .
+	?team rdf:type sport:Team .
+	?team sport:name ?teamName .
 	?teampartic spstat:events-played ?GP .
 	?teampartic spstat:standing-points ?P .
 	?teampartic spstat:wins ?W .
@@ -25,11 +28,13 @@ WHERE
 	?teampartic spstat:points-scored-against ?GA .
 	?teampartic spstat:points-difference ?GD .
 	?teampartic sport:participationSplit ?splithome .
+	?splithome rdf:type sport:ParticipationSplit .
 	?splithome sport:participationSplitType spcompetitionscope:events-home .
 	?splithome spstat:wins ?WHOME .
 	?splithome spstat:losses ?LHOME .
 	# Does this need to repeat?
 	?teampartic sport:participationSplit ?splitaway .
+	?splitaway rdf:type sport:ParticipationSplit .
 	?splitaway sport:participationSplitType spcompetitionscope:events-away .
 	?splitaway spstat:wins ?WAWAY .
 }

@@ -1,6 +1,7 @@
 # Use case: Event / Team / What was the score of the game?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX schemaorg:  <https://schema.org/>
@@ -10,9 +11,10 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 SELECT ?name ?score
 WHERE
 	{ 
-	?team rdfs:type sport:Team .
-	?team schemaorg:name ?name . 
+	?team rdf:type sport:Team .
+	?team sport:name ?name . 
 	?teamPartic sport:participationBy ?team .
+	?teamPartic rdf:type sport:TeamParticipation .
 	?teamPartic spstat:score ?score .
 }
 

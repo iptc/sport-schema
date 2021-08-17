@@ -1,6 +1,7 @@
 # Use case: Event / Player / Did this player score a goal?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX schemaorg:  <https://schema.org/>
@@ -11,10 +12,10 @@ PREFIX spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/>
 SELECT ?playerName ?goals
 WHERE
 	{ 
-	?event rdfs:type sport:Event .
+	?event rdf:type sport:Event .
 	?event sport:participation ?playerperf .
 	?playerperf sport:participationBy ?player .
-	?player schemaorg:name ?playerName . 
+	?player sport:name ?playerName . 
 	?playerperf spsocstat:goals-total ?goals .
 	FILTER (
 		?goals > "0"

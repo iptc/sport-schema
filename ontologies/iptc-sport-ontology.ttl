@@ -16,6 +16,11 @@
 
 ##### Classes #####
 
+sport:Season rdf:type rdfs:Class ;
+    rdfs:label "Season"@en ;
+    rdfs:comment "A grouping of events usually based on proximity by time."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
 sport:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
     rdfs:comment "An individual sport event: a match, race etc."@en ;
@@ -54,6 +59,14 @@ sport:ManagerialParticipation rdf:type rdfs:Class ;
     rdfs:comment "The particpation of a managerial individual"@en ;
     rdfs:range sport:Person ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:ParticipationSplit rdf:type rdfs:Class ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:subClassOf sport:Participation ;  # ??? how does this work with TeamParticipation / IndividualParticipation?
+    rdfs:comment "A representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:domain sport:Event ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
 
 sport:Agent rdf:type rdfs:Class ;
     rdfs:label "Agent"@en ;
@@ -122,12 +135,20 @@ sport:site rdf:type rdf:Property ;
     rdfs:range sport:Site ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
+sport:participationSplit rdf:type rdf:Property ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:comment "A portion of the participation in this event or season"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:ParticipationSplit ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+
 ##### Data properties #####
 
 sport:name rdf:type rdf:Property ;
     rdfs:label "Name"@en ;
     rdfs:comment "The name of a team or player"@en ;
-    rdfs:domain sport:Team ;
+    # rdfs:domain sport:Team ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
@@ -145,7 +166,7 @@ sport:position-regular rdf:type rdf:Property ;
     rdfs:domain sport:Person ;  # can apply to Athlete and Associate so we use the parent
     # I don't think we can do this with rdfs:range, but is there something we can do
     # in OWL or SHACL to show this range constraint?
-    rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
+    # rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:position-event rdf:type rdf:Property ;

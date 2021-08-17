@@ -154,3 +154,34 @@ Query examples:
 | "Dallas Stars" | "Emil Molin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1993-02-03" | ""     |
 | "Dallas Stars" | "Esa Lindell"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1994-05-23" | ""     |
 ```
+
+```bash
+% arq --data samples/ttl/soccer-match-05.ttl --query queries/event-team-game-score.rq
+------------------------------
+| name               | score |
+==============================
+| "Liverpool"        | "1"   |
+| "Newcastle United" | "1"   |
+------------------------------
+```
+
+```bash
+arq --data samples/ttl/soccer-match-05.ttl --query queries/event-player-goal-scorers.rq 
+----------------------------
+| playerName       | goals |
+============================
+| "Joseph Willock" | "1"   |
+| "Mohamed Salah"  | "1"   |
+----------------------------
+```
+
+```bash
+arq --data samples/ttl/soccer-match-02.ttl --query queries/event-team-game-winner.rq
+--------------------------------------------
+| name             | score | opposingScore |
+============================================
+| "Leicester City" | "2"   | "1"           |
+--------------------------------------------
+```
+
+league-schedule.rq
