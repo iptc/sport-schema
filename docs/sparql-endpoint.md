@@ -18,7 +18,7 @@ Once the data is loaded into the TDB2 file, it can be queried using the `tdb2.td
 ## Turning the data file into a SPARQL endpoint
 
 If you install Apache Jena's Fuseki package (a separate download from the
-https://jena.apache.org/download/index.cgi[Jena downloads page]), then it's easy to
+[Jena downloads page](https://jena.apache.org/download/index.cgi), then it's easy to
 turn the TDB2 file into the data store for a SPARQL server:
 
 `fuseki-server --tdb2 --loc test.db /sport`
@@ -31,7 +31,9 @@ Through the Web UI, you can enter SPARQL queries and load more data into the sys
 
 When fuseki is running, you can also query the SPARQL endpoint via HTTP requests
 
-curl http://localhost:3030/sport/query -X POST --data 'query=%0A%0ASELECT+%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE+%7B%0A++%3Fsubject+%3Fpredicate+%3Fobject%0A%7D%0ALIMIT+25' -H 'Accept: application/sparql-results+json,*/*;q=0.9'
+For example:
+
+`curl http://localhost:3030/sport/query -X POST --data 'query=%0A%0ASELECT+%3Fsubject+%3Fpredicate+%3Fobject%0AWHERE+%7B%0A++%3Fsubject+%3Fpredicate+%3Fobject%0A%7D%0ALIMIT+25' -H 'Accept: application/sparql-results+json,*/*;q=0.9'`
 
 ## Adding reasoning capabilities to the SPARQL engine
 
