@@ -48,10 +48,15 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:param name="event-key"/>
         <xsl:param name="event-id"/>
 
-        <xsl:value-of select="$event-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'startDate','»')"/><xsl:value-of select="concat('&quot;',@start-date-time,'&quot;^^«http://www.w3.org/2001/XMLSchema#dateTime»')"/> .
-        <xsl:value-of select="$event-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'event-status','»')"/><xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-status,':'),'/',substring-after(@event-status,':'),'»')"/> .
+        <xsl:value-of select="$event-id"/>~ <xsl:value-of select="concat('«',$sport-ontology-ns,'startDate','»')"/>~<xsl:value-of select="concat('&quot;',@start-date-time,'&quot;^^«http://www.w3.org/2001/XMLSchema#dateTime»')"/> .
+        <xsl:value-of select="$event-id"/>~ <xsl:value-of select="concat('«',$sport-ontology-ns,'event-status','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-status,':'),'/',substring-after(@event-status,':'),'»')"/> .
         <xsl:if test="@event-outcome-type">
-        <xsl:value-of select="$event-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'event-outcome-type','»')"/><xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-outcome-type,':'),'/',substring-after(@event-outcome-type,':'),'»')"/> .
+          <xsl:value-of select="$event-id"/>~ <xsl:value-of select="concat('«',$sport-ontology-ns,'event-outcome-type','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@event-outcome-type,':'),'/',substring-after(@event-outcome-type,':'),'»')"/> .
+        </xsl:if>
+
+        <!-- season week -->
+        <xsl:if test="newsml:event-metadata-soccer/@week">
+          <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'season-week','»')"/>~<xsl:value-of select="newsml:event-metadata-soccer/@week"/>^^«http://www.w3.org/2001/XMLSchema#integer» .
         </xsl:if>
 
         <!-- site info -->
