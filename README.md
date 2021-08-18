@@ -69,6 +69,6 @@ data files.
 
 We have some guides regarding how to use the SportRDF model
 
-* [Running the example queries](running-example-queries.md)
-* [Running a SPARQL endpoint](sparql-endpoint.md)
-* [Validating SportsRDF data with SHACL](validation-with-shacl.md)
+* [Running the example queries](docs/running-example-queries.md)
+* [Running a SPARQL endpoint](docs/sparql-endpoint.md)
+* [Validating SportsRDF data with SHACL](docs/validation-with-shacl.md)
