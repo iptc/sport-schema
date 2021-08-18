@@ -236,7 +236,12 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:if>
 
         <!-- <team> sport:athlete <player> -->
-           <xsl:value-of select="$player-team-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'athlete','»')"/> <xsl:value-of select="$player-id"/> .
+        <xsl:value-of select="$player-team-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'athlete','»')"/> <xsl:value-of select="$player-id"/> .
+
+        <!-- <participation> player-status (started, bench etc) -->
+        <xsl:if test="newsml:player-metadata/@status">
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'status','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(newsml:player-metadata/@status,':'),'/',substring-after(newsml:player-metadata/@status,':'),'»')"/> .
+        </xsl:if>
 
         <!-- <player> sport:position-regular <soccer-position> -->
         <xsl:if test="newsml:player-metadata/@position-regular">
@@ -462,13 +467,20 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
     <xsl:template match="newsml:stat[@stat-type='spstat:event-outcome']">
         <xsl:param name="participation-id"/>
-        <xsl:value-of select="$participation-id"/><xsl:value-of select="concat('«',$sport-ontology-ns,'eventOutcome','»')"/>"<xsl:value-of select="@value"/>" .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'eventOutcome','»')"/>~"<xsl:value-of select="@value"/>" .
     </xsl:template>
 
     <xsl:template match="newsml:stat[@stat-type='spstat:score']">
         <xsl:param name="participation-id"/>
-        <xsl:value-of select="$participation-id"/><xsl:value-of select="concat('«',$sport-ontology-ns,'score','»')"/>"<xsl:value-of select="@value"/>" .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'score','»')"/>~"<xsl:value-of select="@value"/>" .
     </xsl:template>
 
+    <xsl:template match="newsml:stat">
+        <xsl:param name="participation-id"/>
+        <!-- in our source SportsML some stats have empty values so we ignore those -->
+        <xsl:if test="@value != '' and @value != 'NaN'">
+          <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@stat-type,':'),'/',substring-after(@stat-type,':'),'»')"/>~<xsl:value-of select="@value"/> .
+        </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>

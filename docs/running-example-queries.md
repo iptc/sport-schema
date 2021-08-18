@@ -27,7 +27,7 @@ from our design documentation:
 1. Who plays for the team? (Includes jersey number, position, etc.)
 
 ```bash
-arq --data=samples/ttl/team-roster.ttl --query=queries/season-team-players.rq
+arq --data samples/ttl/team-roster.ttl --query queries/season-team-players.rq
 ---------------------------------------------------------------------------------------------------------------------------------
 | teamName       | playerName              | playerPos                                                  | dob          | jersey |
 =================================================================================================================================
@@ -59,7 +59,7 @@ arq --data=samples/ttl/team-roster.ttl --query=queries/season-team-players.rq
 1. What are the current standings? (Includes games played, wins, losses, ties, etc.)
 
 ```bash
-arq --data=samples/ttl/soccer-standings.ttl --query=queries/season-league-standings.rq 
+arq --data samples/ttl/soccer-standings.ttl --query queries/season-league-standings.rq 
 ---------------------------------------------------------------------------------------------------------------
 | Team                       | GP   | P    | W    | L    | D    | GF   | GA   | GD    | WHOME | LHOME | WAWAY |
 ===============================================================================================================
@@ -120,8 +120,90 @@ arq --data samples/ttl/league-schedule.ttl --query queries/league-schedule.rq
 ### Player
 
 1. Was this player in the starting line up?
+
+```bash
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-player-starting-lineup.rq
+----------------------------------------------------------------------------------------------------------
+| teamName          | playerName                 | playerStatus                                          |
+==========================================================================================================
+| "Aston Villa"     | "Alan Hutton"              | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Aly Cissokho"             | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Andreas Weimann"          | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Ashley Westwood"          | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Brad Guzan"               | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Carlos Sánchez"           | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Charles N'Zogbia"         | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Christian Benteke"        | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Ciaran Clark"             | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Darren Bent"              | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Fabian Delph"             | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Jack Grealish"            | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Kieran Richardson"        | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Leandro Bacuna"           | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Nathan Baker"             | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Philippe Senderos"        | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Aston Villa"     | "Shay Given"               | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Aston Villa"     | "Tom Cleverley"            | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Aleksandar Kolarov"       | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Bacary Sagna"             | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "David Silva"              | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Edin Dzeko"               | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Eliaquim Mangala"         | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Fernando Francisco Reges" | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "Fernando Luiz Rosa"       | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Frank Lampard"            | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "Gnegneri Yaya Touré"      | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "James Milner"             | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Jesús Navas"              | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "Joe Hart"                 | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Martín Demichelis"        | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "Pablo Zabaleta"           | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Sergio Agüero"            | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Stevan Jovetic"           | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+| "Manchester City" | "Vincent Kompany"          | <http://cv.iptc.org/newscodes/spplayerstatus/starter> |
+| "Manchester City" | "Willy Caballero"          | <http://cv.iptc.org/newscodes/spplayerstatus/bench>   |
+----------------------------------------------------------------------------------------------------------
+```
+
 2. Which players scored goals and when? (requires Actions)
 3. How many minutes did this player play?
+
+```bash
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-player-minutes-played.rq
+----------------------------------------------
+| playerName                 | minutesPlayed |
+==============================================
+| "Alan Hutton"              | 90            |
+| "Aleksandar Kolarov"       | 90            |
+| "Aly Cissokho"             | 90            |
+| "Andreas Weimann"          | 61            |
+| "Ashley Westwood"          | 90            |
+| "Brad Guzan"               | 90            |
+| "Charles N'Zogbia"         | 71            |
+| "Christian Benteke"        | 29            |
+| "David Silva"              | 84            |
+| "Edin Dzeko"               | 64            |
+| "Eliaquim Mangala"         | 90            |
+| "Fabian Delph"             | 90            |
+| "Fernando Francisco Reges" | 26            |
+| "Fernando Luiz Rosa"       | 56            |
+| "Frank Lampard"            | 34            |
+| "Gnegneri Yaya Touré"      | 90            |
+| "Jack Grealish"            | 19            |
+| "James Milner"             | 90            |
+| "Jesús Navas"              | 6             |
+| "Joe Hart"                 | 90            |
+| "Kieran Richardson"        | 71            |
+| "Leandro Bacuna"           | 19            |
+| "Nathan Baker"             | 90            |
+| "Pablo Zabaleta"           | 90            |
+| "Philippe Senderos"        | 90            |
+| "Sergio Agüero"            | 90            |
+| "Tom Cleverley"            | 90            |
+| "Vincent Kompany"          | 90            |
+----------------------------------------------
+```
+
 4. Did this player score a goal?
 
 ```bash
@@ -198,12 +280,69 @@ arq --data samples/ttl/soccer-match-05.ttl --query queries/event-team-game-score
 ```
 
 4. Who were the substitutes and positions played? (baseball, soccer, American football)
-5. Who got penalized?
+
+TBD (requires Actions)
+
+5. What were the stats for each team?
+
+```bash
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-team-stats.rq 
+------------------------------------------------------------------------------------------
+| teamName          | stat                                 | statValue                   |
+==========================================================================================
+| "Aston Villa"     | spsocstat:shots-on-goal-total        | 1                           |
+| "Aston Villa"     | spstat:score-opposing                | 2                           |
+| "Aston Villa"     | rdf:type                             | sport:TeamParticipation     |
+| "Aston Villa"     | spsocstat:line-formation             | 433                         |
+| "Aston Villa"     | spsocstat:fouls-commited             | 4                           |
+| "Aston Villa"     | sport:participationBy                | <http://sport.org/Team/T2>  |
+| "Aston Villa"     | sport:alignment                      | "home"                      |
+| "Aston Villa"     | spstat:time-of-possession-percentage | 31.6                        |
+| "Aston Villa"     | sport:score                          | "0"                         |
+| "Aston Villa"     | sport:eventOutcome                   | "loss"                      |
+| "Aston Villa"     | spsocstat:shots-total                | 6                           |
+| "Manchester City" | spsocstat:shots-on-goal-total        | 7                           |
+| "Manchester City" | spstat:score-opposing                | 0                           |
+| "Manchester City" | rdf:type                             | sport:TeamParticipation     |
+| "Manchester City" | spsocstat:line-formation             | 442                         |
+| "Manchester City" | spsocstat:fouls-commited             | 6                           |
+| "Manchester City" | sport:participationBy                | <http://sport.org/Team/T12> |
+| "Manchester City" | sport:alignment                      | "away"                      |
+| "Manchester City" | spstat:time-of-possession-percentage | 68.4                        |
+| "Manchester City" | sport:score                          | "2"                         |
+| "Manchester City" | spsocstat:corner-kicks               | 7                           |
+| "Manchester City" | sport:eventOutcome                   | "win"                       |
+| "Manchester City" | spsocstat:shots-total                | 27                          |
+------------------------------------------------------------------------------------------
+```
+
+6. Who was penalized? (Team level)
+
+First version, any foul:
+```bash
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-team-penalties.rq
+-------------------------------------------------------------
+| teamName          | playerName           | foulsCommitted |
+=============================================================
+| "Aston Villa"     | "Aly Cissokho"       | 1              |
+| "Aston Villa"     | "Charles N'Zogbia"   | 1              |
+| "Aston Villa"     | "Nathan Baker"       | 1              |
+| "Aston Villa"     | "Tom Cleverley"      | 1              |
+| "Manchester City" | "Aleksandar Kolarov" | 2              |
+| "Manchester City" | "Edin Dzeko"         | 1              |
+| "Manchester City" | "Fernando Luiz Rosa" | 1              |
+| "Manchester City" | "James Milner"       | 2              |
+-------------------------------------------------------------
+```
+
+Second version, only red/yellow cards:
+
+TBD (requires Actions)
 
 ### League
 
 1. What are the current scores? (Scoreboard)
-```
+```bash
 arq --data samples/ttl/league-schedule.ttl --query queries/event-league-scores.rq
 -----------------------------------------------------------------------------------------------------
 | displayDate  | displayTime | match                                | homeTeamScore | awayTeamScore |
