@@ -55,7 +55,6 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:if>
 
         <!-- site info -->
-        <xsl:if test="newsml:site">
         <xsl:variable name="site-name" select="newsml:site/newsml:site-metadata/newsml:name[@role='nrol:full']"/>
         <xsl:variable name="site-key">
         <xsl:choose>
@@ -70,7 +69,6 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="site-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Site/',$site-key,'»')"/></xsl:variable>
         <xsl:value-of select="$event-id"/> ^<xsl:value-of select="concat('«',$sport-ontology-ns,'site','»')"/>^<xsl:value-of select="$site-id"/> .
         <xsl:value-of select="$site-id"/> ^<xsl:value-of select="concat('«',$sport-ontology-ns,'name','»')"/> "<xsl:value-of select="$site-name"/>" .
-        </xsl:if>
 
 
         <xsl:apply-templates>
@@ -112,18 +110,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:param name="event-id"/>
         <xsl:param name="season-key"/>
         <xsl:param name="season-id"/>
-        <xsl:variable name="name">
-        <xsl:choose>
-            <xsl:when test="newsml:team-metadata/newsml:name/@role='nrol:full'">
-            <xsl:value-of
-        select="newsml:team-metadata/newsml:name[@role='nrol:full']"/>
-            </xsl:when>
-            <xsl:otherwise>
-            <xsl:value-of
-        select="newsml:team-metadata/newsml:name"/>
-            </xsl:otherwise>
-        </xsl:choose>
-        </xsl:variable>
+        <xsl:variable name="name" select="newsml:team-metadata/newsml:name[@role='nrol:full']"/>
         <xsl:variable name="team-key"><xsl:value-of select="substring-after(newsml:team-metadata/@key,':')"/></xsl:variable>
         <xsl:variable name="team-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$team-key,'»')"/></xsl:variable>
         <xsl:variable name="participation-id">
@@ -338,31 +325,14 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:if>
     </xsl:template>
 
-    <!-- general stats templates -->
-
     <xsl:template match="newsml:player-stats">
         <xsl:param name="participation-id"/>
-            <xsl:choose>
-                <xsl:when test="newsml:stats">
-        <xsl:apply-templates>
-            <xsl:with-param name="participation-id" select="$participation-id"/>
-        </xsl:apply-templates>
-                </xsl:when>
-                <xsl:otherwise>
         <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
-                </xsl:otherwise>
-            </xsl:choose>
     </xsl:template>
 
-    <xsl:template match="newsml:stat">
-        <xsl:param name="participation-id"/>
-	    <xsl:variable name="cv-name" select="substring-before(@stat-type,':')"/>
-	    <xsl:variable name="name" select="substring-after(@stat-type,':')"/>
-                <xsl:value-of select="$participation-id"/>^<xsl:value-of
-                 select="concat('«',$newscode-ns,$cv-name,'/',$name,'»')"/>^<xsl:text>"</xsl:text><xsl:value-of select="@value"/><xsl:text>"</xsl:text> .
-    </xsl:template>
+    <!-- general stats templates -->
 
     <xsl:template match="newsml:rank[contains(@type,'final-result')]">
         <xsl:param name="participation-id"/>
@@ -374,12 +344,6 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:param name="participation-id"/>
                 <xsl:value-of select="$participation-id"/>^<xsl:value-of
                  select="concat('«',$newscode-ns,'spstat/outcome-result»')"/>^<xsl:text>"</xsl:text><xsl:value-of select="@type"/><xsl:text>"</xsl:text> .
-    </xsl:template>
-
-    <xsl:template match="newsml:rating">
-        <xsl:param name="participation-id"/>
-                <xsl:value-of select="$participation-id"/>^<xsl:value-of
-                 select="concat('«',$newscode-ns,'spstat/rating»')"/>^<xsl:text>"</xsl:text><xsl:value-of select="@rating-value"/><xsl:text>"</xsl:text> .
     </xsl:template>
 
     <!-- sport-specific stats templates -->
@@ -468,12 +432,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:contentCreated"/>
     <xsl:template match="newsml:headline"/>
     <xsl:template match="newsml:highlight"/>
-    <xsl:template match="newsml:keyword"/>
-    <xsl:template match="newsml:description"/>
 
     <xsl:template match="@team-coverage"/>
     <xsl:template match="@alignment-scope"/>
-    <xsl:template match="@duration-scope"/>
     <xsl:template match="@temporal-unit-type"/>
 
     <!-- templates for generic SportsML. Setting aside for now (2020-12-07) but should be easy to build a general template
