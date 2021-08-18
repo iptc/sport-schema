@@ -165,7 +165,10 @@ arq --data samples/ttl/soccer-match-01.ttl --query queries/event-player-starting
 ----------------------------------------------------------------------------------------------------------
 ```
 
-2. Which players scored goals and when? (requires Actions)
+2. Which players scored goals and when?
+
+TBD - requires Actions
+
 3. How many minutes did this player play?
 
 ```bash
@@ -221,6 +224,41 @@ arq --data samples/ttl/soccer-match-05.ttl --query queries/event-player-goal-sco
 7. Did the player assist a goal?
 8. Was the player substituted? - Y/N and time they went off (NB: this is same as "1. Who were the subs for each team in this match?" Right?
 9. Was this player penalized and what for? (Includes penalty level: straight red, major, minor, etc. Includes time)
+10. What are this player's stats for the game?
+
+```bash
+% arq --data samples/ttl/soccer-match-01.ttl --query queries/event-player-stats.rq
+----------------------------------------------------------------------------------------------------
+| teamName          | playerName                 | stat                                | statValue |
+====================================================================================================
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:shots-off-goal-total      | 1         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:touches                   | 34        |
+| "Aston Villa"     | "Charles N'Zogbia"         | spstat:events-started               | 1         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:passes-total              | 21        |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:passes-complete           | 12        |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:clearances-successful     | 2         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:fouls-commited            | 1         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spstat:time-played-total            | 71        |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:goals-against-total       | 0         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:passes-complete-3rd-final | 4         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:shots-total               | 1         |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocstat:passes-incomplete         | 9         |
+| "Aston Villa"     | "Brad Guzan"               | spsocstat:touches                   | 45        |
+| "Aston Villa"     | "Brad Guzan"               | spsocstat:save-percentage           | 0.714     |
+[ ... ]
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:passes-complete           | 59        |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:passes-complete-long      | 1         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:clearances-successful     | 3         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:shutouts                  | 1         |
+| "Manchester City" | "Eliaquim Mangala"         | spstat:time-played-total            | 90        |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:aerials-won               | 4         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:goals-against-total       | 0         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:fouls-suffered            | 1         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:shots-total               | 1         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:passes-incomplete         | 5         |
+| "Manchester City" | "Eliaquim Mangala"         | spsocstat:interceptions             | 2         |
+----------------------------------------------------------------------------------------------------
+```
 
 ### Team
 
