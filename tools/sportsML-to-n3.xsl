@@ -396,7 +396,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
-    </xsl:template> 
+    </xsl:template>
 
     <xsl:template match="newsml:stats-soccer-offensive">
         <xsl:param name="participation-id"/>
