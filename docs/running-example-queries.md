@@ -5,7 +5,58 @@ If you install
 you can run SPARQL queries from the command line using our sample data files and
 queries.
 
-Query examples:
+Query examples, with references to the [use cases](https://github.com/iptc/sport-model/wiki/Use-Cases)
+from our design documentation:
+
+## All-time Questions
+
+### Player
+1. Career stats (Goals, assists, etc.)
+2. Biographical details (Height, weight, nationality, place and date of birth, etc.)
+
+### Team
+1. Overall record
+2. Championships/Competitions won
+
+## Season Questions
+
+### Player
+1. Season stats (Goals, assists, etc.)
+
+### Team
+1. Who plays for the team? (Includes jersey number, position, etc.)
+
+```bash
+arq --data=samples/ttl/team-roster.ttl --query=queries/season-team-players.rq
+---------------------------------------------------------------------------------------------------------------------------------
+| teamName       | playerName              | playerPos                                                  | dob          | jersey |
+=================================================================================================================================
+| "Dallas Stars" | "Ales Hemsky"           | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1983-08-13" | "83"   |
+| "Dallas Stars" | "Alex Goligoski"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1985-07-30" | "33"   |
+| "Dallas Stars" | "Antoine Roussel"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1989-11-21" | "21"   |
+| "Dallas Stars" | "Austin Smith"          | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1988-11-07" | "9"    |
+| "Dallas Stars" | "Branden Troock"        | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1994-03-20" | ""     |
+| "Dallas Stars" | "Brendan Ranford"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1992-05-03" | "39"   |
+| "Dallas Stars" | "Brett Pollock"         | <http://cv.iptc.org/newscodes/spichposition/center>        | "1996-03-17" | ""     |
+| "Dallas Stars" | "Brett Ritchie"         | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1993-07-01" | "20"   |
+| "Dallas Stars" | "Cameron Gaunce"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1990-03-19" | "36"   |
+| "Dallas Stars" | "Cody Eakin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1991-05-24" | "20"   |
+| "Dallas Stars" | "Colton Sceviour"       | <http://cv.iptc.org/newscodes/spichposition/center>        | "1989-04-20" | "22"   |
+| "Dallas Stars" | "Cristopher Nilstorp"   | <http://cv.iptc.org/newscodes/spichposition/goalie>        | "1984-02-16" | "41"   |
+| "Dallas Stars" | "Curtis McKenzie"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1991-02-22" | "11"   |
+| "Dallas Stars" | "Derek Meech"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1984-04-21" | ""     |
+| "Dallas Stars" | "Emil Molin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1993-02-03" | ""     |
+| "Dallas Stars" | "Esa Lindell"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1994-05-23" | ""     |
+```
+
+2. What is the team's record so far? (Games played, wins, losses, ties, clean sheets/shutouts, etc.)
+3. What is the team record broken down into home and away events?
+4. Scoring for and against in current season?
+5. How many penalty shots against and allowed?
+6. Infractions committed, broken down by type (yellow/red, fouls, TK, particular for other sports)
+
+### League
+1. What are the current standings? (Includes games played, wins, losses, ties, etc.)
 
 ```bash
 arq --data=samples/ttl/soccer-standings.ttl --query=queries/season-league-standings.rq 
@@ -34,6 +85,64 @@ arq --data=samples/ttl/soccer-standings.ttl --query=queries/season-league-standi
 | "Sheffield United"         | "23" | "11" | "3"  | "18" | "2"  | "15" | "37" | "-22" | "2"   | "9"   | "1"   |
 ---------------------------------------------------------------------------------------------------------------
 ```
+
+2. Who is the scoring leader?
+3. Who are the top 20 scorers?
+4. What is the full league schedule (including fixtures and results)?
+
+Note that we don't yet include results in this query.
+
+```bash
+arq --data samples/ttl/league-schedule.ttl --query queries/league-schedule.rq
+--------------------------------------------------------------------------------------------------------------------------
+| week | displayDate  | displayTime | match                                                | siteName                    |
+==========================================================================================================================
+| 1    | "2020-09-12" | "12:30"     | "Fulham v Arsenal"                                   | "Craven Cottage"            |
+| 1    | "2020-09-12" | "15:00"     | "Crystal Palace v Southampton"                       | "Selhurst Park"             |
+| 1    | "2020-09-12" | "17:30"     | "Liverpool v Leeds United"                           | "Anfield"                   |
+| 1    | "2020-09-12" | "20:00"     | "West Ham United v Newcastle United"                 | "London Stadium"            |
+| 1    | "2020-09-13" | "14:00"     | "West Bromwich Albion v Leicester City"              | "The Hawthorns"             |
+[ ... ]
+| 38   | "2021-05-23" | "16:00"     | "Sheffield United v Burnley"                         | "Bramall Lane"              |
+| 38   | "2021-05-23" | "16:00"     | "Leeds United v West Bromwich Albion"                | "Elland Road"               |
+| 38   | "2021-05-23" | "16:00"     | "West Ham United v Southampton"                      | "London Stadium"            |
+| 38   | "2021-05-23" | "16:00"     | "Aston Villa v Chelsea"                              | "Villa Park"                |
+| 38   | "2021-05-23" | "16:00"     | "Manchester City v Everton"                          | "Etihad Stadium"            |
+| 38   | "2021-05-23" | "16:00"     | "Arsenal v Brighton and Hove Albion"                 | "Emirates Stadium"          |
+--------------------------------------------------------------------------------------------------------------------------
+
+5. What are the teams in a competition or league?
+6. Infractions leaders
+7. What is the structure of the seasonal competition? (league competition, regular and post-season, groups/knockout, etc.)
+
+## Event Questions
+
+### Player
+
+1. Was this player in the starting line up?
+2. Which players scored goals and when? (requires Actions)
+3. How many minutes did this player play?
+4. Did this player score a goal?
+
+```bash
+arq --data samples/ttl/soccer-match-05.ttl --query queries/event-player-goal-scorers.rq 
+----------------------------
+| playerName       | goals |
+============================
+| "Joseph Willock" | "1"   |
+| "Mohamed Salah"  | "1"   |
+----------------------------
+```
+
+5. What type of goal? (Penalty, freekick, power-play, three-pointer, field goal, etc.)
+6. What method of goal? (Header, left foot, rush, pass, etc.)
+7. Did the player assist a goal?
+8. Was the player substituted? - Y/N and time they went off (NB: this is same as "1. Who were the subs for each team in this match?" Right?
+9. Was this player penalized and what for? (Includes penalty level: straight red, major, minor, etc. Includes time)
+
+### Team
+
+1. What is the starting lineup? (including position slated)
 
 ```bash
 arq --data=samples/ttl/soccer-match-03.ttl --query=queries/event-team-starting-lineup.rq
@@ -65,28 +174,18 @@ arq --data=samples/ttl/soccer-match-03.ttl --query=queries/event-team-starting-l
 ----------------------------------------------------------------------------------------------------------
 ```
 
+2. Which team won the game?
+
 ```bash
-arq --data=samples/ttl/team-roster.ttl --query=queries/season-team-players.rq
----------------------------------------------------------------------------------------------------------------------------------
-| teamName       | playerName              | playerPos                                                  | dob          | jersey |
-=================================================================================================================================
-| "Dallas Stars" | "Ales Hemsky"           | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1983-08-13" | "83"   |
-| "Dallas Stars" | "Alex Goligoski"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1985-07-30" | "33"   |
-| "Dallas Stars" | "Antoine Roussel"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1989-11-21" | "21"   |
-| "Dallas Stars" | "Austin Smith"          | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1988-11-07" | "9"    |
-| "Dallas Stars" | "Branden Troock"        | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1994-03-20" | ""     |
-| "Dallas Stars" | "Brendan Ranford"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1992-05-03" | "39"   |
-| "Dallas Stars" | "Brett Pollock"         | <http://cv.iptc.org/newscodes/spichposition/center>        | "1996-03-17" | ""     |
-| "Dallas Stars" | "Brett Ritchie"         | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1993-07-01" | "20"   |
-| "Dallas Stars" | "Cameron Gaunce"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1990-03-19" | "36"   |
-| "Dallas Stars" | "Cody Eakin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1991-05-24" | "20"   |
-| "Dallas Stars" | "Colton Sceviour"       | <http://cv.iptc.org/newscodes/spichposition/center>        | "1989-04-20" | "22"   |
-| "Dallas Stars" | "Cristopher Nilstorp"   | <http://cv.iptc.org/newscodes/spichposition/goalie>        | "1984-02-16" | "41"   |
-| "Dallas Stars" | "Curtis McKenzie"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1991-02-22" | "11"   |
-| "Dallas Stars" | "Derek Meech"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1984-04-21" | ""     |
-| "Dallas Stars" | "Emil Molin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1993-02-03" | ""     |
-| "Dallas Stars" | "Esa Lindell"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1994-05-23" | ""     |
+arq --data samples/ttl/soccer-match-02.ttl --query queries/event-team-game-winner.rq
+--------------------------------------------
+| name             | score | opposingScore |
+============================================
+| "Leicester City" | "2"   | "1"           |
+--------------------------------------------
 ```
+
+3. What was the score of the game?
 
 ```bash
 arq --data samples/ttl/soccer-match-05.ttl --query queries/event-team-game-score.rq
@@ -98,40 +197,79 @@ arq --data samples/ttl/soccer-match-05.ttl --query queries/event-team-game-score
 ------------------------------
 ```
 
-```bash
-arq --data samples/ttl/soccer-match-05.ttl --query queries/event-player-goal-scorers.rq 
-----------------------------
-| playerName       | goals |
-============================
-| "Joseph Willock" | "1"   |
-| "Mohamed Salah"  | "1"   |
-----------------------------
+4. Who were the substitutes and positions played? (baseball, soccer, American football)
+5. Who got penalized?
+
+### League
+
+1. What are the current scores? (Scoreboard)
 ```
+arq --data samples/ttl/league-schedule.ttl --query queries/event-league-scores.rq
+-----------------------------------------------------------------------------------------------------
+| displayDate  | displayTime | match                                | homeTeamScore | awayTeamScore |
+=====================================================================================================
+| "2021-02-15" | "18:00"     | "West Ham United v Sheffield United" | "3"           | "0"           |
+| "2021-02-15" | "20:00"     | "Chelsea v Newcastle United"         | "2"           | "0"           |
+-----------------------------------------------------------------------------------------------------
+```
+2. What is the current status of an event (pre-, mid-, post-, postponed, suspended, canceled, etc.)
+```bash
+arq --data samples/ttl/league-schedule.ttl --query queries/event-league-status.rq 
+-------------------------------------------------------------------------------------------------------------------------------
+| displayDate  | displayTime | match                                | status                                                  |
+===============================================================================================================================
+| "2021-02-15" | "18:00"     | "West Ham United v Sheffield United" | <http://cv.iptc.org/newscodes/speventstatus/post-event> |
+| "2021-02-15" | "20:00"     | "Chelsea v Newcastle United"         | <http://cv.iptc.org/newscodes/speventstatus/post-event> |
+-------------------------------------------------------------------------------------------------------------------------------
+```
+3. What was the result the last time these two teams met? Across all competitions this season
+
+TBD
+
+4. Where are today's matches being played?
+```bash
+arq --data samples/ttl/league-schedule.ttl --query queries/event-league-site.rq
+-----------------------------------------------------------------------------------------------------
+| displayDate  | displayTime | match                                         | siteName             |
+=====================================================================================================
+| "2021-05-23" | "16:00"     | "Liverpool v Crystal Palace"                  | "Anfield"            |
+| "2021-05-23" | "16:00"     | "Wolverhampton Wanderers v Manchester United" | "Molineux Stadium"   |
+| "2021-05-23" | "16:00"     | "Fulham v Newcastle United"                   | "Craven Cottage"     |
+| "2021-05-23" | "16:00"     | "Leicester City v Tottenham Hotspur"          | "King Power Stadium" |
+| "2021-05-23" | "16:00"     | "Sheffield United v Burnley"                  | "Bramall Lane"       |
+| "2021-05-23" | "16:00"     | "Leeds United v West Bromwich Albion"         | "Elland Road"        |
+| "2021-05-23" | "16:00"     | "West Ham United v Southampton"               | "London Stadium"     |
+| "2021-05-23" | "16:00"     | "Aston Villa v Chelsea"                       | "Villa Park"         |
+| "2021-05-23" | "16:00"     | "Manchester City v Everton"                   | "Etihad Stadium"     |
+| "2021-05-23" | "16:00"     | "Arsenal v Brighton and Hove Albion"          | "Emirates Stadium"   |
+-----------------------------------------------------------------------------------------------------
+```
+5. What time does game begin?
+```bash
+arq --data samples/ttl/league-schedule.ttl --query queries/event-league-starttime.rq
+---------------
+| displayTime |
+===============
+| "20:00"     |
+---------------
+```
+6. Who are the referees?
 
 ```bash
-arq --data samples/ttl/soccer-match-02.ttl --query queries/event-team-game-winner.rq
---------------------------------------------
-| name             | score | opposingScore |
-============================================
-| "Leicester City" | "2"   | "1"           |
---------------------------------------------
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-league-referees.rq
+--------------------------------------------------------------------------
+| officialName | officialPosition                                        |
+==========================================================================
+| "Chris Foy"  | <http://cv.iptc.org/newscodes/vendoffpos/main-official> |
+--------------------------------------------------------------------------
 ```
 
+7. What was the attendance for this match?
 ```bash
-arq --data samples/ttl/league-schedule.ttl --query queries/league-schedule.rq
---------------------------------------------------------------------------------------------------------------------------
-| week | displayDate  | displayTime | match                                                | siteName                    |
-==========================================================================================================================
-| 1    | "2020-09-12" | "12:30"     | "Fulham v Arsenal"                                   | "Craven Cottage"            |
-| 1    | "2020-09-12" | "15:00"     | "Crystal Palace v Southampton"                       | "Selhurst Park"             |
-| 1    | "2020-09-12" | "17:30"     | "Liverpool v Leeds United"                           | "Anfield"                   |
-| 1    | "2020-09-12" | "20:00"     | "West Ham United v Newcastle United"                 | "London Stadium"            |
-| 1    | "2020-09-13" | "14:00"     | "West Bromwich Albion v Leicester City"              | "The Hawthorns"             |
-| ... | ... | ... | ... | ... |
-| 38   | "2021-05-23" | "16:00"     | "Sheffield United v Burnley"                         | "Bramall Lane"              |
-| 38   | "2021-05-23" | "16:00"     | "Leeds United v West Bromwich Albion"                | "Elland Road"               |
-| 38   | "2021-05-23" | "16:00"     | "West Ham United v Southampton"                      | "London Stadium"            |
-| 38   | "2021-05-23" | "16:00"     | "Aston Villa v Chelsea"                              | "Villa Park"                |
-| 38   | "2021-05-23" | "16:00"     | "Manchester City v Everton"                          | "Etihad Stadium"            |
-| 38   | "2021-05-23" | "16:00"     | "Arsenal v Brighton and Hove Albion"                 | "Emirates Stadium"          |
---------------------------------------------------------------------------------------------------------------------------
+arq --data samples/ttl/soccer-match-01.ttl --query queries/event-league-attendance.rq 
+--------------
+| attendance |
+==============
+| 32964      |
+--------------
+```

@@ -1,0 +1,22 @@
+# Use case: Where is this match being played?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT ?officialName ?officialPosition
+WHERE
+{
+    ?event rdf:type sport:Event .
+    ?event sport:participation ?officialParticipation .
+    ?officialParticipation rdf:type sport:OfficialParticipation .
+    ?officialParticipation sport:participationBy ?official .
+    ?officialParticipation sport:position-event ?officialPosition .
+    ?official rdf:type sport:Official .
+    ?official sport:name ?officialName .
+    FILTER ( ?event = <http://sport.org/Event/E755363> )
+}

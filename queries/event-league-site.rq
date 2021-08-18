@@ -1,0 +1,37 @@
+# Use case: Where is this match being played?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX schemaorg:  <https://schema.org/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
+       (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
+       (CONCAT(?homeTeamName," v ",?awayTeamName) as ?match)
+       ?siteName
+WHERE
+{
+    ?event rdf:type sport:Event .
+    ?event sport:startDate ?date .
+    ?event sport:participation ?homeTeamParticipation .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation .
+    ?homeTeamParticipation sport:participationBy ?homeTeam .
+    ?homeTeamParticipation sport:alignment "home" .
+    ?homeTeam rdf:type sport:Team .
+    ?homeTeam sport:name ?homeTeamName .
+    ?event sport:participation ?awayTeamParticipation .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation .
+    ?awayTeamParticipation sport:participationBy ?awayTeam .
+    ?awayTeamParticipation sport:alignment "away" .
+    ?awayTeam rdf:type sport:Team .
+    ?awayTeam sport:name ?awayTeamName .
+    ?event sport:site ?site .
+    ?site rdf:type sport:Site .
+    ?site sport:name ?siteName .
+    FILTER ( ?date > "2021-05-23T00:00:00Z"^^xsd:dateTime ) 
+    FILTER ( ?date < "2021-05-24T00:00:00Z"^^xsd:dateTime ) 
+}
+ORDER BY ?week ?displayDate ?displayTime
