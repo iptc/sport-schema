@@ -27,26 +27,43 @@ from our design documentation:
 1. Who plays for the team? (Includes jersey number, position, etc.)
 
 ```bash
-arq --data samples/ttl/team-roster.ttl --query queries/season-team-players.rq
----------------------------------------------------------------------------------------------------------------------------------
-| teamName       | playerName              | playerPos                                                  | dob          | jersey |
-=================================================================================================================================
-| "Dallas Stars" | "Ales Hemsky"           | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1983-08-13" | "83"   |
-| "Dallas Stars" | "Alex Goligoski"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1985-07-30" | "33"   |
-| "Dallas Stars" | "Antoine Roussel"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1989-11-21" | "21"   |
-| "Dallas Stars" | "Austin Smith"          | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1988-11-07" | "9"    |
-| "Dallas Stars" | "Branden Troock"        | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1994-03-20" | ""     |
-| "Dallas Stars" | "Brendan Ranford"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1992-05-03" | "39"   |
-| "Dallas Stars" | "Brett Pollock"         | <http://cv.iptc.org/newscodes/spichposition/center>        | "1996-03-17" | ""     |
-| "Dallas Stars" | "Brett Ritchie"         | <http://cv.iptc.org/newscodes/spichposition/right-forward> | "1993-07-01" | "20"   |
-| "Dallas Stars" | "Cameron Gaunce"        | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1990-03-19" | "36"   |
-| "Dallas Stars" | "Cody Eakin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1991-05-24" | "20"   |
-| "Dallas Stars" | "Colton Sceviour"       | <http://cv.iptc.org/newscodes/spichposition/center>        | "1989-04-20" | "22"   |
-| "Dallas Stars" | "Cristopher Nilstorp"   | <http://cv.iptc.org/newscodes/spichposition/goalie>        | "1984-02-16" | "41"   |
-| "Dallas Stars" | "Curtis McKenzie"       | <http://cv.iptc.org/newscodes/spichposition/left-forward>  | "1991-02-22" | "11"   |
-| "Dallas Stars" | "Derek Meech"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1984-04-21" | ""     |
-| "Dallas Stars" | "Emil Molin"            | <http://cv.iptc.org/newscodes/spichposition/center>        | "1993-02-03" | ""     |
-| "Dallas Stars" | "Esa Lindell"           | <http://cv.iptc.org/newscodes/spichposition/defenseman>    | "1994-05-23" | ""     |
+arq --data samples/ttl/team-roster.ttl --query queries/season-team-players.rq    
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| teamName       | playerName              | playerPos                   | dob                                                   | uniformNumber |
+==================================================================================================================================================
+| "Dallas Stars" | "Ales Hemsky"           | spichposition:right-forward | "1983-08-13"^^<http://www.w3.org/2001/XMLSchema#date> | "83"          |
+| "Dallas Stars" | "Alex Goligoski"        | spichposition:defenseman    | "1985-07-30"^^<http://www.w3.org/2001/XMLSchema#date> | "33"          |
+| "Dallas Stars" | "Antoine Roussel"       | spichposition:left-forward  | "1989-11-21"^^<http://www.w3.org/2001/XMLSchema#date> | "21"          |
+| "Dallas Stars" | "Austin Smith"          | spichposition:right-forward | "1988-11-07"^^<http://www.w3.org/2001/XMLSchema#date> | "9"           |
+| "Dallas Stars" | "Branden Troock"        | spichposition:right-forward | "1994-03-20"^^<http://www.w3.org/2001/XMLSchema#date> | ""            |
+| "Dallas Stars" | "Brendan Ranford"       | spichposition:left-forward  | "1992-05-03"^^<http://www.w3.org/2001/XMLSchema#date> | "39"          |
+| "Dallas Stars" | "Brett Pollock"         | spichposition:center        | "1996-03-17"^^<http://www.w3.org/2001/XMLSchema#date> | ""            |
+| "Dallas Stars" | "Brett Ritchie"         | spichposition:right-forward | "1993-07-01"^^<http://www.w3.org/2001/XMLSchema#date> | "20"          |
+| "Dallas Stars" | "Cameron Gaunce"        | spichposition:defenseman    | "1990-03-19"^^<http://www.w3.org/2001/XMLSchema#date> | "36"          |
+[...]
+```
+
+and the same query on soccer data:
+
+```bash
+arq --data samples/ttl/soccer-match-01.ttl --query queries/season-team-players.rq
+---------------------------------------------------------------------------------------------------
+| teamName          | playerName                 | playerPos                | dob | uniformNumber |
+===================================================================================================
+| "Aston Villa"     | "Alan Hutton"              | spsocposition:defender   |     | "21"          |
+| "Aston Villa"     | "Aly Cissokho"             | spsocposition:defender   |     | "23"          |
+| "Aston Villa"     | "Andreas Weimann"          | spsocposition:forward    |     | "10"          |
+| "Aston Villa"     | "Ashley Westwood"          | spsocposition:midfielder |     | "15"          |
+| "Aston Villa"     | "Brad Guzan"               | spsocposition:goalkeeper |     | "1"           |
+| "Aston Villa"     | "Carlos Sánchez"           | spsocposition:midfielder |     | "24"          |
+| "Aston Villa"     | "Charles N'Zogbia"         | spsocposition:forward    |     | "28"          |
+| "Aston Villa"     | "Christian Benteke"        | spsocposition:midfielder |     | "20"          |
+| "Aston Villa"     | "Ciaran Clark"             | spsocposition:defender   |     | "6"           |
+| "Aston Villa"     | "Darren Bent"              | spsocposition:forward    |     | "19"          |
+| "Aston Villa"     | "Fabian Delph"             | spsocposition:midfielder |     | "16"          |
+| "Aston Villa"     | "Jack Grealish"            | spsocposition:midfielder |     | "40"          |
+| "Aston Villa"     | "Kieran Richardson"        | spsocposition:forward    |     | "18"          |
+[...]
 ```
 
 2. What is the team's record so far? (Games played, wins, losses, ties, clean sheets/shutouts, etc.)
@@ -93,7 +110,7 @@ arq --data samples/ttl/soccer-standings.ttl --query queries/season-league-standi
 Note that we don't yet include results in this query.
 
 ```bash
-arq --data samples/ttl/league-schedule.ttl --query queries/league-schedule.rq
+arq --data samples/ttl/league-schedule.ttl --query queries/season-league-schedule.rq
 --------------------------------------------------------------------------------------------------------------------------
 | week | displayDate  | displayTime | match                                                | siteName                    |
 ==========================================================================================================================
@@ -266,32 +283,32 @@ arq --data samples/ttl/soccer-match-05.ttl --query queries/event-player-goal-sco
 
 ```bash
 arq --data=samples/ttl/soccer-match-03.ttl --query=queries/event-team-starting-lineup.rq
-----------------------------------------------------------------------------------------------------------
-| teamName               | playerName               | playerPos                                          |
-==========================================================================================================
-| "Aston Villa"          | "Ahmed El Mohamady"      | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "Aston Villa"          | "Anwar El Ghazi"         | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "Aston Villa"          | "Bertrand Traoré"        | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "Aston Villa"          | "Douglas Luiz"           | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "Aston Villa"          | "Emiliano Martínez"      | <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> |
-| "Aston Villa"          | "Ezri Konsa Ngoyo"       | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "Aston Villa"          | "John McGinn"            | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "Aston Villa"          | "Matt Targett"           | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "Aston Villa"          | "Ollie Watkins"          | <http://cv.iptc.org/newscodes/spsocpos/forward>    |
-| "Aston Villa"          | "Ross Barkley"           | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "Aston Villa"          | "Tyrone Mings"           | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "West Bromwich Albion" | "Ainsley Maitland-Niles" | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "West Bromwich Albion" | "Callum Robinson"        | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "West Bromwich Albion" | "Conor Gallagher"        | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "West Bromwich Albion" | "Conor Townsend"         | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "West Bromwich Albion" | "Darnell Furlong"        | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "West Bromwich Albion" | "Kyle Bartley"           | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-| "West Bromwich Albion" | "Matheus Pereira"        | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "West Bromwich Albion" | "Mbaye Diagne"           | <http://cv.iptc.org/newscodes/spsocpos/forward>    |
-| "West Bromwich Albion" | "Okay Yokuslu"           | <http://cv.iptc.org/newscodes/spsocpos/midfielder> |
-| "West Bromwich Albion" | "Sam Johnstone"          | <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> |
-| "West Bromwich Albion" | "Semi Ajayi"             | <http://cv.iptc.org/newscodes/spsocpos/defender>   |
-----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------
+| teamName               | playerName               | playerPos           |
+===========================================================================
+| "Aston Villa"          | "Ahmed El Mohamady"      | spsocpos:defender   |
+| "Aston Villa"          | "Anwar El Ghazi"         | spsocpos:midfielder |
+| "Aston Villa"          | "Bertrand Traoré"        | spsocpos:midfielder |
+| "Aston Villa"          | "Douglas Luiz"           | spsocpos:midfielder |
+| "Aston Villa"          | "Emiliano Martínez"      | spsocpos:goalkeeper |
+| "Aston Villa"          | "Ezri Konsa Ngoyo"       | spsocpos:defender   |
+| "Aston Villa"          | "John McGinn"            | spsocpos:midfielder |
+| "Aston Villa"          | "Matt Targett"           | spsocpos:defender   |
+| "Aston Villa"          | "Ollie Watkins"          | spsocpos:forward    |
+| "Aston Villa"          | "Ross Barkley"           | spsocpos:midfielder |
+| "Aston Villa"          | "Tyrone Mings"           | spsocpos:defender   |
+| "West Bromwich Albion" | "Ainsley Maitland-Niles" | spsocpos:midfielder |
+| "West Bromwich Albion" | "Callum Robinson"        | spsocpos:midfielder |
+| "West Bromwich Albion" | "Conor Gallagher"        | spsocpos:midfielder |
+| "West Bromwich Albion" | "Conor Townsend"         | spsocpos:defender   |
+| "West Bromwich Albion" | "Darnell Furlong"        | spsocpos:defender   |
+| "West Bromwich Albion" | "Kyle Bartley"           | spsocpos:defender   |
+| "West Bromwich Albion" | "Matheus Pereira"        | spsocpos:midfielder |
+| "West Bromwich Albion" | "Mbaye Diagne"           | spsocpos:forward    |
+| "West Bromwich Albion" | "Okay Yokuslu"           | spsocpos:midfielder |
+| "West Bromwich Albion" | "Sam Johnstone"          | spsocpos:goalkeeper |
+| "West Bromwich Albion" | "Semi Ajayi"             | spsocpos:defender   |
+---------------------------------------------------------------------------
 ```
 
 2. Which team won the game?
@@ -324,34 +341,24 @@ TBD (requires Actions)
 5. What were the stats for each team?
 
 ```bash
-arq --data samples/ttl/soccer-match-01.ttl --query queries/event-team-stats.rq 
-------------------------------------------------------------------------------------------
-| teamName          | stat                                 | statValue                   |
-==========================================================================================
-| "Aston Villa"     | spsocstat:shots-on-goal-total        | 1                           |
-| "Aston Villa"     | spstat:score-opposing                | 2                           |
-| "Aston Villa"     | rdf:type                             | sport:TeamParticipation     |
-| "Aston Villa"     | spsocstat:line-formation             | 433                         |
-| "Aston Villa"     | spsocstat:fouls-commited             | 4                           |
-| "Aston Villa"     | sport:participationBy                | <http://sport.org/Team/T2>  |
-| "Aston Villa"     | sport:alignment                      | "home"                      |
-| "Aston Villa"     | spstat:time-of-possession-percentage | 31.6                        |
-| "Aston Villa"     | sport:score                          | "0"                         |
-| "Aston Villa"     | sport:eventOutcome                   | "loss"                      |
-| "Aston Villa"     | spsocstat:shots-total                | 6                           |
-| "Manchester City" | spsocstat:shots-on-goal-total        | 7                           |
-| "Manchester City" | spstat:score-opposing                | 0                           |
-| "Manchester City" | rdf:type                             | sport:TeamParticipation     |
-| "Manchester City" | spsocstat:line-formation             | 442                         |
-| "Manchester City" | spsocstat:fouls-commited             | 6                           |
-| "Manchester City" | sport:participationBy                | <http://sport.org/Team/T12> |
-| "Manchester City" | sport:alignment                      | "away"                      |
-| "Manchester City" | spstat:time-of-possession-percentage | 68.4                        |
-| "Manchester City" | sport:score                          | "2"                         |
-| "Manchester City" | spsocstat:corner-kicks               | 7                           |
-| "Manchester City" | sport:eventOutcome                   | "win"                       |
-| "Manchester City" | spsocstat:shots-total                | 27                          |
-------------------------------------------------------------------------------------------
+% arq --data samples/ttl/soccer-match-01.ttl --query queries/event-team-stats.rq
+------------------------------------------------------------------------
+| teamName          | stat                                 | statValue |
+========================================================================
+| "Aston Villa"     | spsocstat:shots-on-goal-total        | 1         |
+| "Aston Villa"     | spstat:score-opposing                | 2         |
+| "Aston Villa"     | spsocstat:line-formation             | 433       |
+| "Aston Villa"     | spsocstat:fouls-commited             | 4         |
+| "Aston Villa"     | spstat:time-of-possession-percentage | 31.6      |
+| "Aston Villa"     | spsocstat:shots-total                | 6         |
+| "Manchester City" | spsocstat:shots-on-goal-total        | 7         |
+| "Manchester City" | spstat:score-opposing                | 0         |
+| "Manchester City" | spsocstat:line-formation             | 442       |
+| "Manchester City" | spsocstat:fouls-commited             | 6         |
+| "Manchester City" | spstat:time-of-possession-percentage | 68.4      |
+| "Manchester City" | spsocstat:corner-kicks               | 7         |
+| "Manchester City" | spsocstat:shots-total                | 27        |
+------------------------------------------------------------------------
 ```
 
 6. Who was penalized? (Team level)
@@ -421,7 +428,7 @@ arq --data samples/ttl/league-schedule.ttl --query queries/event-league-site.rq
 | "2021-05-23" | "16:00"     | "Arsenal v Brighton and Hove Albion"          | "Emirates Stadium"   |
 -----------------------------------------------------------------------------------------------------
 ```
-5. What time does game begin?
+5. What time does the game begin?
 ```bash
 arq --data samples/ttl/league-schedule.ttl --query queries/event-league-starttime.rq
 ---------------

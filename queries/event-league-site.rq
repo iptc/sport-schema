@@ -1,11 +1,8 @@
-# Use case: Where is this match being played?
+# Use case: Event / League / 4. Where are today's matches being played?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)

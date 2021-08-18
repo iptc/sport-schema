@@ -1,22 +1,16 @@
-# Use case: Event / Team / Which team won the game?
+# Use case: Event / Team / 2. Which team won the game?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
-SELECT ?name ?score ?opposingScore
-WHERE
-{
-	?team rdf:type sport:Team .
-	?team sport:name ?name . 
-	?teamPartic sport:participationBy ?team .
-	?teamPartic spstat:score ?score .
-	?teamPartic spstat:score-opposing ?opposingScore .
-	FILTER (
-		?score > ?opposingScore
-	)
+SELECT ?teamName ?score ?opposingScore
+WHERE {
+    ?team rdf:type sport:Team .
+    ?team sport:name ?teamName . 
+    ?teamParticipation sport:participationBy ?team .
+    ?teamParticipation spstat:score ?score .
+    ?teamParticipation spstat:score-opposing ?opposingScore .
+    FILTER ( ?score > ?opposingScore )
 }

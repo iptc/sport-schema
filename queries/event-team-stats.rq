@@ -1,18 +1,17 @@
-# Use case: Event / Team / What was the score of the game?
+# Use case: Event / Team / 5. What were the stats for each team?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
 SELECT ?teamName ?stat ?statValue
 WHERE { 
-	?team rdf:type sport:Team .
-	?team sport:name ?teamName . 
-	?teamParticipcation sport:participationBy ?team .
-	?teamParticipcation rdf:type sport:TeamParticipation .
-	?teamParticipcation ?stat ?statValue .
+    ?team rdf:type sport:Team .
+    ?team sport:name ?teamName . 
+    ?teamParticipcation sport:participationBy ?team .
+    ?teamParticipcation rdf:type sport:TeamParticipation .
+    ?teamParticipcation ?stat ?statValue .
+    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/")) .
 }

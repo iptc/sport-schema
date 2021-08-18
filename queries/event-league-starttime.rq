@@ -1,11 +1,8 @@
-# Use case: Where is this match being played?
+# Use case: Event / League / 5. What time does the game begin?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
@@ -14,8 +11,4 @@ WHERE
     ?event rdf:type sport:Event .
     ?event sport:startDate ?date .
     FILTER ( ?event = <http://sport.org/Event/l.premierleague.com-2020-e.2128518> )
-    FILTER ( ?date > "2021-02-15T00:00:00Z"^^xsd:dateTime ) 
-    FILTER ( ?date < "2021-02-16T00:00:00Z"^^xsd:dateTime ) 
-
 }
-ORDER BY ?week ?displayDate ?displayTime

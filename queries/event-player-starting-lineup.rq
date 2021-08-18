@@ -2,20 +2,15 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
 SELECT ?teamName ?playerName ?playerStatus
-WHERE
-	{ 
-	?event rdf:type sport:Event .
-	?event sport:participation ?playerperf .
-	?playerperf sport:participationBy ?player .
+WHERE { 
+    ?event rdf:type sport:Event .
+    ?event sport:participation ?playerperf .
+    ?playerperf sport:participationBy ?player .
     ?playerperf rdf:type sport:IndividualParticipation .
-	?player sport:name ?playerName . 
+    ?player sport:name ?playerName . 
     ?player rdf:type sport:Athlete .
     ?playerperf sport:status ?playerStatus .
     ?team sport:athlete ?player .

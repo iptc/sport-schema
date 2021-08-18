@@ -1,18 +1,13 @@
-# Use case: Event / Team / What is the starting lineup? (including position slated)
+# Use case: Event / Team / 1. What is the starting lineup? (including position slated)
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
-PREFIX spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/>
+PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocpos/>
 
 SELECT ?teamName ?playerName ?playerPos
-WHERE
-{
-
+WHERE {
     ?team rdf:type sport:Team .
     ?player rdf:type  sport:Athlete .
     ?event rdf:type  sport:Event .
@@ -21,7 +16,7 @@ WHERE
     ?team sport:name ?teamName .
     ?player sport:name ?playerName .
     ?player sport:position-regular ?playerPos .
-	?participation sport:participationBy ?player .
-	?participation spstat:events-started "1"
+    ?participation sport:participationBy ?player .
+    ?participation spstat:events-started "1"
 }
 ORDER BY ?teamName ?playerName
