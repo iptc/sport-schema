@@ -1,0 +1,159 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
+
+##### SHACL Shapes for validating Sports RDF data #####
+
+### Classes
+
+sport:SeasonShape
+  sh:targetClass sport:Season ;
+  a sh:NodeShape ;
+  sh:property sport:nameShape .
+
+sport:EventShape
+  sh:targetClass sport:Event ;
+  a sh:NodeShape ;
+  sh:property sport:participationShape ;
+  sh:property sport:athleteShape .
+
+sport:ParticipationShape
+  sh:targetClass sport:Participation ;
+  a sh:NodeShape ;
+  sh:property sport:participationByShape .
+
+sport:TeamParticipationShape
+  sh:targetClass sport:TeamParticipation ;
+  a sh:NodeShape .
+
+sport:IndividualParticipationShape
+  sh:targetClass sport:IndividualParticipation ;
+  a sh:NodeShape .
+
+sport:ManagerialParticipationShape
+  sh:targetClass sport:ManagerialParticipation ;
+  a sh:NodeShape .
+
+sport:ParticipationSplitShape
+  sh:targetClass sport:ParticipationSplit ;
+  a sh:NodeShape .
+
+sport:AgentShape
+  sh:targetClass sport:Agent ;
+  a sh:NodeShape .
+
+sport:TeamShape
+  sh:targetClass sport:Team ;
+  a sh:NodeShape .
+
+sport:PersonShape
+  sh:targetClass sport:Person ;
+  a sh:NodeShape .
+
+sport:AthleteShape
+  sh:targetClass sport:Athlete ;
+  a sh:NodeShape ;
+  sh:property sport:alignmentShape .
+
+sport:AssociateShape
+  sh:targetClass sport:Associate ;
+  a sh:NodeShape .
+
+sport:SiteShape
+  sh:targetClass sport:Site ;
+  a sh:NodeShape .
+
+### Object Properties
+
+sport:participationShape
+  a sh:PropertyShape ;
+   sh:path sport:participation ;
+   sh:datatype sport:Participation ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:athleteShape
+  a sh:PropertyShape ;
+   sh:path sport:athlete ;
+   sh:datatype xsd:Person ;
+   sh:minCount 1 .
+
+sport:coachShape
+  a sh:PropertyShape ;
+   sh:path sport:coach ;
+   sh:datatype xsd:Associate ;
+   sh:minCount 1 .
+
+sport:siteShape
+  a sh:PropertyShape ;
+   sh:path sport:site ;
+   sh:datatype xsd:Site ;
+   sh:minCount 1 .
+
+sport:participationSplitShape
+  a sh:PropertyShape ;
+   sh:path sport:participationSplit ;
+   sh:datatype xsd:ParticipationSplit .
+
+## Data Properties
+
+sport:nameShape
+  a sh:PropertyShape ;
+   sh:path sport:name ;
+   sh:datatype xsd:string ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:scoreShape
+  a sh:PropertyShape ;
+   sh:path sport:score ;
+   sh:datatype xsd:integer ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:position-regularShape
+  a sh:PropertyShape ;
+   sh:path sport:position-regular ;
+   sh:datatype xsd:string ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:position-eventShape
+  a sh:PropertyShape ;
+   sh:path sport:position-event ;
+   sh:datatype xsd:string ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:uniform-numberShape
+  a sh:PropertyShape ;
+   sh:path sport:uniform-number ;
+   sh:datatype xsd:integer ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:start-dateShape
+  a sh:PropertyShape ;
+   sh:path sport:start-date ;
+   sh:datatype xsd:date ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+
+sport:alignmentShape
+  a sh:PropertyShape ;
+   sh:path sport:alignment ;
+   sh:datatype xsd:string ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .
+  
+sport:participationByShape
+  a sh:PropertyShape ;
+   sh:path sport:participationBy ;
+   sh:datatype xsd:string ;
+   sh:minCount 1 ;
+   sh:maxCount 1 .

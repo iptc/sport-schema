@@ -1,16 +1,16 @@
-# Use case: Event / Player / 4. Did this player score a goal?
+# Use case: Event / Player / 3. How many minutes did this player play?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 
-SELECT ?playerName ?goals
+SELECT ?playerName ?minutesPlayed
 WHERE { 
     ?event rdf:type sport:Event .
     ?event sport:participation ?playerperf .
     ?playerperf sport:participationBy ?player .
     ?player sport:name ?playerName . 
-    ?playerperf spsocstat:goals-total ?goals .
-    FILTER ( ?goals > "0" )
+    ?playerperf spstat:time-played-total ?minutesPlayed .
 }
+ORDER BY ?playerName

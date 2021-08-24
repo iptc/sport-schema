@@ -1,0 +1,18 @@
+# Use case: Event / League / 6. Who are the referees?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+
+SELECT ?officialName ?officialPosition
+WHERE
+{
+    ?event rdf:type sport:Event .
+    ?event sport:participation ?officialParticipation .
+    ?officialParticipation rdf:type sport:OfficialParticipation .
+    ?officialParticipation sport:participationBy ?official .
+    ?officialParticipation sport:position-event ?officialPosition .
+    ?official rdf:type sport:Official .
+    ?official sport:name ?officialName .
+    FILTER ( ?event = <http://sport.org/Event/E755363> )
+}

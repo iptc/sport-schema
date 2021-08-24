@@ -1,0 +1,14 @@
+# Use case: Event / League / What was the attendance for this match?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+
+SELECT ?attendance
+WHERE
+{
+    ?event rdf:type sport:Event .
+    ?event sport:startDate ?date .
+    ?event sport:attendance ?attendance .
+    FILTER ( ?event = <http://sport.org/Event/E755363> )
+}

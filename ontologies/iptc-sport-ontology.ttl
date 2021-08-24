@@ -1,9 +1,10 @@
-@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix sport:   <http://www.iptc.org/ontologies/sport/> .
 
 <http://www.iptc.org/ontologies/sport/> ;
     rdf:type owl:Ontology ;
@@ -15,6 +16,11 @@
     dcterms:description "A high level model to describe the core elements of competitive sport"@en .
 
 ##### Classes #####
+
+sport:Season rdf:type rdfs:Class ;
+    rdfs:label "Season"@en ;
+    rdfs:comment "A grouping of events usually based on proximity by time."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Event rdf:type rdfs:Class ;
     rdfs:label "Event"@en ;
@@ -53,6 +59,13 @@ sport:ManagerialParticipation rdf:type rdfs:Class ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The particpation of a managerial individual"@en ;
     rdfs:range sport:Person ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:ParticipationSplit rdf:type rdfs:Class ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:subClassOf sport:Participation ;  # ??? how does this work with TeamParticipation / IndividualParticipation?
+    rdfs:comment "A representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:domain sport:Participation ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Agent rdf:type rdfs:Class ;
@@ -122,13 +135,35 @@ sport:site rdf:type rdf:Property ;
     rdfs:range sport:Site ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
+sport:participationSplit rdf:type rdf:Property ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:comment "A portion of the participation in this event or season"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:ParticipationSplit ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+
 ##### Data properties #####
 
 sport:name rdf:type rdf:Property ;
     rdfs:label "Name"@en ;
-    rdfs:comment "The name of a team or player"@en ;
-    rdfs:domain sport:Team ;
+    rdfs:comment "The name of an agent (team, player, official), or season"@en ;
+    schemaorg:domainIncludes sport:Agent, sport:Season ;
     rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:season-week rdf:type rdf:Property ;
+    rdfs:label "Season Week"@en ;
+    rdfs:comment "The week in a season that a given event takes place"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:attendance rdf:type rdf:Property ;
+    rdfs:label "Attendance"@en ;
+    rdfs:comment "Number of people attending an event"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:integer ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 # we also have "spstat:score", do we need both? Is one for teams and the other for individuals?
@@ -145,7 +180,14 @@ sport:position-regular rdf:type rdf:Property ;
     rdfs:domain sport:Person ;  # can apply to Athlete and Associate so we use the parent
     # I don't think we can do this with rdfs:range, but is there something we can do
     # in OWL or SHACL to show this range constraint?
-    rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
+    # rdfs:range <<http://cv.iptc.org/newscodes/spsocpos/> ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:status rdf:type rdf:Property ;
+    rdfs:label "Status"@en ;
+    rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    # rdfs:range <<http://cv.iptc.org/newscodes/spplayerstatus/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:position-event rdf:type rdf:Property ;

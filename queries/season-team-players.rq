@@ -1,22 +1,23 @@
-# Use case: Season / Team / Who plays for the team? (Includes jersey number, position, etc.)
+# Use case: Season / Team / 1. Who plays for the team? (Includes jersey number, position, etc.)
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX schemaorg:  <https://schema.org/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spsocposition: <http://cv.iptc.org/newscodes/spsocposition/>
+PREFIX spichposition: <http://cv.iptc.org/newscodes/spichposition/>
 
-SELECT ?teamName ?playerName ?playerPos ?dob ?jersey
+SELECT ?teamName ?playerName ?playerPos ?dob ?uniformNumber
 WHERE
 {
-	?team rdfs:type sport:Team .
-	?player rdfs:type  sport:Athlete .
-	?team schemaorg:athlete ?player .
-	?team schemaorg:name ?teamName .
-	?player schemaorg:name ?playerName .
-	?player sport:position-regular ?playerPos .
-	?player sport:date-of-birth ?dob .
-	?player sport:uniform-number ?jersey .
+    ?team rdf:type sport:Team .
+    ?player rdf:type  sport:Athlete .
+    ?team sport:athlete ?player .
+    ?team sport:name ?teamName .
+    ?player sport:name ?playerName .
+    OPTIONAL { ?player sport:position-regular ?playerPos . }
+    OPTIONAL { ?player sport:date-of-birth ?dob . }
+    OPTIONAL { ?player sport:uniform-number ?uniformNumber . }
 }
 ORDER BY ?teamName ?playerName

@@ -1,9 +1,11 @@
-@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix sport:     <http://www.iptc.org/ontologies/Sport/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:    <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://sport.org/Person/p.68312>
         rdf:type                sport:Athlete ;
@@ -16,8 +18,9 @@
         sport:event-outcome-type  <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:event-status        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation       <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.180135> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.109528> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.68312> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.61558> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.75115> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.40142> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-o.thefa.com-t.14> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.60706> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.106618> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.179018> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.200089> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.118748> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.215136> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-PO19485> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.170137> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.111773> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.83314> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.194799> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.175592> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.15157> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.180974> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.58845> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.110979> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.438277> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.50232> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.81441> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.194634> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-o.thefa.com-t.11> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.122798> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.116535> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.41733> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.104547> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.92217> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.214285> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.81880> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.206915> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.219937> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.114243> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.116643> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.169187> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.57145> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.56983> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.67089> ;
+        sport:season-week         33 ;
         sport:site                <http://sport.org/Site/s.39> ;
-        sport:startDate           "2021-04-24T12:30:00+01:00" .
+        sport:startDate           "2021-04-24T12:30:00+01:00"^^xsd:dateTime .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.200089>
         rdf:type                        sport:IndividualParticipation ;
@@ -43,7 +46,8 @@
         spsocstat:tackles-won           "0" ;
         spsocstat:touches               "13" ;
         spstat:time-played-total        "26" ;
-        sport:participationBy           <http://sport.org/Person/p.200089> .
+        sport:participationBy           <http://sport.org/Person/p.200089> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.214285>
         rdf:type                sport:Athlete ;
@@ -75,7 +79,8 @@
         spsocstat:touches              "96" ;
         spstat:events-started          "1" ;
         spstat:time-played-total       "90" ;
-        sport:participationBy          <http://sport.org/Person/p.438277> .
+        sport:participationBy          <http://sport.org/Person/p.438277> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.116535>
         rdf:type                        sport:IndividualParticipation ;
@@ -99,7 +104,8 @@
         spsocstat:touches               "43" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.116535> .
+        sport:participationBy           <http://sport.org/Person/p.116535> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.215136>
         rdf:type                sport:Athlete ;
@@ -128,11 +134,13 @@
         spsocstat:touches               "65" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.110979> .
+        sport:participationBy           <http://sport.org/Person/p.110979> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.111773>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.111773> .
+        sport:participationBy  <http://sport.org/Person/p.111773> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.92217>
         rdf:type                        sport:IndividualParticipation ;
@@ -159,7 +167,8 @@
         spsocstat:touches               "79" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.92217> .
+        sport:participationBy           <http://sport.org/Person/p.92217> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.67089>
         rdf:type                        sport:IndividualParticipation ;
@@ -181,7 +190,8 @@
         spsocstat:touches               "51" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.67089> .
+        sport:participationBy           <http://sport.org/Person/p.67089> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.169187>
         rdf:type                sport:Athlete ;
@@ -209,7 +219,8 @@
         spsocstat:touches               "113" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "77" ;
-        sport:participationBy           <http://sport.org/Person/p.61558> .
+        sport:participationBy           <http://sport.org/Person/p.61558> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.83314>
         rdf:type                sport:Athlete ;
@@ -233,7 +244,8 @@
         spsocstat:touches               "31" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "64" ;
-        sport:participationBy           <http://sport.org/Person/p.58845> .
+        sport:participationBy           <http://sport.org/Person/p.58845> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.219937>
         rdf:type                sport:Athlete ;
@@ -247,6 +259,7 @@
         sport:position-event  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://sport.org/Site/s.39>
+        rdf:type    sport:Site ;
         sport:name  "Anfield" .
 
 <http://sport.org/Person/p.170137>
@@ -283,7 +296,8 @@
         spsocstat:touches               "56" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.50232> .
+        sport:participationBy           <http://sport.org/Person/p.50232> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/PO19485>
         rdf:type    sport:Official ;
@@ -313,7 +327,8 @@
         spsocstat:touches               "36" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "85" ;
-        sport:participationBy           <http://sport.org/Person/p.179018> .
+        sport:participationBy           <http://sport.org/Person/p.179018> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.75115>
         rdf:type                       sport:IndividualParticipation ;
@@ -332,7 +347,8 @@
         spsocstat:shots-total          "1" ;
         spsocstat:touches              "7" ;
         spstat:time-played-total       "30" ;
-        sport:participationBy          <http://sport.org/Person/p.75115> .
+        sport:participationBy          <http://sport.org/Person/p.75115> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.122798>
         rdf:type                        sport:IndividualParticipation ;
@@ -364,7 +380,8 @@
         spsocstat:touches               "122" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.122798> .
+        sport:participationBy           <http://sport.org/Person/p.122798> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.194634>
         rdf:type                sport:Athlete ;
@@ -398,7 +415,8 @@
         spsocstat:touches               "72" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.114243> .
+        sport:participationBy           <http://sport.org/Person/p.114243> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.106618>
         rdf:type                sport:Athlete ;
@@ -413,7 +431,8 @@
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.68312>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.68312> .
+        sport:participationBy  <http://sport.org/Person/p.68312> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Team/o.thefa.com-t.11>
         rdf:type       sport:Team ;
@@ -444,15 +463,18 @@
         spsocstat:touches               "43" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.106618> .
+        sport:participationBy           <http://sport.org/Person/p.106618> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.214285>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.214285> .
+        sport:participationBy  <http://sport.org/Person/p.214285> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.215136>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.215136> .
+        sport:participationBy  <http://sport.org/Person/p.215136> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-o.thefa.com-t.14>
         rdf:type                       sport:TeamParticipation ;
@@ -503,7 +525,8 @@
         spsocstat:passes-total         "1" ;
         spsocstat:touches              "2" ;
         spstat:time-played-total       "5" ;
-        sport:participationBy          <http://sport.org/Person/p.104547> .
+        sport:participationBy          <http://sport.org/Person/p.104547> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.169187>
         rdf:type                        sport:IndividualParticipation ;
@@ -530,11 +553,13 @@
         spsocstat:touches               "108" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.169187> .
+        sport:participationBy           <http://sport.org/Person/p.169187> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.83314>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.83314> .
+        sport:participationBy  <http://sport.org/Person/p.83314> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.41733>
         rdf:type                sport:Athlete ;
@@ -544,7 +569,8 @@
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.219937>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.219937> .
+        sport:participationBy  <http://sport.org/Person/p.219937> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.40142>
         rdf:type                sport:Athlete ;
@@ -575,7 +601,8 @@
         spsocstat:touches               "60" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.170137> .
+        sport:participationBy           <http://sport.org/Person/p.170137> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.81441>
         rdf:type                sport:Athlete ;
@@ -617,7 +644,8 @@
         spsocstat:touches               "60" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.57145> .
+        sport:participationBy           <http://sport.org/Person/p.57145> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.60706>
         rdf:type                sport:Athlete ;
@@ -654,7 +682,8 @@
         spsocstat:touches               "49" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "58" ;
-        sport:participationBy           <http://sport.org/Person/p.194634> .
+        sport:participationBy           <http://sport.org/Person/p.194634> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.15157>
         rdf:type                sport:Athlete ;
@@ -716,7 +745,8 @@
         spsocstat:touches               "102" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.41733> .
+        sport:participationBy           <http://sport.org/Person/p.41733> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.180974>
         rdf:type                sport:Athlete ;
@@ -732,11 +762,13 @@
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.40142>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.40142> .
+        sport:participationBy  <http://sport.org/Person/p.40142> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.81441>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.81441> .
+        sport:participationBy  <http://sport.org/Person/p.81441> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.200089>
         rdf:type                sport:Athlete ;
@@ -791,11 +823,13 @@
         spsocstat:touches               "57" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.118748> .
+        sport:participationBy           <http://sport.org/Person/p.118748> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.60706>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.60706> .
+        sport:participationBy  <http://sport.org/Person/p.60706> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.111773>
         rdf:type                sport:Athlete ;
@@ -805,7 +839,8 @@
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.109528>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.109528> .
+        sport:participationBy  <http://sport.org/Person/p.109528> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.92217>
         rdf:type                sport:Athlete ;
@@ -841,7 +876,8 @@
         spsocstat:shots-total           "1" ;
         spsocstat:touches               "38" ;
         spstat:time-played-total        "32" ;
-        sport:participationBy           <http://sport.org/Person/p.15157> .
+        sport:participationBy           <http://sport.org/Person/p.15157> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.61558>
         rdf:type                sport:Athlete ;
@@ -898,7 +934,8 @@
         spsocstat:touches               "44" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.56983> .
+        sport:participationBy           <http://sport.org/Person/p.56983> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.58845>
         rdf:type                sport:Athlete ;
@@ -932,7 +969,8 @@
         spsocstat:touches               "51" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.180135> .
+        sport:participationBy           <http://sport.org/Person/p.180135> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.116643>
         rdf:type                        sport:IndividualParticipation ;
@@ -958,11 +996,13 @@
         spsocstat:touches               "94" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Person/p.116643> .
+        sport:participationBy           <http://sport.org/Person/p.116643> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.194799>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.194799> .
+        sport:participationBy  <http://sport.org/Person/p.194799> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.206915>
         rdf:type                        sport:IndividualParticipation ;
@@ -979,11 +1019,13 @@
         spsocstat:passes-total          "12" ;
         spsocstat:touches               "13" ;
         spstat:time-played-total        "13" ;
-        sport:participationBy           <http://sport.org/Person/p.206915> .
+        sport:participationBy           <http://sport.org/Person/p.206915> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.175592>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.175592> .
+        sport:participationBy  <http://sport.org/Person/p.175592> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.50232>
         rdf:type                sport:Athlete ;
@@ -999,7 +1041,8 @@
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.81880>
         rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Person/p.81880> .
+        sport:participationBy  <http://sport.org/Person/p.81880> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.75115>
         rdf:type                sport:Athlete ;
@@ -1026,7 +1069,8 @@
         spsocstat:touches              "32" ;
         spstat:events-started          "1" ;
         spstat:time-played-total       "60" ;
-        sport:participationBy          <http://sport.org/Person/p.180974> .
+        sport:participationBy          <http://sport.org/Person/p.180974> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.114243>
         rdf:type                sport:Athlete ;
