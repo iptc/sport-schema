@@ -63,34 +63,36 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'season-week','»')"/>~<xsl:value-of select="newsml:event-metadata-soccer/@week"/> .
         </xsl:if>
 
-        <!-- site info -->
-        <xsl:if test="newsml:site">
-            <xsl:variable name="site-name" select="newsml:site/newsml:site-metadata/newsml:name[@role='nrol:full']"/>
-            <xsl:variable name="site-key">
-                <xsl:choose>
-                    <xsl:when test="newsml:site/newsml:site-metadata/@key">
-                        <xsl:value-of select="substring-after(newsml:site/newsml:site-metadata/@key,':')"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="translate(newsml:site/newsml:site-metadata/newsml:name[@role='nrol:full'],' ','')"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="site-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Site/',$site-key,'»')"/></xsl:variable>
-            <!-- declare Site type -->
-            <xsl:value-of select="$site-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Site','»')"/> .
-            <!-- <event> sport:site <site> -->
-            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'site','»')"/>~<xsl:value-of select="$site-id"/> .
-            <!-- <site> sport:name "name" -->
-            <xsl:value-of select="$site-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'name','»')"/>~"<xsl:value-of select="$site-name"/>" .
-        </xsl:if>
-
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
         </xsl:apply-templates>
     </xsl:template>
 
+    <!-- site info -->
+    <xsl:template match="newsml:site">
+        <xsl:param name="event-id"/>
+
+        <xsl:variable name="site-name" select="newsml:site-metadata/newsml:name[@role='nrol:full']"/>
+        <xsl:variable name="site-key">
+            <xsl:choose>
+                <xsl:when test="newsml:site-metadata/@key">
+                    <xsl:value-of select="substring-after(newsml:site-metadata/@key,':')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="translate(newsml:site-metadata/newsml:name[@role='nrol:full'],' ','')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="site-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Site/',$site-key,'»')"/></xsl:variable>
+        <!-- declare Site type -->
+        <xsl:value-of select="$site-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Site','»')"/> .
+        <!-- <event> sport:site <site> -->
+        <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'site','»')"/>~<xsl:value-of select="$site-id"/> .
+        <!-- <site> sport:name "name" -->
+        <xsl:value-of select="$site-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'name','»')"/>~"<xsl:value-of select="$site-name"/>" .
+    </xsl:template>
+ 
     <!-- top-level element: standing. This will contain team records through a season: events-played, wins, losses, etc. -->
     <xsl:template match="newsml:standing">
         <!-- get an ID for the scope of the standing and convert to URI -->
@@ -154,6 +156,14 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- <team> sport:name "name" -->
         <xsl:value-of select="$team-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'name','»')"/> "<xsl:value-of select="$name"/>" .
 
+        <xsl:if test="string($participation-id)">
+            <!-- <participation> rdf:type <TeamParticipation> -->
+            <xsl:value-of select="$participation-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'TeamParticipation','»')"/> .
+
+            <!-- <participation> sport:participationBy <team> -->
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$team-id"/> .
+        </xsl:if>
+
         <xsl:if test="parent::newsml:sports-event">
             <xsl:choose>
                 <xsl:when test="newsml:team-metadata/@alignment='home'">
@@ -165,19 +175,11 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 <xsl:otherwise/>
             </xsl:choose>
 
-            <!-- Event participation: <participation> rdf:type <TeamParticipation> -->
-            <xsl:value-of select="$participation-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'TeamParticipation','»')"/> .
-            <!-- <participation> sport:participationBy <team> -->
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$team-id"/> .
             <!-- <event> sport:participation <participation> -->
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
         </xsl:if>
 
         <xsl:if test="parent::newsml:standing">
-            <!-- Season participation: <participation> rdf:type <TeamParticipation> -->
-            <xsl:value-of select="$participation-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'TeamParticipation','»')"/> .
-            <!-- <participation> sport:participationBy <team> -->
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$team-id"/> .
             <!-- <season> sport:participation <participation> -->
             <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
         </xsl:if>
@@ -348,13 +350,15 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'position-event','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(newsml:official-metadata/@position-event,':'),'/',substring-after(newsml:official-metadata/@position-event,':'),'»')"/> .
         </xsl:if>
 
+        <!-- <participation> rdf:type <OfficialParticipation> -->
+        <xsl:value-of select="$participation-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'OfficialParticipation','»')"/> .
+
+        <!-- <participation> sport:participationBy <official> -->
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$official-id"/> .
+
         <xsl:if test="ancestor::newsml:sports-event">
             <!-- <event> sport:participation <participation> -->
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
-            <!-- <participation> rdf:type <OfficialParticipation> -->
-            <xsl:value-of select="$participation-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'OfficialParticipation','»')"/> .
-            <!-- <participation> sport:participationBy <official> -->
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$official-id"/> .
         </xsl:if>
     </xsl:template>
 
