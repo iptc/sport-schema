@@ -369,14 +369,14 @@ arq --data samples/ttl/soccer-match-01.ttl --query queries/event-team-penalties.
 -------------------------------------------------------------
 | teamName          | playerName           | foulsCommitted |
 =============================================================
-| "Aston Villa"     | "Aly Cissokho"       | 1              |
-| "Aston Villa"     | "Charles N'Zogbia"   | 1              |
-| "Aston Villa"     | "Nathan Baker"       | 1              |
-| "Aston Villa"     | "Tom Cleverley"      | 1              |
-| "Manchester City" | "Aleksandar Kolarov" | 2              |
-| "Manchester City" | "Edin Dzeko"         | 1              |
-| "Manchester City" | "Fernando Luiz Rosa" | 1              |
-| "Manchester City" | "James Milner"       | 2              |
+| "Aston Villa"     | "Aly Cissokho"       | "1"            |
+| "Aston Villa"     | "Charles N'Zogbia"   | "1"            |
+| "Aston Villa"     | "Nathan Baker"       | "1"            |
+| "Aston Villa"     | "Tom Cleverley"      | "1"            |
+| "Manchester City" | "Aleksandar Kolarov" | "2"            |
+| "Manchester City" | "Edin Dzeko"         | "1"            |
+| "Manchester City" | "Fernando Luiz Rosa" | "1"            |
+| "Manchester City" | "James Milner"       | "2"            |
 -------------------------------------------------------------
 ```
 
