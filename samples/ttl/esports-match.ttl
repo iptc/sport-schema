@@ -1,10 +1,14 @@
 @prefix schemaorg: <https://schema.org/> .
+@prefix esacttype: <http://cv.iptc.org/newscodes/esacttype/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
 @prefix esstat: <http://cv.iptc.org/newscodes/esstat/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
 @prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix sport: <http://www.iptc.org/ontologies/Sport/> .
 @prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 
 <http://sport.org/Participation/5120-13>
         a                      sport:IndividualParticipation ;
@@ -49,7 +53,13 @@
 
 <http://sport.org/Person/15>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1998" .
+        sport:date-of-birth  "1998"^^xsd:date .
+
+<http://sport.org/Action/541807-a3>
+        a                 sport:Action ;
+        sport:actionType  esacttype:choose ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_9572> .
 
 <http://sport.org/Participation/5121-12>
         a                      sport:IndividualParticipation ;
@@ -129,7 +139,7 @@
         a                    sport:Event ;
         sport:event-status   <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation  <http://sport.org/Participation/5121-15> , <http://sport.org/Participation/5121-16> , <http://sport.org/Participation/5121-team_6134> , <http://sport.org/Participation/5121-17> , <http://sport.org/Participation/5121-18> , <http://sport.org/Participation/5121-19> , <http://sport.org/Participation/5121-team_9572> , <http://sport.org/Participation/5121-10> , <http://sport.org/Participation/5121-11> , <http://sport.org/Participation/5121-12> , <http://sport.org/Participation/5121-13> , <http://sport.org/Participation/5121-14> ;
-        sport:startDate      "2018-12-12T14:00:00" .
+        sport:startDate      "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://sport.org/Participation/5122-team_9572>
         a                      sport:TeamParticipation ;
@@ -171,7 +181,13 @@
 
 <http://sport.org/Person/14>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1994" .
+        sport:date-of-birth  "1994"^^xsd:date .
+
+<http://sport.org/Action/541807-a2>
+        a                 sport:Action ;
+        sport:actionType  esacttype:remove ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_6134> .
 
 <http://sport.org/Participation/5121-11>
         a                      sport:IndividualParticipation ;
@@ -233,13 +249,19 @@
 
 <http://sport.org/Person/19>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1993" .
+        sport:date-of-birth  "1993"^^xsd:date .
 
 <http://sport.org/Event/5120>
         a                    sport:Event ;
         sport:event-status   <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation  <http://sport.org/Participation/5120-15> , <http://sport.org/Participation/5120-16> , <http://sport.org/Participation/5120-17> , <http://sport.org/Participation/5120-10> , <http://sport.org/Participation/5120-18> , <http://sport.org/Participation/5120-11> , <http://sport.org/Participation/5120-12> , <http://sport.org/Participation/5120-19> , <http://sport.org/Participation/5120-13> , <http://sport.org/Participation/5120-team_6134> , <http://sport.org/Participation/5120-team_9572> , <http://sport.org/Participation/5120-14> ;
-        sport:startDate      "2018-12-12T14:00:00" .
+        sport:startDate      "2018-12-12T14:00:00"^^xsd:dateTime .
+
+<http://sport.org/Action/541807-a7>
+        a                 sport:Action ;
+        sport:actionType  esacttype:remaining ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/> .
 
 <http://sport.org/Participation/5120-11>
         a                      sport:IndividualParticipation ;
@@ -269,7 +291,13 @@
 
 <http://sport.org/Person/13>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1995" .
+        sport:date-of-birth  "1995"^^xsd:date .
+
+<http://sport.org/Action/541807-a1>
+        a                 sport:Action ;
+        sport:actionType  esacttype:remove ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_9572> .
 
 <http://sport.org/Participation/5121-10>
         a                      sport:IndividualParticipation ;
@@ -312,7 +340,13 @@
 
 <http://sport.org/Person/18>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1991" .
+        sport:date-of-birth  "1991"^^xsd:date .
+
+<http://sport.org/Action/541807-a6>
+        a                 sport:Action ;
+        sport:actionType  esacttype:remove ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_6134> .
 
 <http://sport.org/Participation/5120-10>
         a                      sport:IndividualParticipation ;
@@ -342,7 +376,7 @@
 
 <http://sport.org/Person/12>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1986" .
+        sport:date-of-birth  "1986"^^xsd:date .
 
 <http://sport.org/Participation/5122-14>
         a                      sport:IndividualParticipation ;
@@ -372,7 +406,13 @@
 
 <http://sport.org/Person/17>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1995" .
+        sport:date-of-birth  "1995"^^xsd:date .
+
+<http://sport.org/Action/541807-a5>
+        a                 sport:Action ;
+        sport:actionType  esacttype:remove ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_9572> .
 
 <http://sport.org/Participation/5121-14>
         a                      sport:IndividualParticipation ;
@@ -402,13 +442,14 @@
 
 <http://sport.org/Event/541807>
         a                    sport:Event ;
+        sport:event          <http://sport.org/Event/5122> , <http://sport.org/Event/5121> , <http://sport.org/Event/5120> ;
         sport:event-status   <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation  <http://sport.org/Participation/541807-team_9572> , <http://sport.org/Participation/541807-team_6134> ;
-        sport:startDate      "2018-12-12T14:00:00" .
+        sport:startDate      "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://sport.org/Person/11>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1994" .
+        sport:date-of-birth  "1994"^^xsd:date .
 
 <http://sport.org/Participation/5122-13>
         a                      sport:IndividualParticipation ;
@@ -451,7 +492,13 @@
 
 <http://sport.org/Person/16>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1997" .
+        sport:date-of-birth  "1997"^^xsd:date .
+
+<http://sport.org/Action/541807-a4>
+        a                 sport:Action ;
+        sport:actionType  esacttype:choose ;
+        sport:event       <http://sport.org/Event/541807> ;
+        sport:team        <http://sport.org/Team/team_6134> .
 
 <http://sport.org/Participation/5121-13>
         a                      sport:IndividualParticipation ;
@@ -481,7 +528,7 @@
 
 <http://sport.org/Person/10>
         a                    sport:Athlete ;
-        sport:date-of-birth  "1994" .
+        sport:date-of-birth  "1994"^^xsd:date .
 
 <http://sport.org/Participation/5120-19>
         a                      sport:IndividualParticipation ;
@@ -522,4 +569,4 @@
         a                    sport:Event ;
         sport:event-status   <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation  <http://sport.org/Participation/5122-team_9572> , <http://sport.org/Participation/5122-team_6134> , <http://sport.org/Participation/5122-16> , <http://sport.org/Participation/5122-17> , <http://sport.org/Participation/5122-12> , <http://sport.org/Participation/5122-18> , <http://sport.org/Participation/5122-13> , <http://sport.org/Participation/5122-19> , <http://sport.org/Participation/5122-10> , <http://sport.org/Participation/5122-14> , <http://sport.org/Participation/5122-11> , <http://sport.org/Participation/5122-15> ;
-        sport:startDate      "2018-12-12T14:00:00" .
+        sport:startDate      "2018-12-12T14:00:00"^^xsd:dateTime .

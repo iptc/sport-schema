@@ -1,37 +1,39 @@
-@prefix esstat:         <http://cv.iptc.org/newscodes/esstat/> .
-@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema/> .
-@prefix schemaorg:      <https://schema.org/> .
-@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix esacttype: <http://cv.iptc.org/newscodes/esacttype/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix esstat: <http://cv.iptc.org/newscodes/esstat/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://sport.org/Person/p.221399>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Jack Harrison" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "22" .
 
 <http://sport.org/Person/p.62398>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Nemanja Matic" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "31" .
 
 <http://sport.org/Person/man40342>
-        rdf:type              sport:Associate ;
+        a                     sport:Associate ;
         sport:name            "Ole Gunnar Solskjær" ;
         sport:position-event  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.152590>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.152590> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.149915>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -62,17 +64,17 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.176297>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Marcus Rashford" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "10" .
 
 <http://sport.org/Person/PO41051>
-        rdf:type    sport:Official ;
+        a           sport:Official ;
         sport:name  "Craig Pawson" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.106617>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -97,13 +99,13 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.200617>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Daniel James" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "21" .
 
 <http://sport.org/Event/l.premierleague.com-2020-e.2128609>
-        rdf:type                  sport:Event ;
+        a                         sport:Event ;
         sport:event-outcome-type  <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:event-status        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:participation       <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.106760> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.220688> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.66588> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.149915> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.72222> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.38588> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.200617> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.95658> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.222694> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.193645> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.106617> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.173821> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.43670> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.437495> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.184667> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.152590> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.197365> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.74208> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-o.thefa.com-t.13> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.221399> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.180184> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.172649> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.165808> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.28690> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.176297> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-t.2> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.87873> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.221610> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.39790> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-PO41051> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.101582> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.195851> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.180804> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.141746> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.215460> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.248937> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.62398> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.155405> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.105377> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.40720> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.450070> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.214590> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.51940> ;
@@ -111,18 +113,24 @@
         sport:site                <http://sport.org/Site/s.29> ;
         sport:startDate           "2021-04-25T14:00:00+01:00"^^xsd:dateTime .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291320423>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.51940>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.51940> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.197365>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.197365> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.101582>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -150,41 +158,41 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.72222>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Mateusz Klich" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "43" .
 
 <http://sport.org/Person/p.221610>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Jamie Shackleton" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "46" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.39790>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.39790> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.173821>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Tyler Roberts" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "11" .
 
 <http://sport.org/Team/t.2>
-        rdf:type       sport:Team ;
+        a              sport:Team ;
         sport:athlete  <http://sport.org/Person/p.221610> , <http://sport.org/Person/p.149915> , <http://sport.org/Person/p.66588> , <http://sport.org/Person/p.87873> , <http://sport.org/Person/p.222694> , <http://sport.org/Person/p.106617> , <http://sport.org/Person/p.221399> , <http://sport.org/Person/p.173821> , <http://sport.org/Person/p.155405> , <http://sport.org/Person/p.105377> , <http://sport.org/Person/p.193645> , <http://sport.org/Person/p.72222> , <http://sport.org/Person/p.39790> , <http://sport.org/Person/p.215460> , <http://sport.org/Person/p.248937> , <http://sport.org/Person/p.450070> , <http://sport.org/Person/p.437495> , <http://sport.org/Person/p.38588> , <http://sport.org/Person/p.28690> , <http://sport.org/Person/p.165808> ;
         sport:coach    <http://sport.org/Person/man26> ;
         sport:name     "Leeds United" .
 
 <http://sport.org/Person/man26>
-        rdf:type              sport:Associate ;
+        a                     sport:Associate ;
         sport:name            "Marcelo Bielsa" ;
         sport:position-event  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.180184>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -201,8 +209,32 @@
         sport:participationBy          <http://sport.org/Person/p.180184> ;
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291311527>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291316113>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.1> .
+
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291318829>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291265339>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.141746>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -233,8 +265,14 @@
         sport:participationBy           <http://sport.org/Person/p.141746> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291336033>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.1> .
+
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.220688>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -260,7 +298,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.215460>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -280,19 +318,19 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.248937>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Sam Greenwood" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "42" .
 
 <http://sport.org/Person/p.437495>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Illan Meslier" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniform-number    "1" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.222694>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -318,7 +356,7 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.195851>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -351,18 +389,24 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.184667>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Victor Lindelöf" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "2" .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291268131>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.38588>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.38588> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.193645>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -381,13 +425,13 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.155405>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Kalvin Phillips" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "23" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.165808>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -413,7 +457,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.40720>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -431,94 +475,112 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.214590>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Aaron Wan-Bissaka" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "29" .
 
 <http://sport.org/Person/p.95658>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Harry Maguire" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "5" .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291325173>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.1> .
+
 <http://sport.org/Person/p.106760>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Luke Shaw" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "23" .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291325685>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291316509>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.28690>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.28690> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.152590>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Alex Telles" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "27" .
 
 <http://sport.org/Person/p.149915>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Diego Llorente" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "14" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.450070>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.450070> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.106617>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Patrick Bamford" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "9" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.180804>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.180804> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.40720>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Edinson Cavani" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "7" .
 
 <http://sport.org/Person/p.51940>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "David de Gea" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniform-number    "1" .
 
 <http://sport.org/Person/p.101582>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Fred" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "17" .
 
 <http://sport.org/Person/p.197365>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Eric Bailly" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "3" .
 
 <http://sport.org/Person/p.39790>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Kiko Casilla" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniform-number    "13" .
 
 <http://sport.org/Person/p.180184>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Donny van de Beek" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "34" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.66588>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -554,7 +616,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.105377>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -583,7 +645,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.74208>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -604,13 +666,13 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.28690>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Pablo Hernández" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "19" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.172649>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "3" ;
@@ -632,7 +694,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.221399>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:crosses-18-yard      "2" ;
@@ -656,22 +718,22 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.62398>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.62398> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.141746>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Bruno Fernandes" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "18" .
 
 <http://sport.org/Site/s.29>
-        rdf:type    sport:Site ;
+        a           sport:Site ;
         sport:name  "Elland Road" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.176297>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:ejections-total       "0" ;
@@ -698,30 +760,30 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.220688>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Mason Greenwood" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "11" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-PO41051>
-        rdf:type               sport:OfficialParticipation ;
+        a                      sport:OfficialParticipation ;
         sport:participationBy  <http://sport.org/Person/PO41051> ;
         sport:position-event   <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
 
 <http://sport.org/Person/p.215460>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Ian Poveda-Ocampo" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "7" .
 
 <http://sport.org/Person/p.222694>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Pascal Struijk" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "21" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.200617>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:aerials-won          "2" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -747,18 +809,18 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.221610>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.221610> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Person/p.195851>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Scott McTominay" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "39" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.173821>
-        rdf:type                       sport:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -783,30 +845,30 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.38588>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Gaetano Berardi" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "28" .
 
 <http://sport.org/Person/p.193645>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Robin Koch" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "5" .
 
 <http://sport.org/Person/p.165808>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Hélder Costa" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "17" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.43670>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.43670> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.87873>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -839,12 +901,12 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.248937>
-        rdf:type               sport:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.248937> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.437495>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "2" ;
         spsocstat:cautions-total        "0" ;
@@ -865,13 +927,13 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.450070>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Crysencio Summerville" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "38" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-o.thefa.com-t.13>
-        rdf:type                       sport:TeamParticipation ;
+        a                              sport:TeamParticipation ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
                 "14" ;
@@ -899,7 +961,7 @@
         sport:participationBy          <http://sport.org/Team/o.thefa.com-t.13> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-t.2>
-        rdf:type                       sport:TeamParticipation ;
+        a                              sport:TeamParticipation ;
         spsocstat:cautions-total       "4" ;
         spsocstat:clearances-successful
                 "17" ;
@@ -927,7 +989,7 @@
         sport:participationBy          <http://sport.org/Team/t.2> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.184667>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -954,14 +1016,20 @@
         sport:participationBy           <http://sport.org/Person/p.184667> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291247481>
+        a                 sport:Action ;
+        sport:actionType  esacttype:video-review ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.2> .
+
 <http://sport.org/Person/p.180804>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Axel Tuanzebe" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "38" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.155405>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -990,20 +1058,26 @@
         sport:participationBy           <http://sport.org/Person/p.155405> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
+<http://sport.org/Action/l.premierleague.com-2020-e.2128609-a.2291340193>
+        a                 sport:Action ;
+        sport:actionType  esacttype: ;
+        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128609> ;
+        sport:team        <http://sport.org/Team/e.2128609-t.1> .
+
 <http://sport.org/Person/p.43670>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Juan Mata" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "8" .
 
 <http://sport.org/Team/o.thefa.com-t.13>
-        rdf:type       sport:Team ;
+        a              sport:Team ;
         sport:athlete  <http://sport.org/Person/p.74208> , <http://sport.org/Person/p.51940> , <http://sport.org/Person/p.184667> , <http://sport.org/Person/p.95658> , <http://sport.org/Person/p.152590> , <http://sport.org/Person/p.180804> , <http://sport.org/Person/p.176297> , <http://sport.org/Person/p.220688> , <http://sport.org/Person/p.106760> , <http://sport.org/Person/p.62398> , <http://sport.org/Person/p.200617> , <http://sport.org/Person/p.40720> , <http://sport.org/Person/p.101582> , <http://sport.org/Person/p.43670> , <http://sport.org/Person/p.180184> , <http://sport.org/Person/p.141746> , <http://sport.org/Person/p.195851> , <http://sport.org/Person/p.214590> , <http://sport.org/Person/p.197365> , <http://sport.org/Person/p.172649> ;
         sport:coach    <http://sport.org/Person/man40342> ;
         sport:name     "Manchester United" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.72222>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:crosses-18-yard       "1" ;
@@ -1024,7 +1098,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.214590>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1054,13 +1128,13 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.66588>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Luke Ayling" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "2" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.95658>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -1088,25 +1162,25 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.105377>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Ezgjan Alioski" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniform-number    "10" .
 
 <http://sport.org/Person/p.87873>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Stuart Dallas" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "15" .
 
 <http://sport.org/Person/p.74208>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Paul Pogba" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniform-number    "6" .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128609-p.106760>
-        rdf:type                        sport:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1132,7 +1206,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Person/p.172649>
-        rdf:type                sport:Athlete ;
+        a                       sport:Athlete ;
         sport:name              "Dean Henderson" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniform-number    "26" .

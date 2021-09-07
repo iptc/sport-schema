@@ -38,6 +38,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
         <!-- declare event type -->
         <xsl:value-of select="$event-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .
+        <xsl:for-each select="newsml:sports-event">
+            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'event','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Event/',substring-after(newsml:event-metadata/@key,':'),'»')"/> .        
+        </xsl:for-each>
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
@@ -482,6 +485,43 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+
+    <!-- actions -->
+
+    <xsl:template match="newsml:actions">
+        <xsl:param name="event-key"/>
+        <xsl:param name="event-id"/>
+
+        <xsl:apply-templates>
+            <xsl:with-param name="event-key" select="$event-key"/>
+            <xsl:with-param name="event-id" select="$event-id"/>
+        </xsl:apply-templates>
+    </xsl:template>
+
+    <xsl:template match="newsml:action">
+        <xsl:param name="event-key"/>
+        <xsl:param name="event-id"/>
+    	<xsl:variable name="action-key">
+            <xsl:choose>
+                <xsl:when test="@key">
+                    <xsl:value-of select="@key"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@id"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="action-id" select="concat('«',$sport-vendor-ns,'Action/',$event-key,'-',$action-key,'»')"/>
+
+        <xsl:value-of select="$action-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Action','»')"/> .
+        <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'event','»')"/>~<xsl:value-of select="$event-id"/> .
+        <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'team','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',@team-idref,'»')"/> .
+        <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'actionType','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,'esacttype','/',substring-after(@type,':'),'»')"/> .
+
+    </xsl:template>
+
+
+
 
     <!-- templates for element values and unwanted attributes -->
     <xsl:template match="newsml:name"/>
