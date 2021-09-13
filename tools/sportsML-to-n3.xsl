@@ -197,7 +197,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
     <xsl:template match="newsml:team-stats">
         <xsl:param name="participation-id"/>
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -213,7 +213,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
         <xsl:value-of select="$participationSplit-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationSplitType','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@alignment-scope,':'),'/',substring-after(@alignment-scope,':'),'»')"/> .
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participationSplit-id" select="$participationSplit-id"/>
             <xsl:with-param name="alignment-id" select="@alignment-id"/>
         </xsl:apply-templates>
@@ -222,7 +222,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:outcome-totals[@alignment-scope='spcompetitionscope:events-all']">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
             <xsl:with-param name="alignment-id" select="@alignment-id"/>
         </xsl:apply-templates>
@@ -377,7 +377,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                     </xsl:apply-templates>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates select="@* | node()" mode="stats">
+                    <xsl:apply-templates select="@* | node()">
                         <xsl:with-param name="participation-id" select="$participation-id"/>
                     </xsl:apply-templates>
                 </xsl:otherwise>
@@ -408,7 +408,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:player-stats-soccer">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -416,7 +416,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:team-stats-soccer">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -424,7 +424,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:stats-soccer-offensive">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -432,7 +432,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:stats-soccer-defensive">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
@@ -440,12 +440,12 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:stats-soccer-foul">
         <xsl:param name="participation-id"/>
 
-        <xsl:apply-templates select="@* | node()" mode="stats">
+        <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="@*" mode="stats">
+    <xsl:template match="@*">
         <xsl:param name="participation-id"/>
         <xsl:param name="participationSplit-id"/>
 
@@ -519,8 +519,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$action-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Action','»')"/> .
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'event','»')"/>~<xsl:value-of select="$event-id"/> .
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'team','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',@team-idref,'»')"/> .
-        
-        
+                
     	<xsl:for-each select="@*[not(name()='team-idref') and not(name()='id') and not(name()='created')]">
 
         <xsl:variable name="value">

@@ -1,14 +1,16 @@
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
 @prefix schemaorg: <https://schema.org/> .
-@prefix esacttype: <http://cv.iptc.org/newscodes/esacttype/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix esstat: <http://cv.iptc.org/newscodes/esstat/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
 @prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 
 <http://sport.org/Person/p.68312>
         a                       sport:Athlete ;
@@ -203,10 +205,19 @@
         sport:uniform-number    "66" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290491197>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-24T13:52:19+01:00" ;
+        spact:minutes-elapsed         "64" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.58845" ;
+        spact:person-replacing-idref  "p.200089" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0424135219" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team                    <http://sport.org/Team/e.2128611-t.4> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.61558>
         a                               sport:IndividualParticipation ;
@@ -278,10 +289,19 @@
         sport:uniform-number    "10" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290488237>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.14> .
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-24T13:46:03+01:00" ;
+        spact:minutes-elapsed         "58" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.194634" ;
+        spact:person-replacing-idref  "p.15157" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0424134603" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team                    <http://sport.org/Team/e.2128611-t.14> .
 
 <http://sport.org/Person/p.179018>
         a                       sport:Athlete ;
@@ -482,10 +502,19 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290500091>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.14> .
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        spact:comment          "Foul" ;
+        spact:date-time        "2021-04-24T14:16:43+01:00" ;
+        spact:minutes-elapsed  "89" ;
+        spact:penalty-level    "yellow-card" ;
+        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        spact:period-value     "2" ;
+        spact:recipient-idref  "p.116643" ;
+        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        spact:sequence-number  "0424141643" ;
+        sport:event            <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team             <http://sport.org/Team/e.2128611-t.14> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.214285>
         a                      sport:IndividualParticipation ;
@@ -530,6 +559,10 @@
         sport:name              "Dwight Gayle" ;
         sport:position-regular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniform-number    "12" .
+
+<http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290502185-p.75115>
+        a           sport:IndividualParticipation ;
+        spact:role  <http://cv.iptc.org/newscodes//> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.104547>
         a                              sport:IndividualParticipation ;
@@ -592,6 +625,10 @@
         a                      sport:IndividualParticipation ;
         sport:participationBy  <http://sport.org/Person/p.219937> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290503015-p.104547>
+        a           sport:IndividualParticipation ;
+        spact:role  spsocrole:assist .
 
 <http://sport.org/Person/p.40142>
         a                       sport:Athlete ;
@@ -719,10 +756,19 @@
         sport:uniform-number    "11" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290457919>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        spact:comment          "Foul" ;
+        spact:date-time        "2021-04-24T12:45:34+01:00" ;
+        spact:minutes-elapsed  "15" ;
+        spact:penalty-level    "yellow-card" ;
+        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        spact:period-value     "1" ;
+        spact:recipient-idref  "p.57145" ;
+        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        spact:sequence-number  "0424124534" ;
+        sport:event            <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team             <http://sport.org/Team/e.2128611-t.4> .
 
 <http://sport.org/Person/p.180135>
         a                       sport:Athlete ;
@@ -854,10 +900,19 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290453755>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.14> .
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        spact:comment          "Foul" ;
+        spact:date-time        "2021-04-24T12:39:29+01:00" ;
+        spact:minutes-elapsed  "9" ;
+        spact:penalty-level    "yellow-card" ;
+        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        spact:period-value     "1" ;
+        spact:recipient-idref  "p.438277" ;
+        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        spact:sequence-number  "0424123929" ;
+        sport:event            <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team             <http://sport.org/Team/e.2128611-t.14> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.60706>
         a                      sport:IndividualParticipation ;
@@ -871,10 +926,14 @@
         sport:uniform-number    "17" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290502185>
-        a                 sport:Action ;
-        sport:actionType  esacttype:video-review ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        spact:minutes-elapsed  "92" ;
+        spact:period-value     "2" ;
+        spact:type             spsocaction:video-review ;
+        sport:event            <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:participation    <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290502185-p.75115> ;
+        sport:team             <http://sport.org/Team/e.2128611-t.4> .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.109528>
         a                      sport:IndividualParticipation ;
@@ -882,10 +941,19 @@
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290494235>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.14> .
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-24T14:04:29+01:00" ;
+        spact:minutes-elapsed         "77" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.61558" ;
+        spact:person-replacing-idref  "p.206915" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0424140429" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team                    <http://sport.org/Team/e.2128611-t.14> .
 
 <http://sport.org/Person/p.92217>
         a                       sport:Athlete ;
@@ -900,10 +968,23 @@
         sport:uniform-number    "1" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290498181>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-24T14:12:47+01:00" ;
+        spact:minutes-elapsed         "85" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.179018" ;
+        spact:person-replacing-idref  "p.104547" ;
+        spact:person-replacing-position
+                "forward" ;
+        spact:sequence-number         "0424141247" ;
+        spact:substitution-reason     "Injury" ;
+        sport:event                   <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team                    <http://sport.org/Team/e.2128611-t.4> .
+
+<http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290503015-p.200089>
+        a           sport:IndividualParticipation ;
+        spact:role  spsocrole:scorer .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.15157>
         a                               sport:IndividualParticipation ;
@@ -995,10 +1076,20 @@
         sport:uniform-number    "2" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290503015>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                         sport:Action ;
+        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        spact:date-time           "2021-04-24T14:23:17+01:00" ;
+        spact:minutes-elapsed     "95" ;
+        spact:period-value        "2" ;
+        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        spact:sequence-number     "0424142317" ;
+        sport:event               <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:participation       <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290503015-p.200089> , <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290503015-p.104547> ;
+        sport:team                <http://sport.org/Team/e.2128611-t.4> .
+
+<http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290449949-p.118748>
+        a           sport:IndividualParticipation ;
+        spact:role  spsocrole:scorer .
 
 <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-p.180135>
         a                               sport:IndividualParticipation ;
@@ -1085,10 +1176,19 @@
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290489373>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.4> .
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-24T13:48:14+01:00" ;
+        spact:minutes-elapsed         "60" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.180974" ;
+        spact:person-replacing-idref  "p.75115" ;
+        spact:person-replacing-position
+                "forward" ;
+        spact:sequence-number         "0424134814" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:team                    <http://sport.org/Team/e.2128611-t.4> .
 
 <http://sport.org/Person/p.50232>
         a                       sport:Athlete ;
@@ -1097,10 +1197,16 @@
         sport:uniform-number    "8" .
 
 <http://sport.org/Action/l.premierleague.com-2020-e.2128611-a.2290449949>
-        a                 sport:Action ;
-        sport:actionType  esacttype: ;
-        sport:event       <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
-        sport:team        <http://sport.org/Team/e.2128611-t.14> .
+        a                         sport:Action ;
+        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        spact:date-time           "2021-04-24T12:33:48+01:00" ;
+        spact:minutes-elapsed     "3" ;
+        spact:period-value        "1" ;
+        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        spact:sequence-number     "0424123348" ;
+        sport:event               <http://sport.org/Event/l.premierleague.com-2020-e.2128611> ;
+        sport:participation       <http://sport.org/Participation/l.premierleague.com-2020-e.2128611-a.2290449949-p.118748> ;
+        sport:team                <http://sport.org/Team/e.2128611-t.14> .
 
 <http://sport.org/Person/p.122798>
         a                       sport:Athlete ;
