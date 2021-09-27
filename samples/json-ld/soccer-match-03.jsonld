@@ -160,11 +160,16 @@
   }, {
     "@id" : "http://sport.org/Event/l.premierleague.com-2020-e.2128607",
     "@type" : "sport:Event",
+    "competition" : "http://sport.org/Competition/l.premierleague.com",
     "event-outcome-type" : "http://cv.iptc.org/newscodes/speventoutcometype/regular",
     "event-status" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
     "participation" : [ "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.50229", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.232653", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.59940", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.88894", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.216616", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.108156", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.180294", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.481624", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.221239", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.230046", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.37339", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.21205", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.146426", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-o.thefa.com-t.45", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.154043", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.210407", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.49944", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.98980", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.123354", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.171975", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.47390", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.184704", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.101394", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-o.thefa.com-t.2", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.101982", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.61600", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.149484", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-PO40959", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.193488", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.169359", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.232787", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.213345", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.110504", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.176420", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.179830", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.38716", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.49440", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.122806", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.50093", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.178301", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.199798", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.108053", "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-p.164011" ],
-    "sport:season-week" : 33,
+    "season" : "http://sport.org/Season/l.premierleague.com-2020",
+    "season:-week" : 33,
     "site" : "http://sport.org/Site/s.34",
+    "sport:sport" : {
+      "@id" : "http://cv.iptc.org/newscodes/mediatopic/20001065"
+    },
     "startDate" : "2021-04-25T19:00:00+01:00"
   }, {
     "@id" : "http://sport.org/Participation/l.premierleague.com-2020-e.2128607-PO40959",
@@ -1445,8 +1450,17 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/event-outcome-type",
       "@type" : "@id"
     },
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "site" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/site",
+      "@type" : "@id"
+    },
+    "season" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/season",
+      "@type" : "@id"
+    },
+    "competition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/competition",
       "@type" : "@id"
     },
     "event-status" : {
@@ -1518,7 +1532,6 @@
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
     "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }

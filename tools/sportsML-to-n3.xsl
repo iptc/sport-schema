@@ -19,9 +19,9 @@
     <xsl:variable name="sport-action-ontology-ns">http://www.iptc.org/ontologies/Sport/Action/</xsl:variable>
     <xsl:variable name="sport-code">
         <xsl:choose>
-            <xsl:when test="newsml:newsItem/newsml:contentMeta/newsml:subject/newsml:broader/@qcode='subj:15000000'">
+            <xsl:when test="newsml:newsItem/newsml:contentMeta/newsml:subject/newsml:broader/@qcode='medtop:15000000'">
                 <xsl:value-of
-select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml:broader/@qcode='subj:15000000']/@qcode,':')"/>
+select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml:broader/@qcode='medtop:15000000']/@qcode,':')"/>
             </xsl:when>
             <xsl:otherwise>15000000</xsl:otherwise>
         </xsl:choose>
@@ -31,17 +31,47 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:apply-templates/>
     </xsl:template>
 
+    <!-- template to produce RDF for top-level metadata such as sport, league, season, etc. Called from "top-level" content elements and applied to the corresponding object:
+     	sports-event, standing, schedule, tournament or statistic. -->
+    <xsl:template name="metadata-general">
+        <xsl:param name="object-id"/>
+        
+        <xsl:variable name="sport-key">
+            <xsl:value-of select="concat('«',$newscode-ns,'mediatopic/',substring-after(/newsml:newsItem/newsml:contentMeta/newsml:subject[newsml:broader/@qcode='medtop:15000000']/@qcode,':'),'»')"/>
+        </xsl:variable>
+
+        <xsl:variable name="competition-key">
+            <xsl:value-of select="concat('«',$sport-vendor-ns,'Competition/',substring-after(/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']/@qcode,':'),'»')"/>
+        </xsl:variable>
+
+        <xsl:variable name="season-key">
+            <xsl:value-of select="concat('«',$sport-vendor-ns,'Season/',substring-after(/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']/@qcode,':'),'-',/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:season']/@literal,'»')"/>
+        </xsl:variable>
+
+        <xsl:value-of select="$object-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'sport','»')"/>~<xsl:value-of select="$sport-key"/> .
+        <xsl:value-of select="$object-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competition','»')"/>~<xsl:value-of select="$competition-key"/> .
+        <xsl:if test="$object-id != $season-key">
+        <xsl:value-of select="$object-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'season','»')"/>~<xsl:value-of select="$season-key"/> .
+        </xsl:if>
+
+    </xsl:template>
+
     <!-- top-level element: sports-event. This will direct all the data for reporting on a match/game -->
     <xsl:template match="newsml:sports-event">
         <!-- get the vendor event ID and convert to URI -->
         <xsl:variable name="event-key"><xsl:value-of select="substring-after(newsml:event-metadata/@key,':')"/></xsl:variable>
         <xsl:variable name="event-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Event/',$event-key,'»')"/></xsl:variable>
 
+        <xsl:call-template name="metadata-general">
+            <xsl:with-param name="object-id" select="$event-id"/>
+        </xsl:call-template>
+
         <!-- declare event type -->
         <xsl:value-of select="$event-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Event','»')"/> .
         <xsl:for-each select="newsml:sports-event">
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'event','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Event/',substring-after(newsml:event-metadata/@key,':'),'»')"/> .        
         </xsl:for-each>
+
         <xsl:apply-templates>
             <xsl:with-param name="event-key" select="$event-key"/>
             <xsl:with-param name="event-id" select="$event-id"/>
@@ -109,11 +139,11 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="concat($competition-key,'-',/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:season']/@literal)"/>
         </xsl:variable>
         
-        <xsl:variable name="temporal-scope">
-            <xsl:value-of select="substring-after(newsml:standing-metadata/@temporal-unit-type,':')"/>
-        </xsl:variable>
-
         <xsl:variable name="season-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Season/',$season-key,'»')"/></xsl:variable>
+
+        <xsl:call-template name="metadata-general">
+            <xsl:with-param name="object-id" select="$season-id"/>
+        </xsl:call-template>
 
         <!-- declare sports season type -->
         <xsl:value-of select="$season-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Season','»')"/> .
@@ -121,6 +151,27 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:with-param name="season-key" select="$season-key"/>
             <xsl:with-param name="season-id" select="$season-id"/>
         </xsl:apply-templates>
+    </xsl:template>
+
+    <!-- top-level element: statistic. This will contain statistical reports for leagues, teams and athletes. Could also be a team roster or competitor list. -->
+    <xsl:template match="newsml:statistic">
+        <!-- get an ID for the scope of the standing and convert to URI -->
+                
+	    <xsl:variable name="object-id">
+    	    <xsl:choose>
+        	    <xsl:when test="newsml:statistic-metadata/@team-coverage='spteamcoverage:single-team'">
+        			<xsl:variable name="team-key"><xsl:value-of select="substring-after(newsml:team/newsml:team-metadata/@key,':')"/></xsl:variable>
+        			<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$team-key,'»')"/>
+ 	           </xsl:when>
+    	        <xsl:otherwise></xsl:otherwise>
+        	</xsl:choose>
+  	  </xsl:variable>
+
+        <xsl:call-template name="metadata-general">
+            <xsl:with-param name="object-id" select="$object-id"/>
+        </xsl:call-template>
+
+        <xsl:apply-templates/>
     </xsl:template>
 
     <!-- team info -->
