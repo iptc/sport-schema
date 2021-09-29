@@ -1,5 +1,8 @@
 @startuml
 !theme cerulean-outline
+class Sport {
+  name : string
+}
 class Season {
   name : string
 }
@@ -10,11 +13,8 @@ class Event {
 }
 class Action {
 }
-Action -- Event : >event
-Action -- Participation : participation
-Event -- Participation : participation
-class Participation
-Participation -- Agent : >participationBy
+class Participation {
+}
 class TeamParticipation {
   score
   alignment : CV Value
@@ -41,17 +41,22 @@ class Athlete {
 }
 class Associate {
 }
-Event -- Site :  > hasSite
 Participation <|-- TeamParticipation
 Participation <|-- IndividualParticipation
 Participation <|-- OfficialParticipation
 Participation <|-- ManagerialParticipation
-Participation <|-- ParticipationSplit
-Participation -- ParticipationSplit : participationSplit
 Agent <|-- Team
 Agent <|-- Individual
 Individual <|-- Athlete
-Team -- Athlete : > hasAthlete
 Individual <|-- Associate
-Team -- Associate : coach
+Action .. Event : > event
+Action .. Participation : > participation
+Event .. Sport : > sport
+Event .. Participation : > participation
+Event .. Season : season
+Participation .. Participation : participationSplit
+Participation .. Agent : > participationBy
+Event .. Site :  > venue
+Team .. Athlete : > hasAthlete
+Team .. Associate : > coach
 @enduml
