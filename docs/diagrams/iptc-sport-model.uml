@@ -1,0 +1,63 @@
+@startuml
+!theme cerulean-outline
+class Sport {
+  name : string
+}
+class Season {
+  name : string
+}
+class Event {
+  season-week : integer
+  attendance : integer
+  startDate : date
+}
+class Action {
+}
+class Participation {
+}
+class TeamParticipation {
+  score
+  alignment : CV Value
+}
+class IndividualParticipation {
+  score
+  sportaction:role : CV Value
+  player-status : CV Value
+  position-event : CV Value
+}
+class Site {
+  name : string
+}
+class Agent {
+  name : string
+}
+class Team {
+}
+class Individual {
+  position-regular : CV Value
+}
+class Athlete {
+  uniform-number : integer
+}
+class Associate {
+}
+Participation <|-- TeamParticipation
+Participation <|-- IndividualParticipation
+Participation <|-- OfficialParticipation
+Participation <|-- ManagerialParticipation
+Agent <|-- Team
+Agent <|-- Individual
+Individual <|-- Athlete
+Individual <|-- Associate
+Action .. Event : > event
+Action .. Participation : > participation
+Event .. Sport : > sport
+Event .. Participation : > participation
+Event .. Season : season
+Season .. Participation : > participation
+Participation .. Participation : participationSplit
+Participation .. Agent : > participationBy
+Event .. Site :  > venue
+Team .. Athlete : > hasAthlete
+Team .. Associate : > coach
+@enduml
