@@ -6,10 +6,10 @@
 @prefix schemaorg: <https://schema.org/> .
 @prefix sport:   <http://www.iptc.org/ontologies/sport/> .
 
-<http://www.iptc.org/ontologies/sport/> ;
+<http://www.iptc.org/ontologies/sport/>
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport ontology"@en ;
-    dcterms:created "20/07/2021"^^xsd:date ;
+    dcterms:created "2021-07-20"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2021"@en ;
@@ -73,25 +73,25 @@ sport:Agent rdf:type rdfs:Class ;
 
 sport:Team rdf:type rdfs:Class ;
     rdfs:label "Team"@en ;
-    rdfs:subClassOfOf sport:Agent ;
+    rdfs:subClassOf sport:Agent ;
     rdfs:comment "A group of individuals competing as one entity"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Individual rdf:type rdfs:Class ;
     rdfs:label "Individual"@en ;
-    rdfs:subClassOfOf sport:Agent ;
+    rdfs:subClassOf sport:Agent ;
     rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Athlete rdf:type rdfs:Class ;
     rdfs:label "Athlete"@en ;
-    rdfs:subClassOfOf sport:Individual ;
+    rdfs:subClassOf sport:Individual ;
     rdfs:comment "A competitor in an individual event or a member of a team"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Associate rdf:type rdfs:Class ;
     rdfs:label "Associate"@en ;
-    rdfs:subClassOfOf sport:Individual ;
+    rdfs:subClassOf sport:Individual ;
     rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
@@ -107,6 +107,7 @@ sport:season rdf:type rdf:Property ;
     rdfs:comment "The season in which an Event took place"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:Season ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:event rdf:type rdf:Property ;
     rdfs:label "event"@en ;
@@ -138,7 +139,7 @@ sport:subEvent rdf:type rdf:Property ;
 
 sport:participationBy rdf:type rdf:Property ;
     rdfs:label "participationBy"@en ;
-    rdfs:comment "The person or team participating in an event, season or action"en ;
+    rdfs:comment "The person or team participating in an event, season or action"@en ;
     rdfs:domain sport:Participation ;
     rdfs:range sport:Agent ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
@@ -234,7 +235,7 @@ sport:uniform-number rdf:type rdf:Property ;
 
 sport:alignment rdf:type rdf:Property ;
     rdfs:label "alignment"@en ;
-    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"en ;
+    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"@en ;
     rdfs:domain sport:TeamParticipation ;
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
