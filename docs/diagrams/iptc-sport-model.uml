@@ -1,63 +1,79 @@
 @startuml
 !theme cerulean-outline
-class Sport {
-  name : string
-}
+
+' IPTC Sport Model - last updated 2021-10-13
+
+' RDF Classes defined in our ontology:
 class Season {
   name : string
 }
+
 class Event {
   season-week : integer
   attendance : integer
   startDate : date
 }
-class Action {
-}
-class Participation {
-}
+
+class Action { }
+
+class Participation { }
+
+' TeamParticipation is a subclass of Participation
+Participation <|-- TeamParticipation
 class TeamParticipation {
-  score
+  score : integer
   alignment : CV Value
 }
+
+Participation <|-- IndividualParticipation
 class IndividualParticipation {
-  score
+  score : integer
   sportaction:role : CV Value
   player-status : CV Value
   position-event : CV Value
 }
-class Site {
-  name : string
-}
+
+Participation <|-- OfficialParticipation
+class OfficialParticipation { }
+
+Participation <|-- ManagerialParticipation
+class ManagerialParticipation { }
+
 class Agent {
   name : string
 }
-class Team {
-}
+
+Agent <|-- Team
+class Team { }
+
+Agent <|-- Individual
 class Individual {
   position-regular : CV Value
 }
+
+Individual <|-- Athlete
 class Athlete {
   uniform-number : integer
 }
-class Associate {
-}
-Participation <|-- TeamParticipation
-Participation <|-- IndividualParticipation
-Participation <|-- OfficialParticipation
-Participation <|-- ManagerialParticipation
-Agent <|-- Team
-Agent <|-- Individual
-Individual <|-- Athlete
+
 Individual <|-- Associate
+class Associate { }
+
+class Site {
+  name : string
+}
+
+' Object properties - relationships between classes
+
 Action .. Event : > event
-Action .. Participation : > participation
-Event .. Sport : > sport
-Event .. Participation : > participation
 Event .. Season : season
+Action .. Participation : > participation
+Event .. Participation : > participation
 Season .. Participation : > participation
 Participation .. Participation : participationSplit
+Event .. Event : > subEvent
 Participation .. Agent : > participationBy
-Event .. Site :  > venue
-Team .. Athlete : > hasAthlete
+Team .. Athlete : > athlete
 Team .. Associate : > coach
+Event .. Site :  > site
 @enduml
