@@ -1,111 +1,485 @@
 {
-  "@context": {
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "schema": "https://schema.org/",
-    "sport": "https://iptc.org/std-dev/SportsRDF/iptc-sport-ontology.jsonld"
+  "@context" : {
+    "schemaorg" : "https://schema.org/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "sport" : "http://www.iptc.org/ontologies/sport/"
   },
-  "@graph": [
-    {
-      "@id": "sport:CollegeOrUniversity",
-      "@type": "owl:Ontology",
-      "rdfs:label": "IPTC Sport Ontology",
-      "rdfs:comment": "A high level model to describe the core elements of competitive sport."
+  "@graph" : [ {
+    "@id" : "http://www.iptc.org/ontologies/sport/",
+    "@type" : "owl:Ontology",
+    "created" : "2021-07-20",
+    "creator" : {
+      "@language" : "en",
+      "@value" : "IPTC Sports Content Working Group"
     },
-    {
-      "@id": "sport:Event",
-      "@type": "owl:Class",
-      "rdfs:label": "Event",
-      "rdfs:comment": "An individual sport event. match, race etc."
+    "description" : {
+      "@language" : "en",
+      "@value" : "A high level model to describe the core elements of competitive sport"
     },
-    {
-      "@id": "sport:startdate",
-      "@type": "owl:DatatypeProperty",
-      "rdfs:label": "startdate",
-      "rdfs:comment": "Start date of the event",
-      "rdfs:domain": "sport:Event",
-      "rdfs:range": "xsd:date"
+    "license" : "https://creativecommons.org/licenses/by/4.0/",
+    "rights" : {
+      "@language" : "en",
+      "@value" : "Copyright (C) International Press Telecommunications Council 2021"
     },
-    {
-      "@id": "sport:enddate",
-      "@type": "owl:DatatypeProperty",
-      "rdfs:label": "enddate",
-      "rdfs:comment": "End date of the event",
-      "rdfs:domain": "sport:Event",
-      "rdfs:range": "xsd:date"
-    },
-    {
-      "@id": "sport:Participation",
-      "@type": "owl:Class",
-      "rdfs:label": "Participation",
-      "rdfs:comment": "An actor participating of an event."
-    },
-    {
-      "@id": "sport:TeamParticipation",
-      "@type": "owl:Class",
-      "rdfs:label": "TeamParticipation",
-      "rdfs:subClass": "sport:Participation",
-      "rdfs:comment": "The participation of a team"
-    },
-    {
-      "@id": "sport:IndividualParticipation",
-      "@type": "owl:Class",
-      "rdfs:label": "IndividualParticipation",
-      "rdfs:subClass": "sport:Participation",
-      "rdfs:comment": "The participation of an individual"
-    },
-    {
-      "@id": "sport:OfficialParticipation",
-      "@type": "owl:Class",
-      "rdfs:label": "OfficialParticipation",
-      "rdfs:subClass": "sport:Participation", 
-      "rdfs:comment": "The participation of an event offcial"
-    },
-    {
-      "@id": "sport:ManagerialParticipation",
-      "@type": "owl:Class",
-      "rdfs:label": "ManagerialParticipation",
-      "rdfs:subClass": "sport:Participation",
-      "rdfs:comment": "The particpation of a managerial individual"
-    },
-    {
-      "@id": "sport:Agent",
-      "@type": "owl:Class",
-      "rdfs:label": "Agent",
-      "rdfs:comment": "A participant of a sport event."
-    },
-    {
-      "@id": "sport:Team",
-      "@type": "owl:Class",
-      "rdfs:label": "Team",
-      "rdfs:subClassOf": "sport:Agent",
-      "rdfs:comment": "A type of agent that is a team"
-    },
-    {
-
-      "@id": "sport:Person",
-      "@type": "owl:Class",
-      "rdfs:label": "Person",
-      "rdfs:subClassOf": "sport:Agent",
-      "rdfs:comment": "A type of agent that is a person"
-    },
-    {
-      "@id": "sport:hasParticipation",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": "hasParticipation",
-      "rdfs:comment": "A participation by an agent in a event",
-      "rdfs:domain": "sport:Event",
-      "rdfs:range": "sport:Participation"
-    },
-    {
-      "@id": "sport:score",
-      "@type": "owl:DatatypeProperty",
-      "rdfs:label": "score",
-      "rdfs:comment": "A teams score",
-      "rdfs:domain": "sport:TeamParticipation",
-      "rdfs:range": "xsd:integer"
+    "title" : {
+      "@language" : "en",
+      "@value" : "IPTC Sport ontology"
     }
+  }, {
+    "@id" : "sport:Action",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Something that happens during an event: a kick, a goal, a foul etc"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Action"
+    }
+  }, {
+    "@id" : "sport:Agent",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A participant in a sport event."
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Agent"
+    }
+  }, {
+    "@id" : "sport:Associate",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Associate"
+    },
+    "subClassOf" : "sport:Individual"
+  }, {
+    "@id" : "sport:Athlete",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A competitor in an individual event or a member of a team"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Athlete"
+    },
+    "subClassOf" : "sport:Individual"
+  }, {
+    "@id" : "sport:Event",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An individual sport event: a match, race etc."
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Event"
+    }
+  }, {
+    "@id" : "sport:Individual",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Individual"
+    },
+    "subClassOf" : "sport:Agent"
+  }, {
+    "@id" : "sport:IndividualParticipation",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The participation of an individual in an event"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "IndividualParticipation"
+    },
+    "range" : "sport:Individual",
+    "subClassOf" : "sport:Participation"
+  }, {
+    "@id" : "sport:ManagerialParticipation",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The particpation of a managerial individual in an event"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "ManagerialParticipation"
+    },
+    "range" : "sport:Individual",
+    "subClassOf" : "sport:Participation"
+  }, {
+    "@id" : "sport:OfficialParticipation",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The participation of an offcial in an event"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "OfficialParticipation"
+    },
+    "range" : "sport:Individual",
+    "subClassOf" : "sport:Participation"
+  }, {
+    "@id" : "sport:Participation",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The participation of an actor in an event."
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Participation"
+    }
+  }, {
+    "@id" : "sport:Season",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A grouping of events usually based on proximity by time."
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Season"
+    }
+  }, {
+    "@id" : "sport:Site",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The location where an Event takes place"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Site"
+    }
+  }, {
+    "@id" : "sport:Team",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A group of individuals competing as one entity"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Team"
+    },
+    "subClassOf" : "sport:Agent"
+  }, {
+    "@id" : "sport:TeamParticipation",
+    "@type" : "rdfs:Class",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The participation of a team in an event"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "TeamParticipation"
+    },
+    "range" : "sport:Team",
+    "subClassOf" : "sport:Participation"
+  }, {
+    "@id" : "sport:alignment",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The association between a Team and a Site, e.g. 'home' or 'away'"
+    },
+    "domain" : "sport:TeamParticipation",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "alignment"
+    },
+    "range" : "xsd:anyURI"
+  }, {
+    "@id" : "sport:athlete",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A member of a team"
+    },
+    "domain" : "sport:Team",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "athlete"
+    },
+    "range" : "sport:Athlete"
+  }, {
+    "@id" : "sport:attendance",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The number of people attending an event"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Attendance"
+    },
+    "range" : "xsd:integer"
+  }, {
+    "@id" : "sport:coach",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A coach or manager of a team or individual, trainer of a horse etc"
+    },
+    "domain" : "sport:Team",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "coach"
+    },
+    "range" : "sport:Associate"
+  }, {
+    "@id" : "sport:event",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The event in which an Action took place"
+    },
+    "domain" : "sport:Action",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "event"
+    },
+    "range" : "sport:Event"
+  }, {
+    "@id" : "sport:name",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The name of an agent (team, player, official), or season"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Name"
+    },
+    "range" : "xsd:string",
+    "domainIncludes" : [ "sport:Season", "sport:Agent" ]
+  }, {
+    "@id" : "sport:participation",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A participation by an agent in a season, event or action"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "participation"
+    },
+    "range" : "sport:Participation",
+    "domainIncludes" : [ "sport:Action", "sport:Event", "sport:Season" ]
+  }, {
+    "@id" : "sport:participationBy",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The person or team participating in an event, season or action"
+    },
+    "domain" : "sport:Participation",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "participationBy"
+    },
+    "range" : "sport:Agent"
+  }, {
+    "@id" : "sport:participationSplit",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."
+    },
+    "domain" : "sport:Participation",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Participation Split"
+    },
+    "range" : "sport:Participation"
+  }, {
+    "@id" : "sport:player-status",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "Player status for a given event (e.g. starter or bench)"
+    },
+    "domain" : "sport:IndividualParticipation",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Status"
+    },
+    "range" : "xsd:anyURI"
+  }, {
+    "@id" : "sport:position-event",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The position in a team taken for an individual event"
+    },
+    "domain" : "sport:IndividualParticipation",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Position (event)"
+    },
+    "range" : "xsd:anyURI"
+  }, {
+    "@id" : "sport:position-regular",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The position in a team usually taken by a given player or associate"
+    },
+    "domain" : "sport:Individual",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Position (regular)"
+    },
+    "range" : "xsd:string"
+  }, {
+    "@id" : "sport:score",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "A team's or individual's score in a given event"
+    },
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Score"
+    },
+    "range" : "xsd:integer",
+    "schemaorg:domain" : [ {
+      "@id" : "sport:IndividualParticipation"
+    }, {
+      "@id" : "sport:TeamParticipation"
+    } ]
+  }, {
+    "@id" : "sport:season",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The season in which an Event took place"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "season"
+    },
+    "range" : "sport:Season"
+  }, {
+    "@id" : "sport:season-week",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The week in a season when a given event takes place"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Season Week"
+    },
+    "range" : "xsd:integer"
+  }, {
+    "@id" : "sport:site",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The location where an event takes place"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Site"
+    },
+    "range" : "sport:Site"
+  }, {
+    "@id" : "sport:startDate",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The date on which an event begins"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "startDate"
+    },
+    "range" : "xsd:date"
+  }, {
+    "@id" : "sport:subEvent",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "An event that is part of another event, such as an individual horse race as part of a racing meet. NOTE: We may change this to be a TournamentPart class linking to Event"
+    },
+    "domain" : "sport:Event",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Sub-event"
+    },
+    "range" : "sport:Event"
+  }, {
+    "@id" : "sport:uniform-number",
+    "@type" : "rdf:Property",
+    "comment" : {
+      "@language" : "en",
+      "@value" : "The number usually worn on a player's uniform (jersey etc.)"
+    },
+    "domain" : "sport:Athlete",
+    "isDefinedBy" : "http://www.iptc.org/ontologies/sport/",
+    "label" : {
+      "@language" : "en",
+      "@value" : "Uniform number"
+    },
+    "range" : "xsd:integer"
+  }
   ]
 }
