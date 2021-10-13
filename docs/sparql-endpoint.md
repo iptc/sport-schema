@@ -7,13 +7,13 @@ which can then be queried to test our sample queries.
 
 ## Loading data into a TDB2 datastore
 
-`tdb2.tdbloader --loc test.db samples/ttl/soccer-match-01.ttl`
+`tdb2.tdbloader --loc sportdb samples/ttl/*.ttl`
 
 (note: should we use --graph to load data into a named graph??)
 
 Once the data is loaded into the TDB2 file, it can be queried using the `tdb2.tdbquery` tool:
 
-`tdb2.tdbquery --loc test.db --query queries/season-team-players.rq`
+`tdb2.tdbquery --loc sportdb --query queries/season-team-players.rq`
 
 ## Turning the data file into a SPARQL endpoint
 
@@ -21,7 +21,7 @@ If you install Apache Jena's Fuseki package (a separate download from the
 [Jena downloads page](https://jena.apache.org/download/index.cgi), then it's easy to
 turn the TDB2 file into the data store for a SPARQL server:
 
-`fuseki-server --tdb2 --loc test.db /sport`
+`fuseki-server --tdb2 --loc sportdb /sport`
 
 Fuseki has a Web UI, go to `http://localhost:3030/` to explore it.
 
