@@ -1,0 +1,73 @@
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+
+<http://sport.org/Team/TFBB251>
+        a           sport:Team ;
+        sport:name  "Benfica" .
+
+<http://sport.org/Participation/EFBO782701-TFBB251>
+        a                      sport:TeamParticipation ;
+        spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
+        spstat:score           "0" ;
+        spstat:score-opposing  "2" ;
+        sport:alignment        "home" ;
+        sport:participationBy  <http://sport.org/Team/TFBB251> .
+
+<http://sport.org/Participation/EFBO782701-PO41189>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO41189> .
+
+<http://sport.org/Athlete/PO41189>
+        a       sport:Athlete .
+
+<http://sport.org/Participation/EFBO782701--EFBO782701-PO53645>
+        sport:participationBy  <http://sport.org/Athlete/EFBO782701-PO53645> .
+
+<http://sport.org/Site/VFBB2713>
+        a           sport:Site ;
+        sport:name  "Estádio da Luz" .
+
+<http://sport.org/Participation/EFBO782701-PO53645>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO53645> .
+
+<http://sport.org/Team/TFBB1341>
+        a              sport:Team ;
+        sport:athlete  <http://sport.org/Athlete/PO41189> , <http://sport.org/Athlete/PO53645> ;
+        sport:name     "Zenit St Petersburg" .
+
+<http://sport.org/Athlete/PO53645>
+        a       sport:Athlete .
+
+<http://sport.org/Event/EFBO782701>
+        a                           sport:Event ;
+        sport:competition           <http://sport.org/Season/l.uefa.org.champions-2014> ;
+        sport:competition-form      <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
+        sport:competition-phase     <http://cv.iptc.org/newscodes/sptournamentphase/group> ;
+        sport:event-outcome-type    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:event-status          <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:participation         <http://sport.org/Participation/EFBO782701-PO41189> , <http://sport.org/Participation/EFBO782701-TFBB251> , <http://sport.org/Participation/EFBO782701-TFBB1341> , <http://sport.org/Participation/EFBO782701-PO53645> ;
+        sport:phase-id              <http://cv.iptc.org/newscodes/Phase/l.uefa.org.champions-2014-group-3> ;
+        sport:recurringCompetition  <http://sport.org/League/l.uefa.org.champions> ;
+        sport:site                  <http://sport.org/Site/VFBB2713> ;
+        sport:sport                 <http://cv.iptc.org/newscodes/mediatopic/20001065> ;
+        sport:startDate             "2014-09-16T19:45:00+01:00"^^xsd:dateTime .
+
+<http://sport.org/Participation/EFBO782701-TFBB1341>
+        a                      sport:TeamParticipation ;
+        spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/win> ;
+        spstat:score           "2" ;
+        spstat:score-opposing  "0" ;
+        sport:alignment        "away" ;
+        sport:participationBy  <http://sport.org/Team/TFBB1341> .

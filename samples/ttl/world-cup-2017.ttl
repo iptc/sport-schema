@@ -1,0 +1,87 @@
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+
+<http://sport.org/Participation/WC-2017-e.958022-PO40398>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO40398> .
+
+<http://sport.org/Participation/WC-2017-e.958022--EFBO958022-PO166015>
+        sport:participationBy  <http://sport.org/Athlete/EFBO958022-PO166015> .
+
+<http://sport.org/Participation/WC-2017-e.958022-t.1264>
+        a                      sport:TeamParticipation ;
+        spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
+        spstat:score           "0" ;
+        spstat:score-opposing  "5" ;
+        sport:alignment        "away" ;
+        sport:participationBy  <http://sport.org/Team/t.1264> .
+
+<http://sport.org/Participation/WC-2017-e.958022-PO166015>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO166015> .
+
+<http://sport.org/Site/s.2311>
+        a           sport:Site ;
+        sport:name  "Luzhniki Stadium" .
+
+<http://sport.org/Participation/WC-2017-e.958022-PO88489>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO88489> .
+
+<http://sport.org/Athlete/PO166015>
+        a       sport:Athlete .
+
+<http://sport.org/Team/t.1264>
+        a           sport:Team ;
+        sport:name  "Saudi Arabia" .
+
+<http://sport.org/Athlete/PO40398>
+        a       sport:Athlete .
+
+<http://sport.org/Event/WC-2017-e.958022>
+        a                           sport:Event ;
+        sport:competition           <http://sport.org/Season/WC-2017> ;
+        sport:competition-form      <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
+        sport:competition-phase     <http://cv.iptc.org/newscodes/sptournamentphase/group> ;
+        sport:event-outcome-type    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:event-status          <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:participation         <http://sport.org/Participation/WC-2017-e.958022-t.1264> , <http://sport.org/Participation/WC-2017-e.958022-PO161950> , <http://sport.org/Participation/WC-2017-e.958022-T276> , <http://sport.org/Participation/WC-2017-e.958022-PO88489> , <http://sport.org/Participation/WC-2017-e.958022-PO40398> , <http://sport.org/Participation/WC-2017-e.958022-PO166015> ;
+        sport:phase-id              <http://cv.iptc.org/newscodes/Phase/WC-2017-group-1> ;
+        sport:recurringCompetition  <http://sport.org/League/WC> ;
+        sport:site                  <http://sport.org/Site/s.2311> ;
+        sport:sport                 <http://cv.iptc.org/newscodes/mediatopic/20001065> ;
+        sport:startDate             "2018-06-14T16:00:00+01:00"^^xsd:dateTime .
+
+<http://sport.org/Participation/WC-2017-e.958022-PO161950>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://sport.org/Athlete/PO161950> .
+
+<http://sport.org/Team/T276>
+        a              sport:Team ;
+        sport:athlete  <http://sport.org/Athlete/PO161950> , <http://sport.org/Athlete/PO40398> , <http://sport.org/Athlete/PO88489> , <http://sport.org/Athlete/PO166015> ;
+        sport:name     "Russia" .
+
+<http://sport.org/Participation/WC-2017-e.958022-T276>
+        a                      sport:TeamParticipation ;
+        spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/win> ;
+        spstat:score           "5" ;
+        spstat:score-opposing  "0" ;
+        sport:alignment        "home" ;
+        sport:participationBy  <http://sport.org/Team/T276> .
+
+<http://sport.org/Athlete/PO161950>
+        a       sport:Athlete .
+
+<http://sport.org/Athlete/PO88489>
+        a       sport:Athlete .
