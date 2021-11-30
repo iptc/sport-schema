@@ -85,6 +85,46 @@
     },
     "startDate" : "2018-12-12T14:00:00"
   }, {
+    "@id" : "http://sport.org/Membership/team_6134-10",
+    "membershipBy" : "http://sport.org/Athlete/10",
+    "membershipOf" : "http://sport.org/Team/team_6134"
+  }, {
+    "@id" : "http://sport.org/Membership/team_6134-11",
+    "membershipBy" : "http://sport.org/Athlete/11",
+    "membershipOf" : "http://sport.org/Team/team_6134"
+  }, {
+    "@id" : "http://sport.org/Membership/team_6134-12",
+    "membershipBy" : "http://sport.org/Athlete/12",
+    "membershipOf" : "http://sport.org/Team/team_6134"
+  }, {
+    "@id" : "http://sport.org/Membership/team_6134-13",
+    "membershipBy" : "http://sport.org/Athlete/13",
+    "membershipOf" : "http://sport.org/Team/team_6134"
+  }, {
+    "@id" : "http://sport.org/Membership/team_6134-14",
+    "membershipBy" : "http://sport.org/Athlete/14",
+    "membershipOf" : "http://sport.org/Team/team_6134"
+  }, {
+    "@id" : "http://sport.org/Membership/team_9572-15",
+    "membershipBy" : "http://sport.org/Athlete/15",
+    "membershipOf" : "http://sport.org/Team/team_9572"
+  }, {
+    "@id" : "http://sport.org/Membership/team_9572-16",
+    "membershipBy" : "http://sport.org/Athlete/16",
+    "membershipOf" : "http://sport.org/Team/team_9572"
+  }, {
+    "@id" : "http://sport.org/Membership/team_9572-17",
+    "membershipBy" : "http://sport.org/Athlete/17",
+    "membershipOf" : "http://sport.org/Team/team_9572"
+  }, {
+    "@id" : "http://sport.org/Membership/team_9572-18",
+    "membershipBy" : "http://sport.org/Athlete/18",
+    "membershipOf" : "http://sport.org/Team/team_9572"
+  }, {
+    "@id" : "http://sport.org/Membership/team_9572-19",
+    "membershipBy" : "http://sport.org/Athlete/19",
+    "membershipOf" : "http://sport.org/Team/team_9572"
+  }, {
     "@id" : "http://sport.org/Participation/5120-10",
     "@type" : "sport:IndividualParticipation",
     "ADR" : "65,9",
@@ -531,12 +571,12 @@
   }, {
     "@id" : "http://sport.org/Team/team_6134",
     "@type" : "sport:Team",
-    "athlete" : [ "http://sport.org/Athlete/10", "http://sport.org/Athlete/11", "http://sport.org/Athlete/12", "http://sport.org/Athlete/13", "http://sport.org/Athlete/14" ],
+    "membership" : [ "http://sport.org/Membership/team_6134-10", "http://sport.org/Membership/team_6134-11", "http://sport.org/Membership/team_6134-12", "http://sport.org/Membership/team_6134-13", "http://sport.org/Membership/team_6134-14" ],
     "name" : "Kinguin"
   }, {
     "@id" : "http://sport.org/Team/team_9572",
     "@type" : "sport:Team",
-    "athlete" : [ "http://sport.org/Athlete/15", "http://sport.org/Athlete/16", "http://sport.org/Athlete/17", "http://sport.org/Athlete/18", "http://sport.org/Athlete/19" ],
+    "membership" : [ "http://sport.org/Membership/team_9572-15", "http://sport.org/Membership/team_9572-16", "http://sport.org/Membership/team_9572-17", "http://sport.org/Membership/team_9572-18", "http://sport.org/Membership/team_9572-19" ],
     "name" : "Ex-Space Soldiers"
   } ],
   "@context" : {
@@ -587,6 +627,14 @@
       "@id" : "http://cv.iptc.org/newscodes/spstat/event-outcome",
       "@type" : "@id"
     },
+    "membershipOf" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipOf",
+      "@type" : "@id"
+    },
+    "membershipBy" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
+      "@type" : "@id"
+    },
     "date-of-birth" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/date-of-birth",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
@@ -594,8 +642,8 @@
     "name" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/name"
     },
-    "athlete" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/athlete",
+    "membership" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
     },
     "participation" : {
