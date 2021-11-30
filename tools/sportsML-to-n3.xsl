@@ -221,14 +221,14 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="substring-after(newsml:standing-metadata/@competition,':')"/>
         </xsl:variable>
 
-        <xsl:variable name="season-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Season/',$season-key,'»')"/></xsl:variable>
+        <xsl:variable name="season-id"><xsl:value-of select="concat('«',$sport-vendor-ns,'Competition/',$season-key,'»')"/></xsl:variable>
 
         <xsl:call-template name="metadata-general">
             <xsl:with-param name="object-id" select="$season-id"/>
         </xsl:call-template>
 
         <!-- declare sports season type -->
-        <xsl:value-of select="$season-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Season','»')"/> .
+        <xsl:value-of select="$season-id"/> «http://www.w3.org/1999/02/22-rdf-syntax-ns#type» <xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
         <xsl:apply-templates>
             <xsl:with-param name="season-key" select="$season-key"/>
             <xsl:with-param name="season-id" select="$season-id"/>
