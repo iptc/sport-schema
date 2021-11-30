@@ -53,6 +53,19 @@ class OfficialParticipation { }
 Participation <|-- ManagerialParticipation
 class ManagerialParticipation { }
 
+class Membership {
+  startDate : date
+  endDate : date
+}
+
+Membership <|-- TeamMembership
+class TeamMembership {
+}
+
+Membership <|-- ParentCompetitionMembership
+class ParentCompetitionMembership {
+}
+
 class Agent {
   name : string
 }
@@ -73,17 +86,11 @@ class Athlete {
 Individual <|-- Associate
 class Associate { }
 
-class Membership {
-  startDate : date
-  endDate : date
-}
-
 class Site {
   name : string
 }
 
 ' Object properties - relationships between classes
-
 
 Action .. Event : > event
 Competition .. ParentCompetition : > parentCompetition
@@ -98,7 +105,9 @@ Competition .. Participation : > participation
 Participation .. Participation : participationSplit
 Event .. Event : > subEvent
 Participation .. Agent : > participationBy
-Team .. Membership : < membershipOf
-Membership .. Individual : > membershipBy
+Team .. TeamMembership : < membershipOf
+TeamMembership .. Individual : > membershipBy
+ParentCompetition .. ParentCompetitionMembership : < membershipOf
+ParentCompetitionMembership .. Team : > membershipBy
 Event .. Site :  > site
 @enduml
