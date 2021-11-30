@@ -73,6 +73,11 @@ class Athlete {
 Individual <|-- Associate
 class Associate { }
 
+class Membership {
+  startDate : date
+  endDate : date
+}
+
 class Site {
   name : string
 }
@@ -93,7 +98,7 @@ Competition .. Participation : > participation
 Participation .. Participation : participationSplit
 Event .. Event : > subEvent
 Participation .. Agent : > participationBy
-Team .. Athlete : > athlete
-Team .. Associate : > coach
+Team .. Membership : < membershipOf
+Membership .. Individual : > membershipBy
 Event .. Site :  > site
 @enduml
