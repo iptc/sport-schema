@@ -1,11 +1,25 @@
 @startuml
 !theme cerulean-outline
 
-' IPTC Sport Model - last updated 2021-10-13
+' IPTC Sport Model - last updated 2021-11-16
 
 ' RDF Classes defined in our ontology:
-class Season {
+class GoverningBody {
   name : string
+}
+
+class ParentCompetition {
+  name : string
+}
+
+class Competition {
+  name : string
+}
+
+class CompetitionPhase {
+  name : string
+  competition-format : CV Value
+  competition-phase-type : CV Value
 }
 
 class Event {
@@ -65,11 +79,17 @@ class Site {
 
 ' Object properties - relationships between classes
 
+
 Action .. Event : > event
-Event .. Season : season
+Competition .. ParentCompetition : > parentCompetition
+CompetitionPhase .. Competition : > competition
+ParentCompetition .. GoverningBody : > governingBody
+Event .. Competition : competition
+Event .. ParentCompetition : parentCompetition
+Event .. CompetitionPhase : competitionPhase
 Action .. Participation : > participation
 Event .. Participation : > participation
-Season .. Participation : > participation
+Competition .. Participation : > participation
 Participation .. Participation : participationSplit
 Event .. Event : > subEvent
 Participation .. Agent : > participationBy
