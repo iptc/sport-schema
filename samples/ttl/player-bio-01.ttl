@@ -11,3 +11,43 @@
 @prefix sport: <http://www.iptc.org/ontologies/Sport/> .
 @prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+
+<http://sport.org/Membership/SJnhl-p10039>
+        sport:endDate       "2020-10-06"^^xsd:date ;
+        sport:membershipBy  <http://sport.org/Athlete/p10039> ;
+        sport:membershipOf  <http://sport.org/Team/l.nhl.com-t.24> ;
+        sport:startDate     "2005-11-30"^^xsd:date .
+
+<http://sport.org/Membership/BOSnhl-p10039>
+        sport:endDate       "2005-11-30"^^xsd:date ;
+        sport:membershipBy  <http://sport.org/Athlete/p10039> ;
+        sport:membershipOf  <http://sport.org/Team/l.nhl.com-t.24> ;
+        sport:startDate     "1997-06-21"^^xsd:date .
+
+<http://sport.org/Membership/l.nhl.com-t.24-p10039>
+        sport:membershipBy  <http://sport.org/Athlete/p10039> ;
+        sport:membershipOf  <http://sport.org/Team/l.nhl.com-t.24> .
+
+<http://sport.org/Membership/FLAnhl-p10039>
+        sport:membershipBy  <http://sport.org/Athlete/p10039> ;
+        sport:membershipOf  <http://sport.org/Team/l.nhl.com-t.24> ;
+        sport:startDate     "2021-08-13"^^xsd:date .
+
+<http://sport.org/Athlete/p10039>
+        a                       sport:Athlete ;
+        sport:date-of-birth     "1979-07-02"^^xsd:date ;
+        sport:name              "Joe Thornton" ;
+        sport:position-regular  <http://cv.iptc.org/newscodes/spichpos/center> ;
+        sport:sport             <http://cv.iptc.org/newscodes/mediatopic/15000000> ;
+        sport:uniform-number    "19" .
+
+<http://sport.org/Membership/TORnhl-p10039>
+        sport:endDate       "2021-05-31"^^xsd:date ;
+        sport:membershipBy  <http://sport.org/Athlete/p10039> ;
+        sport:membershipOf  <http://sport.org/Team/l.nhl.com-t.24> ;
+        sport:startDate     "2020-10-06"^^xsd:date .
+
+<http://sport.org/Team/l.nhl.com-t.24>
+        a                 sport:Team ;
+        sport:membership  <http://sport.org/Membership/FLAnhl-p10039> , <http://sport.org/Membership/TORnhl-p10039> , <http://sport.org/Membership/SJnhl-p10039> , <http://sport.org/Membership/BOSnhl-p10039> , <http://sport.org/Membership/l.nhl.com-t.24-p10039> ;
+        sport:name        "San Jose Sharks" .
