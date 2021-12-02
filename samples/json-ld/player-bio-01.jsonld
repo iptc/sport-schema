@@ -1,5 +1,83 @@
 {
+  "@graph" : [ {
+    "@id" : "http://sport.org/Athlete/p10039",
+    "@type" : "sport:Athlete",
+    "date-of-birth" : "1979-07-02",
+    "name" : "Joe Thornton",
+    "position-regular" : "http://cv.iptc.org/newscodes/spichpos/center",
+    "sport:sport" : {
+      "@id" : "http://cv.iptc.org/newscodes/mediatopic/15000000"
+    },
+    "uniform-number" : "19"
+  }, {
+    "@id" : "http://sport.org/Membership/BOSnhl-p10039",
+    "endDate" : "2005-11-30",
+    "membershipBy" : "http://sport.org/Athlete/p10039",
+    "membershipOf" : "http://sport.org/Team/l.nhl.com-t.24",
+    "startDate" : "1997-06-21"
+  }, {
+    "@id" : "http://sport.org/Membership/FLAnhl-p10039",
+    "membershipBy" : "http://sport.org/Athlete/p10039",
+    "membershipOf" : "http://sport.org/Team/l.nhl.com-t.24",
+    "startDate" : "2021-08-13"
+  }, {
+    "@id" : "http://sport.org/Membership/SJnhl-p10039",
+    "endDate" : "2020-10-06",
+    "membershipBy" : "http://sport.org/Athlete/p10039",
+    "membershipOf" : "http://sport.org/Team/l.nhl.com-t.24",
+    "startDate" : "2005-11-30"
+  }, {
+    "@id" : "http://sport.org/Membership/TORnhl-p10039",
+    "endDate" : "2021-05-31",
+    "membershipBy" : "http://sport.org/Athlete/p10039",
+    "membershipOf" : "http://sport.org/Team/l.nhl.com-t.24",
+    "startDate" : "2020-10-06"
+  }, {
+    "@id" : "http://sport.org/Membership/l.nhl.com-t.24-p10039",
+    "membershipBy" : "http://sport.org/Athlete/p10039",
+    "membershipOf" : "http://sport.org/Team/l.nhl.com-t.24"
+  }, {
+    "@id" : "http://sport.org/Team/l.nhl.com-t.24",
+    "@type" : "sport:Team",
+    "membership" : [ "http://sport.org/Membership/l.nhl.com-t.24-p10039", "http://sport.org/Membership/BOSnhl-p10039", "http://sport.org/Membership/SJnhl-p10039", "http://sport.org/Membership/TORnhl-p10039", "http://sport.org/Membership/FLAnhl-p10039" ],
+    "name" : "San Jose Sharks"
+  } ],
   "@context" : {
+    "startDate" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/startDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "membershipOf" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipOf",
+      "@type" : "@id"
+    },
+    "membershipBy" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
+      "@type" : "@id"
+    },
+    "endDate" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "uniform-number" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/uniform-number"
+    },
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
+    "position-regular" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/position-regular",
+      "@type" : "@id"
+    },
+    "name" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/name"
+    },
+    "date-of-birth" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/date-of-birth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "membership" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membership",
+      "@type" : "@id"
+    },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
@@ -10,7 +88,6 @@
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
     "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }
