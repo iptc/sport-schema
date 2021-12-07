@@ -17,9 +17,24 @@
 
 ##### Classes #####
 
-sport:Season rdf:type rdfs:Class ;
-    rdfs:label "Season"@en ;
+sport:GoverningBody rdf:type rdfs:Class ;
+    rdfs:label "Governing Body"@en ;
+    rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:ParentCompetition rdf:type rdfs:Class ;
+    rdfs:label "Parent Competition"@en ;
+    rdfs:comment "The generic competition that contains many seasons, e.g. NFL or WTA."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:Competition rdf:type rdfs:Class ;
+    rdfs:label "Competition"@en ;
     rdfs:comment "A grouping of events usually based on proximity by time."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:CompetitionPhase rdf:type rdfs:Class ;
+    rdfs:label "Competition Phase"@en ;
+    rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Event rdf:type rdfs:Class ;
@@ -61,6 +76,23 @@ sport:ManagerialParticipation rdf:type rdfs:Class ;
     rdfs:comment "The particpation of a managerial individual in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
+sport:Membership rdf:type rdfs:Class ;
+    rdfs:label "Membership"@en ;
+    rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:TeamMembership rdf:type rdfs:Class ;
+    rdfs:label "Team Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A player's membership in a team"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:ParentCompetitionMembership rdf:type rdfs:Class ;
+    rdfs:label "Parent Competition Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A team's membership in a (parent) competition"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
 sport:Agent rdf:type rdfs:Class ;
     rdfs:label "Agent"@en ;
     rdfs:comment "A participant in a sport event."@en ;
@@ -97,11 +129,25 @@ sport:Site rdf:type rdfs:Class ;
 
 ##### Object properties #####
 
-sport:season rdf:type rdf:Property ;
-    rdfs:label "season"@en ;
-    rdfs:comment "The season in which an Event took place"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Season ;
+sport:parentCompetition rdf:type rdf:Property ;
+    rdfs:label "parent competition"@en ;
+    rdfs:comment "The ParentCompetition of a Competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:ParentCompetition ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:competition rdf:type rdf:Property ;
+    rdfs:label "competition"@en ;
+    rdfs:comment "The Competition that an Event or CompetitionPhase is part of"@en ;
+    rdfs:domainIncludes sport:CompetitionPhase, sport:Event ;
+    rdfs:range sport:Competition ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:governingBody rdf:type rdf:Property ;
+    rdfs:label "governing body"@en ;
+    rdfs:comment "The organisation that regulates a given Parent Competition"@en ;
+    rdfs:domain sport:ParentCompetition ;
+    rdfs:range sport:GoverningBody ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:event rdf:type rdf:Property ;
@@ -234,3 +280,4 @@ sport:alignment rdf:type rdf:Property ;
     rdfs:domain sport:TeamParticipation ;
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
