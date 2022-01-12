@@ -53,25 +53,25 @@ sport:Participation rdf:type rdfs:Class ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:TeamParticipation rdf:type rdfs:Class ;
-    rdfs:label "TeamParticipation"@en ;
+    rdfs:label "Team Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of a team in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:IndividualParticipation rdf:type rdfs:Class ;
-    rdfs:label "IndividualParticipation"@en ;
+    rdfs:label "Individual Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an individual in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:OfficialParticipation rdf:type rdfs:Class ;
-    rdfs:label "OfficialParticipation"@en ;
+    rdfs:label "Official Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an offcial in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:ManagerialParticipation rdf:type rdfs:Class ;
-    rdfs:label "ManagerialParticipation"@en ;
+    rdfs:label "Managerial Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The particpation of a managerial individual in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
@@ -81,16 +81,10 @@ sport:Membership rdf:type rdfs:Class ;
     rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:TeamMembership rdf:type rdfs:Class ;
-    rdfs:label "Team Membership"@en ;
+sport:IndividualMembership rdf:type rdfs:Class ;
+    rdfs:label "Individual Membership"@en ;
     rdfs:subClassOf sport:Membership ;
     rdfs:comment "A player's membership in a team"@en ;
-    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
-
-sport:ParentCompetitionMembership rdf:type rdfs:Class ;
-    rdfs:label "Parent Competition Membership"@en ;
-    rdfs:subClassOf sport:Membership ;
-    rdfs:comment "A team's membership in a (parent) competition"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:Agent rdf:type rdfs:Class ;
@@ -155,6 +149,14 @@ sport:event rdf:type rdf:Property ;
     rdfs:comment "The event in which an Action took place"@en ;
     rdfs:domain sport:Action ;
     rdfs:range sport:Event ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+
+sport:event-status rdf:type rdf:Property ;
+    rdfs:label "Event Status"@en ;
+    rdfs:comment "Event's current status (e.g. post-event)"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:anyURI ;
+    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:participation rdf:type rdf:Property ;
@@ -260,7 +262,7 @@ sport:position-event rdf:type rdf:Property ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
 sport:player-status rdf:type rdf:Property ;
-    rdfs:label "Status"@en ;
+    rdfs:label "Player Status"@en ;
     rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
     rdfs:domain sport:IndividualParticipation ;
     rdfs:range xsd:anyURI ;
