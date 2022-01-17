@@ -5,32 +5,37 @@
 
 ' RDF Classes defined in our ontology:
 class GoverningBody {
-  name : string
+  rdfs:label : string
 }
 
 class ParentCompetition {
-  name : string
+  rdfs:label : string
 }
 
 class Competition {
-  name : string
+  rdfs:label : string
 }
 
 class CompetitionPhase {
-  name : string
+  rdfs:label : string
   competition-format : CV Value
   competition-phase-type : CV Value
 }
 
 class Event {
-  season-week : integer
+  rdfs:label : string
+  seasonWeek : integer
   attendance : integer
   startDate : date
 }
 
-class Action { }
+class Action {
+  rdfs:label : string
+}
 
-class Participation { }
+class Participation {
+  rdfs:label : string
+}
 
 ' TeamParticipation is a subclass of Participation
 Participation <|-- TeamParticipation
@@ -54,6 +59,7 @@ Participation <|-- ManagerialParticipation
 class ManagerialParticipation { }
 
 class Membership {
+  rdfs:label : string
   startDate : date
   endDate : date
 }
