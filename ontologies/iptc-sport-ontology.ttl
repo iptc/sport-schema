@@ -151,7 +151,7 @@ sport:event rdf:type rdf:Property ;
     rdfs:range sport:Event ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:event-status rdf:type rdf:Property ;
+sport:eventStatus rdf:type rdf:Property ;
     rdfs:label "Event Status"@en ;
     rdfs:comment "Event's current status (e.g. post-event)"@en ;
     rdfs:domain sport:Event ;
@@ -210,14 +210,9 @@ sport:site rdf:type rdf:Property ;
 
 ##### Data properties #####
 
-sport:name rdf:type rdf:Property ;
-    rdfs:label "Name"@en ;
-    rdfs:comment "The name of an agent (team, player, official), or season"@en ;
-    schemaorg:domainIncludes sport:Agent, sport:Season ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
+# NB "sport:name" has been removed in favour of rdfs:label
 
-sport:season-week rdf:type rdf:Property ;
+sport:seasonWeek rdf:type rdf:Property ;
     rdfs:label "Season Week"@en ;
     rdfs:comment "The week in a season when a given event takes place"@en ;
     rdfs:domain sport:Event ;
@@ -245,7 +240,7 @@ sport:score rdf:type rdf:Property ;
     rdfs:range xsd:integer ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:position-regular rdf:type rdf:Property ;
+sport:positionRegular rdf:type rdf:Property ;
     rdfs:label "Position (regular)"@en ;
     rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
     rdfs:domain sport:Individual ;
@@ -253,7 +248,7 @@ sport:position-regular rdf:type rdf:Property ;
     # Recommended values: <http://cv.iptc.org/newscodes/spsocpos/>
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:position-event rdf:type rdf:Property ;
+sport:positionEvent rdf:type rdf:Property ;
     rdfs:label "Position (event)"@en ;
     rdfs:comment "The position in a team taken for an individual event"@en ;
     rdfs:domain sport:IndividualParticipation ;
@@ -261,7 +256,7 @@ sport:position-event rdf:type rdf:Property ;
     # Recommended values: <http://cv.iptc.org/newscodes/spsocpos/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:player-status rdf:type rdf:Property ;
+sport:playerStatus rdf:type rdf:Property ;
     rdfs:label "Player Status"@en ;
     rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
     rdfs:domain sport:IndividualParticipation ;
@@ -269,7 +264,7 @@ sport:player-status rdf:type rdf:Property ;
     # Recommended values: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/sport/> .
 
-sport:uniform-number rdf:type rdf:Property ;
+sport:uniformNumber rdf:type rdf:Property ;
     rdfs:label "Uniform number"@en ;
     rdfs:comment "The number usually worn on a player's uniform (jersey etc.)"@en ;
     rdfs:domain sport:Athlete ;
