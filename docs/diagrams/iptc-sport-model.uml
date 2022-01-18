@@ -68,10 +68,6 @@ Membership <|-- TeamMembership
 class TeamMembership {
 }
 
-Membership <|-- ParentCompetitionMembership
-class ParentCompetitionMembership {
-}
-
 class Agent {
   name : string
 }
@@ -113,7 +109,5 @@ Event .. Event : > subEvent
 Participation .. Agent : > participationBy
 Team .. TeamMembership : < membershipOf
 TeamMembership .. Individual : > membershipBy
-ParentCompetition .. ParentCompetitionMembership : < membershipOf
-ParentCompetitionMembership .. Team : > membershipBy
 Event .. Site :  > site
 @enduml
