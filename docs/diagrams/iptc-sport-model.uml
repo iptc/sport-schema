@@ -64,8 +64,8 @@ class Membership {
   endDate : date
 }
 
-Membership <|-- TeamMembership
-class TeamMembership {
+Membership <|-- IndividualMembership
+class IndividualMembership {
 }
 
 class Agent {
@@ -107,7 +107,7 @@ Competition .. Participation : > participation
 Participation .. Participation : participationSplit
 Event .. Event : > subEvent
 Participation .. Agent : > participationBy
-Team .. TeamMembership : < membershipOf
-TeamMembership .. Individual : > membershipBy
+Team .. IndividualMembership : < membershipOf
+IndividualMembership .. Individual : > membershipBy
 Event .. Site :  > site
 @enduml
