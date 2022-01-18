@@ -1,7 +1,7 @@
 @startuml
 !theme cerulean-outline
 
-' IPTC Sport Model - last updated 2021-11-16
+' IPTC Sport Model - last updated 2022-01-18
 
 ' RDF Classes defined in our ontology:
 class GoverningBody {
@@ -18,8 +18,8 @@ class Competition {
 
 class CompetitionPhase {
   rdfs:label : string
-  competition-format : CV Value
-  competition-phase-type : CV Value
+  competitionFormat : CV Value
+  competitionPhaseType : CV Value
 }
 
 class Event {
@@ -48,8 +48,8 @@ Participation <|-- IndividualParticipation
 class IndividualParticipation {
   score : integer
   sportaction:role : CV Value
-  player-status : CV Value
-  position-event : CV Value
+  playerStatus : CV Value
+  positionEvent : CV Value
 }
 
 Participation <|-- OfficialParticipation
@@ -77,12 +77,12 @@ class Team { }
 
 Agent <|-- Individual
 class Individual {
-  position-regular : CV Value
+  positionRegular : CV Value
 }
 
 Individual <|-- Athlete
 class Athlete {
-  uniform-number : integer
+  uniformNumber : integer
 }
 
 Individual <|-- Associate
