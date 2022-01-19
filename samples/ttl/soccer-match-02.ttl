@@ -1,234 +1,240 @@
-@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema/> .
-@prefix schemaorg:      <https://schema.org/> .
-@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 
-<http://sport.org/Participation/e.2128610-p.57328>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.57328> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+<http://example.com/Athlete/p.244723>
+        a          sport:Athlete ;
+        rdf:label  "Tyrick Mitchell" .
 
-<http://sport.org/Membership/t.13-p.168580>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.168580> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "17" .
+<http://example.com/Athlete/p.55037>
+        a          sport:Athlete ;
+        rdf:label  "Cheikhou Kouyaté" .
 
-<http://sport.org/Membership/t.13-p.101668>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.101668> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "9" .
-
-<http://sport.org/Participation/e.2128610-p.80146>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:crosses-18-yard       "1" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "4" ;
-        spsocstat:fouls-suffered        "1" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "1" ;
-        spsocstat:passes-complete       "13" ;
-        spsocstat:passes-complete-3rd-final
-                "5" ;
-        spsocstat:passes-incomplete     "9" ;
-        spsocstat:passes-total          "22" ;
-        spsocstat:tackles-lost          "0" ;
-        spsocstat:tackles-total         "1" ;
-        spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "40" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "78" ;
-        sport:participationBy           <http://sport.org/Athlete/p.80146> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Membership/t.31-p.55037>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.55037> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
+<http://example.com/Membership/t.31-p.55494>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.55494> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "8" .
+        sport:uniformNumber    "2" .
 
-<http://sport.org/Participation/e.2128610-p.82403>
-        rdf:type                       sport:IndividualParticipation ;
+<http://example.com/Participation/e.2128610-p.168580>
+        a                              sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
-        spsocstat:fouls-commited       "1" ;
-        spsocstat:fouls-suffered       "3" ;
-        spsocstat:goals-against-total  "2" ;
-        spsocstat:goals-head           "0" ;
-        spsocstat:goals-left-foot      "0" ;
-        spsocstat:goals-right-foot     "0" ;
-        spsocstat:goals-total          "1" ;
-        spsocstat:interceptions        "2" ;
-        spsocstat:passes-complete      "16" ;
+        spsocstat:fouls-commited       "2" ;
+        spsocstat:fouls-suffered       "2" ;
+        spsocstat:goals-against-total  "0" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:passes-complete      "8" ;
         spsocstat:passes-complete-3rd-final
-                "6" ;
-        spsocstat:passes-incomplete    "4" ;
-        spsocstat:passes-total         "20" ;
-        spsocstat:shots-blocked-cross  "1" ;
-        spsocstat:shots-on-goal-total  "1" ;
-        spsocstat:shots-total          "1" ;
-        spsocstat:tackles-lost         "1" ;
-        spsocstat:tackles-total        "3" ;
-        spsocstat:tackles-won          "2" ;
-        spsocstat:touches              "46" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "90" ;
-        sport:participationBy          <http://sport.org/Athlete/p.82403> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
+                "2" ;
+        spsocstat:passes-incomplete    "0" ;
+        spsocstat:passes-total         "8" ;
+        spsocstat:touches              "14" ;
+        spstat:time-played-total       "20" ;
+        sport:participationBy          <http://example.com/Athlete/p.168580> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
-<http://sport.org/Membership/t.31-p.94245>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.94245> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "23" .
+<http://example.com/Athlete/p.19188>
+        a          sport:Athlete ;
+        rdf:label  "Scott Dann" .
 
-<http://sport.org/Athlete/p.111931>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ricardo Pereira" .
-
-<http://sport.org/Athlete/p.155569>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Daniel Amartey" .
-
-<http://sport.org/Membership/t.13-p.244619>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.244619> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "33" .
-
-<http://sport.org/Athlete/p.86417>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jeffrey Schlupp" .
-
-<http://sport.org/Participation/e.2128610-p.19188>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "3" ;
+<http://example.com/Participation/e.2128610-p.101668>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
-                "2" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-suffered        "1" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "1" ;
-        spsocstat:passes-complete       "14" ;
-        spsocstat:passes-complete-3rd-final
-                "2" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "10" ;
-        spsocstat:passes-total          "24" ;
-        spsocstat:shots-blocked-outfielder
                 "1" ;
-        spsocstat:touches               "30" ;
+        spsocstat:crosses-18-yard       "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:fouls-suffered        "2" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "11" ;
+        spsocstat:passes-complete-3rd-final
+                "6" ;
+        spsocstat:passes-incomplete     "7" ;
+        spsocstat:passes-total          "18" ;
+        spsocstat:shots-off-goal-total  "2" ;
+        spsocstat:shots-on-goal-total   "1" ;
+        spsocstat:shots-total           "3" ;
+        spsocstat:touches               "33" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.19188> ;
+        sport:participationBy           <http://example.com/Athlete/p.101668> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Participation/e.2128610-p.95463>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.95463> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+<http://example.com/Athlete/p.95463>
+        a          sport:Athlete ;
+        rdf:label  "Danny Ward" .
 
-<http://sport.org/Membership/t.13-p.444463>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.444463> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
+<http://example.com/Membership/t.13-p.168580>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.168580> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "17" .
+
+<http://example.com/Membership/t.31-p.105666>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.105666> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
+        sport:uniformNumber    "1" .
+
+<http://example.com/Participation/e.2128610-a.2291891767-p.37642>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:assist ;
+        sport:participationBy  <http://example.com/Athlete/p.37642> .
+
+<http://example.com/Associate/man38197>
+        a                    sport:Associate ;
+        rdf:label            "Brendan Rodgers" ;
+        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+
+<http://example.com/Membership/t.13-p.244619>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.244619> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "33" .
+
+<http://example.com/Athlete/p.172780>
+        a          sport:Athlete ;
+        rdf:label  "James Maddison" .
+
+<http://example.com/Membership/t.13-p.444463>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.444463> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "3" .
 
-<http://sport.org/Action/e.2128610-a.2291891243>
-        rdf:type                      sport:Action ;
+<http://example.com/Action/e.2128610-a.2291888189>
+        a                             sport:Action ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-26T21:36:31+01:00" ;
-        spact:minutes-elapsed         "78" ;
+        spact:date-time               "2021-04-26T21:28:36+01:00" ;
+        spact:minutes-elapsed         "70" ;
         spact:period-value            "2" ;
-        spact:person-original-idref   "p.80146" ;
-        spact:person-replacing-idref  "p.60252" ;
+        spact:person-original-idref   "p.172780" ;
+        spact:person-replacing-idref  "p.168580" ;
         spact:person-replacing-position
-                "midfielder" ;
-        spact:sequence-number         "0426213631" ;
+                "forward" ;
+        spact:sequence-number         "0426212836" ;
         spact:substitution-reason     "Tactical" ;
-        sport:event                   <http://sport.org/Event/e.2128610> ;
-        sport:team                    <http://sport.org/Team/e.2128610-t.31> .
+        sport:event                   <http://example.com/Event/e.2128610> ;
+        sport:team                    <http://example.com/Team/e.2128610-t.13> .
 
-<http://sport.org/Participation/e.2128610-p.172780>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "29" ;
-        spsocstat:passes-complete-3rd-final
-                "14" ;
-        spsocstat:passes-complete-long  "3" ;
-        spsocstat:passes-incomplete     "2" ;
-        spsocstat:passes-total          "31" ;
-        spsocstat:shots-off-goal-total  "1" ;
-        spsocstat:shots-on-goal-total   "1" ;
-        spsocstat:shots-total           "2" ;
-        spsocstat:touches               "42" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "70" ;
-        sport:participationBy           <http://sport.org/Athlete/p.172780> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Athlete/p.244723>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Tyrick Mitchell" .
-
-<http://sport.org/Membership/t.31-p.231747>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.231747> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
+<http://example.com/Membership/t.31-p.231747>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.231747> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "14" .
 
-<http://sport.org/Athlete/p.55494>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Joel Ward" .
+<http://example.com/Site/s.2516>
+        a          sport:Site ;
+        rdf:label  "King Power Stadium" .
 
-<http://sport.org/Participation/e.2128610-p.197469>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.197469> ;
+<http://example.com/Action/e.2128610-a.2291892531>
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-26T21:41:24+01:00" ;
+        spact:minutes-elapsed         "83" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.66975" ;
+        spact:person-replacing-idref  "p.50472" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0426214124" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://example.com/Event/e.2128610> ;
+        sport:team                    <http://example.com/Team/e.2128610-t.31> .
+
+<http://example.com/Membership/t.13-p.51938>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.51938> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "11" .
+
+<http://example.com/Participation/e.2128610-a.2291881461-p.173515>
+        a                      sport:IndividualParticipation ;
+        spact:Role             <http://cv.iptc.org/newscodes//> ;
+        sport:participationBy  <http://example.com/Athlete/p.173515> .
+
+<http://example.com/Membership/t.31-p.232413>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.232413> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "25" .
+
+<http://example.com/Participation/e.2128610-p.57328>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.57328> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
-<http://sport.org/Membership/t.13-p.95463>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.95463> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
-        sport:uniformNumber    "12" .
+<http://example.com/Participation/e.2128610-p.51938>
+        a                              sport:IndividualParticipation ;
+        spsocstat:aerials-won          "1" ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "0" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:goals-against-total  "0" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:passes-complete      "6" ;
+        spsocstat:passes-complete-3rd-final
+                "4" ;
+        spsocstat:passes-incomplete    "3" ;
+        spsocstat:passes-total         "9" ;
+        spsocstat:touches              "9" ;
+        spstat:time-played-total       "20" ;
+        sport:participationBy          <http://example.com/Athlete/p.51938> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
-<http://sport.org/Participation/e.2128610-p.166477>
-        rdf:type                        sport:IndividualParticipation ;
+<http://example.com/Athlete/p.74230>
+        a          sport:Athlete ;
+        rdf:label  "Patrick van Aanholt" .
+
+<http://example.com/Membership/t.13-p.106837>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.106837> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "26" .
+
+<http://example.com/Participation/e.2128610-p.94245>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.94245> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.50472>
+        a          sport:Athlete ;
+        rdf:label  "James McCarthy" .
+
+<http://example.com/Membership/t.13-p.228798>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.228798> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "19" .
+
+<http://example.com/Participation/e.2128610-p.166477>
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "3" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -257,23 +263,96 @@
         spsocstat:touches               "73" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.166477> ;
+        sport:participationBy           <http://example.com/Athlete/p.166477> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Athlete/p.173515>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Kelechi Iheanacho" .
+<http://example.com/Participation/e.2128610-p.55037>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "2" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "3" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:fouls-suffered        "1" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "3" ;
+        spsocstat:passes-complete       "9" ;
+        spsocstat:passes-complete-3rd-final
+                "2" ;
+        spsocstat:passes-complete-long  "2" ;
+        spsocstat:passes-incomplete     "12" ;
+        spsocstat:passes-total          "21" ;
+        spsocstat:tackles-lost          "0" ;
+        spsocstat:tackles-total         "1" ;
+        spsocstat:tackles-won           "1" ;
+        spsocstat:touches               "31" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.55037> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Membership/t.31-p.232413>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.232413> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "25" .
+<http://example.com/Athlete/p.82403>
+        a          sport:Athlete ;
+        rdf:label  "Wilfried Zaha" .
 
-<http://sport.org/Participation/e.2128610-p.166989>
-        rdf:type                        sport:IndividualParticipation ;
+<http://example.com/Participation/e.2128610-p.19188>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "3" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "2" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-suffered        "1" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "1" ;
+        spsocstat:passes-complete       "14" ;
+        spsocstat:passes-complete-3rd-final
+                "2" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "10" ;
+        spsocstat:passes-total          "24" ;
+        spsocstat:shots-blocked-outfielder
+                "1" ;
+        spsocstat:touches               "30" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.19188> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-p.203341>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "3" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "3" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "2" ;
+        spsocstat:passes-complete       "64" ;
+        spsocstat:passes-complete-3rd-final
+                "15" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "10" ;
+        spsocstat:passes-total          "74" ;
+        spsocstat:tackles-lost          "2" ;
+        spsocstat:tackles-total         "4" ;
+        spsocstat:tackles-won           "2" ;
+        spsocstat:touches               "92" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.203341> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-p.166989>
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -300,612 +379,66 @@
         spsocstat:touches               "99" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.166989> ;
+        sport:participationBy           <http://example.com/Athlete/p.166989> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Action/e.2128610-a.2291848623>
-        rdf:type                  sport:Action ;
-        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
-        spact:date-time           "2021-04-26T20:12:14+01:00" ;
-        spact:minutes-elapsed     "12" ;
-        spact:period-value        "1" ;
-        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
-        spact:sequence-number     "0426201214" ;
-        sport:event               <http://sport.org/Event/e.2128610> ;
-        sport:participation       <http://sport.org/Participation/e.2128610-a.2291848623-p.232413> , <http://sport.org/Participation/e.2128610-a.2291848623-p.82403> ;
-        sport:team                <http://sport.org/Team/e.2128610-t.31> .
-
-<http://sport.org/Membership/t.13-p.106837>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.106837> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "26" .
-
-<http://sport.org/Official/PO41049>
-        rdf:type  sport:Official ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Graham Scott" .
-
-<http://sport.org/Membership/t.31-p.244723>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.244723> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "27" .
-
-<http://sport.org/Membership/t.31-p.74230>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.74230> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "3" .
-
-<http://sport.org/Action/e.2128610-a.2291893075>
-        rdf:type                      sport:Action ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-26T21:43:23+01:00" ;
-        spact:minutes-elapsed         "85" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.173954" ;
-        spact:person-replacing-idref  "p.86417" ;
-        spact:person-replacing-position
-                "midfielder" ;
-        spact:sequence-number         "0426214323" ;
-        spact:substitution-reason     "Tactical" ;
-        sport:event                   <http://sport.org/Event/e.2128610> ;
-        sport:team                    <http://sport.org/Team/e.2128610-t.31> .
-
-<http://sport.org/Membership/t.13-p.228798>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.228798> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "19" .
-
-<http://sport.org/Membership/t.31-p.66975>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.66975> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "4" .
-
-<http://sport.org/Participation/e.2128610-p.74230>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "2" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "3" ;
-        spsocstat:passes-complete       "26" ;
-        spsocstat:passes-complete-3rd-final
-                "6" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "13" ;
-        spsocstat:passes-total          "39" ;
-        spsocstat:shots-blocked-cross   "1" ;
-        spsocstat:shots-blocked-outfielder
-                "1" ;
-        spsocstat:touches               "60" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.74230> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Participation/e.2128610-p.111931>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.111931> ;
+<http://example.com/Participation/e.2128610-p.231747>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.231747> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
-<http://sport.org/Participation/e.2128610-p.155569>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.155569> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Membership/t.13-p.203341>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.203341> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
+<http://example.com/Membership/t.13-p.203341>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.203341> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "25" .
 
-<http://sport.org/Membership/t.31-p.80146>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.80146> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "9" .
-
-<http://sport.org/Participation/e.2128610-p.244723>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.244723> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Membership/t.31-p.82403>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.82403> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "11" .
-
-<http://sport.org/Participation/e.2128610-p.50472>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "0" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:goals-against-total  "0" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:passes-complete      "3" ;
-        spsocstat:passes-incomplete    "0" ;
-        spsocstat:passes-total         "3" ;
-        spsocstat:touches              "3" ;
-        spstat:time-played-total       "7" ;
-        sport:participationBy          <http://sport.org/Athlete/p.50472> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Athlete/p.444463>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Wesley Fofana" .
-
-<http://sport.org/Action/e.2128610-a.2291891767>
-        rdf:type                  sport:Action ;
-        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
-        spact:date-time           "2021-04-26T21:38:21+01:00" ;
-        spact:minutes-elapsed     "80" ;
-        spact:period-value        "2" ;
-        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
-        spact:sequence-number     "0426213821" ;
-        sport:event               <http://sport.org/Event/e.2128610> ;
-        sport:participation       <http://sport.org/Participation/e.2128610-a.2291891767-p.37642> , <http://sport.org/Participation/e.2128610-a.2291891767-p.173515> ;
-        sport:team                <http://sport.org/Team/e.2128610-t.13> .
-
-<http://sport.org/Participation/e.2128610-PO41049>
-        rdf:type               sport:OfficialParticipation ;
-        sport:participationBy  <http://sport.org/Official/PO41049> ;
-        sport:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
-
-<http://sport.org/Membership/t.31-p.19188>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.19188> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
+<http://example.com/Membership/t.13-p.37642>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.37642> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "6" .
 
-<http://sport.org/Participation/e.2128610-p.54861>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "12" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "11" ;
-        spsocstat:passes-complete-3rd-final
-                "5" ;
-        spsocstat:passes-incomplete     "11" ;
-        spsocstat:passes-total          "22" ;
-        spsocstat:shots-off-goal-total  "1" ;
-        spsocstat:shots-on-goal-total   "1" ;
-        spsocstat:shots-total           "2" ;
-        spsocstat:tackles-lost          "0" ;
-        spsocstat:tackles-total         "1" ;
-        spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "34" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.54861> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+<http://example.com/Event/e.2128610>
+        a                        sport:Event ;
+        sport:competition        <http://example.com/Competition/l.premierleague.com-2020> ;
+        sport:competitionPhase   <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
+        sport:eventOutcomeType   <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:parentCompetition  <http://example.com/ParentCompetition/l.premierleague.com> ;
+        sport:participation      <http://example.com/Participation/e.2128610-p.111931> , <http://example.com/Participation/e.2128610-p.66975> , <http://example.com/Participation/e.2128610-p.57328> , <http://example.com/Participation/e.2128610-p.244619> , <http://example.com/Participation/e.2128610-p.95463> , <http://example.com/Participation/e.2128610-p.80146> , <http://example.com/Participation/e.2128610-p.50472> , <http://example.com/Participation/e.2128610-p.40836> , <http://example.com/Participation/e.2128610-p.172780> , <http://example.com/Participation/e.2128610-p.101668> , <http://example.com/Participation/e.2128610-p.19188> , <http://example.com/Participation/e.2128610-t.31> , <http://example.com/Participation/e.2128610-p.37642> , <http://example.com/Participation/e.2128610-p.17745> , <http://example.com/Participation/e.2128610-p.51938> , <http://example.com/Participation/e.2128610-p.197469> , <http://example.com/Participation/e.2128610-p.173515> , <http://example.com/Participation/e.2128610-p.58786> , <http://example.com/Participation/e.2128610-p.106837> , <http://example.com/Participation/e.2128610-p.60252> , <http://example.com/Participation/e.2128610-p.105666> , <http://example.com/Participation/e.2128610-p.203341> , <http://example.com/Participation/e.2128610-p.218031> , <http://example.com/Participation/e.2128610-PO41049> , <http://example.com/Participation/e.2128610-p.168580> , <http://example.com/Participation/e.2128610-p.173954> , <http://example.com/Participation/e.2128610-p.55494> , <http://example.com/Participation/e.2128610-p.82403> , <http://example.com/Participation/e.2128610-t.13> , <http://example.com/Participation/e.2128610-p.55037> , <http://example.com/Participation/e.2128610-p.444463> , <http://example.com/Participation/e.2128610-p.232413> , <http://example.com/Participation/e.2128610-p.74230> , <http://example.com/Participation/e.2128610-p.231747> , <http://example.com/Participation/e.2128610-p.94245> , <http://example.com/Participation/e.2128610-p.228798> , <http://example.com/Participation/e.2128610-p.166989> , <http://example.com/Participation/e.2128610-p.155569> , <http://example.com/Participation/e.2128610-p.86417> , <http://example.com/Participation/e.2128610-p.54861> , <http://example.com/Participation/e.2128610-p.86881> , <http://example.com/Participation/e.2128610-p.166477> , <http://example.com/Participation/e.2128610-p.244723> ;
+        sport:site               <http://example.com/Site/s.2516> ;
+        sport:sport              <http://cv.iptc.org/newscodes/mediatopic/20001065> ;
+        sport:startDate          "2021-04-26T20:00:00+01:00"^^xsd:dateTime .
 
-<http://sport.org/Participation/e.2128610-a.2291881105-p.166477>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:scorer ;
-        sport:participationBy  <http://sport.org/Athlete/p.166477> .
+<http://example.com/Team/t.31>
+        a                 sport:Team ;
+        rdf:label         "Crystal Palace" ;
+        sport:coach       <http://example.com/Associate/man1280> ;
+        sport:membership  <http://example.com/Membership/t.31-p.80146> , <http://example.com/Membership/t.31-p.66975> , <http://example.com/Membership/t.31-p.50472> , <http://example.com/Membership/t.31-p.173954> , <http://example.com/Membership/t.31-p.86417> , <http://example.com/Membership/t.31-p.232413> , <http://example.com/Membership/t.31-p.231747> , <http://example.com/Membership/t.31-p.40836> , <http://example.com/Membership/t.31-p.82403> , <http://example.com/Membership/t.31-p.58786> , <http://example.com/Membership/t.31-p.94245> , <http://example.com/Membership/t.31-p.74230> , <http://example.com/Membership/t.31-p.57328> , <http://example.com/Membership/t.31-p.54861> , <http://example.com/Membership/t.31-p.105666> , <http://example.com/Membership/t.31-p.55037> , <http://example.com/Membership/t.31-p.19188> , <http://example.com/Membership/t.31-p.55494> , <http://example.com/Membership/t.31-p.60252> , <http://example.com/Membership/t.31-p.244723> .
 
-<http://sport.org/Participation/e.2128610-p.173515>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "1" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:crosses-18-yard       "1" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-head            "0" ;
-        spsocstat:goals-left-foot       "0" ;
-        spsocstat:goals-right-foot      "0" ;
-        spsocstat:goals-total           "1" ;
-        spsocstat:passes-complete       "20" ;
-        spsocstat:passes-complete-3rd-final
-                "13" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "8" ;
-        spsocstat:passes-total          "28" ;
-        spsocstat:shots-off-goal-total  "1" ;
-        spsocstat:shots-on-goal-total   "1" ;
-        spsocstat:shots-total           "2" ;
-        spsocstat:tackles-lost          "1" ;
-        spsocstat:tackles-total         "1" ;
-        spsocstat:tackles-won           "0" ;
-        spsocstat:touches               "46" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.173515> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+<http://example.com/Athlete/p.60252>
+        a          sport:Athlete ;
+        rdf:label  "Andros Townsend" .
 
-<http://sport.org/Participation/e.2128610-p.60252>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "0" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:goals-against-total  "1" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:passes-complete      "1" ;
-        spsocstat:passes-incomplete    "1" ;
-        spsocstat:passes-total         "2" ;
-        spsocstat:touches              "4" ;
-        spstat:time-played-total       "12" ;
-        sport:participationBy          <http://sport.org/Athlete/p.60252> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Membership/t.13-p.218031>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.218031> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "4" .
-
-<http://sport.org/Participation/e.2128610-a.2291848623-p.232413>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:assist ;
-        sport:participationBy  <http://sport.org/Athlete/p.232413> .
-
-<http://sport.org/Membership/t.31-p.58786>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.58786> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "34" .
-
-<http://sport.org/Participation/e.2128610-t.13>
-        rdf:type                       sport:TeamParticipation ;
-        spsocstat:clearances-successful
-                "12" ;
-        spsocstat:corner-kicks         "7" ;
-        spsocstat:fouls-commited       "13" ;
-        spsocstat:free-kicks           "1" ;
-        spsocstat:goals-against-total  "1" ;
-        spsocstat:interceptions        "9" ;
-        spsocstat:line-formation       "3412" ;
-        spsocstat:offsides             "2" ;
-        spsocstat:passes-total         "597" ;
-        spsocstat:shots-blocked        "2" ;
-        spsocstat:shots-on-goal-total  "5" ;
-        spsocstat:shots-total          "13" ;
-        spsocstat:tackles-lost         "7" ;
-        spsocstat:tackles-total        "18" ;
-        spsocstat:tackles-won          "11" ;
-        spsocstat:tackles-won-percentage
-                "0.611" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/win> ;
-        spstat:score                   "2" ;
-        spstat:score-opposing          "1" ;
-        spstat:time-of-possession-percentage
-                "67.1" ;
-        sport:alignment                "home" ;
-        sport:participationBy          <http://sport.org/Team/t.13> .
-
-<http://sport.org/Athlete/p.173954>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jairo Riedewald" .
-
-<http://sport.org/Athlete/p.51938>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Marc Albrighton" .
-
-<http://sport.org/Athlete/p.57328>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Nathaniel Clyne" .
-
-<http://sport.org/Action/e.2128610-a.2291881461>
-        rdf:type               sport:Action ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
-        spact:minutes-elapsed  "50" ;
-        spact:period-value     "2" ;
-        spact:type             spsocaction:video-review ;
-        sport:event            <http://sport.org/Event/e.2128610> ;
-        sport:participation    <http://sport.org/Participation/e.2128610-a.2291881461-p.173515> ;
-        sport:team             <http://sport.org/Team/e.2128610-t.13> .
-
-<http://sport.org/Action/e.2128610-a.2291888189>
-        rdf:type                      sport:Action ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-26T21:28:36+01:00" ;
-        spact:minutes-elapsed         "70" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.172780" ;
-        spact:person-replacing-idref  "p.168580" ;
-        spact:person-replacing-position
-                "forward" ;
-        spact:sequence-number         "0426212836" ;
-        spact:substitution-reason     "Tactical" ;
-        sport:event                   <http://sport.org/Event/e.2128610> ;
-        sport:team                    <http://sport.org/Team/e.2128610-t.13> .
-
-<http://sport.org/Participation/e.2128610-p.58786>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.58786> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Athlete/p.105666>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jack Butland" .
-
-<http://sport.org/Athlete/p.106837>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Dennis Praet" .
-
-<http://sport.org/Membership/t.31-p.40836>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.40836> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
-        sport:uniformNumber    "31" .
-
-<http://sport.org/Participation/e.2128610-p.17745>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:catches-punches       "1" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "13" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "7" ;
-        spsocstat:passes-total          "20" ;
-        spsocstat:save-percentage       "0.500" ;
-        spsocstat:saves                 "1" ;
-        spsocstat:touches               "26" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.17745> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Participation/e.2128610-p.40836>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "12" ;
-        spsocstat:passes-complete-3rd-final
-                "4" ;
-        spsocstat:passes-complete-long  "12" ;
-        spsocstat:passes-incomplete     "14" ;
-        spsocstat:passes-total          "26" ;
-        spsocstat:save-percentage       "0.600" ;
-        spsocstat:saves                 "3" ;
-        spsocstat:touches               "31" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.40836> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Athlete/p.55037>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Cheikhou Kouyaté" .
-
-<http://sport.org/Athlete/p.228798>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Cengiz Ünder" .
-
-<http://sport.org/Membership/t.13-p.172780>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.172780> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
+<http://example.com/Membership/t.13-p.101668>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.101668> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "10" .
+        sport:uniformNumber    "9" .
 
-<http://sport.org/Athlete/p.94245>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Michy Batshuayi" .
+<http://example.com/Membership/t.31-p.57328>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.57328> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "17" .
 
-<http://sport.org/Participation/e.2128610-p.86881>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.86881> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Associate/man38197>
-        rdf:type             sport:Associate ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Brendan Rodgers" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
-
-<http://sport.org/Site/s.2516>
-        rdf:type  sport:Site ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "King Power Stadium" .
-
-<http://sport.org/Participation/e.2128610-p.55494>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "1" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "3" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "3" ;
-        spsocstat:fouls-suffered        "1" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "2" ;
-        spsocstat:passes-complete       "15" ;
-        spsocstat:passes-complete-3rd-final
-                "4" ;
-        spsocstat:passes-incomplete     "10" ;
-        spsocstat:passes-total          "25" ;
-        spsocstat:shots-blocked-cross   "1" ;
-        spsocstat:tackles-lost          "0" ;
-        spsocstat:tackles-total         "2" ;
-        spsocstat:tackles-won           "2" ;
-        spsocstat:touches               "52" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.55494> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Membership/t.13-p.197469>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.197469> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "20" .
-
-<http://sport.org/Athlete/p.168580>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ayoze Pérez" .
-
-<http://sport.org/Membership/t.13-p.17745>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.17745> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
-        sport:uniformNumber    "1" .
-
-<http://sport.org/Athlete/p.101668>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jamie Vardy" .
-
-<http://sport.org/Membership/t.13-p.166477>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.166477> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "27" .
-
-<http://sport.org/Action/e.2128610-a.2291881105>
-        rdf:type                  sport:Action ;
-        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
-        spact:date-time           "2021-04-26T21:08:04+01:00" ;
-        spact:minutes-elapsed     "50" ;
-        spact:period-value        "2" ;
-        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
-        spact:sequence-number     "0426210804" ;
-        sport:event               <http://sport.org/Event/e.2128610> ;
-        sport:participation       <http://sport.org/Participation/e.2128610-a.2291881105-p.173515> , <http://sport.org/Participation/e.2128610-a.2291881105-p.166477> ;
-        sport:team                <http://sport.org/Team/e.2128610-t.13> .
-
-<http://sport.org/Team/t.13>
-        rdf:type          sport:Team ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Leicester City" ;
-        sport:coach       <http://sport.org/Associate/man38197> ;
-        sport:membership  <http://sport.org/Membership/t.13-p.166477> , <http://sport.org/Membership/t.13-p.444463> , <http://sport.org/Membership/t.13-p.101668> , <http://sport.org/Membership/t.13-p.228798> , <http://sport.org/Membership/t.13-p.95463> , <http://sport.org/Membership/t.13-p.172780> , <http://sport.org/Membership/t.13-p.37642> , <http://sport.org/Membership/t.13-p.86881> , <http://sport.org/Membership/t.13-p.51938> , <http://sport.org/Membership/t.13-p.173515> , <http://sport.org/Membership/t.13-p.17745> , <http://sport.org/Membership/t.13-p.168580> , <http://sport.org/Membership/t.13-p.244619> , <http://sport.org/Membership/t.13-p.203341> , <http://sport.org/Membership/t.13-p.166989> , <http://sport.org/Membership/t.13-p.197469> , <http://sport.org/Membership/t.13-p.218031> , <http://sport.org/Membership/t.13-p.111931> , <http://sport.org/Membership/t.13-p.155569> , <http://sport.org/Membership/t.13-p.106837> .
-
-<http://sport.org/Membership/t.13-p.86881>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.86881> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "24" .
-
-<http://sport.org/Membership/t.13-p.166989>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.166989> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "8" .
-
-<http://sport.org/Athlete/p.37642>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jonny Evans" .
-
-<http://sport.org/Membership/t.31-p.50472>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.50472> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "22" .
-
-<http://sport.org/Athlete/p.244619>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Luke Thomas" .
-
-<http://sport.org/Participation/e.2128610-a.2291881105-p.173515>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:assist ;
-        sport:participationBy  <http://sport.org/Athlete/p.173515> .
-
-<http://sport.org/Participation/e.2128610-p.173954>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "1" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:fouls-commited       "2" ;
-        spsocstat:goals-against-total  "2" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:interceptions        "4" ;
-        spsocstat:passes-complete      "13" ;
-        spsocstat:passes-complete-3rd-final
-                "4" ;
-        spsocstat:passes-incomplete    "4" ;
-        spsocstat:passes-total         "17" ;
-        spsocstat:tackles-lost         "0" ;
-        spsocstat:tackles-total        "1" ;
-        spsocstat:tackles-won          "1" ;
-        spsocstat:touches              "26" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "85" ;
-        sport:participationBy          <http://sport.org/Athlete/p.173954> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Membership/t.31-p.54861>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.54861> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "20" .
-
-<http://sport.org/Action/e.2128610-a.2291870573>
-        rdf:type               sport:Action ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
-        spact:minutes-elapsed  "46" ;
-        spact:period-value     "1" ;
-        spact:type             spsocaction:video-review ;
-        sport:event            <http://sport.org/Event/e.2128610> ;
-        sport:participation    <http://sport.org/Participation/e.2128610-a.2291870573-p.173515> ;
-        sport:team             <http://sport.org/Team/e.2128610-t.13> .
-
-<http://sport.org/Membership/t.31-p.60252>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.60252> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "10" .
-
-<http://sport.org/Action/e.2128610-a.2291888213>
-        rdf:type                      sport:Action ;
+<http://example.com/Action/e.2128610-a.2291888213>
+        a                             sport:Action ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-26T21:28:41+01:00" ;
         spact:minutes-elapsed         "70" ;
@@ -916,391 +449,11 @@
                 "midfielder" ;
         spact:sequence-number         "0426212841" ;
         spact:substitution-reason     "Tactical" ;
-        sport:event                   <http://sport.org/Event/e.2128610> ;
-        sport:team                    <http://sport.org/Team/e.2128610-t.13> .
+        sport:event                   <http://example.com/Event/e.2128610> ;
+        sport:team                    <http://example.com/Team/e.2128610-t.13> .
 
-<http://sport.org/Membership/t.13-p.111931>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.111931> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "21" .
-
-<http://sport.org/Membership/t.13-p.155569>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.155569> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "18" .
-
-<http://sport.org/Athlete/p.74230>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Patrick van Aanholt" .
-
-<http://sport.org/Athlete/p.66975>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Luka Milivojevic" .
-
-<http://sport.org/Athlete/p.80146>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jordan Ayew" .
-
-<http://sport.org/Action/e.2128610-a.2291892531>
-        rdf:type                      sport:Action ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-26T21:41:24+01:00" ;
-        spact:minutes-elapsed         "83" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.66975" ;
-        spact:person-replacing-idref  "p.50472" ;
-        spact:person-replacing-position
-                "midfielder" ;
-        spact:sequence-number         "0426214124" ;
-        spact:substitution-reason     "Tactical" ;
-        sport:event                   <http://sport.org/Event/e.2128610> ;
-        sport:team                    <http://sport.org/Team/e.2128610-t.31> .
-
-<http://sport.org/Athlete/p.82403>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Wilfried Zaha" .
-
-<http://sport.org/Participation/e.2128610-p.168580>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "0" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:fouls-commited       "2" ;
-        spsocstat:fouls-suffered       "2" ;
-        spsocstat:goals-against-total  "0" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:passes-complete      "8" ;
-        spsocstat:passes-complete-3rd-final
-                "2" ;
-        spsocstat:passes-incomplete    "0" ;
-        spsocstat:passes-total         "8" ;
-        spsocstat:touches              "14" ;
-        spstat:time-played-total       "20" ;
-        sport:participationBy          <http://sport.org/Athlete/p.168580> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Participation/e.2128610-a.2291848623-p.82403>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:scorer ;
-        sport:participationBy  <http://sport.org/Athlete/p.82403> .
-
-<http://sport.org/Participation/e.2128610-p.101668>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "1" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "1" ;
-        spsocstat:crosses-18-yard       "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:fouls-suffered        "2" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "11" ;
-        spsocstat:passes-complete-3rd-final
-                "6" ;
-        spsocstat:passes-incomplete     "7" ;
-        spsocstat:passes-total          "18" ;
-        spsocstat:shots-off-goal-total  "2" ;
-        spsocstat:shots-on-goal-total   "1" ;
-        spsocstat:shots-total           "3" ;
-        spsocstat:touches               "33" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.101668> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Membership/t.31-p.86417>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.86417> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "15" .
-
-<http://sport.org/Participation/e.2128610-a.2291891767-p.37642>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:assist ;
-        sport:participationBy  <http://sport.org/Athlete/p.37642> .
-
-<http://sport.org/Membership/t.13-p.173515>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.173515> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
-        sport:uniformNumber    "14" .
-
-<http://sport.org/Participation/e.2128610-a.2291891767-p.173515>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             spsocrole:scorer ;
-        sport:participationBy  <http://sport.org/Athlete/p.173515> .
-
-<http://sport.org/Participation/e.2128610-p.86417>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:aerials-won          "1" ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "0" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:goals-against-total  "0" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:passes-complete      "1" ;
-        spsocstat:passes-incomplete    "1" ;
-        spsocstat:passes-total         "2" ;
-        spsocstat:tackles-lost         "0" ;
-        spsocstat:tackles-total        "1" ;
-        spsocstat:tackles-won          "1" ;
-        spsocstat:touches              "6" ;
-        spstat:time-played-total       "5" ;
-        sport:participationBy          <http://sport.org/Athlete/p.86417> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Athlete/p.19188>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Scott Dann" .
-
-<http://sport.org/Event/e.2128610>
-        rdf:type                 sport:Event ;
-        sport:competition        <http://sport.org/Competition/l.premierleague.com-2020> ;
-        sport:competitionPhase   <http://sport.org/CompetitionPhase/l.premierleague.com-2020-week-33> ;
-        sport:eventOutcomeType   <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
-        sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:parentCompetition  <http://sport.org/ParentCompetition/l.premierleague.com> ;
-        sport:participation      <http://sport.org/Participation/e.2128610-p.444463> , <http://sport.org/Participation/e.2128610-p.172780> , <http://sport.org/Participation/e.2128610-p.54861> , <http://sport.org/Participation/e.2128610-p.95463> , <http://sport.org/Participation/e.2128610-p.218031> , <http://sport.org/Participation/e.2128610-PO41049> , <http://sport.org/Participation/e.2128610-p.55037> , <http://sport.org/Participation/e.2128610-p.106837> , <http://sport.org/Participation/e.2128610-p.58786> , <http://sport.org/Participation/e.2128610-p.155569> , <http://sport.org/Participation/e.2128610-p.173515> , <http://sport.org/Participation/e.2128610-p.244619> , <http://sport.org/Participation/e.2128610-p.173954> , <http://sport.org/Participation/e.2128610-p.166989> , <http://sport.org/Participation/e.2128610-p.111931> , <http://sport.org/Participation/e.2128610-p.57328> , <http://sport.org/Participation/e.2128610-p.244723> , <http://sport.org/Participation/e.2128610-p.166477> , <http://sport.org/Participation/e.2128610-t.31> , <http://sport.org/Participation/e.2128610-p.228798> , <http://sport.org/Participation/e.2128610-p.55494> , <http://sport.org/Participation/e.2128610-p.51938> , <http://sport.org/Participation/e.2128610-p.86417> , <http://sport.org/Participation/e.2128610-p.197469> , <http://sport.org/Participation/e.2128610-p.82403> , <http://sport.org/Participation/e.2128610-p.37642> , <http://sport.org/Participation/e.2128610-p.168580> , <http://sport.org/Participation/e.2128610-t.13> , <http://sport.org/Participation/e.2128610-p.105666> , <http://sport.org/Participation/e.2128610-p.80146> , <http://sport.org/Participation/e.2128610-p.60252> , <http://sport.org/Participation/e.2128610-p.86881> , <http://sport.org/Participation/e.2128610-p.232413> , <http://sport.org/Participation/e.2128610-p.101668> , <http://sport.org/Participation/e.2128610-p.66975> , <http://sport.org/Participation/e.2128610-p.74230> , <http://sport.org/Participation/e.2128610-p.231747> , <http://sport.org/Participation/e.2128610-p.94245> , <http://sport.org/Participation/e.2128610-p.203341> , <http://sport.org/Participation/e.2128610-p.19188> , <http://sport.org/Participation/e.2128610-p.50472> , <http://sport.org/Participation/e.2128610-p.40836> , <http://sport.org/Participation/e.2128610-p.17745> ;
-        sport:site               <http://sport.org/Site/s.2516> ;
-        sport:sport              <http://cv.iptc.org/newscodes/mediatopic/20001065> ;
-        sport:startDate          "2021-04-26T20:00:00+01:00"^^xsd:dateTime .
-
-<http://sport.org/Athlete/p.95463>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Danny Ward" .
-
-<http://sport.org/Membership/t.31-p.55494>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.55494> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "2" .
-
-<http://sport.org/Participation/e.2128610-p.244619>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "1" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:crosses-18-yard       "1" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:fouls-suffered        "2" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "36" ;
-        spsocstat:passes-complete-3rd-final
-                "18" ;
-        spsocstat:passes-incomplete     "11" ;
-        spsocstat:passes-total          "47" ;
-        spsocstat:tackles-lost          "0" ;
-        spsocstat:tackles-total         "2" ;
-        spsocstat:tackles-won           "2" ;
-        spsocstat:touches               "60" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "70" ;
-        sport:participationBy           <http://sport.org/Athlete/p.244619> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Athlete/p.203341>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Wilfred Ndidi" .
-
-<http://sport.org/Athlete/p.231747>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jean-Philippe Mateta" .
-
-<http://sport.org/Participation/e.2128610-p.444463>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "2" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "2" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "3" ;
-        spsocstat:fouls-suffered        "1" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:passes-complete       "63" ;
-        spsocstat:passes-complete-3rd-final
-                "7" ;
-        spsocstat:passes-complete-long  "6" ;
-        spsocstat:passes-incomplete     "9" ;
-        spsocstat:passes-total          "72" ;
-        spsocstat:tackles-lost          "1" ;
-        spsocstat:tackles-total         "2" ;
-        spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "90" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.444463> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Membership/t.31-p.173954>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.173954> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "44" .
-
-<http://sport.org/Participation/e.2128610-p.51938>
-        rdf:type                       sport:IndividualParticipation ;
-        spsocstat:aerials-won          "1" ;
-        spsocstat:assists-total        "0" ;
-        spsocstat:cautions-total       "0" ;
-        spsocstat:ejections-total      "0" ;
-        spsocstat:goals-against-total  "0" ;
-        spsocstat:goals-total          "0" ;
-        spsocstat:passes-complete      "6" ;
-        spsocstat:passes-complete-3rd-final
-                "4" ;
-        spsocstat:passes-incomplete    "3" ;
-        spsocstat:passes-total         "9" ;
-        spsocstat:touches              "9" ;
-        spstat:time-played-total       "20" ;
-        sport:participationBy          <http://sport.org/Athlete/p.51938> ;
-        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Athlete/p.58786>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Martin Kelly" .
-
-<http://sport.org/Membership/t.31-p.105666>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.105666> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
-        sport:uniformNumber    "1" .
-
-<http://sport.org/Athlete/p.232413>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Eberechi Eze" .
-
-<http://sport.org/Athlete/p.17745>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Kasper Schmeichel" .
-
-<http://sport.org/Athlete/p.40836>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Vicente Guaita" .
-
-<http://sport.org/Participation/e.2128610-p.94245>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.94245> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Participation/e.2128610-p.55037>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "2" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "3" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:fouls-suffered        "1" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "3" ;
-        spsocstat:passes-complete       "9" ;
-        spsocstat:passes-complete-3rd-final
-                "2" ;
-        spsocstat:passes-complete-long  "2" ;
-        spsocstat:passes-incomplete     "12" ;
-        spsocstat:passes-total          "21" ;
-        spsocstat:tackles-lost          "0" ;
-        spsocstat:tackles-total         "1" ;
-        spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "31" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.55037> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Athlete/p.218031>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Çaglar Söyüncü" .
-
-<http://sport.org/Athlete/p.86881>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Nampalys Mendy" .
-
-<http://sport.org/Participation/e.2128610-t.31>
-        rdf:type                       sport:TeamParticipation ;
-        spsocstat:cautions-total       "1" ;
-        spsocstat:clearances-successful
-                "14" ;
-        spsocstat:corner-kicks         "2" ;
-        spsocstat:fouls-commited       "12" ;
-        spsocstat:goals-against-total  "2" ;
-        spsocstat:interceptions        "19" ;
-        spsocstat:line-formation       "433" ;
-        spsocstat:offsides             "3" ;
-        spsocstat:passes-total         "297" ;
-        spsocstat:shots-blocked        "1" ;
-        spsocstat:shots-on-goal-total  "2" ;
-        spsocstat:shots-total          "4" ;
-        spsocstat:tackles-lost         "3" ;
-        spsocstat:tackles-total        "12" ;
-        spsocstat:tackles-won          "9" ;
-        spsocstat:tackles-won-percentage
-                "0.750" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
-        spstat:score                   "1" ;
-        spstat:score-opposing          "2" ;
-        spstat:time-of-possession-percentage
-                "32.9" ;
-        sport:alignment                "away" ;
-        sport:participationBy          <http://sport.org/Team/t.31> .
-
-<http://sport.org/Membership/t.13-p.51938>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.51938> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
-        sport:uniformNumber    "11" .
-
-<http://sport.org/Participation/e.2128610-p.105666>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.105666> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Participation/e.2128610-p.106837>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.106837> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Participation/e.2128610-a.2291870573-p.173515>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             <http://cv.iptc.org/newscodes//> ;
-        sport:participationBy  <http://sport.org/Athlete/p.173515> .
-
-<http://sport.org/Action/e.2128610-a.2291852343>
-        rdf:type               sport:Action ;
+<http://example.com/Action/e.2128610-a.2291852343>
+        a                      sport:Action ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Foul" ;
         spact:date-time        "2021-04-26T20:17:54+01:00" ;
@@ -1311,16 +464,34 @@
         spact:recipient-idref  "p.173954" ;
         spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
         spact:sequence-number  "0426201754" ;
-        sport:event            <http://sport.org/Event/e.2128610> ;
-        sport:team             <http://sport.org/Team/e.2128610-t.31> .
+        sport:event            <http://example.com/Event/e.2128610> ;
+        sport:team             <http://example.com/Team/e.2128610-t.31> .
 
-<http://sport.org/Participation/e.2128610-p.228798>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.228798> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+<http://example.com/Participation/e.2128610-p.232413>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "1" ;
+        spsocstat:assists-total         "1" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-suffered        "4" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "2" ;
+        spsocstat:passes-complete       "31" ;
+        spsocstat:passes-complete-3rd-final
+                "6" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "7" ;
+        spsocstat:passes-total          "38" ;
+        spsocstat:touches               "53" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.232413> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Participation/e.2128610-p.37642>
-        rdf:type                        sport:IndividualParticipation ;
+<http://example.com/Participation/e.2128610-p.37642>
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "4" ;
         spsocstat:assists-total         "1" ;
         spsocstat:cautions-total        "0" ;
@@ -1340,159 +511,19 @@
         spsocstat:touches               "95" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.37642> ;
+        sport:participationBy           <http://example.com/Athlete/p.37642> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
-<http://sport.org/Athlete/p.172780>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "James Maddison" .
+<http://example.com/Athlete/p.173515>
+        a          sport:Athlete ;
+        rdf:label  "Kelechi Iheanacho" .
 
-<http://sport.org/Participation/e.2128610-p.203341>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "3" ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "3" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-commited        "1" ;
-        spsocstat:goals-against-total   "1" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "2" ;
-        spsocstat:passes-complete       "64" ;
-        spsocstat:passes-complete-3rd-final
-                "15" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "10" ;
-        spsocstat:passes-total          "74" ;
-        spsocstat:tackles-lost          "2" ;
-        spsocstat:tackles-total         "4" ;
-        spsocstat:tackles-won           "2" ;
-        spsocstat:touches               "92" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.203341> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+<http://example.com/Athlete/p.58786>
+        a          sport:Athlete ;
+        rdf:label  "Martin Kelly" .
 
-<http://sport.org/Athlete/p.50472>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "James McCarthy" .
-
-<http://sport.org/Participation/e.2128610-p.231747>
-        rdf:type               sport:IndividualParticipation ;
-        sport:participationBy  <http://sport.org/Athlete/p.231747> ;
-        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
-
-<http://sport.org/Athlete/p.197469>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Hamza Choudhury" .
-
-<http://sport.org/Team/t.31>
-        rdf:type          sport:Team ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Crystal Palace" ;
-        sport:coach       <http://sport.org/Associate/man1280> ;
-        sport:membership  <http://sport.org/Membership/t.31-p.50472> , <http://sport.org/Membership/t.31-p.55037> , <http://sport.org/Membership/t.31-p.57328> , <http://sport.org/Membership/t.31-p.60252> , <http://sport.org/Membership/t.31-p.40836> , <http://sport.org/Membership/t.31-p.94245> , <http://sport.org/Membership/t.31-p.232413> , <http://sport.org/Membership/t.31-p.54861> , <http://sport.org/Membership/t.31-p.74230> , <http://sport.org/Membership/t.31-p.86417> , <http://sport.org/Membership/t.31-p.19188> , <http://sport.org/Membership/t.31-p.105666> , <http://sport.org/Membership/t.31-p.66975> , <http://sport.org/Membership/t.31-p.231747> , <http://sport.org/Membership/t.31-p.173954> , <http://sport.org/Membership/t.31-p.58786> , <http://sport.org/Membership/t.31-p.55494> , <http://sport.org/Membership/t.31-p.244723> , <http://sport.org/Membership/t.31-p.80146> , <http://sport.org/Membership/t.31-p.82403> .
-
-<http://sport.org/Athlete/p.54861>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Christian Benteke" .
-
-<http://sport.org/Membership/t.13-p.37642>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.37642> ;
-        sport:membershipOf     <http://sport.org/Team/t.13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "6" .
-
-<http://sport.org/Athlete/p.166477>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Timothy Castagne" .
-
-<http://sport.org/Participation/e.2128610-a.2291881461-p.173515>
-        rdf:type               sport:IndividualParticipation ;
-        spact:Role             <http://cv.iptc.org/newscodes//> ;
-        sport:participationBy  <http://sport.org/Athlete/p.173515> .
-
-<http://sport.org/Athlete/p.60252>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Andros Townsend" .
-
-<http://sport.org/Associate/man1280>
-        rdf:type             sport:Associate ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Roy Hodgson" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
-
-<http://sport.org/Participation/e.2128610-p.232413>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:aerials-won           "1" ;
-        spsocstat:assists-total         "1" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:fouls-suffered        "4" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "2" ;
-        spsocstat:passes-complete       "31" ;
-        spsocstat:passes-complete-3rd-final
-                "6" ;
-        spsocstat:passes-complete-long  "1" ;
-        spsocstat:passes-incomplete     "7" ;
-        spsocstat:passes-total          "38" ;
-        spsocstat:touches               "53" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.232413> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Athlete/p.166989>
-        rdf:type  sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Youri Tielemans" .
-
-<http://sport.org/Membership/t.31-p.57328>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/p.57328> ;
-        sport:membershipOf     <http://sport.org/Team/t.31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
-        sport:uniformNumber    "17" .
-
-<http://sport.org/Participation/e.2128610-p.66975>
-        rdf:type                        sport:IndividualParticipation ;
-        spsocstat:assists-total         "0" ;
-        spsocstat:cautions-total        "0" ;
-        spsocstat:clearances-successful
-                "4" ;
-        spsocstat:crosses-18-yard-plus  "1" ;
-        spsocstat:ejections-total       "0" ;
-        spsocstat:goals-against-total   "2" ;
-        spsocstat:goals-total           "0" ;
-        spsocstat:interceptions         "1" ;
-        spsocstat:passes-complete       "26" ;
-        spsocstat:passes-complete-3rd-final
-                "10" ;
-        spsocstat:passes-complete-long  "3" ;
-        spsocstat:passes-incomplete     "10" ;
-        spsocstat:passes-total          "36" ;
-        spsocstat:tackles-lost          "2" ;
-        spsocstat:tackles-total         "2" ;
-        spsocstat:tackles-won           "0" ;
-        spsocstat:touches               "51" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "83" ;
-        sport:participationBy           <http://sport.org/Athlete/p.66975> ;
-        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
-
-<http://sport.org/Participation/e.2128610-p.218031>
-        rdf:type                        sport:IndividualParticipation ;
+<http://example.com/Participation/e.2128610-p.218031>
+        a                               sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1519,5 +550,928 @@
         spsocstat:touches               "98" ;
         spstat:events-started           "1" ;
         spstat:time-played-total        "90" ;
-        sport:participationBy           <http://sport.org/Athlete/p.218031> ;
+        sport:participationBy           <http://example.com/Athlete/p.218031> ;
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.31-p.55037>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.55037> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "8" .
+
+<http://example.com/Membership/t.31-p.94245>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.94245> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "23" .
+
+<http://example.com/Membership/t.13-p.218031>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.218031> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "4" .
+
+<http://example.com/Membership/t.31-p.19188>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.19188> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "6" .
+
+<http://example.com/Participation/e.2128610-p.244723>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.244723> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Official/PO41049>
+        a          sport:Official ;
+        rdf:label  "Graham Scott" .
+
+<http://example.com/Athlete/p.17745>
+        a          sport:Athlete ;
+        rdf:label  "Kasper Schmeichel" .
+
+<http://example.com/Athlete/p.40836>
+        a          sport:Athlete ;
+        rdf:label  "Vicente Guaita" .
+
+<http://example.com/Athlete/p.86881>
+        a          sport:Athlete ;
+        rdf:label  "Nampalys Mendy" .
+
+<http://example.com/Athlete/p.168580>
+        a          sport:Athlete ;
+        rdf:label  "Ayoze Pérez" .
+
+<http://example.com/Associate/man1280>
+        a                    sport:Associate ;
+        rdf:label            "Roy Hodgson" ;
+        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+
+<http://example.com/Participation/e.2128610-p.74230>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "2" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "3" ;
+        spsocstat:passes-complete       "26" ;
+        spsocstat:passes-complete-3rd-final
+                "6" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "13" ;
+        spsocstat:passes-total          "39" ;
+        spsocstat:shots-blocked-cross   "1" ;
+        spsocstat:shots-blocked-outfielder
+                "1" ;
+        spsocstat:touches               "60" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.74230> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-p.66975>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "4" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "1" ;
+        spsocstat:passes-complete       "26" ;
+        spsocstat:passes-complete-3rd-final
+                "10" ;
+        spsocstat:passes-complete-long  "3" ;
+        spsocstat:passes-incomplete     "10" ;
+        spsocstat:passes-total          "36" ;
+        spsocstat:tackles-lost          "2" ;
+        spsocstat:tackles-total         "2" ;
+        spsocstat:tackles-won           "0" ;
+        spsocstat:touches               "51" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "83" ;
+        sport:participationBy           <http://example.com/Athlete/p.66975> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-p.172780>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "29" ;
+        spsocstat:passes-complete-3rd-final
+                "14" ;
+        spsocstat:passes-complete-long  "3" ;
+        spsocstat:passes-incomplete     "2" ;
+        spsocstat:passes-total          "31" ;
+        spsocstat:shots-off-goal-total  "1" ;
+        spsocstat:shots-on-goal-total   "1" ;
+        spsocstat:shots-total           "2" ;
+        spsocstat:touches               "42" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "70" ;
+        sport:participationBy           <http://example.com/Athlete/p.172780> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Athlete/p.244619>
+        a          sport:Athlete ;
+        rdf:label  "Luke Thomas" .
+
+<http://example.com/Membership/t.13-p.95463>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.95463> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
+        sport:uniformNumber    "12" .
+
+<http://example.com/Membership/t.31-p.244723>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.244723> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "27" .
+
+<http://example.com/Participation/e.2128610-p.80146>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:crosses-18-yard       "1" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "4" ;
+        spsocstat:fouls-suffered        "1" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "1" ;
+        spsocstat:passes-complete       "13" ;
+        spsocstat:passes-complete-3rd-final
+                "5" ;
+        spsocstat:passes-incomplete     "9" ;
+        spsocstat:passes-total          "22" ;
+        spsocstat:tackles-lost          "0" ;
+        spsocstat:tackles-total         "1" ;
+        spsocstat:tackles-won           "1" ;
+        spsocstat:touches               "40" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "78" ;
+        sport:participationBy           <http://example.com/Athlete/p.80146> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Athlete/p.444463>
+        a          sport:Athlete ;
+        rdf:label  "Wesley Fofana" .
+
+<http://example.com/Participation/e.2128610-p.197469>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.197469> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Participation/e.2128610-t.13>
+        a                              sport:TeamParticipation ;
+        spsocstat:clearances-successful
+                "12" ;
+        spsocstat:corner-kicks         "7" ;
+        spsocstat:fouls-commited       "13" ;
+        spsocstat:free-kicks           "1" ;
+        spsocstat:goals-against-total  "1" ;
+        spsocstat:interceptions        "9" ;
+        spsocstat:line-formation       "3412" ;
+        spsocstat:offsides             "2" ;
+        spsocstat:passes-total         "597" ;
+        spsocstat:shots-blocked        "2" ;
+        spsocstat:shots-on-goal-total  "5" ;
+        spsocstat:shots-total          "13" ;
+        spsocstat:tackles-lost         "7" ;
+        spsocstat:tackles-total        "18" ;
+        spsocstat:tackles-won          "11" ;
+        spsocstat:tackles-won-percentage
+                "0.611" ;
+        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/win> ;
+        spstat:score                   "2" ;
+        spstat:score-opposing          "1" ;
+        spstat:time-of-possession-percentage
+                "67.1" ;
+        sport:alignment                "home" ;
+        sport:participationBy          <http://example.com/Team/t.13> .
+
+<http://example.com/Participation/e.2128610-p.82403>
+        a                              sport:IndividualParticipation ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "0" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:fouls-commited       "1" ;
+        spsocstat:fouls-suffered       "3" ;
+        spsocstat:goals-against-total  "2" ;
+        spsocstat:goals-head           "0" ;
+        spsocstat:goals-left-foot      "0" ;
+        spsocstat:goals-right-foot     "0" ;
+        spsocstat:goals-total          "1" ;
+        spsocstat:interceptions        "2" ;
+        spsocstat:passes-complete      "16" ;
+        spsocstat:passes-complete-3rd-final
+                "6" ;
+        spsocstat:passes-incomplete    "4" ;
+        spsocstat:passes-total         "20" ;
+        spsocstat:shots-blocked-cross  "1" ;
+        spsocstat:shots-on-goal-total  "1" ;
+        spsocstat:shots-total          "1" ;
+        spsocstat:tackles-lost         "1" ;
+        spsocstat:tackles-total        "3" ;
+        spsocstat:tackles-won          "2" ;
+        spsocstat:touches              "46" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "90" ;
+        sport:participationBy          <http://example.com/Athlete/p.82403> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.13-p.197469>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.197469> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "20" .
+
+<http://example.com/Membership/t.13-p.166477>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.166477> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "27" .
+
+<http://example.com/Participation/e.2128610-p.95463>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.95463> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Participation/e.2128610-p.60252>
+        a                              sport:IndividualParticipation ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "0" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:goals-against-total  "1" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:passes-complete      "1" ;
+        spsocstat:passes-incomplete    "1" ;
+        spsocstat:passes-total         "2" ;
+        spsocstat:touches              "4" ;
+        spstat:time-played-total       "12" ;
+        sport:participationBy          <http://example.com/Athlete/p.60252> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Membership/t.31-p.74230>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.74230> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "3" .
+
+<http://example.com/Membership/t.13-p.166989>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.166989> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "8" .
+
+<http://example.com/Participation/e.2128610-a.2291881105-p.166477>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:scorer ;
+        sport:participationBy  <http://example.com/Athlete/p.166477> .
+
+<http://example.com/Athlete/p.54861>
+        a          sport:Athlete ;
+        rdf:label  "Christian Benteke" .
+
+<http://example.com/Membership/t.31-p.66975>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.66975> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "4" .
+
+<http://example.com/Action/e.2128610-a.2291891243>
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-26T21:36:31+01:00" ;
+        spact:minutes-elapsed         "78" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.80146" ;
+        spact:person-replacing-idref  "p.60252" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0426213631" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://example.com/Event/e.2128610> ;
+        sport:team                    <http://example.com/Team/e.2128610-t.31> .
+
+<http://example.com/Athlete/p.173954>
+        a          sport:Athlete ;
+        rdf:label  "Jairo Riedewald" .
+
+<http://example.com/Participation/e.2128610-a.2291848623-p.232413>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:assist ;
+        sport:participationBy  <http://example.com/Athlete/p.232413> .
+
+<http://example.com/Membership/t.13-p.86881>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.86881> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "24" .
+
+<http://example.com/Participation/e.2128610-p.58786>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.58786> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.105666>
+        a          sport:Athlete ;
+        rdf:label  "Jack Butland" .
+
+<http://example.com/Membership/t.31-p.80146>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.80146> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "9" .
+
+<http://example.com/Athlete/p.106837>
+        a          sport:Athlete ;
+        rdf:label  "Dennis Praet" .
+
+<http://example.com/Membership/t.31-p.82403>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.82403> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "11" .
+
+<http://example.com/Participation/e.2128610-p.111931>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.111931> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Participation/e.2128610-p.155569>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.155569> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Participation/e.2128610-p.40836>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "12" ;
+        spsocstat:passes-complete-3rd-final
+                "4" ;
+        spsocstat:passes-complete-long  "12" ;
+        spsocstat:passes-incomplete     "14" ;
+        spsocstat:passes-total          "26" ;
+        spsocstat:save-percentage       "0.600" ;
+        spsocstat:saves                 "3" ;
+        spsocstat:touches               "31" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.40836> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.13-p.111931>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.111931> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "21" .
+
+<http://example.com/Participation/e.2128610-p.17745>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:catches-punches       "1" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "13" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "7" ;
+        spsocstat:passes-total          "20" ;
+        spsocstat:save-percentage       "0.500" ;
+        spsocstat:saves                 "1" ;
+        spsocstat:touches               "26" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.17745> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.13-p.155569>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.155569> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "18" .
+
+<http://example.com/Athlete/p.228798>
+        a          sport:Athlete ;
+        rdf:label  "Cengiz Ünder" .
+
+<http://example.com/Participation/e.2128610-p.86881>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.86881> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Membership/t.31-p.60252>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.60252> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "10" .
+
+<http://example.com/Participation/e.2128610-a.2291891767-p.173515>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:scorer ;
+        sport:participationBy  <http://example.com/Athlete/p.173515> .
+
+<http://example.com/Action/e.2128610-a.2291848623>
+        a                         sport:Action ;
+        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        spact:date-time           "2021-04-26T20:12:14+01:00" ;
+        spact:minutes-elapsed     "12" ;
+        spact:period-value        "1" ;
+        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        spact:sequence-number     "0426201214" ;
+        sport:event               <http://example.com/Event/e.2128610> ;
+        sport:participation       <http://example.com/Participation/e.2128610-a.2291848623-p.82403> , <http://example.com/Participation/e.2128610-a.2291848623-p.232413> ;
+        sport:team                <http://example.com/Team/e.2128610-t.31> .
+
+<http://example.com/Athlete/p.203341>
+        a          sport:Athlete ;
+        rdf:label  "Wilfred Ndidi" .
+
+<http://example.com/Athlete/p.86417>
+        a          sport:Athlete ;
+        rdf:label  "Jeffrey Schlupp" .
+
+<http://example.com/Athlete/p.231747>
+        a          sport:Athlete ;
+        rdf:label  "Jean-Philippe Mateta" .
+
+<http://example.com/Athlete/p.101668>
+        a          sport:Athlete ;
+        rdf:label  "Jamie Vardy" .
+
+<http://example.com/Action/e.2128610-a.2291893075>
+        a                             sport:Action ;
+        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        spact:date-time               "2021-04-26T21:43:23+01:00" ;
+        spact:minutes-elapsed         "85" ;
+        spact:period-value            "2" ;
+        spact:person-original-idref   "p.173954" ;
+        spact:person-replacing-idref  "p.86417" ;
+        spact:person-replacing-position
+                "midfielder" ;
+        spact:sequence-number         "0426214323" ;
+        spact:substitution-reason     "Tactical" ;
+        sport:event                   <http://example.com/Event/e.2128610> ;
+        sport:team                    <http://example.com/Team/e.2128610-t.31> .
+
+<http://example.com/Membership/t.31-p.58786>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.58786> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
+        sport:uniformNumber    "34" .
+
+<http://example.com/Athlete/p.55494>
+        a          sport:Athlete ;
+        rdf:label  "Joel Ward" .
+
+<http://example.com/Participation/e.2128610-p.173515>
+        a                               sport:IndividualParticipation ;
+        spsocstat:assists-total         "1" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:crosses-18-yard       "1" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-head            "0" ;
+        spsocstat:goals-left-foot       "0" ;
+        spsocstat:goals-right-foot      "0" ;
+        spsocstat:goals-total           "1" ;
+        spsocstat:passes-complete       "20" ;
+        spsocstat:passes-complete-3rd-final
+                "13" ;
+        spsocstat:passes-complete-long  "1" ;
+        spsocstat:passes-incomplete     "8" ;
+        spsocstat:passes-total          "28" ;
+        spsocstat:shots-off-goal-total  "1" ;
+        spsocstat:shots-on-goal-total   "1" ;
+        spsocstat:shots-total           "2" ;
+        spsocstat:tackles-lost          "1" ;
+        spsocstat:tackles-total         "1" ;
+        spsocstat:tackles-won           "0" ;
+        spsocstat:touches               "46" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.173515> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Athlete/p.51938>
+        a          sport:Athlete ;
+        rdf:label  "Marc Albrighton" .
+
+<http://example.com/Membership/t.13-p.172780>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.172780> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "10" .
+
+<http://example.com/Athlete/p.232413>
+        a          sport:Athlete ;
+        rdf:label  "Eberechi Eze" .
+
+<http://example.com/Membership/t.31-p.40836>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.40836> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
+        sport:uniformNumber    "31" .
+
+<http://example.com/Participation/e.2128610-a.2291881105-p.173515>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:assist ;
+        sport:participationBy  <http://example.com/Athlete/p.173515> .
+
+<http://example.com/Participation/e.2128610-p.50472>
+        a                              sport:IndividualParticipation ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "0" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:goals-against-total  "0" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:passes-complete      "3" ;
+        spsocstat:passes-incomplete    "0" ;
+        spsocstat:passes-total         "3" ;
+        spsocstat:touches              "3" ;
+        spstat:time-played-total       "7" ;
+        sport:participationBy          <http://example.com/Athlete/p.50472> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.218031>
+        a          sport:Athlete ;
+        rdf:label  "Çaglar Söyüncü" .
+
+<http://example.com/Participation/e.2128610-PO41049>
+        a                      sport:OfficialParticipation ;
+        sport:participationBy  <http://example.com/Official/PO41049> ;
+        sport:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
+
+<http://example.com/Action/e.2128610-a.2291891767>
+        a                         sport:Action ;
+        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        spact:date-time           "2021-04-26T21:38:21+01:00" ;
+        spact:minutes-elapsed     "80" ;
+        spact:period-value        "2" ;
+        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        spact:sequence-number     "0426213821" ;
+        sport:event               <http://example.com/Event/e.2128610> ;
+        sport:participation       <http://example.com/Participation/e.2128610-a.2291891767-p.173515> , <http://example.com/Participation/e.2128610-a.2291891767-p.37642> ;
+        sport:team                <http://example.com/Team/e.2128610-t.13> .
+
+<http://example.com/Membership/t.31-p.173954>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.173954> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "44" .
+
+<http://example.com/Athlete/p.94245>
+        a          sport:Athlete ;
+        rdf:label  "Michy Batshuayi" .
+
+<http://example.com/Participation/e.2128610-p.54861>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "12" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "11" ;
+        spsocstat:passes-complete-3rd-final
+                "5" ;
+        spsocstat:passes-incomplete     "11" ;
+        spsocstat:passes-total          "22" ;
+        spsocstat:shots-off-goal-total  "1" ;
+        spsocstat:shots-on-goal-total   "1" ;
+        spsocstat:shots-total           "2" ;
+        spsocstat:tackles-lost          "0" ;
+        spsocstat:tackles-total         "1" ;
+        spsocstat:tackles-won           "1" ;
+        spsocstat:touches               "34" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.54861> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-a.2291870573-p.173515>
+        a                      sport:IndividualParticipation ;
+        spact:Role             <http://cv.iptc.org/newscodes//> ;
+        sport:participationBy  <http://example.com/Athlete/p.173515> .
+
+<http://example.com/Participation/e.2128610-p.244619>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "1" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:crosses-18-yard       "1" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "1" ;
+        spsocstat:fouls-suffered        "2" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "36" ;
+        spsocstat:passes-complete-3rd-final
+                "18" ;
+        spsocstat:passes-incomplete     "11" ;
+        spsocstat:passes-total          "47" ;
+        spsocstat:tackles-lost          "0" ;
+        spsocstat:tackles-total         "2" ;
+        spsocstat:tackles-won           "2" ;
+        spsocstat:touches               "60" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "70" ;
+        sport:participationBy           <http://example.com/Athlete/p.244619> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.13-p.17745>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.17745> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
+        sport:uniformNumber    "1" .
+
+<http://example.com/Participation/e.2128610-p.444463>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "2" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "2" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "3" ;
+        spsocstat:fouls-suffered        "1" ;
+        spsocstat:goals-against-total   "1" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:passes-complete       "63" ;
+        spsocstat:passes-complete-3rd-final
+                "7" ;
+        spsocstat:passes-complete-long  "6" ;
+        spsocstat:passes-incomplete     "9" ;
+        spsocstat:passes-total          "72" ;
+        spsocstat:tackles-lost          "1" ;
+        spsocstat:tackles-total         "2" ;
+        spsocstat:tackles-won           "1" ;
+        spsocstat:touches               "90" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.444463> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Membership/t.31-p.50472>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.50472> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "22" .
+
+<http://example.com/Action/e.2128610-a.2291881461>
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        spact:minutes-elapsed  "50" ;
+        spact:period-value     "2" ;
+        spact:type             spsocaction:video-review ;
+        sport:event            <http://example.com/Event/e.2128610> ;
+        sport:participation    <http://example.com/Participation/e.2128610-a.2291881461-p.173515> ;
+        sport:team             <http://example.com/Team/e.2128610-t.13> .
+
+<http://example.com/Athlete/p.37642>
+        a          sport:Athlete ;
+        rdf:label  "Jonny Evans" .
+
+<http://example.com/Team/t.13>
+        a                 sport:Team ;
+        rdf:label         "Leicester City" ;
+        sport:coach       <http://example.com/Associate/man38197> ;
+        sport:membership  <http://example.com/Membership/t.13-p.228798> , <http://example.com/Membership/t.13-p.203341> , <http://example.com/Membership/t.13-p.172780> , <http://example.com/Membership/t.13-p.173515> , <http://example.com/Membership/t.13-p.37642> , <http://example.com/Membership/t.13-p.218031> , <http://example.com/Membership/t.13-p.111931> , <http://example.com/Membership/t.13-p.86881> , <http://example.com/Membership/t.13-p.444463> , <http://example.com/Membership/t.13-p.51938> , <http://example.com/Membership/t.13-p.106837> , <http://example.com/Membership/t.13-p.95463> , <http://example.com/Membership/t.13-p.17745> , <http://example.com/Membership/t.13-p.166989> , <http://example.com/Membership/t.13-p.197469> , <http://example.com/Membership/t.13-p.101668> , <http://example.com/Membership/t.13-p.155569> , <http://example.com/Membership/t.13-p.244619> , <http://example.com/Membership/t.13-p.168580> , <http://example.com/Membership/t.13-p.166477> .
+
+<http://example.com/Athlete/p.197469>
+        a          sport:Athlete ;
+        rdf:label  "Hamza Choudhury" .
+
+<http://example.com/Membership/t.31-p.54861>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.54861> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "20" .
+
+<http://example.com/Participation/e.2128610-p.86417>
+        a                              sport:IndividualParticipation ;
+        spsocstat:aerials-won          "1" ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "0" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:goals-against-total  "0" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:passes-complete      "1" ;
+        spsocstat:passes-incomplete    "1" ;
+        spsocstat:passes-total         "2" ;
+        spsocstat:tackles-lost         "0" ;
+        spsocstat:tackles-total        "1" ;
+        spsocstat:tackles-won          "1" ;
+        spsocstat:touches              "6" ;
+        spstat:time-played-total       "5" ;
+        sport:participationBy          <http://example.com/Athlete/p.86417> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.166477>
+        a          sport:Athlete ;
+        rdf:label  "Timothy Castagne" .
+
+<http://example.com/Athlete/p.166989>
+        a          sport:Athlete ;
+        rdf:label  "Youri Tielemans" .
+
+<http://example.com/Participation/e.2128610-p.173954>
+        a                              sport:IndividualParticipation ;
+        spsocstat:assists-total        "0" ;
+        spsocstat:cautions-total       "1" ;
+        spsocstat:ejections-total      "0" ;
+        spsocstat:fouls-commited       "2" ;
+        spsocstat:goals-against-total  "2" ;
+        spsocstat:goals-total          "0" ;
+        spsocstat:interceptions        "4" ;
+        spsocstat:passes-complete      "13" ;
+        spsocstat:passes-complete-3rd-final
+                "4" ;
+        spsocstat:passes-incomplete    "4" ;
+        spsocstat:passes-total         "17" ;
+        spsocstat:tackles-lost         "0" ;
+        spsocstat:tackles-total        "1" ;
+        spsocstat:tackles-won          "1" ;
+        spsocstat:touches              "26" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "85" ;
+        sport:participationBy          <http://example.com/Athlete/p.173954> ;
+        sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-p.55494>
+        a                               sport:IndividualParticipation ;
+        spsocstat:aerials-won           "1" ;
+        spsocstat:assists-total         "0" ;
+        spsocstat:cautions-total        "0" ;
+        spsocstat:clearances-successful
+                "3" ;
+        spsocstat:crosses-18-yard-plus  "1" ;
+        spsocstat:ejections-total       "0" ;
+        spsocstat:fouls-commited        "3" ;
+        spsocstat:fouls-suffered        "1" ;
+        spsocstat:goals-against-total   "2" ;
+        spsocstat:goals-total           "0" ;
+        spsocstat:interceptions         "2" ;
+        spsocstat:passes-complete       "15" ;
+        spsocstat:passes-complete-3rd-final
+                "4" ;
+        spsocstat:passes-incomplete     "10" ;
+        spsocstat:passes-total          "25" ;
+        spsocstat:shots-blocked-cross   "1" ;
+        spsocstat:tackles-lost          "0" ;
+        spsocstat:tackles-total         "2" ;
+        spsocstat:tackles-won           "2" ;
+        spsocstat:touches               "52" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.55494> ;
+        sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
+
+<http://example.com/Participation/e.2128610-t.31>
+        a                              sport:TeamParticipation ;
+        spsocstat:cautions-total       "1" ;
+        spsocstat:clearances-successful
+                "14" ;
+        spsocstat:corner-kicks         "2" ;
+        spsocstat:fouls-commited       "12" ;
+        spsocstat:goals-against-total  "2" ;
+        spsocstat:interceptions        "19" ;
+        spsocstat:line-formation       "433" ;
+        spsocstat:offsides             "3" ;
+        spsocstat:passes-total         "297" ;
+        spsocstat:shots-blocked        "1" ;
+        spsocstat:shots-on-goal-total  "2" ;
+        spsocstat:shots-total          "4" ;
+        spsocstat:tackles-lost         "3" ;
+        spsocstat:tackles-total        "12" ;
+        spsocstat:tackles-won          "9" ;
+        spsocstat:tackles-won-percentage
+                "0.750" ;
+        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
+        spstat:score                   "1" ;
+        spstat:score-opposing          "2" ;
+        spstat:time-of-possession-percentage
+                "32.9" ;
+        sport:alignment                "away" ;
+        sport:participationBy          <http://example.com/Team/t.31> .
+
+<http://example.com/Participation/e.2128610-p.105666>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.105666> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Participation/e.2128610-p.106837>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.106837> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.66975>
+        a          sport:Athlete ;
+        rdf:label  "Luka Milivojevic" .
+
+<http://example.com/Action/e.2128610-a.2291881105>
+        a                         sport:Action ;
+        spact:class               <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        spact:date-time           "2021-04-26T21:08:04+01:00" ;
+        spact:minutes-elapsed     "50" ;
+        spact:period-value        "2" ;
+        spact:score-attempt-type  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        spact:sequence-number     "0426210804" ;
+        sport:event               <http://example.com/Event/e.2128610> ;
+        sport:participation       <http://example.com/Participation/e.2128610-a.2291881105-p.166477> , <http://example.com/Participation/e.2128610-a.2291881105-p.173515> ;
+        sport:team                <http://example.com/Team/e.2128610-t.13> .
+
+<http://example.com/Membership/t.13-p.173515>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.173515> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
+        sport:uniformNumber    "14" .
+
+<http://example.com/Athlete/p.57328>
+        a          sport:Athlete ;
+        rdf:label  "Nathaniel Clyne" .
+
+<http://example.com/Participation/e.2128610-p.228798>
+        a                      sport:IndividualParticipation ;
+        sport:participationBy  <http://example.com/Athlete/p.228798> ;
+        sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
+
+<http://example.com/Athlete/p.111931>
+        a          sport:Athlete ;
+        rdf:label  "Ricardo Pereira" .
+
+<http://example.com/Athlete/p.155569>
+        a          sport:Athlete ;
+        rdf:label  "Daniel Amartey" .
+
+<http://example.com/Athlete/p.80146>
+        a          sport:Athlete ;
+        rdf:label  "Jordan Ayew" .
+
+<http://example.com/Membership/t.31-p.86417>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/p.86417> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
+        sport:uniformNumber    "15" .
+
+<http://example.com/Action/e.2128610-a.2291870573>
+        a                      sport:Action ;
+        spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        spact:minutes-elapsed  "46" ;
+        spact:period-value     "1" ;
+        spact:type             spsocaction:video-review ;
+        sport:event            <http://example.com/Event/e.2128610> ;
+        sport:participation    <http://example.com/Participation/e.2128610-a.2291870573-p.173515> ;
+        sport:team             <http://example.com/Team/e.2128610-t.13> .
+
+<http://example.com/Participation/e.2128610-a.2291848623-p.82403>
+        a                      sport:IndividualParticipation ;
+        spact:Role             spsocrole:scorer ;
+        sport:participationBy  <http://example.com/Athlete/p.82403> .

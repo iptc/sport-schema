@@ -1,839 +1,774 @@
-@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema/> .
-@prefix schemaorg:      <https://schema.org/> .
-@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema/> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 
-<http://sport.org/Athlete/l.nhl.com-p.3895>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Brett Ritchie" ;
-        sport:dateOfBirth  "1993-07-01"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4687>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4687> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "70" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4740>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4740> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2841>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2841> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "36" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4687>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Philippe Desrosiers" ;
-        sport:dateOfBirth  "1995-08-16"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4546>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4546> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4254>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4254> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "24" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4740>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jason Dickinson" ;
-        sport:dateOfBirth  "1995-07-04"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.2841>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Cameron Gaunce" ;
-        sport:dateOfBirth  "1990-03-19"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4546>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Henri Kiviaho" ;
-        sport:dateOfBirth  "1994-02-26"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4254>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jordie Benn" ;
-        sport:dateOfBirth  "1987-07-26"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3454>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3454> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "1" .
-
-<http://sport.org/Athlete/l.nhl.com-p.3454>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jack Campbell" ;
-        sport:dateOfBirth  "1992-01-09"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4054>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4054> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
-
-<http://sport.org/Athlete/l.nhl.com-p.4054>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Mattias Backman" ;
-        sport:dateOfBirth  "1992-10-03"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.485>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Toby Petersen" ;
-        sport:dateOfBirth  "1978-10-27"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2940>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2940> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
-        sport:uniformNumber    "20" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4187>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4187> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
-        sport:uniformNumber    "28" .
-
-<http://sport.org/Athlete/l.nhl.com-p.2940>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Cody Eakin" ;
-        sport:dateOfBirth  "1991-05-24"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3625>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3625> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "3" .
-
-<http://sport.org/Athlete/l.nhl.com-p.423>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jason Spezza" ;
-        sport:dateOfBirth  "1983-06-13"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2561>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2561> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "73" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4187>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Matej Stransky" ;
-        sport:dateOfBirth  "1993-07-11"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4253>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4253> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
-        sport:uniformNumber    "16" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2106>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2106> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
-
-<http://sport.org/Athlete/l.nhl.com-p.3625>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "John Klingberg" ;
-        sport:dateOfBirth  "1992-08-14"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4878>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4878> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4460>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4460> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2200>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2200> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
-        sport:uniformNumber    "39" .
-
-<http://sport.org/Athlete/l.nhl.com-p.229>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Shawn Horcoff" ;
-        sport:dateOfBirth  "1978-09-17"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1362>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1362> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "32" .
-
-<http://sport.org/Athlete/l.nhl.com-p.2106>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Derek Meech" ;
-        sport:dateOfBirth  "1984-04-21"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4253>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ryan Garbutt" ;
-        sport:dateOfBirth  "1985-08-12"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4878>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Mattias Janmark-Nylen" ;
-        sport:dateOfBirth  "1992-12-08"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4460>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ludwig Bystrom" ;
-        sport:dateOfBirth  "1994-07-20"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.2561>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Maxime Fortunus" ;
-        sport:dateOfBirth  "1983-07-28"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.2200>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Travis Morin" ;
-        sport:dateOfBirth  "1984-01-09"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.1362>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Kari Lehtonen" ;
-        sport:dateOfBirth  "1983-11-16"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5032>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.5032> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "30" .
-
-<http://sport.org/Athlete/l.nhl.com-p.5032>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Josh Robinson" ;
-        sport:dateOfBirth  "1989-12-01"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4053>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4053> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "2" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4053>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jyrki Jokipakka" ;
-        sport:dateOfBirth  "1991-08-20"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5099>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.5099> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4537>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4537> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4537> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3724>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3724> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.1192>
+        a                  sport:Athlete ;
+        rdf:label          "Vernon Fiddler" ;
+        sport:dateOfBirth  "1980-05-09"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4435>
+        a                  sport:Athlete ;
+        rdf:label          "Mike Hedden" ;
+        sport:dateOfBirth  "1984-12-27"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3724> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "10" .
 
-<http://sport.org/Athlete/l.nhl.com-p.5099>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Julius Honka" ;
-        sport:dateOfBirth  "1995-12-03"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4537>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Branden Troock" ;
-        sport:dateOfBirth  "1994-03-20"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2732>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2732> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2732> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
         sport:uniformNumber    "4" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4173>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4173> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4173> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
         sport:uniformNumber    "42" .
 
-<http://sport.org/Athlete/l.nhl.com-p.3724>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Justin Dowling" ;
-        sport:dateOfBirth  "1990-10-01"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.3691>
+        a                  sport:Athlete ;
+        rdf:label          "Brendan Ranford" ;
+        sport:dateOfBirth  "1992-05-03"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.740>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.740> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "30" .
+<http://example.com/Athlete/l.nhl.com-p.4806>
+        a                  sport:Athlete ;
+        rdf:label          "Remi Elie" ;
+        sport:dateOfBirth  "1995-04-16"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.2732>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jason Demers" ;
-        sport:dateOfBirth  "1988-06-09"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4173>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Troy Vance" ;
-        sport:dateOfBirth  "1993-08-02"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4158>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4158> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4158> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3872>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3872> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3872> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
         sport:uniformNumber    "5" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3138>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3138> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3138> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
         sport:uniformNumber    "11" .
 
-<http://sport.org/Athlete/l.nhl.com-p.4158>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Emil Molin" ;
-        sport:dateOfBirth  "1993-02-03"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.2841>
+        a                  sport:Athlete ;
+        rdf:label          "Cameron Gaunce" ;
+        sport:dateOfBirth  "1990-03-19"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.3872>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jamie Oleksiak" ;
-        sport:dateOfBirth  "1992-12-21"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4427>
+        a                  sport:Athlete ;
+        rdf:label          "Gemel Smith" ;
+        sport:dateOfBirth  "1994-04-16"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.3138>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Curtis McKenzie" ;
-        sport:dateOfBirth  "1991-02-22"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3716>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3716> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3716> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
         sport:uniformNumber    "21" .
 
-<http://sport.org/Athlete/l.nhl.com-p.3716>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Antoine Roussel" ;
-        sport:dateOfBirth  "1989-11-21"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4314>
+        a                  sport:Athlete ;
+        rdf:label          "Austin Smith" ;
+        sport:dateOfBirth  "1988-11-07"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1440>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1440> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.3454>
+        a                  sport:Athlete ;
+        rdf:label          "Jack Campbell" ;
+        sport:dateOfBirth  "1992-01-09"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1440> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
         sport:uniformNumber    "6" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2279>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2279> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.3514>
+        a                  sport:Athlete ;
+        rdf:label          "Tyler Seguin" ;
+        sport:dateOfBirth  "1992-01-31"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.5121>
+        a                  sport:Athlete ;
+        rdf:label          "Brett Pollock" ;
+        sport:dateOfBirth  "1996-03-17"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2279> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
         sport:uniformNumber    "38" .
 
-<http://sport.org/Athlete/l.nhl.com-p.1440>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Trevor Daley" ;
-        sport:dateOfBirth  "1983-10-09"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4961>
+        a                  sport:Athlete ;
+        rdf:label          "Ludwig Karlsson" ;
+        sport:dateOfBirth  "1991-01-06"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.2279>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Francis Wathier" ;
-        sport:dateOfBirth  "1984-12-07"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4464>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4464> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
-
-<http://sport.org/Athlete/l.nhl.com-p.4464>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Esa Lindell" ;
-        sport:dateOfBirth  "1994-05-23"^^xsd:date .
-
-<http://sport.org/Team/l.nhl.com-t.21>
-        rdf:type             sport:Team ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Dallas Stars" ;
-        sport:competition    <http://sport.org/Competition/l.nhl.com-2015> ;
-        sport:governingBody  <http://sport.org/ParentCompetition/l.nhl.com> ;
-        sport:membership     <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.229> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.423> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.485> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.740> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> , <http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> ;
+<http://example.com/Team/l.nhl.com-t.21>
+        a                    sport:Team ;
+        rdf:label            "Dallas Stars" ;
+        sport:competition    <http://example.com/Competition/l.nhl.com-2015> ;
+        sport:governingBody  <http://example.com/ParentCompetition/l.nhl.com> ;
+        sport:membership     <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> , <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> ;
         sport:sport          <http://cv.iptc.org/newscodes/mediatopic/20000965> .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4349>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4349> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4464> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+
+<http://example.com/Athlete/l.nhl.com-p.485>
+        a                  sport:Athlete ;
+        rdf:label          "Toby Petersen" ;
+        sport:dateOfBirth  "1978-10-27"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2940>
+        a                  sport:Athlete ;
+        rdf:label          "Cody Eakin" ;
+        sport:dateOfBirth  "1991-05-24"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.3895>
+        a                  sport:Athlete ;
+        rdf:label          "Brett Ritchie" ;
+        sport:dateOfBirth  "1993-07-01"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2106>
+        a                  sport:Athlete ;
+        rdf:label          "Derek Meech" ;
+        sport:dateOfBirth  "1984-04-21"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4349> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
         sport:uniformNumber    "41" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3385>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3385> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3385> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
         sport:uniformNumber    "40" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3398>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3398> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.423>
+        a                  sport:Athlete ;
+        rdf:label          "Jason Spezza" ;
+        sport:dateOfBirth  "1983-06-13"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2561>
+        a                  sport:Athlete ;
+        rdf:label          "Maxime Fortunus" ;
+        sport:dateOfBirth  "1983-07-28"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3398> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "60" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4707>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4707> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.2200>
+        a                  sport:Athlete ;
+        rdf:label          "Travis Morin" ;
+        sport:dateOfBirth  "1984-01-09"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4707> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
         sport:uniformNumber    "43" .
 
-<http://sport.org/Athlete/l.nhl.com-p.4349>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Cristopher Nilstorp" ;
-        sport:dateOfBirth  "1984-02-16"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.1362>
+        a                  sport:Athlete ;
+        rdf:label          "Kari Lehtonen" ;
+        sport:dateOfBirth  "1983-11-16"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.3385>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jussi Rynnas" ;
-        sport:dateOfBirth  "1987-05-22"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.229>
+        a                  sport:Athlete ;
+        rdf:label          "Shawn Horcoff" ;
+        sport:dateOfBirth  "1978-09-17"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.4707>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Valeri Nichushkin" ;
-        sport:dateOfBirth  "1995-03-04"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.3398>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Tristan King" ;
-        sport:dateOfBirth  "1990-11-07"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2764>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2764> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2764> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "22" .
 
-<http://sport.org/Athlete/l.nhl.com-p.2764>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Colton Sceviour" ;
-        sport:dateOfBirth  "1989-04-20"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4687>
+        a                  sport:Athlete ;
+        rdf:label          "Philippe Desrosiers" ;
+        sport:dateOfBirth  "1995-08-16"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4328>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4328> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.4740>
+        a                  sport:Athlete ;
+        rdf:label          "Jason Dickinson" ;
+        sport:dateOfBirth  "1995-07-04"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4546>
+        a                  sport:Athlete ;
+        rdf:label          "Henri Kiviaho" ;
+        sport:dateOfBirth  "1994-02-26"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4328> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4397>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4397> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.4254>
+        a                  sport:Athlete ;
+        rdf:label          "Jordie Benn" ;
+        sport:dateOfBirth  "1987-07-26"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4397> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "94" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4284>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4284> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4284> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "25" .
 
-<http://sport.org/Athlete/l.nhl.com-p.4328>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Matt Mangene" ;
-        sport:dateOfBirth  "1989-03-12"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4397>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Radek Faksa" ;
-        sport:dateOfBirth  "1994-01-09"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4435>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4435> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
-        sport:uniformNumber    "26" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1393>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1393> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1393> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
         sport:uniformNumber    "27" .
 
-<http://sport.org/Athlete/l.nhl.com-p.4284>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Taylor Peters" ;
-        sport:dateOfBirth  "1992-01-24"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3691>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3691> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4435> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
-        sport:uniformNumber    "39" .
+        sport:uniformNumber    "26" .
 
-<http://sport.org/Athlete/l.nhl.com-p.740>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Tim Thomas" ;
-        sport:dateOfBirth  "1974-04-15"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4435>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Mike Hedden" ;
-        sport:dateOfBirth  "1984-12-27"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2577>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2577> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
-        sport:uniformNumber    "14" .
-
-<http://sport.org/Athlete/l.nhl.com-p.1393>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Travis Moen" ;
-        sport:dateOfBirth  "1982-04-06"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4806>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4806> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> .
-
-<http://sport.org/Athlete/l.nhl.com-p.2577>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jamie Benn" ;
-        sport:dateOfBirth  "1989-07-18"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.3691>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Brendan Ranford" ;
-        sport:dateOfBirth  "1992-05-03"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4806>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Remi Elie" ;
-        sport:dateOfBirth  "1995-04-16"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.485>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.485> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.485> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "19" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1165>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1165> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
-        sport:uniformNumber    "83" .
+<http://example.com/Athlete/l.nhl.com-p.2732>
+        a                  sport:Athlete ;
+        rdf:label          "Jason Demers" ;
+        sport:dateOfBirth  "1988-06-09"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2377>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2377> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "33" .
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2577> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:uniformNumber    "14" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4427>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4427> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3691> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:uniformNumber    "39" .
 
-<http://sport.org/Athlete/l.nhl.com-p.1165>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ales Hemsky" ;
-        sport:dateOfBirth  "1983-08-13"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4054>
+        a                  sport:Athlete ;
+        rdf:label          "Mattias Backman" ;
+        sport:dateOfBirth  "1992-10-03"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2528>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2528> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
-        sport:uniformNumber    "1" .
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4806> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> .
 
-<http://sport.org/Athlete/l.nhl.com-p.2377>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Alex Goligoski" ;
-        sport:dateOfBirth  "1985-07-30"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.3138>
+        a                  sport:Athlete ;
+        rdf:label          "Curtis McKenzie" ;
+        sport:dateOfBirth  "1991-02-22"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4314>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4314> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
-        sport:uniformNumber    "9" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4427>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Gemel Smith" ;
-        sport:dateOfBirth  "1994-04-16"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.2528>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Jhonas Enroth" ;
-        sport:dateOfBirth  "1988-06-25"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3501>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3501> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "37" .
-
-<http://sport.org/Athlete/l.nhl.com-p.4314>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Austin Smith" ;
-        sport:dateOfBirth  "1988-11-07"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3514>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3514> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
-        sport:uniformNumber    "91" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.423>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.423> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.423> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "90" .
 
-<http://sport.org/Athlete/l.nhl.com-p.3501>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Patrick Nemeth" ;
-        sport:dateOfBirth  "1992-02-08"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.5121>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.5121> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2968>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2968> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
-        sport:uniformNumber    "2" .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1907>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1907> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1165> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
-        sport:uniformNumber    "18" .
+        sport:uniformNumber    "83" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.229>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.229> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.229> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
         sport:uniformNumber    "10" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.4961>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.4961> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2377> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "33" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4427> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
+
+<http://example.com/Athlete/l.nhl.com-p.4187>
+        a                  sport:Athlete ;
+        rdf:label          "Matej Stransky" ;
+        sport:dateOfBirth  "1993-07-11"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2528> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "1" .
+
+<http://example.com/Athlete/l.nhl.com-p.3625>
+        a                  sport:Athlete ;
+        rdf:label          "John Klingberg" ;
+        sport:dateOfBirth  "1992-08-14"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4314> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:uniformNumber    "9" .
+
+<http://example.com/Athlete/l.nhl.com-p.1440>
+        a                  sport:Athlete ;
+        rdf:label          "Trevor Daley" ;
+        sport:dateOfBirth  "1983-10-09"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2279>
+        a                  sport:Athlete ;
+        rdf:label          "Francis Wathier" ;
+        sport:dateOfBirth  "1984-12-07"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3501> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "37" .
+
+<http://example.com/Athlete/l.nhl.com-p.4253>
+        a                  sport:Athlete ;
+        rdf:label          "Ryan Garbutt" ;
+        sport:dateOfBirth  "1985-08-12"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4878>
+        a                  sport:Athlete ;
+        rdf:label          "Mattias Janmark-Nylen" ;
+        sport:dateOfBirth  "1992-12-08"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4460>
+        a                  sport:Athlete ;
+        rdf:label          "Ludwig Bystrom" ;
+        sport:dateOfBirth  "1994-07-20"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3514> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:uniformNumber    "91" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.5121> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2968> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "2" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1907> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:uniformNumber    "18" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4961> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> .
 
-<http://sport.org/Athlete/l.nhl.com-p.3514>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Tyler Seguin" ;
-        sport:dateOfBirth  "1992-01-31"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2149>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2149> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2149> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "17" .
 
-<http://sport.org/Athlete/l.nhl.com-p.5121>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Brett Pollock" ;
-        sport:dateOfBirth  "1996-03-17"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.5032>
+        a                  sport:Athlete ;
+        rdf:label          "Josh Robinson" ;
+        sport:dateOfBirth  "1989-12-01"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.2968>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "William Wrenn" ;
-        sport:dateOfBirth  "1991-03-16"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4053>
+        a                  sport:Athlete ;
+        rdf:label          "Jyrki Jokipakka" ;
+        sport:dateOfBirth  "1991-08-20"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.1907>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Patrick Eaves" ;
-        sport:dateOfBirth  "1984-05-01"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.4961>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ludwig Karlsson" ;
-        sport:dateOfBirth  "1991-01-06"^^xsd:date .
-
-<http://sport.org/Athlete/l.nhl.com-p.2149>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Rich Peverley" ;
-        sport:dateOfBirth  "1982-07-08"^^xsd:date .
-
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2934>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2934> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2934> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
         sport:uniformNumber    "46" .
 
-<http://sport.org/Athlete/l.nhl.com-p.2934>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Ryan Button" ;
-        sport:dateOfBirth  "1991-03-26"^^xsd:date .
+<http://example.com/Athlete/l.nhl.com-p.4537>
+        a                  sport:Athlete ;
+        rdf:label          "Branden Troock" ;
+        sport:dateOfBirth  "1994-03-20"^^xsd:date .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.2919>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.2919> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Athlete/l.nhl.com-p.5099>
+        a                  sport:Athlete ;
+        rdf:label          "Julius Honka" ;
+        sport:dateOfBirth  "1995-12-03"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.3385>
+        a                  sport:Athlete ;
+        rdf:label          "Jussi Rynnas" ;
+        sport:dateOfBirth  "1987-05-22"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2919> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
         sport:uniformNumber    "15" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.1192>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.1192> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1192> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
         sport:uniformNumber    "38" .
 
-<http://sport.org/Membership/l.nhl.com-t.21-l.nhl.com-p.3895>
-        rdf:type               sport:IndividualMembership ;
-        sport:membershipBy     <http://sport.org/Athlete/l.nhl.com-p.3895> ;
-        sport:membershipOf     <http://sport.org/Team/l.nhl.com-t.21> ;
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3895> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
         sport:uniformNumber    "20" .
 
-<http://sport.org/Athlete/l.nhl.com-p.2919>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Scott Glennie" ;
+<http://example.com/Athlete/l.nhl.com-p.3724>
+        a                  sport:Athlete ;
+        rdf:label          "Justin Dowling" ;
+        sport:dateOfBirth  "1990-10-01"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.3398>
+        a                  sport:Athlete ;
+        rdf:label          "Tristan King" ;
+        sport:dateOfBirth  "1990-11-07"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4173>
+        a                  sport:Athlete ;
+        rdf:label          "Troy Vance" ;
+        sport:dateOfBirth  "1993-08-02"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2764>
+        a                  sport:Athlete ;
+        rdf:label          "Colton Sceviour" ;
+        sport:dateOfBirth  "1989-04-20"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4158>
+        a                  sport:Athlete ;
+        rdf:label          "Emil Molin" ;
+        sport:dateOfBirth  "1993-02-03"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.3872>
+        a                  sport:Athlete ;
+        rdf:label          "Jamie Oleksiak" ;
+        sport:dateOfBirth  "1992-12-21"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4687> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "70" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4740> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2841> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "36" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4546> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4254> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "24" .
+
+<http://example.com/Athlete/l.nhl.com-p.3716>
+        a                  sport:Athlete ;
+        rdf:label          "Antoine Roussel" ;
+        sport:dateOfBirth  "1989-11-21"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.1393>
+        a                  sport:Athlete ;
+        rdf:label          "Travis Moen" ;
+        sport:dateOfBirth  "1982-04-06"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3454> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "1" .
+
+<http://example.com/Athlete/l.nhl.com-p.2577>
+        a                  sport:Athlete ;
+        rdf:label          "Jamie Benn" ;
+        sport:dateOfBirth  "1989-07-18"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.740>
+        a                  sport:Athlete ;
+        rdf:label          "Tim Thomas" ;
+        sport:dateOfBirth  "1974-04-15"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4054> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+
+<http://example.com/Athlete/l.nhl.com-p.4464>
+        a                  sport:Athlete ;
+        rdf:label          "Esa Lindell" ;
+        sport:dateOfBirth  "1994-05-23"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.1165>
+        a                  sport:Athlete ;
+        rdf:label          "Ales Hemsky" ;
+        sport:dateOfBirth  "1983-08-13"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2377>
+        a                  sport:Athlete ;
+        rdf:label          "Alex Goligoski" ;
+        sport:dateOfBirth  "1985-07-30"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2940> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:uniformNumber    "20" .
+
+<http://example.com/Athlete/l.nhl.com-p.2528>
+        a                  sport:Athlete ;
+        rdf:label          "Jhonas Enroth" ;
+        sport:dateOfBirth  "1988-06-25"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4187> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:uniformNumber    "28" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.3625> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "3" .
+
+<http://example.com/Athlete/l.nhl.com-p.4349>
+        a                  sport:Athlete ;
+        rdf:label          "Cristopher Nilstorp" ;
+        sport:dateOfBirth  "1984-02-16"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.3501>
+        a                  sport:Athlete ;
+        rdf:label          "Patrick Nemeth" ;
+        sport:dateOfBirth  "1992-02-08"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4707>
+        a                  sport:Athlete ;
+        rdf:label          "Valeri Nichushkin" ;
+        sport:dateOfBirth  "1995-03-04"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4253> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:uniformNumber    "16" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2106> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4460> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4878> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> .
+
+<http://example.com/Athlete/l.nhl.com-p.2968>
+        a                  sport:Athlete ;
+        rdf:label          "William Wrenn" ;
+        sport:dateOfBirth  "1991-03-16"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.1907>
+        a                  sport:Athlete ;
+        rdf:label          "Patrick Eaves" ;
+        sport:dateOfBirth  "1984-05-01"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2561> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "73" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.2200> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:uniformNumber    "39" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.1362> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "32" .
+
+<http://example.com/Athlete/l.nhl.com-p.2149>
+        a                  sport:Athlete ;
+        rdf:label          "Rich Peverley" ;
+        sport:dateOfBirth  "1982-07-08"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.5032> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "30" .
+
+<http://example.com/Athlete/l.nhl.com-p.4397>
+        a                  sport:Athlete ;
+        rdf:label          "Radek Faksa" ;
+        sport:dateOfBirth  "1994-01-09"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2934>
+        a                  sport:Athlete ;
+        rdf:label          "Ryan Button" ;
+        sport:dateOfBirth  "1991-03-26"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.4328>
+        a                  sport:Athlete ;
+        rdf:label          "Matt Mangene" ;
+        sport:dateOfBirth  "1989-03-12"^^xsd:date .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.740> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:uniformNumber    "30" .
+
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.4053> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:uniformNumber    "2" .
+
+<http://example.com/Athlete/l.nhl.com-p.4284>
+        a                  sport:Athlete ;
+        rdf:label          "Taylor Peters" ;
+        sport:dateOfBirth  "1992-01-24"^^xsd:date .
+
+<http://example.com/Athlete/l.nhl.com-p.2919>
+        a                  sport:Athlete ;
+        rdf:label          "Scott Glennie" ;
         sport:dateOfBirth  "1991-02-22"^^xsd:date .
 
-<http://sport.org/Athlete/l.nhl.com-p.1192>
-        rdf:type           sport:Athlete ;
-        <http://www.w3.org/2000/01/rdf-schema#label>
-                "Vernon Fiddler" ;
-        sport:dateOfBirth  "1980-05-09"^^xsd:date .
+<http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099>
+        a                      sport:IndividualMembership ;
+        sport:membershipBy     <http://example.com/Athlete/l.nhl.com-p.5099> ;
+        sport:membershipOf     <http://example.com/Team/l.nhl.com-t.21> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/defenseman> .

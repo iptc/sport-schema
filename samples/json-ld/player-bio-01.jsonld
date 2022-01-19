@@ -1,6 +1,6 @@
 {
   "@graph" : [ {
-    "@id" : "http://sport.org/Athlete/p10039",
+    "@id" : "http://example.com/Athlete/p10039",
     "@type" : "sport:Athlete",
     "dateOfBirth" : "1979-07-02",
     "sport:sport" : {
@@ -8,53 +8,64 @@
     },
     "label" : "Joe Thornton"
   }, {
-    "@id" : "http://sport.org/Membership/BOSnhl-p10039",
+    "@id" : "http://example.com/Membership/BOSnhl-p10039",
     "@type" : "sport:Membership",
     "endDate" : "2005-11-30",
-    "membershipBy" : "http://sport.org/Athlete/p10039",
-    "membershipOf" : "http://sport.org/Team/BOSnhl",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/BOSnhl",
     "startDate" : "1997-06-21"
   }, {
-    "@id" : "http://sport.org/Membership/FLAnhl-p10039",
+    "@id" : "http://example.com/Membership/FLAnhl-p10039",
     "@type" : "sport:IndividualMembership",
-    "membershipBy" : "http://sport.org/Athlete/p10039",
-    "membershipOf" : "http://sport.org/Team/FLAnhl",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/FLAnhl",
     "positionRegular" : "http://cv.iptc.org/newscodes/spichpos/center",
     "startDate" : "2021-08-13",
     "uniformNumber" : "19"
   }, {
-    "@id" : "http://sport.org/Membership/SJnhl-p10039",
+    "@id" : "http://example.com/Membership/SJnhl-p10039",
     "@type" : "sport:Membership",
     "endDate" : "2020-10-06",
-    "membershipBy" : "http://sport.org/Athlete/p10039",
-    "membershipOf" : "http://sport.org/Team/SJnhl",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/SJnhl",
     "startDate" : "2005-11-30"
   }, {
-    "@id" : "http://sport.org/Membership/TORnhl-p10039",
+    "@id" : "http://example.com/Membership/TORnhl-p10039",
     "@type" : "sport:Membership",
     "endDate" : "2021-05-31",
-    "membershipBy" : "http://sport.org/Athlete/p10039",
-    "membershipOf" : "http://sport.org/Team/TORnhl",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/TORnhl",
     "startDate" : "2020-10-06"
   }, {
-    "@id" : "http://sport.org/Team/BOSnhl",
-    "membership" : "http://sport.org/Membership/BOSnhl-p10039"
+    "@id" : "http://example.com/Team/BOSnhl",
+    "membership" : "http://example.com/Membership/BOSnhl-p10039"
   }, {
-    "@id" : "http://sport.org/Team/FLAnhl",
+    "@id" : "http://example.com/Team/FLAnhl",
     "@type" : "sport:Team",
-    "membership" : "http://sport.org/Membership/FLAnhl-p10039",
+    "membership" : "http://example.com/Membership/FLAnhl-p10039",
     "label" : "Florida Panthers"
   }, {
-    "@id" : "http://sport.org/Team/SJnhl",
-    "membership" : "http://sport.org/Membership/SJnhl-p10039"
+    "@id" : "http://example.com/Team/SJnhl",
+    "membership" : "http://example.com/Membership/SJnhl-p10039"
   }, {
-    "@id" : "http://sport.org/Team/TORnhl",
-    "membership" : "http://sport.org/Membership/TORnhl-p10039"
+    "@id" : "http://example.com/Team/TORnhl",
+    "membership" : "http://example.com/Membership/TORnhl-p10039"
   } ],
   "@context" : {
+    "membership" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membership",
+      "@type" : "@id"
+    },
+    "uniformNumber" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
+    },
     "startDate" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/startDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "positionRegular" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionRegular",
+      "@type" : "@id"
     },
     "membershipOf" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membershipOf",
@@ -64,40 +75,29 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
       "@type" : "@id"
     },
-    "endDate" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/endDate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "membership" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/membership",
-      "@type" : "@id"
-    },
-    "uniformNumber" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
-    },
-    "positionRegular" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionRegular",
-      "@type" : "@id"
-    },
     "sport" : "http://www.iptc.org/ontologies/Sport/",
     "dateOfBirth" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/dateOfBirth",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
     "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#label"
+    },
+    "endDate" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
     },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema/",
+    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
     "spescaction" : "http://cv.iptc.org/newscodes/spescaction/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
     "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
     "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
-    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
-    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
-    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }
 }
