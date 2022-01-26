@@ -467,6 +467,11 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$player-id"/> .
         </xsl:if>
 
+        <xsl:if test="parent::newsml:standing">
+            <!-- <season> sport:participation <participation> -->
+            <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
+        </xsl:if>
+
         <xsl:apply-templates>
             <xsl:with-param name="participation-id" select="$participation-id"/>
             <xsl:with-param name="player-id" select="$player-id"/>
