@@ -2,19 +2,23 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 
 SELECT ?teamName ?playerName ?playerStatus
 WHERE { 
-    ?event rdf:type sport:Event .
-    ?event sport:participation ?playerperf .
-    ?playerperf sport:participationBy ?player .
-    ?playerperf rdf:type sport:IndividualParticipation .
-    ?player sport:name ?playerName . 
-    ?player rdf:type sport:Athlete .
-    ?playerperf sport:status ?playerStatus .
-    ?team sport:athlete ?player .
-    ?team rdf:type sport:Team .
-    ?team sport:name ?teamName .
+    ?event rdf:type sport:Event ;
+		   sport:participation ?playerperf .
+    ?playerperf sport:participationBy ?player ;
+    			rdf:type sport:IndividualParticipation .
+    ?player rdfs:label ?playerName ; 
+    		rdf:type sport:Athlete .
+    ?playerperf sport:status <http://cv.iptc.org/newscodes/spperstatus/starter> ;
+    			sport:status ?playerStatus .    
+    ?team sport:membership ?members .
+    ?members sport:membershipBy ?player ;
+    		 sport:membershipOf ?team .
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName .
 }
 ORDER BY ?teamName ?playerName

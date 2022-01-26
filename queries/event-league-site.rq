@@ -2,6 +2,7 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
@@ -18,17 +19,17 @@ WHERE
     ?homeTeamParticipation sport:participationBy ?homeTeam .
     ?homeTeamParticipation sport:alignment "home" .
     ?homeTeam rdf:type sport:Team .
-    ?homeTeam sport:name ?homeTeamName .
+    ?homeTeam rdfs:label ?homeTeamName .
     ?event sport:participation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation .
     ?awayTeamParticipation sport:participationBy ?awayTeam .
     ?awayTeamParticipation sport:alignment "away" .
     ?awayTeam rdf:type sport:Team .
-    ?awayTeam sport:name ?awayTeamName .
+    ?awayTeam rdfs:label ?awayTeamName .
     ?event sport:site ?site .
     ?site rdf:type sport:Site .
-    ?site sport:name ?siteName .
-    FILTER ( ?date > "2021-05-23T00:00:00Z"^^xsd:dateTime ) 
-    FILTER ( ?date < "2021-05-24T00:00:00Z"^^xsd:dateTime ) 
+    ?site rdfs:label ?siteName .
+    FILTER ( ?date > "2014-10-04T00:00:00Z"^^xsd:dateTime ) 
+    FILTER ( ?date < "2014-10-05T00:00:00Z"^^xsd:dateTime ) 
 }
 ORDER BY ?week ?displayDate ?displayTime

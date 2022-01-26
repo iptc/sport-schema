@@ -2,6 +2,7 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
@@ -11,13 +12,15 @@ PREFIX spichposition: <http://cv.iptc.org/newscodes/spichposition/>
 SELECT ?teamName ?playerName ?playerPos ?dob ?uniformNumber
 WHERE
 {
-    ?team rdf:type sport:Team .
+    ?teams sport:membership ?members .
+    ?members sport:membershipBy ?player ;
+    		 sport:membershipOf ?team .
     ?player rdf:type  sport:Athlete .
-    ?team sport:athlete ?player .
-    ?team sport:name ?teamName .
-    ?player sport:name ?playerName .
-    OPTIONAL { ?player sport:positionRegular ?playerPos . }
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName .
+    ?player rdfs:label ?playerName .
+    OPTIONAL { ?members sport:positionRegular ?playerPos . }
+    OPTIONAL { ?members sport:uniformNumber ?uniformNumber . }
     OPTIONAL { ?player sport:dateOfBirth ?dob . }
-    OPTIONAL { ?player sport:uniformNumber ?uniformNumber . }
 }
 ORDER BY ?teamName ?playerName

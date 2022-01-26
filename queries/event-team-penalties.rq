@@ -3,6 +3,7 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
@@ -12,10 +13,12 @@ WHERE {
     ?individualParticipation rdf:type sport:IndividualParticipation .
     ?individualParticipation sport:participationBy ?player .
     ?player rdf:type sport:Athlete .
-    ?player sport:name ?playerName .
-    ?team sport:athlete ?player .
+    ?player rdfs:label ?playerName .
+    ?teams sport:membership ?members .
+    ?members sport:membershipBy ?player ;
+    		 sport:membershipOf ?team .
     ?team rdf:type sport:Team .
-    ?team sport:name ?teamName . 
+    ?team rdfs:label ?teamName . 
     FILTER (?foulsCommitted > "0")
 }
 ORDER BY ?teamName ?playerName

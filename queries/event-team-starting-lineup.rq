@@ -2,21 +2,25 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocpos/>
 
 SELECT ?teamName ?playerName ?playerPos
 WHERE {
-    ?team rdf:type sport:Team .
-    ?player rdf:type  sport:Athlete .
-    ?event rdf:type  sport:Event .
-    ?participation rdf:type  sport:IndividualParticipation .
-    ?team sport:athlete ?player .
-    ?team sport:name ?teamName .
-    ?player sport:name ?playerName .
-    ?player sport:position-regular ?playerPos .
-    ?participation sport:participationBy ?player .
-    ?participation spstat:events-started "1"
+    ?event rdf:type sport:Event ;
+		   sport:participation ?playerperf .
+    ?playerperf sport:participationBy ?player ;
+    			rdf:type sport:IndividualParticipation .
+    ?player rdfs:label ?playerName ; 
+    		rdf:type sport:Athlete .
+    ?playerperf sport:status <http://cv.iptc.org/newscodes/spperstatus/starter> .
+    ?team sport:membership ?members .
+    ?members sport:membershipBy ?player ;
+    		 sport:positionRegular ?playerPos ;
+    		 sport:membershipOf ?team .
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName .
 }
 ORDER BY ?teamName ?playerName

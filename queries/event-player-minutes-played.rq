@@ -2,6 +2,7 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 
@@ -10,7 +11,7 @@ WHERE {
     ?event rdf:type sport:Event .
     ?event sport:participation ?playerperf .
     ?playerperf sport:participationBy ?player .
-    ?player sport:name ?playerName . 
+    ?player rdfs:label ?playerName . 
     ?playerperf spstat:time-played-total ?minutesPlayed .
 }
 ORDER BY ?playerName

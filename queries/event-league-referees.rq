@@ -2,6 +2,7 @@
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 
 SELECT ?officialName ?officialPosition
@@ -11,8 +12,8 @@ WHERE
     ?event sport:participation ?officialParticipation .
     ?officialParticipation rdf:type sport:OfficialParticipation .
     ?officialParticipation sport:participationBy ?official .
-    ?officialParticipation sport:position-event ?officialPosition .
+    ?officialParticipation sport:positionEvent ?officialPosition .
     ?official rdf:type sport:Official .
-    ?official sport:name ?officialName .
-    FILTER ( ?event = <http://sport.org/Event/E755363> )
+    ?official rdfs:label ?officialName .
+    FILTER ( ?event = <http://example.com/Event/E755363> )
 }
