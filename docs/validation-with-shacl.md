@@ -44,4 +44,30 @@ For example:
 ] .
 ```
 
-Currently, the 
+Currently, our SHACL Shape constrains several properties to use only terms from
+our IPTC NewsCodes controlled vocabularies, through the use of regular expressions.
+
+This means that the following Turtle would trigger a validation error:
+
+```ttl
+# invalid
+<http://example.com/Participation/WC-2017-e.958051-T280>
+    a                      sport:TeamParticipation ;
+    spstat:event-outcome   "draw" .
+```
+
+Only a term from the controlled vocabulary would validate:
+
+```ttl
+# valid
+<http://example.com/Participation/WC-2017-e.958051-T280>
+    a                      sport:TeamParticipation ;
+    spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/tie> .
+```
+
+To run the SHACL validator over all sample files in the repository, we have written
+a small shell script that helps:
+
+```bash
+tools/shacl-validate.sh
+```
