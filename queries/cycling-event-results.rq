@@ -8,6 +8,7 @@ PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT ?eventName ?playerName ?rank ?time
 WHERE
@@ -18,9 +19,11 @@ WHERE
 		   sport:participation ?playerperf .
     ?playerperf sport:participationBy ?player ;
     			rdf:type sport:IndividualParticipation ;
-    			sport:rank ?rank ;
+    			sport:rank ?rankstr ;
     			spstat:score ?time .
     ?player rdfs:label ?playerName ; 
     		rdf:type sport:Athlete .
+    		
+        	BIND (xsd:integer(?rankstr) as ?rank)
 }
-ORDER BY ASC(?eventDateTime) ASC(?time)
+ORDER BY ASC(?eventDateTime) ASC(?rank)

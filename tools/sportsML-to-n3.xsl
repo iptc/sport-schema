@@ -110,6 +110,11 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="ancestor::newsml:tournament-part/newsml:tournament-part-metadata/@type">
 	        <xsl:variable name="phase-id">
         <xsl:choose>
+
+        <!-- simple round -->
+        <xsl:when test="parent::newsml:tournament-part/newsml:tournament-part-metadata[@type = 'sptournamentform:round']/@number">
+    	        <xsl:value-of select="concat('«', $sport-vendor-ns, 'CompetitionPhase/', $season-key, '-round-', parent::newsml:tournament-part/newsml:tournament-part-metadata/@number, '»')"/>
+        </xsl:when>
         <!-- group phase -->
             <xsl:when test="parent::newsml:tournament-part[newsml:tournament-part-metadata/@format-type = 'sptournamentform:single-group']">
     	        <xsl:value-of select="concat('«', $sport-vendor-ns, 'CompetitionPhase/', $season-key, '-group-', parent::newsml:tournament-part/newsml:tournament-part-metadata/@number, '»')"/>
@@ -129,6 +134,13 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«', $sport-ontology-ns, 'CompetitionPhase', '»')"/>~<xsl:value-of select="$phase-id"/> .  
 
         <xsl:choose>
+        <!-- simple round -->
+        <xsl:when test="parent::newsml:tournament-part/newsml:tournament-part-metadata[@type = 'sptournamentform:round']/@number">
+            <xsl:value-of select="$phase-id"/>~<xsl:value-of
+                select="concat('«', $sport-ontology-ns, 'CompetitionPhaseType', '»')"/>~<xsl:value-of
+                select="concat('«', $newscode-ns, substring-before(parent::newsml:tournament-part/newsml:tournament-part-metadata/@type, ':'), '/', substring-after(parent::newsml:tournament-part/newsml:tournament-part-metadata/@type, ':'), '»')"
+            /> . 
+        </xsl:when>
         <!-- group phase -->
             <xsl:when test="parent::newsml:tournament-part[newsml:tournament-part-metadata/@format-type = 'sptournamentform:single-group']">
             <xsl:value-of select="$phase-id"/>~<xsl:value-of
