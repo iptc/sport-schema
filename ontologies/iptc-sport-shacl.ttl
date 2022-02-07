@@ -23,8 +23,8 @@ sport:EventShape
     sh:flags   "i"                                               # Ignore case
   ] .
 
-sport:IndividualParticipationShape
-  sh:targetClass sport:teamParticipation, sport:IndividualParticipation ;
+sport:ParticipationShape
+  sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;
   a sh:NodeShape ;
   sh:property [
     sh:path sport:score-units ;
@@ -35,6 +35,11 @@ sport:IndividualParticipationShape
     sh:path sport:event-outcome ;
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:positionRegular ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spsocpos/" ;       # term is from (football) CV
+    sh:flags   "i"                                               # Ignore case
   ] .
 
 # property is from spact: ontology - should it be moved?
@@ -43,6 +48,15 @@ sport:ActionShape
   a sh:NodeShape ;
   sh:property [
     sh:path spact:class ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;  # term is from spactionclass CV
+    sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;  # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] .
+
+sport:IndividualShape
+  sh:targetClass sport:Individual ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:positionRegular ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spsocpos/" ;       # term is from (soccer) CV
     sh:flags   "i"                                               # Ignore case
   ] .
