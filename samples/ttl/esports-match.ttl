@@ -1,23 +1,22 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Athlete/18>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1991"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/5120-18>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "89,7" ;
         spesstat:FKdiff        "-1" ;
         spesstat:KAST          "78,3" ;
@@ -30,7 +29,7 @@
         sport:participationBy  <http://example.com/Athlete/18> .
 
 <http://example.com/Participation/5122-11>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "69,8" ;
         spesstat:FKdiff        "4" ;
         spesstat:KAST          "60,0" ;
@@ -43,7 +42,7 @@
         sport:participationBy  <http://example.com/Athlete/11> .
 
 <http://example.com/Event/5122>
-        a                        sport:Event ;
+        rdf:type                 sport:Event ;
         sport:competition        <http://example.com/Competition/l.intelextrememasters.com-2019> ;
         sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:parentCompetition  <http://example.com/ParentCompetition/l.intelextrememasters.com> ;
@@ -52,16 +51,15 @@
         sport:startDate          "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/team_6134-13>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/13> ;
         sport:membershipOf  <http://example.com/Team/team_6134> .
 
 <http://example.com/Athlete/12>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1986"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/541807-team_9572>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:event-outcome          <http://cv.iptc.org/newscodes/speventoutcome/win> ;
         spstat:events-played          "24" ;
         spstat:score                  "2" ;
@@ -70,12 +68,12 @@
         sport:participationBy         <http://example.com/Team/team_9572> .
 
 <http://example.com/Membership/team_9572-15>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/15> ;
         sport:membershipOf  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5120-12>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "66,9" ;
         spesstat:FKdiff        "-1" ;
         spesstat:KAST          "56,5" ;
@@ -88,7 +86,7 @@
         sport:participationBy  <http://example.com/Athlete/12> .
 
 <http://example.com/Participation/5121-17>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "81,3" ;
         spesstat:FKdiff        "4" ;
         spesstat:KAST          "65,5" ;
@@ -101,13 +99,13 @@
         sport:participationBy  <http://example.com/Athlete/17> .
 
 <http://example.com/Participation/5120-team_6134>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
         spstat:score           "7" ;
         sport:participationBy  <http://example.com/Team/team_6134> .
 
 <http://example.com/Participation/5121-11>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "89,7" ;
         spesstat:FKdiff        "3" ;
         spesstat:KAST          "75,9" ;
@@ -120,7 +118,7 @@
         sport:participationBy  <http://example.com/Athlete/11> .
 
 <http://example.com/Participation/5122-16>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "90,9" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "80,0" ;
@@ -133,23 +131,22 @@
         sport:participationBy  <http://example.com/Athlete/16> .
 
 <http://example.com/Athlete/17>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1995"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/5120-team_9572>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/win> ;
         spstat:score           "16" ;
         sport:participationBy  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5122-team_6134>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
         spstat:score           "9" ;
         sport:participationBy  <http://example.com/Team/team_6134> .
 
 <http://example.com/Participation/5120-17>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "104,9" ;
         spesstat:FKdiff        "3" ;
         spesstat:KAST          "73,9" ;
@@ -162,7 +159,7 @@
         sport:participationBy  <http://example.com/Athlete/17> .
 
 <http://example.com/Participation/5122-10>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "72,5" ;
         spesstat:FKdiff        "-2" ;
         spesstat:KAST          "48,1" ;
@@ -175,7 +172,7 @@
         sport:participationBy  <http://example.com/Athlete/10> .
 
 <http://example.com/Event/5121>
-        a                        sport:Event ;
+        rdf:type                 sport:Event ;
         sport:competition        <http://example.com/Competition/l.intelextrememasters.com-2019> ;
         sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:parentCompetition  <http://example.com/ParentCompetition/l.intelextrememasters.com> ;
@@ -184,16 +181,15 @@
         sport:startDate          "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/team_6134-12>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/12> ;
         sport:membershipOf  <http://example.com/Team/team_6134> .
 
 <http://example.com/Athlete/11>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1994"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/5120-11>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "65,9" ;
         spesstat:FKdiff        "-3" ;
         spesstat:KAST          "65,2" ;
@@ -206,7 +202,7 @@
         sport:participationBy  <http://example.com/Athlete/11> .
 
 <http://example.com/Participation/5121-16>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "66,2" ;
         spesstat:FKdiff        "-4" ;
         spesstat:KAST          "62,1" ;
@@ -219,13 +215,13 @@
         sport:participationBy  <http://example.com/Athlete/16> .
 
 <http://example.com/Participation/5121-team_6134>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/win> ;
         spstat:score           "16" ;
         sport:participationBy  <http://example.com/Team/team_6134> .
 
 <http://example.com/Participation/5121-10>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "84,8" ;
         spesstat:FKdiff        "-2" ;
         spesstat:KAST          "62,1" ;
@@ -238,7 +234,7 @@
         sport:participationBy  <http://example.com/Athlete/10> .
 
 <http://example.com/Participation/5122-15>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "105,2" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "80,0" ;
@@ -251,22 +247,21 @@
         sport:participationBy  <http://example.com/Athlete/15> .
 
 <http://example.com/Participation/5121-team_9572>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
         spstat:score           "13" ;
         sport:participationBy  <http://example.com/Team/team_9572> .
 
 <http://example.com/Athlete/16>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1997"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Membership/team_9572-19>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/19> ;
         sport:membershipOf  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5120-16>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "87,6" ;
         spesstat:FKdiff        "2" ;
         spesstat:KAST          "78,3" ;
@@ -279,7 +274,7 @@
         sport:participationBy  <http://example.com/Athlete/16> .
 
 <http://example.com/Event/5120>
-        a                        sport:Event ;
+        rdf:type                 sport:Event ;
         sport:competition        <http://example.com/Competition/l.intelextrememasters.com-2019> ;
         sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:parentCompetition  <http://example.com/ParentCompetition/l.intelextrememasters.com> ;
@@ -288,16 +283,15 @@
         sport:startDate          "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/team_6134-11>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/11> ;
         sport:membershipOf  <http://example.com/Team/team_6134> .
 
 <http://example.com/Athlete/10>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1994"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/5120-10>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "65,9" ;
         spesstat:FKdiff        "3" ;
         spesstat:KAST          "65,2" ;
@@ -310,7 +304,7 @@
         sport:participationBy  <http://example.com/Athlete/10> .
 
 <http://example.com/Participation/5121-15>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "80,1" ;
         spesstat:FKdiff        "5" ;
         spesstat:KAST          "69,0" ;
@@ -323,13 +317,13 @@
         sport:participationBy  <http://example.com/Athlete/15> .
 
 <http://example.com/Participation/5122-team_9572>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:event-outcome   <http://cv.iptc.org/newscodes/speventoutcome/win> ;
         spstat:score           "16" ;
         sport:participationBy  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5122-14>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "73,7" ;
         spesstat:FKdiff        "2" ;
         spesstat:KAST          "56,0" ;
@@ -342,21 +336,20 @@
         sport:participationBy  <http://example.com/Athlete/14> .
 
 <http://example.com/Athlete/15>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1998"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Membership/team_9572-18>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/18> ;
         sport:membershipOf  <http://example.com/Team/team_9572> .
 
 <http://example.com/Team/team_6134>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Kinguin" ;
         sport:membership  <http://example.com/Membership/team_6134-14> , <http://example.com/Membership/team_6134-13> , <http://example.com/Membership/team_6134-12> , <http://example.com/Membership/team_6134-11> , <http://example.com/Membership/team_6134-10> .
 
 <http://example.com/Participation/5120-15>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "64,4" ;
         spesstat:FKdiff        "3" ;
         spesstat:KAST          "82,6" ;
@@ -369,17 +362,17 @@
         sport:participationBy  <http://example.com/Athlete/15> .
 
 <http://example.com/Membership/team_6134-10>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/10> ;
         sport:membershipOf  <http://example.com/Team/team_6134> .
 
 <http://example.com/Team/team_9572>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Ex-Space Soldiers" ;
         sport:membership  <http://example.com/Membership/team_9572-19> , <http://example.com/Membership/team_9572-18> , <http://example.com/Membership/team_9572-17> , <http://example.com/Membership/team_9572-16> , <http://example.com/Membership/team_9572-15> .
 
 <http://example.com/Participation/5121-14>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "78,4" ;
         spesstat:FKdiff        "0" ;
         spesstat:KAST          "75,9" ;
@@ -392,7 +385,7 @@
         sport:participationBy  <http://example.com/Athlete/14> .
 
 <http://example.com/Participation/5122-19>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "86,5" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "56,0" ;
@@ -405,7 +398,7 @@
         sport:participationBy  <http://example.com/Athlete/19> .
 
 <http://example.com/Participation/5122-13>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "52,6" ;
         spesstat:FKdiff        "-2" ;
         spesstat:KAST          "44,0" ;
@@ -418,16 +411,15 @@
         sport:participationBy  <http://example.com/Athlete/13> .
 
 <http://example.com/Athlete/14>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1994"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Membership/team_9572-17>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/17> ;
         sport:membershipOf  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5120-14>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "46,3" ;
         spesstat:FKdiff        "-1" ;
         spesstat:KAST          "47,8" ;
@@ -440,7 +432,7 @@
         sport:participationBy  <http://example.com/Athlete/14> .
 
 <http://example.com/Participation/541807-team_6134>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:event-outcome          <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
         spstat:events-played          "539" ;
         spstat:score                  "1" ;
@@ -449,7 +441,7 @@
         sport:participationBy         <http://example.com/Team/team_6134> .
 
 <http://example.com/Participation/5121-19>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "54,4" ;
         spesstat:FKdiff        "0" ;
         spesstat:KAST          "51,7" ;
@@ -462,7 +454,7 @@
         sport:participationBy  <http://example.com/Athlete/19> .
 
 <http://example.com/Participation/5121-13>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "66,3" ;
         spesstat:FKdiff        "-3" ;
         spesstat:KAST          "69,0" ;
@@ -475,7 +467,7 @@
         sport:participationBy  <http://example.com/Athlete/13> .
 
 <http://example.com/Participation/5122-18>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "81,8" ;
         spesstat:FKdiff        "-1" ;
         spesstat:KAST          "84,0" ;
@@ -488,11 +480,10 @@
         sport:participationBy  <http://example.com/Athlete/18> .
 
 <http://example.com/Athlete/19>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1993"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Participation/5120-19>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "68,4" ;
         spesstat:FKdiff        "0" ;
         spesstat:KAST          "78,3" ;
@@ -505,7 +496,7 @@
         sport:participationBy  <http://example.com/Athlete/19> .
 
 <http://example.com/Participation/5122-12>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "59,6" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "60,0" ;
@@ -518,16 +509,15 @@
         sport:participationBy  <http://example.com/Athlete/12> .
 
 <http://example.com/Membership/team_6134-14>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/14> ;
         sport:membershipOf  <http://example.com/Team/team_6134> .
 
 <http://example.com/Athlete/13>
-        a                  sport:Athlete ;
-        sport:dateOfBirth  "1995"^^xsd:date .
+        rdf:type  sport:Athlete .
 
 <http://example.com/Event/541807>
-        a                        sport:Event ;
+        rdf:type                 sport:Event ;
         sport:competition        <http://example.com/Competition/l.intelextrememasters.com-2019> ;
         sport:event              <http://example.com/Event/5122> , <http://example.com/Event/5120> , <http://example.com/Event/5121> ;
         sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
@@ -537,12 +527,12 @@
         sport:startDate          "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/team_9572-16>
-        a                   sport:IndividualMembership ;
+        rdf:type            sport:IndividualMembership ;
         sport:membershipBy  <http://example.com/Athlete/16> ;
         sport:membershipOf  <http://example.com/Team/team_9572> .
 
 <http://example.com/Participation/5120-13>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "63,6" ;
         spesstat:FKdiff        "-3" ;
         spesstat:KAST          "60,9" ;
@@ -555,7 +545,7 @@
         sport:participationBy  <http://example.com/Athlete/13> .
 
 <http://example.com/Participation/5121-18>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "70,4" ;
         spesstat:FKdiff        "-4" ;
         spesstat:KAST          "69,0" ;
@@ -568,7 +558,7 @@
         sport:participationBy  <http://example.com/Athlete/18> .
 
 <http://example.com/Participation/5121-12>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "59,2" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "69,0" ;
@@ -581,7 +571,7 @@
         sport:participationBy  <http://example.com/Athlete/12> .
 
 <http://example.com/Participation/5122-17>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spesstat:ADR           "66,6" ;
         spesstat:FKdiff        "-4" ;
         spesstat:KAST          "56,0" ;

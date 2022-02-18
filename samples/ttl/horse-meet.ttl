@@ -1,337 +1,337 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Athlete/p.1712831>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Presenting The Way" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1965312>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:outcome-result  "show" ;
         sport:participationBy  <http://example.com/Team/t.1965312> ;
         sport:rank             "3" .
 
 <http://example.com/Membership/t.2039637-p.2039637>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.2039637> ;
         sport:membershipOf     <http://example.com/Team/t.2039637> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "4" .
 
 <http://example.com/Team/t.2026148>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Sing Alone" ;
         sport:coach       <http://example.com/Associate/12002> ;
         sport:membership  <http://example.com/Membership/t.2026148-p.22064> , <http://example.com/Membership/t.2026148-p.2026148> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1138364>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1138364> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.2039637>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.2039637> .
 
 <http://example.com/Athlete/p.1138364>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "G Sheehan" .
 
 <http://example.com/Athlete/p.2039637>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Graphical" .
 
 <http://example.com/Athlete/p.77406>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Adam Wedge" .
 
 <http://example.com/Membership/t.1712831-p.1712831>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1712831> ;
         sport:membershipOf     <http://example.com/Team/t.1712831> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "6" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1531310>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1531310> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.31701>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.31701> .
 
 <http://example.com/Athlete/p.1531310>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Hawdyerwheesht" .
 
 <http://example.com/Associate/118056>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "J Farrelly" .
 
 <http://example.com/Associate/46218>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "Dr R D P Newland" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1937042>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1937042> .
 
 <http://example.com/Membership/t.2014359-p.77406>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.77406> ;
         sport:membershipOf     <http://example.com/Team/t.2014359> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Team/t.2005646>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "River Clare" ;
         sport:coach       <http://example.com/Associate/2323> ;
         sport:membership  <http://example.com/Membership/t.2005646-p.13961> , <http://example.com/Membership/t.2005646-p.2005646> .
 
 <http://example.com/Athlete/p.1937042>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Deadly Sting" .
 
 <http://example.com/Associate/12002>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "C N Kellett" .
 
 <http://example.com/Membership/t.2005646-p.13961>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.13961> ;
         sport:membershipOf     <http://example.com/Team/t.2005646> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Athlete/p.2005646>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "River Clare" .
 
 <http://example.com/Team/t.2039637>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Graphical" ;
         sport:coach       <http://example.com/Associate/118056> ;
         sport:membership  <http://example.com/Membership/t.2039637-p.1141749> , <http://example.com/Membership/t.2039637-p.2039637> .
 
 <http://example.com/Associate/4993>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "Mrs Caroline Bailey" .
 
 <http://example.com/Membership/t.2040519-p.42108>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.42108> ;
         sport:membershipOf     <http://example.com/Team/t.2040519> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Athlete/p.22064>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "D Crosse" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.2026148>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.2026148> ;
         sport:rank             "did-not-finish" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.2014359>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.2014359> .
 
 <http://example.com/Athlete/p.2014359>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Abbeygrey" .
 
 <http://example.com/Team/t.1531310>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Hawdyerwheesht" ;
         sport:coach       <http://example.com/Associate/46218> ;
         sport:membership  <http://example.com/Membership/t.1531310-p.1106000> , <http://example.com/Membership/t.1531310-p.1531310> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1139083>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1139083> .
 
 <http://example.com/Athlete/p.1139083>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "M J McIntyre" .
 
 <http://example.com/Associate/110810>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "J Butler" .
 
 <http://example.com/Team/t.1937042>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Deadly Sting" ;
         sport:coach       <http://example.com/Associate/110810> ;
         sport:membership  <http://example.com/Membership/t.1937042-p.1138364> , <http://example.com/Membership/t.1937042-p.1937042> .
 
 <http://example.com/Athlete/p.42108>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "T Messenger" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1712831>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.1712831> ;
         sport:rank             "did-not-finish" .
 
 <http://example.com/Membership/t.1712831-p.1139083>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1139083> ;
         sport:membershipOf     <http://example.com/Team/t.1712831> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Membership/t.2026148-p.22064>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.22064> ;
         sport:membershipOf     <http://example.com/Team/t.2026148> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Membership/t.1965312-p.1965312>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1965312> ;
         sport:membershipOf     <http://example.com/Team/t.1965312> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "2" .
 
 <http://example.com/Athlete/p.31701>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "A P Cawley" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.2039637>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.2039637> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.2040519>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.2040519> .
 
 <http://example.com/Athlete/p.2040519>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Brigstock Seabra" .
 
 <http://example.com/Membership/t.1937042-p.1138364>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1138364> ;
         sport:membershipOf     <http://example.com/Team/t.1937042> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Team/t.2014359>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Abbeygrey" ;
         sport:coach       <http://example.com/Associate/12856> ;
         sport:membership  <http://example.com/Membership/t.2014359-p.77406> , <http://example.com/Membership/t.2014359-p.2014359> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1531310>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:outcome-result  "win" ;
         sport:participationBy  <http://example.com/Team/t.1531310> ;
         sport:rank             "1" .
 
 <http://example.com/Membership/t.2040519-p.2040519>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.2040519> ;
         sport:membershipOf     <http://example.com/Team/t.2040519> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "9" .
 
 <http://example.com/Athlete/p.13961>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "R Johnson" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1141749>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1141749> .
 
 <http://example.com/Membership/t.2026148-p.2026148>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.2026148> ;
         sport:membershipOf     <http://example.com/Team/t.2026148> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "8" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1937042>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         spstat:outcome-result  "place" ;
         sport:participationBy  <http://example.com/Team/t.1937042> ;
         sport:rank             "2" .
 
 <http://example.com/Membership/t.1937042-p.1937042>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1937042> ;
         sport:membershipOf     <http://example.com/Team/t.1937042> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "3" .
 
 <http://example.com/Site/Uttoxeter>
-        a           sport:Site ;
+        rdf:type    sport:Site ;
         rdfs:label  "Uttoxeter" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1965312>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1965312> .
 
 <http://example.com/Athlete/p.1965312>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Celtique Beau" .
 
 <http://example.com/Membership/t.1531310-p.1106000>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1106000> ;
         sport:membershipOf     <http://example.com/Team/t.1531310> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.2005646>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.2005646> ;
         sport:rank             "4" .
 
 <http://example.com/Team/t.2040519>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Brigstock Seabra" ;
         sport:coach       <http://example.com/Associate/4993> ;
         sport:membership  <http://example.com/Membership/t.2040519-p.42108> , <http://example.com/Membership/t.2040519-p.2040519> .
 
 <http://example.com/Membership/t.1965312-p.31701>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.31701> ;
         sport:membershipOf     <http://example.com/Team/t.1965312> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Membership/t.2005646-p.2005646>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.2005646> ;
         sport:membershipOf     <http://example.com/Team/t.2005646> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "7" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1712831>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1712831> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.77406>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.77406> .
 
 <http://example.com/Associate/114567>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "H Fry" .
 
 <http://example.com/Membership/t.2039637-p.1141749>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1141749> ;
         sport:membershipOf     <http://example.com/Team/t.2039637> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/jockey> .
 
 <http://example.com/Event/l.horse-racing.uk-2021-e.527912>
-        a                        sport:Event ;
+        rdf:type                 sport:Event ;
         sport:competition        <http://example.com/Competition/l.horse-racing.uk-2021> ;
         sport:eventOutcomeType   <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:eventStatus        <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
@@ -342,85 +342,85 @@
         sport:startDate          "2014-06-29T14:50:00+01:00"^^xsd:dateTime .
 
 <http://example.com/Athlete/p.1141749>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Brendan Powell" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.42108>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.42108> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.1106000>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.1106000> .
 
 <http://example.com/Team/t.1965312>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Celtique Beau" ;
         sport:coach       <http://example.com/Associate/14215> ;
         sport:membership  <http://example.com/Membership/t.1965312-p.31701> , <http://example.com/Membership/t.1965312-p.1965312> .
 
 <http://example.com/Athlete/p.1106000>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Sam Twiston-Davies" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.2026148>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.2026148> .
 
 <http://example.com/Associate/2323>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "J G M O'Shea" .
 
 <http://example.com/Athlete/p.2026148>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Sing Alone" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.2040519>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.2040519> ;
         sport:rank             "5" .
 
 <http://example.com/Associate/14215>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "P J Gilligan" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.22064>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.22064> .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.13961>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.13961> .
 
 <http://example.com/Team/t.1712831>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Presenting The Way" ;
         sport:coach       <http://example.com/Associate/114567> ;
         sport:membership  <http://example.com/Membership/t.1712831-p.1139083> , <http://example.com/Membership/t.1712831-p.1712831> .
 
 <http://example.com/Membership/t.1531310-p.1531310>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.1531310> ;
         sport:membershipOf     <http://example.com/Team/t.1531310> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "5" .
 
 <http://example.com/Membership/t.2014359-p.2014359>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.2014359> ;
         sport:membershipOf     <http://example.com/Team/t.2014359> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/sphorpos/horse> ;
         sport:uniformNumber    "1" .
 
 <http://example.com/Associate/12856>
-        a           sport:Associate ;
+        rdf:type    sport:Associate ;
         rdfs:label  "Evan Williams" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.2014359>
-        a                      sport:TeamParticipation ;
+        rdf:type               sport:TeamParticipation ;
         sport:participationBy  <http://example.com/Team/t.2014359> ;
         sport:rank             "6" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-p.2005646>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.2005646> .

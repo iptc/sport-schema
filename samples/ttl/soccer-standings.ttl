@@ -1,19 +1,19 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB13>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
         spstat:outcome-result         "spresulteffect:promotion" ;
@@ -27,7 +27,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB13-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB13-events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB54>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
         spstat:outcome-result         "spresulteffect:demotion" ;
@@ -41,7 +41,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB54-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB54-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB2-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
         spstat:points-scored-against  "16" ;
@@ -52,7 +52,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB35-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
         spstat:points-scored-against  "32" ;
@@ -63,7 +63,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB39>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
         spstat:points-difference      "-7" ;
@@ -76,7 +76,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB39-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB39-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB20-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "24" ;
@@ -87,7 +87,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB13-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
         spstat:points-scored-against  "16" ;
@@ -98,15 +98,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB4>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Newcastle United" .
 
 <http://example.com/Team/TFBB31>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Crystal Palace" .
 
 <http://example.com/Participation/CFBB8-2020-TFBB20>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "10" ;
         spstat:points-difference      "-9" ;
@@ -119,7 +119,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB20-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB20-events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB49-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "9" ;
         spstat:points-scored-against  "18" ;
@@ -130,7 +130,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB3-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "13" ;
@@ -141,7 +141,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB36-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "15" ;
@@ -152,7 +152,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB1-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "0" ;
         spstat:points-scored-against  "13" ;
@@ -163,7 +163,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB14-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
         spstat:points-scored-against  "14" ;
@@ -174,7 +174,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB21-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
         spstat:points-scored-against  "14" ;
@@ -185,7 +185,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB4>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "12" ;
         spstat:points-difference      "-13" ;
@@ -198,7 +198,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB4-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB4-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB4-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "21" ;
@@ -209,7 +209,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB2-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "26" ;
@@ -220,15 +220,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB36>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Brighton and Hove Albion" .
 
 <http://example.com/Team/TFBB49>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Sheffield United" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB3-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "12" ;
@@ -239,15 +239,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB3>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Arsenal" .
 
 <http://example.com/Team/TFBB43>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Manchester City" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB6-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "13" ;
@@ -258,7 +258,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB39-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "14" ;
@@ -269,7 +269,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB4-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "17" ;
@@ -280,7 +280,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB3>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
         spstat:points-difference      "6" ;
@@ -293,7 +293,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB3-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB3-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB11-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
         spstat:points-scored-against  "13" ;
@@ -304,7 +304,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB7-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "10" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "14" ;
@@ -315,7 +315,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB11>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "22" ;
         spstat:losses                 "7" ;
         spstat:points-difference      "4" ;
@@ -328,15 +328,15 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB11-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB11-events-away> .
 
 <http://example.com/Team/TFBB35>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "West Bromwich Albion" .
 
 <http://example.com/Team/TFBB8>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Chelsea" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB8-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
         spstat:points-scored-against  "11" ;
@@ -347,11 +347,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB2>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Leeds United" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB35-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "8" ;
         spstat:points-scored-against  "23" ;
@@ -362,7 +362,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB8>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
         spstat:outcome-result         "spresulteffect:promotion" ;
@@ -376,7 +376,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB8-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB8-events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB90-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
         spstat:points-scored-against  "13" ;
@@ -387,7 +387,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB31>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "11" ;
         spstat:points-difference      "-15" ;
@@ -400,11 +400,11 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB31-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB31-events-away> .
 
 <http://example.com/Team/TFBB14>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Liverpool" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB13-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
         spstat:points-scored-against  "10" ;
@@ -415,7 +415,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB49-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "9" ;
         spstat:points-scored-against  "19" ;
@@ -426,7 +426,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB2>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
         spstat:points-difference      "-2" ;
@@ -439,7 +439,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB2-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB2-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB36-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "15" ;
@@ -450,7 +450,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB31-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
         spstat:points-scored-against  "21" ;
@@ -461,11 +461,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB21>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "West Ham United" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB14-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
         spstat:points-scored-against  "18" ;
@@ -476,11 +476,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB90>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Burnley" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB54-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
         spstat:points-scored-against  "17" ;
@@ -491,11 +491,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB7>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Aston Villa" .
 
 <http://example.com/Participation/CFBB8-2020-TFBB36>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "8" ;
         spstat:points-difference      "-5" ;
@@ -508,7 +508,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB36-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB36-events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB49>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "18" ;
         spstat:outcome-result         "spresulteffect:demotion" ;
@@ -522,11 +522,11 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB49-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB49-events-home> .
 
 <http://example.com/Team/TFBB1>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Manchester United" .
 
 <http://example.com/Participation/CFBB8-2020-TFBB7>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "22" ;
         spstat:losses                 "8" ;
         spstat:points-difference      "12" ;
@@ -539,15 +539,15 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB7-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB7-events-away> .
 
 <http://example.com/Team/TFBB13>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Leicester City" .
 
 <http://example.com/Team/TFBB54>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Fulham" .
 
 <http://example.com/Participation/CFBB8-2020-TFBB43>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "2" ;
         spstat:outcome-result         "spresulteffect:promotion" ;
@@ -561,7 +561,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB43-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB43-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB20-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "15" ;
@@ -572,7 +572,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB1>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "4" ;
         spstat:outcome-result         "spresulteffect:promotion" ;
@@ -586,11 +586,11 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB1-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB1-events-home> .
 
 <http://example.com/Team/TFBB39>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Wolverhampton Wanderers" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB6-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
         spstat:points-scored-against  "12" ;
@@ -601,7 +601,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB43-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
         spstat:points-scored-against  "7" ;
@@ -612,7 +612,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB39-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "18" ;
@@ -623,11 +623,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB20>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Southampton" .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB21-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
         spstat:points-scored-against  "14" ;
@@ -638,11 +638,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB6>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Tottenham Hotspur" .
 
 <http://example.com/Participation/CFBB8-2020-TFBB35>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "15" ;
         spstat:outcome-result         "spresulteffect:demotion" ;
@@ -656,7 +656,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB35-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB35-events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB7-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "10" ;
@@ -667,7 +667,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB6>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "7" ;
         spstat:points-difference      "11" ;
@@ -680,7 +680,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB6-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB6-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB8-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "13" ;
@@ -691,7 +691,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB14>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
         spstat:outcome-result         "spresulteffect:promotion" ;
@@ -705,7 +705,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB14-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB14-events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB43-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "1" ;
         spstat:points-scored-against  "7" ;
@@ -716,7 +716,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB90-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "16" ;
@@ -727,7 +727,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB21>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
         spstat:points-difference      "6" ;
@@ -740,7 +740,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB21-events-away> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB21-events-home> .
 
 <http://example.com/Participation/CFBB8-2020-TFBB90>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
         spstat:points-difference      "-12" ;
@@ -753,7 +753,7 @@
         sport:participationSplit      <http://example.com/ParticipationSplit/CFBB8-2020-TFBB90-events-home> , <http://example.com/ParticipationSplit/CFBB8-2020-TFBB90-events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB31-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
         spstat:points-scored-against  "21" ;
@@ -764,7 +764,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB11-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
         spstat:points-scored-against  "17" ;
@@ -775,7 +775,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB54-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "14" ;
@@ -786,7 +786,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/CFBB8-2020-TFBB1-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
         spstat:points-scored-against  "18" ;
@@ -797,12 +797,12 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Competition/CFBB8-2020>
-        a                        sport:Competition ;
+        rdf:type                 sport:Competition ;
         rdfs:label               "English Premier League 2020" ;
         sport:parentCompetition  <http://example.com/ParentCompetition/CFBB8> ;
         sport:participation      <http://example.com/Participation/CFBB8-2020-TFBB4> , <http://example.com/Participation/CFBB8-2020-TFBB13> , <http://example.com/Participation/CFBB8-2020-TFBB90> , <http://example.com/Participation/CFBB8-2020-TFBB43> , <http://example.com/Participation/CFBB8-2020-TFBB54> , <http://example.com/Participation/CFBB8-2020-TFBB36> , <http://example.com/Participation/CFBB8-2020-TFBB14> , <http://example.com/Participation/CFBB8-2020-TFBB11> , <http://example.com/Participation/CFBB8-2020-TFBB49> , <http://example.com/Participation/CFBB8-2020-TFBB1> , <http://example.com/Participation/CFBB8-2020-TFBB39> , <http://example.com/Participation/CFBB8-2020-TFBB8> , <http://example.com/Participation/CFBB8-2020-TFBB2> , <http://example.com/Participation/CFBB8-2020-TFBB20> , <http://example.com/Participation/CFBB8-2020-TFBB3> , <http://example.com/Participation/CFBB8-2020-TFBB21> , <http://example.com/Participation/CFBB8-2020-TFBB6> , <http://example.com/Participation/CFBB8-2020-TFBB7> , <http://example.com/Participation/CFBB8-2020-TFBB31> , <http://example.com/Participation/CFBB8-2020-TFBB35> ;
         sport:sport              <http://cv.iptc.org/newscodes/mediatopic/20001065> .
 
 <http://example.com/Team/TFBB11>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Everton" .

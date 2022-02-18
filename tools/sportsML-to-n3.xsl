@@ -131,7 +131,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:choose>
         	</xsl:variable>
 
-            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«', $sport-ontology-ns, 'CompetitionPhase', '»')"/>~<xsl:value-of select="$phase-id"/> .  
+            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«', $sport-ontology-ns, 'competitionPhase', '»')"/>~<xsl:value-of select="$phase-id"/> .  
 
         <xsl:choose>
         <!-- simple round -->
@@ -470,7 +470,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:if>
 
         <!-- <player> sport:dateOfBirth <date> -->
-        <xsl:if test="newsml:player-metadata/@date-of-birth">
+        <xsl:if test="newsml:player-metadata/@date-of-birth and matches(newsml:player-metadata/@date-of-birth,'\d\d\d\d-\d\d-\d\d')">
             <xsl:value-of select="$player-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'dateOfBirth','»')"/>~<xsl:value-of select="concat('&quot;',newsml:player-metadata/@date-of-birth,'&quot;^^«http://www.w3.org/2001/XMLSchema#date»')"/> .
         </xsl:if>
 
@@ -781,7 +781,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Athlete/',$player-key,'»')"/> .
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
 		<xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'IndividualParticipation','»')"/> .
-		<xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-action-ontology-ns,'Role','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@role,':'),'/',substring-after(@role,':'),'»')"/> .
+		<xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-action-ontology-ns,'role','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@role,':'),'/',substring-after(@role,':'),'»')"/> .
 
         
     </xsl:template>
