@@ -38,7 +38,9 @@
     "startDate" : "2020-10-06"
   }, {
     "@id" : "http://example.com/Team/BOSnhl",
-    "membership" : "http://example.com/Membership/BOSnhl-p10039"
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/BOSnhl-p10039",
+    "label" : "Boston Bruins"
   }, {
     "@id" : "http://example.com/Team/FLAnhl",
     "@type" : "sport:Team",
@@ -46,15 +48,22 @@
     "label" : "Florida Panthers"
   }, {
     "@id" : "http://example.com/Team/SJnhl",
-    "membership" : "http://example.com/Membership/SJnhl-p10039"
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/SJnhl-p10039",
+    "label" : "San Jose Sharks"
   }, {
     "@id" : "http://example.com/Team/TORnhl",
-    "membership" : "http://example.com/Membership/TORnhl-p10039"
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/TORnhl-p10039",
+    "label" : "Toronto Maple Leafs"
   } ],
   "@context" : {
     "membership" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "uniformNumber" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
@@ -79,9 +88,6 @@
     "dateOfBirth" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/dateOfBirth",
       "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "endDate" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/endDate",

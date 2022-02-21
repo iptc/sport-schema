@@ -1,34 +1,44 @@
 {
   "@graph" : [ {
     "@id" : "http://example.com/Athlete/10",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/10>"
   }, {
     "@id" : "http://example.com/Athlete/11",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/11>"
   }, {
     "@id" : "http://example.com/Athlete/12",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/12>"
   }, {
     "@id" : "http://example.com/Athlete/13",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/13>"
   }, {
     "@id" : "http://example.com/Athlete/14",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/14>"
   }, {
     "@id" : "http://example.com/Athlete/15",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/15>"
   }, {
     "@id" : "http://example.com/Athlete/16",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/16>"
   }, {
     "@id" : "http://example.com/Athlete/17",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/17>"
   }, {
     "@id" : "http://example.com/Athlete/18",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/18>"
   }, {
     "@id" : "http://example.com/Athlete/19",
-    "@type" : "sport:Athlete"
+    "@type" : "sport:Athlete",
+    "label" : "Player <http://example.com/Athlete/19>"
   }, {
     "@id" : "http://example.com/Event/5120",
     "@type" : "sport:Event",
@@ -572,14 +582,17 @@
     "@id" : "http://example.com/Team/team_6134",
     "@type" : "sport:Team",
     "membership" : [ "http://example.com/Membership/team_6134-10", "http://example.com/Membership/team_6134-11", "http://example.com/Membership/team_6134-12", "http://example.com/Membership/team_6134-13", "http://example.com/Membership/team_6134-14" ],
-    "label" : "Kinguin"
+    "label" : [ "Kinguin", "" ]
   }, {
     "@id" : "http://example.com/Team/team_9572",
     "@type" : "sport:Team",
     "membership" : [ "http://example.com/Membership/team_9572-15", "http://example.com/Membership/team_9572-16", "http://example.com/Membership/team_9572-17", "http://example.com/Membership/team_9572-18", "http://example.com/Membership/team_9572-19" ],
-    "label" : "Ex-Space Soldiers"
+    "label" : [ "Ex-Space Soldiers", "" ]
   } ],
   "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
     "assist" : {
       "@id" : "http://cv.iptc.org/newscodes/spesstat/assist"
     },
@@ -659,9 +672,6 @@
     "membership" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "event" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/event",

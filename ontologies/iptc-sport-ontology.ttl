@@ -5,7 +5,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schemaorg: <https://schema.org/> .
 @prefix sport:   <http://www.iptc.org/ontologies/Sport/> .
-@prefix sport:   <http://www.iptc.org/ontologies/Sport/> .
 
 <http://www.iptc.org/ontologies/Sport/>
     rdf:type owl:Ontology ;
@@ -109,6 +108,11 @@ sport:ParentCompetition rdf:type rdfs:Class ;
 sport:Participation rdf:type rdfs:Class ;
     rdfs:label "Participation"@en ;
     rdfs:comment "The participation of an actor in an event."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:ParticipationSplit rdf:type rdfs:Class ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
 sport:Site rdf:type rdfs:Class ;
@@ -224,7 +228,7 @@ sport:participationBy rdf:type rdf:Property ;
 
 sport:participationSplit rdf:type rdf:Property ;
     rdfs:label "participation split"@en ;
-    rdfs:comment "A link to a representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:comment "Link to a representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
     rdfs:domain sport:Participation ;
     rdfs:range sport:Participation ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
@@ -267,6 +271,22 @@ sport:attendance rdf:type rdf:Property ;
     rdfs:comment "The number of people attending an event"@en ;
     rdfs:domain sport:Event ;
     rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competitionForm rdf:type rdf:Property ;
+    rdfs:label "competition form"@en ;
+    rdfs:comment "xxx"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/sptournamentform/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competitionPhaseType rdf:type rdf:Property ;
+    rdfs:label "competition phase type"@en ;
+    rdfs:comment "xxx"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (doesn't exist yet)
+    rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
 sport:dateOfBirth rdf:type rdf:Property ;
@@ -346,7 +366,7 @@ sport:scoreUnits rdf:type rdf:Property ;
     rdfs:label "score units"@en ;
     rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
     schemaorg:domain sport:IndividualParticipation ;
-    rdfs:range xsd:integer ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
 sport:seasonWeek rdf:type rdf:Property ;
