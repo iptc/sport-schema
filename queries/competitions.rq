@@ -1,0 +1,20 @@
+# Use case: Season / League / 1. What are the current standings?
+# Use case: What is the team record broken down into home and away events?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT ?compName ?comp ?parentComp ?govBody
+WHERE
+{
+    ?comp rdf:type sport:Competition ;
+    	   rdfs:label ?compName .
+    OPTIONAL { ?comp sport:parentCompetition ?parentComp . }
+    OPTIONAL { ?comp sport:governingBody ?govBody . }
+}
