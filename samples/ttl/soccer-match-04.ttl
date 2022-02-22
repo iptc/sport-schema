@@ -1,23 +1,23 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Athlete/p.180804>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Axel Tuanzebe" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.184667>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -45,11 +45,11 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.222694>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Pascal Struijk" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291247481>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291247481> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/play> ;
         spact:minutes-elapsed  "19" ;
@@ -60,7 +60,7 @@
         sport:team             <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Event/l.premierleague.com-2020-e.2128609>
-        a                       sport:Event ;
+        rdf:type                sport:Event ;
         sport:competition       <http://example.com/Competition/l.premierleague.com-2020> ;
         sport:competitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
         sport:eventOutcomeType  <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
@@ -71,7 +71,7 @@
         sport:startDate         "2021-04-25T14:00:00+01:00"^^xsd:dateTime .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291316113>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291316113> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Foul" ;
@@ -87,21 +87,21 @@
         sport:team             <http://example.com/Team/e.2128609-t.1> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.176297>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.176297> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "10" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.95658>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.95658> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "5" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.155405>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -131,11 +131,11 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.105377>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Ezgjan Alioski" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291318829>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291318829> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Dissent" ;
@@ -151,7 +151,7 @@
         sport:team             <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291265339>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291265339> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Foul" ;
@@ -167,7 +167,7 @@
         sport:team             <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291340193>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291340193> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:46:21+01:00" ;
@@ -183,7 +183,7 @@
         sport:team                    <http://example.com/Team/e.2128609-t.1> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.214590>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -213,7 +213,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291336033>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291336033> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:42:51+01:00" ;
@@ -229,19 +229,19 @@
         sport:team                    <http://example.com/Team/e.2128609-t.1> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.200617>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.200617> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "21" .
 
 <http://example.com/Associate/man40342>
-        a                    sport:Associate ;
+        rdf:type             sport:Associate ;
         rdfs:label           "Ole Gunnar Solskjær" ;
         sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106760>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -267,44 +267,44 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.66588>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Luke Ayling" .
 
 <http://example.com/Team/o.thefa.com-t.13>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Manchester United" ;
         sport:coach       <http://example.com/Associate/man40342> ;
         sport:membership  <http://example.com/Membership/o.thefa.com-t.13-p.180184> , <http://example.com/Membership/o.thefa.com-t.13-p.51940> , <http://example.com/Membership/o.thefa.com-t.13-p.40720> , <http://example.com/Membership/o.thefa.com-t.13-p.220688> , <http://example.com/Membership/o.thefa.com-t.13-p.195851> , <http://example.com/Membership/o.thefa.com-t.13-p.184667> , <http://example.com/Membership/o.thefa.com-t.13-p.214590> , <http://example.com/Membership/o.thefa.com-t.13-p.197365> , <http://example.com/Membership/o.thefa.com-t.13-p.172649> , <http://example.com/Membership/o.thefa.com-t.13-p.62398> , <http://example.com/Membership/o.thefa.com-t.13-p.200617> , <http://example.com/Membership/o.thefa.com-t.13-p.180804> , <http://example.com/Membership/o.thefa.com-t.13-p.106760> , <http://example.com/Membership/o.thefa.com-t.13-p.101582> , <http://example.com/Membership/o.thefa.com-t.13-p.152590> , <http://example.com/Membership/o.thefa.com-t.13-p.43670> , <http://example.com/Membership/o.thefa.com-t.13-p.74208> , <http://example.com/Membership/o.thefa.com-t.13-p.141746> , <http://example.com/Membership/o.thefa.com-t.13-p.95658> , <http://example.com/Membership/o.thefa.com-t.13-p.176297> .
 
 <http://example.com/Athlete/p.176297>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Marcus Rashford" .
 
 <http://example.com/Athlete/p.74208>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Paul Pogba" .
 
 <http://example.com/Membership/t.2-p.221399>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.221399> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "22" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.152590>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.152590> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Membership/t.2-p.39790>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.39790> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniformNumber    "13" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.149915>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -335,15 +335,15 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.62398>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Nemanja Matic" .
 
 <http://example.com/Athlete/p.200617>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Daniel James" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106617>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -368,21 +368,21 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.51940>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.51940> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniformNumber    "1" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.40720>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.40720> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "7" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291268131>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291268131> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Foul" ;
@@ -398,11 +398,11 @@
         sport:team             <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Athlete/p.450070>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Crysencio Summerville" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.101582>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -430,16 +430,16 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Site/s.29>
-        a           sport:Site ;
+        rdf:type    sport:Site ;
         rdfs:label  "Elland Road" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.197365>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.197365> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.95658>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -467,14 +467,14 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/t.2-p.221610>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.221610> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "46" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180184>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -492,14 +492,14 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Membership/t.2-p.173821>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.173821> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "11" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291316509>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291316509> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:25:16+01:00" ;
@@ -515,7 +515,7 @@
         sport:team                    <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291311527>
-        a                      sport:Action ;
+        rdf:type               sport:Action ;
         rdfs:label             "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291311527> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         spact:comment          "Foul" ;
@@ -531,14 +531,14 @@
         sport:team             <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.184667>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.184667> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "2" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.141746>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -570,18 +570,18 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/t.2-p.149915>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.149915> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "14" .
 
 <http://example.com/Official/PO41051>
-        a           sport:Official ;
+        rdf:type    sport:Official ;
         rdfs:label  "Craig Pawson" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.40720>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -599,20 +599,20 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.248937>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Sam Greenwood" .
 
 <http://example.com/Athlete/p.172649>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Dean Henderson" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.51940>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.51940> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.220688>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -638,7 +638,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.215460>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -658,41 +658,41 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.221399>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Jack Harrison" .
 
 <http://example.com/Athlete/p.43670>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Juan Mata" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.214590>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.214590> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "29" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.39790>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.39790> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Membership/t.2-p.248937>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.248937> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "42" .
 
 <http://example.com/Membership/t.2-p.38588>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.38588> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "28" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.222694>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -718,29 +718,29 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.87873>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Stuart Dallas" .
 
 <http://example.com/Membership/t.2-p.437495>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.437495> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;
         sport:uniformNumber    "1" .
 
 <http://example.com/Athlete/p.184667>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Victor Lindelöf" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.106760>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.106760> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "23" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.195851>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -773,31 +773,31 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.28690>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.28690> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.155405>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Kalvin Phillips" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.152590>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.152590> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "27" .
 
 <http://example.com/Athlete/p.214590>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Aaron Wan-Bissaka" .
 
 <http://example.com/Athlete/p.221610>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Jamie Shackleton" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.193645>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -816,7 +816,7 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.165808>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -842,47 +842,47 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/t.2-p.28690>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.28690> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "19" .
 
 <http://example.com/Athlete/p.173821>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Tyler Roberts" .
 
 <http://example.com/Membership/t.2-p.155405>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.155405> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "23" .
 
 <http://example.com/Athlete/p.106760>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Luke Shaw" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.197365>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.197365> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "3" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.101582>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.101582> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "17" .
 
 <http://example.com/Athlete/p.72222>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Mateusz Klich" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291325173>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291325173> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:33:26+01:00" ;
@@ -898,7 +898,7 @@
         sport:team                    <http://example.com/Team/e.2128609-t.1> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291325685>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291325685> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:33:56+01:00" ;
@@ -914,35 +914,35 @@
         sport:team                    <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Athlete/p.95658>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Harry Maguire" .
 
 <http://example.com/Athlete/p.152590>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Alex Telles" .
 
 <http://example.com/Athlete/p.149915>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Diego Llorente" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.180184>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.180184> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "34" .
 
 <http://example.com/Athlete/p.106617>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Patrick Bamford" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.450070>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.450070> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.74208>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -963,23 +963,23 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.197365>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Eric Bailly" .
 
 <http://example.com/Membership/t.2-p.66588>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.66588> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "2" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.38588>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.38588> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-t.2>
-        a                              sport:TeamParticipation ;
+        rdf:type                       sport:TeamParticipation ;
         spsocstat:cautions-total       "4" ;
         spsocstat:clearances-successful
                 "17" ;
@@ -1007,73 +1007,73 @@
         sport:participationBy          <http://example.com/Team/t.2> .
 
 <http://example.com/Membership/t.2-p.106617>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.106617> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "9" .
 
 <http://example.com/Athlete/p.437495>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Illan Meslier" .
 
 <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33>
-        a       sport:CompetitionPhase .
+        rdf:type  sport:CompetitionPhase .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-a.2291247481-p.221399>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         spact:role             <http://cv.iptc.org/newscodes//> ;
         sport:participationBy  <http://example.com/Athlete/p.221399> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.141746>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.141746> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "18" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180804>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.180804> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.43670>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.43670> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "8" .
 
 <http://example.com/Athlete/p.180184>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Donny van de Beek" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.220688>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.220688> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "11" .
 
 <http://example.com/Team/t.2>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Leeds United" ;
         sport:coach       <http://example.com/Associate/man26> ;
         sport:membership  <http://example.com/Membership/t.2-p.28690> , <http://example.com/Membership/t.2-p.437495> , <http://example.com/Membership/t.2-p.215460> , <http://example.com/Membership/t.2-p.173821> , <http://example.com/Membership/t.2-p.221610> , <http://example.com/Membership/t.2-p.221399> , <http://example.com/Membership/t.2-p.38588> , <http://example.com/Membership/t.2-p.72222> , <http://example.com/Membership/t.2-p.450070> , <http://example.com/Membership/t.2-p.105377> , <http://example.com/Membership/t.2-p.66588> , <http://example.com/Membership/t.2-p.222694> , <http://example.com/Membership/t.2-p.193645> , <http://example.com/Membership/t.2-p.106617> , <http://example.com/Membership/t.2-p.155405> , <http://example.com/Membership/t.2-p.165808> , <http://example.com/Membership/t.2-p.39790> , <http://example.com/Membership/t.2-p.149915> , <http://example.com/Membership/t.2-p.248937> , <http://example.com/Membership/t.2-p.87873> .
 
 <http://example.com/Athlete/p.51940>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "David de Gea" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.74208>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.74208> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "6" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.105377>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -1102,14 +1102,14 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.62398>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.62398> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "31" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.172649>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "3" ;
@@ -1131,14 +1131,14 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.195851>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.195851> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "39" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221399>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:crosses-18-yard      "2" ;
@@ -1162,11 +1162,11 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.215460>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Ian Poveda-Ocampo" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.176297>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:ejections-total       "0" ;
@@ -1193,14 +1193,14 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/t.2-p.215460>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.215460> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/forward> ;
         sport:uniformNumber    "7" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.200617>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:aerials-won          "2" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -1226,16 +1226,16 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.43670>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.43670> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.195851>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Scott McTominay" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.66588>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -1271,19 +1271,19 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Membership/t.2-p.222694>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.222694> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "21" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221610>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.221610> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.87873>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1316,7 +1316,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.173821>
-        a                              sport:IndividualParticipation ;
+        rdf:type                       sport:IndividualParticipation ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -1341,38 +1341,38 @@
         sport:status                   <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Athlete/p.193645>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Robin Koch" .
 
 <http://example.com/Membership/t.2-p.105377>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.105377> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "10" .
 
 <http://example.com/Athlete/p.165808>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Hélder Costa" .
 
 <http://example.com/Athlete/p.101582>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Fred" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.62398>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.62398> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Membership/t.2-p.87873>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.87873> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "15" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-o.thefa.com-t.13>
-        a                              sport:TeamParticipation ;
+        rdf:type                       sport:TeamParticipation ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
                 "14" ;
@@ -1400,50 +1400,50 @@
         sport:participationBy          <http://example.com/Team/o.thefa.com-t.13> .
 
 <http://example.com/Membership/t.2-p.193645>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.193645> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "5" .
 
 <http://example.com/Membership/t.2-p.165808>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.165808> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "17" .
 
 <http://example.com/Athlete/p.38588>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Gaetano Berardi" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-PO41051>
-        a                      sport:OfficialParticipation ;
+        rdf:type               sport:OfficialParticipation ;
         sport:participationBy  <http://example.com/Official/PO41051> ;
         sport:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.180804>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.180804> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/defender> ;
         sport:uniformNumber    "38" .
 
 <http://example.com/Athlete/p.40720>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Edinson Cavani" .
 
 <http://example.com/Athlete/p.39790>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Kiko Casilla" .
 
 <http://example.com/Associate/man26>
-        a                    sport:Associate ;
+        rdf:type             sport:Associate ;
         rdfs:label           "Marcelo Bielsa" ;
         sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.72222>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:crosses-18-yard       "1" ;
@@ -1464,16 +1464,16 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Athlete/p.141746>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Bruno Fernandes" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.248937>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         sport:participationBy  <http://example.com/Athlete/p.248937> ;
         sport:status           <http://cv.iptc.org/newscodes/spperstatus/bench> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.437495>
-        a                               sport:IndividualParticipation ;
+        rdf:type                        sport:IndividualParticipation ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "2" ;
         spsocstat:cautions-total        "0" ;
@@ -1494,7 +1494,7 @@
         sport:status                    <http://cv.iptc.org/newscodes/spperstatus/starter> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291320423>
-        a                             sport:Action ;
+        rdf:type                      sport:Action ;
         rdfs:label                    "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291320423> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>" ;
         spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         spact:date-time               "2021-04-25T15:29:14+01:00" ;
@@ -1510,29 +1510,29 @@
         sport:team                    <http://example.com/Team/e.2128609-t.2> .
 
 <http://example.com/Athlete/p.220688>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Mason Greenwood" .
 
 <http://example.com/Membership/t.2-p.72222>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.72222> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "43" .
 
 <http://example.com/Membership/t.2-p.450070>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.450070> ;
         sport:membershipOf     <http://example.com/Team/t.2> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/midfielder> ;
         sport:uniformNumber    "38" .
 
 <http://example.com/Athlete/p.28690>
-        a           sport:Athlete ;
+        rdf:type    sport:Athlete ;
         rdfs:label  "Pablo Hernández" .
 
 <http://example.com/Membership/o.thefa.com-t.13-p.172649>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p.172649> ;
         sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> ;

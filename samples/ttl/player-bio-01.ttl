@@ -1,24 +1,24 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:      <https://schema.org/> .
+@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Team/SJnhl>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "San Jose Sharks" ;
         sport:membership  <http://example.com/Membership/SJnhl-p10039> .
 
 <http://example.com/Membership/FLAnhl-p10039>
-        a                      sport:IndividualMembership ;
+        rdf:type               sport:IndividualMembership ;
         sport:membershipBy     <http://example.com/Athlete/p10039> ;
         sport:membershipOf     <http://example.com/Team/FLAnhl> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichpos/center> ;
@@ -26,42 +26,42 @@
         sport:uniformNumber    "19" .
 
 <http://example.com/Membership/TORnhl-p10039>
-        a                   sport:Membership ;
+        rdf:type            sport:Membership ;
         sport:endDate       "2021-05-31"^^xsd:date ;
         sport:membershipBy  <http://example.com/Athlete/p10039> ;
         sport:membershipOf  <http://example.com/Team/TORnhl> ;
         sport:startDate     "2020-10-06"^^xsd:date .
 
 <http://example.com/Athlete/p10039>
-        a                  sport:Athlete ;
+        rdf:type           sport:Athlete ;
         rdfs:label         "Joe Thornton" ;
         sport:dateOfBirth  "1979-07-02"^^xsd:date ;
         sport:sport        <http://cv.iptc.org/newscodes/mediatopic/15000000> .
 
 <http://example.com/Team/TORnhl>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Toronto Maple Leafs" ;
         sport:membership  <http://example.com/Membership/TORnhl-p10039> .
 
 <http://example.com/Team/FLAnhl>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Florida Panthers" ;
         sport:membership  <http://example.com/Membership/FLAnhl-p10039> .
 
 <http://example.com/Team/BOSnhl>
-        a                 sport:Team ;
+        rdf:type          sport:Team ;
         rdfs:label        "Boston Bruins" ;
         sport:membership  <http://example.com/Membership/BOSnhl-p10039> .
 
 <http://example.com/Membership/SJnhl-p10039>
-        a                   sport:Membership ;
+        rdf:type            sport:Membership ;
         sport:endDate       "2020-10-06"^^xsd:date ;
         sport:membershipBy  <http://example.com/Athlete/p10039> ;
         sport:membershipOf  <http://example.com/Team/SJnhl> ;
         sport:startDate     "2005-11-30"^^xsd:date .
 
 <http://example.com/Membership/BOSnhl-p10039>
-        a                   sport:Membership ;
+        rdf:type            sport:Membership ;
         sport:endDate       "2005-11-30"^^xsd:date ;
         sport:membershipBy  <http://example.com/Athlete/p10039> ;
         sport:membershipOf  <http://example.com/Team/BOSnhl> ;
