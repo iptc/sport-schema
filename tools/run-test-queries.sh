@@ -5,10 +5,12 @@
 # the results in the queries/output directory.
 
 TTL_SAMPLES_DIR='samples/ttl'
+SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-ontology.ttl'
 REGEX_FOR_VALID_FILES='conforms  *true'
 
 # build list of data files to use in sparql queries
-DATA_STRING=''
+# start with the ontology file so it can also be used in test queries
+DATA_STRING="--data ${SPORT_ONTOLOGY_FILE}"
 for filename in ${TTL_SAMPLES_DIR}/*.ttl; do
     DATA_STRING="${DATA_STRING} --data=$filename"
 done
