@@ -22,5 +22,5 @@ for queryfile in queries/*.rq; do
     sparql ${DATA_STRING} --query=$queryfile >${temp_file}
     echo "Comparing results for query ${queryname}"
     # Compare our query results against previously saved version
-    diff ${temp_file} queries/output/$base.out
+    diff queries/output/$base.out ${temp_file}
 done
