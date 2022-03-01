@@ -196,7 +196,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 <!-- group phase -->
                 <xsl:when test="parent::newsml:tournament-part[newsml:tournament-part-metadata/@format-type = 'sptournamentform:single-group']">
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
-                        select="concat('«', $sport-ontology-ns, 'competitionForm', '»')"/>~<xsl:value-of
+                        select="concat('«', $sport-ontology-ns, 'competitionFormat', '»')"/>~<xsl:value-of
                         select="concat('«', $newscode-ns, substring-before(parent::newsml:tournament-part/newsml:tournament-part-metadata[@format-type = 'sptournamentform:single-group']/@format-type, ':'), '/', substring-after(parent::newsml:tournament-part/newsml:tournament-part-metadata[@format-type = 'sptournamentform:single-group']/@format-type, ':'), '»')"
                         /> .
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
@@ -207,7 +207,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 <!-- elimination phase when format changes within sub-phases eg. Champions league final switching from home-and-home to single-elimination -->
                 <xsl:when test="parent::newsml:tournament-part[newsml:tournament-part-metadata/@format-type = 'sptournamentform:single-elimination']">
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
-                        select="concat('«', $sport-ontology-ns, 'competitionForm', '»')"/>~<xsl:value-of
+                        select="concat('«', $sport-ontology-ns, 'competitionFormat', '»')"/>~<xsl:value-of
                         select="concat('«', $newscode-ns, substring-before(parent::newsml:tournament-part/newsml:tournament-part-metadata/@format-type, ':'), '/', substring-after(parent::newsml:tournament-part/newsml:tournament-part-metadata/@format-type, ':'), '»')"
                         /> .
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
@@ -218,7 +218,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 <!-- elimination phase -->
                 <xsl:when test="ancestor::newsml:tournament-part[newsml:tournament-part-metadata/@format-type = 'sptournamentform:single-elimination']">
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
-                        select="concat('«', $sport-ontology-ns, 'competitionForm', '»')"/>~<xsl:value-of
+                        select="concat('«', $sport-ontology-ns, 'competitionFormat', '»')"/>~<xsl:value-of
                         select="concat('«', $newscode-ns, substring-before(ancestor::newsml:tournament-part/newsml:tournament-part-metadata[@format-type = 'sptournamentform:single-elimination']/@format-type, ':'), '/', substring-after(ancestor::newsml:tournament-part/newsml:tournament-part-metadata[@format-type = 'sptournamentform:single-elimination']/@format-type, ':'), '»')"
                         /> .
                     <xsl:value-of select="$phase-id"/>~<xsl:value-of
@@ -530,9 +530,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             </xsl:for-each>
         </xsl:if>
 
-        <!-- <participation> sport:status (started, bench etc) -->
+        <!-- <participation> sport:playerStatus (started, bench etc) -->
         <xsl:if test="newsml:player-metadata/@status">
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'status','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(newsml:player-metadata/@status,':'),'/',substring-after(newsml:player-metadata/@status,':'),'»')"/> .
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'playerStatus','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(newsml:player-metadata/@status,':'),'/',substring-after(newsml:player-metadata/@status,':'),'»')"/> .
         </xsl:if>
 
         <!-- <player> sport:dateOfBirth <date> -->
