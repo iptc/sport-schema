@@ -10,19 +10,20 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
-SELECT ?compName ?playerName ?rank ?time
+SELECT ?competitionName ?playerName ?rank ?time
 WHERE
 {
-    ?event rdf:type sport:Competition ;
-           rdfs:label ?compName ;
-		   sport:participation ?playerperf .
-    ?playerperf sport:participationBy ?player ;
-    			rdf:type sport:IndividualParticipation ;
-    			sport:rank ?rankstr ;
-    			spstat:score ?time .
+    ?competition rdf:type sport:Competition ;
+           rdfs:label ?competitionName ;
+           sport:competitionParticipation ?playerparticipation .
+    ?playerparticipation sport:participationBy ?player ;
+                         rdf:type sport:IndividualParticipation ;
+                         sport:rank ?rankstr ;
+                         spstat:score ?time .
     ?player rdfs:label ?playerName ; 
-    		rdf:type sport:Athlete .
+            rdf:type sport:Athlete .
 
-    	BIND (xsd:integer(?rankstr) as ?rank)
+    FILTER (?competition = <http://example.com/Competition/GIRO2019>)
+    BIND (xsd:integer(?rankstr) as ?rank)
 }
 ORDER BY ASC(?rank)

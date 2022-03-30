@@ -6,8 +6,8 @@
     "minutes-elapsed" : "19",
     "period-value" : "1",
     "type" : "spsocaction:video-review",
+    "actionParticipation" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-a.2291247481-p.221399",
     "event" : "http://example.com/Event/l.premierleague.com-2020-e.2128609",
-    "participation" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-a.2291247481-p.221399",
     "team" : "http://example.com/Team/e.2128609-t.2",
     "label" : "Action <http://example.com/Action/l.premierleague.com-2020-e.2128609-a.2291247481> on event <http://example.com/Event/l.premierleague.com-2020-e.2128609>"
   }, {
@@ -351,21 +351,44 @@
     "@type" : "sport:Athlete",
     "label" : "Harry Maguire"
   }, {
+    "@id" : "http://example.com/Competition/l.premierleague.com",
+    "@type" : "sport:Competition",
+    "label" : "English Premier League"
+  }, {
+    "@id" : "http://example.com/Competition/l.premierleague.com-2020",
+    "@type" : "sport:Competition",
+    "parentCompetition" : "http://example.com/Competition/l.premierleague.com",
+    "label" : "English Premier League 2020"
+  }, {
     "@id" : "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
-    "@type" : "sport:CompetitionPhase"
+    "@type" : "sport:CompetitionPhase",
+    "parentCompetition" : "http://example.com/Competition/l.premierleague.com-2020",
+    "label" : "Week 33"
   }, {
     "@id" : "http://example.com/Event/l.premierleague.com-2020-e.2128609",
     "@type" : "sport:Event",
-    "competition" : "http://example.com/Competition/l.premierleague.com-2020",
-    "competitionPhase" : "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
+    "competition" : [ "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33", "http://example.com/Competition/l.premierleague.com-2020" ],
     "eventOutcomeType" : "http://cv.iptc.org/newscodes/speventoutcometype/regular",
+    "eventParticipation" : [ "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.87873", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.51940", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.66588", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-PO41051", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-o.thefa.com-t.13", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.172649", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.38588", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.39790", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.248937", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.165808", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.28690", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180184", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.184667", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.141746", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.152590", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.40720", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.193645", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.155405", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.437495", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.101582", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.220688", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.43670", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.105377", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.72222", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.149915", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106760", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.173821", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.215460", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.176297", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.95658", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.450070", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.214590", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.195851", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.62398", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.74208", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221399", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.222694", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.200617", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106617", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180804", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.197365", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221610", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-t.2" ],
     "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "participation" : [ "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.197365", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221399", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.165808", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.105377", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-t.2", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.152590", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180804", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106760", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.222694", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.149915", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.62398", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.215460", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.437495", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.214590", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.38588", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.95658", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.66588", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.193645", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221610", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.184667", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.72222", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.101582", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.176297", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.220688", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.200617", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-o.thefa.com-t.13", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.195851", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.248937", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.28690", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.173821", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.74208", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106617", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.450070", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.87873", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.155405", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-PO41051", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.39790", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.51940", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.141746", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.43670", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180184", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.172649", "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.40720" ],
     "site" : "http://example.com/Site/s.29",
     "sport:sport" : {
       "@id" : "http://cv.iptc.org/newscodes/mediatopic/20001065"
     },
-    "startDate" : "2021-04-25T14:00:00+01:00"
+    "startDate" : "2021-04-25T14:00:00+01:00",
+    "label" : "Event <http://example.com/Event/l.premierleague.com-2020-e.2128609>"
+  }, {
+    "@id" : "http://example.com/Membership/man26-t.2",
+    "@type" : "sport:Membership",
+    "membershipBy" : "http://example.com/Associate/man26",
+    "membershipOf" : "http://example.com/Team/t.2",
+    "label" : "Marcelo Bielsa associate membership of Leeds United"
+  }, {
+    "@id" : "http://example.com/Membership/man40342-o.thefa.com-t.13",
+    "@type" : "sport:Membership",
+    "membershipBy" : "http://example.com/Associate/man40342",
+    "membershipOf" : "http://example.com/Team/o.thefa.com-t.13",
+    "label" : "Ole Gunnar Solskjær associate membership of Manchester United"
   }, {
     "@id" : "http://example.com/Membership/o.thefa.com-t.13-p.101582",
     "@type" : "sport:IndividualMembership",
@@ -710,7 +733,7 @@
     "events-started" : "1",
     "time-played-total" : "89",
     "participationBy" : "http://example.com/Athlete/p.101582",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.105377",
     "@type" : "sport:IndividualParticipation",
@@ -737,7 +760,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.105377",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106617",
     "@type" : "sport:IndividualParticipation",
@@ -759,7 +782,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.106617",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106760",
     "@type" : "sport:IndividualParticipation",
@@ -783,7 +806,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.106760",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.141746",
     "@type" : "sport:IndividualParticipation",
@@ -813,7 +836,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.141746",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.149915",
     "@type" : "sport:IndividualParticipation",
@@ -841,12 +864,12 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.149915",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.152590",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.152590",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.155405",
     "@type" : "sport:IndividualParticipation",
@@ -873,7 +896,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.155405",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.165808",
     "@type" : "sport:IndividualParticipation",
@@ -897,7 +920,7 @@
     "events-started" : "1",
     "time-played-total" : "72",
     "participationBy" : "http://example.com/Athlete/p.165808",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.172649",
     "@type" : "sport:IndividualParticipation",
@@ -919,7 +942,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.172649",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.173821",
     "@type" : "sport:IndividualParticipation",
@@ -942,7 +965,7 @@
     "events-started" : "1",
     "time-played-total" : "77",
     "participationBy" : "http://example.com/Athlete/p.173821",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.176297",
     "@type" : "sport:IndividualParticipation",
@@ -968,7 +991,7 @@
     "events-started" : "1",
     "time-played-total" : "86",
     "participationBy" : "http://example.com/Athlete/p.176297",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180184",
     "@type" : "sport:IndividualParticipation",
@@ -985,12 +1008,12 @@
     "touches" : "8",
     "time-played-total" : "1",
     "participationBy" : "http://example.com/Athlete/p.180184",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.180804",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.180804",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.184667",
     "@type" : "sport:IndividualParticipation",
@@ -1016,7 +1039,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.184667",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.193645",
     "@type" : "sport:IndividualParticipation",
@@ -1034,7 +1057,7 @@
     "touches" : "6",
     "time-played-total" : "13",
     "participationBy" : "http://example.com/Athlete/p.193645",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.195851",
     "@type" : "sport:IndividualParticipation",
@@ -1064,12 +1087,12 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.195851",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.197365",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.197365",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.200617",
     "@type" : "sport:IndividualParticipation",
@@ -1093,7 +1116,7 @@
     "events-started" : "1",
     "time-played-total" : "76",
     "participationBy" : "http://example.com/Athlete/p.200617",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.214590",
     "@type" : "sport:IndividualParticipation",
@@ -1120,7 +1143,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.214590",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.215460",
     "@type" : "sport:IndividualParticipation",
@@ -1138,7 +1161,7 @@
     "touches" : "6",
     "time-played-total" : "22",
     "participationBy" : "http://example.com/Athlete/p.215460",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.220688",
     "@type" : "sport:IndividualParticipation",
@@ -1163,7 +1186,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.220688",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221399",
     "@type" : "sport:IndividualParticipation",
@@ -1186,12 +1209,12 @@
     "events-started" : "1",
     "time-played-total" : "68",
     "participationBy" : "http://example.com/Athlete/p.221399",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.221610",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.221610",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.222694",
     "@type" : "sport:IndividualParticipation",
@@ -1216,27 +1239,27 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.222694",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.248937",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.248937",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.28690",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.28690",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.38588",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.38588",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.39790",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.39790",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.40720",
     "@type" : "sport:IndividualParticipation",
@@ -1253,12 +1276,12 @@
     "touches" : "10",
     "time-played-total" : "4",
     "participationBy" : "http://example.com/Athlete/p.40720",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.43670",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.43670",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.437495",
     "@type" : "sport:IndividualParticipation",
@@ -1279,22 +1302,22 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.437495",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.450070",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.450070",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.51940",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.51940",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.62398",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.62398",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.66588",
     "@type" : "sport:IndividualParticipation",
@@ -1327,7 +1350,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.66588",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.72222",
     "@type" : "sport:IndividualParticipation",
@@ -1347,7 +1370,7 @@
     "touches" : "12",
     "time-played-total" : "18",
     "participationBy" : "http://example.com/Athlete/p.72222",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.74208",
     "@type" : "sport:IndividualParticipation",
@@ -1367,7 +1390,7 @@
     "touches" : "19",
     "time-played-total" : "14",
     "participationBy" : "http://example.com/Athlete/p.74208",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.87873",
     "@type" : "sport:IndividualParticipation",
@@ -1398,7 +1421,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.87873",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.95658",
     "@type" : "sport:IndividualParticipation",
@@ -1425,7 +1448,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.95658",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-t.2",
     "@type" : "sport:TeamParticipation",
@@ -1458,13 +1481,11 @@
   }, {
     "@id" : "http://example.com/Team/o.thefa.com-t.13",
     "@type" : "sport:Team",
-    "coach" : "http://example.com/Associate/man40342",
     "membership" : [ "http://example.com/Membership/o.thefa.com-t.13-p.180184", "http://example.com/Membership/o.thefa.com-t.13-p.51940", "http://example.com/Membership/o.thefa.com-t.13-p.40720", "http://example.com/Membership/o.thefa.com-t.13-p.220688", "http://example.com/Membership/o.thefa.com-t.13-p.195851", "http://example.com/Membership/o.thefa.com-t.13-p.184667", "http://example.com/Membership/o.thefa.com-t.13-p.214590", "http://example.com/Membership/o.thefa.com-t.13-p.197365", "http://example.com/Membership/o.thefa.com-t.13-p.172649", "http://example.com/Membership/o.thefa.com-t.13-p.62398", "http://example.com/Membership/o.thefa.com-t.13-p.200617", "http://example.com/Membership/o.thefa.com-t.13-p.180804", "http://example.com/Membership/o.thefa.com-t.13-p.106760", "http://example.com/Membership/o.thefa.com-t.13-p.101582", "http://example.com/Membership/o.thefa.com-t.13-p.152590", "http://example.com/Membership/o.thefa.com-t.13-p.43670", "http://example.com/Membership/o.thefa.com-t.13-p.74208", "http://example.com/Membership/o.thefa.com-t.13-p.141746", "http://example.com/Membership/o.thefa.com-t.13-p.95658", "http://example.com/Membership/o.thefa.com-t.13-p.176297" ],
     "label" : "Manchester United"
   }, {
     "@id" : "http://example.com/Team/t.2",
     "@type" : "sport:Team",
-    "coach" : "http://example.com/Associate/man26",
     "membership" : [ "http://example.com/Membership/t.2-p.437495", "http://example.com/Membership/t.2-p.215460", "http://example.com/Membership/t.2-p.28690", "http://example.com/Membership/t.2-p.173821", "http://example.com/Membership/t.2-p.221399", "http://example.com/Membership/t.2-p.221610", "http://example.com/Membership/t.2-p.38588", "http://example.com/Membership/t.2-p.72222", "http://example.com/Membership/t.2-p.450070", "http://example.com/Membership/t.2-p.105377", "http://example.com/Membership/t.2-p.66588", "http://example.com/Membership/t.2-p.222694", "http://example.com/Membership/t.2-p.193645", "http://example.com/Membership/t.2-p.155405", "http://example.com/Membership/t.2-p.106617", "http://example.com/Membership/t.2-p.165808", "http://example.com/Membership/t.2-p.39790", "http://example.com/Membership/t.2-p.149915", "http://example.com/Membership/t.2-p.248937", "http://example.com/Membership/t.2-p.87873" ],
     "label" : "Leeds United"
   } ],
@@ -1498,6 +1519,10 @@
     },
     "participationBy" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/participationBy",
+      "@type" : "@id"
+    },
+    "playerStatus" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/playerStatus",
       "@type" : "@id"
     },
     "passes-incomplete" : {
@@ -1538,10 +1563,6 @@
     },
     "ejections-total" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/ejections-total"
-    },
-    "status" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/status",
-      "@type" : "@id"
     },
     "recipient-type" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/recipient-type",
@@ -1584,8 +1605,8 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/event",
       "@type" : "@id"
     },
-    "participation" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/participation",
+    "eventParticipation" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/eventParticipation",
       "@type" : "@id"
     },
     "eventOutcomeType" : {
@@ -1593,10 +1614,6 @@
       "@type" : "@id"
     },
     "sport" : "http://www.iptc.org/ontologies/Sport/",
-    "competitionPhase" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/competitionPhase",
-      "@type" : "@id"
-    },
     "competition" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/competition",
       "@type" : "@id"
@@ -1626,6 +1643,10 @@
     },
     "membershipBy" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
+      "@type" : "@id"
+    },
+    "actionParticipation" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/actionParticipation",
       "@type" : "@id"
     },
     "type" : {
@@ -1664,10 +1685,6 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
     },
-    "coach" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/coach",
-      "@type" : "@id"
-    },
     "shots-blocked-cross" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked-cross"
     },
@@ -1682,6 +1699,10 @@
     },
     "shots-on-goal-total" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-on-goal-total"
+    },
+    "parentCompetition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
+      "@type" : "@id"
     },
     "event-outcome" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/event-outcome",

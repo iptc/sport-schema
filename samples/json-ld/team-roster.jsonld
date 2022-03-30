@@ -320,8 +320,15 @@
     "dateOfBirth" : "1974-04-15",
     "label" : "Tim Thomas"
   }, {
+    "@id" : "http://example.com/Competition/l.nhl.com",
+    "@type" : "sport:Competition",
+    "label" : "National Hockey League"
+  }, {
     "@id" : "http://example.com/Competition/l.nhl.com-2015",
-    "governingBody" : "http://example.com/GoverningBody/l.nhl.com"
+    "@type" : "sport:Competition",
+    "governingBody" : "http://example.com/Competition/l.nhl.com",
+    "parentCompetition" : "http://example.com/Competition/l.nhl.com",
+    "label" : "National Hockey League 2015"
   }, {
     "@id" : "http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165",
     "@type" : "sport:IndividualMembership",
@@ -797,6 +804,10 @@
       "@type" : "@id"
     },
     "sport" : "http://www.iptc.org/ontologies/Sport/",
+    "parentCompetition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
+      "@type" : "@id"
+    },
     "governingBody" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/governingBody",
       "@type" : "@id"

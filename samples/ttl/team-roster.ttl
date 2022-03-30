@@ -308,6 +308,10 @@
         sport:positionRegular  <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
         sport:uniformNumber    "39" .
 
+<http://example.com/Competition/l.nhl.com>
+        rdf:type    sport:Competition ;
+        rdfs:label  "National Hockey League" .
+
 <http://example.com/Athlete/l.nhl.com-p.4054>
         rdf:type           sport:Athlete ;
         rdfs:label         "Mattias Backman" ;
@@ -533,7 +537,10 @@
         sport:dateOfBirth  "1993-02-03"^^xsd:date .
 
 <http://example.com/Competition/l.nhl.com-2015>
-        sport:governingBody  <http://example.com/GoverningBody/l.nhl.com> .
+        rdf:type                 sport:Competition ;
+        rdfs:label               "National Hockey League 2015" ;
+        sport:governingBody      <http://example.com/Competition/l.nhl.com> ;
+        sport:parentCompetition  <http://example.com/Competition/l.nhl.com> .
 
 <http://example.com/Athlete/l.nhl.com-p.3872>
         rdf:type           sport:Athlete ;

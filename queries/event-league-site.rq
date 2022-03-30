@@ -14,13 +14,13 @@ WHERE
 {
     ?event rdf:type sport:Event .
     ?event sport:startDate ?date .
-    ?event sport:participation ?homeTeamParticipation .
+    ?event sport:eventParticipation ?homeTeamParticipation .
     ?homeTeamParticipation rdf:type sport:TeamParticipation .
     ?homeTeamParticipation sport:participationBy ?homeTeam .
     ?homeTeamParticipation sport:alignment "home" .
     ?homeTeam rdf:type sport:Team .
     ?homeTeam rdfs:label ?homeTeamName .
-    ?event sport:participation ?awayTeamParticipation .
+    ?event sport:eventParticipation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation .
     ?awayTeamParticipation sport:participationBy ?awayTeam .
     ?awayTeamParticipation sport:alignment "away" .

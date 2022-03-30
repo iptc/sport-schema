@@ -5,20 +5,20 @@ PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 
-SELECT ?teamName ?playerName ?playerStatus
+SELECT DISTINCT ?teamName ?playerName ?playerStatus
 WHERE { 
     ?event rdf:type sport:Event ;
-		   sport:participation ?playerperf .
+           sport:eventParticipation ?playerperf .
     ?playerperf sport:participationBy ?player ;
-    			rdf:type sport:IndividualParticipation .
-    ?player rdfs:label ?playerName ; 
-    		rdf:type sport:Athlete .
-    ?playerperf sport:status <http://cv.iptc.org/newscodes/spperstatus/starter> ;
-    			sport:status ?playerStatus .    
-    ?team sport:membership ?members .
-    ?members sport:membershipBy ?player ;
-    		 sport:membershipOf ?team .
+                rdf:type sport:IndividualParticipation ;
+                sport:playerStatus <http://cv.iptc.org/newscodes/spperstatus/starter> ;
+                sport:playerStatus ?playerStatus .
+    ?player rdfs:label ?playerName ;
+            rdf:type sport:Athlete .
+    ?team sport:membership ?membership .
+    ?membership sport:membershipBy ?player ;
+                sport:membershipOf ?team .
     ?team rdf:type sport:Team ;
-		  rdfs:label ?teamName .
+          rdfs:label ?teamName .
 }
 ORDER BY ?teamName ?playerName

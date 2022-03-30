@@ -12,7 +12,6 @@ class Agent {
 }
 
 class Associate {
-  positionEvent (?) : CV Value
 }
 
 class Athlete {
@@ -59,19 +58,15 @@ class Individual {
 }
 
 class IndividualMembership {
-  rdfs:label : string
   uniformNumber : integer
   positionRegular : CV Value
 }
 
 class IndividualParticipation {
-  rdfs:label : string
-  action-role : CV Value
   playerStatus : CV Value
-  positionEvent : CV Value
 }
 
-class ManagerialParticipation {
+class AssociateParticipation {
 }
 
 class Membership {
@@ -85,6 +80,7 @@ class Official {
 }
 
 class OfficialParticipation {
+  rdfs:label : string
 }
 
 class Participation {
@@ -92,7 +88,7 @@ class Participation {
 }
 
 class ParticipationSplit {
-  participationSplitType : CV Value?
+  participationSplitType : CV Value
 }
 
 class Site {
@@ -105,6 +101,7 @@ class Team {
 }
 
 class TeamParticipation {
+  rdfs:label : string
   alignment : CV Value
 }
 
@@ -115,7 +112,7 @@ CompetitorParticipation <|-- TeamParticipation
 CompetitorParticipation <|-- IndividualParticipation
 Participation <|-- CompetitorParticipation
 Participation <|-- OfficialParticipation
-Participation <|-- ManagerialParticipation
+Participation <|-- AssociateParticipation
 Membership <|-- IndividualMembership
 Agent <|-- Team
 Agent <|-- Individual
@@ -126,16 +123,15 @@ Individual <|-- Official
 ' Object properties - relationships between classes
 
 Action .. Event : > event
+Action .. Participation : > actionParticipation
 Competition .. Competition : > parentCompetition
 Competition .. GoverningBody : > governingBody
+Competition .. Participation : > competitionParticipation
 Event .. Competition : > competition
-Action .. Participation : > participation
-Event .. Participation : > participation
-Competition .. Participation : > participation
-Participation .. ParticipationSplit : participationSplit
-Participation .. Agent : > participationBy
-Team .. IndividualMembership : < membershipOf
-Team .. Associate : > coach   # ???
-IndividualMembership .. Individual : > membershipBy
+Event .. Participation : > eventParticipation
 Event .. Site :  > site
+IndividualMembership .. Individual : > membershipBy
+Participation .. Agent : > participationBy
+Participation .. ParticipationSplit : participationSplit
+Team .. IndividualMembership : < membershipOf
 @enduml

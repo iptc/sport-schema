@@ -8,8 +8,8 @@
     "period-value" : "1",
     "score-attempt-type" : "http://cv.iptc.org/newscodes/spsocscore/regular",
     "sequence-number" : "0426201214",
+    "actionParticipation" : [ "http://example.com/Participation/e.2128610-a.2291848623-p.82403", "http://example.com/Participation/e.2128610-a.2291848623-p.232413" ],
     "event" : "http://example.com/Event/e.2128610",
-    "participation" : [ "http://example.com/Participation/e.2128610-a.2291848623-p.82403", "http://example.com/Participation/e.2128610-a.2291848623-p.232413" ],
     "team" : "http://example.com/Team/e.2128610-t.31",
     "label" : "Action <http://example.com/Action/e.2128610-a.2291848623> on event <http://example.com/Event/e.2128610>"
   }, {
@@ -35,8 +35,8 @@
     "minutes-elapsed" : "46",
     "period-value" : "1",
     "type" : "spsocaction:video-review",
+    "actionParticipation" : "http://example.com/Participation/e.2128610-a.2291870573-p.173515",
     "event" : "http://example.com/Event/e.2128610",
-    "participation" : "http://example.com/Participation/e.2128610-a.2291870573-p.173515",
     "team" : "http://example.com/Team/e.2128610-t.13",
     "label" : "Action <http://example.com/Action/e.2128610-a.2291870573> on event <http://example.com/Event/e.2128610>"
   }, {
@@ -48,8 +48,8 @@
     "period-value" : "2",
     "score-attempt-type" : "http://cv.iptc.org/newscodes/spsocscore/regular",
     "sequence-number" : "0426210804",
+    "actionParticipation" : [ "http://example.com/Participation/e.2128610-a.2291881105-p.173515", "http://example.com/Participation/e.2128610-a.2291881105-p.166477" ],
     "event" : "http://example.com/Event/e.2128610",
-    "participation" : [ "http://example.com/Participation/e.2128610-a.2291881105-p.166477", "http://example.com/Participation/e.2128610-a.2291881105-p.173515" ],
     "team" : "http://example.com/Team/e.2128610-t.13",
     "label" : "Action <http://example.com/Action/e.2128610-a.2291881105> on event <http://example.com/Event/e.2128610>"
   }, {
@@ -59,8 +59,8 @@
     "minutes-elapsed" : "50",
     "period-value" : "2",
     "type" : "spsocaction:video-review",
+    "actionParticipation" : "http://example.com/Participation/e.2128610-a.2291881461-p.173515",
     "event" : "http://example.com/Event/e.2128610",
-    "participation" : "http://example.com/Participation/e.2128610-a.2291881461-p.173515",
     "team" : "http://example.com/Team/e.2128610-t.13",
     "label" : "Action <http://example.com/Action/e.2128610-a.2291881461> on event <http://example.com/Event/e.2128610>"
   }, {
@@ -117,8 +117,8 @@
     "period-value" : "2",
     "score-attempt-type" : "http://cv.iptc.org/newscodes/spsocscore/regular",
     "sequence-number" : "0426213821",
+    "actionParticipation" : [ "http://example.com/Participation/e.2128610-a.2291891767-p.37642", "http://example.com/Participation/e.2128610-a.2291891767-p.173515" ],
     "event" : "http://example.com/Event/e.2128610",
-    "participation" : [ "http://example.com/Participation/e.2128610-a.2291891767-p.173515", "http://example.com/Participation/e.2128610-a.2291891767-p.37642" ],
     "team" : "http://example.com/Team/e.2128610-t.13",
     "label" : "Action <http://example.com/Action/e.2128610-a.2291891767> on event <http://example.com/Event/e.2128610>"
   }, {
@@ -322,21 +322,44 @@
     "@type" : "sport:Athlete",
     "label" : "Danny Ward"
   }, {
+    "@id" : "http://example.com/Competition/l.premierleague.com",
+    "@type" : "sport:Competition",
+    "label" : "English Premier League"
+  }, {
+    "@id" : "http://example.com/Competition/l.premierleague.com-2020",
+    "@type" : "sport:Competition",
+    "parentCompetition" : "http://example.com/Competition/l.premierleague.com",
+    "label" : "English Premier League 2020"
+  }, {
     "@id" : "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
-    "@type" : "sport:CompetitionPhase"
+    "@type" : "sport:CompetitionPhase",
+    "parentCompetition" : "http://example.com/Competition/l.premierleague.com-2020",
+    "label" : "Week 33"
   }, {
     "@id" : "http://example.com/Event/e.2128610",
     "@type" : "sport:Event",
-    "competition" : "http://example.com/Competition/l.premierleague.com-2020",
-    "competitionPhase" : "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
+    "competition" : [ "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33", "http://example.com/Competition/l.premierleague.com-2020" ],
     "eventOutcomeType" : "http://cv.iptc.org/newscodes/speventoutcometype/regular",
+    "eventParticipation" : [ "http://example.com/Participation/e.2128610-p.66975", "http://example.com/Participation/e.2128610-p.166989", "http://example.com/Participation/e.2128610-p.231747", "http://example.com/Participation/e.2128610-p.166477", "http://example.com/Participation/e.2128610-p.111931", "http://example.com/Participation/e.2128610-p.50472", "http://example.com/Participation/e.2128610-p.74230", "http://example.com/Participation/e.2128610-p.105666", "http://example.com/Participation/e.2128610-p.82403", "http://example.com/Participation/e.2128610-p.155569", "http://example.com/Participation/e.2128610-p.60252", "http://example.com/Participation/e.2128610-p.173515", "http://example.com/Participation/e.2128610-p.101668", "http://example.com/Participation/e.2128610-p.57328", "http://example.com/Participation/e.2128610-p.244619", "http://example.com/Participation/e.2128610-t.13", "http://example.com/Participation/e.2128610-p.86417", "http://example.com/Participation/e.2128610-p.55494", "http://example.com/Participation/e.2128610-p.55037", "http://example.com/Participation/e.2128610-p.19188", "http://example.com/Participation/e.2128610-PO41049", "http://example.com/Participation/e.2128610-p.232413", "http://example.com/Participation/e.2128610-p.54861", "http://example.com/Participation/e.2128610-p.168580", "http://example.com/Participation/e.2128610-p.106837", "http://example.com/Participation/e.2128610-p.173954", "http://example.com/Participation/e.2128610-p.17745", "http://example.com/Participation/e.2128610-p.172780", "http://example.com/Participation/e.2128610-p.40836", "http://example.com/Participation/e.2128610-p.95463", "http://example.com/Participation/e.2128610-t.31", "http://example.com/Participation/e.2128610-p.86881", "http://example.com/Participation/e.2128610-p.203341", "http://example.com/Participation/e.2128610-p.94245", "http://example.com/Participation/e.2128610-p.228798", "http://example.com/Participation/e.2128610-p.80146", "http://example.com/Participation/e.2128610-p.444463", "http://example.com/Participation/e.2128610-p.218031", "http://example.com/Participation/e.2128610-p.197469", "http://example.com/Participation/e.2128610-p.244723", "http://example.com/Participation/e.2128610-p.58786", "http://example.com/Participation/e.2128610-p.51938", "http://example.com/Participation/e.2128610-p.37642" ],
     "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "participation" : [ "http://example.com/Participation/e.2128610-p.111931", "http://example.com/Participation/e.2128610-p.66975", "http://example.com/Participation/e.2128610-p.57328", "http://example.com/Participation/e.2128610-p.244619", "http://example.com/Participation/e.2128610-p.95463", "http://example.com/Participation/e.2128610-p.80146", "http://example.com/Participation/e.2128610-p.50472", "http://example.com/Participation/e.2128610-p.40836", "http://example.com/Participation/e.2128610-p.172780", "http://example.com/Participation/e.2128610-p.101668", "http://example.com/Participation/e.2128610-p.19188", "http://example.com/Participation/e.2128610-t.31", "http://example.com/Participation/e.2128610-p.37642", "http://example.com/Participation/e.2128610-p.17745", "http://example.com/Participation/e.2128610-p.51938", "http://example.com/Participation/e.2128610-p.197469", "http://example.com/Participation/e.2128610-p.173515", "http://example.com/Participation/e.2128610-p.58786", "http://example.com/Participation/e.2128610-p.106837", "http://example.com/Participation/e.2128610-p.60252", "http://example.com/Participation/e.2128610-p.105666", "http://example.com/Participation/e.2128610-p.203341", "http://example.com/Participation/e.2128610-p.218031", "http://example.com/Participation/e.2128610-PO41049", "http://example.com/Participation/e.2128610-p.168580", "http://example.com/Participation/e.2128610-p.173954", "http://example.com/Participation/e.2128610-p.55494", "http://example.com/Participation/e.2128610-p.82403", "http://example.com/Participation/e.2128610-t.13", "http://example.com/Participation/e.2128610-p.55037", "http://example.com/Participation/e.2128610-p.444463", "http://example.com/Participation/e.2128610-p.232413", "http://example.com/Participation/e.2128610-p.74230", "http://example.com/Participation/e.2128610-p.231747", "http://example.com/Participation/e.2128610-p.94245", "http://example.com/Participation/e.2128610-p.228798", "http://example.com/Participation/e.2128610-p.166989", "http://example.com/Participation/e.2128610-p.155569", "http://example.com/Participation/e.2128610-p.86417", "http://example.com/Participation/e.2128610-p.54861", "http://example.com/Participation/e.2128610-p.86881", "http://example.com/Participation/e.2128610-p.166477", "http://example.com/Participation/e.2128610-p.244723" ],
     "site" : "http://example.com/Site/s.2516",
     "sport:sport" : {
       "@id" : "http://cv.iptc.org/newscodes/mediatopic/20001065"
     },
-    "startDate" : "2021-04-26T20:00:00+01:00"
+    "startDate" : "2021-04-26T20:00:00+01:00",
+    "label" : "Event <http://example.com/Event/e.2128610>"
+  }, {
+    "@id" : "http://example.com/Membership/man1280-t.31",
+    "@type" : "sport:Membership",
+    "membershipBy" : "http://example.com/Associate/man1280",
+    "membershipOf" : "http://example.com/Team/t.31",
+    "label" : "Roy Hodgson associate membership of Crystal Palace"
+  }, {
+    "@id" : "http://example.com/Membership/man38197-t.13",
+    "@type" : "sport:Membership",
+    "membershipBy" : "http://example.com/Associate/man38197",
+    "membershipOf" : "http://example.com/Team/t.13",
+    "label" : "Brendan Rodgers associate membership of Leicester City"
   }, {
     "@id" : "http://example.com/Membership/t.13-p.101668",
     "@type" : "sport:IndividualMembership",
@@ -690,27 +713,27 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.101668",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.105666",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.105666",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.106837",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.106837",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.111931",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.111931",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.155569",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.155569",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.166477",
     "@type" : "sport:IndividualParticipation",
@@ -741,7 +764,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.166477",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.166989",
     "@type" : "sport:IndividualParticipation",
@@ -771,7 +794,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.166989",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.168580",
     "@type" : "sport:IndividualParticipation",
@@ -789,7 +812,7 @@
     "touches" : "14",
     "time-played-total" : "20",
     "participationBy" : "http://example.com/Athlete/p.168580",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.172780",
     "@type" : "sport:IndividualParticipation",
@@ -810,7 +833,7 @@
     "events-started" : "1",
     "time-played-total" : "70",
     "participationBy" : "http://example.com/Athlete/p.172780",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.173515",
     "@type" : "sport:IndividualParticipation",
@@ -840,7 +863,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.173515",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.173954",
     "@type" : "sport:IndividualParticipation",
@@ -862,7 +885,7 @@
     "events-started" : "1",
     "time-played-total" : "85",
     "participationBy" : "http://example.com/Athlete/p.173954",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.17745",
     "@type" : "sport:IndividualParticipation",
@@ -883,7 +906,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.17745",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.19188",
     "@type" : "sport:IndividualParticipation",
@@ -906,12 +929,12 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.19188",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.197469",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.197469",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.203341",
     "@type" : "sport:IndividualParticipation",
@@ -936,7 +959,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.203341",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.218031",
     "@type" : "sport:IndividualParticipation",
@@ -964,17 +987,17 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.218031",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.228798",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.228798",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.231747",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.231747",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.232413",
     "@type" : "sport:IndividualParticipation",
@@ -996,7 +1019,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.232413",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.244619",
     "@type" : "sport:IndividualParticipation",
@@ -1021,12 +1044,12 @@
     "events-started" : "1",
     "time-played-total" : "70",
     "participationBy" : "http://example.com/Athlete/p.244619",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.244723",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.244723",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.37642",
     "@type" : "sport:IndividualParticipation",
@@ -1048,7 +1071,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.37642",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.40836",
     "@type" : "sport:IndividualParticipation",
@@ -1068,7 +1091,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.40836",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.444463",
     "@type" : "sport:IndividualParticipation",
@@ -1093,7 +1116,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.444463",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.50472",
     "@type" : "sport:IndividualParticipation",
@@ -1108,7 +1131,7 @@
     "touches" : "3",
     "time-played-total" : "7",
     "participationBy" : "http://example.com/Athlete/p.50472",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.51938",
     "@type" : "sport:IndividualParticipation",
@@ -1125,7 +1148,7 @@
     "touches" : "9",
     "time-played-total" : "20",
     "participationBy" : "http://example.com/Athlete/p.51938",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.54861",
     "@type" : "sport:IndividualParticipation",
@@ -1150,7 +1173,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.54861",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.55037",
     "@type" : "sport:IndividualParticipation",
@@ -1176,7 +1199,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.55037",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.55494",
     "@type" : "sport:IndividualParticipation",
@@ -1203,17 +1226,17 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.55494",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.57328",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.57328",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.58786",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.58786",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.60252",
     "@type" : "sport:IndividualParticipation",
@@ -1228,7 +1251,7 @@
     "touches" : "4",
     "time-played-total" : "12",
     "participationBy" : "http://example.com/Athlete/p.60252",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.66975",
     "@type" : "sport:IndividualParticipation",
@@ -1252,7 +1275,7 @@
     "events-started" : "1",
     "time-played-total" : "83",
     "participationBy" : "http://example.com/Athlete/p.66975",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.74230",
     "@type" : "sport:IndividualParticipation",
@@ -1274,7 +1297,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.74230",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.80146",
     "@type" : "sport:IndividualParticipation",
@@ -1299,7 +1322,7 @@
     "events-started" : "1",
     "time-played-total" : "78",
     "participationBy" : "http://example.com/Athlete/p.80146",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.82403",
     "@type" : "sport:IndividualParticipation",
@@ -1328,7 +1351,7 @@
     "events-started" : "1",
     "time-played-total" : "90",
     "participationBy" : "http://example.com/Athlete/p.82403",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/starter"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/starter"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.86417",
     "@type" : "sport:IndividualParticipation",
@@ -1347,22 +1370,22 @@
     "touches" : "6",
     "time-played-total" : "5",
     "participationBy" : "http://example.com/Athlete/p.86417",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.86881",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.86881",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.94245",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.94245",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-p.95463",
     "@type" : "sport:IndividualParticipation",
     "participationBy" : "http://example.com/Athlete/p.95463",
-    "status" : "http://cv.iptc.org/newscodes/spperstatus/bench"
+    "playerStatus" : "http://cv.iptc.org/newscodes/spperstatus/bench"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-t.13",
     "@type" : "sport:TeamParticipation",
@@ -1420,17 +1443,18 @@
   }, {
     "@id" : "http://example.com/Team/t.13",
     "@type" : "sport:Team",
-    "coach" : "http://example.com/Associate/man38197",
     "membership" : [ "http://example.com/Membership/t.13-p.228798", "http://example.com/Membership/t.13-p.203341", "http://example.com/Membership/t.13-p.172780", "http://example.com/Membership/t.13-p.173515", "http://example.com/Membership/t.13-p.37642", "http://example.com/Membership/t.13-p.218031", "http://example.com/Membership/t.13-p.111931", "http://example.com/Membership/t.13-p.86881", "http://example.com/Membership/t.13-p.444463", "http://example.com/Membership/t.13-p.51938", "http://example.com/Membership/t.13-p.197469", "http://example.com/Membership/t.13-p.95463", "http://example.com/Membership/t.13-p.17745", "http://example.com/Membership/t.13-p.166989", "http://example.com/Membership/t.13-p.106837", "http://example.com/Membership/t.13-p.101668", "http://example.com/Membership/t.13-p.155569", "http://example.com/Membership/t.13-p.244619", "http://example.com/Membership/t.13-p.168580", "http://example.com/Membership/t.13-p.166477" ],
     "label" : "Leicester City"
   }, {
     "@id" : "http://example.com/Team/t.31",
     "@type" : "sport:Team",
-    "coach" : "http://example.com/Associate/man1280",
-    "membership" : [ "http://example.com/Membership/t.31-p.80146", "http://example.com/Membership/t.31-p.66975", "http://example.com/Membership/t.31-p.50472", "http://example.com/Membership/t.31-p.173954", "http://example.com/Membership/t.31-p.86417", "http://example.com/Membership/t.31-p.232413", "http://example.com/Membership/t.31-p.40836", "http://example.com/Membership/t.31-p.231747", "http://example.com/Membership/t.31-p.82403", "http://example.com/Membership/t.31-p.58786", "http://example.com/Membership/t.31-p.94245", "http://example.com/Membership/t.31-p.74230", "http://example.com/Membership/t.31-p.54861", "http://example.com/Membership/t.31-p.57328", "http://example.com/Membership/t.31-p.105666", "http://example.com/Membership/t.31-p.55037", "http://example.com/Membership/t.31-p.19188", "http://example.com/Membership/t.31-p.55494", "http://example.com/Membership/t.31-p.60252", "http://example.com/Membership/t.31-p.244723" ],
+    "membership" : [ "http://example.com/Membership/t.31-p.80146", "http://example.com/Membership/t.31-p.66975", "http://example.com/Membership/t.31-p.50472", "http://example.com/Membership/t.31-p.173954", "http://example.com/Membership/t.31-p.86417", "http://example.com/Membership/t.31-p.232413", "http://example.com/Membership/t.31-p.231747", "http://example.com/Membership/t.31-p.40836", "http://example.com/Membership/t.31-p.82403", "http://example.com/Membership/t.31-p.58786", "http://example.com/Membership/t.31-p.94245", "http://example.com/Membership/t.31-p.74230", "http://example.com/Membership/t.31-p.54861", "http://example.com/Membership/t.31-p.57328", "http://example.com/Membership/t.31-p.105666", "http://example.com/Membership/t.31-p.55037", "http://example.com/Membership/t.31-p.19188", "http://example.com/Membership/t.31-p.55494", "http://example.com/Membership/t.31-p.60252", "http://example.com/Membership/t.31-p.244723" ],
     "label" : "Crystal Palace"
   } ],
   "@context" : {
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
     "uniformNumber" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
     },
@@ -1446,156 +1470,102 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
       "@type" : "@id"
     },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    "playerStatus" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/playerStatus",
+      "@type" : "@id"
     },
     "participationBy" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/participationBy",
       "@type" : "@id"
     },
-    "passes-incomplete" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-incomplete"
-    },
-    "time-played-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/time-played-total"
+    "touches" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/touches"
     },
     "passes-complete" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-complete"
     },
-    "goals-against-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-against-total"
+    "time-played-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spstat/time-played-total"
     },
-    "cautions-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/cautions-total"
+    "passes-incomplete" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-incomplete"
     },
-    "passes-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-total"
-    },
-    "goals-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-total"
-    },
-    "fouls-suffered" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/fouls-suffered"
+    "crosses-18-yard-plus" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard-plus"
     },
     "ejections-total" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/ejections-total"
     },
-    "assists-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/assists-total"
+    "goals-against-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-against-total"
     },
-    "passes-complete-3rd-final" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-complete-3rd-final"
+    "passes-complete-long" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-complete-long"
     },
-    "fouls-commited" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/fouls-commited"
+    "interceptions" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/interceptions"
     },
-    "status" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/status",
-      "@type" : "@id"
-    },
-    "touches" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/touches"
-    },
-    "shots-off-goal-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-off-goal-total"
-    },
-    "shots-on-goal-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-on-goal-total"
-    },
-    "aerials-won" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/aerials-won"
+    "cautions-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/cautions-total"
     },
     "clearances-successful" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/clearances-successful"
     },
-    "crosses-18-yard" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard"
-    },
-    "shots-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-total"
-    },
     "events-started" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/events-started"
+    },
+    "goals-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-total"
+    },
+    "tackles-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-total"
+    },
+    "passes-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-total"
+    },
+    "passes-complete-3rd-final" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-complete-3rd-final"
+    },
+    "tackles-won" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-won"
+    },
+    "tackles-lost" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-lost"
+    },
+    "assists-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/assists-total"
     },
     "role" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/role",
       "@type" : "@id"
     },
-    "positionEvent" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
-      "@type" : "@id"
+    "fouls-suffered" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/fouls-suffered"
     },
-    "event" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/event",
-      "@type" : "@id"
+    "fouls-commited" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/fouls-commited"
     },
-    "person-replacing-idref" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-replacing-idref"
+    "shots-off-goal-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-off-goal-total"
     },
-    "team" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/team",
-      "@type" : "@id"
+    "aerials-won" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/aerials-won"
     },
-    "substitution-reason" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/substitution-reason"
+    "shots-on-goal-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-on-goal-total"
     },
-    "period-value" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/period-value"
-    },
-    "person-replacing-position" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-replacing-position"
-    },
-    "class" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/class",
-      "@type" : "@id"
-    },
-    "date-time" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/date-time"
-    },
-    "sequence-number" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/sequence-number"
-    },
-    "minutes-elapsed" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed"
-    },
-    "person-original-idref" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-original-idref"
-    },
-    "tackles-lost" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-lost"
-    },
-    "tackles-total" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-total"
-    },
-    "interceptions" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/interceptions"
-    },
-    "passes-complete-long" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/passes-complete-long"
-    },
-    "tackles-won" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-won"
-    },
-    "goals-left-foot" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-left-foot"
-    },
-    "goals-right-foot" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-right-foot"
-    },
-    "goals-head" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-head"
-    },
-    "shots-blocked-outfielder" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked-outfielder"
-    },
-    "crosses-18-yard-plus" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard-plus"
+    "shots-total" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-total"
     },
     "free-kicks" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/free-kicks"
     },
-    "participation" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/participation",
+    "positionEvent" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
+      "@type" : "@id"
+    },
+    "eventParticipation" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/eventParticipation",
       "@type" : "@id"
     },
     "sport" : "http://www.iptc.org/ontologies/Sport/",
@@ -1605,10 +1575,6 @@
     },
     "eventOutcomeType" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/eventOutcomeType",
-      "@type" : "@id"
-    },
-    "competitionPhase" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/competitionPhase",
       "@type" : "@id"
     },
     "competition" : {
@@ -1623,13 +1589,119 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/startDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
+    "shots-blocked-outfielder" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked-outfielder"
+    },
+    "shots-blocked-cross" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked-cross"
+    },
+    "team" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/team",
+      "@type" : "@id"
+    },
+    "event" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/event",
+      "@type" : "@id"
+    },
+    "actionParticipation" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/actionParticipation",
+      "@type" : "@id"
+    },
+    "type" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/type",
+      "@type" : "@id"
+    },
+    "period-value" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/period-value"
+    },
+    "minutes-elapsed" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed"
+    },
+    "class" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/class",
+      "@type" : "@id"
+    },
+    "crosses-18-yard" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard"
+    },
+    "goals-left-foot" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-left-foot"
+    },
+    "goals-right-foot" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-right-foot"
+    },
+    "goals-head" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-head"
+    },
+    "person-original-idref" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-original-idref"
+    },
+    "person-replacing-idref" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-replacing-idref"
+    },
+    "date-time" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/date-time"
+    },
+    "substitution-reason" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/substitution-reason"
+    },
+    "person-replacing-position" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-replacing-position"
+    },
+    "sequence-number" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/sequence-number"
+    },
+    "offsides" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/offsides"
+    },
+    "time-of-possession-percentage" : {
+      "@id" : "http://cv.iptc.org/newscodes/spstat/time-of-possession-percentage"
+    },
+    "corner-kicks" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/corner-kicks"
+    },
+    "score" : {
+      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
+    },
+    "event-outcome" : {
+      "@id" : "http://cv.iptc.org/newscodes/spstat/event-outcome",
+      "@type" : "@id"
+    },
+    "alignment" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/alignment"
+    },
+    "line-formation" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/line-formation"
+    },
+    "tackles-won-percentage" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-won-percentage"
+    },
+    "shots-blocked" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked"
+    },
+    "score-opposing" : {
+      "@id" : "http://cv.iptc.org/newscodes/spstat/score-opposing"
+    },
+    "parentCompetition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
+      "@type" : "@id"
+    },
+    "score-attempt-type" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/Action/score-attempt-type",
+      "@type" : "@id"
+    },
     "membership" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
     },
-    "coach" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/coach",
-      "@type" : "@id"
+    "saves" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/saves"
+    },
+    "save-percentage" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/save-percentage"
+    },
+    "catches-punches" : {
+      "@id" : "http://cv.iptc.org/newscodes/spsocstat/catches-punches"
     },
     "penalty-level" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/penalty-level"
@@ -1647,57 +1719,6 @@
     },
     "comment" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/comment"
-    },
-    "shots-blocked-cross" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked-cross"
-    },
-    "event-outcome" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/event-outcome",
-      "@type" : "@id"
-    },
-    "score" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
-    },
-    "shots-blocked" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked"
-    },
-    "score-opposing" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score-opposing"
-    },
-    "offsides" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/offsides"
-    },
-    "corner-kicks" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/corner-kicks"
-    },
-    "time-of-possession-percentage" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/time-of-possession-percentage"
-    },
-    "alignment" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/alignment"
-    },
-    "line-formation" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/line-formation"
-    },
-    "tackles-won-percentage" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-won-percentage"
-    },
-    "saves" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/saves"
-    },
-    "save-percentage" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/save-percentage"
-    },
-    "catches-punches" : {
-      "@id" : "http://cv.iptc.org/newscodes/spsocstat/catches-punches"
-    },
-    "score-attempt-type" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/score-attempt-type",
-      "@type" : "@id"
-    },
-    "type" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/Action/type",
-      "@type" : "@id"
     },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
