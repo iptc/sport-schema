@@ -13,7 +13,7 @@ SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?d
 WHERE
 {
     ?event rdf:type sport:Event .
-    ?event sport:startDate ?date .
+    ?event sport:startDateTime ?date .
     ?event sport:eventParticipation ?homeTeamParticipation .
     ?homeTeamParticipation rdf:type sport:TeamParticipation .
     ?homeTeamParticipation sport:participationBy ?homeTeam .
