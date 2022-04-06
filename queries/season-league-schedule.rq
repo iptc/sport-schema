@@ -12,30 +12,23 @@ SELECT ?week
        ?siteName
 WHERE
 {
-    ?event rdf:type sport:Event ;
-           sport:startDateTime ?date ;
-           sport:competition ?compPhase ;
-           sport:site ?site ;
-           sport:eventParticipation ?homeTeamParticipation .
-    ?compPhase rdf:type sport:CompetitionPhase ;
-               rdfs:label ?week ;
-               sport:parentCompetition ?parentCompetition .
-    ?parentCompetition rdf:type sport:Competition;
-               rdfs:label ?parentCompName .
-    ?homeTeamParticipation rdf:type sport:TeamParticipation ;
-                           sport:participationBy ?homeTeam ;
-                           sport:alignment "home" .
-    ?homeTeam rdf:type sport:Team ;
-              rdfs:label ?homeTeamName .
-    ?event rdf:type sport:Event ;
-           sport:eventParticipation ?awayTeamParticipation .
-    ?awayTeamParticipation rdf:type sport:TeamParticipation ;
-                           sport:participationBy ?awayTeam ;
-                           sport:alignment "away" .
-    ?awayTeam rdf:type sport:Team ;
-              rdfs:label ?awayTeamName .
-    ?site rdf:type sport:Site ;
-          rdfs:label ?siteName .
-    FILTER (?parentCompetition = <http://example.com/Competition/l.premierleague.com-2020>)
+    ?event rdf:type sport:Event .
+    ?event sport:startDate ?date .
+    ?event sport:competitionPhase ?week .
+    ?event sport:participation ?homeTeamParticipation .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation .
+    ?homeTeamParticipation sport:participationBy ?homeTeam .
+    ?homeTeamParticipation sport:alignment "home" .
+    ?homeTeam rdf:type sport:Team .
+    ?homeTeam rdfs:label ?homeTeamName .
+    ?event sport:participation ?awayTeamParticipation .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation .
+    ?awayTeamParticipation sport:participationBy ?awayTeam .
+    ?awayTeamParticipation sport:alignment "away" .
+    ?awayTeam rdf:type sport:Team .
+    ?awayTeam rdfs:label ?awayTeamName .
+    ?event sport:site ?site .
+    ?site rdf:type sport:Site .
+    ?site rdfs:label ?siteName .
 }
-ORDER BY ?displayDate ?displayTime
+ORDER BY ?week ?displayDate ?displayTime

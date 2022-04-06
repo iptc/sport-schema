@@ -6,14 +6,11 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 
-SELECT ?teamName ?score
-WHERE {
-    ?event rdf:type sport:Event ;
-           sport:eventParticipation ?teamParticipation .
-    ?teamParticipation rdf:type sport:TeamParticipation ;
-                       sport:participationBy ?team ;
-                       spstat:score ?score .
-    ?team rdf:type sport:Team ;
-          rdfs:label ?teamName . 
-    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128468>)
+SELECT ?name ?score
+WHERE { 
+    ?team rdf:type sport:Team .
+    ?team rdfs:label ?name . 
+    ?teamParticipation sport:participationBy ?team .
+    ?teamParticipation rdf:type sport:TeamParticipation .
+    ?teamParticipation spstat:score ?score .
 }

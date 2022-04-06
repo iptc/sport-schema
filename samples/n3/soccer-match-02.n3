@@ -1,20 +1,11 @@
-<http://example.com/Competition/l.premierleague.com> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Competition> .
-                <http://example.com/Competition/l.premierleague.com> <http://www.w3.org/2000/01/rdf-schema#label> "English Premier League" .
-                <http://example.com/Competition/l.premierleague.com-2020> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Competition> .
-                    <http://example.com/Competition/l.premierleague.com-2020> <http://www.w3.org/2000/01/rdf-schema#label> "English Premier League 2020" .
-                    <http://example.com/Competition/l.premierleague.com-2020> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/l.premierleague.com> .
-                <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/l.premierleague.com-2020> .
+<http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20001065> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/l.premierleague.com-2020> .
                 <http://example.com/Event/e.2128610><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
-        <http://example.com/Event/e.2128610> <http://www.w3.org/2000/01/rdf-schema#label> "Event <http://example.com/Event/e.2128610>" .
-          <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-04-26T20:00:00+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/startDate> "2021-04-26T20:00:00+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes/speventstatus/post-event> .
         <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventOutcomeType> <http://cv.iptc.org/newscodes/speventoutcometype/regular> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> .
             <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> <http://www.w3.org/2000/01/rdf-schema#label> "Week 33" .
-            <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/l.premierleague.com-2020> .
         <http://example.com/Site/s.2516><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Site> .
         
         <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/site> <http://example.com/Site/s.2516> .
@@ -29,7 +20,7 @@
             
             <http://example.com/Participation/e.2128610-t.13> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/t.13> .
         <http://example.com/Participation/e.2128610-t.13> <http://www.iptc.org/ontologies/Sport/alignment> "home" .
-                <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-t.13> .
+                <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-t.13> .
         <http://example.com/Participation/e.2128610-t.13> <http://cv.iptc.org/newscodes/spstat/score> "2" .
             <http://example.com/Participation/e.2128610-t.13> <http://cv.iptc.org/newscodes/spstat/score-opposing> "1" .
             <http://example.com/Participation/e.2128610-t.13> <http://cv.iptc.org/newscodes/spstat/event-outcome> <http://cv.iptc.org/newscodes/speventoutcome/win> .
@@ -62,8 +53,8 @@
             <http://example.com/Membership/t.13-p.17745><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.17745> .
             <http://example.com/Membership/t.13-p.17745> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> .
             <http://example.com/Membership/t.13-p.17745> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1" .
-            <http://example.com/Participation/e.2128610-p.17745> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.17745> .
+            <http://example.com/Participation/e.2128610-p.17745> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.17745> .
             
             <http://example.com/Participation/e.2128610-p.17745><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -96,8 +87,8 @@
             <http://example.com/Membership/t.13-p.444463><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.444463> .
             <http://example.com/Membership/t.13-p.444463> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.13-p.444463> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3" .
-            <http://example.com/Participation/e.2128610-p.444463> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.444463> .
+            <http://example.com/Participation/e.2128610-p.444463> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.444463> .
             
             <http://example.com/Participation/e.2128610-p.444463><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -134,8 +125,8 @@
             <http://example.com/Membership/t.13-p.37642><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.37642> .
             <http://example.com/Membership/t.13-p.37642> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.13-p.37642> <http://www.iptc.org/ontologies/Sport/uniformNumber> "6" .
-            <http://example.com/Participation/e.2128610-p.37642> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.37642> .
+            <http://example.com/Participation/e.2128610-p.37642> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.37642> .
             
             <http://example.com/Participation/e.2128610-p.37642><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -169,8 +160,8 @@
             <http://example.com/Membership/t.13-p.218031><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.218031> .
             <http://example.com/Membership/t.13-p.218031> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.13-p.218031> <http://www.iptc.org/ontologies/Sport/uniformNumber> "4" .
-            <http://example.com/Participation/e.2128610-p.218031> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.218031> .
+            <http://example.com/Participation/e.2128610-p.218031> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.218031> .
             
             <http://example.com/Participation/e.2128610-p.218031><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -210,8 +201,8 @@
             <http://example.com/Membership/t.13-p.166477><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.166477> .
             <http://example.com/Membership/t.13-p.166477> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.166477> <http://www.iptc.org/ontologies/Sport/uniformNumber> "27" .
-            <http://example.com/Participation/e.2128610-p.166477> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.166477> .
+            <http://example.com/Participation/e.2128610-p.166477> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.166477> .
             
             <http://example.com/Participation/e.2128610-p.166477><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -254,8 +245,8 @@
             <http://example.com/Membership/t.13-p.203341><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.203341> .
             <http://example.com/Membership/t.13-p.203341> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.203341> <http://www.iptc.org/ontologies/Sport/uniformNumber> "25" .
-            <http://example.com/Participation/e.2128610-p.203341> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.203341> .
+            <http://example.com/Participation/e.2128610-p.203341> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.203341> .
             
             <http://example.com/Participation/e.2128610-p.203341><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -292,8 +283,8 @@
             <http://example.com/Membership/t.13-p.166989><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.166989> .
             <http://example.com/Membership/t.13-p.166989> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.166989> <http://www.iptc.org/ontologies/Sport/uniformNumber> "8" .
-            <http://example.com/Participation/e.2128610-p.166989> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.166989> .
+            <http://example.com/Participation/e.2128610-p.166989> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.166989> .
             
             <http://example.com/Participation/e.2128610-p.166989><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -335,8 +326,8 @@
             <http://example.com/Membership/t.13-p.244619><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.244619> .
             <http://example.com/Membership/t.13-p.244619> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.244619> <http://www.iptc.org/ontologies/Sport/uniformNumber> "33" .
-            <http://example.com/Participation/e.2128610-p.244619> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.244619> .
+            <http://example.com/Participation/e.2128610-p.244619> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.244619> .
             
             <http://example.com/Participation/e.2128610-p.244619><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -373,8 +364,8 @@
             <http://example.com/Membership/t.13-p.172780><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.172780> .
             <http://example.com/Membership/t.13-p.172780> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.13-p.172780> <http://www.iptc.org/ontologies/Sport/uniformNumber> "10" .
-            <http://example.com/Participation/e.2128610-p.172780> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.172780> .
+            <http://example.com/Participation/e.2128610-p.172780> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.172780> .
             
             <http://example.com/Participation/e.2128610-p.172780><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -407,8 +398,8 @@
             <http://example.com/Membership/t.13-p.173515><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.173515> .
             <http://example.com/Membership/t.13-p.173515> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.13-p.173515> <http://www.iptc.org/ontologies/Sport/uniformNumber> "14" .
-            <http://example.com/Participation/e.2128610-p.173515> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.173515> .
+            <http://example.com/Participation/e.2128610-p.173515> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.173515> .
             
             <http://example.com/Participation/e.2128610-p.173515><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -450,8 +441,8 @@
             <http://example.com/Membership/t.13-p.101668><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.101668> .
             <http://example.com/Membership/t.13-p.101668> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.13-p.101668> <http://www.iptc.org/ontologies/Sport/uniformNumber> "9" .
-            <http://example.com/Participation/e.2128610-p.101668> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.101668> .
+            <http://example.com/Participation/e.2128610-p.101668> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.101668> .
             
             <http://example.com/Participation/e.2128610-p.101668><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -488,8 +479,8 @@
             <http://example.com/Membership/t.13-p.51938><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.51938> .
             <http://example.com/Membership/t.13-p.51938> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.51938> <http://www.iptc.org/ontologies/Sport/uniformNumber> "11" .
-            <http://example.com/Participation/e.2128610-p.51938> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.51938> .
+            <http://example.com/Participation/e.2128610-p.51938> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.51938> .
             
             <http://example.com/Participation/e.2128610-p.51938><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -518,8 +509,8 @@
             <http://example.com/Membership/t.13-p.95463><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.95463> .
             <http://example.com/Membership/t.13-p.95463> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> .
             <http://example.com/Membership/t.13-p.95463> <http://www.iptc.org/ontologies/Sport/uniformNumber> "12" .
-            <http://example.com/Participation/e.2128610-p.95463> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.95463> .
+            <http://example.com/Participation/e.2128610-p.95463> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.95463> .
             
             <http://example.com/Participation/e.2128610-p.95463><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -536,8 +527,8 @@
             <http://example.com/Membership/t.13-p.168580><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.168580> .
             <http://example.com/Membership/t.13-p.168580> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.13-p.168580> <http://www.iptc.org/ontologies/Sport/uniformNumber> "17" .
-            <http://example.com/Participation/e.2128610-p.168580> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.168580> .
+            <http://example.com/Participation/e.2128610-p.168580> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.168580> .
             
             <http://example.com/Participation/e.2128610-p.168580><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -567,8 +558,8 @@
             <http://example.com/Membership/t.13-p.155569><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.155569> .
             <http://example.com/Membership/t.13-p.155569> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.13-p.155569> <http://www.iptc.org/ontologies/Sport/uniformNumber> "18" .
-            <http://example.com/Participation/e.2128610-p.155569> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.155569> .
+            <http://example.com/Participation/e.2128610-p.155569> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.155569> .
             
             <http://example.com/Participation/e.2128610-p.155569><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -585,8 +576,8 @@
             <http://example.com/Membership/t.13-p.228798><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.228798> .
             <http://example.com/Membership/t.13-p.228798> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.228798> <http://www.iptc.org/ontologies/Sport/uniformNumber> "19" .
-            <http://example.com/Participation/e.2128610-p.228798> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.228798> .
+            <http://example.com/Participation/e.2128610-p.228798> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.228798> .
             
             <http://example.com/Participation/e.2128610-p.228798><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -603,8 +594,8 @@
             <http://example.com/Membership/t.13-p.197469><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.197469> .
             <http://example.com/Membership/t.13-p.197469> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.197469> <http://www.iptc.org/ontologies/Sport/uniformNumber> "20" .
-            <http://example.com/Participation/e.2128610-p.197469> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.197469> .
+            <http://example.com/Participation/e.2128610-p.197469> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.197469> .
             
             <http://example.com/Participation/e.2128610-p.197469><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -621,8 +612,8 @@
             <http://example.com/Membership/t.13-p.111931><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.111931> .
             <http://example.com/Membership/t.13-p.111931> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.13-p.111931> <http://www.iptc.org/ontologies/Sport/uniformNumber> "21" .
-            <http://example.com/Participation/e.2128610-p.111931> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.111931> .
+            <http://example.com/Participation/e.2128610-p.111931> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.111931> .
             
             <http://example.com/Participation/e.2128610-p.111931><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -639,8 +630,8 @@
             <http://example.com/Membership/t.13-p.86881><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.86881> .
             <http://example.com/Membership/t.13-p.86881> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.86881> <http://www.iptc.org/ontologies/Sport/uniformNumber> "24" .
-            <http://example.com/Participation/e.2128610-p.86881> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.86881> .
+            <http://example.com/Participation/e.2128610-p.86881> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.86881> .
             
             <http://example.com/Participation/e.2128610-p.86881><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -657,8 +648,8 @@
             <http://example.com/Membership/t.13-p.106837><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.106837> .
             <http://example.com/Membership/t.13-p.106837> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.13-p.106837> <http://www.iptc.org/ontologies/Sport/uniformNumber> "26" .
-            <http://example.com/Participation/e.2128610-p.106837> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.106837> .
+            <http://example.com/Participation/e.2128610-p.106837> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.106837> .
             
             <http://example.com/Participation/e.2128610-p.106837><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -667,18 +658,7 @@
 
         
         <http://example.com/Associate/man38197> <http://www.w3.org/2000/01/rdf-schema#label> "Brendan Rodgers" .
-        <http://example.com/Membership/man38197-t.13><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Membership> .
-        
-        <http://example.com/Membership/man38197-t.13> <http://www.w3.org/2000/01/rdf-schema#label> "Brendan Rodgers associate membership of Leicester City" .
-
-        
-        <http://example.com/Membership/man38197-t.13><http://www.iptc.org/ontologies/Sport/membershipOf><http://example.com/Team/t.13> .
-
-        
-        <http://example.com/Membership/man38197-t.13><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Associate/man38197> .
-
-        
-        
+        <http://example.com/Team/t.13><http://www.iptc.org/ontologies/Sport/coach><http://example.com/Associate/man38197> .
 
         
         <http://example.com/Associate/man38197> <http://www.iptc.org/ontologies/Sport/positionEvent> <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
@@ -691,7 +671,7 @@
             
             <http://example.com/Participation/e.2128610-t.31> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/t.31> .
         <http://example.com/Participation/e.2128610-t.31> <http://www.iptc.org/ontologies/Sport/alignment> "away" .
-                <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-t.31> .
+                <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-t.31> .
         <http://example.com/Participation/e.2128610-t.31> <http://cv.iptc.org/newscodes/spstat/score> "1" .
             <http://example.com/Participation/e.2128610-t.31> <http://cv.iptc.org/newscodes/spstat/score-opposing> "2" .
             <http://example.com/Participation/e.2128610-t.31> <http://cv.iptc.org/newscodes/spstat/event-outcome> <http://cv.iptc.org/newscodes/speventoutcome/loss> .
@@ -724,8 +704,8 @@
             <http://example.com/Membership/t.31-p.40836><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.40836> .
             <http://example.com/Membership/t.31-p.40836> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> .
             <http://example.com/Membership/t.31-p.40836> <http://www.iptc.org/ontologies/Sport/uniformNumber> "31" .
-            <http://example.com/Participation/e.2128610-p.40836> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.40836> .
+            <http://example.com/Participation/e.2128610-p.40836> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.40836> .
             
             <http://example.com/Participation/e.2128610-p.40836><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -757,8 +737,8 @@
             <http://example.com/Membership/t.31-p.55494><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.55494> .
             <http://example.com/Membership/t.31-p.55494> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.55494> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2" .
-            <http://example.com/Participation/e.2128610-p.55494> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.55494> .
+            <http://example.com/Participation/e.2128610-p.55494> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.55494> .
             
             <http://example.com/Participation/e.2128610-p.55494><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -797,8 +777,8 @@
             <http://example.com/Membership/t.31-p.55037><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.55037> .
             <http://example.com/Membership/t.31-p.55037> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.55037> <http://www.iptc.org/ontologies/Sport/uniformNumber> "8" .
-            <http://example.com/Participation/e.2128610-p.55037> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.55037> .
+            <http://example.com/Participation/e.2128610-p.55037> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.55037> .
             
             <http://example.com/Participation/e.2128610-p.55037><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -836,8 +816,8 @@
             <http://example.com/Membership/t.31-p.19188><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.19188> .
             <http://example.com/Membership/t.31-p.19188> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.19188> <http://www.iptc.org/ontologies/Sport/uniformNumber> "6" .
-            <http://example.com/Participation/e.2128610-p.19188> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.19188> .
+            <http://example.com/Participation/e.2128610-p.19188> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.19188> .
             
             <http://example.com/Participation/e.2128610-p.19188><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -872,8 +852,8 @@
             <http://example.com/Membership/t.31-p.74230><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.74230> .
             <http://example.com/Membership/t.31-p.74230> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.74230> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3" .
-            <http://example.com/Participation/e.2128610-p.74230> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.74230> .
+            <http://example.com/Participation/e.2128610-p.74230> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.74230> .
             
             <http://example.com/Participation/e.2128610-p.74230><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -907,8 +887,8 @@
             <http://example.com/Membership/t.31-p.173954><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.173954> .
             <http://example.com/Membership/t.31-p.173954> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.173954> <http://www.iptc.org/ontologies/Sport/uniformNumber> "44" .
-            <http://example.com/Participation/e.2128610-p.173954> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.173954> .
+            <http://example.com/Participation/e.2128610-p.173954> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.173954> .
             
             <http://example.com/Participation/e.2128610-p.173954><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -942,8 +922,8 @@
             <http://example.com/Membership/t.31-p.66975><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.66975> .
             <http://example.com/Membership/t.31-p.66975> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.66975> <http://www.iptc.org/ontologies/Sport/uniformNumber> "4" .
-            <http://example.com/Participation/e.2128610-p.66975> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.66975> .
+            <http://example.com/Participation/e.2128610-p.66975> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.66975> .
             
             <http://example.com/Participation/e.2128610-p.66975><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -979,8 +959,8 @@
             <http://example.com/Membership/t.31-p.232413><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.232413> .
             <http://example.com/Membership/t.31-p.232413> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.232413> <http://www.iptc.org/ontologies/Sport/uniformNumber> "25" .
-            <http://example.com/Participation/e.2128610-p.232413> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.232413> .
+            <http://example.com/Participation/e.2128610-p.232413> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.232413> .
             
             <http://example.com/Participation/e.2128610-p.232413><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1014,8 +994,8 @@
             <http://example.com/Membership/t.31-p.80146><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.80146> .
             <http://example.com/Membership/t.31-p.80146> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.31-p.80146> <http://www.iptc.org/ontologies/Sport/uniformNumber> "9" .
-            <http://example.com/Participation/e.2128610-p.80146> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.80146> .
+            <http://example.com/Participation/e.2128610-p.80146> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.80146> .
             
             <http://example.com/Participation/e.2128610-p.80146><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1052,8 +1032,8 @@
             <http://example.com/Membership/t.31-p.54861><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.54861> .
             <http://example.com/Membership/t.31-p.54861> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.31-p.54861> <http://www.iptc.org/ontologies/Sport/uniformNumber> "20" .
-            <http://example.com/Participation/e.2128610-p.54861> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.54861> .
+            <http://example.com/Participation/e.2128610-p.54861> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.54861> .
             
             <http://example.com/Participation/e.2128610-p.54861><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1090,8 +1070,8 @@
             <http://example.com/Membership/t.31-p.82403><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.82403> .
             <http://example.com/Membership/t.31-p.82403> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.31-p.82403> <http://www.iptc.org/ontologies/Sport/uniformNumber> "11" .
-            <http://example.com/Participation/e.2128610-p.82403> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/starter> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.82403> .
+            <http://example.com/Participation/e.2128610-p.82403> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/starter> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.82403> .
             
             <http://example.com/Participation/e.2128610-p.82403><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1132,8 +1112,8 @@
             <http://example.com/Membership/t.31-p.105666><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.105666> .
             <http://example.com/Membership/t.31-p.105666> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/goalkeeper> .
             <http://example.com/Membership/t.31-p.105666> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1" .
-            <http://example.com/Participation/e.2128610-p.105666> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.105666> .
+            <http://example.com/Participation/e.2128610-p.105666> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.105666> .
             
             <http://example.com/Participation/e.2128610-p.105666><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1150,8 +1130,8 @@
             <http://example.com/Membership/t.31-p.60252><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.60252> .
             <http://example.com/Membership/t.31-p.60252> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.60252> <http://www.iptc.org/ontologies/Sport/uniformNumber> "10" .
-            <http://example.com/Participation/e.2128610-p.60252> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.60252> .
+            <http://example.com/Participation/e.2128610-p.60252> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.60252> .
             
             <http://example.com/Participation/e.2128610-p.60252><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1178,8 +1158,8 @@
             <http://example.com/Membership/t.31-p.231747><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.231747> .
             <http://example.com/Membership/t.31-p.231747> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.31-p.231747> <http://www.iptc.org/ontologies/Sport/uniformNumber> "14" .
-            <http://example.com/Participation/e.2128610-p.231747> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.231747> .
+            <http://example.com/Participation/e.2128610-p.231747> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.231747> .
             
             <http://example.com/Participation/e.2128610-p.231747><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1196,8 +1176,8 @@
             <http://example.com/Membership/t.31-p.86417><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.86417> .
             <http://example.com/Membership/t.31-p.86417> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.86417> <http://www.iptc.org/ontologies/Sport/uniformNumber> "15" .
-            <http://example.com/Participation/e.2128610-p.86417> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.86417> .
+            <http://example.com/Participation/e.2128610-p.86417> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.86417> .
             
             <http://example.com/Participation/e.2128610-p.86417><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1228,8 +1208,8 @@
             <http://example.com/Membership/t.31-p.57328><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.57328> .
             <http://example.com/Membership/t.31-p.57328> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.57328> <http://www.iptc.org/ontologies/Sport/uniformNumber> "17" .
-            <http://example.com/Participation/e.2128610-p.57328> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.57328> .
+            <http://example.com/Participation/e.2128610-p.57328> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.57328> .
             
             <http://example.com/Participation/e.2128610-p.57328><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1246,8 +1226,8 @@
             <http://example.com/Membership/t.31-p.50472><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.50472> .
             <http://example.com/Membership/t.31-p.50472> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/midfielder> .
             <http://example.com/Membership/t.31-p.50472> <http://www.iptc.org/ontologies/Sport/uniformNumber> "22" .
-            <http://example.com/Participation/e.2128610-p.50472> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.50472> .
+            <http://example.com/Participation/e.2128610-p.50472> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.50472> .
             
             <http://example.com/Participation/e.2128610-p.50472><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1274,8 +1254,8 @@
             <http://example.com/Membership/t.31-p.94245><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.94245> .
             <http://example.com/Membership/t.31-p.94245> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/forward> .
             <http://example.com/Membership/t.31-p.94245> <http://www.iptc.org/ontologies/Sport/uniformNumber> "23" .
-            <http://example.com/Participation/e.2128610-p.94245> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.94245> .
+            <http://example.com/Participation/e.2128610-p.94245> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.94245> .
             
             <http://example.com/Participation/e.2128610-p.94245><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1292,8 +1272,8 @@
             <http://example.com/Membership/t.31-p.244723><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.244723> .
             <http://example.com/Membership/t.31-p.244723> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.244723> <http://www.iptc.org/ontologies/Sport/uniformNumber> "27" .
-            <http://example.com/Participation/e.2128610-p.244723> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.244723> .
+            <http://example.com/Participation/e.2128610-p.244723> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.244723> .
             
             <http://example.com/Participation/e.2128610-p.244723><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1310,8 +1290,8 @@
             <http://example.com/Membership/t.31-p.58786><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Athlete/p.58786> .
             <http://example.com/Membership/t.31-p.58786> <http://www.iptc.org/ontologies/Sport/positionRegular> <http://cv.iptc.org/newscodes/spsocpos/defender> .
             <http://example.com/Membership/t.31-p.58786> <http://www.iptc.org/ontologies/Sport/uniformNumber> "34" .
-            <http://example.com/Participation/e.2128610-p.58786> <http://www.iptc.org/ontologies/Sport/playerStatus> <http://cv.iptc.org/newscodes/spperstatus/bench> .
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-p.58786> .
+            <http://example.com/Participation/e.2128610-p.58786> <http://www.iptc.org/ontologies/Sport/status> <http://cv.iptc.org/newscodes/spperstatus/bench> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-p.58786> .
             
             <http://example.com/Participation/e.2128610-p.58786><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1320,18 +1300,7 @@
 
         
         <http://example.com/Associate/man1280> <http://www.w3.org/2000/01/rdf-schema#label> "Roy Hodgson" .
-        <http://example.com/Membership/man1280-t.31><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Membership> .
-        
-        <http://example.com/Membership/man1280-t.31> <http://www.w3.org/2000/01/rdf-schema#label> "Roy Hodgson associate membership of Crystal Palace" .
-
-        
-        <http://example.com/Membership/man1280-t.31><http://www.iptc.org/ontologies/Sport/membershipOf><http://example.com/Team/t.31> .
-
-        
-        <http://example.com/Membership/man1280-t.31><http://www.iptc.org/ontologies/Sport/membershipBy><http://example.com/Associate/man1280> .
-
-        
-        
+        <http://example.com/Team/t.31><http://www.iptc.org/ontologies/Sport/coach><http://example.com/Associate/man1280> .
 
         
         <http://example.com/Associate/man1280> <http://www.iptc.org/ontologies/Sport/positionEvent> <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
@@ -1345,11 +1314,11 @@
         
         <http://example.com/Participation/e.2128610-PO41049> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Official/PO41049> .
 
-        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/e.2128610-PO41049> .
+        <http://example.com/Event/e.2128610> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-PO41049> .
         <http://example.com/Action/e.2128610-a.2291881105><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291881105> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/score> .
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426210804" .
@@ -1358,17 +1327,17 @@
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed> "50" .
         <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/Action/date-time> "2021-04-26T21:08:04+01:00" .
         <http://example.com/Participation/e.2128610-a.2291881105-p.166477> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.166477> .
-        <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291881105-p.166477> .
+        <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291881105-p.166477> .
         <http://example.com/Participation/e.2128610-a.2291881105-p.166477><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291881105-p.166477> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/scorer> .
     <http://example.com/Participation/e.2128610-a.2291881105-p.173515> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.173515> .
-        <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291881105-p.173515> .
+        <http://example.com/Action/e.2128610-a.2291881105> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291881105-p.173515> .
         <http://example.com/Participation/e.2128610-a.2291881105-p.173515><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291881105-p.173515> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/assist> .
     <http://example.com/Action/e.2128610-a.2291891767><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291891767> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/score> .
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426213821" .
@@ -1377,17 +1346,17 @@
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed> "80" .
         <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/Action/date-time> "2021-04-26T21:38:21+01:00" .
         <http://example.com/Participation/e.2128610-a.2291891767-p.173515> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.173515> .
-        <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291891767-p.173515> .
+        <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291891767-p.173515> .
         <http://example.com/Participation/e.2128610-a.2291891767-p.173515><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291891767-p.173515> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/scorer> .
     <http://example.com/Participation/e.2128610-a.2291891767-p.37642> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.37642> .
-        <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291891767-p.37642> .
+        <http://example.com/Action/e.2128610-a.2291891767> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291891767-p.37642> .
         <http://example.com/Participation/e.2128610-a.2291891767-p.37642><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291891767-p.37642> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/assist> .
     <http://example.com/Action/e.2128610-a.2291888189><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291888189> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291888189> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291888189> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291888189> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291888189> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
         <http://example.com/Action/e.2128610-a.2291888189> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426212836" .
@@ -1401,7 +1370,7 @@
         <http://example.com/Action/e.2128610-a.2291888213><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291888213> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291888213> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291888213> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291888213> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291888213> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
         <http://example.com/Action/e.2128610-a.2291888213> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426212841" .
@@ -1415,7 +1384,7 @@
         <http://example.com/Action/e.2128610-a.2291852343><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291852343> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291852343> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291852343> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291852343> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.31> .
 
         <http://example.com/Action/e.2128610-a.2291852343> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
         <http://example.com/Action/e.2128610-a.2291852343> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426201754" .
@@ -1430,7 +1399,7 @@
         <http://example.com/Action/e.2128610-a.2291848623><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291848623> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.31> .
 
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/score> .
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426201214" .
@@ -1439,17 +1408,17 @@
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed> "12" .
         <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/Action/date-time> "2021-04-26T20:12:14+01:00" .
         <http://example.com/Participation/e.2128610-a.2291848623-p.82403> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.82403> .
-        <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291848623-p.82403> .
+        <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291848623-p.82403> .
         <http://example.com/Participation/e.2128610-a.2291848623-p.82403><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291848623-p.82403> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/scorer> .
     <http://example.com/Participation/e.2128610-a.2291848623-p.232413> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.232413> .
-        <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291848623-p.232413> .
+        <http://example.com/Action/e.2128610-a.2291848623> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291848623-p.232413> .
         <http://example.com/Participation/e.2128610-a.2291848623-p.232413><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291848623-p.232413> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes/spsocrole/assist> .
     <http://example.com/Action/e.2128610-a.2291891243><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291891243> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291891243> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291891243> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291891243> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.31> .
 
         <http://example.com/Action/e.2128610-a.2291891243> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
         <http://example.com/Action/e.2128610-a.2291891243> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426213631" .
@@ -1463,7 +1432,7 @@
         <http://example.com/Action/e.2128610-a.2291892531><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291892531> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291892531> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291892531> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291892531> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.31> .
 
         <http://example.com/Action/e.2128610-a.2291892531> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
         <http://example.com/Action/e.2128610-a.2291892531> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426214124" .
@@ -1477,7 +1446,7 @@
         <http://example.com/Action/e.2128610-a.2291893075><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291893075> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291893075> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291893075> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291893075> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.31> .
 
         <http://example.com/Action/e.2128610-a.2291893075> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
         <http://example.com/Action/e.2128610-a.2291893075> <http://www.iptc.org/ontologies/Sport/Action/sequence-number> "0426214323" .
@@ -1491,27 +1460,27 @@
         <http://example.com/Action/e.2128610-a.2291870573><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291870573> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/play> .
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed> "46" .
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/Action/period-value> "1" .
         <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/Action/type> <http://cv.iptc.org/newscodes/spsocaction/video-review> .
         <http://example.com/Participation/e.2128610-a.2291870573-p.173515> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.173515> .
-        <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291870573-p.173515> .
+        <http://example.com/Action/e.2128610-a.2291870573> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291870573-p.173515> .
         <http://example.com/Participation/e.2128610-a.2291870573-p.173515><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291870573-p.173515> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes//> .
     <http://example.com/Action/e.2128610-a.2291881461><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Action> .
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.w3.org/2000/01/rdf-schema#label> "Action <http://example.com/Action/e.2128610-a.2291881461> on event <http://example.com/Event/e.2128610>" .
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/event> <http://example.com/Event/e.2128610> .
-        
+        <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/team> <http://example.com/Team/e.2128610-t.13> .
 
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/Action/class> <http://cv.iptc.org/newscodes/spactionclass/play> .
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/Action/minutes-elapsed> "50" .
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/Action/period-value> "2" .
         <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/Action/type> <http://cv.iptc.org/newscodes/spsocaction/video-review> .
         <http://example.com/Participation/e.2128610-a.2291881461-p.173515> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/p.173515> .
-        <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/actionParticipation> <http://example.com/Participation/e.2128610-a.2291881461-p.173515> .
+        <http://example.com/Action/e.2128610-a.2291881461> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/e.2128610-a.2291881461-p.173515> .
         <http://example.com/Participation/e.2128610-a.2291881461-p.173515><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
         <http://example.com/Participation/e.2128610-a.2291881461-p.173515> <http://www.iptc.org/ontologies/Sport/Action/role> <http://cv.iptc.org/newscodes//> .
     
