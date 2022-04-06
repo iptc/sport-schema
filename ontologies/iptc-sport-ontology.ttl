@@ -106,11 +106,6 @@ sport:OfficialParticipation rdf:type rdfs:Class ;
     rdfs:comment "The participation of an offcial in an event"@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
-#sport:ParentCompetition rdf:type rdfs:Class ;
-#    rdfs:label "Parent Competition"@en ;
-#    rdfs:comment "The generic competition that contains many seasons, e.g. NFL or WTA."@en ;
-#    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
-
 sport:Participation rdf:type rdfs:Class ;
     rdfs:label "Participation"@en ;
     rdfs:comment "The participation of an actor in an event."@en ;
@@ -239,13 +234,6 @@ sport:site rdf:type rdf:Property ;
     rdfs:range sport:Site ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
-sport:team rdf:type rdf:Property ;
-    rdfs:label "team"@en ;
-    rdfs:comment "Link to the team participating in this Action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range sport:Site ;
-    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
-
 ##### Data properties #####
 
 sport:alignment rdf:type rdf:Property ;
@@ -287,8 +275,15 @@ sport:dateOfBirth rdf:type rdf:Property ;
 
 sport:endDate rdf:type rdf:Property ;
     rdfs:label "end date"@en ;
-    rdfs:comment "The date on which an event or membership ends"@en ;
-    rdfs:domain sport:Event, sport:Membership ;
+    rdfs:comment "The date on which a membership ends"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:endDateTime rdf:type rdf:Property ;
+    rdfs:label "end datetime"@en ;
+    rdfs:comment "The date and time on which an event ends"@en ;
+    rdfs:domain sport:Event ;
     rdfs:range xsd:date ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
@@ -381,17 +376,23 @@ sport:scoreUnits rdf:type rdf:Property ;
 
 sport:sport rdf:type rdf:Property ;
     rdfs:label "sport"@en ;
-    rdfs:comment "The sport which this entity takes part in"@en;
-    # NOTE do we really need to attach sport to all of these things??
-    rdfs:domainIncludes sport:Event, sport:Competition, sport:Athlete, sport:Team ;
+    rdfs:comment "The sport which this competition represents"@en;
+    rdfs:domain sport:Competition ;
     # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
+sport:startDateTime rdf:type rdf:Property ;
+    rdfs:label "start datetime"@en ;
+    rdfs:comment "The date on which an event begins"@en ;
+    schemaorg:domain sport:Event ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
 sport:startDate rdf:type rdf:Property ;
     rdfs:label "start date"@en ;
-    rdfs:comment "The date on which an event begins"@en ;
-    schemaorg:domainIncludes sport:Event, sport:Membership ;
+    rdfs:comment "The date on which a membership begins"@en ;
+    schemaorg:domain sport:Membership ;
     rdfs:range xsd:date ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
