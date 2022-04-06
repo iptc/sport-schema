@@ -7,16 +7,25 @@ PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
-SELECT ?teamName ?playerName ?stat ?statValue
+SELECT DISTINCT ?teamName ?playerName ?stat ?statValue
 WHERE { 
-    ?team rdf:type sport:Team .
-    ?team rdfs:label ?teamName . 
-    ?team sport:membership ?members . 
-    ?members sport:membershipBy ?player .
-    ?player rdf:type sport:Athlete .
-    ?player rdfs:label ?playerName .
-    ?playerParticipcation sport:participationBy ?player .
-    ?playerParticipcation rdf:type sport:IndividualParticipation .
-    ?playerParticipcation ?stat ?statValue .
-    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/")) .
+    ?event rdf:type sport:Event ;
+           rdfs:label ?eventName ;
+           sport:eventParticipation ?teamParticipation ;
+           sport:eventParticipation ?playerParticipation .
+    ?playerParticipation rdf:type sport:IndividualParticipation ;
+                         sport:participationBy ?player ;
+                         ?stat ?statValue .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?members rdf:type sport:IndividualMembership ;
+             sport:membershipBy ?player .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName ;
+          sport:membership ?members . 
+    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/"))
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128609>)
 }
+ORDER BY ?teamName ?playerName ?stat

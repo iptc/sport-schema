@@ -4,16 +4,30 @@
 ' IPTC Sport Model - last updated 2022-01-18
 
 ' RDF Classes defined in our ontology:
-class GoverningBody {
+class Action {
   rdfs:label : string
 }
 
-class ParentCompetition {
-  rdfs:label : string
+class Agent {
+}
+
+class Associate {
+}
+
+class Athlete {
 }
 
 class Competition {
   rdfs:label : string
+  sport : CV Value
+}
+
+class CompetitorParticipation {
+  eventOutcome : CV Value
+  positionEvent : CV Value
+  rank : string
+  score : string 
+  scoreUnits : CV Value 
 }
 
 class CompetitionPhase {
@@ -24,39 +38,35 @@ class CompetitionPhase {
 
 class Event {
   rdfs:label : string
-  seasonWeek : integer
+  sport : CV Value
+  eventOutcomeType : CV Value
   attendance : integer
-  startDate : date
+  startDateTime : date
+  endDateTime : date
 }
 
-class Action {
+class GoverningBody {
   rdfs:label : string
 }
 
-class Participation {
+class Individual {
   rdfs:label : string
+  nationality : string
+  dateOfBirth : date
+  positionRegular : CV Value
 }
 
-' TeamParticipation is a subclass of Participation
-Participation <|-- TeamParticipation
-class TeamParticipation {
-  score : integer
-  alignment : CV Value
+class IndividualMembership {
+  uniformNumber : integer
+  positionRegular : CV Value
 }
 
-Participation <|-- IndividualParticipation
 class IndividualParticipation {
-  score : integer
-  sportaction:role : CV Value
   playerStatus : CV Value
-  positionEvent : CV Value
 }
 
-Participation <|-- OfficialParticipation
-class OfficialParticipation { }
-
-Participation <|-- ManagerialParticipation
-class ManagerialParticipation { }
+class AssociateParticipation {
+}
 
 class Membership {
   rdfs:label : string
@@ -64,50 +74,62 @@ class Membership {
   endDate : date
 }
 
-Membership <|-- IndividualMembership
-class IndividualMembership {
+class Official {
+  rdfs:label : string
 }
 
-class Agent {
-  name : string
+class OfficialParticipation {
+  rdfs:label : string
 }
 
-Agent <|-- Team
-class Team { }
-
-Agent <|-- Individual
-class Individual {
-  positionRegular : CV Value
+class Participation {
+  rdfs:label : string
 }
 
-Individual <|-- Athlete
-class Athlete {
-  uniformNumber : integer
+class ParticipationSplit {
+  participationSplitType : CV Value
 }
-
-Individual <|-- Associate
-class Associate { }
 
 class Site {
-  name : string
+  rdfs:label : string
 }
+
+class Team {
+  rdfs:label : string
+}
+
+class TeamParticipation {
+  rdfs:label : string
+  alignment : CV Value
+}
+
+' subclass relationships
+
+Competition <|-- CompetitionPhase
+CompetitorParticipation <|-- TeamParticipation
+CompetitorParticipation <|-- IndividualParticipation
+Participation <|-- CompetitorParticipation
+Participation <|-- OfficialParticipation
+Participation <|-- AssociateParticipation
+Membership <|-- IndividualMembership
+Agent <|-- Team
+Agent <|-- Individual
+Individual <|-- Athlete
+Individual <|-- Associate
+Individual <|-- Official
 
 ' Object properties - relationships between classes
 
 Action .. Event : > event
-Competition .. ParentCompetition : > parentCompetition
-CompetitionPhase .. Competition : > competition
-ParentCompetition .. GoverningBody : > governingBody
-Event .. Competition : competition
-Event .. ParentCompetition : parentCompetition
-Event .. CompetitionPhase : competitionPhase
-Action .. Participation : > participation
-Event .. Participation : > participation
-Competition .. Participation : > participation
-Participation .. Participation : participationSplit
-Event .. Event : > subEvent
-Participation .. Agent : > participationBy
-Team .. IndividualMembership : < membershipOf
-IndividualMembership .. Individual : > membershipBy
+Action .. Participation : > actionParticipation
+Competition .. Competition : > parentCompetition
+Competition .. GoverningBody : > governingBody
+Competition .. Participation : > competitionParticipation
+Event .. Competition : > competition
+Event .. Participation : > eventParticipation
 Event .. Site :  > site
+IndividualMembership .. Individual : > membershipBy
+Participation .. Agent : > participationBy
+Participation .. ParticipationSplit : participationSplit
+Team .. IndividualMembership : < membershipOf
 @enduml

@@ -9,9 +9,10 @@ PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 SELECT ?playerName ?minutesPlayed
 WHERE { 
     ?event rdf:type sport:Event .
-    ?event sport:participation ?playerperf .
+    ?event sport:eventParticipation ?playerperf .
     ?playerperf sport:participationBy ?player .
     ?player rdfs:label ?playerName . 
     ?playerperf spstat:time-played-total ?minutesPlayed .
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128609>)
 }
 ORDER BY ?playerName
