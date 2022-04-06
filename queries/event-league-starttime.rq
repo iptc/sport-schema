@@ -9,6 +9,6 @@ SELECT (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
 WHERE
 {
     ?event rdf:type sport:Event .
-    ?event sport:startDate ?date .
+    ?event sport:startDateTime ?date .
     FILTER ( ?event = <http://example.com/Event/E755363> )
 }
