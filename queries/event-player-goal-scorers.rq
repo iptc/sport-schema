@@ -9,7 +9,7 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 SELECT ?playerName ?goals
 WHERE { 
     ?event rdf:type sport:Event .
-    ?event sport:eventParticipation ?playerperf .
+    ?event sport:participation ?playerperf .
     ?playerperf sport:participationBy ?player .
     ?player rdfs:label ?playerName . 
     ?playerperf spsocstat:goals-total ?goals .

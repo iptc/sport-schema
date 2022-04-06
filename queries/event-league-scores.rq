@@ -14,15 +14,15 @@ SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?d
 WHERE
 {
     ?event rdf:type sport:Event .
-    ?event sport:startDateTime ?date .
-    ?event sport:eventParticipation ?homeTeamParticipation .
+    ?event sport:startDate ?date .
+    ?event sport:participation ?homeTeamParticipation .
     ?homeTeamParticipation rdf:type sport:TeamParticipation .
     ?homeTeamParticipation sport:participationBy ?homeTeam .
     ?homeTeamParticipation sport:alignment "home" .
     ?homeTeamParticipation spstat:score ?homeTeamScore .
     ?homeTeam rdf:type sport:Team .
     ?homeTeam rdfs:label ?homeTeamName .
-    ?event sport:eventParticipation ?awayTeamParticipation .
+    ?event sport:participation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation .
     ?awayTeamParticipation sport:participationBy ?awayTeam .
     ?awayTeamParticipation sport:alignment "away" .

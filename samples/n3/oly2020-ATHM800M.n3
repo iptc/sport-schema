@@ -1,8 +1,6 @@
 <http://example.com/Competition/OLYS><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/OLYS> <http://www.w3.org/2000/01/rdf-schema#label> "Summer Olympics" .
                     <http://example.com/Competition/OLYS><http://www.iptc.org/ontologies/Sport/governingBody><http://example.com/GoverningBody/OLY> .
-                        <http://example.com/GoverningBody/OLY><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/GoverningBody> .
-                        <http://example.com/GoverningBody/OLY> <http://www.w3.org/2000/01/rdf-schema#label> "Olympics" .
                     <http://example.com/Competition/OLYS2020><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/OLYS2020> <http://www.w3.org/2000/01/rdf-schema#label> "2020 Summer Olympics" .
                     <http://example.com/Competition/OLYS2020><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/OLYS> .
@@ -11,17 +9,15 @@
                     <http://example.com/Competition/OLYS2020-ATHM800M><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/OLYS2020> .
                     <http://example.com/GoverningBody/OLY><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/GoverningBody> .
                     <http://example.com/GoverningBody/OLY> <http://www.w3.org/2000/01/rdf-schema#label> "Olympics" .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000100><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 1" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T09:50:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T09:50:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1402332> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -30,7 +26,7 @@
             <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1989-11-30"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1402332> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2786" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1402332> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1402332> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1402332><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -46,7 +42,7 @@
             <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1481536> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1077" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1481536> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1481536> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1481536><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -62,7 +58,7 @@
             <http://example.com/Athlete/PI1477734> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-05-26"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1477734> <http://www.iptc.org/ontologies/Sport/nationality> "GBR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1477734> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2047" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1477734> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1477734> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1477734><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -78,7 +74,7 @@
             <http://example.com/Athlete/PI1421671> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1993-02-27"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1421671> <http://www.iptc.org/ontologies/Sport/nationality> "MAR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1421671> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2887" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1421671> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1421671> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1421671><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -93,7 +89,7 @@
             <http://example.com/Athlete/PI1458024> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-02-06"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1458024> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1458024> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3937" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1458024> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1458024> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1458024><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -108,7 +104,7 @@
             <http://example.com/Athlete/PI1476269> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-04-17"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1476269> <http://www.iptc.org/ontologies/Sport/nationality> "NED" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1476269> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3027" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1476269> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1476269> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1476269><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -123,7 +119,7 @@
             <http://example.com/Athlete/PI1288448> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-12-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1288448> <http://www.iptc.org/ontologies/Sport/nationality> "AND" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1288448> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1021" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1288448> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1288448> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1288448><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -138,7 +134,7 @@
             <http://example.com/Athlete/PI1326672> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1987-10-11"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1326672> <http://www.iptc.org/ontologies/Sport/nationality> "KOS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2825" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -146,17 +142,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> <http://cv.iptc.org/newscodes/spstat/score> "1:48.96" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000200><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 2" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T09:58:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T09:58:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1432372> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -165,7 +159,7 @@
             <http://example.com/Athlete/PI1432372> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-09-20"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1432372> <http://www.iptc.org/ontologies/Sport/nationality> "CAN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1432372> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1420" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1432372> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1432372> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1432372><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -181,7 +175,7 @@
             <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1991-01-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/nationality> "BIH" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1420792> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1225" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1420792> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1420792> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1420792><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -197,7 +191,7 @@
             <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1395537> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1978" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1395537> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1395537> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1395537><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -213,7 +207,7 @@
             <http://example.com/Athlete/PI1349279> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-11-12"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1349279> <http://www.iptc.org/ontologies/Sport/nationality> "ESP" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1349279> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1810" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1349279> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1349279> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1349279><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -228,7 +222,7 @@
             <http://example.com/Athlete/PI1449177> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-04-13"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1449177> <http://www.iptc.org/ontologies/Sport/nationality> "SWE" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1449177> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3565" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1449177> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1449177> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1449177><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -243,7 +237,7 @@
             <http://example.com/Athlete/PI1477726> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "2000-11-29"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1477726> <http://www.iptc.org/ontologies/Sport/nationality> "GBR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1477726> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2043" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1477726> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1477726> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1477726><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -258,7 +252,7 @@
             <http://example.com/Athlete/PI1365661> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-07-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1365661> <http://www.iptc.org/ontologies/Sport/nationality> "COK" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1365661> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1534" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1365661> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1365661> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1365661><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -273,7 +267,7 @@
             <http://example.com/Athlete/PI1321373> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-09-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1321373> <http://www.iptc.org/ontologies/Sport/nationality> "CAF" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1381" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -281,17 +275,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> <http://cv.iptc.org/newscodes/spstat/score> "1:48.26" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000300><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 3" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T10:06:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T10:06:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1453126> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -300,7 +292,7 @@
             <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-02-26"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1453126> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3956" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1453126> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1453126> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1453126><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -316,7 +308,7 @@
             <http://example.com/Athlete/PI1477832> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-09-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1477832> <http://www.iptc.org/ontologies/Sport/nationality> "GBR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1477832> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2064" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1477832> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1477832> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1477832><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -332,7 +324,7 @@
             <http://example.com/Athlete/PI1373936> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-05-16"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1373936> <http://www.iptc.org/ontologies/Sport/nationality> "TUN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1373936> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3648" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1373936> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1373936> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1373936><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -348,7 +340,7 @@
             <http://example.com/Athlete/PI1553500> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-07-20"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1553500> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1553500> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1087" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1553500> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1553500> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1553500><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -363,7 +355,7 @@
             <http://example.com/Athlete/PI1349208> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-04-10"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1349208> <http://www.iptc.org/ontologies/Sport/nationality> "ESP" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1807" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -378,7 +370,7 @@
             <http://example.com/Athlete/PI1432531> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-06-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1432531> <http://www.iptc.org/ontologies/Sport/nationality> "CAN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1432531> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1435" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1432531> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1432531> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1432531><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -393,7 +385,7 @@
             <http://example.com/Athlete/PI1781692> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "2001-01-29"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1781692> <http://www.iptc.org/ontologies/Sport/nationality> "ETH" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1781692> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1873" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1781692> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1781692> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1781692><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -408,7 +400,7 @@
             <http://example.com/Athlete/PI1485432> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-03-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1485432> <http://www.iptc.org/ontologies/Sport/nationality> "EOR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1729" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -416,17 +408,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> <http://cv.iptc.org/newscodes/spstat/score> "2:02.04" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000400><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 4" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T10:14:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T10:14:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1324805> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -435,7 +425,7 @@
             <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-03-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/nationality> "BOT" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1324805> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1269" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1324805> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1324805> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1324805><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -451,7 +441,7 @@
             <http://example.com/Athlete/PI1402372> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-01-18"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402372> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1402372> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2787" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1402372> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1402372> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1402372><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -467,7 +457,7 @@
             <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-08-04"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/nationality> "ESP" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1349085> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1784" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1349085> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1349085> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1349085><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -483,7 +473,7 @@
             <http://example.com/Athlete/PI1481478> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1986-11-11"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1481478> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1481478> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1095" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1481478> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1481478> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1481478><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -498,7 +488,7 @@
             <http://example.com/Athlete/PI1425685> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-02-18"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1425685> <http://www.iptc.org/ontologies/Sport/nationality> "MAR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1425685> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2891" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1425685> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1425685> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1425685><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -513,7 +503,7 @@
             <http://example.com/Athlete/PI1391267> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1992-05-11"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1391267> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1391267> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1947" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1391267> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1391267> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1391267><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -528,7 +518,7 @@
             <http://example.com/Athlete/PI1285682> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-06-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1285682> <http://www.iptc.org/ontologies/Sport/nationality> "PUR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1285682> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3273" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1285682> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1285682> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1285682><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -543,7 +533,7 @@
             <http://example.com/Athlete/PI1355069> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-08-04"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1355069> <http://www.iptc.org/ontologies/Sport/nationality> "BRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1305" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000400> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -551,17 +541,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> <http://cv.iptc.org/newscodes/spstat/score> "1:47.75" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000500><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 5" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T10:22:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T10:22:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1307604> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -570,7 +558,7 @@
             <http://example.com/Athlete/PI1307604> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-08-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1307604> <http://www.iptc.org/ontologies/Sport/nationality> "MEX" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1307604> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2930" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1307604> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1307604> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1307604><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -586,7 +574,7 @@
             <http://example.com/Athlete/PI1393393> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1999-02-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1393393> <http://www.iptc.org/ontologies/Sport/nationality> "BEL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1393393> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1193" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1393393> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1393393> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1393393><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -602,7 +590,7 @@
             <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/nationality> "POL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1324450> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3190" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1324450> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1324450> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1324450><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -618,7 +606,7 @@
             <http://example.com/Athlete/PI1281464> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1993-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1281464> <http://www.iptc.org/ontologies/Sport/nationality> "IRL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1281464> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2343" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1281464> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1281464> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1281464><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -633,7 +621,7 @@
             <http://example.com/Athlete/PI1395498> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-01-04"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1395498> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1395498> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1976" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1395498> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1395498> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1395498><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -648,7 +636,7 @@
             <http://example.com/Athlete/PI1327979> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1327979> <http://www.iptc.org/ontologies/Sport/nationality> "BDI" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1327979> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1165" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1327979> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1327979> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1327979><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -663,7 +651,7 @@
             <http://example.com/Athlete/PI1285680> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1285680> <http://www.iptc.org/ontologies/Sport/nationality> "PUR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1285680> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3265" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1285680> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1285680> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1285680><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -678,7 +666,7 @@
             <http://example.com/Athlete/PI1468788> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "2001-01-28"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1468788> <http://www.iptc.org/ontologies/Sport/nationality> "DMA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1680" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000500> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -686,17 +674,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> <http://cv.iptc.org/newscodes/spstat/score> "1:54.30" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000600><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 6" .
-          <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Round 1" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
-                <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-07-31T10:30:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/startDate> "2021-07-31T10:30:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1402343> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -705,7 +691,7 @@
             <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-06-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1402343> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2780" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1402343> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1402343> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1402343><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -721,7 +707,7 @@
             <http://example.com/Athlete/PI1324441> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-04-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324441> <http://www.iptc.org/ontologies/Sport/nationality> "POL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1324441> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3186" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1324441> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1324441> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1324441><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -737,7 +723,7 @@
             <http://example.com/Athlete/PI1453173> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-09-05"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1453173> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1453173> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3935" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1453173> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1453173> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1453173><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -753,7 +739,7 @@
             <http://example.com/Athlete/PI1421733> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-01-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1421733> <http://www.iptc.org/ontologies/Sport/nationality> "MAR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1421733> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2894" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1421733> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1421733> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1421733><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -768,7 +754,7 @@
             <http://example.com/Athlete/PI1377716> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1991-08-30"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1377716> <http://www.iptc.org/ontologies/Sport/nationality> "ALG" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1377716> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1007" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1377716> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1377716> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1377716><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -783,7 +769,7 @@
             <http://example.com/Athlete/PI1328854> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-08-28"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1328854> <http://www.iptc.org/ontologies/Sport/nationality> "QAT" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1328854> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3289" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1328854> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1328854> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1328854><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -798,7 +784,7 @@
             <http://example.com/Athlete/PI1285686> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-03-27"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1285686> <http://www.iptc.org/ontologies/Sport/nationality> "PUR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1285686> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3278" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1285686> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1285686> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1285686><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -813,24 +799,22 @@
             <http://example.com/Athlete/PI1283519> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1992-12-03"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1283519> <http://www.iptc.org/ontologies/Sport/nationality> "DJI" .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1678" .
-        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> .
+        <http://example.com/Event/OLYS2020-ATHM800M-RND1000600> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Athlete/PI1283519> .
         <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> <http://cv.iptc.org/newscodes/spstat/score> "DNS" .
             <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> <http://www.iptc.org/ontologies/Sport/score-type> "IRM" .
-            <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
+            <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 1" .
-          <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/2000/01/rdf-schema#label> "Semi-Final" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> .
-                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-08-01T20:26:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/startDate> "2021-08-01T20:26:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1324450> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -839,7 +823,7 @@
             <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/nationality> "POL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3190" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -855,7 +839,7 @@
             <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-06-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2780" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -871,7 +855,7 @@
             <http://example.com/Athlete/PI1307604> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-08-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1307604> <http://www.iptc.org/ontologies/Sport/nationality> "MEX" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2930" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -886,7 +870,7 @@
             <http://example.com/Athlete/PI1393393> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1999-02-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1393393> <http://www.iptc.org/ontologies/Sport/nationality> "BEL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1193" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -901,7 +885,7 @@
             <http://example.com/Athlete/PI1453173> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-09-05"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1453173> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3935" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -916,7 +900,7 @@
             <http://example.com/Athlete/PI1373936> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-05-16"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1373936> <http://www.iptc.org/ontologies/Sport/nationality> "TUN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3648" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -931,7 +915,7 @@
             <http://example.com/Athlete/PI1553500> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-07-20"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1553500> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1087" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -946,7 +930,7 @@
             <http://example.com/Athlete/PI1421671> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1993-02-27"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1421671> <http://www.iptc.org/ontologies/Sport/nationality> "MAR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2887" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -954,17 +938,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> <http://cv.iptc.org/newscodes/spstat/score> "1:46.85" .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 2" .
-          <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/2000/01/rdf-schema#label> "Semi-Final" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> .
-                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-08-01T20:35:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/startDate> "2021-08-01T20:35:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1481536> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -973,7 +955,7 @@
             <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1481536> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1077" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1481536> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1481536> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1481536><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -989,7 +971,7 @@
             <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-02-26"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1453126> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3956" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1453126> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1453126> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1453126><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1005,7 +987,7 @@
             <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1395537> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1978" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1395537> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1395537> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1395537><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1020,7 +1002,7 @@
             <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-08-04"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/nationality> "ESP" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1349085> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1784" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1349085> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1349085> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1349085><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1035,7 +1017,7 @@
             <http://example.com/Athlete/PI1477832> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-09-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1477832> <http://www.iptc.org/ontologies/Sport/nationality> "GBR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1477832> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2064" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1477832> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1477832> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1477832><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1050,7 +1032,7 @@
             <http://example.com/Athlete/PI1402372> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-01-18"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402372> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1402372> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2787" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1402372> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1402372> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1402372><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1065,7 +1047,7 @@
             <http://example.com/Athlete/PI1432372> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-09-20"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1432372> <http://www.iptc.org/ontologies/Sport/nationality> "CAN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1432372> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1420" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1432372> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1432372> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1432372><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1080,7 +1062,7 @@
             <http://example.com/Athlete/PI1324441> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-04-02"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324441> <http://www.iptc.org/ontologies/Sport/nationality> "POL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3186" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1088,17 +1070,15 @@
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> <http://cv.iptc.org/newscodes/spstat/score> "1:46.54" .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.w3.org/2000/01/rdf-schema#label> "Heat 3" .
-          <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.w3.org/2000/01/rdf-schema#label> "Semi-Final" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> .
-                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-08-01T20:45:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/startDate> "2021-08-01T20:45:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1402332> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -1107,7 +1087,7 @@
             <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1989-11-30"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1402332> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2786" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1402332> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1402332> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1402332><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1123,7 +1103,7 @@
             <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1991-01-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/nationality> "BIH" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1420792> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1225" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1420792> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1420792> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1420792><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1139,7 +1119,7 @@
             <http://example.com/Athlete/PI1477734> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-05-26"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1477734> <http://www.iptc.org/ontologies/Sport/nationality> "GBR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1477734> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2047" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1477734> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1477734> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1477734><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1154,7 +1134,7 @@
             <http://example.com/Athlete/PI1425685> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1996-02-18"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1425685> <http://www.iptc.org/ontologies/Sport/nationality> "MAR" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1425685> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2891" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1425685> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1425685> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1425685><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1169,7 +1149,7 @@
             <http://example.com/Athlete/PI1481478> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1986-11-11"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1481478> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1481478> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1095" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1481478> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1481478> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1481478><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1184,7 +1164,7 @@
             <http://example.com/Athlete/PI1391267> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1992-05-11"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1391267> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1391267> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1947" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1391267> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1391267> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1391267><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1199,7 +1179,7 @@
             <http://example.com/Athlete/PI1458024> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1997-02-06"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1458024> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1458024> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3937" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1458024> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1458024> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1458024><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1214,7 +1194,7 @@
             <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-03-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/nationality> "BOT" .
         <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1269" .
-        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> .
+        <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1223,17 +1203,15 @@
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> <http://www.iptc.org/ontologies/Sport/score-type> "TIME" .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> <http://cv.iptc.org/newscodes/spstat/result-effect> <http://cv.iptc.org/newscodes/spresulteffect/qR> .
             <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20000827> .
         <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Event> .
-
-        
         <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.w3.org/2000/01/rdf-schema#label> "Final" .
-          <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/OLYS2020-ATHM800M> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> .
+            <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
 
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> <http://www.w3.org/2000/01/rdf-schema#label> "Final" .
             <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/final> .
-                <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/startDateTime> "2021-08-04T21:05:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+                <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/startDate> "2021-08-04T21:05:00+09:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventStatus> <http://cv.iptc.org/newscodes//> .
         <http://example.com/Athlete/PI1402343> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
@@ -1242,7 +1220,7 @@
             <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-06-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402343> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402343> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2780" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402343> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402343> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402343><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1257,7 +1235,7 @@
             <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1989-11-30"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1402332> <http://www.iptc.org/ontologies/Sport/nationality> "KEN" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402332> <http://www.iptc.org/ontologies/Sport/uniformNumber> "2786" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402332> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402332> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402332><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1272,7 +1250,7 @@
             <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324450> <http://www.iptc.org/ontologies/Sport/nationality> "POL" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324450> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3190" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324450> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324450> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324450><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1287,7 +1265,7 @@
             <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-02-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1481536> <http://www.iptc.org/ontologies/Sport/nationality> "AUS" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1481536> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1077" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1481536> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1481536> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1481536><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1302,7 +1280,7 @@
             <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-08-04"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1349085> <http://www.iptc.org/ontologies/Sport/nationality> "ESP" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1349085> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1784" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1349085> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1349085> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1349085><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1317,7 +1295,7 @@
             <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1991-01-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1420792> <http://www.iptc.org/ontologies/Sport/nationality> "BIH" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1420792> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1225" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1420792> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1420792> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1420792><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1332,7 +1310,7 @@
             <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1998-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1395537> <http://www.iptc.org/ontologies/Sport/nationality> "FRA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1395537> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1978" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1395537> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1395537> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1395537><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1347,7 +1325,7 @@
             <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1994-03-15"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1324805> <http://www.iptc.org/ontologies/Sport/nationality> "BOT" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324805> <http://www.iptc.org/ontologies/Sport/uniformNumber> "1269" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324805> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324805> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324805><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             
@@ -1362,7 +1340,7 @@
             <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/dateOfBirth> "1995-02-26"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://example.com/Athlete/PI1453126> <http://www.iptc.org/ontologies/Sport/nationality> "USA" .
         <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1453126> <http://www.iptc.org/ontologies/Sport/uniformNumber> "3956" .
-        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/eventParticipation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1453126> .
+        <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100> <http://www.iptc.org/ontologies/Sport/participation> <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1453126> .
             
             <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1453126><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/IndividualParticipation> .
             

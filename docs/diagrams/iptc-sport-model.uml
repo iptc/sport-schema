@@ -4,30 +4,16 @@
 ' IPTC Sport Model - last updated 2022-01-18
 
 ' RDF Classes defined in our ontology:
-class Action {
+class GoverningBody {
   rdfs:label : string
 }
 
-class Agent {
-}
-
-class Associate {
-}
-
-class Athlete {
+class ParentCompetition {
+  rdfs:label : string
 }
 
 class Competition {
   rdfs:label : string
-  sport : CV Value
-}
-
-class CompetitorParticipation {
-  eventOutcome : CV Value
-  positionEvent : CV Value
-  rank : string
-  score : string 
-  scoreUnits : CV Value 
 }
 
 class CompetitionPhase {
@@ -38,47 +24,12 @@ class CompetitionPhase {
 
 class Event {
   rdfs:label : string
-  sport : CV Value
-  eventOutcomeType : CV Value
+  seasonWeek : integer
   attendance : integer
-  startDateTime : date
-  endDateTime : date
-}
-
-class GoverningBody {
-  rdfs:label : string
-}
-
-class Individual {
-  rdfs:label : string
-  nationality : string
-  dateOfBirth : date
-  positionRegular : CV Value
-}
-
-class IndividualMembership {
-  uniformNumber : integer
-  positionRegular : CV Value
-}
-
-class IndividualParticipation {
-  playerStatus : CV Value
-}
-
-class AssociateParticipation {
-}
-
-class Membership {
-  rdfs:label : string
   startDate : date
-  endDate : date
 }
 
-class Official {
-  rdfs:label : string
-}
-
-class OfficialParticipation {
+class Action {
   rdfs:label : string
 }
 
@@ -86,50 +37,77 @@ class Participation {
   rdfs:label : string
 }
 
-class ParticipationSplit {
-  participationSplitType : CV Value
-}
-
-class Site {
-  rdfs:label : string
-}
-
-class Team {
-  rdfs:label : string
-}
-
+' TeamParticipation is a subclass of Participation
+Participation <|-- TeamParticipation
 class TeamParticipation {
-  rdfs:label : string
+  score : integer
   alignment : CV Value
 }
 
-' subclass relationships
+Participation <|-- IndividualParticipation
+class IndividualParticipation {
+  score : integer
+  sportaction:role : CV Value
+  playerStatus : CV Value
+  positionEvent : CV Value
+}
 
-Competition <|-- CompetitionPhase
-CompetitorParticipation <|-- TeamParticipation
-CompetitorParticipation <|-- IndividualParticipation
-Participation <|-- CompetitorParticipation
 Participation <|-- OfficialParticipation
-Participation <|-- AssociateParticipation
+class OfficialParticipation { }
+
+Participation <|-- ManagerialParticipation
+class ManagerialParticipation { }
+
+class Membership {
+  rdfs:label : string
+  startDate : date
+  endDate : date
+}
+
 Membership <|-- IndividualMembership
+class IndividualMembership {
+}
+
+class Agent {
+  name : string
+}
+
 Agent <|-- Team
+class Team { }
+
 Agent <|-- Individual
+class Individual {
+  positionRegular : CV Value
+}
+
 Individual <|-- Athlete
+class Athlete {
+  uniformNumber : integer
+}
+
 Individual <|-- Associate
-Individual <|-- Official
+class Associate { }
+
+class Site {
+  name : string
+}
 
 ' Object properties - relationships between classes
 
 Action .. Event : > event
-Action .. Participation : > actionParticipation
-Competition .. Competition : > parentCompetition
-Competition .. GoverningBody : > governingBody
-Competition .. Participation : > competitionParticipation
-Event .. Competition : > competition
-Event .. Participation : > eventParticipation
-Event .. Site :  > site
-IndividualMembership .. Individual : > membershipBy
+Competition .. ParentCompetition : > parentCompetition
+CompetitionPhase .. Competition : > competition
+ParentCompetition .. GoverningBody : > governingBody
+Event .. Competition : competition
+Event .. ParentCompetition : parentCompetition
+Event .. CompetitionPhase : competitionPhase
+Action .. Participation : > participation
+Event .. Participation : > participation
+Competition .. Participation : > participation
+Participation .. Participation : participationSplit
+Event .. Event : > subEvent
 Participation .. Agent : > participationBy
-Participation .. ParticipationSplit : participationSplit
 Team .. IndividualMembership : < membershipOf
+IndividualMembership .. Individual : > membershipBy
+Event .. Site :  > site
 @enduml
