@@ -8,10 +8,14 @@ PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 
 SELECT ?teamName ?score ?opposingScore
 WHERE {
-    ?team rdf:type sport:Team .
-    ?team rdfs:label ?teamName . 
-    ?teamParticipation sport:participationBy ?team .
-    ?teamParticipation spstat:score ?score .
-    ?teamParticipation spstat:score-opposing ?opposingScore .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName . 
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team ;
+                       spstat:score ?score ;
+                       spstat:score-opposing ?opposingScore .
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?teamParticipation .
     FILTER ( ?score > ?opposingScore )
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128468>)
 }

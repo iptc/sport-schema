@@ -6,13 +6,17 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/>
 
 SELECT ?teamName ?stat ?statValue
 WHERE { 
-    ?team rdf:type sport:Team .
-    ?team rdfs:label ?teamName . 
-    ?teamParticipcation sport:participationBy ?team .
-    ?teamParticipcation rdf:type sport:TeamParticipation .
-    ?teamParticipcation ?stat ?statValue .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName . 
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                        sport:participationBy ?team ;
+                        ?stat ?statValue .
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?teamParticipation .
     FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/")) .
+    FILTER (?event = <http://example.com/Event/E755363>)
 }

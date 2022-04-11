@@ -1,5 +1,5 @@
-# Use case: Season / League / 1. What are the current standings?
-# Use case: What is the team record broken down into home and away events?
+# Use case: Athletics event results
+# Use case: What are the outcomes of each heat in each stage in the athletics competition?
 # https://github.com/iptc/sport-model/wiki/Use-Cases
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -19,7 +19,8 @@ WHERE
            sport:eventParticipation ?playerperf ;
            sport:competition ?compPhase .
     ?compPhase rdf:type sport:CompetitionPhase ;
-               rdfs:label ?stageName .
+               rdfs:label ?stageName ;
+               sport:parentCompetition ?parentCompetition .
     ?playerperf rdf:type sport:IndividualParticipation ;
                 sport:participationBy ?player ;
                 sport:rank ?rankstr ;
@@ -28,5 +29,6 @@ WHERE
             rdfs:label ?playerName . 
             
     BIND (xsd:integer(?rankstr) as ?rank)
+    FILTER (?parentCompetition = <http://example.com/Competition/OLYS2020-ATHM800M>)
 }
 ORDER BY ASC(?eventDateTime) ASC(?rank)

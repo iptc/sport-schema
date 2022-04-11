@@ -9,16 +9,21 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 
 SELECT ?teamName ?playerName ?foulsCommitted
 WHERE { 
-    ?individualParticipation spsocstat:fouls-commited ?foulsCommitted .
-    ?individualParticipation rdf:type sport:IndividualParticipation .
-    ?individualParticipation sport:participationBy ?player .
-    ?player rdf:type sport:Athlete .
-    ?player rdfs:label ?playerName .
-    ?teams sport:membership ?members .
-    ?members sport:membershipBy ?player ;
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?individualParticipation .
+    ?individualParticipation rdf:type sport:IndividualParticipation ;
+                             spsocstat:fouls-commited ?foulsCommitted ;
+                             sport:participationBy ?player .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?members rdf:type sport:IndividualMembership ;
+             sport:membershipBy ?player ;
     		 sport:membershipOf ?team .
-    ?team rdf:type sport:Team .
-    ?team rdfs:label ?teamName . 
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName ;
+          sport:membership ?members .
     FILTER (?foulsCommitted > "0")
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128607>)
 }
 ORDER BY ?teamName ?playerName
+#ORDER BY ?playerName
