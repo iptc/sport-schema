@@ -1,0 +1,42 @@
+@startuml
+!theme cerulean-outline
+
+class Player1 {
+  rdfs:label = "Jodie Bloggs"
+}
+
+class Membership1 {
+  rdfs:label = "Jodie Bloggs membership of the Pluggers"
+  startDate = "2017-01-01"
+  endDate = "2020-12-31"
+}
+
+class Membership2 {
+  rdfs:label = "Jodie Bloggs membership of the Hitters"
+  startDate = "2021-01-01"
+}
+
+class Player2 {
+  rdfs:label = "Sam Steel"
+}
+
+class Membership3 {
+  rdfs:label = "Sam Steel membership of the Hitters"
+  startDate = "2021-01-01"
+}
+
+class TeamA {
+  rdfs:label = "The Pluggers"
+}
+
+class TeamB {
+  rdfs:label = "The Hitters"
+}
+
+Player1 .. Membership1 : < membershipBy
+Membership1 .. TeamA : > membershipOf
+Player1 .. Membership2 : < membershipBy
+Membership2 .. TeamB : > membershipOf
+Player2 .. Membership3 : < membershipBy
+Membership3 .. TeamB : > membershipOf
+@enduml

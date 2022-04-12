@@ -11,7 +11,7 @@ for filename in samples/xml/sportsml/*.xml; do
     echo -n "Creating RDF from $name: "
     base=${name%.xml}     # strip off .xml extension
     echo -n "N3 "
-    tools/process-sportsml.sh $filename >samples/n3/${base}.n3
+    tools/convert-sportsml-to-n3.sh $filename >samples/n3/${base}.n3
     echo -n "Turtle "
     riot -q --formatted=TURTLE tools/prefixes.ttl samples/n3/${base}.n3 >samples/ttl/${base}.ttl
     echo "JSON-LD"

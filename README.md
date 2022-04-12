@@ -1,12 +1,19 @@
-# sport-model
+# IPTC Sport Schema
 
-Working on the next generation of SportsML, based on semantic web technology.
+The next generation of sports data, based on IPTC's SportsML and semantic web
+principles.
 
-## About the IPTC Sport Model
+## About the IPTC Sport Schema
 
-It is currently a work in progress. We are experimenting with different
-approaches based on a set of use cases documented at
-https://github.com/iptc/sport-model/wiki/Use-Cases .
+It is currently a work in progress. We have developed an RDF-based data model
+covering sports schedules, event results and statistics.
+
+> :warning: Please note that we are making the IPTC Sport Schema available for
+> comment before release, and the schema may change at any time based on
+> feedback. Please do not use this schema for production applications (yet).
+
+Our development process is based on a set of use cases documented
+at https://github.com/iptc/sport-model/wiki/Use-Cases .
 
 We are creating an RDF model that represents schedules, statistics and results
 for all levels of all sports, for both human and machine consumption.
@@ -16,28 +23,35 @@ for all levels of all sports, for both human and machine consumption.
 We want the resulting data model and vocabulary to be:
 
 * **Comprehensive** - it should be able to handle schedules, results and
-statistics for many sports (team, individual and head-to-head)
+statistics for many types of sports: team, individual and head-to-head.
 * **Easy to use** - should be approachable by non-experts in Semantic Web
-technologies, e.g. the JSON-LD versions should be simple enough to be parsed by
-any competent developer who is comfortable with handling JSON files.
+technologies. For example, the JSON-LD versions should be simple enough that
+they can  be parsed by any competent developer who is comfortable with handling
+JSON files.
 * **Easy to query** - for those who want to use the power of RDF features such
 as SPARQL, querying data should be as simple as possible.
-* **Compatible with schema.org** - we want this vocabulary to be self-contained
-but it should be possible to use it alongside schema.org in the future.
+* **Compatible with schema.org** - we want the IPTC Sport Schema to be
+self-contained, but it should be possible to use it alongside schema.org in the
+future.
 
 ## Repository layout
 
 `queries`:
 
-Contains sample SPARQL queries exercising some of the use cases.
+Sample SPARQL queries exercising some of the use cases.
+
+`queries/output`:
+
+Expected output from each of the sample SPARQL queries.
 
 `samples/{n3|ttl|jsonld}/`:
 
-Contains example data files in RDF N3, Turtle (`.ttl`) and JSON-LD formats.
+Example data files in RDF N3, Turtle (`.ttl`) and JSON-LD formats.
 
 `samples/xml/sportsml`:
 
-Examples in SportsML, to be converted to N3 using the XSLT script in `tools`.
+Examples in SportsML, to be converted to N3 using the
+`convert-sportsml-to-rdf.sh` script in the `tools` folder.
 
 `tools`:
 
@@ -49,7 +63,7 @@ This repository contains the converted files, but if you need to convert them
 again, simply run:
 
 ```bash
-tools/convert-sportsml-to-rdf.sh
+tools/convert-examples-to-rdf.sh
 ```
 
 If you want to try converting an individual N3 file yourself, you can use Jena's
@@ -65,10 +79,23 @@ file, whereas most JSON-LD examples include `@context` at the top. This is an
 artefact of the Jena JSON-LD generator and doesn't affect the usefulness of the
 data files.
 
+To run the test queries and compare them against the expected output, run
+
+```bash
+tools/run-test-queries.sh
+```
+
+This will run each of the example SPARQL queries in the `queries` folder against
+all the data files in the `samples/ttl` folder. It compares the output of the
+SPARQL queries against the corresponding file in the `queries/output` folder.
+If there are any discrepancies, they will be displayed inline.
+
 ## More detailed documentation
 
-We have some guides regarding how to use the SportRDF model
+We have some guides regarding how to use the IPTC Sport Schema and how the model
+is constructed.
 
-* [Running the example queries](docs/running-example-queries.md)
+* [Running the IPTC Sports Model example queries](docs/running-example-queries.md)
 * [Running a SPARQL endpoint](docs/sparql-endpoint.md)
-* [Validating SportsRDF data with SHACL](docs/validation-with-shacl.md)
+* [Validating IPTC Sports Model data with SHACL](docs/validation-with-shacl.md)
+* [Overview of the IPTC Sport Schema data model](docs/schema-overview.md)
