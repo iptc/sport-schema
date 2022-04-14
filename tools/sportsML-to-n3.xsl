@@ -173,7 +173,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="newsml:event-metadata/newsml:name"/>" .
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "Event <xsl:value-of select="$event-id"/>" .
+            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "Event <xsl:value-of select="$event-key"/>" .
           </xsl:otherwise>
         </xsl:choose>
 
@@ -421,7 +421,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="string($participation-id)">
             <!-- <participation> rdf:type <TeamParticipation> -->
             <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'TeamParticipation','»')"/> .
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$team-name"/> participation in Event <xsl:value-of select="$event-id"/>" .
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$team-name"/> participation in Event <xsl:value-of select="$event-key"/>" .
 
             <!-- <participation> sport:participationBy <team> -->
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$team-id"/> .
@@ -593,7 +593,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <!-- <participation> rdf:type <IndividualParticipation> -->
             <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'IndividualParticipation','»')"/> .
             <!-- <participation> rdfs:label -->
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$player-name"/> participation in Event <xsl:value-of select="$event-id"/>" .
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$player-name"/> participation in Event <xsl:value-of select="$event-key"/>" .
             <!-- <participation> sport:participationBy <player> -->
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$player-id"/> .
         </xsl:if>
@@ -602,7 +602,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <!-- <season> sport:competitionParticipation <participation> -->
             <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competitionParticipation','»')"/>~<xsl:value-of select="$participation-id"/> .
             <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'IndividualParticipation','»')"/> .
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$player-name"/> participation in Event <xsl:value-of select="$event-id"/>" .
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$player-name"/> participation in Event <xsl:value-of select="$event-key"/>" .
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$player-id"/> .
         </xsl:if>
 
@@ -699,7 +699,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
         <!-- <participation> rdf:type <OfficialParticipation> -->
         <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'OfficialParticipation','»')"/> .
-        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$official-name"/> participation in Event <xsl:value-of select="$event-id"/>" .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$official-name"/> participation in Event <xsl:value-of select="$event-key"/>" .
 
         <!-- <participation> sport:participationBy <official> -->
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$official-id"/> .
@@ -874,7 +874,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:variable name="action-id" select="concat('«',$sport-vendor-ns,'Action/',$event-key,'-',$action-key,'»')"/>
 
         <xsl:value-of select="$action-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'Action','»')"/> .
-        <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "Action <xsl:value-of select="$action-id"/> on event <xsl:value-of select="$event-id"/>" .
+        <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "Action <xsl:value-of select="$action-key"/> on event <xsl:value-of select="$event-key"/>" .
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'event','»')"/>~<xsl:value-of select="$event-id"/> .
         <!-- xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'team','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',@team-idref,'»')"/> . -->
 
@@ -915,7 +915,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Athlete/',$player-key,'»')"/> .
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'actionParticipation','»')"/>~<xsl:value-of select="$participation-id"/> .
         <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'IndividualParticipation','»')"/> .
-        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="$player-key"/> participation in action <xsl:value-of select="$action-id"/> in event <xsl:value-of select="$event-id"/>" .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="$player-key"/> participation in action <xsl:value-of select="$action-key"/> in event <xsl:value-of select="$event-key"/>" .
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-action-ontology-ns,'role','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@role,':'),'/',substring-after(@role,':'),'»')"/> .
     </xsl:template>
 
