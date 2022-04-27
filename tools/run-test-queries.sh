@@ -8,6 +8,9 @@ TTL_SAMPLES_DIR='samples/ttl'
 SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-ontology.ttl'
 REGEX_FOR_VALID_FILES='conforms  *true'
 
+# handle error in the case that the glob returns null
+shopt -s nullglob
+
 # build list of data files to use in sparql queries
 # start with the ontology file so it can also be used in test queries
 DATA_STRING="--data ${SPORT_ONTOLOGY_FILE}"
@@ -15,7 +18,13 @@ for filename in ${TTL_SAMPLES_DIR}/*.ttl; do
     DATA_STRING="${DATA_STRING} --data=$filename"
 done
 
-for queryfile in queries/*.rq; do
+if [[ $# -eq 1 ]]; then
+    queryfiles=($1)
+else
+    queryfiles=(queries/*.rq)
+fi
+
+for queryfile in "${queryfiles[@]}"; do
     queryname=${queryfile##*/}  # get part after last /
     base=${queryname%.rq}     # strip off .xml extension
     temp_file=$(mktemp)
