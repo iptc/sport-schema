@@ -4,6 +4,7 @@
 @prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -496,10 +497,11 @@
         sport:participationBy  <http://example.com/Athlete/PO17476> .
 
 <http://example.com/Membership/man37630-T2>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Paul Lambert associate membership of Aston Villa" ;
-        sport:membershipBy  <http://example.com/Associate/man37630> ;
-        sport:membershipOf  <http://example.com/Team/T2> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Paul Lambert associate membership of Aston Villa" ;
+        sport:membershipBy     <http://example.com/Associate/man37630> ;
+        sport:membershipOf     <http://example.com/Team/T2> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/E755363-a.970482042-PO43250>
         rdf:type               sport:IndividualParticipation ;
@@ -8517,9 +8519,8 @@
         sport:event                <http://example.com/Event/E755363> .
 
 <http://example.com/Associate/man37630>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Paul Lambert" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/vendascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Paul Lambert" .
 
 <http://example.com/Action/E755363-a.1998101566>
         rdf:type                   sport:Action ;
@@ -11735,7 +11736,7 @@
         spstat:time-of-possession-percentage
                 "68.4" ;
         sport:alignment                "away" ;
-        sport:eventOutcome             "win" ;
+        sport:eventOutcome             speventoutcome:win ;
         sport:participationBy          <http://example.com/Team/T12> .
 
 <http://example.com/Action/E755363-a.1861559859>
@@ -17822,9 +17823,8 @@
         sport:event                <http://example.com/Event/E755363> .
 
 <http://example.com/Associate/man257>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Manuel Pellegrini" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/vendascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Manuel Pellegrini" .
 
 <http://example.com/Participation/E755363-a.1893322970-PO60551>
         rdf:type               sport:IndividualParticipation ;
@@ -29332,7 +29332,7 @@
         spstat:time-of-possession-percentage
                 "31.6" ;
         sport:alignment                "home" ;
-        sport:eventOutcome             "loss" ;
+        sport:eventOutcome             speventoutcome:loss ;
         sport:participationBy          <http://example.com/Team/T2> .
 
 <http://example.com/Action/E755363-a.1458514359>
@@ -35937,10 +35937,11 @@
         sport:event                    <http://example.com/Event/E755363> .
 
 <http://example.com/Membership/man257-T12>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Manuel Pellegrini associate membership of Manchester City" ;
-        sport:membershipBy  <http://example.com/Associate/man257> ;
-        sport:membershipOf  <http://example.com/Team/T12> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Manuel Pellegrini associate membership of Manchester City" ;
+        sport:membershipBy     <http://example.com/Associate/man257> ;
+        sport:membershipOf     <http://example.com/Team/T12> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/E755363-a.271530678-PO114283>
         rdf:type               sport:IndividualParticipation ;

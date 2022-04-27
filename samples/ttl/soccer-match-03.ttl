@@ -4,6 +4,7 @@
 @prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -79,10 +80,11 @@
         sport:uniformNumber    "7" .
 
 <http://example.com/Membership/man40412-o.thefa.com-t.2>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Dean Smith associate membership of Aston Villa" ;
-        sport:membershipBy  <http://example.com/Associate/man40412> ;
-        sport:membershipOf  <http://example.com/Team/o.thefa.com-t.2> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Dean Smith associate membership of Aston Villa" ;
+        sport:membershipBy     <http://example.com/Associate/man40412> ;
+        sport:membershipOf     <http://example.com/Team/o.thefa.com-t.2> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Membership/o.thefa.com-t.45-p.49944>
         rdf:type               sport:IndividualMembership ;
@@ -112,13 +114,13 @@
         spsocstat:tackles-won          "6" ;
         spsocstat:tackles-won-percentage
                 "0.462" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "2" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "2" ;
         spstat:time-of-possession-percentage
                 "70.2" ;
         sport:alignment                "home" ;
-        sport:participationBy          <http://example.com/Team/o.thefa.com-t.2> .
+        sport:participationBy          <http://example.com/Team/o.thefa.com-t.2> ;
+        sport:score                    "2" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.232787>
         rdf:type                        sport:IndividualParticipation ;
@@ -327,13 +329,13 @@
         spsocstat:tackles-won          "5" ;
         spsocstat:tackles-won-percentage
                 "0.500" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "2" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "2" ;
         spstat:time-of-possession-percentage
                 "29.8" ;
         sport:alignment                "away" ;
-        sport:participationBy          <http://example.com/Team/o.thefa.com-t.45> .
+        sport:participationBy          <http://example.com/Team/o.thefa.com-t.45> ;
+        sport:score                    "2" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128607-a.2291472209>
         rdf:type                   sport:Action ;
@@ -605,9 +607,8 @@
         rdfs:label  "Semi Ajayi" .
 
 <http://example.com/Associate/man40412>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Dean Smith" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Dean Smith" .
 
 <http://example.com/Athlete/p.481624>
         rdf:type    sport:Athlete ;
@@ -1345,9 +1346,8 @@
         sport:uniformNumber    "19" .
 
 <http://example.com/Associate/man83>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Sam Allardyce" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Sam Allardyce" .
 
 <http://example.com/Membership/o.thefa.com-t.2-p.88894>
         rdf:type               sport:IndividualMembership ;
@@ -1567,10 +1567,11 @@
         sport:uniformNumber    "11" .
 
 <http://example.com/Membership/man83-o.thefa.com-t.45>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Sam Allardyce associate membership of West Bromwich Albion" ;
-        sport:membershipBy  <http://example.com/Associate/man83> ;
-        sport:membershipOf  <http://example.com/Team/o.thefa.com-t.45> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Sam Allardyce associate membership of West Bromwich Albion" ;
+        sport:membershipBy     <http://example.com/Associate/man83> ;
+        sport:membershipOf     <http://example.com/Team/o.thefa.com-t.45> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128607-PO40959>
         rdf:type               sport:OfficialParticipation ;

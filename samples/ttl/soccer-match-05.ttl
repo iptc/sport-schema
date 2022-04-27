@@ -4,6 +4,7 @@
 @prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -6973,13 +6974,13 @@
         spsocstat:tackles-won          "5" ;
         spsocstat:tackles-won-percentage
                 "0.333" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "1" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "1" ;
         spstat:time-of-possession-percentage
                 "31.5" ;
         sport:alignment                "away" ;
-        sport:participationBy          <http://example.com/Team/o.thefa.com-t.14> .
+        sport:participationBy          <http://example.com/Team/o.thefa.com-t.14> ;
+        sport:score                    "1" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128611-a.2290458637>
         rdf:type                       sport:Action ;
@@ -11150,10 +11151,11 @@
         sport:participationBy  <http://example.com/Athlete/p.122798> .
 
 <http://example.com/Membership/man279-o.thefa.com-t.11>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Jürgen Klopp associate membership of Liverpool" ;
-        sport:membershipBy  <http://example.com/Associate/man279> ;
-        sport:membershipOf  <http://example.com/Team/o.thefa.com-t.11> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Jürgen Klopp associate membership of Liverpool" ;
+        sport:membershipBy     <http://example.com/Associate/man279> ;
+        sport:membershipOf     <http://example.com/Team/o.thefa.com-t.11> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128611-a.2290484499>
         rdf:type                   sport:Action ;
@@ -31843,9 +31845,8 @@
         sport:participationBy  <http://example.com/Athlete/p.41733> .
 
 <http://example.com/Associate/man81>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Steve Bruce" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Steve Bruce" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128611-a.2290486957-p.438277>
         rdf:type               sport:IndividualParticipation ;
@@ -38435,10 +38436,11 @@
         sport:participationBy  <http://example.com/Athlete/p.122798> .
 
 <http://example.com/Membership/man81-o.thefa.com-t.14>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Steve Bruce associate membership of Newcastle United" ;
-        sport:membershipBy  <http://example.com/Associate/man81> ;
-        sport:membershipOf  <http://example.com/Team/o.thefa.com-t.14> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Steve Bruce associate membership of Newcastle United" ;
+        sport:membershipBy     <http://example.com/Associate/man81> ;
+        sport:membershipOf     <http://example.com/Team/o.thefa.com-t.14> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128611-a.2290465679>
         rdf:type                   sport:Action ;
@@ -40302,9 +40304,8 @@
         sport:participationBy  <http://example.com/Athlete/p.116535> .
 
 <http://example.com/Associate/man279>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Jürgen Klopp" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Jürgen Klopp" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128611-a.2290482751-p.122798>
         rdf:type               sport:IndividualParticipation ;
@@ -46785,13 +46786,13 @@
         spsocstat:tackles-won          "10" ;
         spsocstat:tackles-won-percentage
                 "0.476" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "1" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "1" ;
         spstat:time-of-possession-percentage
                 "68.5" ;
         sport:alignment                "home" ;
-        sport:participationBy          <http://example.com/Team/o.thefa.com-t.11> .
+        sport:participationBy          <http://example.com/Team/o.thefa.com-t.11> ;
+        sport:score                    "1" .
 
 <http://example.com/Action/l.premierleague.com-2020-e.2128611-a.2290836731>
         rdf:type                   sport:Action ;

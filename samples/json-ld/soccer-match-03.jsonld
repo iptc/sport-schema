@@ -160,12 +160,10 @@
   }, {
     "@id" : "http://example.com/Associate/man40412",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Dean Smith"
   }, {
     "@id" : "http://example.com/Associate/man83",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Sam Allardyce"
   }, {
     "@id" : "http://example.com/Athlete/p.101394",
@@ -357,12 +355,14 @@
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man40412",
     "membershipOf" : "http://example.com/Team/o.thefa.com-t.2",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Dean Smith associate membership of Aston Villa"
   }, {
     "@id" : "http://example.com/Membership/man83-o.thefa.com-t.45",
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man83",
     "membershipOf" : "http://example.com/Team/o.thefa.com-t.45",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Sam Allardyce associate membership of West Bromwich Albion"
   }, {
     "@id" : "http://example.com/Membership/o.thefa.com-t.2-p.108156",
@@ -742,12 +742,12 @@
     "tackles-total" : "13",
     "tackles-won" : "6",
     "tackles-won-percentage" : "0.462",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "2",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "2",
     "time-of-possession-percentage" : "70.2",
     "alignment" : "home",
     "participationBy" : "http://example.com/Team/o.thefa.com-t.2",
+    "score" : "2",
     "label" : "Aston Villa participation in Event l.premierleague.com-2020-e.2128607"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128607-o.thefa.com-t.45",
@@ -769,12 +769,12 @@
     "tackles-total" : "10",
     "tackles-won" : "5",
     "tackles-won-percentage" : "0.500",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "2",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "2",
     "time-of-possession-percentage" : "29.8",
     "alignment" : "away",
     "participationBy" : "http://example.com/Team/o.thefa.com-t.45",
+    "score" : "2",
     "label" : "West Bromwich Albion participation in Event l.premierleague.com-2020-e.2128607"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.101394",
@@ -1628,11 +1628,11 @@
     "tackles-lost" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-lost"
     },
-    "score" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
-    },
     "time-of-possession-percentage" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/time-of-possession-percentage"
+    },
+    "score" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/score"
     },
     "offsides" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/offsides"
@@ -1772,10 +1772,6 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
       "@type" : "@id"
     },
-    "positionEvent" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
-      "@type" : "@id"
-    },
     "parentCompetition" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
       "@type" : "@id"
@@ -1836,6 +1832,10 @@
     "goals-own" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-own"
     },
+    "positionEvent" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
+      "@type" : "@id"
+    },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
@@ -1847,6 +1847,7 @@
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
     "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
   }
 }

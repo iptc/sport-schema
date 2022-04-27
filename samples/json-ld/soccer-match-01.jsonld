@@ -31130,12 +31130,10 @@
   }, {
     "@id" : "http://example.com/Associate/man257",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/vendascpos/Manager",
     "label" : "Manuel Pellegrini"
   }, {
     "@id" : "http://example.com/Associate/man37630",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/vendascpos/Manager",
     "label" : "Paul Lambert"
   }, {
     "@id" : "http://example.com/Athlete/PO10738",
@@ -31600,12 +31598,14 @@
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man257",
     "membershipOf" : "http://example.com/Team/T12",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Manuel Pellegrini associate membership of Manchester City"
   }, {
     "@id" : "http://example.com/Membership/man37630-T2",
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man37630",
     "membershipOf" : "http://example.com/Team/T2",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Paul Lambert associate membership of Aston Villa"
   }, {
     "@id" : "http://example.com/Official/PO10514",
@@ -32263,7 +32263,7 @@
     "score-opposing" : "0",
     "time-of-possession-percentage" : "68.4",
     "alignment" : "away",
-    "eventOutcome" : "win",
+    "eventOutcome" : "speventoutcome:win",
     "participationBy" : "http://example.com/Team/T12",
     "label" : "Manchester City participation in Event E755363"
   }, {
@@ -32277,7 +32277,7 @@
     "score-opposing" : "2",
     "time-of-possession-percentage" : "31.6",
     "alignment" : "home",
-    "eventOutcome" : "loss",
+    "eventOutcome" : "speventoutcome:loss",
     "participationBy" : "http://example.com/Team/T2",
     "label" : "Aston Villa participation in Event E755363"
   }, {
@@ -43790,6 +43790,10 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/score-attempt-type",
       "@type" : "@id"
     },
+    "positionRegular" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionRegular",
+      "@type" : "@id"
+    },
     "membershipOf" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membershipOf",
       "@type" : "@id"
@@ -43852,10 +43856,6 @@
     "uniformNumber" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
     },
-    "positionRegular" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionRegular",
-      "@type" : "@id"
-    },
     "time-addition" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/time-addition"
     },
@@ -43892,10 +43892,6 @@
     "interceptions" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/interceptions"
     },
-    "positionEvent" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
-      "@type" : "@id"
-    },
     "clearances-successful" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/clearances-successful"
     },
@@ -43923,7 +43919,8 @@
       "@id" : "http://cv.iptc.org/newscodes/spstat/score-opposing"
     },
     "eventOutcome" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/eventOutcome"
+      "@id" : "http://www.iptc.org/ontologies/Sport/eventOutcome",
+      "@type" : "@id"
     },
     "time-of-possession-percentage" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/time-of-possession-percentage"
@@ -43971,6 +43968,10 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
       "@type" : "@id"
     },
+    "positionEvent" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
+      "@type" : "@id"
+    },
     "eventParticipation" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/eventParticipation",
       "@type" : "@id"
@@ -44009,6 +44010,7 @@
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
     "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
   }
 }

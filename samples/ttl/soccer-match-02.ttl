@@ -4,6 +4,7 @@
 @prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -508,10 +509,11 @@
         rdfs:label  "Ayoze Pérez" .
 
 <http://example.com/Membership/man1280-t.31>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Roy Hodgson associate membership of Crystal Palace" ;
-        sport:membershipBy  <http://example.com/Associate/man1280> ;
-        sport:membershipOf  <http://example.com/Team/t.31> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Roy Hodgson associate membership of Crystal Palace" ;
+        sport:membershipBy     <http://example.com/Associate/man1280> ;
+        sport:membershipOf     <http://example.com/Team/t.31> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/e.2128610-p.168580>
         rdf:type                       sport:IndividualParticipation ;
@@ -862,13 +864,13 @@
         spsocstat:tackles-won          "9" ;
         spsocstat:tackles-won-percentage
                 "0.750" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/loss> ;
-        spstat:score                   "1" ;
+        spstat:event-outcome           speventoutcome:loss ;
         spstat:score-opposing          "2" ;
         spstat:time-of-possession-percentage
                 "32.9" ;
         sport:alignment                "away" ;
-        sport:participationBy          <http://example.com/Team/t.31> .
+        sport:participationBy          <http://example.com/Team/t.31> ;
+        sport:score                    "1" .
 
 <http://example.com/Participation/e.2128610-p.55037>
         rdf:type                        sport:IndividualParticipation ;
@@ -913,14 +915,12 @@
         sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/Associate/man1280>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Roy Hodgson" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Roy Hodgson" .
 
 <http://example.com/Associate/man38197>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Brendan Rodgers" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Brendan Rodgers" .
 
 <http://example.com/Membership/t.13-p.168580>
         rdf:type               sport:IndividualMembership ;
@@ -1081,13 +1081,13 @@
         spsocstat:tackles-won          "11" ;
         spsocstat:tackles-won-percentage
                 "0.611" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/win> ;
-        spstat:score                   "2" ;
+        spstat:event-outcome           speventoutcome:win ;
         spstat:score-opposing          "1" ;
         spstat:time-of-possession-percentage
                 "67.1" ;
         sport:alignment                "home" ;
-        sport:participationBy          <http://example.com/Team/t.13> .
+        sport:participationBy          <http://example.com/Team/t.13> ;
+        sport:score                    "2" .
 
 <http://example.com/Participation/e.2128610-p.50472>
         rdf:type                       sport:IndividualParticipation ;
@@ -1560,10 +1560,11 @@
         sport:playerStatus              spplayerstatus:starter .
 
 <http://example.com/Membership/man38197-t.13>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Brendan Rodgers associate membership of Leicester City" ;
-        sport:membershipBy  <http://example.com/Associate/man38197> ;
-        sport:membershipOf  <http://example.com/Team/t.13> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Brendan Rodgers associate membership of Leicester City" ;
+        sport:membershipBy     <http://example.com/Associate/man38197> ;
+        sport:membershipOf     <http://example.com/Team/t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Action/e.2128610-a.2291870573>
         rdf:type                   sport:Action ;

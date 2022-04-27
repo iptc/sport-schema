@@ -171,12 +171,10 @@
   }, {
     "@id" : "http://example.com/Associate/man26",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Marcelo Bielsa"
   }, {
     "@id" : "http://example.com/Associate/man40342",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Ole Gunnar Solskjær"
   }, {
     "@id" : "http://example.com/Athlete/p.101582",
@@ -368,12 +366,14 @@
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man26",
     "membershipOf" : "http://example.com/Team/t.2",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Marcelo Bielsa associate membership of Leeds United"
   }, {
     "@id" : "http://example.com/Membership/man40342-o.thefa.com-t.13",
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man40342",
     "membershipOf" : "http://example.com/Team/o.thefa.com-t.13",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Ole Gunnar Solskjær associate membership of Manchester United"
   }, {
     "@id" : "http://example.com/Membership/o.thefa.com-t.13-p.101582",
@@ -730,12 +730,12 @@
     "tackles-total" : "16",
     "tackles-won" : "11",
     "tackles-won-percentage" : "0.688",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "0",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "0",
     "time-of-possession-percentage" : "55.8",
     "alignment" : "away",
     "participationBy" : "http://example.com/Team/o.thefa.com-t.13",
+    "score" : "0",
     "label" : "Manchester United participation in Event l.premierleague.com-2020-e.2128609"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.101582",
@@ -1537,12 +1537,12 @@
     "tackles-total" : "30",
     "tackles-won" : "17",
     "tackles-won-percentage" : "0.567",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "0",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "0",
     "time-of-possession-percentage" : "44.2",
     "alignment" : "home",
     "participationBy" : "http://example.com/Team/t.2",
+    "score" : "0",
     "label" : "Leeds United participation in Event l.premierleague.com-2020-e.2128609"
   }, {
     "@id" : "http://example.com/Site/s.29",
@@ -1739,10 +1739,6 @@
     "crosses-18-yard" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard"
     },
-    "positionEvent" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
-      "@type" : "@id"
-    },
     "crosses-18-yard-plus" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/crosses-18-yard-plus"
     },
@@ -1778,7 +1774,7 @@
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/line-formation"
     },
     "score" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
+      "@id" : "http://www.iptc.org/ontologies/Sport/score"
     },
     "shots-blocked" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked"
@@ -1814,6 +1810,10 @@
     "catches-punches" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/catches-punches"
     },
+    "positionEvent" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionEvent",
+      "@type" : "@id"
+    },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
@@ -1825,6 +1825,7 @@
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
     "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
   }
 }

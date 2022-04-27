@@ -9,6 +9,7 @@ class Action {
 }
 
 class Agent {
+  rdfs:label : string
 }
 
 class Associate {
@@ -24,14 +25,12 @@ class Competition {
 
 class CompetitorParticipation {
   eventOutcome : CV Value
-  positionEvent : CV Value
   rank : string
   score : string 
   scoreUnits : CV Value 
 }
 
 class CompetitionPhase {
-  rdfs:label : string
   competitionFormat : CV Value
   competitionPhaseType : CV Value
 }
@@ -53,7 +52,6 @@ class Individual {
   rdfs:label : string
   nationality : string
   dateOfBirth : date
-  positionRegular : CV Value
 }
 
 class IndividualMembership {
@@ -75,15 +73,13 @@ class Membership {
 }
 
 class Official {
-  rdfs:label : string
 }
 
 class OfficialParticipation {
-  rdfs:label : string
 }
 
 class Participation {
-  rdfs:label : string
+  positionEvent : CV Value
 }
 
 class ParticipationSplit {
@@ -95,11 +91,9 @@ class Site {
 }
 
 class Team {
-  rdfs:label : string
 }
 
 class TeamParticipation {
-  rdfs:label : string
   alignment : CV Value
 }
 

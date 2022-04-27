@@ -4,6 +4,7 @@
 @prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -235,9 +236,8 @@
         sport:uniformNumber    "21" .
 
 <http://example.com/Associate/man40342>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Ole Gunnar Solskjær" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Ole Gunnar Solskjær" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.106760>
         rdf:type                        sport:IndividualParticipation ;
@@ -271,10 +271,11 @@
         rdfs:label  "Luke Ayling" .
 
 <http://example.com/Membership/man40342-o.thefa.com-t.13>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Ole Gunnar Solskjær associate membership of Manchester United" ;
-        sport:membershipBy  <http://example.com/Associate/man40342> ;
-        sport:membershipOf  <http://example.com/Team/o.thefa.com-t.13> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Ole Gunnar Solskjær associate membership of Manchester United" ;
+        sport:membershipBy     <http://example.com/Associate/man40342> ;
+        sport:membershipOf     <http://example.com/Team/o.thefa.com-t.13> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Team/o.thefa.com-t.13>
         rdf:type          sport:Team ;
@@ -906,10 +907,11 @@
         sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/Membership/man26-t.2>
-        rdf:type            sport:Membership ;
-        rdfs:label          "Marcelo Bielsa associate membership of Leeds United" ;
-        sport:membershipBy  <http://example.com/Associate/man26> ;
-        sport:membershipOf  <http://example.com/Team/t.2> .
+        rdf:type               sport:Membership ;
+        rdfs:label             "Marcelo Bielsa associate membership of Leeds United" ;
+        sport:membershipBy     <http://example.com/Associate/man26> ;
+        sport:membershipOf     <http://example.com/Team/t.2> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Athlete/p.106760>
         rdf:type    sport:Athlete ;
@@ -1056,13 +1058,13 @@
         spsocstat:tackles-won          "17" ;
         spsocstat:tackles-won-percentage
                 "0.567" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "0" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "0" ;
         spstat:time-of-possession-percentage
                 "44.2" ;
         sport:alignment                "home" ;
-        sport:participationBy          <http://example.com/Team/t.2> .
+        sport:participationBy          <http://example.com/Team/t.2> ;
+        sport:score                    "0" .
 
 <http://example.com/Membership/t.2-p.106617>
         rdf:type               sport:IndividualMembership ;
@@ -1475,13 +1477,13 @@
         spsocstat:tackles-won          "11" ;
         spsocstat:tackles-won-percentage
                 "0.688" ;
-        spstat:event-outcome           <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
-        spstat:score                   "0" ;
+        spstat:event-outcome           speventoutcome:tie ;
         spstat:score-opposing          "0" ;
         spstat:time-of-possession-percentage
                 "55.8" ;
         sport:alignment                "away" ;
-        sport:participationBy          <http://example.com/Team/o.thefa.com-t.13> .
+        sport:participationBy          <http://example.com/Team/o.thefa.com-t.13> ;
+        sport:score                    "0" .
 
 <http://example.com/Membership/t.2-p.193645>
         rdf:type               sport:IndividualMembership ;
@@ -1526,9 +1528,8 @@
         rdfs:label  "Kiko Casilla" .
 
 <http://example.com/Associate/man26>
-        rdf:type             sport:Associate ;
-        rdfs:label           "Marcelo Bielsa" ;
-        sport:positionEvent  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        rdf:type    sport:Associate ;
+        rdfs:label  "Marcelo Bielsa" .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128609-p.72222>
         rdf:type                        sport:IndividualParticipation ;

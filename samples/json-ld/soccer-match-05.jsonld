@@ -36450,12 +36450,10 @@
   }, {
     "@id" : "http://example.com/Associate/man279",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Jürgen Klopp"
   }, {
     "@id" : "http://example.com/Associate/man81",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Steve Bruce"
   }, {
     "@id" : "http://example.com/Athlete/p.104547",
@@ -36647,12 +36645,14 @@
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man279",
     "membershipOf" : "http://example.com/Team/o.thefa.com-t.11",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Jürgen Klopp associate membership of Liverpool"
   }, {
     "@id" : "http://example.com/Membership/man81-o.thefa.com-t.14",
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man81",
     "membershipOf" : "http://example.com/Team/o.thefa.com-t.14",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Steve Bruce associate membership of Newcastle United"
   }, {
     "@id" : "http://example.com/Membership/o.thefa.com-t.11-p.110979",
@@ -48962,12 +48962,12 @@
     "tackles-total" : "21",
     "tackles-won" : "10",
     "tackles-won-percentage" : "0.476",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "1",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "1",
     "time-of-possession-percentage" : "68.5",
     "alignment" : "home",
     "participationBy" : "http://example.com/Team/o.thefa.com-t.11",
+    "score" : "1",
     "label" : "Liverpool participation in Event l.premierleague.com-2020-e.2128611"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128611-o.thefa.com-t.14",
@@ -48988,12 +48988,12 @@
     "tackles-total" : "15",
     "tackles-won" : "5",
     "tackles-won-percentage" : "0.333",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/tie",
-    "score" : "1",
+    "event-outcome" : "speventoutcome:tie",
     "score-opposing" : "1",
     "time-of-possession-percentage" : "31.5",
     "alignment" : "away",
     "participationBy" : "http://example.com/Team/o.thefa.com-t.14",
+    "score" : "1",
     "label" : "Newcastle United participation in Event l.premierleague.com-2020-e.2128611"
   }, {
     "@id" : "http://example.com/Participation/l.premierleague.com-2020-e.2128611-p.104547",
@@ -49997,6 +49997,9 @@
     "shots-blocked" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked"
     },
+    "score" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/score"
+    },
     "time-of-possession-percentage" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/time-of-possession-percentage"
     },
@@ -50005,9 +50008,6 @@
     },
     "corner-kicks" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/corner-kicks"
-    },
-    "score" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
     },
     "score-opposing" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/score-opposing"
@@ -50101,6 +50101,7 @@
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
     "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
   }
 }

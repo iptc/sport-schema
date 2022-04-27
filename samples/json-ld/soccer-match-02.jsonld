@@ -143,12 +143,10 @@
   }, {
     "@id" : "http://example.com/Associate/man1280",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Roy Hodgson"
   }, {
     "@id" : "http://example.com/Associate/man38197",
     "@type" : "sport:Associate",
-    "positionEvent" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Brendan Rodgers"
   }, {
     "@id" : "http://example.com/Athlete/p.101668",
@@ -340,12 +338,14 @@
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man1280",
     "membershipOf" : "http://example.com/Team/t.31",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Roy Hodgson associate membership of Crystal Palace"
   }, {
     "@id" : "http://example.com/Membership/man38197-t.13",
     "@type" : "sport:Membership",
     "membershipBy" : "http://example.com/Associate/man38197",
     "membershipOf" : "http://example.com/Team/t.13",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spsocascpos/Manager",
     "label" : "Brendan Rodgers associate membership of Leicester City"
   }, {
     "@id" : "http://example.com/Membership/t.13-p.101668",
@@ -1481,12 +1481,12 @@
     "tackles-total" : "18",
     "tackles-won" : "11",
     "tackles-won-percentage" : "0.611",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/win",
-    "score" : "2",
+    "event-outcome" : "speventoutcome:win",
     "score-opposing" : "1",
     "time-of-possession-percentage" : "67.1",
     "alignment" : "home",
     "participationBy" : "http://example.com/Team/t.13",
+    "score" : "2",
     "label" : "Leicester City participation in Event e.2128610"
   }, {
     "@id" : "http://example.com/Participation/e.2128610-t.31",
@@ -1507,12 +1507,12 @@
     "tackles-total" : "12",
     "tackles-won" : "9",
     "tackles-won-percentage" : "0.750",
-    "event-outcome" : "http://cv.iptc.org/newscodes/speventoutcome/loss",
-    "score" : "1",
+    "event-outcome" : "speventoutcome:loss",
     "score-opposing" : "2",
     "time-of-possession-percentage" : "32.9",
     "alignment" : "away",
     "participationBy" : "http://example.com/Team/t.31",
+    "score" : "1",
     "label" : "Crystal Palace participation in Event e.2128610"
   }, {
     "@id" : "http://example.com/Site/s.2516",
@@ -1734,9 +1734,6 @@
     "corner-kicks" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/corner-kicks"
     },
-    "score" : {
-      "@id" : "http://cv.iptc.org/newscodes/spstat/score"
-    },
     "event-outcome" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/event-outcome",
       "@type" : "@id"
@@ -1749,6 +1746,9 @@
     },
     "tackles-won-percentage" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/tackles-won-percentage"
+    },
+    "score" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/score"
     },
     "shots-blocked" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/shots-blocked"
@@ -1805,6 +1805,7 @@
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
     "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/"
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
   }
 }
