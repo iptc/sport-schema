@@ -53,6 +53,7 @@ sport:CompetitionPhase rdf:type rdfs:Class ;
 
 sport:CompetitorParticipation rdf:type rdfs:Class ;
     rdfs:label "Competitor Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an actor that can win or lose an event."@en ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
@@ -358,8 +359,6 @@ sport:role rdf:type rdf:Property ;
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
-# BQ: I'm confused as to why we have spstat:score but sport:scoreUnits..?
-# so even though this is not used I'm leaving it in the ontology for now.
 sport:score rdf:type rdf:Property ;
     rdfs:label "score"@en ;
     rdfs:comment "A team's or individual's score in a given event"@en ;
