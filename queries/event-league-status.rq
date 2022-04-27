@@ -4,7 +4,6 @@
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
@@ -19,14 +18,14 @@ WHERE
     ?homeTeamParticipation rdf:type sport:TeamParticipation .
     ?homeTeamParticipation sport:participationBy ?homeTeam .
     ?homeTeamParticipation sport:alignment "home" .
-    ?homeTeamParticipation spstat:score ?homeTeamScore .
+    ?homeTeamParticipation sport:score ?homeTeamScore .
     ?homeTeam rdf:type sport:Team .
     ?homeTeam rdfs:label ?homeTeamName .
     ?event sport:eventParticipation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation .
     ?awayTeamParticipation sport:participationBy ?awayTeam .
     ?awayTeamParticipation sport:alignment "away" .
-    ?awayTeamParticipation spstat:score ?awayTeamScore .
+    ?awayTeamParticipation sport:score ?awayTeamScore .
     ?awayTeam rdf:type sport:Team .
     ?awayTeam rdfs:label ?awayTeamName .
     ?event sport:eventStatus ?status .
