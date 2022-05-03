@@ -464,7 +464,14 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:param name="participation-id"/>
 
         <xsl:if test="newsml:rank">
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'rank»')"/> "<xsl:value-of select="newsml:rank[1]/@value"/>" .
+            <xsl:choose>
+                <xsl:when test="newsml:rank[contains(@type,'final-result')]">
+			        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'rank»')"/>~<xsl:text>"</xsl:text><xsl:value-of select="newsml:rank[contains(@type,'final-result')]/@value"/><xsl:text>"</xsl:text> .
+                </xsl:when>
+                <xsl:otherwise>
+		            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'rank»')"/> "<xsl:value-of select="newsml:rank[1]/@value"/>" .
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
 
         <xsl:apply-templates select="@* | node()">
@@ -740,13 +747,6 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="newsml:rank">
             <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'rank»')"/> "<xsl:value-of select="newsml:rank/@value"/>" .
         </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="newsml:rank[contains(@type,'final-result')]">
-        <xsl:param name="participation-id"/>
-
-        <!-- <participation> newscodescv:cvterm "value" -->
-        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'rank»')"/>~<xsl:text>"</xsl:text><xsl:value-of select="@value"/><xsl:text>"</xsl:text> .
     </xsl:template>
 
     <xsl:template match="newsml:outcome-result">

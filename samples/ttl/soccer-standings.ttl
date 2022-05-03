@@ -1,20 +1,20 @@
-@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:      <https://schema.org/> .
-@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB2>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Leeds United participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -25,10 +25,11 @@
         spstat:ties                   "2" ;
         spstat:wins                   "10" ;
         sport:participationBy         <http://example.com/Team/TFBB2> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-home> ;
+        sport:rank                    "11" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
@@ -40,7 +41,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -52,7 +53,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
@@ -64,7 +65,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "9" ;
@@ -76,15 +77,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB4>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Newcastle United" .
 
 <http://example.com/Team/TFBB31>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Crystal Palace" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -96,7 +97,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB11>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Everton participation in Event " ;
         spstat:events-played          "22" ;
         spstat:losses                 "7" ;
@@ -107,10 +108,11 @@
         spstat:ties                   "4" ;
         spstat:wins                   "11" ;
         sport:participationBy         <http://example.com/Team/TFBB11> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-away> ;
+        sport:rank                    "7" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -122,7 +124,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "6" ;
@@ -134,7 +136,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB7>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Aston Villa participation in Event " ;
         spstat:events-played          "22" ;
         spstat:losses                 "8" ;
@@ -145,10 +147,11 @@
         spstat:ties                   "3" ;
         spstat:wins                   "11" ;
         sport:participationBy         <http://example.com/Team/TFBB7> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-away> ;
+        sport:rank                    "8" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "8" ;
@@ -160,7 +163,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-home>" ;
         spstat:events-played          "10" ;
         spstat:losses                 "4" ;
@@ -172,7 +175,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
@@ -184,7 +187,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB31>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Crystal Palace participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "11" ;
@@ -195,10 +198,11 @@
         spstat:ties                   "5" ;
         spstat:wins                   "8" ;
         sport:participationBy         <http://example.com/Team/TFBB31> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-home> ;
+        sport:rank                    "14" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB1>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Manchester United participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "4" ;
@@ -210,10 +214,11 @@
         spstat:ties                   "7" ;
         spstat:wins                   "13" ;
         sport:participationBy         <http://example.com/Team/TFBB1> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-home> ;
+        sport:rank                    "2" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "9" ;
@@ -225,11 +230,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB36>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Brighton and Hove Albion" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -241,7 +246,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
@@ -253,16 +258,16 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Competition/l.premierleague.com>
-        rdf:type     sport:Competition ;
+        a            sport:Competition ;
         rdfs:label   "English Premier League" ;
         sport:sport  20001065 .
 
 <http://example.com/Team/TFBB49>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Sheffield United" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -274,11 +279,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB3>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Arsenal" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
@@ -290,7 +295,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -302,11 +307,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB43>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Manchester City" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB36>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Brighton and Hove Albion participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "8" ;
@@ -317,10 +322,11 @@
         spstat:ties                   "11" ;
         spstat:wins                   "5" ;
         sport:participationBy         <http://example.com/Team/TFBB36> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-away> ;
+        sport:rank                    "15" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB6>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Tottenham Hotspur participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "7" ;
@@ -331,10 +337,11 @@
         spstat:ties                   "6" ;
         spstat:wins                   "10" ;
         sport:participationBy         <http://example.com/Team/TFBB6> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-away> ;
+        sport:rank                    "9" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB49>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Sheffield United participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "18" ;
@@ -346,18 +353,19 @@
         spstat:ties                   "2" ;
         spstat:wins                   "3" ;
         sport:participationBy         <http://example.com/Team/TFBB49> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB49-events-home> ;
+        sport:rank                    "20" .
 
 <http://example.com/Team/TFBB35>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "West Bromwich Albion" .
 
 <http://example.com/Team/TFBB8>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Chelsea" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB43>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Manchester City participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "2" ;
@@ -369,10 +377,11 @@
         spstat:ties                   "5" ;
         spstat:wins                   "16" ;
         sport:participationBy         <http://example.com/Team/TFBB43> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-away> ;
+        sport:rank                    "1" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
@@ -384,7 +393,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -396,7 +405,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -408,15 +417,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB2>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Leeds United" .
 
 <http://example.com/Team/TFBB14>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Liverpool" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB35>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "West Bromwich Albion participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "15" ;
@@ -428,16 +437,17 @@
         spstat:ties                   "7" ;
         spstat:wins                   "2" ;
         sport:participationBy         <http://example.com/Team/TFBB35> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-away> ;
+        sport:rank                    "19" .
 
 <http://example.com/Competition/l.premierleague.com-2020>
-        rdf:type                        sport:Competition ;
+        a                               sport:Competition ;
         rdfs:label                      "English Premier League 2020" ;
         sport:competitionParticipation  <http://example.com/Participation/l.premierleague.com-2020-TFBB2> , <http://example.com/Participation/l.premierleague.com-2020-TFBB7> , <http://example.com/Participation/l.premierleague.com-2020-TFBB39> , <http://example.com/Participation/l.premierleague.com-2020-TFBB13> , <http://example.com/Participation/l.premierleague.com-2020-TFBB4> , <http://example.com/Participation/l.premierleague.com-2020-TFBB49> , <http://example.com/Participation/l.premierleague.com-2020-TFBB31> , <http://example.com/Participation/l.premierleague.com-2020-TFBB36> , <http://example.com/Participation/l.premierleague.com-2020-TFBB54> , <http://example.com/Participation/l.premierleague.com-2020-TFBB20> , <http://example.com/Participation/l.premierleague.com-2020-TFBB1> , <http://example.com/Participation/l.premierleague.com-2020-TFBB6> , <http://example.com/Participation/l.premierleague.com-2020-TFBB14> , <http://example.com/Participation/l.premierleague.com-2020-TFBB43> , <http://example.com/Participation/l.premierleague.com-2020-TFBB3> , <http://example.com/Participation/l.premierleague.com-2020-TFBB8> , <http://example.com/Participation/l.premierleague.com-2020-TFBB35> , <http://example.com/Participation/l.premierleague.com-2020-TFBB90> , <http://example.com/Participation/l.premierleague.com-2020-TFBB11> , <http://example.com/Participation/l.premierleague.com-2020-TFBB21> ;
         sport:parentCompetition         <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
@@ -449,7 +459,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB6-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
@@ -461,7 +471,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -473,15 +483,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB21>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "West Ham United" .
 
 <http://example.com/Team/TFBB90>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Burnley" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB7-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -493,11 +503,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB7>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Aston Villa" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB14>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Liverpool participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
@@ -509,10 +519,11 @@
         spstat:ties                   "7" ;
         spstat:wins                   "11" ;
         sport:participationBy         <http://example.com/Team/TFBB14> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB14-events-home> ;
+        sport:rank                    "4" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -524,7 +535,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -536,11 +547,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB1>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Manchester United" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -552,7 +563,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB31-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -564,7 +575,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -576,7 +587,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB21>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "West Ham United participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
@@ -587,14 +598,15 @@
         spstat:ties                   "6" ;
         spstat:wins                   "11" ;
         sport:participationBy         <http://example.com/Team/TFBB21> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-away> ;
+        sport:rank                    "6" .
 
 <http://example.com/Team/TFBB13>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Leicester City" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB90>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Burnley participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -605,10 +617,11 @@
         spstat:ties                   "5" ;
         spstat:wins                   "7" ;
         sport:participationBy         <http://example.com/Team/TFBB90> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB90-events-home> ;
+        sport:rank                    "16" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB11-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -620,11 +633,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB54>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Fulham" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB4>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Newcastle United participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "12" ;
@@ -635,10 +648,11 @@
         spstat:ties                   "4" ;
         spstat:wins                   "7" ;
         sport:participationBy         <http://example.com/Team/TFBB4> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-home> ;
+        sport:rank                    "17" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
@@ -650,11 +664,11 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB39>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Wolverhampton Wanderers" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
@@ -666,15 +680,15 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Team/TFBB20>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Southampton" .
 
 <http://example.com/Team/TFBB6>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Tottenham Hotspur" .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB13>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Leicester City participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
@@ -686,10 +700,11 @@
         spstat:ties                   "4" ;
         spstat:wins                   "14" ;
         sport:participationBy         <http://example.com/Team/TFBB13> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB13-events-home> ;
+        sport:rank                    "3" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB35-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
@@ -701,7 +716,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB54>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Fulham participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -713,10 +728,11 @@
         spstat:ties                   "9" ;
         spstat:wins                   "3" ;
         sport:participationBy         <http://example.com/Team/TFBB54> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB54-events-away> ;
+        sport:rank                    "18" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
@@ -728,7 +744,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB39>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Wolverhampton Wanderers participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
@@ -739,10 +755,11 @@
         spstat:ties                   "6" ;
         spstat:wins                   "8" ;
         sport:participationBy         <http://example.com/Team/TFBB39> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB39-events-home> ;
+        sport:rank                    "12" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB36-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -754,7 +771,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB20>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Southampton participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "10" ;
@@ -765,10 +782,11 @@
         spstat:ties                   "5" ;
         spstat:wins                   "8" ;
         sport:participationBy         <http://example.com/Team/TFBB20> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB20-events-away> ;
+        sport:rank                    "13" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB43-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "1" ;
@@ -780,7 +798,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB3>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Arsenal participation in Event " ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
@@ -791,10 +809,11 @@
         spstat:ties                   "4" ;
         spstat:wins                   "10" ;
         sport:participationBy         <http://example.com/Team/TFBB3> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-home> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-away> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-home> ;
+        sport:rank                    "10" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB21-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -806,7 +825,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB3-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -818,7 +837,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB1-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "0" ;
@@ -830,7 +849,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-home>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB4-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -842,7 +861,7 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-home> .
 
 <http://example.com/Participation/l.premierleague.com-2020-TFBB8>
-        rdf:type                      sport:TeamParticipation ;
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Chelsea participation in Event " ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
@@ -854,10 +873,11 @@
         spstat:ties                   "6" ;
         spstat:wins                   "11" ;
         sport:participationBy         <http://example.com/Team/TFBB8> ;
-        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-away> .
+        sport:participationSplit      <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-home> , <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB8-events-away> ;
+        sport:rank                    "5" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-away>
-        rdf:type                      sport:ParticipationSplit ;
+        a                             sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-TFBB2-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -869,5 +889,5 @@
         sport:participationSplitType  <http://cv.iptc.org/newscodes/spcompetitionscope/events-away> .
 
 <http://example.com/Team/TFBB11>
-        rdf:type    sport:Team ;
+        a           sport:Team ;
         rdfs:label  "Everton" .
