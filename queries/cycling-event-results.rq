@@ -1,0 +1,30 @@
+# Use case: Cycling event results
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT ?eventName ?playerName ?rank ?time
+WHERE
+{
+    ?event rdf:type sport:Event ;
+           rdfs:label ?eventName ;
+           sport:startDateTime ?eventDateTime ;
+           sport:eventParticipation ?playerperf ;
+           sport:competition ?competitionPhase .
+    ?competitionPhase rdf:type sport:CompetitionPhase ;
+                      sport:parentCompetition ?parentCompetition .
+    ?playerperf sport:participationBy ?player ;
+                rdf:type sport:IndividualParticipation ;
+                sport:rank ?rankstr ;
+                sport:score ?time .
+    ?player rdfs:label ?playerName ; 
+            rdf:type sport:Athlete .
+    FILTER (?parentCompetition = <http://example.com/Competition/GIRO2019>)
+    BIND (xsd:integer(?rankstr) as ?rank)
+}
+ORDER BY ASC(?eventDateTime) ASC(?rank)

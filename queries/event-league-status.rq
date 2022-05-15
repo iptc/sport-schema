@@ -1,0 +1,35 @@
+# Use case: Event / League / 2. What is the current status of an event (pre-, mid-, post-, postponed, suspended, canceled, etc.)
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
+       (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
+       (CONCAT(?homeTeamName," v ",?awayTeamName) as ?match)
+       ?status
+WHERE
+{
+    ?event rdf:type sport:Event .
+    ?event sport:startDateTime ?date .
+    ?event sport:eventParticipation ?homeTeamParticipation .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation .
+    ?homeTeamParticipation sport:participationBy ?homeTeam .
+    ?homeTeamParticipation sport:alignment "home" .
+    ?homeTeamParticipation sport:score ?homeTeamScore .
+    ?homeTeam rdf:type sport:Team .
+    ?homeTeam rdfs:label ?homeTeamName .
+    ?event sport:eventParticipation ?awayTeamParticipation .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation .
+    ?awayTeamParticipation sport:participationBy ?awayTeam .
+    ?awayTeamParticipation sport:alignment "away" .
+    ?awayTeamParticipation sport:score ?awayTeamScore .
+    ?awayTeam rdf:type sport:Team .
+    ?awayTeam rdfs:label ?awayTeamName .
+    ?event sport:eventStatus ?status .
+    FILTER ( ?date > "2021-04-25T00:00:00Z"^^xsd:dateTime ) 
+    FILTER ( ?date < "2021-04-26T00:00:00Z"^^xsd:dateTime ) 
+}
+ORDER BY ?displayDate ?displayTime

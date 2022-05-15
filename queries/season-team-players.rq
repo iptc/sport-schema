@@ -1,0 +1,44 @@
+# Use case: Season / Team / 1. Who plays for the team? (Includes jersey number, position, etc.)
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spsocposition: <http://cv.iptc.org/newscodes/spsocposition/>
+PREFIX spichposition: <http://cv.iptc.org/newscodes/spichposition/>
+
+SELECT DISTINCT ?teamName ?playerName ?playerPos ?dob ?uniformNumber
+WHERE
+{
+    ?competition rdf:type sport:Competition .
+    OPTIONAL {
+        ?competitionPhase rdf:type sport:CompetitionPhase ;
+                          sport:parentCompetition ?competition .
+        ?event rdf:type sport:Event ;
+               sport:competition ?competitionPhase ;
+               sport:eventParticipation ?teamParticipation .
+        ?teamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?team .
+    }
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?membership rdf:type sport:IndividualMembership ;
+                sport:membershipBy ?player ;
+    		    sport:membershipOf ?team .
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName ;
+          sport:membership ?membership .
+    OPTIONAL {
+          ?team sport:competition ?competition .
+    }
+    OPTIONAL { ?membership sport:positionRegular ?playerPos . }
+    OPTIONAL { ?membership sport:uniformNumber ?uniformNumber . }
+    OPTIONAL { ?player sport:dateOfBirth ?dob . }
+    # query works for either soccer or hockey
+    FILTER (?competition = <http://example.com/Competition/l.premierleague.com-2020>)
+    FILTER (?teamName = "Aston Villa")
+    # FILTER (?competition = <http://example.com/Competition/l.nhl.com-2015>)
+}
+ORDER BY ?teamName ?playerName

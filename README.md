@@ -1,2 +1,101 @@
-# sport-model
-Working on the next generation of SportsML, possibly based on semantic web technology.
+# IPTC Sport Schema
+
+The next generation of sports data, based on IPTC's SportsML and semantic web
+principles.
+
+## About the IPTC Sport Schema
+
+It is currently a work in progress. We have developed an RDF-based data model
+covering sports schedules, event results and statistics.
+
+> :warning: Please note that we are making the IPTC Sport Schema available for
+> comment before release, and the schema may change at any time based on
+> feedback. Please do not use this schema for production applications (yet).
+
+Our development process is based on a set of use cases documented
+at https://github.com/iptc/sport-model/wiki/Use-Cases .
+
+We are creating an RDF model that represents schedules, statistics and results
+for all levels of all sports, for both human and machine consumption.
+
+## Project goals and principles
+
+We want the resulting data model and vocabulary to be:
+
+* **Comprehensive** - it should be able to handle schedules, results and
+statistics for many types of sports: team, individual and head-to-head.
+* **Easy to use** - should be approachable by non-experts in Semantic Web
+technologies. For example, the JSON-LD versions should be simple enough that
+they can  be parsed by any competent developer who is comfortable with handling
+JSON files.
+* **Easy to query** - for those who want to use the power of RDF features such
+as SPARQL, querying data should be as simple as possible.
+* **Compatible with schema.org** - we want the IPTC Sport Schema to be
+self-contained, but it should be possible to use it alongside schema.org in the
+future.
+
+## Repository layout
+
+`queries`:
+
+Sample SPARQL queries exercising some of the use cases.
+
+`queries/output`:
+
+Expected output from each of the sample SPARQL queries.
+
+`samples/{n3|ttl|jsonld}/`:
+
+Example data files in RDF N3, Turtle (`.ttl`) and JSON-LD formats.
+
+`samples/xml/sportsml`:
+
+Examples in SportsML, to be converted to N3 using the
+`convert-sportsml-to-rdf.sh` script in the `tools` folder.
+
+`tools`:
+
+We have created a Bash script which uses the Saxon XSLT processor to convert
+SportsML example files in XML to N3 triples and then uses Apache Jena to convert
+the N3 to the more readable Turtle (TTL) and JSON-LD formats.
+
+This repository contains the converted files, but if you need to convert them
+again, simply run:
+
+```bash
+tools/convert-examples-to-rdf.sh
+```
+
+If you want to try converting an individual N3 file yourself, you can use Jena's
+`riot` tool directly:
+
+```bash
+riot --formatted=TURTLE tools/prefixes.ttl samples/n3/soccer-match-01.n3
+riot --formatted=JSON-LD samples/ttl/soccer-match-01.ttl
+```
+
+Note that the JSON-LD files include the `@context` section at the bottom of the
+file, whereas most JSON-LD examples include `@context` at the top. This is an
+artefact of the Jena JSON-LD generator and doesn't affect the usefulness of the
+data files.
+
+To run the test queries and compare them against the expected output, run
+
+```bash
+tools/run-test-queries.sh
+```
+
+This will run each of the example SPARQL queries in the `queries` folder against
+all the data files in the `samples/ttl` folder. It compares the output of the
+SPARQL queries against the corresponding file in the `queries/output` folder.
+If there are any discrepancies, they will be displayed inline.
+
+## More detailed documentation
+
+We have some guides regarding how to use the IPTC Sport Schema and how the model
+is constructed.
+
+* [Running the IPTC Sports Model example queries](docs/running-example-queries.md)
+* [Running a SPARQL endpoint](docs/sparql-endpoint.md)
+* [Validating IPTC Sports Model data with SHACL](docs/validation-with-shacl.md)
+* [Overview of the IPTC Sport Schema data model](docs/schema-overview.md)

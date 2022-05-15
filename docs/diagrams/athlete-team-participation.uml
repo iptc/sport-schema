@@ -1,0 +1,52 @@
+@startuml
+!theme cerulean-outline
+
+object "Athlete1 <Athlete>" as Athlete1 {
+  rdfs:label = "Jodie Bloggs"
+}
+
+object "Athlete2 <Athlete>" as Athlete2 {
+  rdfs:label = "Sam Steel"
+}
+
+object "TeamA <Team>" as TeamA {
+  rdfs:label = "The Sluggers"
+}
+
+object "TeamB <Team>" as TeamB {
+  rdfs:label = "The Hitters"
+}
+
+object "EventX <Event>" as EventX {
+  rdfs:label = "Sluggers vs Hitters 16 May 2022"
+}
+
+object "TeamAParticipationInEventX <TeamParticipation>" as TeamAParticipationInEventX {
+  rdfs:label = "Sluggers vs Hitters 16 May 2022"
+  sport:score = 13
+}
+
+object "TeamBParticipationInEventX <TeamParticipation>" as TeamBParticipationInEventX {
+  rdfs:label = "Sluggers vs Hitters 16 May 2022"
+  sport:score = 22
+}
+
+object "Athlete1ParticipationInEventX <IndividualParticipation>" as Athlete1ParticipationInEventX {
+  rdfs:label = "Sluggers vs Hitters 16 May 2022"
+  sport:score = 2
+}
+
+object "Athlete2ParticipationInEventX <IndividualParticipation>" as Athlete2ParticipationInEventX {
+  rdfs:label = "Sluggers vs Hitters 16 May 2022"
+  sport:score = 3
+}
+
+EventX .. TeamAParticipationInEventX : >eventParticipation
+TeamAParticipationInEventX .. TeamA : >participationBy
+EventX .. TeamBParticipationInEventX : >eventParticipation
+TeamBParticipationInEventX .. TeamB : >participationBy
+EventX .. Athlete1ParticipationInEventX : >eventParticipation
+Athlete1ParticipationInEventX .. Athlete1 : >participationBy
+EventX .. Athlete2ParticipationInEventX : >eventParticipation
+Athlete2ParticipationInEventX .. Athlete2 : >participationBy
+@enduml

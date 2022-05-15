@@ -1,0 +1,42 @@
+@startuml
+!theme cerulean-outline
+
+object "Athlete1 <Athlete>" as Athlete1 {
+  rdfs:label = "Jodie Bloggs"
+}
+
+object "Membership1 <IndividualMembership>" as Membership1 {
+  rdfs:label = "Jodie Bloggs membership of the Sluggers"
+  startDate = "2017-01-01"
+  endDate = "2020-12-31"
+}
+
+object "Membership2 <IndividualMembership>" as Membership2 {
+  rdfs:label = "Jodie Bloggs membership of the Hitters"
+  startDate = "2021-01-01"
+}
+
+object "Athlete2 <Athlete>" as Athlete2 {
+  rdfs:label = "Sam Steel"
+}
+
+object "Membership3 <IndividualMembership>" as Membership3 {
+  rdfs:label = "Sam Steel membership of the Hitters"
+  startDate = "2021-01-01"
+}
+
+object "TeamA <Team>" as TeamA {
+  rdfs:label = "The Sluggers"
+}
+
+object "TeamB <Team>" as TeamB {
+  rdfs:label = "The Hitters"
+}
+
+Athlete1 .. Membership1 : < membershipBy
+Membership1 .. TeamA : > membershipOf
+Athlete1 .. Membership2 : < membershipBy
+Membership2 .. TeamB : > membershipOf
+Athlete2 .. Membership3 : < membershipBy
+Membership3 .. TeamB : > membershipOf
+@enduml

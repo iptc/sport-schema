@@ -1,0 +1,41 @@
+# Use case: Season / League / 4. What is the full league schedule (including fixtures and results)?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+
+SELECT ?week
+       (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
+       (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
+       (CONCAT(?homeTeamName," v ",?awayTeamName) as ?match)
+       ?siteName
+WHERE
+{
+    ?event rdf:type sport:Event ;
+           sport:startDateTime ?date ;
+           sport:competition ?compPhase ;
+           sport:site ?site ;
+           sport:eventParticipation ?homeTeamParticipation .
+    ?compPhase rdf:type sport:CompetitionPhase ;
+               rdfs:label ?week ;
+               sport:parentCompetition ?parentCompetition .
+    ?parentCompetition rdf:type sport:Competition;
+               rdfs:label ?parentCompName .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?homeTeam ;
+                           sport:alignment "home" .
+    ?homeTeam rdf:type sport:Team ;
+              rdfs:label ?homeTeamName .
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?awayTeamParticipation .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?awayTeam ;
+                           sport:alignment "away" .
+    ?awayTeam rdf:type sport:Team ;
+              rdfs:label ?awayTeamName .
+    ?site rdf:type sport:Site ;
+          rdfs:label ?siteName .
+    FILTER (?parentCompetition = <http://example.com/Competition/l.premierleague.com-2020>)
+}
+ORDER BY ?displayDate ?displayTime

@@ -1,0 +1,18 @@
+# Use case: Event / Team / What was the score of the game?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+
+SELECT ?teamName ?score
+WHERE {
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?teamParticipation .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team ;
+                       sport:score ?score .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName . 
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128468>)
+}

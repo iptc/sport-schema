@@ -1,0 +1,129 @@
+@startuml
+!theme cerulean-outline
+
+' IPTC Sport Model - last updated 2022-01-18
+
+' RDF Classes defined in our ontology:
+class Action {
+  rdfs:label : string
+}
+
+class Agent {
+  rdfs:label : string
+}
+
+class Associate {
+}
+
+class Athlete {
+}
+
+class Competition {
+  rdfs:label : string
+  sport : CV Value
+}
+
+class CompetitorParticipation {
+  eventOutcome : CV Value
+  rank : string
+  score : string 
+  scoreUnits : CV Value 
+}
+
+class CompetitionPhase {
+  competitionFormat : CV Value
+  competitionPhaseType : CV Value
+}
+
+class Event {
+  rdfs:label : string
+  sport : CV Value
+  eventOutcomeType : CV Value
+  attendance : integer
+  startDateTime : date
+  endDateTime : date
+}
+
+class GoverningBody {
+  rdfs:label : string
+}
+
+class Individual {
+  rdfs:label : string
+  nationality : string
+  dateOfBirth : date
+}
+
+class IndividualMembership {
+  uniformNumber : integer
+  positionRegular : CV Value
+}
+
+class IndividualParticipation {
+  playerStatus : CV Value
+}
+
+class AssociateParticipation {
+}
+
+class Membership {
+  rdfs:label : string
+  startDate : date
+  endDate : date
+}
+
+class Official {
+}
+
+class OfficialParticipation {
+}
+
+class Participation {
+  positionEvent : CV Value
+}
+
+class ParticipationSplit {
+  participationSplitType : CV Value
+}
+
+class Site {
+  rdfs:label : string
+}
+
+class Team {
+}
+
+class TeamParticipation {
+  alignment : CV Value
+}
+
+' subclass relationships
+
+Competition <|-- CompetitionPhase
+CompetitorParticipation <|-- TeamParticipation
+CompetitorParticipation <|-- IndividualParticipation
+Participation <|-- CompetitorParticipation
+Participation <|-- OfficialParticipation
+Participation <|-- AssociateParticipation
+Membership <|-- IndividualMembership
+Agent <|-- Team
+Agent <|-- Individual
+Individual <|-- Athlete
+Individual <|-- Associate
+Individual <|-- Official
+
+' Object properties - relationships between classes
+
+Action .. Event : > event
+Action .. Participation : > actionParticipation
+Competition .. Competition : > parentCompetition
+Competition .. GoverningBody : > governingBody
+Competition .. Participation : > competitionParticipation
+Event .. Competition : > competition
+Event .. Participation : > eventParticipation
+Event .. Site :  > site
+IndividualMembership .. Individual : > membershipBy
+Participation .. Agent : > participationBy
+Participation .. ParticipationSplit : participationSplit
+Team .. IndividualMembership : < membershipOf
+@enduml

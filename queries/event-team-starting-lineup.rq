@@ -1,0 +1,31 @@
+# Use case: Event / Team / 1. What is the starting lineup? (including position slated)
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocpos/>
+
+SELECT ?teamName ?playerName ?regularPosition ?eventPosition
+WHERE {
+    ?event rdf:type sport:Event ;
+           rdfs:label ?eventName ;
+		   sport:eventParticipation ?playerParticipation .
+    ?playerParticipation rdf:type sport:IndividualParticipation ;
+                         sport:participationBy ?player ;
+                         sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName . 
+    ?team rdf:type sport:Team ;
+          sport:membership ?members .
+    ?members rdf:type sport:IndividualMembership ;
+             sport:membershipBy ?player ;
+    		 sport:positionRegular ?regularPosition ;
+    		 sport:membershipOf ?team .
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName .
+    OPTIONAL { ?playerParticipation sport:positionEvent ?eventPosition }
+    FILTER (?event = <http://example.com/Event/e.2128610>)
+}
+ORDER BY ?teamName ?playerName

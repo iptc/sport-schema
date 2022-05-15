@@ -1,0 +1,20 @@
+# Use case: Event / Player / 4. Did this player score a goal?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+SELECT ?playerName ?goals
+WHERE { 
+    ?event rdf:type sport:Event ;
+           sport:eventParticipation ?playerperf .
+    ?playerperf rdf:type sport:IndividualParticipation ;
+                sport:participationBy ?player ;
+                spsocstat:goals-total ?goals .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName . 
+    FILTER ( ?goals > "0" )
+    FILTER ( ?event = <http://example.com/Event/l.premierleague.com-2020-e.2128611>)
+}

@@ -1,0 +1,29 @@
+# Use case: Season / League / 1. What are the current standings?
+# Use case: What is the team record broken down into home and away events?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+SELECT ?stageName ?playerName ?rank ?time
+WHERE
+{
+    ?event rdf:type sport:Event ;
+           sport:competition ?compPhase ;
+           sport:eventParticipation ?playerperf .
+    ?compPhase rdf:type sport:CompetitionPhase ;
+               rdfs:label ?stageName ;
+               sport:competitionPhaseType <http://cv.iptc.org/newscodes/sptournamentphase/final> .
+    ?playerperf rdf:type sport:IndividualParticipation ;
+                sport:participationBy ?player ;
+                sport:rank ?rankstr ;
+                sport:score ?time .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName . 
+    BIND (xsd:integer(?rankstr) as ?rank)
+}
+ORDER BY ASC(?rank)

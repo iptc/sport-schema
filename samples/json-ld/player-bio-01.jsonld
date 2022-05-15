@@ -1,0 +1,111 @@
+{
+  "@graph" : [ {
+    "@id" : "http://example.com/Athlete/p10039",
+    "@type" : "sport:Athlete",
+    "dateOfBirth" : "1979-07-02",
+    "label" : "Joe Thornton"
+  }, {
+    "@id" : "http://example.com/Membership/BOSnhl-p10039",
+    "@type" : "sport:Membership",
+    "endDate" : "2005-11-30",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/BOSnhl",
+    "startDate" : "1997-06-21",
+    "label" : "Joe Thornton membership of Boston Bruins"
+  }, {
+    "@id" : "http://example.com/Membership/FLAnhl-p10039",
+    "@type" : "sport:IndividualMembership",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/FLAnhl",
+    "positionRegular" : "http://cv.iptc.org/newscodes/spichpos/center",
+    "startDate" : "2021-08-13",
+    "uniformNumber" : "19",
+    "label" : "Joe Thornton membership of Florida Panthers"
+  }, {
+    "@id" : "http://example.com/Membership/SJnhl-p10039",
+    "@type" : "sport:Membership",
+    "endDate" : "2020-10-06",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/SJnhl",
+    "startDate" : "2005-11-30",
+    "label" : "Joe Thornton membership of San Jose Sharks"
+  }, {
+    "@id" : "http://example.com/Membership/TORnhl-p10039",
+    "@type" : "sport:Membership",
+    "endDate" : "2021-05-31",
+    "membershipBy" : "http://example.com/Athlete/p10039",
+    "membershipOf" : "http://example.com/Team/TORnhl",
+    "startDate" : "2020-10-06",
+    "label" : "Joe Thornton membership of Toronto Maple Leafs"
+  }, {
+    "@id" : "http://example.com/Team/BOSnhl",
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/BOSnhl-p10039",
+    "label" : "Boston Bruins"
+  }, {
+    "@id" : "http://example.com/Team/FLAnhl",
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/FLAnhl-p10039",
+    "label" : "Florida Panthers"
+  }, {
+    "@id" : "http://example.com/Team/SJnhl",
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/SJnhl-p10039",
+    "label" : "San Jose Sharks"
+  }, {
+    "@id" : "http://example.com/Team/TORnhl",
+    "@type" : "sport:Team",
+    "membership" : "http://example.com/Membership/TORnhl-p10039",
+    "label" : "Toronto Maple Leafs"
+  } ],
+  "@context" : {
+    "membership" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membership",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "uniformNumber" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/uniformNumber"
+    },
+    "startDate" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/startDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "positionRegular" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/positionRegular",
+      "@type" : "@id"
+    },
+    "membershipOf" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipOf",
+      "@type" : "@id"
+    },
+    "membershipBy" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/membershipBy",
+      "@type" : "@id"
+    },
+    "dateOfBirth" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/dateOfBirth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "endDate" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/endDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
+    "schemaorg" : "https://schema.org/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
+    "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
+    "spescaction" : "http://cv.iptc.org/newscodes/spescaction/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
+    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
+    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/",
+    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
+  }
+}

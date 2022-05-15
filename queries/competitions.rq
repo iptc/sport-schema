@@ -1,0 +1,17 @@
+# Use case: Competition hierarchy
+# Use case: What parent competition is this competition part of?
+# What body governs this parent competition?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+
+SELECT ?compName ?comp ?parentComp ?govBody
+WHERE
+{
+    ?comp rdf:type sport:Competition ;
+          rdfs:label ?compName .
+    OPTIONAL { ?comp sport:parentCompetition ?parentComp . }
+    OPTIONAL { ?comp sport:governingBody ?govBody . }
+}

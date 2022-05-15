@@ -1,0 +1,404 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix sport:   <http://www.iptc.org/ontologies/Sport/> .
+
+<http://www.iptc.org/ontologies/Sport/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport ontology"@en ;
+    rdfs:label "IPTC Sport ontology"@en ;
+    dcterms:created "2021-07-20"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022"@en ;
+    dcterms:description "A high level model to describe the core elements of competitive sport"@en .
+
+##### Classes #####
+
+sport:Action rdf:type rdfs:Class ;
+    rdfs:label "Action"@en ;
+    rdfs:comment "Something that happens during an event: a kick, a goal, a foul etc"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Agent rdf:type rdfs:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "A participant in a sport event."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Associate rdf:type rdfs:Class ;
+    rdfs:label "Associate"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Athlete rdf:type rdfs:Class ;
+    rdfs:label "Athlete"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A competitor in an individual event or a member of a team"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Competition rdf:type rdfs:Class ;
+    rdfs:label "Competition"@en ;
+    rdfs:comment "A grouping of events usually based on proximity by time."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:CompetitionPhase rdf:type rdfs:Class ;
+    rdfs:label "Competition Phase"@en ;
+    rdfs:subClassOf sport:Competition ;
+    rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:CompetitorParticipation rdf:type rdfs:Class ;
+    rdfs:label "Competitor Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an actor that can win or lose an event."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Event rdf:type rdfs:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "An individual sport event: a match, race etc."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:GoverningBody rdf:type rdfs:Class ;
+    rdfs:label "Governing Body"@en ;
+    rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Individual rdf:type rdfs:Class ;
+    rdfs:label "Individual"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:IndividualMembership rdf:type rdfs:Class ;
+    rdfs:label "Individual Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A player's membership in a team"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:IndividualParticipation rdf:type rdfs:Class ;
+    rdfs:label "Individual Participation"@en ;
+    rdfs:subClassOf sport:CompetitorParticipation ;
+    rdfs:comment "The participation of an individual in an event"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:AssociateParticipation rdf:type rdfs:Class ;
+    rdfs:label "Associate Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The particpation of an associate who supports players and teams, e.g. coach, manager, trainer"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Membership rdf:type rdfs:Class ;
+    rdfs:label "Membership"@en ;
+    rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Official rdf:type rdfs:Class ;
+    rdfs:label "Official"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A person who ensures that the sports event is played according to its rules. Also referred to as umpire or referee."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:OfficialParticipation rdf:type rdfs:Class ;
+    rdfs:label "Official Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an offcial in an event"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Participation rdf:type rdfs:Class ;
+    rdfs:label "Participation"@en ;
+    rdfs:comment "The participation of an actor in an event."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:ParticipationSplit rdf:type rdfs:Class ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Site rdf:type rdfs:Class ;
+    rdfs:label "Site"@en ;
+    rdfs:comment "The location where an Event takes place"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:Team rdf:type rdfs:Class ;
+    rdfs:label "Team"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "A group of individuals competing as one entity"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:TeamParticipation rdf:type rdfs:Class ;
+    rdfs:label "Team Participation"@en ;
+    rdfs:subClassOf sport:CompetitorParticipation ;
+    rdfs:comment "The participation of a team in an event"@en ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+##### Object properties #####
+
+sport:actionParticipation rdf:type rdf:Property ;
+    rdfs:label "action participation"@en ;
+    rdfs:comment "Link to the participation by an agent in a single action"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range sport:Participation ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competition rdf:type rdf:Property ;
+    rdfs:label "competition"@en ;
+    rdfs:comment "The Competition that an Event is part of"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Competition ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competitionParticipation rdf:type rdf:Property ;
+    rdfs:label "competition participation"@en ;
+    rdfs:comment "Link to the participation by an agent in a group of events"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:Participation ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:event rdf:type rdf:Property ;
+    rdfs:label "event"@en ;
+    rdfs:comment "The event in which an Action took place"@en ;
+    rdfs:domain sport:Action, sport:Event ;
+    rdfs:range sport:Event ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:eventParticipation rdf:type rdf:Property ;
+    rdfs:label "event participation"@en ;
+    rdfs:comment "Link to the participation by an agent in a single events"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Participation ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:eventStatus rdf:type rdf:Property ;
+    rdfs:label "event status"@en ;
+    rdfs:comment "Event's current status (e.g. post-event)"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:anyURI ;
+    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:governingBody rdf:type rdf:Property ;
+    rdfs:label "governing body"@en ;
+    rdfs:comment "The organisation that regulates a given Parent Competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:GoverningBody ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:membership rdf:type rdf:Property ;
+    rdfs:label "membership"@en ;
+    rdfs:comment "Link between a team and a membership object"@en ;
+    rdfs:domain sport:Team ;
+    rdfs:range sport:Membership ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:membershipBy rdf:type rdf:Property ;
+    rdfs:label "membership by"@en ;
+    rdfs:comment "Link between a membership and an individual athlete"@en ;
+    rdfs:domain sport:Membership, sport:IndividualMembership ;
+    rdfs:range sport:Athlete ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:membershipOf rdf:type rdf:Property ;
+    rdfs:label "membership of"@en ;
+    rdfs:comment "Link between a membership and a team"@en ;
+    rdfs:domain sport:Membership, sport:IndividualMembership ;
+    rdfs:range sport:Team ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:parentCompetition rdf:type rdf:Property ;
+    rdfs:label "parent competition"@en ;
+    rdfs:comment "Link to the ParentCompetition of a Competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:Competition ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:participationBy rdf:type rdf:Property ;
+    rdfs:label "participationBy"@en ;
+    rdfs:comment "Link to a person or team participating in an event, season or action"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:Agent ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:participationSplit rdf:type rdf:Property ;
+    rdfs:label "participation split"@en ;
+    rdfs:comment "Link to a representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:ParticipationSplit ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:site rdf:type rdf:Property ;
+    rdfs:label "site"@en ;
+    rdfs:comment "Link to the location where an event takes place"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Site ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+##### Data properties #####
+
+sport:alignment rdf:type rdf:Property ;
+    rdfs:label "alignment"@en ;
+    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"@en ;
+    rdfs:domain sport:TeamParticipation ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:attendance rdf:type rdf:Property ;
+    rdfs:label "attendance"@en ;
+    rdfs:comment "The number of people attending an event"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competitionFormat rdf:type rdf:Property ;
+    rdfs:label "competition form"@en ;
+    rdfs:comment "Competition format: round robin, sudden death etc"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/sptournamentform/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:competitionPhaseType rdf:type rdf:Property ;
+    rdfs:label "competition phase type"@en ;
+    rdfs:comment "Type of the competition phase - regular week, final etc"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (doesn't exist yet)
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:dateOfBirth rdf:type rdf:Property ;
+    rdfs:label "date of birth"@en ;
+    rdfs:comment "The date of birth of a person"@en ;
+    rdfs:domain sport:Individual ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:endDate rdf:type rdf:Property ;
+    rdfs:label "end date"@en ;
+    rdfs:comment "The date on which a membership ends"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:endDateTime rdf:type rdf:Property ;
+    rdfs:label "end datetime"@en ;
+    rdfs:comment "The date and time on which an event ends"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:eventOutcome rdf:type rdf:Property ;
+    rdfs:label "event outcome"@en ;
+    rdfs:comment "The outcome of an event (win, loss etc)"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: https://cv.iptc.org/newscodes/speventoutcome/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:eventOutcomeType rdf:type rdf:Property ;
+    rdfs:label "event outcome type"@en ;
+    rdfs:comment "The type of outcome of an event (win, loss etc)"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/speventoutcometype/> ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:nationality rdf:type rdf:Property ;
+    rdfs:label "nationality"@en ;
+    rdfs:comment "The country an individual is identified with"@en ;
+    rdfs:domain sport:Individual ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:participationSplitType rdf:type rdf:Property ;
+    rdfs:label "participation split type"@en ;
+    rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
+    rdfs:domain sport:ParticipationSplit ;
+    # Recommended CV: ???
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:playerStatus rdf:type rdf:Property ;
+    rdfs:label "player status"@en ;
+    rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:anyURI ;
+    # Recommended values: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:positionEvent rdf:type rdf:Property ;
+    rdfs:label "position (event)"@en ;
+    rdfs:comment "The position in a team taken for an individual event"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/> ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:positionRegular rdf:type rdf:Property ;
+    rdfs:label "position (regular)"@en ;
+    rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
+    rdfs:domain sport:IndividualMembership ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/>
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:rank rdf:type rdf:Property ;
+    rdfs:label "rank"@en ;
+    rdfs:comment "The rank of a player or team in standings etc."@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:role rdf:type rdf:Property ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A team's or individual's role in a given action"@en ;
+    rdfs:domain sport:Action ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:score rdf:type rdf:Property ;
+    rdfs:label "score"@en ;
+    rdfs:comment "A team's or individual's score in a given event"@en ;
+    schemaorg:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:scoreUnits rdf:type rdf:Property ;
+    rdfs:label "score units"@en ;
+    rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
+    schemaorg:domain sport:CompetitorParticipation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spscoreunits/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:sport rdf:type rdf:Property ;
+    rdfs:label "sport"@en ;
+    rdfs:comment "The sport which this competition represents"@en;
+    rdfs:domain sport:Competition ;
+    # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:startDateTime rdf:type rdf:Property ;
+    rdfs:label "start datetime"@en ;
+    rdfs:comment "The date on which an event begins"@en ;
+    schemaorg:domain sport:Event ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:startDate rdf:type rdf:Property ;
+    rdfs:label "start date"@en ;
+    rdfs:comment "The date on which a membership begins"@en ;
+    schemaorg:domain sport:Membership ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:uniformNumber rdf:type rdf:Property ;
+    rdfs:label "uniform number"@en ;
+    rdfs:comment "The number usually worn on a player's uniform (jersey etc.)"@en ;
+    rdfs:domain sport:IndividualMembership ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .

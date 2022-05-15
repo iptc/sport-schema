@@ -1,0 +1,32 @@
+# Use case: Event / Player / What are this player's stats for the game?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+
+SELECT DISTINCT ?teamName ?playerName ?stat ?statValue
+WHERE { 
+    ?event rdf:type sport:Event ;
+           rdfs:label ?eventName ;
+           sport:eventParticipation ?teamParticipation ;
+           sport:eventParticipation ?playerParticipation .
+    ?playerParticipation rdf:type sport:IndividualParticipation ;
+                         sport:participationBy ?player ;
+                         ?stat ?statValue .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?members rdf:type sport:IndividualMembership ;
+             sport:membershipBy ?player .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName ;
+          sport:membership ?members . 
+    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/"))
+    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128609>)
+    FILTER (?playerName = "Pascal Struijk")
+}
+ORDER BY ?teamName ?playerName ?stat

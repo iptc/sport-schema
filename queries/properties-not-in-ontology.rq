@@ -1,0 +1,16 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?class ?property
+WHERE {
+  ?subject rdf:type ?class .
+  ?subject ?property ?object .
+  FILTER NOT EXISTS { ?property rdf:type rdf:Property }
+  FILTER (!REGEX ( STR(?property), "^http://cv.iptc.org/newscodes", "i" ))
+  FILTER ( ?class != rdfs:Class )
+  FILTER ( ?class != rdf:Property )
+  FILTER ( ?class != owl:Ontology )
+  FILTER ( ?property != rdf:type )
+  FILTER ( ?property != rdfs:label )
+} ORDER BY ?property ?class
