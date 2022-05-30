@@ -1,0 +1,386 @@
+spstat:wins rdf:type rdf:Property ; 
+        rdfs:label "wins"@en ; 
+        rdfs:comment "Number of wins."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:losses rdf:type rdf:Property ; 
+        rdfs:label "losses"@en ; 
+        rdfs:comment "Number of losses."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:ties rdf:type rdf:Property ; 
+        rdfs:label "ties"@en ; 
+        rdfs:comment "Number of ties."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:undecideds rdf:type rdf:Property ; 
+        rdfs:label "undecideds"@en ; 
+        rdfs:comment "Number of events that were started, but ended up undecided."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:winningPercentage rdf:type rdf:Property ; 
+        rdfs:label "winningPercentage"@en ; 
+        rdfs:comment "The winning percentage. Generally, wins divided by total events completed."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:pointsScoredFor rdf:type rdf:Property ; 
+        rdfs:label "pointsScoredFor"@en ; 
+        rdfs:comment "The number of points a team has scored against its opponents during an extended time period."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:pointsScoredAgainst rdf:type rdf:Property ; 
+        rdfs:label "pointsScoredAgainst"@en ; 
+        rdfs:comment "The number of points scored against a team by its opponents during an extended time period."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:pointsDifference rdf:type rdf:Property ; 
+        rdfs:label "pointsDifference"@en ; 
+        rdfs:comment "The final calculated difference between points-scored-for and points-scored-against. Possibly takes into account other scoring aspects, such as penalties and differences in score-values."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:standingPoints rdf:type rdf:Property ; 
+        rdfs:label "standingPoints"@en ; 
+        rdfs:comment "A quantity used to rank teams, usually within a division, in order to decide who comes in first at the end of a season. Localized to the coverage-attributes."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:standingPointsAgainst rdf:type rdf:Property ; 
+        rdfs:label "standingPointsAgainst"@en ; 
+        rdfs:comment "Points counted against a team in rankings. Used in European handball standings, for example."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:streakDuration rdf:type rdf:Property ; 
+        rdfs:label "streakDuration"@en ; 
+        rdfs:comment "How long the streak lasted."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:streakTotal rdf:type rdf:Property ; 
+        rdfs:label "streakTotal"@en ; 
+        rdfs:comment "Holds the number of goals scored during a streak-type of score, for example."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:streakStart rdf:type rdf:Property ; 
+        rdfs:label "streakStart"@en ; 
+        rdfs:comment "Date on which the streak began."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:streakEnd rdf:type rdf:Property ; 
+        rdfs:label "streakEnd"@en ; 
+        rdfs:comment "Date on which the streak ended."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventsDiscarded rdf:type rdf:Property ; 
+        rdfs:label "eventsDiscarded"@en ; 
+        rdfs:comment "The number of events that the team or player has discarded under this particular time period. Added from issue #29 2019-03-20."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:gamesBack rdf:type rdf:Property ; 
+        rdfs:label "gamesBack"@en ; 
+        rdfs:comment "A number used to measure how behind one team is from first place. The first place team is 0 games back."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:lossesOvertime rdf:type rdf:Property ; 
+        rdfs:label "lossesOvertime"@en ; 
+        rdfs:comment "Number of losses in events which went into overtime. For leagues that use this as a top-level outcome category (eg. NHL), as opposed to just a derivative of scoping."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:relegationAverage rdf:type rdf:Property ; 
+        rdfs:label "relegationAverage"@en ; 
+        rdfs:comment "The product of a relegation average formula used to determine which team is demoted to a lower league. The formula may vary by league but the average typically looks at team performance across multiple competitions. The team(s) with the lowest relegation averages is sent to the league below."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:points rdf:type rdf:Property ; 
+        rdfs:label "points"@en ; 
+        rdfs:comment "Points accumulated by this associate. For example, points earned by a NASCAR
+                owner."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventsPlayed rdf:type rdf:Property ; 
+        rdfs:label "eventsPlayed"@en ; 
+        rdfs:comment "The number of sports-events in which this team or player has already
+                participated."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timePlayedTotal rdf:type rdf:Property ; 
+        rdfs:label "timePlayedTotal"@en ; 
+        rdfs:comment "Value for the amount of time played by the team or player over the course of
+                a particular time-span, such as a season."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timePlayedEvent rdf:type rdf:Property ; 
+        rdfs:label "timePlayedEvent"@en ; 
+        rdfs:comment "Value for the amount of time played by this player in a particular
+                sports-event."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timePlayedEventAverage rdf:type rdf:Property ; 
+        rdfs:label "timePlayedEventAverage"@en ; 
+        rdfs:comment "Value for the average amount of time played per-event by the player over the
+                course of a particular time-span, such as a season."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventsStarted rdf:type rdf:Property ; 
+        rdfs:label "eventsStarted"@en ; 
+        rdfs:comment "Number of sports-events the player has played in since the start of the
+                event."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:periodExtraTimeAdded rdf:type rdf:Property ; 
+        rdfs:label "periodExtraTimeAdded"@en ; 
+        rdfs:comment "How many minutes the referee has decided to add to the period."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:periodExtraTimeElapsed rdf:type rdf:Property ; 
+        rdfs:label "periodExtraTimeElapsed"@en ; 
+        rdfs:comment "How much time exactly MMSS that was actually elapsed in the
+                period."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:score rdf:type rdf:Property ; 
+        rdfs:label "score"@en ; 
+        rdfs:comment "Final or current score of the team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreOpposing rdf:type rdf:Property ; 
+        rdfs:label "scoreOpposing"@en ; 
+        rdfs:comment "Final or current score of the opposing team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreAverage rdf:type rdf:Property ; 
+        rdfs:label "scoreAverage"@en ; 
+        rdfs:comment "Average per-game score for the team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreOpposingAverage rdf:type rdf:Property ; 
+        rdfs:label "scoreOpposingAverage"@en ; 
+        rdfs:comment "Average per-game score for the opposing team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreBehind rdf:type rdf:Property ; 
+        rdfs:label "scoreBehind"@en ; 
+        rdfs:comment "The points or time behind the leading score."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreAttempts rdf:type rdf:Property ; 
+        rdfs:label "scoreAttempts"@en ; 
+        rdfs:comment "Final or current number of attempts to score by a team or player. Example:
+                in ice hockey, would represent total shots on goal."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreAttemptsOpposing rdf:type rdf:Property ; 
+        rdfs:label "scoreAttemptsOpposing"@en ; 
+        rdfs:comment "Final or current number of attempts to score by an opposing team or
+                player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreAttemptsOnGoal rdf:type rdf:Property ; 
+        rdfs:label "scoreAttemptsOnGoal"@en ; 
+        rdfs:comment "A subset of score-attempts. Only counts those attempts that were
+                on-goal."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scoreAttemptsOnGoalOpposing rdf:type rdf:Property ; 
+        rdfs:label "scoreAttemptsOnGoalOpposing"@en ; 
+        rdfs:comment "Final or current number of attempts to score by an opposing team or player
+                that were on-goal."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scorePercentage rdf:type rdf:Property ; 
+        rdfs:label "scorePercentage"@en ; 
+        rdfs:comment "Percentage of attempted scores that reached their mark."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:scorePercentageOpposing rdf:type rdf:Property ; 
+        rdfs:label "scorePercentageOpposing"@en ; 
+        rdfs:comment "Percentage of attempted scores by opposing team or player that reached their
+                mark."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:resultEffect rdf:type rdf:Property ; 
+        rdfs:label "resultEffect"@en ; 
+        rdfs:comment "Describes the effect that the result of the event or rank changing has had
+                on the team. Example: Whether or not a team has qualified for the playoffs, or has
+                been promoted or demoted to a different division."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventOutcome rdf:type rdf:Property ; 
+        rdfs:label "eventOutcome"@en ; 
+        rdfs:comment "Whether the competitor won, lost, or tied."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventStandingPoints rdf:type rdf:Property ; 
+        rdfs:label "eventStandingPoints"@en ; 
+        rdfs:comment "How many points were earned as a result of the outcome of this particular
+                event."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventStandingPointsAgainst rdf:type rdf:Property ; 
+        rdfs:label "eventStandingPointsAgainst"@en ; 
+        rdfs:comment "How many points were deducted as a result of the outcome of this particular
+                event. This occurs, for example, in the German Handball leagues."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:eventsRemaining rdf:type rdf:Property ; 
+        rdfs:label "eventsRemaining"@en ; 
+        rdfs:comment "Number of sports-events the player has yet to participate in."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timeOfPossession rdf:type rdf:Property ; 
+        rdfs:label "timeOfPossession"@en ; 
+        rdfs:comment "Amount of time the team or player has possession of ball (or similar object
+                like puck)."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timeOfPossessionPercentage rdf:type rdf:Property ; 
+        rdfs:label "timeOfPossessionPercentage"@en ; 
+        rdfs:comment "Amount of time the team or player has possession of ball (or similar object
+                like puck) expressed as a percentage of the full time of the match."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timeOfPossessionPercentageOpposing rdf:type rdf:Property ; 
+        rdfs:label "timeOfPossessionPercentageOpposing"@en ; 
+        rdfs:comment "Amount of time the opposing team or player has possession of ball (or
+                similar object like puck) expressed as a percentage of the full time of the
+                match."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timeOfPossessionAverage rdf:type rdf:Property ; 
+        rdfs:label "timeOfPossessionAverage"@en ; 
+        rdfs:comment "Amount of time the team or player has possession of ball (or similar object
+                like puck) per game."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:timeOfPossessionAverageOpposing rdf:type rdf:Property ; 
+        rdfs:label "timeOfPossessionAverageOpposing"@en ; 
+        rdfs:comment "Amount of time the opposing team or player has possession of ball (or
+                similar object like puck) per game."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:seriesScore rdf:type rdf:Property ; 
+        rdfs:label "seriesScore"@en ; 
+        rdfs:comment "Number of events in a series won by team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:seriesScoreOpposing rdf:type rdf:Property ; 
+        rdfs:label "seriesScoreOpposing"@en ; 
+        rdfs:comment "Number of events in a series won by opposing team or player."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:adjustedScoreFor rdf:type rdf:Property ; 
+        rdfs:label "adjustedScoreFor"@en ; 
+        rdfs:comment "The final score as adjusted by some authority. Usually as a result of some
+                dispute or transgression that must be settled post-event and rendered in the score.
+                Will differ from the regular score reflecting the number of actual goals scored in
+                play. Should be tested for before displaying actual score."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	spstat:adjustedScoreAgainst rdf:type rdf:Property ; 
+        rdfs:label "adjustedScoreAgainst"@en ; 
+        rdfs:comment "The final score against as adjusted by some authority. Usually as a result
+                of some dispute or transgression that must be settled post-event and rendered in the
+                score. Will differ from the regular score reflecting the number of actual goals
+                scored in play. Should be tested for before displaying actual score."@en ; 
+        rdfs:domain [fill in] ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/core-statistics> . 
+        
+	
