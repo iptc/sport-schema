@@ -8,19 +8,22 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spact: <http://www.iptc.org/ontologies/Sport/Action/>
 PREFIX spsocrole: <http://cv.iptc.org/newscodes/spsocrole/>
 
-SELECT ?playerName ?time ?teamName
+SELECT ?playerName ?time ?teamName ?playerperfrole
 WHERE { 
     ?action rdf:type sport:Action ;
     		spact:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
     		spact:minutes-elapsed ?time ;
             sport:actionParticipation ?playerperf .
     ?playerperf rdf:type sport:IndividualParticipation ;
-    			spact:role  spsocrole:scorer ;
-                sport:participationBy ?player .
+                sport:participationBy ?player ;
+                spact:role ?playerperfrole .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName . 
     ?teampartic sport:membershipBy ?player ;
     		sport:membershipOf ?team .
-    ?team 	rdfs:label ?teamName 
-    			
+    ?team 	rdfs:label ?teamName .
+
+
+    FILTER (?playerperfrole = spsocrole:scorer ||?playerperfrole = spsocrole:shooter) .
+
 } ORDER BY ?time
