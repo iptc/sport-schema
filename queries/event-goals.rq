@@ -1,0 +1,26 @@
+# Use case: Event / Player / 4. Did this player score a goal?
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spact: <http://www.iptc.org/ontologies/Sport/Action/>
+PREFIX spsocrole: <http://cv.iptc.org/newscodes/spsocrole/>
+
+SELECT ?playerName ?time ?teamName
+WHERE { 
+    ?action rdf:type sport:Action ;
+    		spact:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
+    		spact:minutes-elapsed ?time ;
+            sport:actionParticipation ?playerperf .
+    ?playerperf rdf:type sport:IndividualParticipation ;
+    			spact:role  spsocrole:scorer ;
+                sport:participationBy ?player .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName . 
+    ?teampartic sport:membershipBy ?player ;
+    		sport:membershipOf ?team .
+    ?team 	rdfs:label ?teamName 
+    			
+} ORDER BY ?time
