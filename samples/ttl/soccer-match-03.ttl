@@ -408,9 +408,8 @@
         sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Competition/l.premierleague.com>
-        a            sport:Competition ;
-        rdfs:label   "English Premier League" ;
-        sport:sport  20001065 .
+        a           sport:Competition ;
+        rdfs:label  "English Premier League" .
 
 <http://example.com/Athlete/p.154043>
         a           sport:Athlete ;
@@ -547,7 +546,8 @@
 <http://example.com/Event/l.premierleague.com-2020-e.2128607>
         a                         sport:Event ;
         rdfs:label                "Event l.premierleague.com-2020-e.2128607" ;
-        sport:competition         <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> , <http://example.com/Competition/l.premierleague.com-2020> ;
+        sport:competition         <http://example.com/Competition/l.premierleague.com.2020> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33> ;
         sport:eventOutcomeType    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:eventParticipation  <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.154043> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.210407> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-o.thefa.com-t.2> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.61600> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.230046> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.108156> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.108053> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.123354> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.49944> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.164011> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.38716> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.88894> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.47390> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.37339> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.178301> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.199798> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-o.thefa.com-t.45> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.50093> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.21205> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.122806> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.98980> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.213345> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.146426> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.169359> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.101394> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.184704> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.193488> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.179830> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.149484> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.59940> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-PO40959> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.232787> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.481624> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.176420> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.180294> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.110504> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.101982> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.50229> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.171975> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.221239> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.232653> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.49440> , <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.216616> ;
         sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
@@ -669,11 +669,6 @@
         rdfs:label             "Neil Taylor participation in Event l.premierleague.com-2020-e.2128607" ;
         sport:participationBy  <http://example.com/Athlete/p.47390> ;
         sport:playerStatus     spplayerstatus:bench .
-
-<http://example.com/Competition/l.premierleague.com-2020>
-        a                        sport:Competition ;
-        rdfs:label               "English Premier League 2020" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.49440>
         a                      sport:IndividualParticipation ;
@@ -937,6 +932,11 @@
         sport:participationBy          <http://example.com/Athlete/p.108053> ;
         sport:playerStatus             spplayerstatus:starter .
 
+<http://example.com/Competition/l.premierleague.com.2020>
+        a                 sport:Competition ;
+        rdfs:label        "English Premier League 2020" ;
+        sport:instanceOf  <http://example.com/Competition/l.premierleague.com> .
+
 <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.230046>
         a                               sport:IndividualParticipation ;
         rdfs:label                      "Douglas Luiz participation in Event l.premierleague.com-2020-e.2128607" ;
@@ -1049,12 +1049,6 @@
         spact:substitution-reason     "Tactical" ;
         sport:event                   <http://example.com/Event/l.premierleague.com-2020-e.2128607> .
 
-<http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.49944>
-        a                      sport:IndividualParticipation ;
-        rdfs:label             "Jake Livermore participation in Event l.premierleague.com-2020-e.2128607" ;
-        sport:participationBy  <http://example.com/Athlete/p.49944> ;
-        sport:playerStatus     spplayerstatus:bench .
-
 <http://example.com/Athlete/p.184704>
         a           sport:Athlete ;
         rdfs:label  "Marvelous Nakamba" .
@@ -1067,10 +1061,11 @@
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         sport:uniformNumber    "7" .
 
-<http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33>
-        a                        sport:CompetitionPhase ;
-        rdfs:label               "Week 33" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com-2020> .
+<http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.49944>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Jake Livermore participation in Event l.premierleague.com-2020-e.2128607" ;
+        sport:participationBy  <http://example.com/Athlete/p.49944> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/l.premierleague.com-2020-e.2128607-p.154043>
         a                              sport:IndividualParticipation ;
@@ -1169,6 +1164,11 @@
         rdfs:label             "David Button participation in Event l.premierleague.com-2020-e.2128607" ;
         sport:participationBy  <http://example.com/Athlete/p.50093> ;
         sport:playerStatus     spplayerstatus:bench .
+
+<http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33>
+        a                  sport:CompetitionPhase ;
+        rdfs:label         "Week 33" ;
+        sport:competition  <http://example.com/Competition/l.premierleague.com.2020> .
 
 <http://example.com/Membership/o.thefa.com-t.2-p.47390>
         a                      sport:IndividualMembership ;

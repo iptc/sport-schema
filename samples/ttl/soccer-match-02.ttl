@@ -235,7 +235,8 @@
 <http://example.com/Event/e.2128610>
         a                         sport:Event ;
         rdfs:label                "Event e.2128610" ;
-        sport:competition         <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> , <http://example.com/Competition/l.premierleague.com-2020> ;
+        sport:competition         <http://example.com/Competition/l.premierleague.com.2020> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33> ;
         sport:eventOutcomeType    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:eventParticipation  <http://example.com/Participation/e.2128610-p.66975> , <http://example.com/Participation/e.2128610-p.166989> , <http://example.com/Participation/e.2128610-p.231747> , <http://example.com/Participation/e.2128610-p.166477> , <http://example.com/Participation/e.2128610-p.111931> , <http://example.com/Participation/e.2128610-p.50472> , <http://example.com/Participation/e.2128610-p.74230> , <http://example.com/Participation/e.2128610-p.105666> , <http://example.com/Participation/e.2128610-p.60252> , <http://example.com/Participation/e.2128610-p.82403> , <http://example.com/Participation/e.2128610-p.155569> , <http://example.com/Participation/e.2128610-p.173515> , <http://example.com/Participation/e.2128610-p.101668> , <http://example.com/Participation/e.2128610-p.57328> , <http://example.com/Participation/e.2128610-p.244619> , <http://example.com/Participation/e.2128610-t.13> , <http://example.com/Participation/e.2128610-p.86417> , <http://example.com/Participation/e.2128610-p.55494> , <http://example.com/Participation/e.2128610-p.55037> , <http://example.com/Participation/e.2128610-p.19188> , <http://example.com/Participation/e.2128610-PO41049> , <http://example.com/Participation/e.2128610-p.232413> , <http://example.com/Participation/e.2128610-p.54861> , <http://example.com/Participation/e.2128610-p.168580> , <http://example.com/Participation/e.2128610-p.106837> , <http://example.com/Participation/e.2128610-p.173954> , <http://example.com/Participation/e.2128610-p.17745> , <http://example.com/Participation/e.2128610-p.172780> , <http://example.com/Participation/e.2128610-p.40836> , <http://example.com/Participation/e.2128610-p.95463> , <http://example.com/Participation/e.2128610-t.31> , <http://example.com/Participation/e.2128610-p.86881> , <http://example.com/Participation/e.2128610-p.203341> , <http://example.com/Participation/e.2128610-p.94245> , <http://example.com/Participation/e.2128610-p.228798> , <http://example.com/Participation/e.2128610-p.80146> , <http://example.com/Participation/e.2128610-p.444463> , <http://example.com/Participation/e.2128610-p.218031> , <http://example.com/Participation/e.2128610-p.197469> , <http://example.com/Participation/e.2128610-p.244723> , <http://example.com/Participation/e.2128610-p.58786> , <http://example.com/Participation/e.2128610-p.51938> , <http://example.com/Participation/e.2128610-p.37642> ;
         sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
@@ -718,9 +719,8 @@
         sport:playerStatus              spplayerstatus:starter .
 
 <http://example.com/Competition/l.premierleague.com>
-        a            sport:Competition ;
-        rdfs:label   "English Premier League" ;
-        sport:sport  20001065 .
+        a           sport:Competition ;
+        rdfs:label  "English Premier League" .
 
 <http://example.com/Action/e.2128610-a.2291891243>
         a                             sport:Action ;
@@ -872,6 +872,11 @@
         sport:participationBy          <http://example.com/Team/t.31> ;
         sport:score                    "1" .
 
+<http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33>
+        a                  sport:CompetitionPhase ;
+        rdfs:label         "Week 33" ;
+        sport:competition  <http://example.com/Competition/l.premierleague.com.2020> .
+
 <http://example.com/Participation/e.2128610-p.55037>
         a                               sport:IndividualParticipation ;
         rdfs:label                      "Cheikhou Kouyaté participation in Event e.2128610" ;
@@ -908,11 +913,6 @@
         sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         sport:uniformNumber    "11" .
-
-<http://example.com/Competition/l.premierleague.com-2020>
-        a                        sport:Competition ;
-        rdfs:label               "English Premier League 2020" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/Associate/man1280>
         a           sport:Associate ;
@@ -1112,6 +1112,11 @@
         sport:membershipOf     <http://example.com/Team/t.13> ;
         sport:positionRegular  <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         sport:uniformNumber    "20" .
+
+<http://example.com/Competition/l.premierleague.com.2020>
+        a                 sport:Competition ;
+        rdfs:label        "English Premier League 2020" ;
+        sport:instanceOf  <http://example.com/Competition/l.premierleague.com> .
 
 <http://example.com/Membership/t.13-p.173515>
         a                      sport:IndividualMembership ;
@@ -1327,11 +1332,6 @@
 <http://example.com/Athlete/p.166477>
         a           sport:Athlete ;
         rdfs:label  "Timothy Castagne" .
-
-<http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33>
-        a                        sport:CompetitionPhase ;
-        rdfs:label               "Week 33" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com-2020> .
 
 <http://example.com/Membership/t.13-p.228798>
         a                      sport:IndividualMembership ;

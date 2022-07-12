@@ -5522,6 +5522,11 @@
         spact:role             spsocrole:passer ;
         sport:participationBy  <http://example.com/Athlete/PO60551> .
 
+<http://example.com/CompetitionPhase/l.premierleague.com.2020-week-7>
+        a                  sport:CompetitionPhase ;
+        rdfs:label         "Week 7" ;
+        sport:competition  <http://example.com/Competition/l.premierleague.com.2020> .
+
 <http://example.com/Action/E755363-a.1575185377>
         a                          sport:Action ;
         rdfs:label                 "Action a.1575185377 on event E755363" ;
@@ -18209,9 +18214,8 @@
         sport:participationBy  <http://example.com/Athlete/PO41823> .
 
 <http://example.com/Competition/l.premierleague.com>
-        a            sport:Competition ;
-        rdfs:label   "English Barclays Premier League" ;
-        sport:sport  20001065 .
+        a           sport:Competition ;
+        rdfs:label  "English Premier League" .
 
 <http://example.com/Participation/E755363-a.2039630977-PO41823>
         a                      sport:IndividualParticipation ;
@@ -25618,6 +25622,11 @@
         sport:actionParticipation  <http://example.com/Participation/E755363-a.675790250-PO54861> ;
         sport:event                <http://example.com/Event/E755363> .
 
+<http://example.com/Competition/l.premierleague.com.2020>
+        a                 sport:Competition ;
+        rdfs:label        "English Premier League 2020" ;
+        sport:instanceOf  <http://example.com/Competition/l.premierleague.com> .
+
 <http://example.com/Action/E755363-a.1657376029>
         a                          sport:Action ;
         rdfs:label                 "Action a.1657376029 on event E755363" ;
@@ -26424,11 +26433,6 @@
         rdfs:label             "PO43250 participation in action a.1682056137 in event E755363" ;
         spact:role             spsocrole:giveaway ;
         sport:participationBy  <http://example.com/Athlete/PO43250> .
-
-<http://example.com/CompetitionPhase/l.premierleague.com-2014-week-7>
-        a                        sport:CompetitionPhase ;
-        rdfs:label               "Week 7" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com-2014> .
 
 <http://example.com/Action/E755363-a.1017512859>
         a                          sport:Action ;
@@ -35302,11 +35306,6 @@
         spact:role             spsocrole:passer ;
         sport:participationBy  <http://example.com/Athlete/PO41823> .
 
-<http://example.com/Competition/l.premierleague.com-2014>
-        a                        sport:Competition ;
-        rdfs:label               "English Barclays Premier League 2014" ;
-        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> .
-
 <http://example.com/Participation/E755363-a.732774834-PO20664>
         a                      sport:IndividualParticipation ;
         rdfs:label             "PO20664 participation in action a.732774834 in event E755363" ;
@@ -36807,7 +36806,8 @@
         a                         sport:Event ;
         rdfs:label                "Event E755363" ;
         sport:attendance          "32964" ;
-        sport:competition         <http://example.com/Competition/l.premierleague.com-2014> , <http://example.com/CompetitionPhase/l.premierleague.com-2014-week-7> ;
+        sport:competition         <http://example.com/Competition/l.premierleague.com.2020> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/l.premierleague.com.2020-week-7> ;
         sport:eventOutcomeType    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
         sport:eventParticipation  <http://example.com/Participation/E755363-PO42593> , <http://example.com/Participation/E755363-PO20664> , <http://example.com/Participation/E755363-PO15749> , <http://example.com/Participation/E755363-PO20658> , <http://example.com/Participation/E755363-PO52477> , <http://example.com/Participation/E755363-PO114283> , <http://example.com/Participation/E755363-PO17476> , <http://example.com/Participation/E755363-PO1822> , <http://example.com/Participation/E755363-T2> , <http://example.com/Participation/E755363-PO74297> , <http://example.com/Participation/E755363-PO54861> , <http://example.com/Participation/E755363-T12> , <http://example.com/Participation/E755363-PO17740> , <http://example.com/Participation/E755363-PO41705> , <http://example.com/Participation/E755363-PO16854> , <http://example.com/Participation/E755363-PO15405> , <http://example.com/Participation/E755363-PO50442> , <http://example.com/Participation/E755363-PO43250> , <http://example.com/Participation/E755363-PO27789> , <http://example.com/Participation/E755363-PO15157> , <http://example.com/Participation/E755363-PO58845> , <http://example.com/Participation/E755363-PO42824> , <http://example.com/Participation/E755363-PO10514> , <http://example.com/Participation/E755363-PO14664> , <http://example.com/Participation/E755363-PO20310> , <http://example.com/Participation/E755363-PO37572> , <http://example.com/Participation/E755363-PO57112> , <http://example.com/Participation/E755363-PO37748> , <http://example.com/Participation/E755363-PO60551> , <http://example.com/Participation/E755363-PO52538> , <http://example.com/Participation/E755363-PO15312> , <http://example.com/Participation/E755363-PO44354> , <http://example.com/Participation/E755363-PO15073> , <http://example.com/Participation/E755363-PO80979> , <http://example.com/Participation/E755363-PO10738> , <http://example.com/Participation/E755363-PO41823> , <http://example.com/Participation/E755363-PO42544> , <http://example.com/Participation/E755363-PO2051> , <http://example.com/Participation/E755363-PO18737> ;
         sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;

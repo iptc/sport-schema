@@ -60,6 +60,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:when test="//newsml:tournament/newsml:tournament-metadata/@key">
                 <xsl:value-of select="substring-after(//newsml:tournament/newsml:tournament-metadata/@key,':')"/>
             </xsl:when>
+            <xsl:when test="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:competition']">
+                <xsl:value-of select="$competition-key"/>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="concat($competition-key,'-',/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:season']/@literal)"/>
             </xsl:otherwise>
@@ -84,33 +87,42 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:when test="$sport-code = ('20000849','20000851','20000965','20000823')">
                 <xsl:value-of select="$season-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
                 <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="concat(/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']/newsml:name,' ',/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:season']/@literal)"/>" .
-                <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'parentCompetition','»')"/>~<xsl:value-of select="$competition-id"/> .
+                <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'instanceOf','»')"/>~<xsl:value-of select="$competition-id"/> .
                 <xsl:value-of select="$competition-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
                 <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']/newsml:name"/>" .
                 <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'sport','»')"/>~<xsl:value-of select="$sport-code"/> .
             </xsl:when>
-            <xsl:when test="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:competition']">
-                <xsl:for-each select="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:competition']">
+            <xsl:when test="/newsml:newsItem/newsml:contentMeta/newsml:subject[contains(@type,'competition')]">
+                <xsl:for-each select="/newsml:newsItem/newsml:contentMeta/newsml:subject[contains(@type,'competition')]">
                     <xsl:variable name="competition-id" select="concat('«',$sport-vendor-ns,'Competition/',substring-after(@qcode,':'),'»')"/>
-                    <xsl:variable name="parent-competition-key" select="newsml:broader/@qcode"/>
+                    <xsl:variable name="parent-competition-key" select="newsml:broader[@rel='comprel:child']/@qcode"/>
+                    <xsl:variable name="instance-competition-key" select="newsml:broader[@rel='comprel:instance']/@qcode"/>
+                    
+                    <!-- info about the comp itself -->
                     <xsl:value-of select="$competition-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
                     <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="newsml:name"/>" .
-                    <xsl:if test="newsml:broader and //newsml:subject[@qcode=$parent-competition-key]/@type='spct:competition'">
-                        <xsl:variable name="parent-competition-id" select="concat('«',$sport-vendor-ns,'Competition/',substring-after(newsml:broader/@qcode,':'),'»')"/>
+
+                    <!-- info about parent competitions -->
+                    <xsl:if test="newsml:broader[@rel='comprel:child'] and contains(//newsml:subject[@qcode=$parent-competition-key]/@type,'competition')">
+                        <xsl:variable name="parent-competition-id" select="concat('«',$sport-vendor-ns,'Competition/',substring-after(newsml:broader[@rel='comprel:child']/@qcode,':'),'»')"/>
                         <xsl:value-of select="$competition-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'parentCompetition','»')"/> <xsl:value-of select="$parent-competition-id"/> .
                     </xsl:if>
+
+                    <!-- info about instanceOf -->
+                    <xsl:if test="newsml:broader[@rel='comprel:instance'] and contains(//newsml:subject[@qcode=$instance-competition-key]/@type,'competition')">
+                        <xsl:variable name="parent-competition-id" select="concat('«',$sport-vendor-ns,'Competition/',substring-after(newsml:broader[@rel='comprel:instance']/@qcode,':'),'»')"/>
+                        <xsl:value-of select="$competition-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'instanceOf','»')"/> <xsl:value-of select="$parent-competition-id"/> .
+                    </xsl:if>
+
+                    <!-- info about broader governing body -->
                     <xsl:if test="newsml:broader and //newsml:subject[@qcode=$parent-competition-key]/@type='spct:governing-body'">
                         <xsl:variable name="governing-body-id" select="concat('«',$sport-vendor-ns,'GoverningBody/',substring-after(newsml:broader/@qcode,':'),'»')"/>
                         <xsl:value-of select="$competition-id"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'governingBody','»')"/> <xsl:value-of select="$governing-body-id"/> .
                         <xsl:value-of select="$governing-body-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'GoverningBody','»')"/> .
                         <xsl:value-of select="$governing-body-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="//newsml:subject[@qcode=$parent-competition-key]/newsml:name"/>" .
                     </xsl:if>
+
                 </xsl:for-each>
-                <xsl:if test="//newsml:subject/@type='spct:governing-body'">
-                    <xsl:variable name="governing-body-id" select="concat('«',$sport-vendor-ns,'GoverningBody/',substring-after(//newsml:subject[@type='spct:governing-body']/@qcode,':'),'»')"/>
-                    <xsl:value-of select="$governing-body-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'GoverningBody','»')"/> .
-                    <xsl:value-of select="$governing-body-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="//newsml:subject[@type='spct:governing-body']/newsml:name"/>" .
-                </xsl:if>
             </xsl:when>
             <xsl:when test="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']">
                 <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$rdf-ns,'type','»')"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
@@ -210,9 +222,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 </xsl:choose>
             </xsl:variable>
 
-            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«', $sport-ontology-ns, 'competition', '»')"/>~<xsl:value-of select="$phase-id"/> .
+            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«', $sport-ontology-ns, 'competitionPhase', '»')"/>~<xsl:value-of select="$phase-id"/> .
             <xsl:value-of select="$phase-id"/>~<xsl:value-of select="concat('«',$rdf-ns,'type','»')"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'CompetitionPhase','»')"/> .
-            <xsl:value-of select="$phase-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'parentCompetition','»')"/>~<xsl:value-of select="$competition-id"/> .
+            <xsl:value-of select="$phase-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competition','»')"/>~<xsl:value-of select="$competition-id"/> .
 
             <xsl:choose>
                 <xsl:when test="parent::newsml:tournament-part/newsml:tournament-part-metadata//newsml:name">
@@ -300,10 +312,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="newsml:event-metadata-soccer/@week and not(ancestor::newsml:tournament-part)">
             <xsl:variable name="season-week" select="newsml:event-metadata-soccer/@week"/>
             <xsl:variable name="competition-phase-id" select="concat('«', $sport-vendor-ns, 'CompetitionPhase/', $season-key, '-week-', $season-week, '»')"/>
-            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competition','»')"/>~<xsl:value-of select="$competition-phase-id" /> .
+            <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competitionPhase','»')"/>~<xsl:value-of select="$competition-phase-id" /> .
             <xsl:value-of select="$competition-phase-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'CompetitionPhase','»')"/> .
             <xsl:value-of select="$competition-phase-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"Week <xsl:value-of select="$season-week"/>" .
-            <xsl:value-of select="$competition-phase-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'parentCompetition','»')"/>~<xsl:value-of select="$season-id"/> .
+            <xsl:value-of select="$competition-phase-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competition','»')"/>~<xsl:value-of select="$season-id"/> .
         </xsl:if>
 
         <xsl:apply-templates>
@@ -352,6 +364,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- declare sports season type -->
         <xsl:choose>
             <xsl:when test="//newsml:tournament"/>
+            <xsl:when test="/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:competition']"/>
             <xsl:otherwise>
                 <xsl:value-of select="$season-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'Competition','»')"/> .
                 <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="concat(/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:league']/newsml:name,' ',/newsml:newsItem/newsml:contentMeta/newsml:subject[@type='spct:season']/@literal)"/>" .

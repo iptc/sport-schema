@@ -35,7 +35,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100>
         a                         sport:Event ;
         rdfs:label                "Heat 1" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173> ;
         sport:startDateTime       "2021-08-01T20:26:00+09:00"^^xsd:dateTime .
 
@@ -78,7 +78,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000200>
         a                         sport:Event ;
         rdfs:label                "Heat 2" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1321373> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1365661> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1420792> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1395537> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1432372> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1449177> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1477726> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000200-PI1349279> ;
         sport:startDateTime       "2021-07-31T09:58:00+09:00"^^xsd:dateTime .
 
@@ -125,7 +125,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000100>
         a                         sport:Event ;
         rdfs:label                "Heat 1" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1476269> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1402332> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1288448> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1458024> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1421671> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1481536> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1326672> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000100-PI1477734> ;
         sport:startDateTime       "2021-07-31T09:50:00+09:00"^^xsd:dateTime .
 
@@ -418,8 +418,8 @@
 <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final>
         a                           sport:CompetitionPhase ;
         rdfs:label                  "Final" ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/final> ;
-        sport:parentCompetition     <http://example.com/Competition/OLYS2020-ATHM800M> .
+        sport:competition           <http://example.com/Competition/OLYS2020-ATHM800M> ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/final> .
 
 <http://example.com/Athlete/PI1307604>
         a                  sport:Athlete ;
@@ -428,9 +428,9 @@
         sport:nationality  "MEX" .
 
 <http://example.com/Competition/OLYS2020>
-        a                        sport:Competition ;
-        rdfs:label               "2020 Summer Olympics" ;
-        sport:parentCompetition  <http://example.com/Competition/OLYS> .
+        a                 sport:Competition ;
+        rdfs:label        "2020 Tokyo Summer Olympics" ;
+        sport:instanceOf  <http://example.com/Competition/OLYS> .
 
 <http://example.com/Athlete/PI1365661>
         a                  sport:Athlete ;
@@ -538,7 +538,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-FNL-000100>
         a                         sport:Event ;
         rdfs:label                "Final" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-final> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1453126> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324805> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1420792> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402332> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1349085> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1324450> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1402343> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1481536> , <http://example.com/Participation/OLYS2020-ATHM800M-FNL-000100-PI1395537> ;
         sport:startDateTime       "2021-08-04T21:05:00+09:00"^^xsd:dateTime .
 
@@ -594,8 +594,8 @@
 <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1>
         a                           sport:CompetitionPhase ;
         rdfs:label                  "Round 1" ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round> ;
-        sport:parentCompetition     <http://example.com/Competition/OLYS2020-ATHM800M> .
+        sport:competition           <http://example.com/Competition/OLYS2020-ATHM800M> ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round> .
 
 <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450>
         a                      sport:IndividualParticipation ;
@@ -798,8 +798,8 @@
 <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final>
         a                           sport:CompetitionPhase ;
         rdfs:label                  "Semi-Final" ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> ;
-        sport:parentCompetition     <http://example.com/Competition/OLYS2020-ATHM800M> .
+        sport:competition           <http://example.com/Competition/OLYS2020-ATHM800M> ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> .
 
 <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208>
         a                      sport:IndividualParticipation ;
@@ -996,7 +996,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000600>
         a                         sport:Event ;
         rdfs:label                "Heat 6" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1402343> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1421733> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1285686> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1377716> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1324441> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1283519> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1453173> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000600-PI1328854> ;
         sport:startDateTime       "2021-07-31T10:30:00+09:00"^^xsd:dateTime .
 
@@ -1037,7 +1037,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000500>
         a                         sport:Event ;
         rdfs:label                "Heat 5" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1324450> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1395498> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1327979> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1285680> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1393393> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1307604> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1468788> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000500-PI1281464> ;
         sport:startDateTime       "2021-07-31T10:22:00+09:00"^^xsd:dateTime .
 
@@ -1062,7 +1062,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-SFNL000300>
         a                         sport:Event ;
         rdfs:label                "Heat 3" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1420792> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1477734> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1391267> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1324805> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1402332> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1458024> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1481478> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000300-PI1425685> ;
         sport:startDateTime       "2021-08-01T20:45:00+09:00"^^xsd:dateTime .
 
@@ -1074,7 +1074,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000400>
         a                         sport:Event ;
         rdfs:label                "Heat 4" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1349085> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1324805> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1391267> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1402372> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1285682> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1425685> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1355069> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000400-PI1481478> ;
         sport:startDateTime       "2021-07-31T10:14:00+09:00"^^xsd:dateTime .
 
@@ -1099,7 +1099,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-SFNL000200>
         a                         sport:Event ;
         rdfs:label                "Heat 2" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-semi-final> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1349085> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1477832> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1432372> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1395537> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1481536> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1453126> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1324441> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000200-PI1402372> ;
         sport:startDateTime       "2021-08-01T20:35:00+09:00"^^xsd:dateTime .
 
@@ -1133,7 +1133,7 @@
 <http://example.com/Event/OLYS2020-ATHM800M-RND1000300>
         a                         sport:Event ;
         rdfs:label                "Heat 3" ;
-        sport:competition         <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-round-1> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1553500> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1781692> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1477832> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1432531> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1349208> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1373936> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1453126> , <http://example.com/Participation/OLYS2020-ATHM800M-RND1000300-PI1485432> ;
         sport:startDateTime       "2021-07-31T10:06:00+09:00"^^xsd:dateTime .
 

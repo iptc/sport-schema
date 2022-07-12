@@ -311,22 +311,22 @@
   }, {
     "@id" : "http://example.com/Competition/l.premierleague.com",
     "@type" : "sport:Competition",
-    "sport:sport" : 20001065,
     "label" : "English Premier League"
   }, {
-    "@id" : "http://example.com/Competition/l.premierleague.com-2020",
+    "@id" : "http://example.com/Competition/l.premierleague.com.2020",
     "@type" : "sport:Competition",
-    "parentCompetition" : "http://example.com/Competition/l.premierleague.com",
+    "instanceOf" : "http://example.com/Competition/l.premierleague.com",
     "label" : "English Premier League 2020"
   }, {
-    "@id" : "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
+    "@id" : "http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33",
     "@type" : "sport:CompetitionPhase",
-    "parentCompetition" : "http://example.com/Competition/l.premierleague.com-2020",
+    "competition" : "http://example.com/Competition/l.premierleague.com.2020",
     "label" : "Week 33"
   }, {
     "@id" : "http://example.com/Event/e.2128610",
     "@type" : "sport:Event",
-    "competition" : [ "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33", "http://example.com/Competition/l.premierleague.com-2020" ],
+    "competition" : "http://example.com/Competition/l.premierleague.com.2020",
+    "competitionPhase" : "http://example.com/CompetitionPhase/l.premierleague.com.2020-week-33",
     "eventOutcomeType" : "http://cv.iptc.org/newscodes/speventoutcometype/regular",
     "eventParticipation" : [ "http://example.com/Participation/e.2128610-p.66975", "http://example.com/Participation/e.2128610-p.166989", "http://example.com/Participation/e.2128610-p.231747", "http://example.com/Participation/e.2128610-p.166477", "http://example.com/Participation/e.2128610-p.111931", "http://example.com/Participation/e.2128610-p.50472", "http://example.com/Participation/e.2128610-p.74230", "http://example.com/Participation/e.2128610-p.105666", "http://example.com/Participation/e.2128610-p.82403", "http://example.com/Participation/e.2128610-p.155569", "http://example.com/Participation/e.2128610-p.60252", "http://example.com/Participation/e.2128610-p.173515", "http://example.com/Participation/e.2128610-p.101668", "http://example.com/Participation/e.2128610-p.57328", "http://example.com/Participation/e.2128610-p.244619", "http://example.com/Participation/e.2128610-t.13", "http://example.com/Participation/e.2128610-p.86417", "http://example.com/Participation/e.2128610-p.55494", "http://example.com/Participation/e.2128610-p.55037", "http://example.com/Participation/e.2128610-p.19188", "http://example.com/Participation/e.2128610-PO41049", "http://example.com/Participation/e.2128610-p.232413", "http://example.com/Participation/e.2128610-p.54861", "http://example.com/Participation/e.2128610-p.168580", "http://example.com/Participation/e.2128610-p.106837", "http://example.com/Participation/e.2128610-p.173954", "http://example.com/Participation/e.2128610-p.17745", "http://example.com/Participation/e.2128610-p.172780", "http://example.com/Participation/e.2128610-p.40836", "http://example.com/Participation/e.2128610-p.95463", "http://example.com/Participation/e.2128610-t.31", "http://example.com/Participation/e.2128610-p.86881", "http://example.com/Participation/e.2128610-p.203341", "http://example.com/Participation/e.2128610-p.94245", "http://example.com/Participation/e.2128610-p.228798", "http://example.com/Participation/e.2128610-p.80146", "http://example.com/Participation/e.2128610-p.444463", "http://example.com/Participation/e.2128610-p.218031", "http://example.com/Participation/e.2128610-p.197469", "http://example.com/Participation/e.2128610-p.244723", "http://example.com/Participation/e.2128610-p.58786", "http://example.com/Participation/e.2128610-p.51938", "http://example.com/Participation/e.2128610-p.37642" ],
     "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
@@ -1646,6 +1646,14 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/eventParticipation",
       "@type" : "@id"
     },
+    "competitionPhase" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/competitionPhase",
+      "@type" : "@id"
+    },
+    "competition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/competition",
+      "@type" : "@id"
+    },
     "startDateTime" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/startDateTime",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -1656,10 +1664,6 @@
     },
     "eventOutcomeType" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/eventOutcomeType",
-      "@type" : "@id"
-    },
-    "competition" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/competition",
       "@type" : "@id"
     },
     "eventStatus" : {
@@ -1706,7 +1710,6 @@
     "goals-head" : {
       "@id" : "http://cv.iptc.org/newscodes/spsocstat/goals-head"
     },
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "person-original-idref" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/person-original-idref"
     },
@@ -1756,16 +1759,16 @@
     "score-opposing" : {
       "@id" : "http://cv.iptc.org/newscodes/spstat/score-opposing"
     },
-    "parentCompetition" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
-      "@type" : "@id"
-    },
     "score-attempt-type" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/Action/score-attempt-type",
       "@type" : "@id"
     },
     "membership" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/membership",
+      "@type" : "@id"
+    },
+    "instanceOf" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/instanceOf",
       "@type" : "@id"
     },
     "saves" : {
@@ -1804,6 +1807,7 @@
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
     "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
     "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/",
     "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"

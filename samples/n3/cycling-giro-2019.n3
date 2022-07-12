@@ -1,20 +1,27 @@
 <http://example.com/Competition/UCIWT><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/UCIWT> <http://www.w3.org/2000/01/rdf-schema#label> "UCI World Tour" .
+
+                    
                     <http://example.com/Competition/UCIWT><http://www.iptc.org/ontologies/Sport/governingBody><http://example.com/GoverningBody/UCI> .
                         <http://example.com/GoverningBody/UCI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/GoverningBody> .
                         <http://example.com/GoverningBody/UCI> <http://www.w3.org/2000/01/rdf-schema#label> "Union Cycliste Internationale" .
                     <http://example.com/Competition/UCIWT2019><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/UCIWT2019> <http://www.w3.org/2000/01/rdf-schema#label> "UCI World Tour 2019" .
-                    <http://example.com/Competition/UCIWT2019><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/UCIWT> .
+
+                    
+                    <http://example.com/Competition/UCIWT2019><http://www.iptc.org/ontologies/Sport/instanceOf><http://example.com/Competition/UCIWT> .
                     <http://example.com/Competition/GIRO><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/GIRO> <http://www.w3.org/2000/01/rdf-schema#label> "Giro d'Italia" .
-                    <http://example.com/Competition/GIRO><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/UCIWT2019> .
+
+                    
+                    <http://example.com/Competition/GIRO><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/UCIWT> .
                     <http://example.com/Competition/GIRO2019><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
                     <http://example.com/Competition/GIRO2019> <http://www.w3.org/2000/01/rdf-schema#label> "Giro d'Italia 2019" .
-                    <http://example.com/Competition/GIRO2019><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/GIRO> .
-                    <http://example.com/GoverningBody/UCI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/GoverningBody> .
-                    <http://example.com/GoverningBody/UCI> <http://www.w3.org/2000/01/rdf-schema#label> "Union Cycliste Internationale" .
-                <http://example.com/Athlete/P73453> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
+
+                    
+                    <http://example.com/Competition/GIRO2019><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/UCIWT2019> .
+                    <http://example.com/Competition/GIRO2019><http://www.iptc.org/ontologies/Sport/instanceOf><http://example.com/Competition/GIRO> .
+                    <http://example.com/Athlete/P73453> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/Athlete> .
 
         
         <http://example.com/Athlete/P73453> <http://www.w3.org/2000/01/rdf-schema#label> "Richard Carapaz" .
@@ -159,9 +166,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73966> <http://www.w3.org/2000/01/rdf-schema#label> "Bologna (ITT) - 8km" .
-          <http://example.com/Event/GIRO2019-e.73966> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-1> .
+          <http://example.com/Event/GIRO2019-e.73966> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-1> .
             <http://example.com/CompetitionPhase/GIRO2019-round-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-1> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-1> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-1> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 1" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-1> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -513,9 +520,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73967> <http://www.w3.org/2000/01/rdf-schema#label> "Bologna - Fucecchio - 205km" .
-          <http://example.com/Event/GIRO2019-e.73967> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-2> .
+          <http://example.com/Event/GIRO2019-e.73967> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-2> .
             <http://example.com/CompetitionPhase/GIRO2019-round-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-2> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-2> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-2> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 2" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-2> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -867,9 +874,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73968> <http://www.w3.org/2000/01/rdf-schema#label> "Vinci - Orbetello - 220km" .
-          <http://example.com/Event/GIRO2019-e.73968> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-3> .
+          <http://example.com/Event/GIRO2019-e.73968> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-3> .
             <http://example.com/CompetitionPhase/GIRO2019-round-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-3> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-3> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-3> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 3" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-3> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -1221,9 +1228,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73969> <http://www.w3.org/2000/01/rdf-schema#label> "Orbetello - Frascati - 235km" .
-          <http://example.com/Event/GIRO2019-e.73969> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-4> .
+          <http://example.com/Event/GIRO2019-e.73969> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-4> .
             <http://example.com/CompetitionPhase/GIRO2019-round-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-4> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-4> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-4> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 4" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-4> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -1575,9 +1582,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73970> <http://www.w3.org/2000/01/rdf-schema#label> "Frascati - Terracina - 140km" .
-          <http://example.com/Event/GIRO2019-e.73970> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-5> .
+          <http://example.com/Event/GIRO2019-e.73970> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-5> .
             <http://example.com/CompetitionPhase/GIRO2019-round-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-5> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-5> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-5> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 5" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-5> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -1929,9 +1936,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73971> <http://www.w3.org/2000/01/rdf-schema#label> "Cassino - San Giovanni Rotondo - 238km" .
-          <http://example.com/Event/GIRO2019-e.73971> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-6> .
+          <http://example.com/Event/GIRO2019-e.73971> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-6> .
             <http://example.com/CompetitionPhase/GIRO2019-round-6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-6> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-6> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-6> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 6" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-6> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -2283,9 +2290,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73972> <http://www.w3.org/2000/01/rdf-schema#label> "Vasto - l'Aquila - 185km" .
-          <http://example.com/Event/GIRO2019-e.73972> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-7> .
+          <http://example.com/Event/GIRO2019-e.73972> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-7> .
             <http://example.com/CompetitionPhase/GIRO2019-round-7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-7> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-7> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-7> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 7" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-7> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -2637,9 +2644,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73973> <http://www.w3.org/2000/01/rdf-schema#label> "Tortoreto Lido - Pesaro - 239km" .
-          <http://example.com/Event/GIRO2019-e.73973> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-8> .
+          <http://example.com/Event/GIRO2019-e.73973> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-8> .
             <http://example.com/CompetitionPhase/GIRO2019-round-8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-8> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-8> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-8> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 8" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-8> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -2991,9 +2998,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73974> <http://www.w3.org/2000/01/rdf-schema#label> "Riccione - San Marino (ITT) - 34.8km" .
-          <http://example.com/Event/GIRO2019-e.73974> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-9> .
+          <http://example.com/Event/GIRO2019-e.73974> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-9> .
             <http://example.com/CompetitionPhase/GIRO2019-round-9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-9> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-9> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-9> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 9" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-9> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -3345,9 +3352,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73975> <http://www.w3.org/2000/01/rdf-schema#label> "Ravenna - Modena - 145km" .
-          <http://example.com/Event/GIRO2019-e.73975> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-10> .
+          <http://example.com/Event/GIRO2019-e.73975> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-10> .
             <http://example.com/CompetitionPhase/GIRO2019-round-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-10> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-10> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-10> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 10" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-10> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -3699,9 +3706,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73976> <http://www.w3.org/2000/01/rdf-schema#label> "Carpi - Novi Ligure - 221km" .
-          <http://example.com/Event/GIRO2019-e.73976> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-11> .
+          <http://example.com/Event/GIRO2019-e.73976> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-11> .
             <http://example.com/CompetitionPhase/GIRO2019-round-11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-11> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-11> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-11> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 11" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-11> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -4053,9 +4060,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73977> <http://www.w3.org/2000/01/rdf-schema#label> "Cuneo - Pinerolo - 156km" .
-          <http://example.com/Event/GIRO2019-e.73977> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-12> .
+          <http://example.com/Event/GIRO2019-e.73977> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-12> .
             <http://example.com/CompetitionPhase/GIRO2019-round-12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-12> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-12> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-12> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 12" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-12> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -4407,9 +4414,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73978> <http://www.w3.org/2000/01/rdf-schema#label> "Pinerolo - Ceresole Reale (Lago Serru) - 196km" .
-          <http://example.com/Event/GIRO2019-e.73978> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-13> .
+          <http://example.com/Event/GIRO2019-e.73978> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-13> .
             <http://example.com/CompetitionPhase/GIRO2019-round-13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-13> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-13> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-13> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 13" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-13> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -4761,9 +4768,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73979> <http://www.w3.org/2000/01/rdf-schema#label> "Saint-Vincent - Courmayeur (Skyway Monte Bianco) - 131km" .
-          <http://example.com/Event/GIRO2019-e.73979> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-14> .
+          <http://example.com/Event/GIRO2019-e.73979> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-14> .
             <http://example.com/CompetitionPhase/GIRO2019-round-14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-14> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-14> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-14> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 14" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-14> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -5115,9 +5122,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73980> <http://www.w3.org/2000/01/rdf-schema#label> "Ivrea - Como - 232km" .
-          <http://example.com/Event/GIRO2019-e.73980> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-15> .
+          <http://example.com/Event/GIRO2019-e.73980> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-15> .
             <http://example.com/CompetitionPhase/GIRO2019-round-15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-15> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-15> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-15> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 15" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-15> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -5469,9 +5476,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73981> <http://www.w3.org/2000/01/rdf-schema#label> "Lovere - Ponte di Legno - 226km" .
-          <http://example.com/Event/GIRO2019-e.73981> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-16> .
+          <http://example.com/Event/GIRO2019-e.73981> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-16> .
             <http://example.com/CompetitionPhase/GIRO2019-round-16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-16> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-16> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-16> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 16" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-16> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -5823,9 +5830,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73982> <http://www.w3.org/2000/01/rdf-schema#label> "Commezzadura (Val Di Sole) - Anterselva/Antholz - 181km" .
-          <http://example.com/Event/GIRO2019-e.73982> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-17> .
+          <http://example.com/Event/GIRO2019-e.73982> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-17> .
             <http://example.com/CompetitionPhase/GIRO2019-round-17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-17> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-17> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-17> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 17" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-17> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -6177,9 +6184,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73983> <http://www.w3.org/2000/01/rdf-schema#label> "Valdaora/Olang - Santa Maria di Sala - 222km" .
-          <http://example.com/Event/GIRO2019-e.73983> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-18> .
+          <http://example.com/Event/GIRO2019-e.73983> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-18> .
             <http://example.com/CompetitionPhase/GIRO2019-round-18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-18> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-18> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-18> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 18" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-18> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -6531,9 +6538,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73984> <http://www.w3.org/2000/01/rdf-schema#label> "Treviso - San Martino di Castrozza - 151km" .
-          <http://example.com/Event/GIRO2019-e.73984> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-19> .
+          <http://example.com/Event/GIRO2019-e.73984> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-19> .
             <http://example.com/CompetitionPhase/GIRO2019-round-19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-19> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-19> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-19> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 19" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-19> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -6885,9 +6892,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73985> <http://www.w3.org/2000/01/rdf-schema#label> "Feltre - Croce d'Aune-Monte Avena - 194km" .
-          <http://example.com/Event/GIRO2019-e.73985> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-20> .
+          <http://example.com/Event/GIRO2019-e.73985> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-20> .
             <http://example.com/CompetitionPhase/GIRO2019-round-20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-20> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-20> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-20> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 20" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-20> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
@@ -7239,9 +7246,9 @@
 
         
         <http://example.com/Event/GIRO2019-e.73986> <http://www.w3.org/2000/01/rdf-schema#label> "Verona - Verona (ITT) - 17km" .
-          <http://example.com/Event/GIRO2019-e.73986> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/CompetitionPhase/GIRO2019-round-21> .
+          <http://example.com/Event/GIRO2019-e.73986> <http://www.iptc.org/ontologies/Sport/competitionPhase> <http://example.com/CompetitionPhase/GIRO2019-round-21> .
             <http://example.com/CompetitionPhase/GIRO2019-round-21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.iptc.org/ontologies/Sport/CompetitionPhase> .
-            <http://example.com/CompetitionPhase/GIRO2019-round-21> <http://www.iptc.org/ontologies/Sport/parentCompetition> <http://example.com/Competition/GIRO2019> .
+            <http://example.com/CompetitionPhase/GIRO2019-round-21> <http://www.iptc.org/ontologies/Sport/competition> <http://example.com/Competition/GIRO2019> .
 
             <http://example.com/CompetitionPhase/GIRO2019-round-21> <http://www.w3.org/2000/01/rdf-schema#label> "Stage 21" .
                 <http://example.com/CompetitionPhase/GIRO2019-round-21> <http://www.iptc.org/ontologies/Sport/competitionPhaseType> <http://cv.iptc.org/newscodes/sptournamentphase/round> .
