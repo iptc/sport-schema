@@ -16,7 +16,7 @@ for filename in ${TTL_SAMPLES_DIR}/*.ttl; do
     DATA_STRING="${DATA_STRING} --data=$filename"
 done
 
-for queryfile in queries/get-all-properties.rq; do
+for queryfile in queries/*.rq; do
     name=${queryfile##*/}  # get part after last /
     base=${name%.rq}     # strip off .xml extension
     echo "Creating output file for ${base}..."

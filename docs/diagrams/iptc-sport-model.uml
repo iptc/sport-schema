@@ -31,6 +31,8 @@ class CompetitorParticipation {
 }
 
 class CompetitionPhase {
+  rdfs:label : string
+  sport : CV Value
   competitionFormat : CV Value
   competitionPhaseType : CV Value
 }
@@ -99,7 +101,7 @@ class TeamParticipation {
 
 ' subclass relationships
 
-Competition <|-- CompetitionPhase
+' removed 2022-07-12 Competition <|-- CompetitionPhase
 CompetitorParticipation <|-- TeamParticipation
 CompetitorParticipation <|-- IndividualParticipation
 Participation <|-- CompetitorParticipation
@@ -119,7 +121,9 @@ Action .. Participation : > actionParticipation
 Competition .. Competition : > parentCompetition
 Competition .. GoverningBody : > governingBody
 Competition .. Participation : > competitionParticipation
+CompetitionPhase .. Competition : > competition
 Event .. Competition : > competition
+Event .. CompetitionPhase : > competitionPhase
 Event .. Participation : > eventParticipation
 Event .. Site :  > site
 IndividualMembership .. Individual : > membershipBy
