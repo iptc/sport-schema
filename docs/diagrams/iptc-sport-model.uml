@@ -101,7 +101,6 @@ class TeamParticipation {
 
 ' subclass relationships
 
-' removed 2022-07-12 Competition <|-- CompetitionPhase
 CompetitorParticipation <|-- TeamParticipation
 CompetitorParticipation <|-- IndividualParticipation
 Participation <|-- CompetitorParticipation
@@ -124,6 +123,7 @@ Competition .. Participation : > competitionParticipation
 CompetitionPhase .. Competition : > competition
 Event .. Competition : > competition
 Event .. CompetitionPhase : > competitionPhase
+Event .. Event : > subEvent
 Event .. Participation : > eventParticipation
 Event .. Site :  > site
 IndividualMembership .. Individual : > membershipBy
