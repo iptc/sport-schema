@@ -49,6 +49,14 @@ sport:CompetitionShape
   sh:property [
     sh:path sport:parentCompetition ;
     sh:class sport:Competition
+  ] ;
+  sh:property [
+    sh:path sport:competitionParticipation ;
+    sh:class sport:Participation
+  ] ;
+  sh:property [
+    sh:path sport:governingBody ;
+    sh:class sport:GoverningBody
   ] .
 
 sport:CompetitionPhaseShape
@@ -103,7 +111,8 @@ sport:EventShape rdf:type sh:NodeShape ;
   ] ;
   sh:property [
     sh:path sport:attendance ;
-    sh:datatype xsd:integer ;
+    sh:datatype xsd:string ;
+    # sh:datatype xsd:integer ;
   ] ;
   sh:property [
     sh:path sport:startDateTime ;
@@ -144,7 +153,7 @@ sport:ParticipationShape
   ] ;
   sh:property [
     sh:path sport:positionEvent ;
-    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos)/" ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
     sh:flags   "i"                                               # Ignore case
   ] .
 
