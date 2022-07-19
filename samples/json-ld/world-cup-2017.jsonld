@@ -531,11 +531,13 @@
     "@id" : "http://example.com/Competition/WC",
     "@type" : "sport:Competition",
     "governingBody" : "http://example.com/GoverningBody/FIFA",
+    "sport:sport" : 20001065,
     "label" : "World Cup"
   }, {
     "@id" : "http://example.com/Competition/WC2018",
     "@type" : "sport:Competition",
-    "instanceOf" : "http://example.com/Competition/WC",
+    "parentCompetition" : "http://example.com/Competition/WC",
+    "sport:sport" : 20001065,
     "label" : "World Cup 2018"
   }, {
     "@id" : "http://example.com/CompetitionPhase/WC2018-final",
@@ -4379,8 +4381,9 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/startDateTime",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "instanceOf" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/instanceOf",
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
+    "parentCompetition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
       "@type" : "@id"
     },
     "governingBody" : {
@@ -4391,15 +4394,14 @@
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
     "spescaction" : "http://cv.iptc.org/newscodes/spescaction/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
-    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
-    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
+    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
+    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/",
+    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }
 }

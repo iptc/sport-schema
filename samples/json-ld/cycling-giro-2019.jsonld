@@ -648,21 +648,26 @@
     "@id" : "http://example.com/Competition/GIRO",
     "@type" : "sport:Competition",
     "parentCompetition" : "http://example.com/Competition/UCIWT",
+    "sport:sport" : 20000892,
     "label" : "Giro d'Italia"
   }, {
     "@id" : "http://example.com/Competition/GIRO2019",
     "@type" : "sport:Competition",
     "competitionParticipation" : [ "http://example.com/Participation/GIRO2019-P73453", "http://example.com/Participation/GIRO2019-P68973", "http://example.com/Participation/GIRO2019-P62276", "http://example.com/Participation/GIRO2019-P1394", "http://example.com/Participation/GIRO2019-P56278", "http://example.com/Participation/GIRO2019-P18607", "http://example.com/Participation/GIRO2019-P78352", "http://example.com/Participation/GIRO2019-P56239", "http://example.com/Participation/GIRO2019-P56409", "http://example.com/Participation/GIRO2019-P68304" ],
+    "parentCompetition" : [ "http://example.com/Competition/GIRO", "http://example.com/Competition/UCIWT2019" ],
+    "sport:sport" : 20000892,
     "label" : "Giro d'Italia 2019"
   }, {
     "@id" : "http://example.com/Competition/UCIWT",
     "@type" : "sport:Competition",
     "governingBody" : "http://example.com/GoverningBody/UCI",
+    "sport:sport" : 20000892,
     "label" : "UCI World Tour"
   }, {
     "@id" : "http://example.com/Competition/UCIWT2019",
     "@type" : "sport:Competition",
-    "instanceOf" : "http://example.com/Competition/UCIWT",
+    "parentCompetition" : "http://example.com/Competition/UCIWT",
+    "sport:sport" : 20000892,
     "label" : "UCI World Tour 2019"
   }, {
     "@id" : "http://example.com/CompetitionPhase/GIRO2019-round-1",
@@ -4498,6 +4503,7 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/competition",
       "@type" : "@id"
     },
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "parentCompetition" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
       "@type" : "@id"
@@ -4510,23 +4516,18 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/competitionParticipation",
       "@type" : "@id"
     },
-    "instanceOf" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/instanceOf",
-      "@type" : "@id"
-    },
     "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
     "spescaction" : "http://cv.iptc.org/newscodes/spescaction/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
-    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
-    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
+    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
+    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/",
+    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }
 }

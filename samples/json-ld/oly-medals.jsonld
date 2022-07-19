@@ -3,12 +3,14 @@
     "@id" : "http://example.com/Competition/CSO",
     "@type" : "sport:Competition",
     "governingBody" : "http://example.com/GoverningBody/IOC",
+    "sport:sport" : 20001177,
     "label" : "Summer Olympics"
   }, {
     "@id" : "http://example.com/Competition/CSOB4",
     "@type" : "sport:Competition",
     "competitionParticipation" : [ "http://example.com/Participation/CSOB4-TISUI", "http://example.com/Participation/CSOB4-TIKOS", "http://example.com/Participation/CSOB4-TIITA", "http://example.com/Participation/CSOB4-TIIND", "http://example.com/Participation/CSOB4-TINED", "http://example.com/Participation/CSOB4-TIJPN", "http://example.com/Participation/CSOB4-TIECU", "http://example.com/Participation/CSOB4-TIISR", "http://example.com/Participation/CSOB4-TICHN", "http://example.com/Participation/CSOB4-TIROC", "http://example.com/Participation/CSOB4-TIINA", "http://example.com/Participation/CSOB4-TIROU", "http://example.com/Participation/CSOB4-TITPE", "http://example.com/Participation/CSOB4-TISLO", "http://example.com/Participation/CSOB4-TISRB", "http://example.com/Participation/CSOB4-TIUKR", "http://example.com/Participation/CSOB4-TIEST", "http://example.com/Participation/CSOB4-TIIRI", "http://example.com/Participation/CSOB4-TIHUN", "http://example.com/Participation/CSOB4-TIFRA", "http://example.com/Participation/CSOB4-TIBEL", "http://example.com/Participation/CSOB4-TIMEX", "http://example.com/Participation/CSOB4-TIKOR", "http://example.com/Participation/CSOB4-TIKAZ", "http://example.com/Participation/CSOB4-TIMGL" ],
-    "instanceOf" : "http://example.com/Competition/CSO",
+    "parentCompetition" : "http://example.com/Competition/CSO",
+    "sport:sport" : 20001177,
     "label" : "2020 Tokyo Summer Olympics"
   }, {
     "@id" : "http://example.com/GoverningBody/IOC",
@@ -280,10 +282,11 @@
       "@id" : "http://www.iptc.org/ontologies/Sport/competitionParticipation",
       "@type" : "@id"
     },
-    "instanceOf" : {
-      "@id" : "http://www.iptc.org/ontologies/Sport/instanceOf",
+    "parentCompetition" : {
+      "@id" : "http://www.iptc.org/ontologies/Sport/parentCompetition",
       "@type" : "@id"
     },
+    "sport" : "http://www.iptc.org/ontologies/Sport/",
     "governingBody" : {
       "@id" : "http://www.iptc.org/ontologies/Sport/governingBody",
       "@type" : "@id"
@@ -292,15 +295,14 @@
     "schemaorg" : "https://schema.org/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
     "spescaction" : "http://cv.iptc.org/newscodes/spescaction/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
-    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/",
-    "spstat" : "http://cv.iptc.org/newscodes/spstat/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "spsocaction" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "sport" : "http://www.iptc.org/ontologies/Sport/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
+    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
+    "spact" : "http://www.iptc.org/ontologies/Sport/Action/",
+    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/",
+    "spsocstat" : "http://cv.iptc.org/newscodes/spsocstat/"
   }
 }
