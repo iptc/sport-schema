@@ -8,7 +8,7 @@ PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
 PREFIX spact: <http://www.iptc.org/ontologies/Sport/Action/>
 PREFIX spsocrole: <http://cv.iptc.org/newscodes/spsocrole/>
 
-SELECT ?playerName ?time ?teamName ?playerperfrole
+SELECT DISTINCT ?playerName ?time ?teamName ?playerperfrole
 WHERE { 
     ?action rdf:type sport:Action ;
     		spact:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
@@ -24,6 +24,6 @@ WHERE {
     ?team 	rdfs:label ?teamName .
 
 
-    FILTER (?playerperfrole = spsocrole:scorer ||?playerperfrole = spsocrole:shooter) .
+    FILTER (?playerperfrole = spsocrole:scorer) .
 
 } ORDER BY ?time

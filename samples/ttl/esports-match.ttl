@@ -1,453 +1,31 @@
-@prefix medtop:         <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:           <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:      <https://schema.org/> .
-@prefix spact:          <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix spescaction:    <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix spesstat:       <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix sport:          <http://www.iptc.org/ontologies/Sport/> .
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
 @prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocaction:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:      <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:      <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:         <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
+@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
+@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix medtop: <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix spct:  <http://cv.iptc.org/newscodes/spct/> .
+@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
+@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
 
-<http://example.com/Athlete/18>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/18>" ;
-        sport:nationality  "Turkish" .
-
-<http://example.com/Participation/5120-18>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/18> participation in Event 5120" ;
-        spesstat:ADR           "89,7" ;
-        spesstat:FKdiff        "-1" ;
-        spesstat:KAST          "78,3" ;
-        spesstat:assist        "11" ;
-        spesstat:deaths        "13" ;
-        spesstat:flashassist   "3" ;
-        spesstat:headshot      "6" ;
-        spesstat:kills         "12" ;
-        spstat:rating          "1,08" ;
-        sport:participationBy  <http://example.com/Athlete/18> .
-
-<http://example.com/Participation/5122-11>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/11> participation in Event 5122" ;
-        spesstat:ADR           "69,8" ;
-        spesstat:FKdiff        "4" ;
-        spesstat:KAST          "60,0" ;
-        spesstat:assist        "2" ;
-        spesstat:deaths        "22" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "8" ;
-        spesstat:kills         "11" ;
-        spstat:rating          "0,76" ;
-        sport:participationBy  <http://example.com/Athlete/11> .
-
-<http://example.com/Event/5122>
-        rdf:type                  sport:Event ;
-        rdfs:label                "Event 5122" ;
-        sport:eventParticipation  <http://example.com/Participation/5122-team_6134> , <http://example.com/Participation/5122-15> , <http://example.com/Participation/5122-11> , <http://example.com/Participation/5122-10> , <http://example.com/Participation/5122-18> , <http://example.com/Participation/5122-12> , <http://example.com/Participation/5122-17> , <http://example.com/Participation/5122-team_9572> , <http://example.com/Participation/5122-14> , <http://example.com/Participation/5122-13> , <http://example.com/Participation/5122-19> , <http://example.com/Participation/5122-16> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
-
-<http://example.com/Membership/team_6134-13>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/13> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/13> ;
-        sport:membershipOf  <http://example.com/Team/team_6134> .
-
-<http://example.com/Athlete/12>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/12>" ;
-        sport:nationality  "Polish" .
-
-<http://example.com/Participation/541807-team_9572>
-        rdf:type                      sport:TeamParticipation ;
-        rdfs:label                    "Ex-Space Soldiers participation in Event 541807" ;
-        spstat:event-outcome          speventoutcome:win ;
-        spstat:events-played          "24" ;
-        spstat:series-score           "9" ;
-        spstat:series-score-opposing  "15" ;
-        sport:participationBy         <http://example.com/Team/team_9572> ;
-        sport:score                   "2" .
-
-<http://example.com/Membership/team_9572-15>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/15> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/15> ;
-        sport:membershipOf  <http://example.com/Team/team_9572> .
-
-<http://example.com/Participation/5120-12>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/12> participation in Event 5120" ;
-        spesstat:ADR           "66,9" ;
-        spesstat:FKdiff        "-1" ;
-        spesstat:KAST          "56,5" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "19" ;
-        spesstat:flashassist   "1" ;
-        spesstat:headshot      "11" ;
-        spesstat:kills         "16" ;
-        spstat:rating          "0,86" ;
-        sport:participationBy  <http://example.com/Athlete/12> .
-
-<http://example.com/Participation/5121-17>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/17> participation in Event 5121" ;
-        spesstat:ADR           "81,3" ;
-        spesstat:FKdiff        "4" ;
-        spesstat:KAST          "65,5" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "19" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "14" ;
-        spesstat:kills         "23" ;
-        spstat:rating          "1,14" ;
-        sport:participationBy  <http://example.com/Athlete/17> .
-
-<http://example.com/Participation/5120-team_6134>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Kinguin participation in Event 5120" ;
-        spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/team_6134> ;
-        sport:score            "7" .
-
-<http://example.com/Participation/5121-11>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/11> participation in Event 5121" ;
-        spesstat:ADR           "89,7" ;
-        spesstat:FKdiff        "3" ;
-        spesstat:KAST          "75,9" ;
-        spesstat:assist        "2" ;
-        spesstat:deaths        "18" ;
-        spesstat:flashassist   "2" ;
-        spesstat:headshot      "14" ;
-        spesstat:kills         "28" ;
-        spstat:rating          "1,36" ;
-        sport:participationBy  <http://example.com/Athlete/11> .
-
-<http://example.com/Participation/5122-16>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/16> participation in Event 5122" ;
-        spesstat:ADR           "90,9" ;
-        spesstat:FKdiff        "1" ;
-        spesstat:KAST          "80,0" ;
-        spesstat:assist        "5" ;
-        spesstat:deaths        "12" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "11" ;
-        spesstat:kills         "20" ;
-        spstat:rating          "1,37" ;
-        sport:participationBy  <http://example.com/Athlete/16> .
-
-<http://example.com/Athlete/17>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/17>" ;
-        sport:nationality  "Turkish" .
-
-<http://example.com/Participation/5120-team_9572>
-        rdf:type               sport:TeamParticipation ;
+<http://example.com/Participation/5120-T9572>
+        a                      sport:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5120" ;
         spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/team_9572> ;
+        sport:participationBy  <http://example.com/Team/T9572> ;
         sport:score            "16" .
 
-<http://example.com/Participation/5122-team_6134>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Kinguin participation in Event 5122" ;
-        spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/team_6134> ;
-        sport:score            "9" .
-
-<http://example.com/Participation/5120-17>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/17> participation in Event 5120" ;
-        spesstat:ADR           "104,9" ;
-        spesstat:FKdiff        "3" ;
-        spesstat:KAST          "73,9" ;
-        spesstat:assist        "6" ;
-        spesstat:deaths        "16" ;
-        spesstat:flashassist   "2" ;
-        spesstat:headshot      "6" ;
-        spesstat:kills         "22" ;
-        spstat:rating          "1,43" ;
-        sport:participationBy  <http://example.com/Athlete/17> .
-
-<http://example.com/Participation/5122-10>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/10> participation in Event 5122" ;
-        spesstat:ADR           "72,5" ;
-        spesstat:FKdiff        "-2" ;
-        spesstat:KAST          "48,1" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "18" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "8" ;
-        spesstat:kills         "19" ;
-        spstat:rating          "0,98" ;
-        sport:participationBy  <http://example.com/Athlete/10> .
-
-<http://example.com/Event/5121>
-        rdf:type                  sport:Event ;
-        rdfs:label                "Event 5121" ;
-        sport:eventParticipation  <http://example.com/Participation/5121-15> , <http://example.com/Participation/5121-team_9572> , <http://example.com/Participation/5121-10> , <http://example.com/Participation/5121-14> , <http://example.com/Participation/5121-17> , <http://example.com/Participation/5121-16> , <http://example.com/Participation/5121-11> , <http://example.com/Participation/5121-19> , <http://example.com/Participation/5121-13> , <http://example.com/Participation/5121-18> , <http://example.com/Participation/5121-team_6134> , <http://example.com/Participation/5121-12> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
-
-<http://example.com/Membership/team_6134-12>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/12> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/12> ;
-        sport:membershipOf  <http://example.com/Team/team_6134> .
-
-<http://example.com/Athlete/11>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/11>" ;
-        sport:nationality  "Polish" .
-
-<http://example.com/Participation/5120-11>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/11> participation in Event 5120" ;
-        spesstat:ADR           "65,9" ;
-        spesstat:FKdiff        "-3" ;
-        spesstat:KAST          "65,2" ;
-        spesstat:assist        "1" ;
-        spesstat:deaths        "16" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "9" ;
-        spesstat:kills         "15" ;
-        spstat:rating          "0,92" ;
-        sport:participationBy  <http://example.com/Athlete/11> .
-
-<http://example.com/Participation/5121-16>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/16> participation in Event 5121" ;
-        spesstat:ADR           "66,2" ;
-        spesstat:FKdiff        "-4" ;
-        spesstat:KAST          "62,1" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "22" ;
-        spesstat:flashassist   "2" ;
-        spesstat:headshot      "14" ;
-        spesstat:kills         "22" ;
-        spstat:rating          "0,87" ;
-        sport:participationBy  <http://example.com/Athlete/16> .
-
-<http://example.com/Participation/5121-team_6134>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Kinguin participation in Event 5121" ;
-        spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/team_6134> ;
-        sport:score            "16" .
-
-<http://example.com/Participation/5121-10>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/10> participation in Event 5121" ;
-        spesstat:ADR           "84,8" ;
-        spesstat:FKdiff        "-2" ;
-        spesstat:KAST          "62,1" ;
-        spesstat:assist        "2" ;
-        spesstat:deaths        "20" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "4" ;
-        spesstat:kills         "22" ;
-        spstat:rating          "1,14" ;
-        sport:participationBy  <http://example.com/Athlete/10> .
-
-<http://example.com/Participation/5122-15>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/15> participation in Event 5122" ;
-        spesstat:ADR           "105,2" ;
-        spesstat:FKdiff        "1" ;
-        spesstat:KAST          "80,0" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "12" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "15" ;
-        spesstat:kills         "26" ;
-        spstat:rating          "1,57" ;
-        sport:participationBy  <http://example.com/Athlete/15> .
-
-<http://example.com/Participation/5121-team_9572>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Ex-Space Soldiers participation in Event 5121" ;
-        spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/team_9572> ;
-        sport:score            "13" .
-
-<http://example.com/Athlete/16>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/16>" ;
-        sport:nationality  "Turkish" .
-
-<http://example.com/Membership/team_9572-19>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/19> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/19> ;
-        sport:membershipOf  <http://example.com/Team/team_9572> .
-
-<http://example.com/Participation/5120-16>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/16> participation in Event 5120" ;
-        spesstat:ADR           "87,6" ;
-        spesstat:FKdiff        "2" ;
-        spesstat:KAST          "78,3" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "12" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "11" ;
-        spesstat:kills         "24" ;
-        spstat:rating          "1,53" ;
-        sport:participationBy  <http://example.com/Athlete/16> .
-
-<http://example.com/Event/5120>
-        rdf:type                  sport:Event ;
-        rdfs:label                "Event 5120" ;
-        sport:eventParticipation  <http://example.com/Participation/5120-11> , <http://example.com/Participation/5120-19> , <http://example.com/Participation/5120-18> , <http://example.com/Participation/5120-team_9572> , <http://example.com/Participation/5120-10> , <http://example.com/Participation/5120-13> , <http://example.com/Participation/5120-12> , <http://example.com/Participation/5120-15> , <http://example.com/Participation/5120-17> , <http://example.com/Participation/5120-14> , <http://example.com/Participation/5120-team_6134> , <http://example.com/Participation/5120-16> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
-
-<http://example.com/Membership/team_6134-11>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/11> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/11> ;
-        sport:membershipOf  <http://example.com/Team/team_6134> .
-
-<http://example.com/Athlete/10>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/10>" ;
-        sport:nationality  "Polish" .
-
-<http://example.com/Participation/5120-10>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/10> participation in Event 5120" ;
-        spesstat:ADR           "65,9" ;
-        spesstat:FKdiff        "3" ;
-        spesstat:KAST          "65,2" ;
-        spesstat:assist        "5" ;
-        spesstat:deaths        "17" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "7" ;
-        spesstat:kills         "16" ;
-        spstat:rating          "1,06" ;
-        sport:participationBy  <http://example.com/Athlete/10> .
-
-<http://example.com/Participation/5121-15>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/15> participation in Event 5121" ;
-        spesstat:ADR           "80,1" ;
-        spesstat:FKdiff        "5" ;
-        spesstat:KAST          "69,0" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "22" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "12" ;
-        spesstat:kills         "21" ;
-        spstat:rating          "1,15" ;
-        sport:participationBy  <http://example.com/Athlete/15> .
-
-<http://example.com/Participation/5122-team_9572>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Ex-Space Soldiers participation in Event 5122" ;
-        spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/team_9572> ;
-        sport:score            "16" .
-
-<http://example.com/Participation/5122-14>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/14> participation in Event 5122" ;
-        spesstat:ADR           "73,7" ;
-        spesstat:FKdiff        "2" ;
-        spesstat:KAST          "56,0" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "20" ;
-        spesstat:flashassist   "1" ;
-        spesstat:headshot      "10" ;
-        spesstat:kills         "16" ;
-        spstat:rating          "0,89" ;
-        sport:participationBy  <http://example.com/Athlete/14> .
-
-<http://example.com/Athlete/15>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/15>" ;
-        sport:nationality  "Turkish" .
-
-<http://example.com/Membership/team_9572-18>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/18> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/18> ;
-        sport:membershipOf  <http://example.com/Team/team_9572> .
-
-<http://example.com/Team/team_6134>
-        rdf:type          sport:Team ;
-        rdfs:label        "" , "Kinguin" ;
-        sport:membership  <http://example.com/Membership/team_6134-14> , <http://example.com/Membership/team_6134-13> , <http://example.com/Membership/team_6134-12> , <http://example.com/Membership/team_6134-11> , <http://example.com/Membership/team_6134-10> .
-
-<http://example.com/Participation/5120-15>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/15> participation in Event 5120" ;
-        spesstat:ADR           "64,4" ;
-        spesstat:FKdiff        "3" ;
-        spesstat:KAST          "82,6" ;
-        spesstat:assist        "5" ;
-        spesstat:deaths        "14" ;
-        spesstat:flashassist   "2" ;
-        spesstat:headshot      "5" ;
-        spesstat:kills         "14" ;
-        spstat:rating          "1,15" ;
-        sport:participationBy  <http://example.com/Athlete/15> .
-
-<http://example.com/Membership/team_6134-10>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/10> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/10> ;
-        sport:membershipOf  <http://example.com/Team/team_6134> .
-
-<http://example.com/Team/team_9572>
-        rdf:type          sport:Team ;
-        rdfs:label        "" , "Ex-Space Soldiers" ;
-        sport:membership  <http://example.com/Membership/team_9572-19> , <http://example.com/Membership/team_9572-18> , <http://example.com/Membership/team_9572-17> , <http://example.com/Membership/team_9572-16> , <http://example.com/Membership/team_9572-15> .
-
-<http://example.com/Participation/5121-14>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/14> participation in Event 5121" ;
-        spesstat:ADR           "78,4" ;
-        spesstat:FKdiff        "0" ;
-        spesstat:KAST          "75,9" ;
-        spesstat:assist        "1" ;
-        spesstat:deaths        "15" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "8" ;
-        spesstat:kills         "24" ;
-        spstat:rating          "1,21" ;
-        sport:participationBy  <http://example.com/Athlete/14> .
-
-<http://example.com/Participation/5122-19>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/19> participation in Event 5122" ;
-        spesstat:ADR           "86,5" ;
-        spesstat:FKdiff        "1" ;
-        spesstat:KAST          "56,0" ;
-        spesstat:assist        "5" ;
-        spesstat:deaths        "16" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "10" ;
-        spesstat:kills         "20" ;
-        spstat:rating          "1,21" ;
-        sport:participationBy  <http://example.com/Athlete/19> .
-
-<http://example.com/Competition/l.intelextrememasters.com-2019>
-        rdf:type                 sport:Competition ;
-        rdfs:label               "Intel Extreme Masters 2019" ;
-        sport:parentCompetition  <http://example.com/Competition/l.intelextrememasters.com> .
-
-<http://example.com/Participation/5122-13>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/13> participation in Event 5122" ;
+<http://example.com/Participation/5122-PES13>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES13> participation in Event 5122" ;
         spesstat:ADR           "52,6" ;
         spesstat:FKdiff        "-2" ;
         spesstat:KAST          "44,0" ;
@@ -457,74 +35,59 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "8" ;
         spstat:rating          "0,59" ;
-        sport:participationBy  <http://example.com/Athlete/13> .
+        sport:participationBy  <http://example.com/Athlete/PES13> .
 
-<http://example.com/Athlete/14>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/14>" ;
-        sport:nationality  "Polish" .
+<http://example.com/Participation/5121-PES11>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES11> participation in Event 5121" ;
+        spesstat:ADR           "89,7" ;
+        spesstat:FKdiff        "3" ;
+        spesstat:KAST          "75,9" ;
+        spesstat:assist        "2" ;
+        spesstat:deaths        "18" ;
+        spesstat:flashassist   "2" ;
+        spesstat:headshot      "14" ;
+        spesstat:kills         "28" ;
+        spstat:rating          "1,36" ;
+        sport:participationBy  <http://example.com/Athlete/PES11> .
 
-<http://example.com/Membership/team_9572-17>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/17> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/17> ;
-        sport:membershipOf  <http://example.com/Team/team_9572> .
+<http://example.com/Event/5122>
+        a                         sport:Event ;
+        rdfs:label                "Event 5122" ;
+        sport:eventParticipation  <http://example.com/Participation/5122-PES17> , <http://example.com/Participation/5122-PES16> , <http://example.com/Participation/5122-PES10> , <http://example.com/Participation/5122-PES12> , <http://example.com/Participation/5122-T6134> , <http://example.com/Participation/5122-PES18> , <http://example.com/Participation/5122-PES19> , <http://example.com/Participation/5122-PES13> , <http://example.com/Participation/5122-T9572> , <http://example.com/Participation/5122-PES11> , <http://example.com/Participation/5122-PES14> , <http://example.com/Participation/5122-PES15> ;
+        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
 
-<http://example.com/Participation/5120-14>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/14> participation in Event 5120" ;
-        spesstat:ADR           "46,3" ;
-        spesstat:FKdiff        "-1" ;
-        spesstat:KAST          "47,8" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "19" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "3" ;
-        spesstat:kills         "6" ;
-        spstat:rating          "0,62" ;
-        sport:participationBy  <http://example.com/Athlete/14> .
+<http://example.com/Membership/T9572-PES19>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES19> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES19> ;
+        sport:membershipOf  <http://example.com/Team/T9572> .
 
-<http://example.com/Participation/541807-team_6134>
-        rdf:type                      sport:TeamParticipation ;
+<http://example.com/Membership/T6134-PES14>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES14> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES14> ;
+        sport:membershipOf  <http://example.com/Team/T6134> .
+
+<http://example.com/Athlete/PES18>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES18>" ;
+        sport:nationality  "Turkish" .
+
+<http://example.com/Participation/541807-T6134>
+        a                             sport:TeamParticipation ;
         rdfs:label                    "Kinguin participation in Event 541807" ;
         spstat:event-outcome          speventoutcome:loss ;
         spstat:events-played          "539" ;
         spstat:series-score           "299" ;
         spstat:series-score-opposing  "214" ;
-        sport:participationBy         <http://example.com/Team/team_6134> ;
+        sport:participationBy         <http://example.com/Team/T6134> ;
         sport:score                   "1" .
 
-<http://example.com/Participation/5121-19>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/19> participation in Event 5121" ;
-        spesstat:ADR           "54,4" ;
-        spesstat:FKdiff        "0" ;
-        spesstat:KAST          "51,7" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "21" ;
-        spesstat:flashassist   "0" ;
-        spesstat:headshot      "7" ;
-        spesstat:kills         "12" ;
-        spstat:rating          "0,66" ;
-        sport:participationBy  <http://example.com/Athlete/19> .
-
-<http://example.com/Participation/5121-13>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/13> participation in Event 5121" ;
-        spesstat:ADR           "66,3" ;
-        spesstat:FKdiff        "-3" ;
-        spesstat:KAST          "69,0" ;
-        spesstat:assist        "3" ;
-        spesstat:deaths        "22" ;
-        spesstat:flashassist   "1" ;
-        spesstat:headshot      "8" ;
-        spesstat:kills         "16" ;
-        spstat:rating          "0,82" ;
-        sport:participationBy  <http://example.com/Athlete/13> .
-
-<http://example.com/Participation/5122-18>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/18> participation in Event 5122" ;
+<http://example.com/Participation/5122-PES18>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES18> participation in Event 5122" ;
         spesstat:ADR           "81,8" ;
         spesstat:FKdiff        "-1" ;
         spesstat:KAST          "84,0" ;
@@ -534,35 +97,54 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "20" ;
         spstat:rating          "1,35" ;
-        sport:participationBy  <http://example.com/Athlete/18> .
+        sport:participationBy  <http://example.com/Athlete/PES18> .
 
-<http://example.com/Athlete/19>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/19>" ;
-        sport:nationality  "Turkish" .
-
-<http://example.com/Competition/l.intelextrememasters.com>
-        rdf:type     sport:Competition ;
-        rdfs:label   "Intel Extreme Masters" ;
-        sport:sport  medtop:20001183 .
-
-<http://example.com/Participation/5120-19>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/19> participation in Event 5120" ;
-        spesstat:ADR           "68,4" ;
-        spesstat:FKdiff        "0" ;
-        spesstat:KAST          "78,3" ;
+<http://example.com/Participation/5121-PES16>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES16> participation in Event 5121" ;
+        spesstat:ADR           "66,2" ;
+        spesstat:FKdiff        "-4" ;
+        spesstat:KAST          "62,1" ;
         spesstat:assist        "4" ;
-        spesstat:deaths        "11" ;
+        spesstat:deaths        "22" ;
         spesstat:flashassist   "2" ;
-        spesstat:headshot      "6" ;
-        spesstat:kills         "15" ;
-        spstat:rating          "1,11" ;
-        sport:participationBy  <http://example.com/Athlete/19> .
+        spesstat:headshot      "14" ;
+        spesstat:kills         "22" ;
+        spstat:rating          "0,87" ;
+        sport:participationBy  <http://example.com/Athlete/PES16> .
 
-<http://example.com/Participation/5122-12>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/12> participation in Event 5122" ;
+<http://example.com/Athlete/PES12>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES12>" ;
+        sport:nationality  "Polish" .
+
+<http://example.com/Participation/5120-PES14>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES14> participation in Event 5120" ;
+        spesstat:ADR           "46,3" ;
+        spesstat:FKdiff        "-1" ;
+        spesstat:KAST          "47,8" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "19" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "3" ;
+        spesstat:kills         "6" ;
+        spstat:rating          "0,62" ;
+        sport:participationBy  <http://example.com/Athlete/PES14> .
+
+<http://example.com/Participation/541807-T9572>
+        a                             sport:TeamParticipation ;
+        rdfs:label                    "Ex-Space Soldiers participation in Event 541807" ;
+        spstat:event-outcome          speventoutcome:win ;
+        spstat:events-played          "24" ;
+        spstat:series-score           "9" ;
+        spstat:series-score-opposing  "15" ;
+        sport:participationBy         <http://example.com/Team/T9572> ;
+        sport:score                   "2" .
+
+<http://example.com/Participation/5122-PES12>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES12> participation in Event 5122" ;
         spesstat:ADR           "59,6" ;
         spesstat:FKdiff        "1" ;
         spesstat:KAST          "60,0" ;
@@ -572,78 +154,75 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "13" ;
         spstat:rating          "0,75" ;
-        sport:participationBy  <http://example.com/Athlete/12> .
+        sport:participationBy  <http://example.com/Athlete/PES12> .
 
-<http://example.com/Membership/team_6134-14>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/14> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/14> ;
-        sport:membershipOf  <http://example.com/Team/team_6134> .
-
-<http://example.com/Event/541807>
-        rdf:type                  sport:Event ;
-        rdfs:label                "Event 541807" ;
-        sport:eventParticipation  <http://example.com/Participation/541807-team_9572> , <http://example.com/Participation/541807-team_6134> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime ;
-        sport:subEvent            <http://example.com/Event/5122> , <http://example.com/Event/5121> , <http://example.com/Event/5120> .
-
-<http://example.com/Athlete/13>
-        rdf:type           sport:Athlete ;
-        rdfs:label         "Player <http://example.com/Athlete/13>" ;
-        sport:nationality  "Polish" .
-
-<http://example.com/Membership/team_9572-16>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/16> membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/16> ;
-        sport:membershipOf  <http://example.com/Team/team_9572> .
-
-<http://example.com/Participation/5120-13>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/13> participation in Event 5120" ;
-        spesstat:ADR           "63,6" ;
-        spesstat:FKdiff        "-3" ;
-        spesstat:KAST          "60,9" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "17" ;
-        spesstat:flashassist   "1" ;
-        spesstat:headshot      "8" ;
-        spesstat:kills         "13" ;
-        spstat:rating          "0,85" ;
-        sport:participationBy  <http://example.com/Athlete/13> .
-
-<http://example.com/Participation/5121-18>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/18> participation in Event 5121" ;
-        spesstat:ADR           "70,4" ;
-        spesstat:FKdiff        "-4" ;
-        spesstat:KAST          "69,0" ;
-        spesstat:assist        "5" ;
-        spesstat:deaths        "19" ;
-        spesstat:flashassist   "1" ;
-        spesstat:headshot      "5" ;
-        spesstat:kills         "15" ;
-        spstat:rating          "0,89" ;
-        sport:participationBy  <http://example.com/Athlete/18> .
-
-<http://example.com/Participation/5121-12>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/12> participation in Event 5121" ;
-        spesstat:ADR           "59,2" ;
-        spesstat:FKdiff        "1" ;
-        spesstat:KAST          "69,0" ;
-        spesstat:assist        "4" ;
-        spesstat:deaths        "18" ;
+<http://example.com/Participation/5121-PES10>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES10> participation in Event 5121" ;
+        spesstat:ADR           "84,8" ;
+        spesstat:FKdiff        "-2" ;
+        spesstat:KAST          "62,1" ;
+        spesstat:assist        "2" ;
+        spesstat:deaths        "20" ;
         spesstat:flashassist   "0" ;
-        spesstat:headshot      "9" ;
-        spesstat:kills         "13" ;
-        spstat:rating          "0,88" ;
-        sport:participationBy  <http://example.com/Athlete/12> .
+        spesstat:headshot      "4" ;
+        spesstat:kills         "22" ;
+        spstat:rating          "1,14" ;
+        sport:participationBy  <http://example.com/Athlete/PES10> .
 
-<http://example.com/Participation/5122-17>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/17> participation in Event 5122" ;
+<http://example.com/Event/5121>
+        a                         sport:Event ;
+        rdfs:label                "Event 5121" ;
+        sport:eventParticipation  <http://example.com/Participation/5121-PES14> , <http://example.com/Participation/5121-PES17> , <http://example.com/Participation/5121-PES16> , <http://example.com/Participation/5121-PES12> , <http://example.com/Participation/5121-T9572> , <http://example.com/Participation/5121-PES11> , <http://example.com/Participation/5121-PES19> , <http://example.com/Participation/5121-PES18> , <http://example.com/Participation/5121-T6134> , <http://example.com/Participation/5121-PES13> , <http://example.com/Participation/5121-PES15> , <http://example.com/Participation/5121-PES10> ;
+        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
+
+<http://example.com/Membership/T9572-PES18>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES18> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES18> ;
+        sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Membership/T6134-PES13>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES13> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES13> ;
+        sport:membershipOf  <http://example.com/Team/T6134> .
+
+<http://example.com/Athlete/PES17>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES17>" ;
+        sport:nationality  "Turkish" .
+
+<http://example.com/Participation/5120-PES19>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES19> participation in Event 5120" ;
+        spesstat:ADR           "68,4" ;
+        spesstat:FKdiff        "0" ;
+        spesstat:KAST          "78,3" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "11" ;
+        spesstat:flashassist   "2" ;
+        spesstat:headshot      "6" ;
+        spesstat:kills         "15" ;
+        spstat:rating          "1,11" ;
+        sport:participationBy  <http://example.com/Athlete/PES19> .
+
+<http://example.com/Participation/5121-T6134>
+        a                      sport:TeamParticipation ;
+        rdfs:label             "Kinguin participation in Event 5121" ;
+        spstat:event-outcome   speventoutcome:win ;
+        sport:participationBy  <http://example.com/Team/T6134> ;
+        sport:score            "16" .
+
+<http://example.com/Team/T9572>
+        a                 sport:Team ;
+        rdfs:label        "" , "Ex-Space Soldiers" ;
+        sport:membership  <http://example.com/Membership/T9572-PES19> , <http://example.com/Membership/T9572-PES18> , <http://example.com/Membership/T9572-PES17> , <http://example.com/Membership/T9572-PES16> , <http://example.com/Membership/T9572-PES15> .
+
+<http://example.com/Participation/5122-PES17>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES17> participation in Event 5122" ;
         spesstat:ADR           "66,6" ;
         spesstat:FKdiff        "-4" ;
         spesstat:KAST          "56,0" ;
@@ -653,4 +232,433 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "15" ;
         spstat:rating          "0,94" ;
-        sport:participationBy  <http://example.com/Athlete/17> .
+        sport:participationBy  <http://example.com/Athlete/PES17> .
+
+<http://example.com/Participation/5121-PES15>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES15> participation in Event 5121" ;
+        spesstat:ADR           "80,1" ;
+        spesstat:FKdiff        "5" ;
+        spesstat:KAST          "69,0" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "22" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "12" ;
+        spesstat:kills         "21" ;
+        spstat:rating          "1,15" ;
+        sport:participationBy  <http://example.com/Athlete/PES15> .
+
+<http://example.com/Athlete/PES11>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES11>" ;
+        sport:nationality  "Polish" .
+
+<http://example.com/Participation/5120-PES13>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES13> participation in Event 5120" ;
+        spesstat:ADR           "63,6" ;
+        spesstat:FKdiff        "-3" ;
+        spesstat:KAST          "60,9" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "17" ;
+        spesstat:flashassist   "1" ;
+        spesstat:headshot      "8" ;
+        spesstat:kills         "13" ;
+        spstat:rating          "0,85" ;
+        sport:participationBy  <http://example.com/Athlete/PES13> .
+
+<http://example.com/Participation/5121-T9572>
+        a                      sport:TeamParticipation ;
+        rdfs:label             "Ex-Space Soldiers participation in Event 5121" ;
+        spstat:event-outcome   speventoutcome:loss ;
+        sport:participationBy  <http://example.com/Team/T9572> ;
+        sport:score            "13" .
+
+<http://example.com/Participation/5122-PES11>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES11> participation in Event 5122" ;
+        spesstat:ADR           "69,8" ;
+        spesstat:FKdiff        "4" ;
+        spesstat:KAST          "60,0" ;
+        spesstat:assist        "2" ;
+        spesstat:deaths        "22" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "8" ;
+        spesstat:kills         "11" ;
+        spstat:rating          "0,76" ;
+        sport:participationBy  <http://example.com/Athlete/PES11> .
+
+<http://example.com/Event/5120>
+        a                         sport:Event ;
+        rdfs:label                "Event 5120" ;
+        sport:eventParticipation  <http://example.com/Participation/5120-PES14> , <http://example.com/Participation/5120-PES18> , <http://example.com/Participation/5120-PES17> , <http://example.com/Participation/5120-T6134> , <http://example.com/Participation/5120-PES11> , <http://example.com/Participation/5120-PES10> , <http://example.com/Participation/5120-PES19> , <http://example.com/Participation/5120-T9572> , <http://example.com/Participation/5120-PES13> , <http://example.com/Participation/5120-PES16> , <http://example.com/Participation/5120-PES12> , <http://example.com/Participation/5120-PES15> ;
+        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
+
+<http://example.com/Membership/T9572-PES17>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES17> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES17> ;
+        sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Membership/T6134-PES12>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES12> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES12> ;
+        sport:membershipOf  <http://example.com/Team/T6134> .
+
+<http://example.com/Athlete/PES16>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES16>" ;
+        sport:nationality  "Turkish" .
+
+<http://example.com/Participation/5120-PES18>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES18> participation in Event 5120" ;
+        spesstat:ADR           "89,7" ;
+        spesstat:FKdiff        "-1" ;
+        spesstat:KAST          "78,3" ;
+        spesstat:assist        "11" ;
+        spesstat:deaths        "13" ;
+        spesstat:flashassist   "3" ;
+        spesstat:headshot      "6" ;
+        spesstat:kills         "12" ;
+        spstat:rating          "1,08" ;
+        sport:participationBy  <http://example.com/Athlete/PES18> .
+
+<http://example.com/Participation/5122-PES16>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES16> participation in Event 5122" ;
+        spesstat:ADR           "90,9" ;
+        spesstat:FKdiff        "1" ;
+        spesstat:KAST          "80,0" ;
+        spesstat:assist        "5" ;
+        spesstat:deaths        "12" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "11" ;
+        spesstat:kills         "20" ;
+        spstat:rating          "1,37" ;
+        sport:participationBy  <http://example.com/Athlete/PES16> .
+
+<http://example.com/Participation/5121-PES14>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES14> participation in Event 5121" ;
+        spesstat:ADR           "78,4" ;
+        spesstat:FKdiff        "0" ;
+        spesstat:KAST          "75,9" ;
+        spesstat:assist        "1" ;
+        spesstat:deaths        "15" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "8" ;
+        spesstat:kills         "24" ;
+        spstat:rating          "1,21" ;
+        sport:participationBy  <http://example.com/Athlete/PES14> .
+
+<http://example.com/Athlete/PES10>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES10>" ;
+        sport:nationality  "Polish" .
+
+<http://example.com/Participation/5120-PES12>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES12> participation in Event 5120" ;
+        spesstat:ADR           "66,9" ;
+        spesstat:FKdiff        "-1" ;
+        spesstat:KAST          "56,5" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "19" ;
+        spesstat:flashassist   "1" ;
+        spesstat:headshot      "11" ;
+        spesstat:kills         "16" ;
+        spstat:rating          "0,86" ;
+        sport:participationBy  <http://example.com/Athlete/PES12> .
+
+<http://example.com/Participation/5122-PES10>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES10> participation in Event 5122" ;
+        spesstat:ADR           "72,5" ;
+        spesstat:FKdiff        "-2" ;
+        spesstat:KAST          "48,1" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "18" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "8" ;
+        spesstat:kills         "19" ;
+        spstat:rating          "0,98" ;
+        sport:participationBy  <http://example.com/Athlete/PES10> .
+
+<http://example.com/Membership/T9572-PES16>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES16> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES16> ;
+        sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Membership/T6134-PES11>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES11> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES11> ;
+        sport:membershipOf  <http://example.com/Team/T6134> .
+
+<http://example.com/Participation/5121-PES19>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES19> participation in Event 5121" ;
+        spesstat:ADR           "54,4" ;
+        spesstat:FKdiff        "0" ;
+        spesstat:KAST          "51,7" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "21" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "7" ;
+        spesstat:kills         "12" ;
+        spstat:rating          "0,66" ;
+        sport:participationBy  <http://example.com/Athlete/PES19> .
+
+<http://example.com/Athlete/PES15>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES15>" ;
+        sport:nationality  "Turkish" .
+
+<http://example.com/Participation/5120-PES17>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES17> participation in Event 5120" ;
+        spesstat:ADR           "104,9" ;
+        spesstat:FKdiff        "3" ;
+        spesstat:KAST          "73,9" ;
+        spesstat:assist        "6" ;
+        spesstat:deaths        "16" ;
+        spesstat:flashassist   "2" ;
+        spesstat:headshot      "6" ;
+        spesstat:kills         "22" ;
+        spstat:rating          "1,43" ;
+        sport:participationBy  <http://example.com/Athlete/PES17> .
+
+<http://example.com/Participation/5122-T6134>
+        a                      sport:TeamParticipation ;
+        rdfs:label             "Kinguin participation in Event 5122" ;
+        spstat:event-outcome   speventoutcome:loss ;
+        sport:participationBy  <http://example.com/Team/T6134> ;
+        sport:score            "9" .
+
+<http://example.com/Competition/l.intelextrememasters.com-2019>
+        a                        sport:Competition ;
+        rdfs:label               "Intel Extreme Masters 2019" ;
+        sport:parentCompetition  <http://example.com/Competition/l.intelextrememasters.com> .
+
+<http://example.com/Participation/5122-PES15>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES15> participation in Event 5122" ;
+        spesstat:ADR           "105,2" ;
+        spesstat:FKdiff        "1" ;
+        spesstat:KAST          "80,0" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "12" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "15" ;
+        spesstat:kills         "26" ;
+        spstat:rating          "1,57" ;
+        sport:participationBy  <http://example.com/Athlete/PES15> .
+
+<http://example.com/Participation/5121-PES13>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES13> participation in Event 5121" ;
+        spesstat:ADR           "66,3" ;
+        spesstat:FKdiff        "-3" ;
+        spesstat:KAST          "69,0" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "22" ;
+        spesstat:flashassist   "1" ;
+        spesstat:headshot      "8" ;
+        spesstat:kills         "16" ;
+        spstat:rating          "0,82" ;
+        sport:participationBy  <http://example.com/Athlete/PES13> .
+
+<http://example.com/Participation/5120-PES11>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES11> participation in Event 5120" ;
+        spesstat:ADR           "65,9" ;
+        spesstat:FKdiff        "-3" ;
+        spesstat:KAST          "65,2" ;
+        spesstat:assist        "1" ;
+        spesstat:deaths        "16" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "9" ;
+        spesstat:kills         "15" ;
+        spstat:rating          "0,92" ;
+        sport:participationBy  <http://example.com/Athlete/PES11> .
+
+<http://example.com/Membership/T9572-PES15>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES15> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES15> ;
+        sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Membership/T6134-PES10>
+        a                   sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/PES10> membership of " ;
+        sport:membershipBy  <http://example.com/Athlete/PES10> ;
+        sport:membershipOf  <http://example.com/Team/T6134> .
+
+<http://example.com/Participation/5121-PES18>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES18> participation in Event 5121" ;
+        spesstat:ADR           "70,4" ;
+        spesstat:FKdiff        "-4" ;
+        spesstat:KAST          "69,0" ;
+        spesstat:assist        "5" ;
+        spesstat:deaths        "19" ;
+        spesstat:flashassist   "1" ;
+        spesstat:headshot      "5" ;
+        spesstat:kills         "15" ;
+        spstat:rating          "0,89" ;
+        sport:participationBy  <http://example.com/Athlete/PES18> .
+
+<http://example.com/Athlete/PES14>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES14>" ;
+        sport:nationality  "Polish" .
+
+<http://example.com/Participation/5120-PES16>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES16> participation in Event 5120" ;
+        spesstat:ADR           "87,6" ;
+        spesstat:FKdiff        "2" ;
+        spesstat:KAST          "78,3" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "12" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "11" ;
+        spesstat:kills         "24" ;
+        spstat:rating          "1,53" ;
+        sport:participationBy  <http://example.com/Athlete/PES16> .
+
+<http://example.com/Competition/l.intelextrememasters.com>
+        a            sport:Competition ;
+        rdfs:label   "Intel Extreme Masters" ;
+        sport:sport  medtop:20001183 .
+
+<http://example.com/Participation/5122-PES14>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES14> participation in Event 5122" ;
+        spesstat:ADR           "73,7" ;
+        spesstat:FKdiff        "2" ;
+        spesstat:KAST          "56,0" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "20" ;
+        spesstat:flashassist   "1" ;
+        spesstat:headshot      "10" ;
+        spesstat:kills         "16" ;
+        spstat:rating          "0,89" ;
+        sport:participationBy  <http://example.com/Athlete/PES14> .
+
+<http://example.com/Participation/5121-PES12>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES12> participation in Event 5121" ;
+        spesstat:ADR           "59,2" ;
+        spesstat:FKdiff        "1" ;
+        spesstat:KAST          "69,0" ;
+        spesstat:assist        "4" ;
+        spesstat:deaths        "18" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "9" ;
+        spesstat:kills         "13" ;
+        spstat:rating          "0,88" ;
+        sport:participationBy  <http://example.com/Athlete/PES12> .
+
+<http://example.com/Participation/5120-PES10>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES10> participation in Event 5120" ;
+        spesstat:ADR           "65,9" ;
+        spesstat:FKdiff        "3" ;
+        spesstat:KAST          "65,2" ;
+        spesstat:assist        "5" ;
+        spesstat:deaths        "17" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "7" ;
+        spesstat:kills         "16" ;
+        spstat:rating          "1,06" ;
+        sport:participationBy  <http://example.com/Athlete/PES10> .
+
+<http://example.com/CompetitionPhase/>
+        a                           sport:CompetitionPhase ;
+        rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/> of competition <http://example.com/Competition/l.intelextrememasters.com>" ;
+        sport:competition           <http://example.com/Competition/l.intelextrememasters.com> ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes//> .
+
+<http://example.com/Event/541807>
+        a                         sport:Event ;
+        rdfs:label                "Event 541807" ;
+        sport:eventParticipation  <http://example.com/Participation/541807-T9572> , <http://example.com/Participation/541807-T6134> ;
+        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime ;
+        sport:subEvent            <http://example.com/Event/5122> , <http://example.com/Event/5121> , <http://example.com/Event/5120> .
+
+<http://example.com/Athlete/PES19>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES19>" ;
+        sport:nationality  "Turkish" .
+
+<http://example.com/Participation/5120-T6134>
+        a                      sport:TeamParticipation ;
+        rdfs:label             "Kinguin participation in Event 5120" ;
+        spstat:event-outcome   speventoutcome:loss ;
+        sport:participationBy  <http://example.com/Team/T6134> ;
+        sport:score            "7" .
+
+<http://example.com/Participation/5122-T9572>
+        a                      sport:TeamParticipation ;
+        rdfs:label             "Ex-Space Soldiers participation in Event 5122" ;
+        spstat:event-outcome   speventoutcome:win ;
+        sport:participationBy  <http://example.com/Team/T9572> ;
+        sport:score            "16" .
+
+<http://example.com/Participation/5122-PES19>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES19> participation in Event 5122" ;
+        spesstat:ADR           "86,5" ;
+        spesstat:FKdiff        "1" ;
+        spesstat:KAST          "56,0" ;
+        spesstat:assist        "5" ;
+        spesstat:deaths        "16" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "10" ;
+        spesstat:kills         "20" ;
+        spstat:rating          "1,21" ;
+        sport:participationBy  <http://example.com/Athlete/PES19> .
+
+<http://example.com/Participation/5121-PES17>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES17> participation in Event 5121" ;
+        spesstat:ADR           "81,3" ;
+        spesstat:FKdiff        "4" ;
+        spesstat:KAST          "65,5" ;
+        spesstat:assist        "3" ;
+        spesstat:deaths        "19" ;
+        spesstat:flashassist   "0" ;
+        spesstat:headshot      "14" ;
+        spesstat:kills         "23" ;
+        spstat:rating          "1,14" ;
+        sport:participationBy  <http://example.com/Athlete/PES17> .
+
+<http://example.com/Team/T6134>
+        a                 sport:Team ;
+        rdfs:label        "" , "Kinguin" ;
+        sport:membership  <http://example.com/Membership/T6134-PES14> , <http://example.com/Membership/T6134-PES13> , <http://example.com/Membership/T6134-PES12> , <http://example.com/Membership/T6134-PES11> , <http://example.com/Membership/T6134-PES10> .
+
+<http://example.com/Athlete/PES13>
+        a                  sport:Athlete ;
+        rdfs:label         "Player <http://example.com/Athlete/PES13>" ;
+        sport:nationality  "Polish" .
+
+<http://example.com/Participation/5120-PES15>
+        a                      sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/PES15> participation in Event 5120" ;
+        spesstat:ADR           "64,4" ;
+        spesstat:FKdiff        "3" ;
+        spesstat:KAST          "82,6" ;
+        spesstat:assist        "5" ;
+        spesstat:deaths        "14" ;
+        spesstat:flashassist   "2" ;
+        spesstat:headshot      "5" ;
+        spesstat:kills         "14" ;
+        spstat:rating          "1,15" ;
+        sport:participationBy  <http://example.com/Athlete/PES15> .

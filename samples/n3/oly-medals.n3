@@ -1,290 +1,267 @@
-<http://example.com/Competition/CSO><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
-                    <http://example.com/Competition/CSO> <http://www.w3.org/2000/01/rdf-schema#label> "Summer Olympics" .
-                    <http://example.com/Competition/CSO> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20001177> .
+<http://example.com/Competition/OLYS><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
+                    <http://example.com/Competition/OLYS><http://www.iptc.org/ontologies/Sport/competitionType><http://www.iptc.org/ontologies/Sport/spct/recurring-competition> .
+                    <http://example.com/Competition/OLYS> <http://www.w3.org/2000/01/rdf-schema#label> "Summer Olympics" .
+                    <http://example.com/Competition/OLYS> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20001177> .
 
                     
-                <http://example.com/Competition/CSO><http://www.iptc.org/ontologies/Sport/governingBody><http://example.com/GoverningBody/IOC> .
+                <http://example.com/Competition/OLYS><http://www.iptc.org/ontologies/Sport/governingBody><http://example.com/GoverningBody/IOC> .
                         <http://example.com/GoverningBody/IOC><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/GoverningBody> .
                         <http://example.com/GoverningBody/IOC> <http://www.w3.org/2000/01/rdf-schema#label> "International Olympic Committee" .
-                    <http://example.com/Competition/CSOB4><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
-                    <http://example.com/Competition/CSOB4> <http://www.w3.org/2000/01/rdf-schema#label> "2020 Tokyo Summer Olympics" .
-                    <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20001177> .
+                    <http://example.com/Competition/OLYS2020><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Competition> .
+                    <http://example.com/Competition/OLYS2020><http://www.iptc.org/ontologies/Sport/competitionType><http://www.iptc.org/ontologies/Sport/spct/competition> .
+                    <http://example.com/Competition/OLYS2020> <http://www.w3.org/2000/01/rdf-schema#label> "2020 Tokyo Summer Olympics" .
+                    <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/sport> <http://cv.iptc.org/newscodes/mediatopic/20001177> .
 
                     
-                <http://example.com/Competition/CSOB4><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/CSO> .
+                <http://example.com/Competition/OLYS2020><http://www.iptc.org/ontologies/Sport/parentCompetition><http://example.com/Competition/OLYS> .
                     <http://example.com/Team/TICHN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TICHN> <http://www.w3.org/2000/01/rdf-schema#label> "People's Republic of China" .
 
-        <http://example.com/Participation/CSOB4-TICHN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TICHN> <http://www.w3.org/2000/01/rdf-schema#label> "People's Republic of China participation in Event " .
+        <http://example.com/Participation/OLYS2020-TICHN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TICHN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TICHN> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TICHN> .
-        <http://example.com/Participation/CSOB4-TICHN> <http://www.iptc.org/ontologies/Sport/rank> "1" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TICHN> .
+          	     <http://example.com/Participation/OLYS2020-TICHN> <http://www.w3.org/2000/01/rdf-schema#label> "People's Republic of China participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TICHN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TICHN> .
+        <http://example.com/Participation/OLYS2020-TICHN> <http://www.iptc.org/ontologies/Sport/rank> "1" .
                 <http://example.com/Team/TIJPN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIJPN> <http://www.w3.org/2000/01/rdf-schema#label> "Japan" .
 
-        <http://example.com/Participation/CSOB4-TIJPN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIJPN> <http://www.w3.org/2000/01/rdf-schema#label> "Japan participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIJPN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIJPN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIJPN> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIJPN> .
-        <http://example.com/Participation/CSOB4-TIJPN> <http://www.iptc.org/ontologies/Sport/rank> "2" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIJPN> .
+          	     <http://example.com/Participation/OLYS2020-TIJPN> <http://www.w3.org/2000/01/rdf-schema#label> "Japan participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIJPN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIJPN> .
+        <http://example.com/Participation/OLYS2020-TIJPN> <http://www.iptc.org/ontologies/Sport/rank> "2" .
                 <http://example.com/Team/TIKOR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIKOR> <http://www.w3.org/2000/01/rdf-schema#label> "Republic of Korea" .
 
-        <http://example.com/Participation/CSOB4-TIKOR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIKOR> <http://www.w3.org/2000/01/rdf-schema#label> "Republic of Korea participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIKOR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIKOR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKOR> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIKOR> .
-        <http://example.com/Participation/CSOB4-TIKOR> <http://www.iptc.org/ontologies/Sport/rank> "3" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIKOR> .
+          	     <http://example.com/Participation/OLYS2020-TIKOR> <http://www.w3.org/2000/01/rdf-schema#label> "Republic of Korea participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIKOR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKOR> .
+        <http://example.com/Participation/OLYS2020-TIKOR> <http://www.iptc.org/ontologies/Sport/rank> "3" .
                 <http://example.com/Team/TIECU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIECU> <http://www.w3.org/2000/01/rdf-schema#label> "Ecuador" .
 
-        <http://example.com/Participation/CSOB4-TIECU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIECU> <http://www.w3.org/2000/01/rdf-schema#label> "Ecuador participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIECU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIECU> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIECU> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIECU> .
-        <http://example.com/Participation/CSOB4-TIECU> <http://www.iptc.org/ontologies/Sport/rank> "4" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIECU> .
+          	     <http://example.com/Participation/OLYS2020-TIECU> <http://www.w3.org/2000/01/rdf-schema#label> "Ecuador participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIECU> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIECU> .
+        <http://example.com/Participation/OLYS2020-TIECU> <http://www.iptc.org/ontologies/Sport/rank> "4" .
                 <http://example.com/Team/TIHUN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIHUN> <http://www.w3.org/2000/01/rdf-schema#label> "Hungary" .
 
-        <http://example.com/Participation/CSOB4-TIHUN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIHUN> <http://www.w3.org/2000/01/rdf-schema#label> "Hungary participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIHUN><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIHUN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIHUN> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIHUN> .
-        <http://example.com/Participation/CSOB4-TIHUN> <http://www.iptc.org/ontologies/Sport/rank> "4" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIHUN> .
+          	     <http://example.com/Participation/OLYS2020-TIHUN> <http://www.w3.org/2000/01/rdf-schema#label> "Hungary participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIHUN> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIHUN> .
+        <http://example.com/Participation/OLYS2020-TIHUN> <http://www.iptc.org/ontologies/Sport/rank> "4" .
                 <http://example.com/Team/TIIRI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIIRI> <http://www.w3.org/2000/01/rdf-schema#label> "Islamic Republic of Iran" .
 
-        <http://example.com/Participation/CSOB4-TIIRI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIIRI> <http://www.w3.org/2000/01/rdf-schema#label> "Islamic Republic of Iran participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIIRI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIIRI> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIIRI> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIIRI> .
-        <http://example.com/Participation/CSOB4-TIIRI> <http://www.iptc.org/ontologies/Sport/rank> "4" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIIRI> .
+          	     <http://example.com/Participation/OLYS2020-TIIRI> <http://www.w3.org/2000/01/rdf-schema#label> "Islamic Republic of Iran participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIIRI> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIIRI> .
+        <http://example.com/Participation/OLYS2020-TIIRI> <http://www.iptc.org/ontologies/Sport/rank> "4" .
                 <http://example.com/Team/TIKOS><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIKOS> <http://www.w3.org/2000/01/rdf-schema#label> "Kosovo" .
 
-        <http://example.com/Participation/CSOB4-TIKOS><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIKOS> <http://www.w3.org/2000/01/rdf-schema#label> "Kosovo participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIKOS><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIKOS> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKOS> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIKOS> .
-        <http://example.com/Participation/CSOB4-TIKOS> <http://www.iptc.org/ontologies/Sport/rank> "4" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIKOS> .
+          	     <http://example.com/Participation/OLYS2020-TIKOS> <http://www.w3.org/2000/01/rdf-schema#label> "Kosovo participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIKOS> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKOS> .
+        <http://example.com/Participation/OLYS2020-TIKOS> <http://www.iptc.org/ontologies/Sport/rank> "4" .
                 <http://example.com/Team/TIROC><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIROC> <http://www.w3.org/2000/01/rdf-schema#label> "Russia" .
 
-        <http://example.com/Participation/CSOB4-TIROC><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIROC> <http://www.w3.org/2000/01/rdf-schema#label> "Russia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIROC><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIROC> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIROC> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIROC> .
-        <http://example.com/Participation/CSOB4-TIROC> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIROC> .
+          	     <http://example.com/Participation/OLYS2020-TIROC> <http://www.w3.org/2000/01/rdf-schema#label> "Russia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIROC> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIROC> .
+        <http://example.com/Participation/OLYS2020-TIROC> <http://www.iptc.org/ontologies/Sport/rank> "8" .
                 <http://example.com/Team/TISRB><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TISRB> <http://www.w3.org/2000/01/rdf-schema#label> "Serbia" .
 
-        <http://example.com/Participation/CSOB4-TISRB><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TISRB> <http://www.w3.org/2000/01/rdf-schema#label> "Serbia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TISRB><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TISRB> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISRB> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TISRB> .
-        <http://example.com/Participation/CSOB4-TISRB> <http://www.iptc.org/ontologies/Sport/rank> "8" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TISRB> .
+          	     <http://example.com/Participation/OLYS2020-TISRB> <http://www.w3.org/2000/01/rdf-schema#label> "Serbia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TISRB> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISRB> .
+        <http://example.com/Participation/OLYS2020-TISRB> <http://www.iptc.org/ontologies/Sport/rank> "8" .
                 <http://example.com/Team/TIBEL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIBEL> <http://www.w3.org/2000/01/rdf-schema#label> "Belgium" .
 
-        <http://example.com/Participation/CSOB4-TIBEL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIBEL> <http://www.w3.org/2000/01/rdf-schema#label> "Belgium participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIBEL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIBEL> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIBEL> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIBEL> .
-        <http://example.com/Participation/CSOB4-TIBEL> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIBEL> .
+          	     <http://example.com/Participation/OLYS2020-TIBEL> <http://www.w3.org/2000/01/rdf-schema#label> "Belgium participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIBEL> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIBEL> .
+        <http://example.com/Participation/OLYS2020-TIBEL> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TIIND><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIIND> <http://www.w3.org/2000/01/rdf-schema#label> "India" .
 
-        <http://example.com/Participation/CSOB4-TIIND><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIIND> <http://www.w3.org/2000/01/rdf-schema#label> "India participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIIND><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIIND> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIIND> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIIND> .
-        <http://example.com/Participation/CSOB4-TIIND> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIIND> .
+          	     <http://example.com/Participation/OLYS2020-TIIND> <http://www.w3.org/2000/01/rdf-schema#label> "India participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIIND> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIIND> .
+        <http://example.com/Participation/OLYS2020-TIIND> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TIITA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIITA> <http://www.w3.org/2000/01/rdf-schema#label> "Italy" .
 
-        <http://example.com/Participation/CSOB4-TIITA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIITA> <http://www.w3.org/2000/01/rdf-schema#label> "Italy participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIITA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIITA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIITA> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIITA> .
-        <http://example.com/Participation/CSOB4-TIITA> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIITA> .
+          	     <http://example.com/Participation/OLYS2020-TIITA> <http://www.w3.org/2000/01/rdf-schema#label> "Italy participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIITA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIITA> .
+        <http://example.com/Participation/OLYS2020-TIITA> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TINED><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TINED> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands" .
 
-        <http://example.com/Participation/CSOB4-TINED><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TINED> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands participation in Event " .
+        <http://example.com/Participation/OLYS2020-TINED><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TINED> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TINED> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TINED> .
-        <http://example.com/Participation/CSOB4-TINED> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TINED> .
+          	     <http://example.com/Participation/OLYS2020-TINED> <http://www.w3.org/2000/01/rdf-schema#label> "Netherlands participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TINED> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TINED> .
+        <http://example.com/Participation/OLYS2020-TINED> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TIROU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIROU> <http://www.w3.org/2000/01/rdf-schema#label> "Romania" .
 
-        <http://example.com/Participation/CSOB4-TIROU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIROU> <http://www.w3.org/2000/01/rdf-schema#label> "Romania participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIROU><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIROU> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIROU> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIROU> .
-        <http://example.com/Participation/CSOB4-TIROU> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIROU> .
+          	     <http://example.com/Participation/OLYS2020-TIROU> <http://www.w3.org/2000/01/rdf-schema#label> "Romania participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIROU> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIROU> .
+        <http://example.com/Participation/OLYS2020-TIROU> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TITPE><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TITPE> <http://www.w3.org/2000/01/rdf-schema#label> "Chinese Taipei" .
 
-        <http://example.com/Participation/CSOB4-TITPE><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TITPE> <http://www.w3.org/2000/01/rdf-schema#label> "Chinese Taipei participation in Event " .
+        <http://example.com/Participation/OLYS2020-TITPE><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TITPE> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TITPE> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TITPE> .
-        <http://example.com/Participation/CSOB4-TITPE> <http://www.iptc.org/ontologies/Sport/rank> "10" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TITPE> .
+          	     <http://example.com/Participation/OLYS2020-TITPE> <http://www.w3.org/2000/01/rdf-schema#label> "Chinese Taipei participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TITPE> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TITPE> .
+        <http://example.com/Participation/OLYS2020-TITPE> <http://www.iptc.org/ontologies/Sport/rank> "10" .
                 <http://example.com/Team/TIEST><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIEST> <http://www.w3.org/2000/01/rdf-schema#label> "Estonia" .
 
-        <http://example.com/Participation/CSOB4-TIEST><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIEST> <http://www.w3.org/2000/01/rdf-schema#label> "Estonia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIEST><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIEST> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIEST> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIEST> .
-        <http://example.com/Participation/CSOB4-TIEST> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIEST> .
+          	     <http://example.com/Participation/OLYS2020-TIEST> <http://www.w3.org/2000/01/rdf-schema#label> "Estonia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIEST> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIEST> .
+        <http://example.com/Participation/OLYS2020-TIEST> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIFRA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIFRA> <http://www.w3.org/2000/01/rdf-schema#label> "France" .
 
-        <http://example.com/Participation/CSOB4-TIFRA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIFRA> <http://www.w3.org/2000/01/rdf-schema#label> "France participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIFRA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIFRA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIFRA> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIFRA> .
-        <http://example.com/Participation/CSOB4-TIFRA> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIFRA> .
+          	     <http://example.com/Participation/OLYS2020-TIFRA> <http://www.w3.org/2000/01/rdf-schema#label> "France participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIFRA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIFRA> .
+        <http://example.com/Participation/OLYS2020-TIFRA> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIINA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIINA> <http://www.w3.org/2000/01/rdf-schema#label> "Indonesia" .
 
-        <http://example.com/Participation/CSOB4-TIINA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIINA> <http://www.w3.org/2000/01/rdf-schema#label> "Indonesia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIINA><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIINA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIINA> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIINA> .
-        <http://example.com/Participation/CSOB4-TIINA> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIINA> .
+          	     <http://example.com/Participation/OLYS2020-TIINA> <http://www.w3.org/2000/01/rdf-schema#label> "Indonesia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIINA> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIINA> .
+        <http://example.com/Participation/OLYS2020-TIINA> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIISR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIISR> <http://www.w3.org/2000/01/rdf-schema#label> "Israel" .
 
-        <http://example.com/Participation/CSOB4-TIISR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIISR> <http://www.w3.org/2000/01/rdf-schema#label> "Israel participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIISR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIISR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIISR> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIISR> .
-        <http://example.com/Participation/CSOB4-TIISR> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIISR> .
+          	     <http://example.com/Participation/OLYS2020-TIISR> <http://www.w3.org/2000/01/rdf-schema#label> "Israel participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIISR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIISR> .
+        <http://example.com/Participation/OLYS2020-TIISR> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIKAZ><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIKAZ> <http://www.w3.org/2000/01/rdf-schema#label> "Kazakhstan" .
 
-        <http://example.com/Participation/CSOB4-TIKAZ><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIKAZ> <http://www.w3.org/2000/01/rdf-schema#label> "Kazakhstan participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIKAZ><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIKAZ> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKAZ> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIKAZ> .
-        <http://example.com/Participation/CSOB4-TIKAZ> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIKAZ> .
+          	     <http://example.com/Participation/OLYS2020-TIKAZ> <http://www.w3.org/2000/01/rdf-schema#label> "Kazakhstan participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIKAZ> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIKAZ> .
+        <http://example.com/Participation/OLYS2020-TIKAZ> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIMEX><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIMEX> <http://www.w3.org/2000/01/rdf-schema#label> "Mexico" .
 
-        <http://example.com/Participation/CSOB4-TIMEX><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIMEX> <http://www.w3.org/2000/01/rdf-schema#label> "Mexico participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIMEX><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIMEX> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIMEX> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIMEX> .
-        <http://example.com/Participation/CSOB4-TIMEX> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIMEX> .
+          	     <http://example.com/Participation/OLYS2020-TIMEX> <http://www.w3.org/2000/01/rdf-schema#label> "Mexico participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIMEX> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIMEX> .
+        <http://example.com/Participation/OLYS2020-TIMEX> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIMGL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIMGL> <http://www.w3.org/2000/01/rdf-schema#label> "Mongolia" .
 
-        <http://example.com/Participation/CSOB4-TIMGL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIMGL> <http://www.w3.org/2000/01/rdf-schema#label> "Mongolia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIMGL><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIMGL> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIMGL> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIMGL> .
-        <http://example.com/Participation/CSOB4-TIMGL> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIMGL> .
+          	     <http://example.com/Participation/OLYS2020-TIMGL> <http://www.w3.org/2000/01/rdf-schema#label> "Mongolia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIMGL> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIMGL> .
+        <http://example.com/Participation/OLYS2020-TIMGL> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TISLO><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TISLO> <http://www.w3.org/2000/01/rdf-schema#label> "Slovenia" .
 
-        <http://example.com/Participation/CSOB4-TISLO><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TISLO> <http://www.w3.org/2000/01/rdf-schema#label> "Slovenia participation in Event " .
+        <http://example.com/Participation/OLYS2020-TISLO><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TISLO> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISLO> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TISLO> .
-        <http://example.com/Participation/CSOB4-TISLO> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TISLO> .
+          	     <http://example.com/Participation/OLYS2020-TISLO> <http://www.w3.org/2000/01/rdf-schema#label> "Slovenia participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TISLO> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISLO> .
+        <http://example.com/Participation/OLYS2020-TISLO> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TISUI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TISUI> <http://www.w3.org/2000/01/rdf-schema#label> "Switzerland" .
 
-        <http://example.com/Participation/CSOB4-TISUI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TISUI> <http://www.w3.org/2000/01/rdf-schema#label> "Switzerland participation in Event " .
+        <http://example.com/Participation/OLYS2020-TISUI><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TISUI> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISUI> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TISUI> .
-        <http://example.com/Participation/CSOB4-TISUI> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TISUI> .
+          	     <http://example.com/Participation/OLYS2020-TISUI> <http://www.w3.org/2000/01/rdf-schema#label> "Switzerland participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TISUI> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TISUI> .
+        <http://example.com/Participation/OLYS2020-TISUI> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 <http://example.com/Team/TIUKR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/Team> .
         
         <http://example.com/Team/TIUKR> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine" .
 
-        <http://example.com/Participation/CSOB4-TIUKR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
-            <http://example.com/Participation/CSOB4-TIUKR> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine participation in Event " .
+        <http://example.com/Participation/OLYS2020-TIUKR><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><http://www.iptc.org/ontologies/Sport/TeamParticipation> .
 
-            
-            <http://example.com/Participation/CSOB4-TIUKR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIUKR> .
-        <http://example.com/Competition/CSOB4> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/CSOB4-TIUKR> .
-        <http://example.com/Participation/CSOB4-TIUKR> <http://www.iptc.org/ontologies/Sport/rank> "16" .
+            <http://example.com/Competition/OLYS2020> <http://www.iptc.org/ontologies/Sport/competitionParticipation> <http://example.com/Participation/OLYS2020-TIUKR> .
+          	     <http://example.com/Participation/OLYS2020-TIUKR> <http://www.w3.org/2000/01/rdf-schema#label> "Ukraine participation in Competition OLYS2020" .
+                <http://example.com/Participation/OLYS2020-TIUKR> <http://www.iptc.org/ontologies/Sport/participationBy> <http://example.com/Team/TIUKR> .
+        <http://example.com/Participation/OLYS2020-TIUKR> <http://www.iptc.org/ontologies/Sport/rank> "16" .
                 
