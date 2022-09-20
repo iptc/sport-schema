@@ -7,25 +7,24 @@ PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
 PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
 PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocpos/>
 
-SELECT ?teamName ?playerName ?regularPosition ?eventPosition
+SELECT ?teamName ?playerName ?eventPosition
 WHERE {
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-		   sport:eventParticipation ?playerParticipation .
-    ?playerParticipation rdf:type sport:IndividualParticipation ;
-                         sport:participationBy ?player ;
-                         sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
+		   sport:eventParticipation ?Participation .
+    ?Participation rdf:type sport:TeamParticipation ;
+                   sport:participationBy ?team .
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName ;
+		  sport:membership ?playerMembership .
+	?playerMembership rdf:type sport:IndividualMembership ;
+			sport:membershipBy ?player .
+    ?tParticipation rdf:type sport:IndividualParticipation ;
+    				 sport:participationBy ?player ;
+                         sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> ;
+                         sport:positionEvent ?eventPosition .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName . 
-    ?team rdf:type sport:Team ;
-          sport:membership ?members .
-    ?members rdf:type sport:IndividualMembership ;
-             sport:membershipBy ?player ;
-    		 sport:positionRegular ?regularPosition ;
-    		 sport:membershipOf ?team .
-    ?team rdf:type sport:Team ;
-		  rdfs:label ?teamName .
-    OPTIONAL { ?playerParticipation sport:positionEvent ?eventPosition }
     FILTER (?event = <http://example.com/Event/E2128610>)
 }
 ORDER BY ?teamName ?playerName
