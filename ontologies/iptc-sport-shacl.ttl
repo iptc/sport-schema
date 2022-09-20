@@ -47,6 +47,12 @@ sport:CompetitionShape
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
+    sh:path sport:competitionType ;
+    rdfs:domain sport:Competition ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spct/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
     sh:path sport:parentCompetition ;
     sh:class sport:Competition
   ] ;
@@ -68,6 +74,10 @@ sport:CompetitionPhaseShape
     sh:path sport:sport ;
     sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
     sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:phaseParticipation ;
+    sh:class sport:Participation
   ] ;
   sh:property [
     sh:path sport:competitionFormat ;

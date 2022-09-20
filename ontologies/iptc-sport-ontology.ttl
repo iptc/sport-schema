@@ -164,6 +164,20 @@ sport:competitionPhase rdf:type rdf:Property ;
     rdfs:range sport:CompetitionPhase ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
 
+sport:competitionType rdf:type rdf:Property ;
+    rdfs:label "competition type"@en ;
+    rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
+sport:phaseParticipation rdf:type rdf:Property ;
+    rdfs:label "phase participation"@en ;
+    rdfs:comment "Link to the participation by an agent in a competition phase"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:Participation ;
+    rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .
+
 sport:event rdf:type rdf:Property ;
     rdfs:label "event"@en ;
     rdfs:comment "The event in which an Action took place"@en ;
@@ -173,7 +187,7 @@ sport:event rdf:type rdf:Property ;
 
 sport:eventParticipation rdf:type rdf:Property ;
     rdfs:label "event participation"@en ;
-    rdfs:comment "Link to the participation by an agent in a single events"@en ;
+    rdfs:comment "Link to the participation by an agent in a single event"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:Participation ;
     rdfs:isDefinedBy <http://www.iptc.org/ontologies/Sport/> .

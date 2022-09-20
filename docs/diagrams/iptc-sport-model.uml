@@ -21,6 +21,7 @@ class Athlete {
 class Competition {
   rdfs:label : string
   sport : CV Value
+  competitionType : CV Value
 }
 
 class CompetitorParticipation {
@@ -121,6 +122,7 @@ Competition .. Competition : > parentCompetition
 Competition .. GoverningBody : > governingBody
 Competition .. Participation : > competitionParticipation
 CompetitionPhase .. Competition : > competition
+CompetitionPhase .. Participation : > phaseParticipation
 Event .. Competition : > competition
 Event .. CompetitionPhase : > competitionPhase
 Event .. Event : > subEvent
