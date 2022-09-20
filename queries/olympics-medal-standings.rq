@@ -13,15 +13,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT ?compName ?teamName ?rank
 WHERE
 {
-    ?event rdf:type sport:Competition ;
+    ?competition rdf:type sport:Competition ;
            rdfs:label ?compName ;
-		   sport:participation ?teamperf .
+		   sport:competitionParticipation ?teamperf .
     ?teamperf sport:participationBy ?team ;
     			rdf:type sport:TeamParticipation ;
     			sport:rank ?rankstr .
     ?team rdfs:label ?teamName ; 
     		rdf:type sport:Team .
 
+    FILTER (?competition = <http://example.com/Competition/OLYS2020>)
     	BIND (xsd:integer(?rankstr) as ?rank)
 }
 ORDER BY ASC(?rank)
