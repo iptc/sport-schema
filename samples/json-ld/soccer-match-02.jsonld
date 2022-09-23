@@ -3,12 +3,12 @@
         {
             "@id": "http://example.com/Athlete/p.155569",
             "rdfs:label": "Daniel Amartey",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.51938",
             "rdfs:label": "Marc Albrighton",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-EPLT13",
@@ -19,7 +19,6 @@
             "spsocstat:free-kicks": "1",
             "spsocstat:goals-against-total": "1",
             "spsocstat:line-formation": "3412",
-            "sport:alignment": "home",
             "spstat:time-of-possession-percentage": "67.1",
             "rdfs:label": "Leicester City participation in Event E2128610",
             "spsocstat:tackles-won": "11",
@@ -28,28 +27,31 @@
             "spsocstat:interceptions": "9",
             "spsocstat:offsides": "2",
             "spsocstat:fouls-commited": "13",
-            "sport:score": "2",
+            "@type": "spact:TeamParticipation",
             "spsocstat:passes-total": "597",
-            "sport:participationBy": {
-                "@id": "http://example.com/Team/EPLT13"
-            },
             "spsocstat:shots-total": "13",
             "spsocstat:corner-kicks": "7",
+            "spact:alignment": "home",
+            "spact:score": "2",
             "spsocstat:clearances-successful": "12",
             "spstat:score-opposing": "1",
             "spsocstat:tackles-won-percentage": "0.611",
             "spsocstat:shots-blocked": "2",
-            "@type": "sport:TeamParticipation"
+            "spact:participationBy": {
+                "@id": "http://example.com/Team/EPLT13"
+            }
         },
         {
             "@id": "http://example.com/Team/EPLT13",
-            "@type": "sport:Team",
-            "sport:membership": [
+            "spact:membership": [
                 {
-                    "@id": "http://example.com/Membership/EPLT13-p.37642"
+                    "@id": "http://example.com/Membership/EPLT13-p.168580"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT13-p.172780"
+                    "@id": "http://example.com/Membership/EPLT13-p.111931"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.166989"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT13-p.444463"
@@ -58,77 +60,76 @@
                     "@id": "http://example.com/Membership/EPLT13-p.101668"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT13-p.106837"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.166477"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.95463"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.228798"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.86881"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.203341"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.17745"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.166989"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.173515"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.168580"
+                    "@id": "http://example.com/Membership/EPLT13-p.244619"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT13-p.155569"
                 },
                 {
+                    "@id": "http://example.com/Membership/EPLT13-p.203341"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.95463"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.166477"
+                },
+                {
                     "@id": "http://example.com/Membership/EPLT13-p.218031"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.244619"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT13-p.197469"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT13-p.51938"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT13-p.111931"
+                    "@id": "http://example.com/Membership/EPLT13-p.228798"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.197469"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.106837"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.86881"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.37642"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.17745"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.172780"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT13-p.173515"
                 }
             ],
-            "rdfs:label": "Leicester City"
+            "rdfs:label": "Leicester City",
+            "@type": "spact:Team"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.168580",
-            "sport:uniformNumber": "17",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "17",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.168580"
             },
             "rdfs:label": "Ayoze Pérez membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.168580",
             "rdfs:label": "Ayoze Pérez",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.218031",
             "rdfs:label": "Çaglar Söyüncü participation in Event E2128610",
             "spsocstat:shots-off-goal-total": "1",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:touches": "98",
             "spsocstat:aerials-won": "1",
             "spsocstat:interceptions": "2",
@@ -140,32 +141,31 @@
             "spsocstat:tackles-lost": "1",
             "spsocstat:passes-total": "84",
             "spsocstat:goals-against-total": "1",
-            "@type": "sport:IndividualParticipation",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.218031"
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
+            },
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
             },
             "spsocstat:passes-complete-3rd-final": "11",
             "spstat:time-played-total": "90",
             "spsocstat:passes-complete": "78",
             "spsocstat:shots-total": "1",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.218031"
             },
             "spstat:events-started": "1",
             "spsocstat:fouls-suffered": "3",
             "spsocstat:ejections-total": "0",
             "spsocstat:passes-incomplete": "6",
             "spsocstat:passes-complete-long": "3",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            },
             "spsocstat:tackles-total": "1",
             "spsocstat:assists-total": "0"
         },
         {
             "@id": "http://example.com/Athlete/p.218031",
             "rdfs:label": "Çaglar Söyüncü",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.101668",
@@ -173,10 +173,13 @@
             "spsocstat:goals-against-total": "1",
             "spsocstat:assists-total": "0",
             "rdfs:label": "Jamie Vardy participation in Event E2128610",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.101668"
             },
             "spsocstat:clearances-successful": "1",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            },
             "spstat:events-started": "1",
             "spsocstat:passes-total": "18",
             "spsocstat:shots-on-goal-total": "1",
@@ -185,258 +188,237 @@
             "spstat:time-played-total": "90",
             "spsocstat:goals-total": "0",
             "spsocstat:shots-total": "3",
-            "sport:playerStatus": {
+            "spsocstat:fouls-commited": "1",
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:starter"
             },
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:fouls-commited": "1",
             "spsocstat:cautions-total": "0",
             "spsocstat:passes-incomplete": "7",
             "spsocstat:aerials-won": "1",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.101668"
-            },
             "spsocstat:fouls-suffered": "2",
             "spsocstat:crosses-18-yard": "1",
             "spsocstat:ejections-total": "0",
-            "spsocstat:shots-off-goal-total": "2"
+            "spsocstat:shots-off-goal-total": "2",
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.101668",
             "rdfs:label": "Jamie Vardy",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291888213",
-            "spact:person-replacing-idref": "p.51938",
             "spact:date-time": "2021-04-26T21:28:41+01:00",
-            "spact:substitution-reason": "Tactical",
+            "spact:person-original-idref": "p.244619",
+            "spact:period-value": "2",
+            "@type": "spact:Action",
+            "rdfs:label": "Action a.2291888213 on event E2128610",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
-            "sport:event": {
+            "spact:sequence-number": "0426212841",
+            "spact:event": {
                 "@id": "http://example.com/Event/E2128610"
             },
-            "rdfs:label": "Action a.2291888213 on event E2128610",
-            "spact:person-original-idref": "p.244619",
-            "spact:sequence-number": "0426212841",
-            "spact:period-value": "2",
-            "@type": "sport:Action",
+            "spact:substitution-reason": "Tactical",
             "spact:minutes-elapsed": "70",
+            "spact:person-replacing-idref": "p.51938",
             "spact:person-replacing-position": "midfielder"
         },
         {
             "@id": "http://example.com/Event/E2128610",
-            "sport:eventParticipation": [
+            "spact:eventOutcomeType": {
+                "@id": "http://cv.iptc.org/newscodes/speventoutcometype/regular"
+            },
+            "spact:eventParticipation": [
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.80146"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.218031"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.O41049"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.60252"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.95463"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.232413"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.231747"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.94245"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.244723"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.51938"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.74230"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.101668"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.17745"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.166477"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.19188"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.173515"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.86417"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.40836"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.244619"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.55037"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.86881"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.172780"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.54861"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.37642"
+                    "@id": "http://example.com/Participation/E2128610-p.444463"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128610-p.168580"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.173954"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.58786"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.50472"
-                },
-                {
                     "@id": "http://example.com/Participation/E2128610-p.228798"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.111931"
+                    "@id": "http://example.com/Participation/E2128610-p.173954"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.444463"
+                    "@id": "http://example.com/Participation/E2128610-p.19188"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128610-p.203341"
                 },
                 {
+                    "@id": "http://example.com/Participation/E2128610-p.94245"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.58786"
+                },
+                {
                     "@id": "http://example.com/Participation/E2128610-p.105666"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.55494"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.82403"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.197469"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-EPLT13"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-EPLT31"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-p.106837"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128610-p.166989"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.66975"
+                    "@id": "http://example.com/Participation/E2128610-p.40836"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.173515"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.74230"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.95463"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.54861"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-EPLT31"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.57328"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.166477"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.17745"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.O41049"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.111931"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.101668"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.60252"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.244619"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.86417"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.82403"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.244723"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.86881"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.197469"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.55037"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.231747"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.50472"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.106837"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-EPLT13"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.37642"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128610-p.155569"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128610-p.57328"
+                    "@id": "http://example.com/Participation/E2128610-p.172780"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.232413"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.218031"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.80146"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.66975"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.55494"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-p.51938"
                 }
             ],
-            "@type": "sport:Event",
-            "sport:eventOutcomeType": {
-                "@id": "http://cv.iptc.org/newscodes/speventoutcometype/regular"
+            "spact:competitionPhase": {
+                "@id": "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33"
             },
-            "sport:competition": {
-                "@id": "http://example.com/Competition/l.premierleague.com-2020"
-            },
-            "sport:site": {
+            "spact:site": {
                 "@id": "http://example.com/Site/s.2516"
             },
-            "sport:startDateTime": {
+            "spact:startDateTime": {
                 "@value": "2021-04-26T20:00:00+01:00",
                 "@type": "xsd:dateTime"
             },
-            "sport:eventStatus": {
-                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            "spact:competition": {
+                "@id": "http://example.com/Competition/l.premierleague.com-2020"
             },
             "rdfs:label": "Event E2128610",
-            "sport:competitionPhase": {
-                "@id": "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33"
-            }
+            "spact:eventStatus": {
+                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            },
+            "@type": "spact:Event"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.51938",
-            "sport:uniformNumber": "11",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "11",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.51938"
             },
             "rdfs:label": "Marc Albrighton membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.105666",
             "rdfs:label": "Jack Butland",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.86881",
             "rdfs:label": "Nampalys Mendy",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.74230",
-            "sport:uniformNumber": "3",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "3",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.74230"
             },
             "rdfs:label": "Patrick van Aanholt membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Team/EPLT31",
-            "sport:membership": [
+            "spact:membership": [
                 {
-                    "@id": "http://example.com/Membership/EPLT31-p.82403"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.60252"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.244723"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.80146"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.58786"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.86417"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.94245"
+                    "@id": "http://example.com/Membership/EPLT31-p.66975"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT31-p.74230"
@@ -445,46 +427,64 @@
                     "@id": "http://example.com/Membership/EPLT31-p.55037"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT31-p.66975"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.50472"
+                    "@id": "http://example.com/Membership/EPLT31-p.244723"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT31-p.105666"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT31-p.54861"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.232413"
-                },
-                {
                     "@id": "http://example.com/Membership/EPLT31-p.173954"
-                },
-                {
-                    "@id": "http://example.com/Membership/EPLT31-p.55494"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT31-p.231747"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT31-p.19188"
+                    "@id": "http://example.com/Membership/EPLT31-p.58786"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.40836"
                 },
                 {
                     "@id": "http://example.com/Membership/EPLT31-p.57328"
                 },
                 {
-                    "@id": "http://example.com/Membership/EPLT31-p.40836"
+                    "@id": "http://example.com/Membership/EPLT31-p.94245"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.82403"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.55494"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.19188"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.60252"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.86417"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.50472"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.232413"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.80146"
+                },
+                {
+                    "@id": "http://example.com/Membership/EPLT31-p.54861"
                 }
             ],
-            "rdfs:label": "Crystal Palace",
-            "@type": "sport:Team"
+            "@type": "spact:Team",
+            "rdfs:label": "Crystal Palace"
         },
         {
             "@id": "http://example.com/Athlete/p.74230",
             "rdfs:label": "Patrick van Aanholt",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.17745",
@@ -494,86 +494,86 @@
             "spsocstat:assists-total": "0",
             "spstat:events-started": "1",
             "spsocstat:ejections-total": "0",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "@type": "spact:IndividualParticipation",
             "spsocstat:passes-complete": "13",
             "spsocstat:goals-against-total": "1",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.17745"
             },
             "spsocstat:save-percentage": "0.500",
             "spsocstat:saves": "1",
             "spsocstat:passes-incomplete": "7",
             "spsocstat:catches-punches": "1",
-            "@type": "sport:IndividualParticipation",
             "spstat:time-played-total": "90",
             "spsocstat:passes-total": "20",
             "spsocstat:passes-complete-long": "1",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.17745"
-            },
             "spsocstat:touches": "26",
-            "spsocstat:clearances-successful": "1",
-            "sport:positionEvent": {
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
-            }
+            },
+            "spsocstat:clearances-successful": "1"
         },
         {
             "@id": "http://example.com/Athlete/p.17745",
             "rdfs:label": "Kasper Schmeichel",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.O41049",
-            "sport:positionEvent": {
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/vendoffpos/main-official"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Official/p.O41049"
             },
             "rdfs:label": "Graham Scott participation in Event E2128610",
-            "@type": "sport:OfficialParticipation"
+            "@type": "spact:OfficialParticipation"
         },
         {
             "@id": "http://example.com/Official/p.O41049",
             "rdfs:label": "Graham Scott",
-            "@type": "sport:Official"
+            "@type": "spact:Official"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.94245",
-            "sport:uniformNumber": "23",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "23",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.94245"
             },
             "rdfs:label": "Michy Batshuayi membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.94245",
             "rdfs:label": "Michy Batshuayi",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.40836",
             "spsocstat:save-percentage": "0.600",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:starter"
             },
-            "@type": "sport:IndividualParticipation",
             "spsocstat:passes-total": "26",
             "spsocstat:passes-incomplete": "14",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
-            },
-            "sport:participationBy": {
+            "spsocstat:goals-total": "0",
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:touches": "31",
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.40836"
             },
-            "spsocstat:goals-total": "0",
-            "spsocstat:touches": "31",
             "rdfs:label": "Vicente Guaita participation in Event E2128610",
             "spsocstat:cautions-total": "0",
             "spsocstat:passes-complete-long": "12",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
+            },
             "spsocstat:goals-against-total": "2",
             "spsocstat:assists-total": "0",
             "spsocstat:ejections-total": "0",
@@ -586,20 +586,20 @@
         {
             "@id": "http://example.com/Athlete/p.40836",
             "rdfs:label": "Vicente Guaita",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291881461-p.173515",
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.173515"
             },
             "rdfs:label": "p.173515 participation in action a.2291881461 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.173515",
             "rdfs:label": "Kelechi Iheanacho",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.166477",
@@ -607,18 +607,16 @@
             "spsocstat:tackles-won": "2",
             "spsocstat:fouls-commited": "1",
             "spsocstat:tackles-total": "2",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
-            },
             "spsocstat:goals-total": "1",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:aerials-won": "3",
             "spstat:events-started": "1",
             "spsocstat:goals-against-total": "1",
             "spsocstat:cautions-total": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
             "spsocstat:passes-complete-long": "1",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:interceptions": "1",
             "spsocstat:passes-complete": "39",
             "spsocstat:crosses-18-yard": "3",
@@ -635,163 +633,165 @@
             "spsocstat:passes-total": "46",
             "spsocstat:tackles-lost": "0",
             "spsocstat:goals-right-foot": "0",
-            "spsocstat:shots-total": "1",
-            "sport:participationBy": {
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.166477"
             },
-            "@type": "sport:IndividualParticipation"
+            "spsocstat:shots-total": "1"
         },
         {
             "@id": "http://example.com/Athlete/p.166477",
             "rdfs:label": "Timothy Castagne",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.105666",
-            "sport:uniformNumber": "1",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "1",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.105666"
             },
             "rdfs:label": "Jack Butland membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.197469",
-            "sport:uniformNumber": "20",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "20",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.197469"
             },
             "rdfs:label": "Hamza Choudhury membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.197469",
             "rdfs:label": "Hamza Choudhury",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.54861",
-            "sport:uniformNumber": "20",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "20",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.54861"
             },
             "rdfs:label": "Christian Benteke membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.54861",
             "rdfs:label": "Christian Benteke",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.111931",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.111931"
             },
             "rdfs:label": "Ricardo Pereira participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.111931",
             "rdfs:label": "Ricardo Pereira",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291848623-p.82403",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.82403"
-            },
             "spact:role": {
                 "@id": "spsocrole:scorer"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.82403"
+            },
             "rdfs:label": "p.82403 participation in action a.2291848623 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.82403",
             "rdfs:label": "Wilfried Zaha",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.95463",
             "rdfs:label": "Danny Ward",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.232413",
             "rdfs:label": "Eberechi Eze participation in Event E2128610",
             "spsocstat:passes-complete-long": "1",
             "spsocstat:assists-total": "1",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
-            },
             "spsocstat:cautions-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.232413"
-            },
             "spsocstat:passes-complete-3rd-final": "6",
             "spstat:time-played-total": "90",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:touches": "53",
             "spstat:events-started": "1",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
             "spsocstat:passes-incomplete": "7",
             "spsocstat:goals-total": "0",
             "spsocstat:ejections-total": "0",
             "spsocstat:interceptions": "2",
             "spsocstat:goals-against-total": "2",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
             "spsocstat:crosses-18-yard-plus": "1",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:passes-complete": "31",
             "spsocstat:fouls-suffered": "4",
             "spsocstat:passes-total": "38",
-            "spsocstat:aerials-won": "1"
+            "spsocstat:aerials-won": "1",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.232413"
+            }
         },
         {
             "@id": "http://example.com/Athlete/p.232413",
             "rdfs:label": "Eberechi Eze",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.444463",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            },
             "rdfs:label": "Wesley Fofana participation in Event E2128610",
             "spsocstat:passes-complete-3rd-final": "7",
             "spsocstat:passes-total": "72",
             "spsocstat:goals-against-total": "1",
             "spsocstat:ejections-total": "0",
+            "@type": "spact:IndividualParticipation",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.444463"
+            },
             "spsocstat:passes-complete": "63",
             "spstat:time-played-total": "90",
             "spsocstat:goals-total": "0",
             "spsocstat:fouls-commited": "3",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.444463"
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
             },
             "spsocstat:passes-complete-long": "6",
             "spsocstat:tackles-total": "2",
             "spsocstat:assists-total": "0",
-            "@type": "sport:IndividualParticipation",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
             "spsocstat:cautions-total": "0",
             "spsocstat:tackles-lost": "1",
             "spsocstat:clearances-successful": "2",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
+            },
             "spsocstat:touches": "90",
             "spsocstat:tackles-won": "1",
             "spsocstat:fouls-suffered": "1",
@@ -802,26 +802,26 @@
         {
             "@id": "http://example.com/Athlete/p.444463",
             "rdfs:label": "Wesley Fofana",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291892531",
-            "sport:event": {
+            "spact:event": {
                 "@id": "http://example.com/Event/E2128610"
             },
-            "spact:substitution-reason": "Tactical",
-            "spact:minutes-elapsed": "83",
-            "spact:person-replacing-idref": "p.50472",
-            "spact:date-time": "2021-04-26T21:41:24+01:00",
-            "spact:person-replacing-position": "midfielder",
+            "@type": "spact:Action",
             "spact:period-value": "2",
+            "spact:person-replacing-idref": "p.50472",
+            "spact:substitution-reason": "Tactical",
+            "spact:person-replacing-position": "midfielder",
             "rdfs:label": "Action a.2291892531 on event E2128610",
-            "spact:person-original-idref": "p.66975",
-            "@type": "sport:Action",
+            "spact:minutes-elapsed": "83",
+            "spact:date-time": "2021-04-26T21:41:24+01:00",
+            "spact:sequence-number": "0426214124",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
-            "spact:sequence-number": "0426214124"
+            "spact:person-original-idref": "p.66975"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.173954",
@@ -829,80 +829,80 @@
             "spsocstat:tackles-lost": "0",
             "spsocstat:ejections-total": "0",
             "spstat:events-started": "1",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.173954"
             },
             "spsocstat:tackles-total": "1",
             "spsocstat:tackles-won": "1",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.173954"
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "spsocstat:passes-incomplete": "4",
             "spsocstat:goals-against-total": "2",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:touches": "26",
             "rdfs:label": "Jairo Riedewald participation in Event E2128610",
             "spsocstat:passes-total": "17",
             "spsocstat:interceptions": "4",
             "spsocstat:assists-total": "0",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:passes-complete-3rd-final": "4",
             "spstat:time-played-total": "85",
             "spsocstat:cautions-total": "1",
             "spsocstat:fouls-commited": "2",
-            "spsocstat:passes-complete": "13"
+            "spsocstat:passes-complete": "13",
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.173954",
             "rdfs:label": "Jairo Riedewald",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.203341",
             "rdfs:label": "Wilfred Ndidi",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.50472",
             "rdfs:label": "James McCarthy",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.95463",
-            "sport:uniformNumber": "12",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "12",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.95463"
             },
             "rdfs:label": "Danny Ward membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.51938",
             "rdfs:label": "Marc Albrighton participation in Event E2128610",
             "spsocstat:passes-complete": "6",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:passes-total": "9",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.51938"
-            },
             "spsocstat:aerials-won": "1",
             "spsocstat:ejections-total": "0",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
             },
             "spsocstat:passes-complete-3rd-final": "4",
             "spsocstat:goals-against-total": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.51938"
             },
             "spsocstat:passes-incomplete": "3",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
             "spsocstat:goals-total": "0",
             "spsocstat:assists-total": "0",
+            "@type": "spact:IndividualParticipation",
             "spstat:time-played-total": "20",
             "spsocstat:touches": "9",
             "spsocstat:cautions-total": "0"
@@ -910,103 +910,103 @@
         {
             "@id": "http://example.com/Site/s.2516",
             "rdfs:label": "King Power Stadium",
-            "@type": "sport:Site"
+            "@type": "spact:Site"
         },
         {
             "@id": "http://example.com/Athlete/p.244723",
             "rdfs:label": "Tyrick Mitchell",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.166989",
-            "sport:uniformNumber": "8",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "8",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.166989"
             },
             "rdfs:label": "Youri Tielemans membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.166989",
             "rdfs:label": "Youri Tielemans",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.80146",
             "rdfs:label": "Jordan Ayew",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.231747",
             "rdfs:label": "Jean-Philippe Mateta",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/man38197-EPLT13",
-            "sport:positionRegular": {
+            "spact:positionRegular": {
                 "@id": "http://cv.iptc.org/newscodes/spsocascpos/Manager"
             },
-            "sport:membershipOf": {
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Associate/man38197"
             },
             "rdfs:label": "Brendan Rodgers associate membership of Leicester City",
-            "@type": "sport:Membership"
+            "@type": "spact:Membership"
         },
         {
             "@id": "http://example.com/Associate/man38197",
             "rdfs:label": "Brendan Rodgers",
-            "@type": "sport:Associate"
+            "@type": "spact:Associate"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.228798",
-            "sport:uniformNumber": "19",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "19",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.228798"
             },
             "rdfs:label": "Cengiz Ünder membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.228798",
             "rdfs:label": "Cengiz Ünder",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.58786",
-            "sport:uniformNumber": "34",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "34",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.58786"
             },
             "rdfs:label": "Martin Kelly membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.58786",
             "rdfs:label": "Martin Kelly",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.86881",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.86881"
             },
             "rdfs:label": "Nampalys Mendy participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.74230",
@@ -1017,26 +1017,26 @@
             "rdfs:label": "Patrick van Aanholt participation in Event E2128610",
             "spsocstat:passes-incomplete": "13",
             "spsocstat:passes-total": "39",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:goals-against-total": "2",
             "spsocstat:assists-total": "0",
             "spsocstat:shots-blocked-outfielder": "1",
             "spstat:time-played-total": "90",
             "spsocstat:passes-complete": "26",
-            "spsocstat:goals-total": "0",
-            "@type": "sport:IndividualParticipation",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
-            "sport:positionEvent": {
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
-            "sport:participationBy": {
+            "spsocstat:goals-total": "0",
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.74230"
             },
             "spsocstat:clearances-successful": "2",
             "spsocstat:passes-complete-3rd-final": "6",
-            "spsocstat:shots-blocked-cross": "1",
             "spsocstat:touches": "60",
+            "spsocstat:shots-blocked-cross": "1",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:interceptions": "3"
         },
         {
@@ -1048,30 +1048,30 @@
             "spsocstat:passes-incomplete": "8",
             "spsocstat:tackles-lost": "1",
             "spsocstat:touches": "46",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:goals-left-foot": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
             "rdfs:label": "Kelechi Iheanacho participation in Event E2128610",
             "spstat:time-played-total": "90",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            },
             "spsocstat:tackles-total": "1",
             "spsocstat:passes-complete": "20",
             "spsocstat:crosses-18-yard-plus": "1",
             "spsocstat:tackles-won": "0",
             "spsocstat:goals-against-total": "1",
-            "sport:participationBy": {
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.173515"
             },
             "spsocstat:shots-total": "2",
             "spsocstat:passes-complete-long": "1",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
-            },
             "spsocstat:assists-total": "1",
             "spsocstat:ejections-total": "0",
             "spsocstat:passes-complete-3rd-final": "13",
             "spsocstat:goals-right-foot": "0",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:shots-off-goal-total": "1",
             "spsocstat:passes-total": "28",
             "spsocstat:fouls-commited": "1",
@@ -1080,164 +1080,170 @@
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.55494",
-            "sport:uniformNumber": "2",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "2",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.55494"
             },
             "rdfs:label": "Joel Ward membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.55494",
             "rdfs:label": "Joel Ward",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.155569",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.155569"
             },
             "rdfs:label": "Daniel Amartey participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Membership/man1280-EPLT31",
-            "sport:positionRegular": {
+            "spact:positionRegular": {
                 "@id": "http://cv.iptc.org/newscodes/spsocascpos/Manager"
             },
-            "sport:membershipOf": {
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Associate/man1280"
             },
             "rdfs:label": "Roy Hodgson associate membership of Crystal Palace",
-            "@type": "sport:Membership"
+            "@type": "spact:Membership"
         },
         {
             "@id": "http://example.com/Associate/man1280",
             "rdfs:label": "Roy Hodgson",
-            "@type": "sport:Associate"
+            "@type": "spact:Associate"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.95463",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.95463"
             },
             "rdfs:label": "Danny Ward participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.228798",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.228798"
             },
             "rdfs:label": "Cengiz Ünder participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291881105-p.173515",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.173515"
-            },
             "spact:role": {
                 "@id": "spsocrole:assist"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.173515"
+            },
             "rdfs:label": "p.173515 participation in action a.2291881105 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.50472",
             "spsocstat:passes-incomplete": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.50472"
-            },
             "spsocstat:passes-complete": "3",
             "spsocstat:ejections-total": "0",
             "spsocstat:cautions-total": "0",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
             "rdfs:label": "James McCarthy participation in Event E2128610",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
+            "@type": "spact:IndividualParticipation",
             "spsocstat:goals-total": "0",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.50472"
             },
             "spstat:time-played-total": "7",
             "spsocstat:passes-total": "3",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:assists-total": "0",
             "spsocstat:touches": "3",
             "spsocstat:goals-against-total": "0"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.244619",
-            "sport:uniformNumber": "33",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "33",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.244619"
             },
             "rdfs:label": "Luke Thomas membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.244619",
             "rdfs:label": "Luke Thomas",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291881105",
-            "sport:actionParticipation": [
-                {
-                    "@id": "http://example.com/Participation/E2128610-a.2291881105-p.166477"
-                },
-                {
-                    "@id": "http://example.com/Participation/E2128610-a.2291881105-p.173515"
-                }
-            ],
-            "spact:period-value": "2",
+            "spact:minutes-elapsed": "50",
+            "spact:sequence-number": "0426210804",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/score"
             },
             "rdfs:label": "Action a.2291881105 on event E2128610",
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            },
+            "spact:period-value": "2",
+            "spact:actionParticipation": [
+                {
+                    "@id": "http://example.com/Participation/E2128610-a.2291881105-p.173515"
+                },
+                {
+                    "@id": "http://example.com/Participation/E2128610-a.2291881105-p.166477"
+                }
+            ],
+            "@type": "spact:Action",
             "spact:score-attempt-type": {
                 "@id": "http://cv.iptc.org/newscodes/spsocscore/regular"
             },
-            "spact:sequence-number": "0426210804",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
-            "spact:minutes-elapsed": "50",
-            "@type": "sport:Action",
             "spact:date-time": "2021-04-26T21:08:04+01:00"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291881105-p.166477",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.166477"
-            },
             "spact:role": {
                 "@id": "spsocrole:scorer"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.166477"
+            },
             "rdfs:label": "p.166477 participation in action a.2291881105 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.172780",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            },
             "spsocstat:ejections-total": "0",
             "spsocstat:cautions-total": "0",
             "spsocstat:touches": "42",
@@ -1247,74 +1253,68 @@
             "rdfs:label": "James Maddison participation in Event E2128610",
             "spsocstat:goals-against-total": "1",
             "spstat:time-played-total": "70",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.172780"
-            },
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
-            },
             "spsocstat:assists-total": "0",
             "spsocstat:goals-total": "0",
             "spsocstat:passes-complete-long": "3",
             "spsocstat:passes-complete": "29",
             "spsocstat:shots-on-goal-total": "1",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:passes-incomplete": "2",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:shots-off-goal-total": "1",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.172780"
             },
             "spstat:events-started": "1"
         },
         {
             "@id": "http://example.com/Athlete/p.172780",
             "rdfs:label": "James Maddison",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.19188",
-            "sport:uniformNumber": "6",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "6",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.19188"
             },
             "rdfs:label": "Scott Dann membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.19188",
             "rdfs:label": "Scott Dann",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.82403",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:goals-total": "1",
             "spsocstat:tackles-lost": "1",
             "spsocstat:interceptions": "2",
             "spsocstat:cautions-total": "0",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.82403"
+            },
             "spsocstat:goals-head": "0",
             "spsocstat:shots-total": "1",
             "spsocstat:goals-right-foot": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
             "spsocstat:passes-complete-3rd-final": "6",
             "spsocstat:passes-total": "20",
             "spsocstat:fouls-commited": "1",
             "spsocstat:fouls-suffered": "3",
-            "@type": "sport:IndividualParticipation",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:goals-left-foot": "0",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
-            },
             "spstat:time-played-total": "90",
             "spsocstat:ejections-total": "0",
             "spsocstat:shots-blocked-cross": "1",
             "spsocstat:passes-complete": "16",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.82403"
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "spsocstat:touches": "46",
             "spsocstat:tackles-total": "3",
@@ -1331,149 +1331,149 @@
             "spsocstat:fouls-suffered": "1",
             "spsocstat:passes-incomplete": "9",
             "spsocstat:goals-against-total": "1",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.80146"
-            },
+            "@type": "spact:IndividualParticipation",
             "spsocstat:tackles-won": "1",
             "spsocstat:crosses-18-yard-plus": "1",
             "spsocstat:fouls-commited": "4",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
-            },
             "rdfs:label": "Jordan Ayew participation in Event E2128610",
             "spsocstat:tackles-lost": "0",
             "spstat:events-started": "1",
             "spsocstat:tackles-total": "1",
-            "@type": "sport:IndividualParticipation",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.80146"
+            },
             "spstat:time-played-total": "78",
             "spsocstat:cautions-total": "0",
             "spsocstat:passes-complete-3rd-final": "5",
             "spsocstat:ejections-total": "0",
-            "spsocstat:touches": "40",
-            "spsocstat:interceptions": "1",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:starter"
             },
+            "spsocstat:touches": "40",
+            "spsocstat:interceptions": "1",
             "spsocstat:goals-total": "0",
             "spsocstat:crosses-18-yard": "1",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            },
             "spsocstat:assists-total": "0",
             "spsocstat:passes-total": "22",
             "spsocstat:passes-complete": "13"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291891767-p.173515",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.173515"
-            },
             "spact:role": {
                 "@id": "spsocrole:scorer"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.173515"
+            },
             "rdfs:label": "p.173515 participation in action a.2291891767 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.106837",
-            "sport:uniformNumber": "26",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "26",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.106837"
             },
             "rdfs:label": "Dennis Praet membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.106837",
             "rdfs:label": "Dennis Praet",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.232413",
-            "sport:uniformNumber": "25",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "25",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.232413"
             },
             "rdfs:label": "Eberechi Eze membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.57328",
-            "sport:uniformNumber": "17",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "17",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.57328"
             },
             "rdfs:label": "Nathaniel Clyne membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.57328",
             "rdfs:label": "Nathaniel Clyne",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Competition/l.premierleague.com",
-            "sport:sport": {
+            "spact:sport": {
                 "@id": "medtop:20001065"
             },
-            "sport:competitionType": {
+            "spact:competitionType": {
                 "@id": "spct:recurring-competition"
             },
             "rdfs:label": "English Premier League",
-            "@type": "sport:Competition"
+            "@type": "spact:Competition"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.173954",
-            "sport:uniformNumber": "44",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "44",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.173954"
             },
             "rdfs:label": "Jairo Riedewald membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.218031",
-            "sport:uniformNumber": "4",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "4",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.218031"
             },
             "rdfs:label": "Çaglar Söyüncü membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.58786",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.58786"
             },
             "rdfs:label": "Martin Kelly participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.101668",
-            "sport:uniformNumber": "9",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "9",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.101668"
             },
             "rdfs:label": "Jamie Vardy membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.203341",
@@ -1484,26 +1484,26 @@
             "spsocstat:tackles-lost": "2",
             "spsocstat:clearances-successful": "3",
             "spsocstat:passes-incomplete": "10",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:goals-against-total": "1",
-            "sport:positionEvent": {
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "spsocstat:fouls-commited": "1",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.203341"
+            },
             "spsocstat:tackles-won": "2",
             "spsocstat:cautions-total": "0",
             "spsocstat:assists-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.203341"
-            },
             "spsocstat:ejections-total": "0",
             "spsocstat:touches": "92",
             "spsocstat:aerials-won": "3",
             "spsocstat:goals-total": "0",
-            "spsocstat:interceptions": "2",
             "spsocstat:passes-total": "74",
+            "spsocstat:interceptions": "2",
             "spsocstat:passes-complete-3rd-final": "15",
-            "sport:playerStatus": {
+            "@type": "spact:IndividualParticipation",
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:starter"
             },
             "spsocstat:passes-complete-long": "1",
@@ -1511,30 +1511,30 @@
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291893075",
-            "spact:date-time": "2021-04-26T21:43:23+01:00",
-            "spact:minutes-elapsed": "85",
-            "spact:person-replacing-position": "midfielder",
-            "sport:event": {
+            "spact:period-value": "2",
+            "spact:event": {
                 "@id": "http://example.com/Event/E2128610"
             },
-            "spact:person-original-idref": "p.173954",
+            "spact:minutes-elapsed": "85",
+            "spact:date-time": "2021-04-26T21:43:23+01:00",
             "rdfs:label": "Action a.2291893075 on event E2128610",
+            "spact:person-original-idref": "p.173954",
+            "spact:substitution-reason": "Tactical",
+            "spact:person-replacing-idref": "p.86417",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
-            "spact:person-replacing-idref": "p.86417",
-            "spact:substitution-reason": "Tactical",
             "spact:sequence-number": "0426214323",
-            "spact:period-value": "2",
-            "@type": "sport:Action"
+            "@type": "spact:Action",
+            "spact:person-replacing-position": "midfielder"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291870573-p.173515",
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.173515"
             },
             "rdfs:label": "p.173515 participation in action a.2291870573 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.55494",
@@ -1543,27 +1543,27 @@
             "spsocstat:clearances-successful": "3",
             "spsocstat:crosses-18-yard-plus": "1",
             "spsocstat:passes-incomplete": "10",
-            "spsocstat:fouls-commited": "3",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
-            "spsocstat:ejections-total": "0",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:aerials-won": "1",
-            "spsocstat:tackles-total": "2",
-            "sport:participationBy": {
+            "spsocstat:fouls-commited": "3",
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.55494"
             },
+            "spsocstat:ejections-total": "0",
+            "spsocstat:aerials-won": "1",
+            "spsocstat:tackles-total": "2",
             "spstat:events-started": "1",
             "spsocstat:touches": "52",
             "spsocstat:interceptions": "2",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "@type": "spact:IndividualParticipation",
             "spsocstat:assists-total": "0",
             "rdfs:label": "Joel Ward participation in Event E2128610",
             "spsocstat:fouls-suffered": "1",
             "spsocstat:passes-complete": "15",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            },
             "spsocstat:tackles-won": "2",
             "spsocstat:goals-against-total": "2",
             "spsocstat:passes-complete-3rd-final": "4",
@@ -1574,148 +1574,145 @@
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.244723",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.244723"
             },
             "rdfs:label": "Tyrick Mitchell participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.55037",
-            "sport:uniformNumber": "8",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "8",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.55037"
             },
             "rdfs:label": "Cheikhou Kouyaté membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.55037",
             "rdfs:label": "Cheikhou Kouyaté",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Athlete/p.66975",
             "rdfs:label": "Luka Milivojevic",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.231747",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.231747"
             },
             "rdfs:label": "Jean-Philippe Mateta participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.106837",
-            "sport:playerStatus": {
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.106837"
             },
             "rdfs:label": "Dennis Praet participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Athlete/p.37642",
             "rdfs:label": "Jonny Evans",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.166477",
-            "sport:uniformNumber": "27",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "27",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.166477"
             },
             "rdfs:label": "Timothy Castagne membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291852343",
-            "spact:recipient-type": {
-                "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
+            "@type": "spact:Action",
+            "spact:penalty-type": {
+                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
             },
-            "spact:penalty-level": "yellow-card",
-            "spact:comment": "Foul",
-            "spact:date-time": "2021-04-26T20:17:54+01:00",
-            "spact:period-value": "1",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
-            "spact:sequence-number": "0426201754",
-            "@type": "sport:Action",
-            "rdfs:label": "Action a.2291852343 on event E2128610",
             "spact:recipient-idref": "p.173954",
+            "spact:minutes-elapsed": "18",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/infraction"
             },
-            "spact:minutes-elapsed": "18",
-            "spact:penalty-type": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
-            }
+            "spact:comment": "Foul",
+            "spact:recipient-type": {
+                "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
+            },
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            },
+            "rdfs:label": "Action a.2291852343 on event E2128610",
+            "spact:sequence-number": "0426201754",
+            "spact:period-value": "1",
+            "spact:penalty-level": "yellow-card",
+            "spact:date-time": "2021-04-26T20:17:54+01:00"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291870573",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
-            "sport:actionParticipation": {
-                "@id": "http://example.com/Participation/E2128610-a.2291870573-p.173515"
-            },
             "spact:type": {
                 "@id": "spsocaction:video-review"
             },
             "spact:period-value": "1",
             "spact:minutes-elapsed": "46",
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            },
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/play"
             },
+            "spact:actionParticipation": {
+                "@id": "http://example.com/Participation/E2128610-a.2291870573-p.173515"
+            },
             "rdfs:label": "Action a.2291870573 on event E2128610",
-            "@type": "sport:Action"
+            "@type": "spact:Action"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.37642",
-            "sport:uniformNumber": "6",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "6",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.37642"
             },
             "rdfs:label": "Jonny Evans membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.168580",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
             "spsocstat:assists-total": "0",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:passes-complete": "8",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.168580"
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
             },
             "rdfs:label": "Ayoze Pérez participation in Event E2128610",
             "spsocstat:goals-against-total": "0",
             "spsocstat:fouls-commited": "2",
             "spsocstat:ejections-total": "0",
+            "@type": "spact:IndividualParticipation",
             "spsocstat:passes-total": "8",
-            "sport:positionEvent": {
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "spsocstat:passes-incomplete": "0",
@@ -1724,80 +1721,59 @@
             "spsocstat:touches": "14",
             "spsocstat:goals-total": "0",
             "spsocstat:passes-complete-3rd-final": "2",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.168580"
+            },
             "spstat:time-played-total": "20"
         },
         {
             "@id": "http://example.com/Competition/l.premierleague.com-2020",
-            "sport:sport": {
+            "spact:sport": {
                 "@id": "medtop:20001065"
             },
-            "sport:parentCompetition": {
+            "spact:parentCompetition": {
                 "@id": "http://example.com/Competition/l.premierleague.com"
             },
-            "sport:competitionType": {
+            "spact:competitionType": {
                 "@id": "spct:competition"
             },
             "rdfs:label": "English Premier League 2020",
-            "@type": "sport:Competition"
+            "@type": "spact:Competition"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291891243",
-            "spact:person-replacing-idref": "p.60252",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
-            "spact:date-time": "2021-04-26T21:36:31+01:00",
-            "spact:person-original-idref": "p.80146",
-            "spact:class": {
-                "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
-            },
-            "spact:sequence-number": "0426213631",
-            "@type": "sport:Action",
+            "@type": "spact:Action",
             "spact:minutes-elapsed": "78",
+            "spact:date-time": "2021-04-26T21:36:31+01:00",
             "spact:substitution-reason": "Tactical",
             "spact:period-value": "2",
+            "spact:person-replacing-idref": "p.60252",
+            "spact:sequence-number": "0426213631",
+            "spact:person-replacing-position": "midfielder",
+            "spact:person-original-idref": "p.80146",
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            },
             "rdfs:label": "Action a.2291891243 on event E2128610",
-            "spact:person-replacing-position": "midfielder"
+            "spact:class": {
+                "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
+            }
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.60252",
-            "rdfs:label": "Andros Townsend participation in Event E2128610",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:goals-against-total": "1",
-            "spsocstat:passes-complete": "1",
-            "spsocstat:touches": "4",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            "@id": "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
+            "spact:competition": {
+                "@id": "http://example.com/Competition/l.premierleague.com-2020"
             },
-            "spsocstat:passes-incomplete": "1",
-            "spsocstat:passes-total": "2",
-            "spsocstat:ejections-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.60252"
-            },
-            "spsocstat:goals-total": "0",
-            "spsocstat:cautions-total": "0",
-            "spsocstat:assists-total": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
-            "spstat:time-played-total": "12"
-        },
-        {
-            "@id": "http://example.com/Participation/E2128610-p.94245",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.94245"
-            },
-            "rdfs:label": "Michy Batshuayi participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "rdfs:label": "Week 33",
+            "@type": "spact:CompetitionPhase"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.19188",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.19188"
+            },
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "spsocstat:passes-complete-long": "1",
             "spsocstat:passes-complete": "14",
@@ -1806,148 +1782,109 @@
             "spstat:events-started": "1",
             "spsocstat:aerials-won": "3",
             "spsocstat:touches": "30",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:goals-total": "0",
             "spstat:time-played-total": "90",
             "spsocstat:passes-total": "24",
             "spsocstat:passes-incomplete": "10",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:assists-total": "0",
             "spsocstat:interceptions": "1",
             "spsocstat:fouls-suffered": "1",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            },
             "spsocstat:passes-complete-3rd-final": "2",
             "spsocstat:clearances-successful": "2",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.19188"
-            },
             "spsocstat:ejections-total": "0",
+            "@type": "spact:IndividualParticipation",
             "rdfs:label": "Scott Dann participation in Event E2128610",
             "spsocstat:cautions-total": "0"
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.86417",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
-            },
-            "spsocstat:assists-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.86417"
-            },
-            "spsocstat:tackles-won": "1",
-            "spsocstat:aerials-won": "1",
-            "spsocstat:passes-total": "2",
-            "spsocstat:ejections-total": "0",
-            "spsocstat:goals-total": "0",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:tackles-total": "1",
-            "rdfs:label": "Jeffrey Schlupp participation in Event E2128610",
-            "spsocstat:goals-against-total": "0",
-            "sport:playerStatus": {
+            "@id": "http://example.com/Participation/E2128610-p.94245",
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:bench"
             },
-            "spsocstat:cautions-total": "0",
-            "spsocstat:passes-incomplete": "1",
-            "spsocstat:passes-complete": "1",
-            "spsocstat:touches": "6",
-            "spsocstat:tackles-lost": "0",
-            "spstat:time-played-total": "5"
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.94245"
+            },
+            "rdfs:label": "Michy Batshuayi participation in Event E2128610",
+            "@type": "spact:IndividualParticipation"
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.244619",
-            "spsocstat:passes-complete": "36",
-            "spsocstat:goals-total": "0",
-            "spsocstat:assists-total": "0",
-            "spsocstat:tackles-won": "2",
-            "spsocstat:fouls-commited": "1",
-            "spsocstat:tackles-total": "2",
-            "rdfs:label": "Luke Thomas participation in Event E2128610",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.244619"
+            "@id": "http://example.com/Participation/E2128610-p.105666",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
             },
-            "sport:playerStatus": {
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.105666"
+            },
+            "rdfs:label": "Jack Butland participation in Event E2128610",
+            "@type": "spact:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.166989",
+            "spact:playerStatus": {
                 "@id": "spplayerstatus:starter"
             },
-            "spsocstat:ejections-total": "0",
-            "spsocstat:passes-complete-3rd-final": "18",
-            "spsocstat:crosses-18-yard-plus": "1",
-            "spsocstat:touches": "60",
-            "spstat:time-played-total": "70",
-            "spsocstat:crosses-18-yard": "1",
-            "spsocstat:tackles-lost": "0",
-            "spsocstat:passes-total": "47",
+            "rdfs:label": "Youri Tielemans participation in Event E2128610",
+            "spsocstat:shots-on-goal-total": "1",
+            "spsocstat:shots-total": "2",
+            "spsocstat:passes-total": "71",
+            "spsocstat:goals-against-total": "1",
+            "spsocstat:interceptions": "2",
             "spsocstat:fouls-suffered": "2",
             "spsocstat:aerials-won": "1",
-            "spsocstat:goals-against-total": "1",
-            "sport:positionEvent": {
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:cautions-total": "0",
+            "spsocstat:tackles-lost": "2",
+            "spsocstat:goals-total": "0",
+            "spsocstat:ejections-total": "0",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.166989"
+            },
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
-            "spstat:events-started": "1",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:passes-incomplete": "11",
-            "spsocstat:cautions-total": "0"
-        },
-        {
-            "@id": "http://example.com/Participation/E2128610-p.55037",
-            "spsocstat:passes-complete": "9",
-            "spsocstat:tackles-total": "1",
-            "spstat:events-started": "1",
-            "spsocstat:cautions-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.55037"
-            },
-            "rdfs:label": "Cheikhou Kouyaté participation in Event E2128610",
-            "spsocstat:clearances-successful": "3",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            },
-            "spstat:time-played-total": "90",
-            "spsocstat:touches": "31",
-            "spsocstat:assists-total": "0",
-            "spsocstat:tackles-lost": "0",
-            "spsocstat:ejections-total": "0",
-            "spsocstat:passes-total": "21",
+            "spsocstat:tackles-total": "6",
             "spsocstat:fouls-commited": "1",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
+            "spsocstat:passes-complete": "54",
+            "spsocstat:passes-complete-3rd-final": "16",
             "spsocstat:passes-complete-long": "2",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:tackles-won": "1",
-            "spsocstat:goals-total": "0",
-            "spsocstat:goals-against-total": "2",
-            "spsocstat:fouls-suffered": "1",
-            "spsocstat:aerials-won": "2",
-            "spsocstat:passes-complete-3rd-final": "2",
-            "spsocstat:interceptions": "3",
-            "spsocstat:passes-incomplete": "12"
+            "spsocstat:assists-total": "0",
+            "spsocstat:free-kicks": "1",
+            "spsocstat:passes-incomplete": "17",
+            "spsocstat:tackles-won": "4",
+            "spsocstat:shots-off-goal-total": "1",
+            "spsocstat:crosses-18-yard-plus": "2",
+            "spstat:time-played-total": "90",
+            "spstat:events-started": "1",
+            "spsocstat:touches": "99"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.54861",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
+            "@type": "spact:IndividualParticipation",
             "spsocstat:passes-incomplete": "11",
             "spsocstat:tackles-lost": "0",
             "spsocstat:goals-against-total": "2",
             "spsocstat:ejections-total": "0",
             "spsocstat:tackles-won": "1",
-            "@type": "sport:IndividualParticipation",
             "spstat:events-started": "1",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:fouls-commited": "1",
             "spsocstat:tackles-total": "1",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
+            },
             "spsocstat:cautions-total": "0",
             "spsocstat:passes-complete": "11",
             "spsocstat:shots-on-goal-total": "1",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
-            },
             "spsocstat:touches": "34",
             "spstat:time-played-total": "90",
             "spsocstat:passes-total": "22",
             "spsocstat:goals-total": "0",
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.54861"
             },
             "spsocstat:aerials-won": "12",
@@ -1958,86 +1895,25 @@
             "spsocstat:shots-total": "2"
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.37642",
-            "spsocstat:aerials-won": "4",
-            "rdfs:label": "Jonny Evans participation in Event E2128610",
-            "spsocstat:interceptions": "2",
-            "spstat:time-played-total": "90",
-            "spsocstat:assists-total": "1",
-            "spsocstat:passes-incomplete": "11",
-            "spsocstat:goals-total": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.37642"
-            },
-            "spsocstat:passes-complete-3rd-final": "10",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
-            },
-            "spsocstat:passes-complete-long": "12",
-            "spstat:events-started": "1",
-            "spsocstat:touches": "95",
-            "spsocstat:passes-complete": "78",
-            "spsocstat:passes-total": "89",
-            "spsocstat:clearances-successful": "2",
-            "spsocstat:cautions-total": "0",
-            "spsocstat:goals-against-total": "1",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:fouls-commited": "2",
-            "spsocstat:ejections-total": "0",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
-            }
-        },
-        {
-            "@id": "http://example.com/Participation/E2128610-p.105666",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.105666"
-            },
-            "rdfs:label": "Jack Butland participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
-        },
-        {
-            "@id": "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
-            "sport:competition": {
-                "@id": "http://example.com/Competition/l.premierleague.com-2020"
-            },
-            "rdfs:label": "Week 33",
-            "@type": "sport:CompetitionPhase"
-        },
-        {
-            "@id": "http://example.com/Participation/E2128610-p.197469",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.197469"
-            },
-            "rdfs:label": "Hamza Choudhury participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
-        },
-        {
             "@id": "http://example.com/Participation/E2128610-EPLT31",
             "spsocstat:interceptions": "19",
             "spstat:time-of-possession-percentage": "32.9",
             "spsocstat:tackles-total": "12",
-            "sport:alignment": "away",
             "spsocstat:clearances-successful": "14",
             "spsocstat:tackles-lost": "3",
             "spsocstat:shots-blocked": "1",
             "spsocstat:cautions-total": "1",
             "spstat:score-opposing": "2",
-            "@type": "sport:TeamParticipation",
             "spsocstat:shots-on-goal-total": "2",
-            "sport:participationBy": {
-                "@id": "http://example.com/Team/EPLT31"
-            },
+            "spact:score": "1",
+            "spact:alignment": "away",
             "spsocstat:line-formation": "433",
             "spsocstat:corner-kicks": "2",
             "spstat:event-outcome": {
                 "@id": "speventoutcome:loss"
+            },
+            "spact:participationBy": {
+                "@id": "http://example.com/Team/EPLT31"
             },
             "spsocstat:tackles-won": "9",
             "rdfs:label": "Crystal Palace participation in Event E2128610",
@@ -2046,61 +1922,195 @@
             "spsocstat:passes-total": "297",
             "spsocstat:fouls-commited": "12",
             "spsocstat:offsides": "3",
-            "sport:score": "1",
+            "@type": "spact:TeamParticipation",
             "spsocstat:tackles-won-percentage": "0.750"
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.166989",
-            "rdfs:label": "Youri Tielemans participation in Event E2128610",
-            "spsocstat:shots-on-goal-total": "1",
-            "spsocstat:shots-total": "2",
-            "spsocstat:passes-total": "71",
-            "spsocstat:goals-against-total": "1",
-            "spsocstat:interceptions": "2",
-            "spsocstat:fouls-suffered": "2",
-            "spsocstat:aerials-won": "1",
-            "spsocstat:cautions-total": "0",
-            "spsocstat:tackles-lost": "2",
-            "spsocstat:goals-total": "0",
-            "spsocstat:ejections-total": "0",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
+            "@id": "http://example.com/Participation/E2128610-p.57328",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
             },
-            "spsocstat:tackles-total": "6",
-            "spsocstat:fouls-commited": "1",
-            "spsocstat:passes-complete": "54",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:passes-complete-3rd-final": "16",
-            "spsocstat:passes-complete-long": "2",
-            "spsocstat:assists-total": "0",
-            "spsocstat:free-kicks": "1",
-            "spsocstat:passes-incomplete": "17",
-            "sport:positionEvent": {
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.57328"
+            },
+            "rdfs:label": "Nathaniel Clyne participation in Event E2128610",
+            "@type": "spact:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.60252",
+            "rdfs:label": "Andros Townsend participation in Event E2128610",
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:goals-against-total": "1",
+            "spsocstat:passes-complete": "1",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.60252"
+            },
+            "spsocstat:touches": "4",
+            "spsocstat:passes-incomplete": "1",
+            "spsocstat:passes-total": "2",
+            "spact:positionEvent": {
                 "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
-            "spsocstat:tackles-won": "4",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.166989"
+            "spsocstat:ejections-total": "0",
+            "spsocstat:goals-total": "0",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
             },
-            "spsocstat:shots-off-goal-total": "1",
-            "spsocstat:crosses-18-yard-plus": "2",
-            "spstat:time-played-total": "90",
+            "spsocstat:cautions-total": "0",
+            "spsocstat:assists-total": "0",
+            "spstat:time-played-total": "12"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.244619",
+            "spsocstat:passes-complete": "36",
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:goals-total": "0",
+            "spsocstat:assists-total": "0",
+            "spsocstat:tackles-won": "2",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.244619"
+            },
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spsocstat:fouls-commited": "1",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
+            "spsocstat:tackles-total": "2",
+            "rdfs:label": "Luke Thomas participation in Event E2128610",
+            "spsocstat:ejections-total": "0",
+            "spsocstat:passes-complete-3rd-final": "18",
+            "spsocstat:crosses-18-yard-plus": "1",
+            "spsocstat:touches": "60",
+            "spstat:time-played-total": "70",
+            "spsocstat:crosses-18-yard": "1",
+            "spsocstat:tackles-lost": "0",
+            "spsocstat:passes-total": "47",
+            "spsocstat:aerials-won": "1",
+            "spsocstat:fouls-suffered": "2",
+            "spsocstat:goals-against-total": "1",
             "spstat:events-started": "1",
-            "spsocstat:touches": "99"
+            "spsocstat:passes-incomplete": "11",
+            "spsocstat:cautions-total": "0"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.86417",
+            "spsocstat:assists-total": "0",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:tackles-won": "1",
+            "spsocstat:aerials-won": "1",
+            "spsocstat:passes-total": "2",
+            "spsocstat:ejections-total": "0",
+            "spsocstat:goals-total": "0",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.86417"
+            },
+            "spsocstat:tackles-total": "1",
+            "rdfs:label": "Jeffrey Schlupp participation in Event E2128610",
+            "spsocstat:goals-against-total": "0",
+            "spsocstat:cautions-total": "0",
+            "spsocstat:passes-incomplete": "1",
+            "spsocstat:passes-complete": "1",
+            "spsocstat:touches": "6",
+            "spsocstat:tackles-lost": "0",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
+            "spstat:time-played-total": "5"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.197469",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.197469"
+            },
+            "rdfs:label": "Hamza Choudhury participation in Event E2128610",
+            "@type": "spact:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.55037",
+            "spsocstat:passes-complete": "9",
+            "spsocstat:tackles-total": "1",
+            "spstat:events-started": "1",
+            "spsocstat:cautions-total": "0",
+            "rdfs:label": "Cheikhou Kouyaté participation in Event E2128610",
+            "spsocstat:clearances-successful": "3",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "@type": "spact:IndividualParticipation",
+            "spstat:time-played-total": "90",
+            "spsocstat:touches": "31",
+            "spsocstat:assists-total": "0",
+            "spsocstat:tackles-lost": "0",
+            "spsocstat:ejections-total": "0",
+            "spsocstat:passes-total": "21",
+            "spsocstat:fouls-commited": "1",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.55037"
+            },
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
+            },
+            "spsocstat:passes-complete-long": "2",
+            "spsocstat:tackles-won": "1",
+            "spsocstat:goals-total": "0",
+            "spsocstat:goals-against-total": "2",
+            "spsocstat:fouls-suffered": "1",
+            "spsocstat:aerials-won": "2",
+            "spsocstat:passes-complete-3rd-final": "2",
+            "spsocstat:interceptions": "3",
+            "spsocstat:passes-incomplete": "12"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128610-p.37642",
+            "spsocstat:aerials-won": "4",
+            "rdfs:label": "Jonny Evans participation in Event E2128610",
+            "spsocstat:interceptions": "2",
+            "spstat:time-played-total": "90",
+            "spsocstat:assists-total": "1",
+            "spsocstat:passes-incomplete": "11",
+            "spsocstat:goals-total": "0",
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.37642"
+            },
+            "spsocstat:passes-complete-3rd-final": "10",
+            "spsocstat:passes-complete-long": "12",
+            "spstat:events-started": "1",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
+            },
+            "@type": "spact:IndividualParticipation",
+            "spsocstat:touches": "95",
+            "spsocstat:passes-complete": "78",
+            "spsocstat:passes-total": "89",
+            "spsocstat:clearances-successful": "2",
+            "spsocstat:cautions-total": "0",
+            "spsocstat:goals-against-total": "1",
+            "spsocstat:fouls-commited": "2",
+            "spsocstat:ejections-total": "0"
         },
         {
             "@id": "http://example.com/Participation/E2128610-p.66975",
             "spsocstat:passes-complete-long": "3",
             "spstat:events-started": "1",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:crosses-18-yard-plus": "1",
+            "spact:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:tackles-won": "0",
             "spsocstat:cautions-total": "0",
-            "sport:participationBy": {
+            "spact:participationBy": {
                 "@id": "http://example.com/Athlete/p.66975"
-            },
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:starter"
             },
             "spsocstat:goals-total": "0",
             "spsocstat:tackles-total": "2",
@@ -2108,12 +2118,13 @@
             "spsocstat:interceptions": "1",
             "spsocstat:passes-total": "36",
             "spsocstat:clearances-successful": "4",
-            "sport:positionEvent": {
-                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
-            },
             "spsocstat:passes-complete-3rd-final": "10",
             "spsocstat:goals-against-total": "2",
             "spsocstat:tackles-lost": "2",
+            "@type": "spact:IndividualParticipation",
+            "spact:positionEvent": {
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
+            },
             "spstat:time-played-total": "83",
             "spsocstat:assists-total": "0",
             "spsocstat:passes-complete": "26",
@@ -2122,217 +2133,207 @@
             "spsocstat:ejections-total": "0"
         },
         {
-            "@id": "http://example.com/Participation/E2128610-p.57328",
-            "sport:playerStatus": {
-                "@id": "spplayerstatus:bench"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.57328"
-            },
-            "rdfs:label": "Nathaniel Clyne participation in Event E2128610",
-            "@type": "sport:IndividualParticipation"
-        },
-        {
             "@id": "http://example.com/Membership/EPLT13-p.111931",
-            "sport:uniformNumber": "21",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "21",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.111931"
             },
             "rdfs:label": "Ricardo Pereira membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.86417",
-            "sport:uniformNumber": "15",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "15",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.86417"
             },
             "rdfs:label": "Jeffrey Schlupp membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.86417",
             "rdfs:label": "Jeffrey Schlupp",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.444463",
-            "sport:uniformNumber": "3",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "3",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.444463"
             },
             "rdfs:label": "Wesley Fofana membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.50472",
-            "sport:uniformNumber": "22",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "22",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.50472"
             },
             "rdfs:label": "James McCarthy membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.86881",
-            "sport:uniformNumber": "24",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "24",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.86881"
             },
             "rdfs:label": "Nampalys Mendy membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.82403",
-            "sport:uniformNumber": "11",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "11",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.82403"
             },
             "rdfs:label": "Wilfried Zaha membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.80146",
-            "sport:uniformNumber": "9",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "9",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.80146"
             },
             "rdfs:label": "Jordan Ayew membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.60252",
-            "sport:uniformNumber": "10",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "10",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.60252"
             },
             "rdfs:label": "Andros Townsend membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Athlete/p.60252",
             "rdfs:label": "Andros Townsend",
-            "@type": "sport:Athlete"
+            "@type": "spact:Athlete"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291848623-p.232413",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.232413"
-            },
             "spact:role": {
                 "@id": "spsocrole:assist"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.232413"
+            },
             "rdfs:label": "p.232413 participation in action a.2291848623 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.173515",
-            "sport:uniformNumber": "14",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "14",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.173515"
             },
             "rdfs:label": "Kelechi Iheanacho membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.155569",
-            "sport:uniformNumber": "18",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "18",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.155569"
             },
             "rdfs:label": "Daniel Amartey membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.244723",
-            "sport:uniformNumber": "27",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "27",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.244723"
             },
             "rdfs:label": "Tyrick Mitchell membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128610-a.2291891767-p.37642",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/p.37642"
-            },
             "spact:role": {
                 "@id": "spsocrole:assist"
             },
+            "spact:participationBy": {
+                "@id": "http://example.com/Athlete/p.37642"
+            },
             "rdfs:label": "p.37642 participation in action a.2291891767 in event E2128610",
-            "@type": "sport:IndividualParticipation"
+            "@type": "spact:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291881461",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
-            "sport:actionParticipation": {
-                "@id": "http://example.com/Participation/E2128610-a.2291881461-p.173515"
-            },
             "spact:type": {
                 "@id": "spsocaction:video-review"
             },
             "spact:period-value": "2",
             "spact:minutes-elapsed": "50",
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            },
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/play"
             },
+            "spact:actionParticipation": {
+                "@id": "http://example.com/Participation/E2128610-a.2291881461-p.173515"
+            },
             "rdfs:label": "Action a.2291881461 on event E2128610",
-            "@type": "sport:Action"
+            "@type": "spact:Action"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.231747",
-            "sport:uniformNumber": "14",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "14",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.231747"
             },
             "rdfs:label": "Jean-Philippe Mateta membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291848623",
-            "sport:event": {
+            "spact:event": {
                 "@id": "http://example.com/Event/E2128610"
             },
-            "sport:actionParticipation": [
+            "spact:minutes-elapsed": "12",
+            "spact:actionParticipation": [
                 {
                     "@id": "http://example.com/Participation/E2128610-a.2291848623-p.82403"
                 },
@@ -2340,46 +2341,45 @@
                     "@id": "http://example.com/Participation/E2128610-a.2291848623-p.232413"
                 }
             ],
-            "@type": "sport:Action",
+            "spact:period-value": "1",
+            "@type": "spact:Action",
+            "rdfs:label": "Action a.2291848623 on event E2128610",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/score"
             },
-            "spact:sequence-number": "0426201214",
             "spact:score-attempt-type": {
                 "@id": "http://cv.iptc.org/newscodes/spsocscore/regular"
             },
-            "rdfs:label": "Action a.2291848623 on event E2128610",
-            "spact:minutes-elapsed": "12",
-            "spact:date-time": "2021-04-26T20:12:14+01:00",
-            "spact:period-value": "1"
+            "spact:sequence-number": "0426201214",
+            "spact:date-time": "2021-04-26T20:12:14+01:00"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.66975",
-            "sport:uniformNumber": "4",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "4",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.66975"
             },
             "rdfs:label": "Luka Milivojevic membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT31-p.40836",
-            "sport:uniformNumber": "31",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "31",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT31"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.40836"
             },
             "rdfs:label": "Vicente Guaita membership of Crystal Palace",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291891767",
-            "sport:actionParticipation": [
+            "spact:actionParticipation": [
                 {
                     "@id": "http://example.com/Participation/E2128610-a.2291891767-p.173515"
                 },
@@ -2387,76 +2387,76 @@
                     "@id": "http://example.com/Participation/E2128610-a.2291891767-p.37642"
                 }
             ],
-            "spact:date-time": "2021-04-26T21:38:21+01:00",
-            "sport:event": {
+            "spact:period-value": "2",
+            "spact:sequence-number": "0426213821",
+            "@type": "spact:Action",
+            "spact:event": {
                 "@id": "http://example.com/Event/E2128610"
             },
-            "@type": "sport:Action",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/score"
             },
-            "spact:period-value": "2",
-            "spact:minutes-elapsed": "80",
-            "spact:sequence-number": "0426213821",
             "spact:score-attempt-type": {
                 "@id": "http://cv.iptc.org/newscodes/spsocscore/regular"
             },
-            "rdfs:label": "Action a.2291891767 on event E2128610"
+            "rdfs:label": "Action a.2291891767 on event E2128610",
+            "spact:date-time": "2021-04-26T21:38:21+01:00",
+            "spact:minutes-elapsed": "80"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.172780",
-            "sport:uniformNumber": "10",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "10",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.172780"
             },
             "rdfs:label": "James Maddison membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.17745",
-            "sport:uniformNumber": "1",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "1",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.17745"
             },
             "rdfs:label": "Kasper Schmeichel membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/EPLT13-p.203341",
-            "sport:uniformNumber": "25",
-            "sport:membershipOf": {
+            "spact:uniformNumber": "25",
+            "spact:membershipOf": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "sport:membershipBy": {
+            "spact:membershipBy": {
                 "@id": "http://example.com/Athlete/p.203341"
             },
             "rdfs:label": "Wilfred Ndidi membership of Leicester City",
-            "@type": "sport:IndividualMembership"
+            "@type": "spact:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/E2128610-a.2291888189",
-            "@type": "sport:Action",
-            "spact:person-original-idref": "p.172780",
-            "sport:event": {
-                "@id": "http://example.com/Event/E2128610"
-            },
+            "spact:minutes-elapsed": "70",
             "spact:date-time": "2021-04-26T21:28:36+01:00",
+            "spact:person-replacing-position": "forward",
             "spact:substitution-reason": "Tactical",
+            "rdfs:label": "Action a.2291888189 on event E2128610",
+            "spact:sequence-number": "0426212836",
+            "spact:person-original-idref": "p.172780",
+            "spact:period-value": "2",
+            "@type": "spact:Action",
             "spact:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
-            "spact:sequence-number": "0426212836",
             "spact:person-replacing-idref": "p.168580",
-            "rdfs:label": "Action a.2291888189 on event E2128610",
-            "spact:minutes-elapsed": "70",
-            "spact:person-replacing-position": "forward",
-            "spact:period-value": "2"
+            "spact:event": {
+                "@id": "http://example.com/Event/E2128610"
+            }
         }
     ],
     "@context": {
@@ -2473,8 +2473,8 @@
         "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
         "spesstat": "http://cv.iptc.org/newscodes/spesstat/",
         "spct": "http://cv.iptc.org/newscodes/spct/",
-        "spact": "http://www.iptc.org/ontologies/Sport/Action/",
-        "sport": "http://www.iptc.org/ontologies/Sport/",
+        "spact": "https://sportschema.org/ontologies/main/",
+        "sport": "https://sportschema.org/ontologies/main/",
         "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",
         "spsocstat": "http://cv.iptc.org/newscodes/spsocstat/"
     }

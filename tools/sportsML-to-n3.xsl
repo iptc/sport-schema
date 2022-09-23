@@ -15,8 +15,8 @@
     <!-- global data variables -->
     <xsl:variable name="sport-vendor-ns">http://example.com/</xsl:variable>
     <xsl:variable name="newscode-ns">http://cv.iptc.org/newscodes/</xsl:variable>
-    <xsl:variable name="sport-ontology-ns">http://www.iptc.org/ontologies/Sport/</xsl:variable>
-    <xsl:variable name="sport-action-ontology-ns">http://www.iptc.org/ontologies/Sport/Action/</xsl:variable>
+    <xsl:variable name="sport-ontology-ns">https://sportschema.org/ontologies/main/</xsl:variable>
+    <xsl:variable name="sport-action-ontology-ns">https://sportschema.org/ontologies/main/</xsl:variable>
     <xsl:variable name="rdf-ns">http://www.w3.org/1999/02/22-rdf-syntax-ns#</xsl:variable>
     <xsl:variable name="rdfs-ns">http://www.w3.org/2000/01/rdf-schema#</xsl:variable>
     <xsl:variable name="medtop-ns">http://cv.iptc.org/newscodes/mediatopic/</xsl:variable>
@@ -465,10 +465,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="parent::newsml:sports-event">
             <xsl:choose>
                 <xsl:when test="newsml:team-metadata/@alignment='home'">
-                    <xsl:value-of select="$participation-id"/> «http://www.iptc.org/ontologies/Sport/alignment» "home" .
+                    <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'alignment','»')"/>~"home" .
                 </xsl:when>
                 <xsl:when test="newsml:team-metadata/@alignment='away'">
-                    <xsl:value-of select="$participation-id"/> «http://www.iptc.org/ontologies/Sport/alignment» "away" .
+                    <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'alignment','»')"/>~"away" .
                 </xsl:when>
                 <xsl:otherwise/>
             </xsl:choose>
