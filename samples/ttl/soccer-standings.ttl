@@ -1,23 +1,23 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <http://cv.iptc.org/newscodes/spstat/> .
-@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spescaction: <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:          <https://schema.org/> .
+@prefix spact:              <http://www.iptc.org/ontologies/Sport/Action/> .
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spsocaction: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix medtop: <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix spct:  <http://cv.iptc.org/newscodes/spct/> .
-@prefix sport: <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact: <http://www.iptc.org/ontologies/Sport/Action/> .
-@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix spsocstat: <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
+@prefix spescaction:        <http://cv.iptc.org/newscodes/spescaction/> .
+@prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix sport:              <http://www.iptc.org/ontologies/Sport/> .
+@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spsocaction:        <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:          <http://cv.iptc.org/newscodes/spsocstat/> .
+@prefix spstat:             <http://cv.iptc.org/newscodes/spstat/> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT36-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT36-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -29,7 +29,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT20>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Southampton participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "10" ;
@@ -44,7 +44,7 @@
         sport:rank                    "13" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT3-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT3-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -56,7 +56,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT14-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT14-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -68,7 +68,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -80,11 +80,11 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT1>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Manchester United" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT35-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT35-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "8" ;
@@ -96,7 +96,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT4-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT4-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -108,7 +108,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT4>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Newcastle United participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "12" ;
@@ -123,7 +123,7 @@
         sport:rank                    "17" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT36-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT36-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -135,15 +135,15 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT6>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Tottenham Hotspur" .
 
 <http://example.com/Team/EPLT11>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Everton" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT39-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT39-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -155,13 +155,13 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Competition/l.premierleague.com>
-        a                      sport:Competition ;
+        rdf:type               sport:Competition ;
         rdfs:label             "English Premier League" ;
-        sport:competitionType  sport:recurring-competition ;
+        sport:competitionType  spct:recurring-competition ;
         sport:sport            medtop:20001065 .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT3>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Arsenal participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
@@ -176,11 +176,11 @@
         sport:rank                    "10" .
 
 <http://example.com/Team/EPLT31>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Crystal Palace" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT11>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Everton participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "22" ;
         spstat:losses                 "7" ;
@@ -195,7 +195,7 @@
         sport:rank                    "7" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT1-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT1-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "0" ;
@@ -207,7 +207,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT43-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT43-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
@@ -219,7 +219,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -231,7 +231,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT2-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT2-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -243,7 +243,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "1" ;
@@ -255,7 +255,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT31>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Crystal Palace participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "11" ;
@@ -270,7 +270,7 @@
         sport:rank                    "14" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT8>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Chelsea participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
@@ -286,7 +286,7 @@
         sport:rank                    "5" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT49-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT49-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "9" ;
@@ -298,11 +298,11 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT36>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Brighton and Hove Albion" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT31-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT31-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
@@ -314,7 +314,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT3-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT3-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -326,11 +326,11 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT49>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Sheffield United" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT14-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT14-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "3" ;
@@ -342,7 +342,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT2>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Leeds United participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -357,7 +357,7 @@
         sport:rank                    "11" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT54-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT54-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
@@ -369,15 +369,15 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Competition/l.premierleague.com-2020>
-        a                               sport:Competition ;
+        rdf:type                        sport:Competition ;
         rdfs:label                      "English Premier League 2020" ;
         sport:competitionParticipation  <http://example.com/Participation/l.premierleague.com-2020-EPLT3> , <http://example.com/Participation/l.premierleague.com-2020-EPLT11> , <http://example.com/Participation/l.premierleague.com-2020-EPLT43> , <http://example.com/Participation/l.premierleague.com-2020-EPLT39> , <http://example.com/Participation/l.premierleague.com-2020-EPLT7> , <http://example.com/Participation/l.premierleague.com-2020-EPLT13> , <http://example.com/Participation/l.premierleague.com-2020-EPLT21> , <http://example.com/Participation/l.premierleague.com-2020-EPLT49> , <http://example.com/Participation/l.premierleague.com-2020-EPLT2> , <http://example.com/Participation/l.premierleague.com-2020-EPLT36> , <http://example.com/Participation/l.premierleague.com-2020-EPLT6> , <http://example.com/Participation/l.premierleague.com-2020-EPLT4> , <http://example.com/Participation/l.premierleague.com-2020-EPLT1> , <http://example.com/Participation/l.premierleague.com-2020-EPLT31> , <http://example.com/Participation/l.premierleague.com-2020-EPLT8> , <http://example.com/Participation/l.premierleague.com-2020-EPLT35> , <http://example.com/Participation/l.premierleague.com-2020-EPLT54> , <http://example.com/Participation/l.premierleague.com-2020-EPLT14> , <http://example.com/Participation/l.premierleague.com-2020-EPLT20> , <http://example.com/Participation/l.premierleague.com-2020-EPLT90> ;
-        sport:competitionType           sport:competition ;
+        sport:competitionType           spct:competition ;
         sport:parentCompetition         <http://example.com/Competition/l.premierleague.com> ;
         sport:sport                     medtop:20001065 .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT6-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT6-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -389,11 +389,11 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Team/EPLT43>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Manchester City" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT4-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT4-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "6" ;
@@ -405,7 +405,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT36>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Brighton and Hove Albion participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "8" ;
@@ -420,11 +420,11 @@
         sport:rank                    "15" .
 
 <http://example.com/Team/EPLT4>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Newcastle United" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT49>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Sheffield United participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "18" ;
@@ -440,7 +440,7 @@
         sport:rank                    "20" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT7-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT7-events-home>" ;
         spstat:events-played          "10" ;
         spstat:losses                 "4" ;
@@ -452,7 +452,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT20-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT20-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -464,7 +464,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT7>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Aston Villa participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "22" ;
         spstat:losses                 "8" ;
@@ -479,11 +479,11 @@
         sport:rank                    "8" .
 
 <http://example.com/Team/EPLT35>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "West Bromwich Albion" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT43>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Manchester City participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "2" ;
@@ -499,7 +499,7 @@
         sport:rank                    "1" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT54-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT54-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
@@ -511,7 +511,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT39-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT39-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -523,7 +523,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT8-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT8-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
@@ -535,7 +535,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT1>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Manchester United participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "4" ;
@@ -551,7 +551,7 @@
         sport:rank                    "2" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT6-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT6-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
@@ -563,7 +563,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "3" ;
@@ -575,11 +575,11 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Team/EPLT14>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Liverpool" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT35>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "West Bromwich Albion participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "15" ;
@@ -595,7 +595,7 @@
         sport:rank                    "19" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT7-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT7-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -607,11 +607,11 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT3>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Arsenal" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT20-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT20-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "4" ;
@@ -623,7 +623,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT6>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Tottenham Hotspur participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "7" ;
@@ -638,11 +638,11 @@
         sport:rank                    "9" .
 
 <http://example.com/Team/EPLT21>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "West Ham United" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT43-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT43-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "1" ;
@@ -654,11 +654,11 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Team/EPLT90>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Burnley" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT8-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT8-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -670,7 +670,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -682,7 +682,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT14>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Liverpool participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
@@ -698,11 +698,11 @@
         sport:rank                    "4" .
 
 <http://example.com/Team/EPLT8>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Chelsea" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT31-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT31-events-away>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "6" ;
@@ -714,7 +714,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT11-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT11-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -726,11 +726,11 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Team/EPLT13>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Leicester City" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT21>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "West Ham United participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "6" ;
@@ -745,7 +745,7 @@
         sport:rank                    "6" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT90>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Burnley participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -760,19 +760,19 @@
         sport:rank                    "16" .
 
 <http://example.com/Team/EPLT54>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Fulham" .
 
 <http://example.com/Team/EPLT2>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Leeds United" .
 
 <http://example.com/Team/EPLT39>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Wolverhampton Wanderers" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT1-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT1-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "4" ;
@@ -784,11 +784,11 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Team/EPLT20>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Southampton" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT35-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT35-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "7" ;
@@ -800,7 +800,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT13>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Leicester City participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "6" ;
@@ -816,7 +816,7 @@
         sport:rank                    "3" .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT54>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Fulham participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "23" ;
         spstat:losses                 "11" ;
@@ -832,7 +832,7 @@
         sport:rank                    "18" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT2-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT2-events-home>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "5" ;
@@ -844,7 +844,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "5" ;
@@ -856,7 +856,7 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT39>
-        a                             sport:TeamParticipation ;
+        rdf:type                      sport:TeamParticipation ;
         rdfs:label                    "Wolverhampton Wanderers participation in Competition l.premierleague.com-2020" ;
         spstat:events-played          "24" ;
         spstat:losses                 "10" ;
@@ -871,7 +871,7 @@
         sport:rank                    "12" .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT11-events-away>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT11-events-away>" ;
         spstat:events-played          "11" ;
         spstat:losses                 "2" ;
@@ -883,7 +883,7 @@
         sport:participationSplitType  spcompetitionscope:events-away .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT49-events-home>
-        a                             sport:ParticipationSplit ;
+        rdf:type                      sport:ParticipationSplit ;
         rdfs:label                    "ParticipationSplit <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT49-events-home>" ;
         spstat:events-played          "12" ;
         spstat:losses                 "9" ;
@@ -895,5 +895,5 @@
         sport:participationSplitType  spcompetitionscope:events-home .
 
 <http://example.com/Team/EPLT7>
-        a           sport:Team ;
+        rdf:type    sport:Team ;
         rdfs:label  "Aston Villa" .
