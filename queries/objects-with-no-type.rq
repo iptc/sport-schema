@@ -2,7 +2,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?o
 WHERE {
-  ?s ?p ?o ;
+  ?s ?p ?o .
+  ?o ?x ?y .
   FILTER NOT EXISTS { ?o rdf:type ?type }
   FILTER ( isURI(?o) )
   FILTER (!REGEX ( STR(?o), "^http://cv.iptc.org/newscodes", "i" ))
