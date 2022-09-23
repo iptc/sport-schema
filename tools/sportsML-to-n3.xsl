@@ -992,7 +992,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'actionParticipation','»')"/>~<xsl:value-of select="$participation-id"/> .
         <xsl:value-of select="$participation-id"/> <xsl:value-of select="concat('«',$rdf-ns,'type','»')"/> <xsl:value-of select="concat('«',$sport-ontology-ns,'IndividualParticipation','»')"/> .
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="$player-key"/> participation in action <xsl:value-of select="$action-key"/> in event <xsl:value-of select="$event-key"/>" .
-        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-action-ontology-ns,'role','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@role,':'),'/',substring-after(@role,':'),'»')"/> .
+        <xsl:if test="@role">
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-action-ontology-ns,'role','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@role,':'),'/',substring-after(@role,':'),'»')"/> .
+        </xsl:if>
     </xsl:template>
 
     <!-- templates for unwanted element values and attributes -->
