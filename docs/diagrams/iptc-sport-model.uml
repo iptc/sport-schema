@@ -43,8 +43,8 @@ class Event {
   sport : CV Value
   eventOutcomeType : CV Value
   attendance : integer
-  startDateTime : date
-  endDateTime : date
+  startDateTime : dateTime
+  endDateTime : dateTime
 }
 
 class GoverningBody {
@@ -123,6 +123,7 @@ Competition .. GoverningBody : > governingBody
 Competition .. Participation : > competitionParticipation
 CompetitionPhase .. Competition : > competition
 CompetitionPhase .. Participation : > phaseParticipation
+CompetitionPhase .. CompetitionPhase : > competitionPhase
 Event .. Competition : > competition
 Event .. CompetitionPhase : > competitionPhase
 Event .. Event : > subEvent
