@@ -176,7 +176,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     </xsl:template>
 
     <!-- top-level element: sports-event. This will direct all the data for reporting on a match/game -->
-    <xsl:template match="newsml:tournament-part">
+    <xsl:template match="newsml:tournament-part[newsml:tournament-part-metadata]">
 
             <xsl:variable name="phase-id">
                 <xsl:value-of select="concat('«', $sport-vendor-ns, 'CompetitionPhase/', substring-after(newsml:tournament-part-metadata/@key,':'), '»')"/>

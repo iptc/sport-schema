@@ -8,30 +8,31 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
        (CONCAT(STR(HOURS(?date)),":",STR(MINUTES(?date))) as ?displayTime)
-       (CONCAT(?homeTeamName," v ",?awayTeamName) as ?match)
+       (CONCAT(?homeTeamName," v ",?awayTeamName) as ?match) ?eventStatus
        ?homeTeamScore ?awayTeamScore
 WHERE
 {
     ?event rdf:type sport:Event .
     ?event sport:startDateTime ?date .
+    ?event sport:eventStatus ?eventStatus .
     ?event sport:eventParticipation ?homeTeamParticipation .
     ?homeTeamParticipation rdf:type sport:TeamParticipation .
     ?homeTeamParticipation sport:participationBy ?homeTeam .
     ?homeTeamParticipation sport:alignment "home" .
-    ?homeTeamParticipation sport:score ?homeTeamScore .
+	OPTIONAL { ?homeTeamParticipation sport:score ?homeTeamScore . }
     ?homeTeam rdf:type sport:Team .
     ?homeTeam rdfs:label ?homeTeamName .
     ?event sport:eventParticipation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation .
     ?awayTeamParticipation sport:participationBy ?awayTeam .
     ?awayTeamParticipation sport:alignment "away" .
-    ?awayTeamParticipation sport:score ?awayTeamScore .
+	OPTIONAL { ?awayTeamParticipation sport:score ?awayTeamScore . }
     ?awayTeam rdf:type sport:Team .
     ?awayTeam rdfs:label ?awayTeamName .
     ?event sport:site ?site .
     ?site rdf:type sport:Site .
     ?site rdfs:label ?siteName .
-    FILTER ( ?date > "2021-02-15T00:00:00Z"^^xsd:dateTime ) 
-    FILTER ( ?date < "2021-02-16T00:00:00Z"^^xsd:dateTime ) 
+    FILTER ( ?date > "2021-05-23T00:00:00Z"^^xsd:dateTime ) 
+    FILTER ( ?date < "2021-05-24T00:00:00Z"^^xsd:dateTime ) 
 }
 ORDER BY ?week ?displayDate ?displayTime
