@@ -2,13 +2,13 @@
 @prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schemaorg:          <https://schema.org/> .
-@prefix spact:              <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix spact:              <https://sportschema.org/ontologies/main/> .
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
 @prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
 @prefix spescaction:        <http://cv.iptc.org/newscodes/spescaction/> .
 @prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix sport:              <http://www.iptc.org/ontologies/Sport/> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocaction:        <http://cv.iptc.org/newscodes/spsocaction/> .
 @prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
@@ -17,14 +17,14 @@
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Participation/5120-T9572>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5120" ;
         spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/T9572> ;
-        sport:score            "16" .
+        spact:participationBy  <http://example.com/Team/T9572> ;
+        spact:score            "16" .
 
 <http://example.com/Participation/5122-PES13>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5122" ;
         spesstat:ADR           "52,6" ;
         spesstat:FKdiff        "-2" ;
@@ -35,10 +35,10 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "8" ;
         spstat:rating          "0,59" ;
-        sport:participationBy  <http://example.com/Athlete/PES13> .
+        spact:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5121-PES11>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5121" ;
         spesstat:ADR           "89,7" ;
         spesstat:FKdiff        "3" ;
@@ -49,44 +49,44 @@
         spesstat:headshot      "14" ;
         spesstat:kills         "28" ;
         spstat:rating          "1,36" ;
-        sport:participationBy  <http://example.com/Athlete/PES11> .
+        spact:participationBy  <http://example.com/Athlete/PES11> .
 
 <http://example.com/Event/5122>
-        rdf:type                  sport:Event ;
+        rdf:type                  spact:Event ;
         rdfs:label                "Event 5122" ;
-        sport:eventParticipation  <http://example.com/Participation/5122-PES17> , <http://example.com/Participation/5122-PES16> , <http://example.com/Participation/5122-PES10> , <http://example.com/Participation/5122-PES12> , <http://example.com/Participation/5122-T6134> , <http://example.com/Participation/5122-PES18> , <http://example.com/Participation/5122-PES19> , <http://example.com/Participation/5122-PES13> , <http://example.com/Participation/5122-T9572> , <http://example.com/Participation/5122-PES11> , <http://example.com/Participation/5122-PES14> , <http://example.com/Participation/5122-PES15> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
+        spact:eventParticipation  <http://example.com/Participation/5122-PES17> , <http://example.com/Participation/5122-PES12> , <http://example.com/Participation/5122-T6134> , <http://example.com/Participation/5122-PES10> , <http://example.com/Participation/5122-PES18> , <http://example.com/Participation/5122-PES11> , <http://example.com/Participation/5122-PES19> , <http://example.com/Participation/5122-PES13> , <http://example.com/Participation/5122-PES14> , <http://example.com/Participation/5122-T9572> , <http://example.com/Participation/5122-PES15> , <http://example.com/Participation/5122-PES16> ;
+        spact:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        spact:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/T9572-PES19>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Engin Kor membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES19> ;
-        sport:membershipOf  <http://example.com/Team/T9572> .
+        spact:membershipBy  <http://example.com/Athlete/PES19> ;
+        spact:membershipOf  <http://example.com/Team/T9572> .
 
 <http://example.com/Membership/T6134-PES14>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Karol Rodowicz membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES14> ;
-        sport:membershipOf  <http://example.com/Team/T6134> .
+        spact:membershipBy  <http://example.com/Athlete/PES14> ;
+        spact:membershipOf  <http://example.com/Team/T6134> .
 
 <http://example.com/Athlete/PES18>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Engin Küpeli" ;
-        sport:nationality  "Turkish" .
+        spact:nationality  "Turkish" .
 
 <http://example.com/Participation/541807-T6134>
-        rdf:type                      sport:TeamParticipation ;
+        rdf:type                      spact:TeamParticipation ;
         rdfs:label                    "Kinguin participation in Event 541807" ;
         spstat:event-outcome          speventoutcome:loss ;
         spstat:events-played          "539" ;
         spstat:series-score           "299" ;
         spstat:series-score-opposing  "214" ;
-        sport:participationBy         <http://example.com/Team/T6134> ;
-        sport:score                   "1" .
+        spact:participationBy         <http://example.com/Team/T6134> ;
+        spact:score                   "1" .
 
 <http://example.com/Participation/5122-PES18>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5122" ;
         spesstat:ADR           "81,8" ;
         spesstat:FKdiff        "-1" ;
@@ -97,10 +97,10 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "20" ;
         spstat:rating          "1,35" ;
-        sport:participationBy  <http://example.com/Athlete/PES18> .
+        spact:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Participation/5121-PES16>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5121" ;
         spesstat:ADR           "66,2" ;
         spesstat:FKdiff        "-4" ;
@@ -111,15 +111,15 @@
         spesstat:headshot      "14" ;
         spesstat:kills         "22" ;
         spstat:rating          "0,87" ;
-        sport:participationBy  <http://example.com/Athlete/PES16> .
+        spact:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Athlete/PES12>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Wiktor Wojtas" ;
-        sport:nationality  "Polish" .
+        spact:nationality  "Polish" .
 
 <http://example.com/Participation/5120-PES14>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5120" ;
         spesstat:ADR           "46,3" ;
         spesstat:FKdiff        "-1" ;
@@ -130,20 +130,20 @@
         spesstat:headshot      "3" ;
         spesstat:kills         "6" ;
         spstat:rating          "0,62" ;
-        sport:participationBy  <http://example.com/Athlete/PES14> .
+        spact:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Participation/541807-T9572>
-        rdf:type                      sport:TeamParticipation ;
+        rdf:type                      spact:TeamParticipation ;
         rdfs:label                    "Ex-Space Soldiers participation in Event 541807" ;
         spstat:event-outcome          speventoutcome:win ;
         spstat:events-played          "24" ;
         spstat:series-score           "9" ;
         spstat:series-score-opposing  "15" ;
-        sport:participationBy         <http://example.com/Team/T9572> ;
-        sport:score                   "2" .
+        spact:participationBy         <http://example.com/Team/T9572> ;
+        spact:score                   "2" .
 
 <http://example.com/Participation/5122-PES12>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5122" ;
         spesstat:ADR           "59,6" ;
         spesstat:FKdiff        "1" ;
@@ -154,10 +154,10 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "13" ;
         spstat:rating          "0,75" ;
-        sport:participationBy  <http://example.com/Athlete/PES12> .
+        spact:participationBy  <http://example.com/Athlete/PES12> .
 
 <http://example.com/Participation/5121-PES10>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5121" ;
         spesstat:ADR           "84,8" ;
         spesstat:FKdiff        "-2" ;
@@ -168,34 +168,34 @@
         spesstat:headshot      "4" ;
         spesstat:kills         "22" ;
         spstat:rating          "1,14" ;
-        sport:participationBy  <http://example.com/Athlete/PES10> .
+        spact:participationBy  <http://example.com/Athlete/PES10> .
 
 <http://example.com/Event/5121>
-        rdf:type                  sport:Event ;
+        rdf:type                  spact:Event ;
         rdfs:label                "Event 5121" ;
-        sport:eventParticipation  <http://example.com/Participation/5121-PES14> , <http://example.com/Participation/5121-PES17> , <http://example.com/Participation/5121-PES16> , <http://example.com/Participation/5121-PES12> , <http://example.com/Participation/5121-T9572> , <http://example.com/Participation/5121-PES11> , <http://example.com/Participation/5121-PES19> , <http://example.com/Participation/5121-PES18> , <http://example.com/Participation/5121-T6134> , <http://example.com/Participation/5121-PES13> , <http://example.com/Participation/5121-PES15> , <http://example.com/Participation/5121-PES10> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
+        spact:eventParticipation  <http://example.com/Participation/5121-T9572> , <http://example.com/Participation/5121-PES12> , <http://example.com/Participation/5121-PES14> , <http://example.com/Participation/5121-PES16> , <http://example.com/Participation/5121-PES19> , <http://example.com/Participation/5121-T6134> , <http://example.com/Participation/5121-PES11> , <http://example.com/Participation/5121-PES18> , <http://example.com/Participation/5121-PES13> , <http://example.com/Participation/5121-PES15> , <http://example.com/Participation/5121-PES10> , <http://example.com/Participation/5121-PES17> ;
+        spact:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        spact:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/T9572-PES18>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Engin Küpeli membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES18> ;
-        sport:membershipOf  <http://example.com/Team/T9572> .
+        spact:membershipBy  <http://example.com/Athlete/PES18> ;
+        spact:membershipOf  <http://example.com/Team/T9572> .
 
 <http://example.com/Membership/T6134-PES13>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Mikołaj Karolewski membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES13> ;
-        sport:membershipOf  <http://example.com/Team/T6134> .
+        spact:membershipBy  <http://example.com/Athlete/PES13> ;
+        spact:membershipOf  <http://example.com/Team/T6134> .
 
 <http://example.com/Athlete/PES17>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Ismailcan Dörtkardeş" ;
-        sport:nationality  "Turkish" .
+        spact:nationality  "Turkish" .
 
 <http://example.com/Participation/5120-PES19>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5120" ;
         spesstat:ADR           "68,4" ;
         spesstat:FKdiff        "0" ;
@@ -206,22 +206,22 @@
         spesstat:headshot      "6" ;
         spesstat:kills         "15" ;
         spstat:rating          "1,11" ;
-        sport:participationBy  <http://example.com/Athlete/PES19> .
+        spact:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Participation/5121-T6134>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5121" ;
         spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/T6134> ;
-        sport:score            "16" .
+        spact:participationBy  <http://example.com/Team/T6134> ;
+        spact:score            "16" .
 
 <http://example.com/Team/T9572>
-        rdf:type          sport:Team ;
+        rdf:type          spact:Team ;
         rdfs:label        "" , "Ex-Space Soldiers" ;
-        sport:membership  <http://example.com/Membership/T9572-PES19> , <http://example.com/Membership/T9572-PES18> , <http://example.com/Membership/T9572-PES17> , <http://example.com/Membership/T9572-PES16> , <http://example.com/Membership/T9572-PES15> .
+        spact:membership  <http://example.com/Membership/T9572-PES19> , <http://example.com/Membership/T9572-PES18> , <http://example.com/Membership/T9572-PES17> , <http://example.com/Membership/T9572-PES16> , <http://example.com/Membership/T9572-PES15> .
 
 <http://example.com/Participation/5122-PES17>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5122" ;
         spesstat:ADR           "66,6" ;
         spesstat:FKdiff        "-4" ;
@@ -232,10 +232,10 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "15" ;
         spstat:rating          "0,94" ;
-        sport:participationBy  <http://example.com/Athlete/PES17> .
+        spact:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Participation/5121-PES15>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5121" ;
         spesstat:ADR           "80,1" ;
         spesstat:FKdiff        "5" ;
@@ -246,15 +246,15 @@
         spesstat:headshot      "12" ;
         spesstat:kills         "21" ;
         spstat:rating          "1,15" ;
-        sport:participationBy  <http://example.com/Athlete/PES15> .
+        spact:participationBy  <http://example.com/Athlete/PES15> .
 
 <http://example.com/Athlete/PES11>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Pawet Jańczak" ;
-        sport:nationality  "Polish" .
+        spact:nationality  "Polish" .
 
 <http://example.com/Participation/5120-PES13>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5120" ;
         spesstat:ADR           "63,6" ;
         spesstat:FKdiff        "-3" ;
@@ -265,17 +265,17 @@
         spesstat:headshot      "8" ;
         spesstat:kills         "13" ;
         spstat:rating          "0,85" ;
-        sport:participationBy  <http://example.com/Athlete/PES13> .
+        spact:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5121-T9572>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5121" ;
         spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/T9572> ;
-        sport:score            "13" .
+        spact:participationBy  <http://example.com/Team/T9572> ;
+        spact:score            "13" .
 
 <http://example.com/Participation/5122-PES11>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5122" ;
         spesstat:ADR           "69,8" ;
         spesstat:FKdiff        "4" ;
@@ -286,34 +286,34 @@
         spesstat:headshot      "8" ;
         spesstat:kills         "11" ;
         spstat:rating          "0,76" ;
-        sport:participationBy  <http://example.com/Athlete/PES11> .
+        spact:participationBy  <http://example.com/Athlete/PES11> .
 
 <http://example.com/Event/5120>
-        rdf:type                  sport:Event ;
+        rdf:type                  spact:Event ;
         rdfs:label                "Event 5120" ;
-        sport:eventParticipation  <http://example.com/Participation/5120-PES14> , <http://example.com/Participation/5120-PES18> , <http://example.com/Participation/5120-PES17> , <http://example.com/Participation/5120-T6134> , <http://example.com/Participation/5120-PES11> , <http://example.com/Participation/5120-PES10> , <http://example.com/Participation/5120-PES19> , <http://example.com/Participation/5120-T9572> , <http://example.com/Participation/5120-PES13> , <http://example.com/Participation/5120-PES16> , <http://example.com/Participation/5120-PES12> , <http://example.com/Participation/5120-PES15> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
+        spact:eventParticipation  <http://example.com/Participation/5120-PES14> , <http://example.com/Participation/5120-PES17> , <http://example.com/Participation/5120-PES11> , <http://example.com/Participation/5120-T6134> , <http://example.com/Participation/5120-PES10> , <http://example.com/Participation/5120-PES13> , <http://example.com/Participation/5120-PES16> , <http://example.com/Participation/5120-PES19> , <http://example.com/Participation/5120-PES18> , <http://example.com/Participation/5120-PES12> , <http://example.com/Participation/5120-PES15> , <http://example.com/Participation/5120-T9572> ;
+        spact:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        spact:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/T9572-PES17>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Ismailcan Dörtkardeş membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES17> ;
-        sport:membershipOf  <http://example.com/Team/T9572> .
+        spact:membershipBy  <http://example.com/Athlete/PES17> ;
+        spact:membershipOf  <http://example.com/Team/T9572> .
 
 <http://example.com/Membership/T6134-PES12>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Wiktor Wojtas membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES12> ;
-        sport:membershipOf  <http://example.com/Team/T6134> .
+        spact:membershipBy  <http://example.com/Athlete/PES12> ;
+        spact:membershipOf  <http://example.com/Team/T6134> .
 
 <http://example.com/Athlete/PES16>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Ahmet Karahoca" ;
-        sport:nationality  "Turkish" .
+        spact:nationality  "Turkish" .
 
 <http://example.com/Participation/5120-PES18>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5120" ;
         spesstat:ADR           "89,7" ;
         spesstat:FKdiff        "-1" ;
@@ -324,10 +324,10 @@
         spesstat:headshot      "6" ;
         spesstat:kills         "12" ;
         spstat:rating          "1,08" ;
-        sport:participationBy  <http://example.com/Athlete/PES18> .
+        spact:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Participation/5122-PES16>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5122" ;
         spesstat:ADR           "90,9" ;
         spesstat:FKdiff        "1" ;
@@ -338,10 +338,10 @@
         spesstat:headshot      "11" ;
         spesstat:kills         "20" ;
         spstat:rating          "1,37" ;
-        sport:participationBy  <http://example.com/Athlete/PES16> .
+        spact:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Participation/5121-PES14>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5121" ;
         spesstat:ADR           "78,4" ;
         spesstat:FKdiff        "0" ;
@@ -352,15 +352,15 @@
         spesstat:headshot      "8" ;
         spesstat:kills         "24" ;
         spstat:rating          "1,21" ;
-        sport:participationBy  <http://example.com/Athlete/PES14> .
+        spact:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Athlete/PES10>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Jazek Jeziak" ;
-        sport:nationality  "Polish" .
+        spact:nationality  "Polish" .
 
 <http://example.com/Participation/5120-PES12>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5120" ;
         spesstat:ADR           "66,9" ;
         spesstat:FKdiff        "-1" ;
@@ -371,10 +371,10 @@
         spesstat:headshot      "11" ;
         spesstat:kills         "16" ;
         spstat:rating          "0,86" ;
-        sport:participationBy  <http://example.com/Athlete/PES12> .
+        spact:participationBy  <http://example.com/Athlete/PES12> .
 
 <http://example.com/Participation/5122-PES10>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5122" ;
         spesstat:ADR           "72,5" ;
         spesstat:FKdiff        "-2" ;
@@ -385,22 +385,22 @@
         spesstat:headshot      "8" ;
         spesstat:kills         "19" ;
         spstat:rating          "0,98" ;
-        sport:participationBy  <http://example.com/Athlete/PES10> .
+        spact:participationBy  <http://example.com/Athlete/PES10> .
 
 <http://example.com/Membership/T9572-PES16>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Ahmet Karahoca membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES16> ;
-        sport:membershipOf  <http://example.com/Team/T9572> .
+        spact:membershipBy  <http://example.com/Athlete/PES16> ;
+        spact:membershipOf  <http://example.com/Team/T9572> .
 
 <http://example.com/Membership/T6134-PES11>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Pawet Jańczak membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES11> ;
-        sport:membershipOf  <http://example.com/Team/T6134> .
+        spact:membershipBy  <http://example.com/Athlete/PES11> ;
+        spact:membershipOf  <http://example.com/Team/T6134> .
 
 <http://example.com/Participation/5121-PES19>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5121" ;
         spesstat:ADR           "54,4" ;
         spesstat:FKdiff        "0" ;
@@ -411,15 +411,15 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "12" ;
         spstat:rating          "0,66" ;
-        sport:participationBy  <http://example.com/Athlete/PES19> .
+        spact:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Athlete/PES15>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Buğra Arkın" ;
-        sport:nationality  "Turkish" .
+        spact:nationality  "Turkish" .
 
 <http://example.com/Participation/5120-PES17>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5120" ;
         spesstat:ADR           "104,9" ;
         spesstat:FKdiff        "3" ;
@@ -430,22 +430,22 @@
         spesstat:headshot      "6" ;
         spesstat:kills         "22" ;
         spstat:rating          "1,43" ;
-        sport:participationBy  <http://example.com/Athlete/PES17> .
+        spact:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Participation/5122-T6134>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5122" ;
         spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/T6134> ;
-        sport:score            "9" .
+        spact:participationBy  <http://example.com/Team/T6134> ;
+        spact:score            "9" .
 
 <http://example.com/Competition/l.intelextrememasters.com-2019>
-        rdf:type                 sport:Competition ;
+        rdf:type                 spact:Competition ;
         rdfs:label               "Intel Extreme Masters 2019" ;
-        sport:parentCompetition  <http://example.com/Competition/l.intelextrememasters.com> .
+        spact:parentCompetition  <http://example.com/Competition/l.intelextrememasters.com> .
 
 <http://example.com/Participation/5122-PES15>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5122" ;
         spesstat:ADR           "105,2" ;
         spesstat:FKdiff        "1" ;
@@ -456,10 +456,10 @@
         spesstat:headshot      "15" ;
         spesstat:kills         "26" ;
         spstat:rating          "1,57" ;
-        sport:participationBy  <http://example.com/Athlete/PES15> .
+        spact:participationBy  <http://example.com/Athlete/PES15> .
 
 <http://example.com/Participation/5121-PES13>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5121" ;
         spesstat:ADR           "66,3" ;
         spesstat:FKdiff        "-3" ;
@@ -470,10 +470,10 @@
         spesstat:headshot      "8" ;
         spesstat:kills         "16" ;
         spstat:rating          "0,82" ;
-        sport:participationBy  <http://example.com/Athlete/PES13> .
+        spact:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5120-PES11>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5120" ;
         spesstat:ADR           "65,9" ;
         spesstat:FKdiff        "-3" ;
@@ -484,22 +484,22 @@
         spesstat:headshot      "9" ;
         spesstat:kills         "15" ;
         spstat:rating          "0,92" ;
-        sport:participationBy  <http://example.com/Athlete/PES11> .
+        spact:participationBy  <http://example.com/Athlete/PES11> .
 
 <http://example.com/Membership/T9572-PES15>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Buğra Arkın membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES15> ;
-        sport:membershipOf  <http://example.com/Team/T9572> .
+        spact:membershipBy  <http://example.com/Athlete/PES15> ;
+        spact:membershipOf  <http://example.com/Team/T9572> .
 
 <http://example.com/Membership/T6134-PES10>
-        rdf:type            sport:IndividualMembership ;
+        rdf:type            spact:IndividualMembership ;
         rdfs:label          "Jazek Jeziak membership of " ;
-        sport:membershipBy  <http://example.com/Athlete/PES10> ;
-        sport:membershipOf  <http://example.com/Team/T6134> .
+        spact:membershipBy  <http://example.com/Athlete/PES10> ;
+        spact:membershipOf  <http://example.com/Team/T6134> .
 
 <http://example.com/Participation/5121-PES18>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5121" ;
         spesstat:ADR           "70,4" ;
         spesstat:FKdiff        "-4" ;
@@ -510,15 +510,15 @@
         spesstat:headshot      "5" ;
         spesstat:kills         "15" ;
         spstat:rating          "0,89" ;
-        sport:participationBy  <http://example.com/Athlete/PES18> .
+        spact:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Athlete/PES14>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Karol Rodowicz" ;
-        sport:nationality  "Polish" .
+        spact:nationality  "Polish" .
 
 <http://example.com/Participation/5120-PES16>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5120" ;
         spesstat:ADR           "87,6" ;
         spesstat:FKdiff        "2" ;
@@ -529,15 +529,15 @@
         spesstat:headshot      "11" ;
         spesstat:kills         "24" ;
         spstat:rating          "1,53" ;
-        sport:participationBy  <http://example.com/Athlete/PES16> .
+        spact:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Competition/l.intelextrememasters.com>
-        rdf:type     sport:Competition ;
+        rdf:type     spact:Competition ;
         rdfs:label   "Intel Extreme Masters" ;
-        sport:sport  medtop:20001183 .
+        spact:sport  medtop:20001183 .
 
 <http://example.com/Participation/5122-PES14>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5122" ;
         spesstat:ADR           "73,7" ;
         spesstat:FKdiff        "2" ;
@@ -548,10 +548,10 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "16" ;
         spstat:rating          "0,89" ;
-        sport:participationBy  <http://example.com/Athlete/PES14> .
+        spact:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Participation/5121-PES12>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5121" ;
         spesstat:ADR           "59,2" ;
         spesstat:FKdiff        "1" ;
@@ -562,10 +562,10 @@
         spesstat:headshot      "9" ;
         spesstat:kills         "13" ;
         spstat:rating          "0,88" ;
-        sport:participationBy  <http://example.com/Athlete/PES12> .
+        spact:participationBy  <http://example.com/Athlete/PES12> .
 
 <http://example.com/Participation/5120-PES10>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5120" ;
         spesstat:ADR           "65,9" ;
         spesstat:FKdiff        "3" ;
@@ -576,42 +576,37 @@
         spesstat:headshot      "7" ;
         spesstat:kills         "16" ;
         spstat:rating          "1,06" ;
-        sport:participationBy  <http://example.com/Athlete/PES10> .
-
-<http://example.com/CompetitionPhase/>
-        rdf:type           sport:CompetitionPhase ;
-        rdfs:label         "CompetitionPhase <http://example.com/CompetitionPhase/> of competition <http://example.com/Competition/l.intelextrememasters.com>" ;
-        sport:competition  <http://example.com/Competition/l.intelextrememasters.com> .
+        spact:participationBy  <http://example.com/Athlete/PES10> .
 
 <http://example.com/Event/541807>
-        rdf:type                  sport:Event ;
+        rdf:type                  spact:Event ;
         rdfs:label                "Event 541807" ;
-        sport:eventParticipation  <http://example.com/Participation/541807-T9572> , <http://example.com/Participation/541807-T6134> ;
-        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime ;
-        sport:subEvent            <http://example.com/Event/5122> , <http://example.com/Event/5121> , <http://example.com/Event/5120> .
+        spact:eventParticipation  <http://example.com/Participation/541807-T9572> , <http://example.com/Participation/541807-T6134> ;
+        spact:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        spact:startDateTime       "2018-12-12T14:00:00"^^xsd:dateTime ;
+        spact:subEvent            <http://example.com/Event/5122> , <http://example.com/Event/5121> , <http://example.com/Event/5120> .
 
 <http://example.com/Athlete/PES19>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Engin Kor" ;
-        sport:nationality  "Turkish" .
+        spact:nationality  "Turkish" .
 
 <http://example.com/Participation/5120-T6134>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5120" ;
         spstat:event-outcome   speventoutcome:loss ;
-        sport:participationBy  <http://example.com/Team/T6134> ;
-        sport:score            "7" .
+        spact:participationBy  <http://example.com/Team/T6134> ;
+        spact:score            "7" .
 
 <http://example.com/Participation/5122-T9572>
-        rdf:type               sport:TeamParticipation ;
+        rdf:type               spact:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5122" ;
         spstat:event-outcome   speventoutcome:win ;
-        sport:participationBy  <http://example.com/Team/T9572> ;
-        sport:score            "16" .
+        spact:participationBy  <http://example.com/Team/T9572> ;
+        spact:score            "16" .
 
 <http://example.com/Participation/5122-PES19>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5122" ;
         spesstat:ADR           "86,5" ;
         spesstat:FKdiff        "1" ;
@@ -622,10 +617,10 @@
         spesstat:headshot      "10" ;
         spesstat:kills         "20" ;
         spstat:rating          "1,21" ;
-        sport:participationBy  <http://example.com/Athlete/PES19> .
+        spact:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Participation/5121-PES17>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5121" ;
         spesstat:ADR           "81,3" ;
         spesstat:FKdiff        "4" ;
@@ -636,20 +631,20 @@
         spesstat:headshot      "14" ;
         spesstat:kills         "23" ;
         spstat:rating          "1,14" ;
-        sport:participationBy  <http://example.com/Athlete/PES17> .
+        spact:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Team/T6134>
-        rdf:type          sport:Team ;
+        rdf:type          spact:Team ;
         rdfs:label        "" , "Kinguin" ;
-        sport:membership  <http://example.com/Membership/T6134-PES14> , <http://example.com/Membership/T6134-PES13> , <http://example.com/Membership/T6134-PES12> , <http://example.com/Membership/T6134-PES11> , <http://example.com/Membership/T6134-PES10> .
+        spact:membership  <http://example.com/Membership/T6134-PES14> , <http://example.com/Membership/T6134-PES13> , <http://example.com/Membership/T6134-PES12> , <http://example.com/Membership/T6134-PES11> , <http://example.com/Membership/T6134-PES10> .
 
 <http://example.com/Athlete/PES13>
-        rdf:type           sport:Athlete ;
+        rdf:type           spact:Athlete ;
         rdfs:label         "Mikołaj Karolewski" ;
-        sport:nationality  "Polish" .
+        spact:nationality  "Polish" .
 
 <http://example.com/Participation/5120-PES15>
-        rdf:type               sport:IndividualParticipation ;
+        rdf:type               spact:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5120" ;
         spesstat:ADR           "64,4" ;
         spesstat:FKdiff        "3" ;
@@ -660,4 +655,4 @@
         spesstat:headshot      "5" ;
         spesstat:kills         "14" ;
         spstat:rating          "1,15" ;
-        sport:participationBy  <http://example.com/Athlete/PES15> .
+        spact:participationBy  <http://example.com/Athlete/PES15> .
