@@ -1,32 +1,36 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spact:              <https://sportschema.org/ontologies/main/> .
+@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spesaction: <http://cv.iptc.org/newscodes/spesaction/> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spsocactiontype: <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spstat: <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spescaction:        <http://cv.iptc.org/newscodes/spescaction/> .
-@prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocaction:        <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <http://cv.iptc.org/newscodes/spsocstat/> .
-@prefix spstat:             <http://cv.iptc.org/newscodes/spstat/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix medtop: <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix spct:  <http://cv.iptc.org/newscodes/spct/> .
+@prefix sport: <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
 
 <http://example.com/Athlete/p.180804>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Axel Tuanzebe" .
 
 <http://example.com/Athlete/p.222694>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Pascal Struijk" .
 
 <http://example.com/Participation/E2128609-p.149915>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Diego Llorente participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.149915> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -50,31 +54,31 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "2" ;
         spsocstat:tackles-won           "2" ;
-        spsocstat:touches               "66" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.149915> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "66" .
 
 <http://example.com/Action/E2128609-a.2291325173>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291325173 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:33:26+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "76" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.200617" ;
-        spact:person-replacing-idref  "p.74208" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:33:26+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "76" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.200617" ;
+        sport:person-replacing-idref  "p.74208" ;
+        sport:person-replacing-position
                 "midfielder" ;
-        spact:sequence-number         "0425153326" ;
-        spact:substitution-reason     "Tactical" .
+        sport:sequence-number         "0425153326" ;
+        sport:substitution-reason     "Tactical" .
 
 <http://example.com/Participation/E2128609-p.106617>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Patrick Bamford participation in Event E2128609" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "90" ;
+        sport:participationBy          <http://example.com/Athlete/p.106617> ;
+        sport:playerStatus             spplayerstatus:starter ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/forward> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -92,60 +96,59 @@
         spsocstat:shots-blocked-outfielder
                 "1" ;
         spsocstat:shutouts             "1" ;
-        spsocstat:touches              "26" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "90" ;
-        spact:participationBy          <http://example.com/Athlete/p.106617> ;
-        spact:playerStatus             spplayerstatus:starter ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/forward> .
+        spsocstat:touches              "26" .
 
 <http://example.com/Action/E2128609-a.2291325685>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291325685 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:33:56+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "77" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.173821" ;
-        spact:person-replacing-idref  "p.193645" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:33:56+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "77" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.173821" ;
+        sport:person-replacing-idref  "p.193645" ;
+        sport:person-replacing-position
                 "defender" ;
-        spact:sequence-number         "0425153356" ;
-        spact:substitution-reason     "Tactical" .
+        sport:sequence-number         "0425153356" ;
+        sport:substitution-reason     "Tactical" .
 
 <http://example.com/Athlete/p.105377>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Ezgjan Alioski" .
 
 <http://example.com/Team/EPLT1>
-        rdf:type          spact:Team ;
+        a                 sport:Team ;
         rdfs:label        "Manchester United" ;
-        spact:membership  <http://example.com/Membership/EPLT1-p.95658> , <http://example.com/Membership/EPLT1-p.101582> , <http://example.com/Membership/EPLT1-p.214590> , <http://example.com/Membership/EPLT1-p.43670> , <http://example.com/Membership/EPLT1-p.180804> , <http://example.com/Membership/EPLT1-p.176297> , <http://example.com/Membership/EPLT1-p.197365> , <http://example.com/Membership/EPLT1-p.74208> , <http://example.com/Membership/EPLT1-p.106760> , <http://example.com/Membership/EPLT1-p.184667> , <http://example.com/Membership/EPLT1-p.62398> , <http://example.com/Membership/EPLT1-p.200617> , <http://example.com/Membership/EPLT1-p.40720> , <http://example.com/Membership/EPLT1-p.141746> , <http://example.com/Membership/EPLT1-p.172649> , <http://example.com/Membership/EPLT1-p.51940> , <http://example.com/Membership/EPLT1-p.220688> , <http://example.com/Membership/EPLT1-p.152590> , <http://example.com/Membership/EPLT1-p.195851> , <http://example.com/Membership/EPLT1-p.180184> .
+        sport:membership  <http://example.com/Membership/EPLT1-p.95658> , <http://example.com/Membership/EPLT1-p.101582> , <http://example.com/Membership/EPLT1-p.214590> , <http://example.com/Membership/EPLT1-p.43670> , <http://example.com/Membership/EPLT1-p.180804> , <http://example.com/Membership/EPLT1-p.176297> , <http://example.com/Membership/EPLT1-p.197365> , <http://example.com/Membership/EPLT1-p.74208> , <http://example.com/Membership/EPLT1-p.106760> , <http://example.com/Membership/EPLT1-p.184667> , <http://example.com/Membership/EPLT1-p.62398> , <http://example.com/Membership/EPLT1-p.200617> , <http://example.com/Membership/EPLT1-p.40720> , <http://example.com/Membership/EPLT1-p.141746> , <http://example.com/Membership/EPLT1-p.172649> , <http://example.com/Membership/EPLT1-p.51940> , <http://example.com/Membership/EPLT1-p.220688> , <http://example.com/Membership/EPLT1-p.152590> , <http://example.com/Membership/EPLT1-p.195851> , <http://example.com/Membership/EPLT1-p.180184> .
 
 <http://example.com/Participation/E2128609-p.41051>
-        rdf:type               spact:OfficialParticipation ;
+        a                      sport:OfficialParticipation ;
         rdfs:label             "Craig Pawson participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Official/p.41051> ;
-        spact:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
+        sport:participationBy  <http://example.com/Official/p.41051> ;
+        sport:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
 
 <http://example.com/Membership/EPLT2-p.66588>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Luke Ayling membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.66588> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "2" .
+        sport:membershipBy   <http://example.com/Athlete/p.66588> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "2" .
 
 <http://example.com/Membership/EPLT1-p.40720>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Edinson Cavani membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.40720> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "7" .
+        sport:membershipBy   <http://example.com/Athlete/p.40720> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "7" .
 
 <http://example.com/Participation/E2128609-p.72222>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Mateusz Klich participation in Event E2128609" ;
+        spstat:time-played-total        "18" ;
+        sport:participationBy           <http://example.com/Athlete/p.72222> ;
+        sport:playerStatus              spplayerstatus:bench ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:crosses-18-yard       "1" ;
@@ -160,35 +163,36 @@
         spsocstat:passes-total          "9" ;
         spsocstat:shots-on-goal-total   "1" ;
         spsocstat:shots-total           "1" ;
-        spsocstat:touches               "12" ;
-        spstat:time-played-total        "18" ;
-        spact:participationBy           <http://example.com/Athlete/p.72222> ;
-        spact:playerStatus              spplayerstatus:bench ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "12" .
 
 <http://example.com/Membership/EPLT1-p.51940>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "David de Gea membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.51940> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "1" .
+        sport:membershipBy   <http://example.com/Athlete/p.51940> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "1" .
 
 <http://example.com/Membership/EPLT2-p.221610>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Jamie Shackleton membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.221610> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "46" .
+        sport:membershipBy   <http://example.com/Athlete/p.221610> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "46" .
 
 <http://example.com/Participation/E2128609-p.248937>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Sam Greenwood participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.248937> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.248937> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.437495>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Illan Meslier participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.437495> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "2" ;
         spsocstat:cautions-total        "0" ;
@@ -202,16 +206,18 @@
         spsocstat:save-percentage       "NaN" ;
         spsocstat:saves                 "4" ;
         spsocstat:shutouts              "1" ;
-        spsocstat:touches               "49" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.437495> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
+        spsocstat:touches               "49" .
 
 <http://example.com/Participation/E2128609-EPLT2>
-        rdf:type                       spact:TeamParticipation ;
+        a                              sport:TeamParticipation ;
         rdfs:label                     "Leeds United participation in Event E2128609" ;
+        spstat:event-outcome           speventoutcome:tie ;
+        spstat:score-opposing          "0" ;
+        spstat:time-of-possession-percentage
+                "44.2" ;
+        sport:alignment                "home" ;
+        sport:participationBy          <http://example.com/Team/EPLT2> ;
+        sport:score                    "0" ;
         spsocstat:cautions-total       "4" ;
         spsocstat:clearances-successful
                 "17" ;
@@ -229,37 +235,35 @@
         spsocstat:tackles-total        "30" ;
         spsocstat:tackles-won          "17" ;
         spsocstat:tackles-won-percentage
-                "0.567" ;
-        spstat:event-outcome           speventoutcome:tie ;
-        spstat:score-opposing          "0" ;
-        spstat:time-of-possession-percentage
-                "44.2" ;
-        spact:alignment                "home" ;
-        spact:participationBy          <http://example.com/Team/EPLT2> ;
-        spact:score                    "0" .
+                "0.567" .
 
 <http://example.com/Associate/man40342>
-        rdf:type    spact:Associate ;
+        a           sport:Associate ;
         rdfs:label  "Ole Gunnar Solskjær" .
 
 <http://example.com/Membership/EPLT2-p.173821>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Tyler Roberts membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.173821> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "11" .
+        sport:membershipBy   <http://example.com/Athlete/p.173821> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "11" .
 
 <http://example.com/Athlete/p.66588>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Luke Ayling" .
 
 <http://example.com/Athlete/p.176297>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Marcus Rashford" .
 
 <http://example.com/Participation/E2128609-p.184667>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Victor Lindelöf participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.184667> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -280,49 +284,49 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "87" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.184667> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "87" .
 
 <http://example.com/Athlete/p.74208>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Paul Pogba" .
 
 <http://example.com/Membership/EPLT1-p.180804>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Axel Tuanzebe membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.180804> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "38" .
+        sport:membershipBy   <http://example.com/Athlete/p.180804> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "38" .
 
 <http://example.com/Membership/EPLT2-p.149915>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Diego Llorente membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.149915> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "14" .
+        sport:membershipBy   <http://example.com/Athlete/p.149915> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "14" .
 
 <http://example.com/Athlete/p.62398>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Nemanja Matic" .
 
 <http://example.com/Athlete/p.200617>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Daniel James" .
 
 <http://example.com/Membership/man26-EPLT2>
-        rdf:type               spact:Membership ;
+        a                      sport:Membership ;
         rdfs:label             "Marcelo Bielsa associate membership of Leeds United" ;
-        spact:membershipBy     <http://example.com/Associate/man26> ;
-        spact:membershipOf     <http://example.com/Team/EPLT2> ;
-        spact:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        sport:membershipBy     <http://example.com/Associate/man26> ;
+        sport:membershipOf     <http://example.com/Team/EPLT2> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Participation/E2128609-p.155405>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Kalvin Phillips participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.155405> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -345,51 +349,50 @@
         spsocstat:tackles-lost          "4" ;
         spsocstat:tackles-total         "8" ;
         spsocstat:tackles-won           "4" ;
-        spsocstat:touches               "72" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.155405> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "72" .
 
 <http://example.com/Membership/EPLT2-p.106617>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Patrick Bamford membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.106617> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "9" .
+        sport:membershipBy   <http://example.com/Athlete/p.106617> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "9" .
 
 <http://example.com/Membership/EPLT1-p.172649>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Dean Henderson membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.172649> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "26" .
+        sport:membershipBy   <http://example.com/Athlete/p.172649> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "26" .
 
 <http://example.com/Athlete/p.450070>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Crysencio Summerville" .
 
 <http://example.com/Site/s.29>
-        rdf:type    spact:Site ;
+        a           sport:Site ;
         rdfs:label  "Elland Road" .
 
 <http://example.com/Competition/l.premierleague.com>
-        rdf:type               spact:Competition ;
+        a                      sport:Competition ;
         rdfs:label             "English Premier League" ;
-        spact:competitionType  spct:recurring-competition ;
-        spact:sport            medtop:20001065 .
+        sport:competitionType  spct:recurring-competition ;
+        sport:sport            medtop:20001065 .
 
 <http://example.com/Membership/EPLT2-p.248937>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Sam Greenwood membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.248937> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "42" .
+        sport:membershipBy   <http://example.com/Athlete/p.248937> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "42" .
 
 <http://example.com/Participation/E2128609-p.215460>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Ian Poveda-Ocampo participation in Event E2128609" ;
+        spstat:time-played-total        "22" ;
+        sport:participationBy           <http://example.com/Athlete/p.215460> ;
+        sport:playerStatus              spplayerstatus:bench ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/forward> ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -403,40 +406,43 @@
         spsocstat:passes-complete-long  "1" ;
         spsocstat:passes-incomplete     "0" ;
         spsocstat:passes-total          "4" ;
-        spsocstat:touches               "6" ;
-        spstat:time-played-total        "22" ;
-        spact:participationBy           <http://example.com/Athlete/p.215460> ;
-        spact:playerStatus              spplayerstatus:bench ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/forward> .
+        spsocstat:touches               "6" .
 
 <http://example.com/Membership/EPLT2-p.437495>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Illan Meslier membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.437495> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "1" .
+        sport:membershipBy   <http://example.com/Athlete/p.437495> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "1" .
 
 <http://example.com/Event/E2128609>
-        rdf:type                  spact:Event ;
+        a                         sport:Event ;
         rdfs:label                "Event E2128609" ;
-        spact:competition         <http://example.com/Competition/l.premierleague.com-2020> ;
-        spact:competitionPhase    <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
-        spact:eventOutcomeType    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
-        spact:eventParticipation  <http://example.com/Participation/E2128609-p.51940> , <http://example.com/Participation/E2128609-p.155405> , <http://example.com/Participation/E2128609-p.193645> , <http://example.com/Participation/E2128609-p.28690> , <http://example.com/Participation/E2128609-p.221610> , <http://example.com/Participation/E2128609-p.87873> , <http://example.com/Participation/E2128609-p.195851> , <http://example.com/Participation/E2128609-p.39790> , <http://example.com/Participation/E2128609-p.152590> , <http://example.com/Participation/E2128609-p.215460> , <http://example.com/Participation/E2128609-p.41051> , <http://example.com/Participation/E2128609-p.149915> , <http://example.com/Participation/E2128609-p.176297> , <http://example.com/Participation/E2128609-p.165808> , <http://example.com/Participation/E2128609-EPLT2> , <http://example.com/Participation/E2128609-p.106760> , <http://example.com/Participation/E2128609-p.248937> , <http://example.com/Participation/E2128609-p.180804> , <http://example.com/Participation/E2128609-p.74208> , <http://example.com/Participation/E2128609-p.72222> , <http://example.com/Participation/E2128609-p.184667> , <http://example.com/Participation/E2128609-p.66588> , <http://example.com/Participation/E2128609-p.105377> , <http://example.com/Participation/E2128609-p.101582> , <http://example.com/Participation/E2128609-p.220688> , <http://example.com/Participation/E2128609-p.43670> , <http://example.com/Participation/E2128609-p.40720> , <http://example.com/Participation/E2128609-p.173821> , <http://example.com/Participation/E2128609-p.221399> , <http://example.com/Participation/E2128609-p.222694> , <http://example.com/Participation/E2128609-p.141746> , <http://example.com/Participation/E2128609-p.450070> , <http://example.com/Participation/E2128609-p.214590> , <http://example.com/Participation/E2128609-p.180184> , <http://example.com/Participation/E2128609-p.38588> , <http://example.com/Participation/E2128609-p.437495> , <http://example.com/Participation/E2128609-p.95658> , <http://example.com/Participation/E2128609-p.106617> , <http://example.com/Participation/E2128609-p.172649> , <http://example.com/Participation/E2128609-p.200617> , <http://example.com/Participation/E2128609-p.197365> , <http://example.com/Participation/E2128609-EPLT1> , <http://example.com/Participation/E2128609-p.62398> ;
-        spact:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        spact:site                <http://example.com/Site/s.29> ;
-        spact:startDateTime       "2021-04-25T14:00:00+01:00"^^xsd:dateTime .
+        sport:competition         <http://example.com/Competition/l.premierleague.com-2020> ;
+        sport:competitionPhase    <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
+        sport:eventOutcomeType    <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:eventParticipation  <http://example.com/Participation/E2128609-p.51940> , <http://example.com/Participation/E2128609-p.155405> , <http://example.com/Participation/E2128609-p.193645> , <http://example.com/Participation/E2128609-p.28690> , <http://example.com/Participation/E2128609-p.221610> , <http://example.com/Participation/E2128609-p.87873> , <http://example.com/Participation/E2128609-p.195851> , <http://example.com/Participation/E2128609-p.39790> , <http://example.com/Participation/E2128609-p.152590> , <http://example.com/Participation/E2128609-p.215460> , <http://example.com/Participation/E2128609-p.41051> , <http://example.com/Participation/E2128609-p.149915> , <http://example.com/Participation/E2128609-p.176297> , <http://example.com/Participation/E2128609-p.165808> , <http://example.com/Participation/E2128609-EPLT2> , <http://example.com/Participation/E2128609-p.106760> , <http://example.com/Participation/E2128609-p.248937> , <http://example.com/Participation/E2128609-p.180804> , <http://example.com/Participation/E2128609-p.74208> , <http://example.com/Participation/E2128609-p.72222> , <http://example.com/Participation/E2128609-p.184667> , <http://example.com/Participation/E2128609-p.66588> , <http://example.com/Participation/E2128609-p.105377> , <http://example.com/Participation/E2128609-p.101582> , <http://example.com/Participation/E2128609-p.220688> , <http://example.com/Participation/E2128609-p.43670> , <http://example.com/Participation/E2128609-p.40720> , <http://example.com/Participation/E2128609-p.173821> , <http://example.com/Participation/E2128609-p.221399> , <http://example.com/Participation/E2128609-p.222694> , <http://example.com/Participation/E2128609-p.141746> , <http://example.com/Participation/E2128609-p.450070> , <http://example.com/Participation/E2128609-p.214590> , <http://example.com/Participation/E2128609-p.180184> , <http://example.com/Participation/E2128609-p.38588> , <http://example.com/Participation/E2128609-p.437495> , <http://example.com/Participation/E2128609-p.95658> , <http://example.com/Participation/E2128609-p.106617> , <http://example.com/Participation/E2128609-p.172649> , <http://example.com/Participation/E2128609-p.200617> , <http://example.com/Participation/E2128609-p.197365> , <http://example.com/Participation/E2128609-EPLT1> , <http://example.com/Participation/E2128609-p.62398> ;
+        sport:eventStatus         <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:site                <http://example.com/Site/s.29> ;
+        sport:startDateTime       "2021-04-25T14:00:00+01:00"^^xsd:dateTime .
 
 <http://example.com/Membership/EPLT1-p.176297>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Marcus Rashford membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.176297> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "10" .
+        sport:membershipBy   <http://example.com/Athlete/p.176297> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "10" .
 
 <http://example.com/Participation/E2128609-EPLT1>
-        rdf:type                       spact:TeamParticipation ;
+        a                              sport:TeamParticipation ;
         rdfs:label                     "Manchester United participation in Event E2128609" ;
+        spstat:event-outcome           speventoutcome:tie ;
+        spstat:score-opposing          "0" ;
+        spstat:time-of-possession-percentage
+                "55.8" ;
+        sport:alignment                "away" ;
+        sport:participationBy          <http://example.com/Team/EPLT1> ;
+        sport:score                    "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
                 "14" ;
@@ -454,51 +460,48 @@
         spsocstat:tackles-total        "16" ;
         spsocstat:tackles-won          "11" ;
         spsocstat:tackles-won-percentage
-                "0.688" ;
-        spstat:event-outcome           speventoutcome:tie ;
-        spstat:score-opposing          "0" ;
-        spstat:time-of-possession-percentage
-                "55.8" ;
-        spact:alignment                "away" ;
-        spact:participationBy          <http://example.com/Team/EPLT1> ;
-        spact:score                    "0" .
+                "0.688" .
 
 <http://example.com/Participation/E2128609-p.152590>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Alex Telles participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.152590> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.152590> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Membership/EPLT1-p.74208>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Paul Pogba membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.74208> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "6" .
+        sport:membershipBy   <http://example.com/Athlete/p.74208> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "6" .
 
 <http://example.com/Membership/EPLT1-p.200617>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Daniel James membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.200617> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "21" .
+        sport:membershipBy   <http://example.com/Athlete/p.200617> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "21" .
 
 <http://example.com/Membership/EPLT2-p.155405>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Kalvin Phillips membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.155405> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "23" .
+        sport:membershipBy   <http://example.com/Athlete/p.155405> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "23" .
 
 <http://example.com/Participation/E2128609-p.197365>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Eric Bailly participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.197365> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.197365> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.193645>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Robin Koch participation in Event E2128609" ;
+        spstat:time-played-total       "13" ;
+        sport:participationBy          <http://example.com/Athlete/p.193645> ;
+        sport:playerStatus             spplayerstatus:bench ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -511,15 +514,16 @@
                 "1" ;
         spsocstat:passes-incomplete    "1" ;
         spsocstat:passes-total         "4" ;
-        spsocstat:touches              "6" ;
-        spstat:time-played-total       "13" ;
-        spact:participationBy          <http://example.com/Athlete/p.193645> ;
-        spact:playerStatus             spplayerstatus:bench ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches              "6" .
 
 <http://example.com/Participation/E2128609-p.165808>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Hélder Costa participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "72" ;
+        sport:participationBy           <http://example.com/Athlete/p.165808> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -538,16 +542,16 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "19" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "72" ;
-        spact:participationBy           <http://example.com/Athlete/p.165808> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "19" .
 
 <http://example.com/Participation/E2128609-p.101582>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Fred participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "89" ;
+        sport:participationBy           <http://example.com/Athlete/p.101582> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -568,31 +572,31 @@
         spsocstat:tackles-lost          "3" ;
         spsocstat:tackles-total         "4" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "68" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "89" ;
-        spact:participationBy           <http://example.com/Athlete/p.101582> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "68" .
 
 <http://example.com/Athlete/p.172649>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Dean Henderson" .
 
 <http://example.com/Athlete/p.248937>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Sam Greenwood" .
 
 <http://example.com/Membership/EPLT2-p.87873>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Stuart Dallas membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.87873> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "15" .
+        sport:membershipBy   <http://example.com/Athlete/p.87873> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "15" .
 
 <http://example.com/Participation/E2128609-p.95658>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Harry Maguire participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.95658> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -613,24 +617,23 @@
         spsocstat:tackles-lost          "1" ;
         spsocstat:tackles-total         "2" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "62" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.95658> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "62" .
 
 <http://example.com/Athlete/p.221399>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Jack Harrison" .
 
 <http://example.com/Athlete/p.43670>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Juan Mata" .
 
 <http://example.com/Participation/E2128609-p.180184>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Donny van de Beek participation in Event E2128609" ;
+        spstat:time-played-total       "1" ;
+        sport:participationBy          <http://example.com/Athlete/p.180184> ;
+        sport:playerStatus             spplayerstatus:bench ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -642,38 +645,39 @@
                 "1" ;
         spsocstat:passes-incomplete    "1" ;
         spsocstat:passes-total         "3" ;
-        spsocstat:touches              "8" ;
-        spstat:time-played-total       "1" ;
-        spact:participationBy          <http://example.com/Athlete/p.180184> ;
-        spact:playerStatus             spplayerstatus:bench ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches              "8" .
 
 <http://example.com/Official/p.41051>
-        rdf:type    spact:Official ;
+        a           sport:Official ;
         rdfs:label  "Craig Pawson" .
 
 <http://example.com/Athlete/p.87873>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Stuart Dallas" .
 
 <http://example.com/Athlete/p.184667>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Victor Lindelöf" .
 
 <http://example.com/Membership/man40342-EPLT1>
-        rdf:type               spact:Membership ;
+        a                      sport:Membership ;
         rdfs:label             "Ole Gunnar Solskjær associate membership of Manchester United" ;
-        spact:membershipBy     <http://example.com/Associate/man40342> ;
-        spact:membershipOf     <http://example.com/Team/EPLT1> ;
-        spact:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        sport:membershipBy     <http://example.com/Associate/man40342> ;
+        sport:membershipOf     <http://example.com/Team/EPLT1> ;
+        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
 
 <http://example.com/Athlete/p.155405>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Kalvin Phillips" .
 
 <http://example.com/Participation/E2128609-p.141746>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Bruno Fernandes participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.141746> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:clearances-successful
@@ -698,30 +702,30 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "73" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.141746> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "73" .
 
 <http://example.com/Athlete/p.214590>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Aaron Wan-Bissaka" .
 
 <http://example.com/Athlete/p.221610>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Jamie Shackleton" .
 
 <http://example.com/Participation/E2128609-p.51940>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "David de Gea participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.51940> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.51940> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.220688>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Mason Greenwood participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.220688> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/forward> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -740,27 +744,26 @@
         spsocstat:shots-on-goal-total   "3" ;
         spsocstat:shots-total           "3" ;
         spsocstat:shutouts              "1" ;
-        spsocstat:touches               "68" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.220688> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/forward> .
+        spsocstat:touches               "68" .
 
 <http://example.com/Membership/EPLT2-p.72222>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Mateusz Klich membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.72222> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "43" .
+        sport:membershipBy   <http://example.com/Athlete/p.72222> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "43" .
 
 <http://example.com/Athlete/p.173821>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Tyler Roberts" .
 
 <http://example.com/Participation/E2128609-p.40720>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Edinson Cavani participation in Event E2128609" ;
+        spstat:time-played-total       "4" ;
+        sport:participationBy          <http://example.com/Athlete/p.40720> ;
+        sport:playerStatus             spplayerstatus:bench ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/forward> ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -772,37 +775,38 @@
                 "4" ;
         spsocstat:passes-incomplete    "0" ;
         spsocstat:passes-total         "6" ;
-        spsocstat:touches              "10" ;
-        spstat:time-played-total       "4" ;
-        spact:participationBy          <http://example.com/Athlete/p.40720> ;
-        spact:playerStatus             spplayerstatus:bench ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/forward> .
+        spsocstat:touches              "10" .
 
 <http://example.com/Competition/l.premierleague.com-2020>
-        rdf:type                 spact:Competition ;
+        a                        sport:Competition ;
         rdfs:label               "English Premier League 2020" ;
-        spact:competitionType    spct:competition ;
-        spact:parentCompetition  <http://example.com/Competition/l.premierleague.com> ;
-        spact:sport              medtop:20001065 .
+        sport:competitionType    spct:competition ;
+        sport:parentCompetition  <http://example.com/Competition/l.premierleague.com> ;
+        sport:sport              medtop:20001065 .
 
 <http://example.com/Participation/E2128609-a.2291247481-p.221399>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "p.221399 participation in action a.2291247481 in event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.221399> .
+        sport:participationBy  <http://example.com/Athlete/p.221399> .
 
 <http://example.com/Athlete/p.106760>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Luke Shaw" .
 
 <http://example.com/Participation/E2128609-p.39790>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Kiko Casilla participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.39790> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.39790> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.222694>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Pascal Struijk participation in Event E2128609" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "90" ;
+        sport:participationBy          <http://example.com/Athlete/p.222694> ;
+        sport:playerStatus             spplayerstatus:starter ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won          "1" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -821,46 +825,46 @@
         spsocstat:tackles-lost         "2" ;
         spsocstat:tackles-total        "4" ;
         spsocstat:tackles-won          "2" ;
-        spsocstat:touches              "55" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "90" ;
-        spact:participationBy          <http://example.com/Athlete/p.222694> ;
-        spact:playerStatus             spplayerstatus:starter ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches              "55" .
 
 <http://example.com/Athlete/p.72222>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Mateusz Klich" .
 
 <http://example.com/Membership/EPLT1-p.43670>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Juan Mata membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.43670> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "8" .
+        sport:membershipBy   <http://example.com/Athlete/p.43670> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "8" .
 
 <http://example.com/Athlete/p.95658>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Harry Maguire" .
 
 <http://example.com/Membership/EPLT1-p.184667>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Victor Lindelöf membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.184667> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "2" .
+        sport:membershipBy   <http://example.com/Athlete/p.184667> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "2" .
 
 <http://example.com/Athlete/p.152590>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Alex Telles" .
 
 <http://example.com/Athlete/p.149915>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Diego Llorente" .
 
 <http://example.com/Participation/E2128609-p.195851>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Scott McTominay participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.195851> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:aerials-won           "2" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -886,16 +890,16 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "48" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.195851> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "48" .
 
 <http://example.com/Participation/E2128609-p.105377>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Ezgjan Alioski participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.105377> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -917,123 +921,123 @@
         spsocstat:tackles-lost          "4" ;
         spsocstat:tackles-total         "5" ;
         spsocstat:tackles-won           "1" ;
-        spsocstat:touches               "67" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.105377> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "67" .
 
 <http://example.com/Action/E2128609-a.2291247481>
-        rdf:type                   spact:Action ;
+        a                          sport:Action ;
         rdfs:label                 "Action a.2291247481 on event E2128609" ;
-        spact:actionParticipation  <http://example.com/Participation/E2128609-a.2291247481-p.221399> ;
-        spact:class                <http://cv.iptc.org/newscodes/spactionclass/play> ;
-        spact:event                <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed      "19" ;
-        spact:period-value         "1" ;
-        spact:type                 spsocaction:video-review .
+        sport:actionParticipation  <http://example.com/Participation/E2128609-a.2291247481-p.221399> ;
+        sport:class                <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        sport:event                <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed      "19" ;
+        sport:period-value         "1" ;
+        sport:type                 spsocactiontype:video-review .
 
 <http://example.com/Action/E2128609-a.2291316113>
-        rdf:type               spact:Action ;
+        a                      sport:Action ;
         rdfs:label             "Action a.2291316113 on event E2128609" ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
-        spact:comment          "Foul" ;
-        spact:date-time        "2021-04-25T15:24:48+01:00" ;
-        spact:event            <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed  "68" ;
-        spact:penalty-level    "yellow-card" ;
-        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
-        spact:period-value     "2" ;
-        spact:recipient-idref  "p.95658" ;
-        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
-        spact:sequence-number  "0425152448" .
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:comment          "Foul" ;
+        sport:date-time        "2021-04-25T15:24:48+01:00" ;
+        sport:event            <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed  "68" ;
+        sport:penalty-level    "yellow-card" ;
+        sport:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:period-value     "2" ;
+        sport:recipient-idref  "p.95658" ;
+        sport:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:sequence-number  "0425152448" .
 
 <http://example.com/Participation/E2128609-p.28690>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Pablo Hernández participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.28690> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.28690> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Athlete/p.106617>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Patrick Bamford" .
 
 <http://example.com/Action/E2128609-a.2291318829>
-        rdf:type               spact:Action ;
+        a                      sport:Action ;
         rdfs:label             "Action a.2291318829 on event E2128609" ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
-        spact:comment          "Dissent" ;
-        spact:date-time        "2021-04-25T15:27:29+01:00" ;
-        spact:event            <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed  "70" ;
-        spact:penalty-level    "yellow-card" ;
-        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/dissent> ;
-        spact:period-value     "2" ;
-        spact:recipient-idref  "p.106617" ;
-        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
-        spact:sequence-number  "0425152729" .
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:comment          "Dissent" ;
+        sport:date-time        "2021-04-25T15:27:29+01:00" ;
+        sport:event            <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed  "70" ;
+        sport:penalty-level    "yellow-card" ;
+        sport:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/dissent> ;
+        sport:period-value     "2" ;
+        sport:recipient-idref  "p.106617" ;
+        sport:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:sequence-number  "0425152729" .
 
 <http://example.com/Action/E2128609-a.2291265339>
-        rdf:type               spact:Action ;
+        a                      sport:Action ;
         rdfs:label             "Action a.2291265339 on event E2128609" ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
-        spact:comment          "Foul" ;
-        spact:date-time        "2021-04-25T14:36:45+01:00" ;
-        spact:event            <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed  "37" ;
-        spact:penalty-level    "yellow-card" ;
-        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
-        spact:period-value     "1" ;
-        spact:recipient-idref  "p.66588" ;
-        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
-        spact:sequence-number  "0425143645" .
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:comment          "Foul" ;
+        sport:date-time        "2021-04-25T14:36:45+01:00" ;
+        sport:event            <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed  "37" ;
+        sport:penalty-level    "yellow-card" ;
+        sport:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:period-value     "1" ;
+        sport:recipient-idref  "p.66588" ;
+        sport:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:sequence-number  "0425143645" .
 
 <http://example.com/Action/E2128609-a.2291340193>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291340193 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:46:21+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "89" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.101582" ;
-        spact:person-replacing-idref  "p.180184" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:46:21+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "89" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.101582" ;
+        sport:person-replacing-idref  "p.180184" ;
+        sport:person-replacing-position
                 "midfielder" ;
-        spact:sequence-number         "0425154621" ;
-        spact:substitution-reason     "Tactical" .
+        sport:sequence-number         "0425154621" ;
+        sport:substitution-reason     "Tactical" .
 
 <http://example.com/Membership/EPLT1-p.62398>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Nemanja Matic membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.62398> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "31" .
+        sport:membershipBy   <http://example.com/Athlete/p.62398> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "31" .
 
 <http://example.com/Membership/EPLT1-p.214590>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Aaron Wan-Bissaka membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.214590> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "29" .
+        sport:membershipBy   <http://example.com/Athlete/p.214590> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "29" .
 
 <http://example.com/Athlete/p.197365>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Eric Bailly" .
 
 <http://example.com/Athlete/p.437495>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Illan Meslier" .
 
 <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33>
-        rdf:type           spact:CompetitionPhase ;
+        a                  sport:CompetitionPhase ;
         rdfs:label         "Week 33" ;
-        spact:competition  <http://example.com/Competition/l.premierleague.com-2020> .
+        sport:competition  <http://example.com/Competition/l.premierleague.com-2020> .
 
 <http://example.com/Participation/E2128609-p.176297>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Marcus Rashford participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "86" ;
+        sport:participationBy           <http://example.com/Athlete/p.176297> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
         spsocstat:ejections-total       "0" ;
@@ -1053,52 +1057,52 @@
         spsocstat:tackles-lost          "0" ;
         spsocstat:tackles-total         "3" ;
         spsocstat:tackles-won           "3" ;
-        spsocstat:touches               "52" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "86" ;
-        spact:participationBy           <http://example.com/Athlete/p.176297> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "52" .
 
 <http://example.com/Membership/EPLT1-p.106760>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Luke Shaw membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.106760> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "23" .
+        sport:membershipBy   <http://example.com/Athlete/p.106760> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "23" .
 
 <http://example.com/Membership/EPLT2-p.215460>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Ian Poveda-Ocampo membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.215460> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "7" .
+        sport:membershipBy   <http://example.com/Athlete/p.215460> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "7" .
 
 <http://example.com/Membership/EPLT2-p.39790>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Kiko Casilla membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.39790> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "13" .
+        sport:membershipBy   <http://example.com/Athlete/p.39790> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "13" .
 
 <http://example.com/Athlete/p.180184>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Donny van de Beek" .
 
 <http://example.com/Membership/EPLT2-p.222694>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Pascal Struijk membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.222694> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "21" .
+        sport:membershipBy   <http://example.com/Athlete/p.222694> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "21" .
 
 <http://example.com/Athlete/p.51940>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "David de Gea" .
 
 <http://example.com/Participation/E2128609-p.200617>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Daniel James participation in Event E2128609" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "76" ;
+        sport:participationBy          <http://example.com/Athlete/p.200617> ;
+        sport:playerStatus             spplayerstatus:starter ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:aerials-won          "2" ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
@@ -1117,151 +1121,151 @@
         spsocstat:tackles-lost         "0" ;
         spsocstat:tackles-total        "2" ;
         spsocstat:tackles-won          "2" ;
-        spsocstat:touches              "50" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "76" ;
-        spact:participationBy          <http://example.com/Athlete/p.200617> ;
-        spact:playerStatus             spplayerstatus:starter ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches              "50" .
 
 <http://example.com/Membership/EPLT1-p.152590>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Alex Telles membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.152590> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "27" .
+        sport:membershipBy   <http://example.com/Athlete/p.152590> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "27" .
 
 <http://example.com/Membership/EPLT2-p.105377>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Ezgjan Alioski membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.105377> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "10" .
+        sport:membershipBy   <http://example.com/Athlete/p.105377> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "10" .
 
 <http://example.com/Participation/E2128609-p.450070>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Crysencio Summerville participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.450070> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.450070> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.38588>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Gaetano Berardi participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.38588> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.38588> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Action/E2128609-a.2291268131>
-        rdf:type               spact:Action ;
+        a                      sport:Action ;
         rdfs:label             "Action a.2291268131 on event E2128609" ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
-        spact:comment          "Foul" ;
-        spact:date-time        "2021-04-25T14:38:58+01:00" ;
-        spact:event            <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed  "39" ;
-        spact:penalty-level    "yellow-card" ;
-        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
-        spact:period-value     "1" ;
-        spact:recipient-idref  "p.173821" ;
-        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
-        spact:sequence-number  "0425143858" .
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:comment          "Foul" ;
+        sport:date-time        "2021-04-25T14:38:58+01:00" ;
+        sport:event            <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed  "39" ;
+        sport:penalty-level    "yellow-card" ;
+        sport:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:period-value     "1" ;
+        sport:recipient-idref  "p.173821" ;
+        sport:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:sequence-number  "0425143858" .
 
 <http://example.com/Membership/EPLT1-p.197365>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Eric Bailly membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.197365> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "3" .
+        sport:membershipBy   <http://example.com/Athlete/p.197365> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "3" .
 
 <http://example.com/Membership/EPLT2-p.193645>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Robin Koch membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.193645> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "5" .
+        sport:membershipBy   <http://example.com/Athlete/p.193645> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "5" .
 
 <http://example.com/Membership/EPLT2-p.165808>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Hélder Costa membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.165808> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "17" .
+        sport:membershipBy   <http://example.com/Athlete/p.165808> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "17" .
 
 <http://example.com/Membership/EPLT1-p.101582>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Fred membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.101582> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "17" .
+        sport:membershipBy   <http://example.com/Athlete/p.101582> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "17" .
 
 <http://example.com/Athlete/p.215460>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Ian Poveda-Ocampo" .
 
 <http://example.com/Action/E2128609-a.2291320423>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291320423 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:29:14+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "72" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.165808" ;
-        spact:person-replacing-idref  "p.72222" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:29:14+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "72" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.165808" ;
+        sport:person-replacing-idref  "p.72222" ;
+        sport:person-replacing-position
                 "midfielder" ;
-        spact:sequence-number         "0425152914" ;
-        spact:substitution-reason     "Injury" .
+        sport:sequence-number         "0425152914" ;
+        sport:substitution-reason     "Injury" .
 
 <http://example.com/Participation/E2128609-p.180804>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Axel Tuanzebe participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.180804> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.180804> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Membership/EPLT1-p.180184>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Donny van de Beek membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.180184> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "34" .
+        sport:membershipBy   <http://example.com/Athlete/p.180184> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "34" .
 
 <http://example.com/Athlete/p.195851>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Scott McTominay" .
 
 <http://example.com/Action/E2128609-a.2291316509>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291316509 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:25:16+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "68" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.221399" ;
-        spact:person-replacing-idref  "p.215460" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:25:16+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "68" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.221399" ;
+        sport:person-replacing-idref  "p.215460" ;
+        sport:person-replacing-position
                 "forward" ;
-        spact:sequence-number         "0425152516" ;
-        spact:substitution-reason     "Tactical" .
+        sport:sequence-number         "0425152516" ;
+        sport:substitution-reason     "Tactical" .
 
 <http://example.com/Action/E2128609-a.2291311527>
-        rdf:type               spact:Action ;
+        a                      sport:Action ;
         rdfs:label             "Action a.2291311527 on event E2128609" ;
-        spact:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
-        spact:comment          "Foul" ;
-        spact:date-time        "2021-04-25T15:20:49+01:00" ;
-        spact:event            <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed  "64" ;
-        spact:penalty-level    "yellow-card" ;
-        spact:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
-        spact:period-value     "2" ;
-        spact:recipient-idref  "p.105377" ;
-        spact:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
-        spact:sequence-number  "0425152049" .
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:comment          "Foul" ;
+        sport:date-time        "2021-04-25T15:20:49+01:00" ;
+        sport:event            <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed  "64" ;
+        sport:penalty-level    "yellow-card" ;
+        sport:penalty-type     <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:period-value     "2" ;
+        sport:recipient-idref  "p.105377" ;
+        sport:recipient-type   <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:sequence-number  "0425152049" .
 
 <http://example.com/Participation/E2128609-p.172649>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Dean Henderson participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.172649> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:catches-punches       "3" ;
@@ -1276,34 +1280,34 @@
         spsocstat:save-percentage       "NaN" ;
         spsocstat:saves                 "3" ;
         spsocstat:shutouts              "1" ;
-        spsocstat:touches               "36" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.172649> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> .
+        spsocstat:touches               "36" .
 
 <http://example.com/Membership/EPLT1-p.141746>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Bruno Fernandes membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.141746> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "18" .
+        sport:membershipBy   <http://example.com/Athlete/p.141746> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "18" .
 
 <http://example.com/Membership/EPLT2-p.450070>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Crysencio Summerville membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.450070> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "38" .
+        sport:membershipBy   <http://example.com/Athlete/p.450070> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "38" .
 
 <http://example.com/Athlete/p.193645>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Robin Koch" .
 
 <http://example.com/Participation/E2128609-p.221399>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Jack Harrison participation in Event E2128609" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "68" ;
+        sport:participationBy          <http://example.com/Athlete/p.221399> ;
+        sport:playerStatus             spplayerstatus:starter ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:crosses-18-yard      "2" ;
@@ -1320,79 +1324,79 @@
         spsocstat:tackles-lost         "0" ;
         spsocstat:tackles-total        "1" ;
         spsocstat:tackles-won          "1" ;
-        spsocstat:touches              "35" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "68" ;
-        spact:participationBy          <http://example.com/Athlete/p.221399> ;
-        spact:playerStatus             spplayerstatus:starter ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches              "35" .
 
 <http://example.com/Athlete/p.165808>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Hélder Costa" .
 
 <http://example.com/Action/E2128609-a.2291336033>
-        rdf:type                      spact:Action ;
+        a                             sport:Action ;
         rdfs:label                    "Action a.2291336033 on event E2128609" ;
-        spact:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
-        spact:date-time               "2021-04-25T15:42:51+01:00" ;
-        spact:event                   <http://example.com/Event/E2128609> ;
-        spact:minutes-elapsed         "86" ;
-        spact:period-value            "2" ;
-        spact:person-original-idref   "p.176297" ;
-        spact:person-replacing-idref  "p.40720" ;
-        spact:person-replacing-position
+        sport:class                   <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:date-time               "2021-04-25T15:42:51+01:00" ;
+        sport:event                   <http://example.com/Event/E2128609> ;
+        sport:minutes-elapsed         "86" ;
+        sport:period-value            "2" ;
+        sport:person-original-idref   "p.176297" ;
+        sport:person-replacing-idref  "p.40720" ;
+        sport:person-replacing-position
                 "forward" ;
-        spact:sequence-number         "0425154251" ;
-        spact:substitution-reason     "Tactical" .
+        sport:sequence-number         "0425154251" ;
+        sport:substitution-reason     "Tactical" .
 
 <http://example.com/Athlete/p.101582>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Fred" .
 
 <http://example.com/Membership/EPLT2-p.38588>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Gaetano Berardi membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.38588> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "28" .
+        sport:membershipBy   <http://example.com/Athlete/p.38588> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "28" .
 
 <http://example.com/Membership/EPLT1-p.220688>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Mason Greenwood membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.220688> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "11" .
+        sport:membershipBy   <http://example.com/Athlete/p.220688> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "11" .
 
 <http://example.com/Team/EPLT2>
-        rdf:type          spact:Team ;
+        a                 sport:Team ;
         rdfs:label        "Leeds United" ;
-        spact:membership  <http://example.com/Membership/EPLT2-p.39790> , <http://example.com/Membership/EPLT2-p.149915> , <http://example.com/Membership/EPLT2-p.38588> , <http://example.com/Membership/EPLT2-p.215460> , <http://example.com/Membership/EPLT2-p.248937> , <http://example.com/Membership/EPLT2-p.437495> , <http://example.com/Membership/EPLT2-p.222694> , <http://example.com/Membership/EPLT2-p.155405> , <http://example.com/Membership/EPLT2-p.450070> , <http://example.com/Membership/EPLT2-p.105377> , <http://example.com/Membership/EPLT2-p.106617> , <http://example.com/Membership/EPLT2-p.221399> , <http://example.com/Membership/EPLT2-p.72222> , <http://example.com/Membership/EPLT2-p.28690> , <http://example.com/Membership/EPLT2-p.66588> , <http://example.com/Membership/EPLT2-p.165808> , <http://example.com/Membership/EPLT2-p.193645> , <http://example.com/Membership/EPLT2-p.221610> , <http://example.com/Membership/EPLT2-p.173821> , <http://example.com/Membership/EPLT2-p.87873> .
+        sport:membership  <http://example.com/Membership/EPLT2-p.39790> , <http://example.com/Membership/EPLT2-p.149915> , <http://example.com/Membership/EPLT2-p.38588> , <http://example.com/Membership/EPLT2-p.215460> , <http://example.com/Membership/EPLT2-p.248937> , <http://example.com/Membership/EPLT2-p.437495> , <http://example.com/Membership/EPLT2-p.222694> , <http://example.com/Membership/EPLT2-p.155405> , <http://example.com/Membership/EPLT2-p.450070> , <http://example.com/Membership/EPLT2-p.105377> , <http://example.com/Membership/EPLT2-p.106617> , <http://example.com/Membership/EPLT2-p.221399> , <http://example.com/Membership/EPLT2-p.72222> , <http://example.com/Membership/EPLT2-p.28690> , <http://example.com/Membership/EPLT2-p.66588> , <http://example.com/Membership/EPLT2-p.165808> , <http://example.com/Membership/EPLT2-p.193645> , <http://example.com/Membership/EPLT2-p.221610> , <http://example.com/Membership/EPLT2-p.173821> , <http://example.com/Membership/EPLT2-p.87873> .
 
 <http://example.com/Athlete/p.38588>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Gaetano Berardi" .
 
 <http://example.com/Participation/E2128609-p.43670>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Juan Mata participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.43670> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.43670> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Athlete/p.40720>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Edinson Cavani" .
 
 <http://example.com/Membership/EPLT1-p.195851>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Scott McTominay membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.195851> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "39" .
+        sport:membershipBy   <http://example.com/Athlete/p.195851> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "39" .
 
 <http://example.com/Participation/E2128609-p.66588>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Luke Ayling participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.66588> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "1" ;
@@ -1421,20 +1425,20 @@
         spsocstat:tackles-lost          "2" ;
         spsocstat:tackles-total         "7" ;
         spsocstat:tackles-won           "5" ;
-        spsocstat:touches               "78" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.66588> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "78" .
 
 <http://example.com/Athlete/p.39790>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Kiko Casilla" .
 
 <http://example.com/Participation/E2128609-p.214590>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Aaron Wan-Bissaka participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.214590> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1457,26 +1461,25 @@
         spsocstat:tackles-lost          "1" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "0" ;
-        spsocstat:touches               "78" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.214590> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "78" .
 
 <http://example.com/Associate/man26>
-        rdf:type    spact:Associate ;
+        a           sport:Associate ;
         rdfs:label  "Marcelo Bielsa" .
 
 <http://example.com/Participation/E2128609-p.221610>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Jamie Shackleton participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.221610> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.221610> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Participation/E2128609-p.74208>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Paul Pogba participation in Event E2128609" ;
+        spstat:time-played-total       "14" ;
+        sport:participationBy          <http://example.com/Athlete/p.74208> ;
+        sport:playerStatus             spplayerstatus:bench ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "0" ;
         spsocstat:ejections-total      "0" ;
@@ -1491,15 +1494,16 @@
         spsocstat:tackles-lost         "0" ;
         spsocstat:tackles-total        "1" ;
         spsocstat:tackles-won          "1" ;
-        spsocstat:touches              "19" ;
-        spstat:time-played-total       "14" ;
-        spact:participationBy          <http://example.com/Athlete/p.74208> ;
-        spact:playerStatus             spplayerstatus:bench ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches              "19" .
 
 <http://example.com/Participation/E2128609-p.87873>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Stuart Dallas participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.87873> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1525,34 +1529,34 @@
         spsocstat:tackles-lost          "1" ;
         spsocstat:tackles-total         "1" ;
         spsocstat:tackles-won           "0" ;
-        spsocstat:touches               "51" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.87873> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches               "51" .
 
 <http://example.com/Membership/EPLT1-p.95658>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Harry Maguire membership of Manchester United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.95658> ;
-        spact:membershipOf   <http://example.com/Team/EPLT1> ;
-        spact:uniformNumber  "5" .
+        sport:membershipBy   <http://example.com/Athlete/p.95658> ;
+        sport:membershipOf   <http://example.com/Team/EPLT1> ;
+        sport:uniformNumber  "5" .
 
 <http://example.com/Membership/EPLT2-p.28690>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Pablo Hernández membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.28690> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "19" .
+        sport:membershipBy   <http://example.com/Athlete/p.28690> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "19" .
 
 <http://example.com/Athlete/p.141746>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Bruno Fernandes" .
 
 <http://example.com/Participation/E2128609-p.173821>
-        rdf:type                       spact:IndividualParticipation ;
+        a                              sport:IndividualParticipation ;
         rdfs:label                     "Tyler Roberts participation in Event E2128609" ;
+        spstat:events-started          "1" ;
+        spstat:time-played-total       "77" ;
+        sport:participationBy          <http://example.com/Athlete/p.173821> ;
+        sport:playerStatus             spplayerstatus:starter ;
+        sport:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
         spsocstat:assists-total        "0" ;
         spsocstat:cautions-total       "1" ;
         spsocstat:clearances-successful
@@ -1570,16 +1574,16 @@
         spsocstat:tackles-lost         "0" ;
         spsocstat:tackles-total        "1" ;
         spsocstat:tackles-won          "1" ;
-        spsocstat:touches              "29" ;
-        spstat:events-started          "1" ;
-        spstat:time-played-total       "77" ;
-        spact:participationBy          <http://example.com/Athlete/p.173821> ;
-        spact:playerStatus             spplayerstatus:starter ;
-        spact:positionEvent            <http://cv.iptc.org/newscodes/spsocposition/midfielder> .
+        spsocstat:touches              "29" .
 
 <http://example.com/Participation/E2128609-p.106760>
-        rdf:type                        spact:IndividualParticipation ;
+        a                               sport:IndividualParticipation ;
         rdfs:label                      "Luke Shaw participation in Event E2128609" ;
+        spstat:events-started           "1" ;
+        spstat:time-played-total        "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.106760> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
         spsocstat:aerials-won           "1" ;
         spsocstat:assists-total         "0" ;
         spsocstat:cautions-total        "0" ;
@@ -1598,30 +1602,25 @@
         spsocstat:passes-incomplete     "4" ;
         spsocstat:passes-total          "36" ;
         spsocstat:shutouts              "1" ;
-        spsocstat:touches               "64" ;
-        spstat:events-started           "1" ;
-        spstat:time-played-total        "90" ;
-        spact:participationBy           <http://example.com/Athlete/p.106760> ;
-        spact:playerStatus              spplayerstatus:starter ;
-        spact:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> .
+        spsocstat:touches               "64" .
 
 <http://example.com/Participation/E2128609-p.62398>
-        rdf:type               spact:IndividualParticipation ;
+        a                      sport:IndividualParticipation ;
         rdfs:label             "Nemanja Matic participation in Event E2128609" ;
-        spact:participationBy  <http://example.com/Athlete/p.62398> ;
-        spact:playerStatus     spplayerstatus:bench .
+        sport:participationBy  <http://example.com/Athlete/p.62398> ;
+        sport:playerStatus     spplayerstatus:bench .
 
 <http://example.com/Membership/EPLT2-p.221399>
-        rdf:type             spact:IndividualMembership ;
+        a                    sport:IndividualMembership ;
         rdfs:label           "Jack Harrison membership of Leeds United" ;
-        spact:membershipBy   <http://example.com/Athlete/p.221399> ;
-        spact:membershipOf   <http://example.com/Team/EPLT2> ;
-        spact:uniformNumber  "22" .
+        sport:membershipBy   <http://example.com/Athlete/p.221399> ;
+        sport:membershipOf   <http://example.com/Team/EPLT2> ;
+        sport:uniformNumber  "22" .
 
 <http://example.com/Athlete/p.220688>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Mason Greenwood" .
 
 <http://example.com/Athlete/p.28690>
-        rdf:type    spact:Athlete ;
+        a           sport:Athlete ;
         rdfs:label  "Pablo Hernández" .

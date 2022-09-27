@@ -4,8 +4,8 @@
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <https://sportschema.org/ontologies/main/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 PREFIX speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/>
 
 SELECT ?teamName ?stat ?statValue
@@ -17,6 +17,6 @@ WHERE {
                         ?stat ?statValue .
     ?event rdf:type sport:Event ;
            sport:eventParticipation ?teamParticipation .
-    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/")) .
+    FILTER ((strStarts(str(?stat), "https://sportschema.org/ontologies/corestatistics/")) || (strStarts(str(?stat), "https://sportschema.org/ontologies/soccer/")))
     FILTER (?event = <http://example.com/Event/E755363>)
 }
