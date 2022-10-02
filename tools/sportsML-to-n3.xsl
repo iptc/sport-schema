@@ -189,6 +189,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:if test="$object-id != $season-id">
             <xsl:choose>
                 <xsl:when test="$genre-key='spfixt:player-bio'"/>
+                <xsl:when test="$genre-key='spfixt:rosters'"/>
                 <xsl:when test="//newsml:tournament"/>
                 <xsl:otherwise>
                     <xsl:value-of select="$object-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'competition','»')"/>~<xsl:value-of select="$season-id"/> .
@@ -342,6 +343,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:site">
         <xsl:param name="event-id"/>
 
+        <xsl:if test="string($event-id)">
         <xsl:variable name="site-name" select="newsml:site-metadata/newsml:name[@role='nrol:full']"/>
         <xsl:variable name="site-key">
             <xsl:choose>
@@ -360,6 +362,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$event-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'site','»')"/>~<xsl:value-of select="$site-id"/> .
         <!-- <site> rdfs:label "name" -->
         <xsl:value-of select="$site-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$site-name"/>" .
+        </xsl:if>
     </xsl:template>
 
     <!-- top-level element: standing. This will contain team records through a season: events-played, wins, losses, etc. -->
