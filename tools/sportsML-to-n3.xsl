@@ -900,6 +900,15 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:param name="participationSplit-id"/>
 
         <xsl:variable name="element-name" select="name()"/>
+
+        <xsl:variable name="element-name-cc">
+            <xsl:call-template name="string-walk">
+                <xsl:with-param name="string" select="name()"/>
+                <xsl:with-param name="char" select="'-'"/>
+                <xsl:with-param name="increment" select="0"/>
+            </xsl:call-template>
+        </xsl:variable>
+
         <xsl:variable name="parent-element-name" select="name(parent::*)"/>
         <xsl:variable name="value">
             <xsl:choose>
@@ -939,21 +948,21 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             </xsl:when>
             <xsl:when test="$cv-name=''">
                 <!-- general properties not in CVs -->
-                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,$cv-name,$element-name,'»')"/>~<xsl:value-of select="$value"/> .
+                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,$cv-name,$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
             </xsl:when>
             <xsl:when test="string($participationSplit-id) and parent::newsml:outcome-totals">
                 <!-- <participationSplit> <newscodescv:cvterm> "value" -->
-                <xsl:value-of select="$participationSplit-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/',$element-name,'»')"/>~<xsl:value-of select="$value"/> .
+                <xsl:value-of select="$participationSplit-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/',$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
             </xsl:when>
             <xsl:when test="$cv-name = 'spstat'">
-                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/',$element-name,'»')"/>~<xsl:value-of select="$value"/> .
+                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/',$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
             </xsl:when>
             <xsl:when test="contains($cv-name,'stat') and $cv-name != 'spstat'">
-                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«https://sportschema.org/ontologies/',$sport-name,'/',$element-name,'»')"/>~<xsl:value-of select="$value"/> .
+                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«https://sportschema.org/ontologies/',$sport-name,'/',$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
             </xsl:when>
             <xsl:otherwise>
                 <!-- <participation> <newscodescv:cvterm> "value" -->
-                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$newscode-ns,$cv-name,'/',$element-name,'»')"/>~<xsl:value-of select="$value"/> .
+                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$newscode-ns,$cv-name,'/',$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -991,6 +1000,13 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'team','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',@team-idref,'»')"/> . -->
 
         <xsl:for-each select="@*[not(name()='team-idref') and not(name()='id') and not(name()='created')]">
+        <xsl:variable name="name-cc">
+            <xsl:call-template name="string-walk">
+                <xsl:with-param name="string" select="name()"/>
+                <xsl:with-param name="char" select="'-'"/>
+                <xsl:with-param name="increment" select="0"/>
+            </xsl:call-template>
+        </xsl:variable>
             <xsl:variable name="value">
                 <xsl:choose>
                     <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed')">
@@ -1002,7 +1018,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,name(),'»')"/>~<xsl:value-of select="$value"/> .
+            <xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,$name-cc,'»')"/>~<xsl:value-of select="$value"/> .
         </xsl:for-each>
 
         <xsl:apply-templates>
@@ -1100,6 +1116,50 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:choose>
 
         </xsl:if>
+    </xsl:template>
+
+    <xsl:template name="string-walk">
+        <xsl:param name="string"/>
+        <xsl:param name="char"/>
+        <xsl:param name="increment"/>
+        <xsl:variable name="string-bit" select="substring-before($string, $char)"/>
+
+        <xsl:choose>
+            <xsl:when test="contains($string, $char)">
+                <xsl:choose>
+                    <xsl:when test="$increment = 0">
+                        <xsl:value-of select="$string-bit"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="capitalize">
+                            <xsl:with-param name="string-bit" select="$string-bit"/>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:call-template name="string-walk">
+                    <xsl:with-param name="string" select="substring-after($string, $char)"/>
+                    <xsl:with-param name="char" select="$char"/>
+                    <xsl:with-param name="increment" select="$increment + 1"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test="$increment = 0">
+                <xsl:value-of select="$string"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="capitalize">
+                    <xsl:with-param name="string-bit" select="$string"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+
+    </xsl:template>
+
+    <xsl:template name="capitalize">
+        <xsl:param name="string-bit"/>
+        <xsl:variable name="first-char" select="substring($string-bit, 1, 1)"/>
+        <xsl:variable name="cap-char"
+            select="translate($first-char, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+        <xsl:value-of select="concat($cap-char, substring-after($string-bit, $first-char))"/>
     </xsl:template>
 
 </xsl:stylesheet>
