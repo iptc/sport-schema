@@ -5,7 +5,7 @@
 # the results in the queries/output directory.
 
 TTL_SAMPLES_DIR='samples/ttl'
-SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-ontology.ttl'
+SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-merged-ontology.ttl'
 REGEX_FOR_VALID_FILES='conforms  *true'
 
 # handle error in the case that the glob returns null

@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Run queries against all sample data, ensure that
-# the output is what we expect by comparing it to
-# the results in the queries/output directory.
+# Run the named query against all sample data.
 
 TTL_SAMPLES_DIR='samples/ttl'
-SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-ontology.ttl'
+SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-merged-ontology.ttl'
 
 if [[ $# -eq 0 ]]; then
     echo "Usage: $0 <query file>"
