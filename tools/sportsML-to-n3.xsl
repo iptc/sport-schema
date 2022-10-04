@@ -34,24 +34,24 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     </xsl:variable>
 
     <xsl:variable name="sport-name">
-                       <xsl:choose>
-                            <xsl:when test="$sport-code = '20000823'">american-football</xsl:when>
-                            <xsl:when test="$sport-code = '20001065'">soccer</xsl:when>
-                            <xsl:when test="$sport-code = '20000888'">cricket</xsl:when>
-                            <xsl:when test="$sport-code = '20001035'">rugby</xsl:when>
-                            <xsl:when test="$sport-code = '20001036'">rugby</xsl:when>
-                            <xsl:when test="$sport-code = '20000965'">ice-hockey</xsl:when>
-                            <xsl:when test="$sport-code = '20000849'">baseball</xsl:when>
-                            <xsl:when test="$sport-code = '20000851'">basketball</xsl:when>
-                            <xsl:when test="$sport-code = '20000890'">curling</xsl:when>
-                            <xsl:when test="$sport-code = '20000940'">golf</xsl:when>
-                            <xsl:when test="$sport-code = '20000960'">horse-racing</xsl:when>
-                            <xsl:when test="$sport-code = '20001183'">esports</xsl:when>
-                            <xsl:when test="$sport-code = '20001334'">track-cycling</xsl:when>
-                            <xsl:when test="$sport-code = '20000892'">cycling</xsl:when>
-                            <xsl:when test="$sport-code = '20000827'">athletics</xsl:when>
-                            <xsl:otherwise>unknown</xsl:otherwise>
-                        </xsl:choose>
+       <xsl:choose>
+            <xsl:when test="$sport-code = '20000823'">american-football</xsl:when>
+            <xsl:when test="$sport-code = '20001065'">soccer</xsl:when>
+            <xsl:when test="$sport-code = '20000888'">cricket</xsl:when>
+            <xsl:when test="$sport-code = '20001035'">rugby</xsl:when>
+            <xsl:when test="$sport-code = '20001036'">rugby</xsl:when>
+            <xsl:when test="$sport-code = '20000965'">ice-hockey</xsl:when>
+            <xsl:when test="$sport-code = '20000849'">baseball</xsl:when>
+            <xsl:when test="$sport-code = '20000851'">basketball</xsl:when>
+            <xsl:when test="$sport-code = '20000890'">curling</xsl:when>
+            <xsl:when test="$sport-code = '20000940'">golf</xsl:when>
+            <xsl:when test="$sport-code = '20000960'">horse-racing</xsl:when>
+            <xsl:when test="$sport-code = '20001183'">esports</xsl:when>
+            <xsl:when test="$sport-code = '20001334'">track-cycling</xsl:when>
+            <xsl:when test="$sport-code = '20000892'">cycling</xsl:when>
+            <xsl:when test="$sport-code = '20000827'">athletics</xsl:when>
+            <xsl:otherwise>unknown</xsl:otherwise>
+        </xsl:choose>
 	</xsl:variable>
 
     <xsl:variable name="sport-id">
@@ -1001,11 +1001,17 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
 
         <xsl:for-each select="@*[not(name()='team-idref') and not(name()='id') and not(name()='created')]">
         <xsl:variable name="name-cc">
-            <xsl:call-template name="string-walk">
-                <xsl:with-param name="string" select="name()"/>
-                <xsl:with-param name="char" select="'-'"/>
-                <xsl:with-param name="increment" select="0"/>
-            </xsl:call-template>
+            <xsl:choose>
+                <xsl:when test="name()='type'">actionType</xsl:when>
+                <xsl:when test="name()='date-time'">actionDateTime</xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="string-walk">
+                        <xsl:with-param name="string" select="name()"/>
+                        <xsl:with-param name="char" select="'-'"/>
+                        <xsl:with-param name="increment" select="0"/>
+                    </xsl:call-template>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:variable>
             <xsl:variable name="value">
                 <xsl:choose>
