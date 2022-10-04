@@ -13,7 +13,7 @@ WHERE {
     ?teamParticipation rdf:type sport:TeamParticipation ;
                        sport:participationBy ?team ;
                        sport:score ?score ;
-                       spstat:score-opposing ?opposingScore .
+                       spstat:scoreOpposing ?opposingScore .
     ?event rdf:type sport:Event ;
            sport:eventParticipation ?teamParticipation .
     FILTER ( ?score > ?opposingScore )

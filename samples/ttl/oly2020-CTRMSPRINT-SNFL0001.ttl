@@ -1,88 +1,89 @@
-@prefix spsocrole: <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spesaction: <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix schemaorg: <https://schema.org/> .
-@prefix spsocactiontype: <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spstat: <https://sportschema.org/ontologies/corestatistics/> .
-@prefix spplayerstatus: <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg:          <https://schema.org/> .
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix medtop: <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix spesstat: <http://cv.iptc.org/newscodes/spesstat/> .
-@prefix spct:  <http://cv.iptc.org/newscodes/spct/> .
-@prefix sport: <https://sportschema.org/ontologies/main/> .
-@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
-@prefix speventoutcome: <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
+@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
+@prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Athlete/PI1436558>
-        a                  sport:Athlete ;
+        rdf:type           sport:Athlete ;
         rdfs:label         "Denis Dmitriev" ;
         sport:nationality  "ROC" .
 
 <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-RND1>
-        a                           sport:CompetitionPhase ;
+        rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Round 1" ;
         sport:competition           <http://example.com/Competition/OLYS2020-CTRMSPRINT> ;
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round> .
 
 <http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010002>
-        a                         sport:Event ;
+        rdf:type                  sport:Event ;
         rdfs:label                "Heat 1, Race 2" ;
         sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558> , <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923> ;
         sport:startDateTime       "2021-08-06T16:52:00+09:00"^^xsd:dateTime .
 
 <http://example.com/GoverningBody/IOC>
-        a           sport:GoverningBody ;
+        rdf:type    sport:GoverningBody ;
         rdfs:label  "International Olympic Committee" .
 
 <http://example.com/Athlete/PI1467923>
-        a                  sport:Athlete ;
+        rdf:type           sport:Athlete ;
         rdfs:label         "Jeffrey Hoogland" ;
         sport:nationality  "NED" .
 
 <http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010001>
-        a                         sport:Event ;
+        rdf:type                  sport:Event ;
         rdfs:label                "Heat 1, Race 1" ;
         sport:competitionPhase    <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000> ;
         sport:eventParticipation  <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558> , <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923> ;
         sport:startDateTime       "2021-08-06T16:10:00+09:00"^^xsd:dateTime .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Denis Dmitriev participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL" ;
         sport:participationBy  <http://example.com/Athlete/PI1436558> ;
         sport:rank             "2" .
 
 <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL>
-        a                           sport:CompetitionPhase ;
+        rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Semi-Finals" ;
         sport:competition           <http://example.com/Competition/OLYS2020-CTRMSPRINT> ;
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> ;
         sport:phaseParticipation    <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558> , <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923> .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jeffrey Hoogland participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL" ;
         sport:participationBy  <http://example.com/Athlete/PI1467923> ;
         sport:rank             "1" .
 
 <http://example.com/Competition/OLYS2020>
-        a                        sport:Competition ;
+        rdf:type                 sport:Competition ;
         rdfs:label               "2020 Tokyo Summer Olympics" ;
         sport:competitionType    spct:competition ;
         sport:parentCompetition  <http://example.com/Competition/OLYS> ;
         sport:sport              medtop:20001334 .
 
 <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-FNL>
-        a                           sport:CompetitionPhase ;
+        rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Final" ;
         sport:competition           <http://example.com/Competition/OLYS2020-CTRMSPRINT> ;
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/final> .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002" ;
         sport:participationBy  <http://example.com/Athlete/PI1436558> ;
         sport:rank             "2" ;
@@ -90,21 +91,21 @@
         sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/relative> .
 
 <http://example.com/Competition/OLYS>
-        a                      sport:Competition ;
+        rdf:type               sport:Competition ;
         rdfs:label             "Summer Olympics" ;
         sport:competitionType  spct:recurring-competition ;
         sport:governingBody    <http://example.com/GoverningBody/IOC> ;
         sport:sport            medtop:20001334 .
 
 <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000>
-        a                           sport:CompetitionPhase ;
+        rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Heat 1" ;
         sport:competition           <http://example.com/Competition/OLYS2020-CTRMSPRINT> ;
         sport:competitionPhase      <http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL> ;
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/heat> .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001" ;
         sport:participationBy  <http://example.com/Athlete/PI1436558> ;
         sport:rank             "2" ;
@@ -112,14 +113,14 @@
         sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/relative> .
 
 <http://example.com/Competition/OLYS2020-CTRMSPRINT>
-        a                        sport:Competition ;
+        rdf:type                 sport:Competition ;
         rdfs:label               "Men's Track Cycling (Sprint)" ;
         sport:competitionType    spct:competition ;
         sport:parentCompetition  <http://example.com/Competition/OLYS2020> ;
         sport:sport              medtop:20001334 .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002" ;
         sport:participationBy  <http://example.com/Athlete/PI1467923> ;
         sport:rank             "1" ;
@@ -127,7 +128,7 @@
         sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/time-absolute> .
 
 <http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923>
-        a                      sport:IndividualParticipation ;
+        rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001" ;
         sport:participationBy  <http://example.com/Athlete/PI1467923> ;
         sport:rank             "1" ;

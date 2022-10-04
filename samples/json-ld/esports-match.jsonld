@@ -1,749 +1,1052 @@
 {
-  "@graph" : [ {
-    "@id" : "http://example.com/Athlete/PES10",
-    "@type" : "sport:Athlete",
-    "label" : "Jazek Jeziak",
-    "nationality" : "Polish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES11",
-    "@type" : "sport:Athlete",
-    "label" : "Pawet Jańczak",
-    "nationality" : "Polish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES12",
-    "@type" : "sport:Athlete",
-    "label" : "Wiktor Wojtas",
-    "nationality" : "Polish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES13",
-    "@type" : "sport:Athlete",
-    "label" : "Mikołaj Karolewski",
-    "nationality" : "Polish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES14",
-    "@type" : "sport:Athlete",
-    "label" : "Karol Rodowicz",
-    "nationality" : "Polish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES15",
-    "@type" : "sport:Athlete",
-    "label" : "Buğra Arkın",
-    "nationality" : "Turkish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES16",
-    "@type" : "sport:Athlete",
-    "label" : "Ahmet Karahoca",
-    "nationality" : "Turkish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES17",
-    "@type" : "sport:Athlete",
-    "label" : "Ismailcan Dörtkardeş",
-    "nationality" : "Turkish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES18",
-    "@type" : "sport:Athlete",
-    "label" : "Engin Küpeli",
-    "nationality" : "Turkish"
-  }, {
-    "@id" : "http://example.com/Athlete/PES19",
-    "@type" : "sport:Athlete",
-    "label" : "Engin Kor",
-    "nationality" : "Turkish"
-  }, {
-    "@id" : "http://example.com/Competition/l.intelextrememasters.com",
-    "@type" : "sport:Competition",
-    "label" : "Intel Extreme Masters",
-    "sport:sport" : {
-      "@id" : "medtop:20001183"
+    "@graph": [
+        {
+            "@id": "http://example.com/Participation/5120-T9572",
+            "sport:score": "16",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
+            },
+            "rdfs:label": "Ex-Space Soldiers participation in Event 5120",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Team/T9572",
+            "sport:membership": [
+                {
+                    "@id": "http://example.com/Membership/T9572-PES15"
+                },
+                {
+                    "@id": "http://example.com/Membership/T9572-PES16"
+                },
+                {
+                    "@id": "http://example.com/Membership/T9572-PES17"
+                },
+                {
+                    "@id": "http://example.com/Membership/T9572-PES18"
+                },
+                {
+                    "@id": "http://example.com/Membership/T9572-PES19"
+                }
+            ],
+            "rdfs:label": [
+                "Ex-Space Soldiers",
+                ""
+            ],
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES13",
+            "https://sportschema.org/ontologies/esports/headshot": "7",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES13"
+            },
+            "https://sportschema.org/ontologies/esports/deaths": "21",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/kills": "8",
+            "https://sportschema.org/ontologies/esports/ADR": "52,6",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/KAST": "44,0",
+            "rdfs:label": "Mikołaj Karolewski participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-2",
+            "spstat:rating": "0,59",
+            "https://sportschema.org/ontologies/esports/flashassist": "0"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES13",
+            "sport:nationality": "Polish",
+            "rdfs:label": "Mikołaj Karolewski",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES11",
+            "rdfs:label": "Pawet Jańczak participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/ADR": "89,7",
+            "https://sportschema.org/ontologies/esports/headshot": "14",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES11"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "2",
+            "https://sportschema.org/ontologies/esports/KAST": "75,9",
+            "https://sportschema.org/ontologies/esports/kills": "28",
+            "https://sportschema.org/ontologies/esports/deaths": "18",
+            "https://sportschema.org/ontologies/esports/FKdiff": "3",
+            "https://sportschema.org/ontologies/esports/assist": "2",
+            "@type": "sport:IndividualParticipation",
+            "spstat:rating": "1,36"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES11",
+            "sport:nationality": "Polish",
+            "rdfs:label": "Pawet Jańczak",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Event/5122",
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/5122-PES17"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES12"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-T6134"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES10"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES18"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES11"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES19"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES13"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES14"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-T9572"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES15"
+                },
+                {
+                    "@id": "http://example.com/Participation/5122-PES16"
+                }
+            ],
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            },
+            "rdfs:label": "Event 5122",
+            "sport:eventStatus": {
+                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            },
+            "@type": "sport:Event"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES17",
+            "spstat:rating": "0,94",
+            "https://sportschema.org/ontologies/esports/headshot": "10",
+            "rdfs:label": "Ismailcan Dörtkardeş participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/deaths": "17",
+            "https://sportschema.org/ontologies/esports/KAST": "56,0",
+            "https://sportschema.org/ontologies/esports/kills": "15",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-4",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/ADR": "66,6",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES17"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES12",
+            "https://sportschema.org/ontologies/esports/KAST": "60,0",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/FKdiff": "1",
+            "spstat:rating": "0,75",
+            "https://sportschema.org/ontologies/esports/deaths": "20",
+            "rdfs:label": "Wiktor Wojtas participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/kills": "13",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES12"
+            },
+            "https://sportschema.org/ontologies/esports/ADR": "59,6",
+            "https://sportschema.org/ontologies/esports/assist": "2",
+            "https://sportschema.org/ontologies/esports/headshot": "7",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-T6134",
+            "sport:score": "9",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
+            },
+            "rdfs:label": "Kinguin participation in Event 5122",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES10",
+            "spstat:rating": "0,98",
+            "https://sportschema.org/ontologies/esports/kills": "19",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "@type": "sport:IndividualParticipation",
+            "rdfs:label": "Jazek Jeziak participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/headshot": "8",
+            "https://sportschema.org/ontologies/esports/deaths": "18",
+            "https://sportschema.org/ontologies/esports/KAST": "48,1",
+            "https://sportschema.org/ontologies/esports/ADR": "72,5",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES10"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "0"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES18",
+            "https://sportschema.org/ontologies/esports/deaths": "10",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-1",
+            "https://sportschema.org/ontologies/esports/ADR": "81,8",
+            "spstat:rating": "1,35",
+            "https://sportschema.org/ontologies/esports/KAST": "84,0",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/flashassist": "6",
+            "https://sportschema.org/ontologies/esports/kills": "20",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES18"
+            },
+            "https://sportschema.org/ontologies/esports/assist": "8",
+            "https://sportschema.org/ontologies/esports/headshot": "10",
+            "rdfs:label": "Engin Küpeli participation in Event 5122"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES11",
+            "spstat:rating": "0,76",
+            "https://sportschema.org/ontologies/esports/deaths": "22",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/ADR": "69,8",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES11"
+            },
+            "rdfs:label": "Pawet Jańczak participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/KAST": "60,0",
+            "https://sportschema.org/ontologies/esports/FKdiff": "4",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/kills": "11",
+            "https://sportschema.org/ontologies/esports/assist": "2",
+            "https://sportschema.org/ontologies/esports/headshot": "8"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES19",
+            "https://sportschema.org/ontologies/esports/headshot": "10",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/FKdiff": "1",
+            "https://sportschema.org/ontologies/esports/assist": "5",
+            "https://sportschema.org/ontologies/esports/KAST": "56,0",
+            "spstat:rating": "1,21",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES19"
+            },
+            "https://sportschema.org/ontologies/esports/ADR": "86,5",
+            "https://sportschema.org/ontologies/esports/kills": "20",
+            "rdfs:label": "Engin Kor participation in Event 5122",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/deaths": "16"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES14",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES14"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "1",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "spstat:rating": "0,89",
+            "https://sportschema.org/ontologies/esports/deaths": "20",
+            "https://sportschema.org/ontologies/esports/FKdiff": "2",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/headshot": "10",
+            "https://sportschema.org/ontologies/esports/ADR": "73,7",
+            "rdfs:label": "Karol Rodowicz participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/kills": "16",
+            "https://sportschema.org/ontologies/esports/KAST": "56,0"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-T9572",
+            "sport:score": "16",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
+            },
+            "rdfs:label": "Ex-Space Soldiers participation in Event 5122",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES15",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES15"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/headshot": "15",
+            "https://sportschema.org/ontologies/esports/deaths": "12",
+            "https://sportschema.org/ontologies/esports/ADR": "105,2",
+            "rdfs:label": "Buğra Arkın participation in Event 5122",
+            "https://sportschema.org/ontologies/esports/kills": "26",
+            "spstat:rating": "1,57",
+            "https://sportschema.org/ontologies/esports/KAST": "80,0",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/FKdiff": "1"
+        },
+        {
+            "@id": "http://example.com/Participation/5122-PES16",
+            "https://sportschema.org/ontologies/esports/KAST": "80,0",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/ADR": "90,9",
+            "https://sportschema.org/ontologies/esports/FKdiff": "1",
+            "https://sportschema.org/ontologies/esports/kills": "20",
+            "spstat:rating": "1,37",
+            "https://sportschema.org/ontologies/esports/deaths": "12",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES16"
+            },
+            "https://sportschema.org/ontologies/esports/headshot": "11",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/assist": "5",
+            "rdfs:label": "Ahmet Karahoca participation in Event 5122"
+        },
+        {
+            "@id": "http://example.com/Membership/T9572-PES19",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES19"
+            },
+            "rdfs:label": "Engin Kor membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES19",
+            "sport:nationality": "Turkish",
+            "rdfs:label": "Engin Kor",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Membership/T6134-PES14",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES14"
+            },
+            "rdfs:label": "Karol Rodowicz membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Team/T6134",
+            "sport:membership": [
+                {
+                    "@id": "http://example.com/Membership/T6134-PES10"
+                },
+                {
+                    "@id": "http://example.com/Membership/T6134-PES11"
+                },
+                {
+                    "@id": "http://example.com/Membership/T6134-PES12"
+                },
+                {
+                    "@id": "http://example.com/Membership/T6134-PES13"
+                },
+                {
+                    "@id": "http://example.com/Membership/T6134-PES14"
+                }
+            ],
+            "rdfs:label": [
+                "Kinguin",
+                ""
+            ],
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES14",
+            "sport:nationality": "Polish",
+            "rdfs:label": "Karol Rodowicz",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES18",
+            "sport:nationality": "Turkish",
+            "rdfs:label": "Engin Küpeli",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Participation/541807-T6134",
+            "sport:score": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:seriesScoreOpposing": "214",
+            "spstat:seriesScore": "299",
+            "spstat:eventsPlayed": "539",
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
+            },
+            "rdfs:label": "Kinguin participation in Event 541807",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES16",
+            "https://sportschema.org/ontologies/esports/ADR": "66,2",
+            "https://sportschema.org/ontologies/esports/flashassist": "2",
+            "https://sportschema.org/ontologies/esports/headshot": "14",
+            "rdfs:label": "Ahmet Karahoca participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/KAST": "62,1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES16"
+            },
+            "https://sportschema.org/ontologies/esports/deaths": "22",
+            "https://sportschema.org/ontologies/esports/kills": "22",
+            "spstat:rating": "0,87",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-4",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES16",
+            "sport:nationality": "Turkish",
+            "rdfs:label": "Ahmet Karahoca",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES12",
+            "sport:nationality": "Polish",
+            "rdfs:label": "Wiktor Wojtas",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES14",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES14"
+            },
+            "https://sportschema.org/ontologies/esports/kills": "6",
+            "spstat:rating": "0,62",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-1",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/headshot": "3",
+            "rdfs:label": "Karol Rodowicz participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/deaths": "19",
+            "https://sportschema.org/ontologies/esports/ADR": "46,3",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/KAST": "47,8"
+        },
+        {
+            "@id": "http://example.com/Participation/541807-T9572",
+            "sport:score": "2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:seriesScoreOpposing": "15",
+            "spstat:seriesScore": "9",
+            "spstat:eventsPlayed": "24",
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
+            },
+            "rdfs:label": "Ex-Space Soldiers participation in Event 541807",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES10",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/assist": "2",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-2",
+            "https://sportschema.org/ontologies/esports/headshot": "4",
+            "spstat:rating": "1,14",
+            "rdfs:label": "Jazek Jeziak participation in Event 5121",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/deaths": "20",
+            "https://sportschema.org/ontologies/esports/ADR": "84,8",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES10"
+            },
+            "https://sportschema.org/ontologies/esports/kills": "22",
+            "https://sportschema.org/ontologies/esports/KAST": "62,1"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES10",
+            "sport:nationality": "Polish",
+            "rdfs:label": "Jazek Jeziak",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Event/5121",
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            },
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/5121-PES12"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-T9572"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES14"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES16"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES19"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-T6134"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES11"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES18"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES13"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES10"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES15"
+                },
+                {
+                    "@id": "http://example.com/Participation/5121-PES17"
+                }
+            ],
+            "rdfs:label": "Event 5121",
+            "sport:eventStatus": {
+                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            },
+            "@type": "sport:Event"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES12",
+            "https://sportschema.org/ontologies/esports/FKdiff": "1",
+            "https://sportschema.org/ontologies/esports/headshot": "9",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/KAST": "69,0",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/deaths": "18",
+            "@type": "sport:IndividualParticipation",
+            "spstat:rating": "0,88",
+            "https://sportschema.org/ontologies/esports/ADR": "59,2",
+            "rdfs:label": "Wiktor Wojtas participation in Event 5121",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES12"
+            },
+            "https://sportschema.org/ontologies/esports/kills": "13"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-T9572",
+            "sport:score": "13",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
+            },
+            "rdfs:label": "Ex-Space Soldiers participation in Event 5121",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES14",
+            "https://sportschema.org/ontologies/esports/deaths": "15",
+            "@type": "sport:IndividualParticipation",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES14"
+            },
+            "spstat:rating": "1,21",
+            "rdfs:label": "Karol Rodowicz participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/ADR": "78,4",
+            "https://sportschema.org/ontologies/esports/headshot": "8",
+            "https://sportschema.org/ontologies/esports/assist": "1",
+            "https://sportschema.org/ontologies/esports/kills": "24",
+            "https://sportschema.org/ontologies/esports/KAST": "75,9",
+            "https://sportschema.org/ontologies/esports/FKdiff": "0",
+            "https://sportschema.org/ontologies/esports/flashassist": "0"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES19",
+            "rdfs:label": "Engin Kor participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/kills": "12",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/ADR": "54,4",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES19"
+            },
+            "spstat:rating": "0,66",
+            "https://sportschema.org/ontologies/esports/headshot": "7",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/KAST": "51,7",
+            "https://sportschema.org/ontologies/esports/deaths": "21",
+            "https://sportschema.org/ontologies/esports/FKdiff": "0"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-T6134",
+            "sport:score": "16",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
+            },
+            "rdfs:label": "Kinguin participation in Event 5121",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES18",
+            "spstat:rating": "0,89",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-4",
+            "rdfs:label": "Engin Küpeli participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/ADR": "70,4",
+            "https://sportschema.org/ontologies/esports/headshot": "5",
+            "https://sportschema.org/ontologies/esports/deaths": "19",
+            "https://sportschema.org/ontologies/esports/kills": "15",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES18"
+            },
+            "https://sportschema.org/ontologies/esports/KAST": "69,0",
+            "https://sportschema.org/ontologies/esports/flashassist": "1",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/assist": "5"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES13",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-3",
+            "https://sportschema.org/ontologies/esports/deaths": "22",
+            "https://sportschema.org/ontologies/esports/ADR": "66,3",
+            "rdfs:label": "Mikołaj Karolewski participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/kills": "16",
+            "https://sportschema.org/ontologies/esports/KAST": "69,0",
+            "spstat:rating": "0,82",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "https://sportschema.org/ontologies/esports/flashassist": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES13"
+            },
+            "https://sportschema.org/ontologies/esports/headshot": "8"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES15",
+            "https://sportschema.org/ontologies/esports/KAST": "69,0",
+            "https://sportschema.org/ontologies/esports/FKdiff": "5",
+            "spstat:rating": "1,15",
+            "https://sportschema.org/ontologies/esports/ADR": "80,1",
+            "rdfs:label": "Buğra Arkın participation in Event 5121",
+            "https://sportschema.org/ontologies/esports/headshot": "12",
+            "https://sportschema.org/ontologies/esports/kills": "21",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/deaths": "22",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES15"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/assist": "4"
+        },
+        {
+            "@id": "http://example.com/Participation/5121-PES17",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "@type": "sport:IndividualParticipation",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES17"
+            },
+            "https://sportschema.org/ontologies/esports/KAST": "65,5",
+            "https://sportschema.org/ontologies/esports/headshot": "14",
+            "https://sportschema.org/ontologies/esports/kills": "23",
+            "https://sportschema.org/ontologies/esports/FKdiff": "4",
+            "https://sportschema.org/ontologies/esports/deaths": "19",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "spstat:rating": "1,14",
+            "https://sportschema.org/ontologies/esports/ADR": "81,3",
+            "rdfs:label": "Ismailcan Dörtkardeş participation in Event 5121"
+        },
+        {
+            "@id": "http://example.com/Membership/T9572-PES18",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES18"
+            },
+            "rdfs:label": "Engin Küpeli membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Membership/T6134-PES13",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES13"
+            },
+            "rdfs:label": "Mikołaj Karolewski membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES17",
+            "sport:nationality": "Turkish",
+            "rdfs:label": "Ismailcan Dörtkardeş",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES19",
+            "https://sportschema.org/ontologies/esports/kills": "15",
+            "https://sportschema.org/ontologies/esports/headshot": "6",
+            "https://sportschema.org/ontologies/esports/deaths": "11",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES19"
+            },
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/flashassist": "2",
+            "https://sportschema.org/ontologies/esports/ADR": "68,4",
+            "spstat:rating": "1,11",
+            "https://sportschema.org/ontologies/esports/KAST": "78,3",
+            "https://sportschema.org/ontologies/esports/FKdiff": "0",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "rdfs:label": "Engin Kor participation in Event 5120"
+        },
+        {
+            "@id": "http://example.com/Membership/T9572-PES15",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES15"
+            },
+            "rdfs:label": "Buğra Arkın membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Membership/T9572-PES16",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES16"
+            },
+            "rdfs:label": "Ahmet Karahoca membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Membership/T9572-PES17",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T9572"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES17"
+            },
+            "rdfs:label": "Ismailcan Dörtkardeş membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Athlete/PES15",
+            "sport:nationality": "Turkish",
+            "rdfs:label": "Buğra Arkın",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES13",
+            "https://sportschema.org/ontologies/esports/KAST": "60,9",
+            "https://sportschema.org/ontologies/esports/headshot": "8",
+            "spstat:rating": "0,85",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/ADR": "63,6",
+            "https://sportschema.org/ontologies/esports/flashassist": "1",
+            "rdfs:label": "Mikołaj Karolewski participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/kills": "13",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-3",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES13"
+            },
+            "https://sportschema.org/ontologies/esports/deaths": "17"
+        },
+        {
+            "@id": "http://example.com/Event/5120",
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/5120-PES14"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES17"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES11"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-T6134"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES10"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES13"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES16"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES19"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES18"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES12"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-T9572"
+                },
+                {
+                    "@id": "http://example.com/Participation/5120-PES15"
+                }
+            ],
+            "rdfs:label": "Event 5120",
+            "@type": "sport:Event",
+            "sport:eventStatus": {
+                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            },
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            }
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES17",
+            "https://sportschema.org/ontologies/esports/kills": "22",
+            "https://sportschema.org/ontologies/esports/FKdiff": "3",
+            "https://sportschema.org/ontologies/esports/ADR": "104,9",
+            "https://sportschema.org/ontologies/esports/flashassist": "2",
+            "rdfs:label": "Ismailcan Dörtkardeş participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/assist": "6",
+            "https://sportschema.org/ontologies/esports/KAST": "73,9",
+            "https://sportschema.org/ontologies/esports/headshot": "6",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/deaths": "16",
+            "spstat:rating": "1,43",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES17"
+            }
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES11",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES11"
+            },
+            "https://sportschema.org/ontologies/esports/KAST": "65,2",
+            "https://sportschema.org/ontologies/esports/deaths": "16",
+            "https://sportschema.org/ontologies/esports/ADR": "65,9",
+            "@type": "sport:IndividualParticipation",
+            "rdfs:label": "Pawet Jańczak participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/headshot": "9",
+            "https://sportschema.org/ontologies/esports/assist": "1",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-3",
+            "spstat:rating": "0,92",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "https://sportschema.org/ontologies/esports/kills": "15"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-T6134",
+            "sport:score": "7",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
+            },
+            "rdfs:label": "Kinguin participation in Event 5120",
+            "@type": "sport:TeamParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES10",
+            "https://sportschema.org/ontologies/esports/FKdiff": "3",
+            "https://sportschema.org/ontologies/esports/deaths": "17",
+            "https://sportschema.org/ontologies/esports/ADR": "65,9",
+            "https://sportschema.org/ontologies/esports/kills": "16",
+            "https://sportschema.org/ontologies/esports/headshot": "7",
+            "https://sportschema.org/ontologies/esports/KAST": "65,2",
+            "rdfs:label": "Jazek Jeziak participation in Event 5120",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/assist": "5",
+            "spstat:rating": "1,06",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES10"
+            },
+            "https://sportschema.org/ontologies/esports/flashassist": "0"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES16",
+            "https://sportschema.org/ontologies/esports/assist": "4",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/headshot": "11",
+            "rdfs:label": "Ahmet Karahoca participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/FKdiff": "2",
+            "https://sportschema.org/ontologies/esports/flashassist": "0",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES16"
+            },
+            "https://sportschema.org/ontologies/esports/ADR": "87,6",
+            "spstat:rating": "1,53",
+            "https://sportschema.org/ontologies/esports/deaths": "12",
+            "https://sportschema.org/ontologies/esports/KAST": "78,3",
+            "https://sportschema.org/ontologies/esports/kills": "24"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES18",
+            "https://sportschema.org/ontologies/esports/kills": "12",
+            "https://sportschema.org/ontologies/esports/assist": "11",
+            "spstat:rating": "1,08",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-1",
+            "rdfs:label": "Engin Küpeli participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/ADR": "89,7",
+            "https://sportschema.org/ontologies/esports/deaths": "13",
+            "https://sportschema.org/ontologies/esports/flashassist": "3",
+            "https://sportschema.org/ontologies/esports/headshot": "6",
+            "https://sportschema.org/ontologies/esports/KAST": "78,3",
+            "@type": "sport:IndividualParticipation",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES18"
+            }
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES12",
+            "spstat:rating": "0,86",
+            "https://sportschema.org/ontologies/esports/assist": "3",
+            "https://sportschema.org/ontologies/esports/kills": "16",
+            "https://sportschema.org/ontologies/esports/KAST": "56,5",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES12"
+            },
+            "rdfs:label": "Wiktor Wojtas participation in Event 5120",
+            "https://sportschema.org/ontologies/esports/FKdiff": "-1",
+            "https://sportschema.org/ontologies/esports/flashassist": "1",
+            "https://sportschema.org/ontologies/esports/ADR": "66,9",
+            "@type": "sport:IndividualParticipation",
+            "https://sportschema.org/ontologies/esports/deaths": "19",
+            "https://sportschema.org/ontologies/esports/headshot": "11"
+        },
+        {
+            "@id": "http://example.com/Participation/5120-PES15",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES15"
+            },
+            "https://sportschema.org/ontologies/esports/kills": "14",
+            "https://sportschema.org/ontologies/esports/FKdiff": "3",
+            "https://sportschema.org/ontologies/esports/deaths": "14",
+            "https://sportschema.org/ontologies/esports/flashassist": "2",
+            "spstat:rating": "1,15",
+            "https://sportschema.org/ontologies/esports/assist": "5",
+            "https://sportschema.org/ontologies/esports/ADR": "64,4",
+            "https://sportschema.org/ontologies/esports/headshot": "5",
+            "https://sportschema.org/ontologies/esports/KAST": "82,6",
+            "@type": "sport:IndividualParticipation",
+            "rdfs:label": "Buğra Arkın participation in Event 5120"
+        },
+        {
+            "@id": "http://example.com/Membership/T6134-PES12",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES12"
+            },
+            "rdfs:label": "Wiktor Wojtas membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Membership/T6134-PES11",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES11"
+            },
+            "rdfs:label": "Pawet Jańczak membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Competition/l.intelextrememasters.com-2019",
+            "sport:parentCompetition": {
+                "@id": "http://example.com/Competition/l.intelextrememasters.com"
+            },
+            "rdfs:label": "Intel Extreme Masters 2019",
+            "@type": "sport:Competition"
+        },
+        {
+            "@id": "http://example.com/Competition/l.intelextrememasters.com",
+            "sport:sport": {
+                "@id": "medtop:20001183"
+            },
+            "rdfs:label": "Intel Extreme Masters",
+            "@type": "sport:Competition"
+        },
+        {
+            "@id": "http://example.com/Membership/T6134-PES10",
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/T6134"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/PES10"
+            },
+            "rdfs:label": "Jazek Jeziak membership of ",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Event/541807",
+            "sport:subEvent": [
+                {
+                    "@id": "http://example.com/Event/5120"
+                },
+                {
+                    "@id": "http://example.com/Event/5121"
+                },
+                {
+                    "@id": "http://example.com/Event/5122"
+                }
+            ],
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            },
+            "sport:eventStatus": {
+                "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
+            },
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/541807-T6134"
+                },
+                {
+                    "@id": "http://example.com/Participation/541807-T9572"
+                }
+            ],
+            "rdfs:label": "Event 541807",
+            "@type": "sport:Event"
+        }
+    ],
+    "@context": {
+        "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
+        "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
+        "schemaorg": "https://schema.org/",
+        "spsocactiontype": "http://cv.iptc.org/newscodes/spsocaction/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "spstat": "https://sportschema.org/ontologies/corestatistics/",
+        "speventoutcometype": "http://cv.iptc.org/newscodes/speventoutcometype/",
+        "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
+        "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
+        "spesstat": "http://cv.iptc.org/newscodes/spesstat/",
+        "spct": "http://cv.iptc.org/newscodes/spct/",
+        "sport": "https://sportschema.org/ontologies/main/",
+        "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",
+        "spsocstat": "https://sportschema.org/ontologies/soccer/"
     }
-  }, {
-    "@id" : "http://example.com/Competition/l.intelextrememasters.com-2019",
-    "@type" : "sport:Competition",
-    "label" : "Intel Extreme Masters 2019",
-    "parentCompetition" : "http://example.com/Competition/l.intelextrememasters.com"
-  }, {
-    "@id" : "http://example.com/Event/5120",
-    "@type" : "sport:Event",
-    "label" : "Event 5120",
-    "eventParticipation" : [ "http://example.com/Participation/5120-PES14", "http://example.com/Participation/5120-PES17", "http://example.com/Participation/5120-PES11", "http://example.com/Participation/5120-T6134", "http://example.com/Participation/5120-PES10", "http://example.com/Participation/5120-PES13", "http://example.com/Participation/5120-PES16", "http://example.com/Participation/5120-PES19", "http://example.com/Participation/5120-PES18", "http://example.com/Participation/5120-PES12", "http://example.com/Participation/5120-T9572", "http://example.com/Participation/5120-PES15" ],
-    "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "startDateTime" : "2018-12-12T14:00:00"
-  }, {
-    "@id" : "http://example.com/Event/5121",
-    "@type" : "sport:Event",
-    "label" : "Event 5121",
-    "eventParticipation" : [ "http://example.com/Participation/5121-PES12", "http://example.com/Participation/5121-T9572", "http://example.com/Participation/5121-PES14", "http://example.com/Participation/5121-PES16", "http://example.com/Participation/5121-PES19", "http://example.com/Participation/5121-T6134", "http://example.com/Participation/5121-PES11", "http://example.com/Participation/5121-PES18", "http://example.com/Participation/5121-PES13", "http://example.com/Participation/5121-PES10", "http://example.com/Participation/5121-PES15", "http://example.com/Participation/5121-PES17" ],
-    "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "startDateTime" : "2018-12-12T14:00:00"
-  }, {
-    "@id" : "http://example.com/Event/5122",
-    "@type" : "sport:Event",
-    "label" : "Event 5122",
-    "eventParticipation" : [ "http://example.com/Participation/5122-PES17", "http://example.com/Participation/5122-PES12", "http://example.com/Participation/5122-T6134", "http://example.com/Participation/5122-PES10", "http://example.com/Participation/5122-PES18", "http://example.com/Participation/5122-PES11", "http://example.com/Participation/5122-PES19", "http://example.com/Participation/5122-PES13", "http://example.com/Participation/5122-PES14", "http://example.com/Participation/5122-T9572", "http://example.com/Participation/5122-PES15", "http://example.com/Participation/5122-PES16" ],
-    "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "startDateTime" : "2018-12-12T14:00:00"
-  }, {
-    "@id" : "http://example.com/Event/541807",
-    "@type" : "sport:Event",
-    "label" : "Event 541807",
-    "eventParticipation" : [ "http://example.com/Participation/541807-T6134", "http://example.com/Participation/541807-T9572" ],
-    "eventStatus" : "http://cv.iptc.org/newscodes/speventstatus/post-event",
-    "startDateTime" : "2018-12-12T14:00:00",
-    "subEvent" : [ "http://example.com/Event/5120", "http://example.com/Event/5121", "http://example.com/Event/5122" ]
-  }, {
-    "@id" : "http://example.com/Membership/T6134-PES10",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Jazek Jeziak membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES10",
-    "membershipOf" : "http://example.com/Team/T6134"
-  }, {
-    "@id" : "http://example.com/Membership/T6134-PES11",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Pawet Jańczak membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES11",
-    "membershipOf" : "http://example.com/Team/T6134"
-  }, {
-    "@id" : "http://example.com/Membership/T6134-PES12",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Wiktor Wojtas membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES12",
-    "membershipOf" : "http://example.com/Team/T6134"
-  }, {
-    "@id" : "http://example.com/Membership/T6134-PES13",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Mikołaj Karolewski membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES13",
-    "membershipOf" : "http://example.com/Team/T6134"
-  }, {
-    "@id" : "http://example.com/Membership/T6134-PES14",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Karol Rodowicz membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES14",
-    "membershipOf" : "http://example.com/Team/T6134"
-  }, {
-    "@id" : "http://example.com/Membership/T9572-PES15",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Buğra Arkın membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES15",
-    "membershipOf" : "http://example.com/Team/T9572"
-  }, {
-    "@id" : "http://example.com/Membership/T9572-PES16",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Ahmet Karahoca membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES16",
-    "membershipOf" : "http://example.com/Team/T9572"
-  }, {
-    "@id" : "http://example.com/Membership/T9572-PES17",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Ismailcan Dörtkardeş membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES17",
-    "membershipOf" : "http://example.com/Team/T9572"
-  }, {
-    "@id" : "http://example.com/Membership/T9572-PES18",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Engin Küpeli membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES18",
-    "membershipOf" : "http://example.com/Team/T9572"
-  }, {
-    "@id" : "http://example.com/Membership/T9572-PES19",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Engin Kor membership of ",
-    "membershipBy" : "http://example.com/Athlete/PES19",
-    "membershipOf" : "http://example.com/Team/T9572"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES10",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jazek Jeziak participation in Event 5120",
-    "rating" : "1,06",
-    "ADR" : "65,9",
-    "FKdiff" : "3",
-    "KAST" : "65,2",
-    "assist" : "5",
-    "deaths" : "17",
-    "flashassist" : "0",
-    "headshot" : "7",
-    "kills" : "16",
-    "participationBy" : "http://example.com/Athlete/PES10"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES11",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Pawet Jańczak participation in Event 5120",
-    "rating" : "0,92",
-    "ADR" : "65,9",
-    "FKdiff" : "-3",
-    "KAST" : "65,2",
-    "assist" : "1",
-    "deaths" : "16",
-    "flashassist" : "0",
-    "headshot" : "9",
-    "kills" : "15",
-    "participationBy" : "http://example.com/Athlete/PES11"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES12",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Wiktor Wojtas participation in Event 5120",
-    "rating" : "0,86",
-    "ADR" : "66,9",
-    "FKdiff" : "-1",
-    "KAST" : "56,5",
-    "assist" : "3",
-    "deaths" : "19",
-    "flashassist" : "1",
-    "headshot" : "11",
-    "kills" : "16",
-    "participationBy" : "http://example.com/Athlete/PES12"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES13",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Mikołaj Karolewski participation in Event 5120",
-    "rating" : "0,85",
-    "ADR" : "63,6",
-    "FKdiff" : "-3",
-    "KAST" : "60,9",
-    "assist" : "4",
-    "deaths" : "17",
-    "flashassist" : "1",
-    "headshot" : "8",
-    "kills" : "13",
-    "participationBy" : "http://example.com/Athlete/PES13"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES14",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Karol Rodowicz participation in Event 5120",
-    "rating" : "0,62",
-    "ADR" : "46,3",
-    "FKdiff" : "-1",
-    "KAST" : "47,8",
-    "assist" : "3",
-    "deaths" : "19",
-    "flashassist" : "0",
-    "headshot" : "3",
-    "kills" : "6",
-    "participationBy" : "http://example.com/Athlete/PES14"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES15",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Buğra Arkın participation in Event 5120",
-    "rating" : "1,15",
-    "ADR" : "64,4",
-    "FKdiff" : "3",
-    "KAST" : "82,6",
-    "assist" : "5",
-    "deaths" : "14",
-    "flashassist" : "2",
-    "headshot" : "5",
-    "kills" : "14",
-    "participationBy" : "http://example.com/Athlete/PES15"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES16",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ahmet Karahoca participation in Event 5120",
-    "rating" : "1,53",
-    "ADR" : "87,6",
-    "FKdiff" : "2",
-    "KAST" : "78,3",
-    "assist" : "4",
-    "deaths" : "12",
-    "flashassist" : "0",
-    "headshot" : "11",
-    "kills" : "24",
-    "participationBy" : "http://example.com/Athlete/PES16"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES17",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ismailcan Dörtkardeş participation in Event 5120",
-    "rating" : "1,43",
-    "ADR" : "104,9",
-    "FKdiff" : "3",
-    "KAST" : "73,9",
-    "assist" : "6",
-    "deaths" : "16",
-    "flashassist" : "2",
-    "headshot" : "6",
-    "kills" : "22",
-    "participationBy" : "http://example.com/Athlete/PES17"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES18",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Küpeli participation in Event 5120",
-    "rating" : "1,08",
-    "ADR" : "89,7",
-    "FKdiff" : "-1",
-    "KAST" : "78,3",
-    "assist" : "11",
-    "deaths" : "13",
-    "flashassist" : "3",
-    "headshot" : "6",
-    "kills" : "12",
-    "participationBy" : "http://example.com/Athlete/PES18"
-  }, {
-    "@id" : "http://example.com/Participation/5120-PES19",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Kor participation in Event 5120",
-    "rating" : "1,11",
-    "ADR" : "68,4",
-    "FKdiff" : "0",
-    "KAST" : "78,3",
-    "assist" : "4",
-    "deaths" : "11",
-    "flashassist" : "2",
-    "headshot" : "6",
-    "kills" : "15",
-    "participationBy" : "http://example.com/Athlete/PES19"
-  }, {
-    "@id" : "http://example.com/Participation/5120-T6134",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Kinguin participation in Event 5120",
-    "event-outcome" : "speventoutcome:loss",
-    "participationBy" : "http://example.com/Team/T6134",
-    "score" : "7"
-  }, {
-    "@id" : "http://example.com/Participation/5120-T9572",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Ex-Space Soldiers participation in Event 5120",
-    "event-outcome" : "speventoutcome:win",
-    "participationBy" : "http://example.com/Team/T9572",
-    "score" : "16"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES10",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jazek Jeziak participation in Event 5121",
-    "rating" : "1,14",
-    "ADR" : "84,8",
-    "FKdiff" : "-2",
-    "KAST" : "62,1",
-    "assist" : "2",
-    "deaths" : "20",
-    "flashassist" : "0",
-    "headshot" : "4",
-    "kills" : "22",
-    "participationBy" : "http://example.com/Athlete/PES10"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES11",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Pawet Jańczak participation in Event 5121",
-    "rating" : "1,36",
-    "ADR" : "89,7",
-    "FKdiff" : "3",
-    "KAST" : "75,9",
-    "assist" : "2",
-    "deaths" : "18",
-    "flashassist" : "2",
-    "headshot" : "14",
-    "kills" : "28",
-    "participationBy" : "http://example.com/Athlete/PES11"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES12",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Wiktor Wojtas participation in Event 5121",
-    "rating" : "0,88",
-    "ADR" : "59,2",
-    "FKdiff" : "1",
-    "KAST" : "69,0",
-    "assist" : "4",
-    "deaths" : "18",
-    "flashassist" : "0",
-    "headshot" : "9",
-    "kills" : "13",
-    "participationBy" : "http://example.com/Athlete/PES12"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES13",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Mikołaj Karolewski participation in Event 5121",
-    "rating" : "0,82",
-    "ADR" : "66,3",
-    "FKdiff" : "-3",
-    "KAST" : "69,0",
-    "assist" : "3",
-    "deaths" : "22",
-    "flashassist" : "1",
-    "headshot" : "8",
-    "kills" : "16",
-    "participationBy" : "http://example.com/Athlete/PES13"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES14",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Karol Rodowicz participation in Event 5121",
-    "rating" : "1,21",
-    "ADR" : "78,4",
-    "FKdiff" : "0",
-    "KAST" : "75,9",
-    "assist" : "1",
-    "deaths" : "15",
-    "flashassist" : "0",
-    "headshot" : "8",
-    "kills" : "24",
-    "participationBy" : "http://example.com/Athlete/PES14"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES15",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Buğra Arkın participation in Event 5121",
-    "rating" : "1,15",
-    "ADR" : "80,1",
-    "FKdiff" : "5",
-    "KAST" : "69,0",
-    "assist" : "4",
-    "deaths" : "22",
-    "flashassist" : "0",
-    "headshot" : "12",
-    "kills" : "21",
-    "participationBy" : "http://example.com/Athlete/PES15"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES16",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ahmet Karahoca participation in Event 5121",
-    "rating" : "0,87",
-    "ADR" : "66,2",
-    "FKdiff" : "-4",
-    "KAST" : "62,1",
-    "assist" : "4",
-    "deaths" : "22",
-    "flashassist" : "2",
-    "headshot" : "14",
-    "kills" : "22",
-    "participationBy" : "http://example.com/Athlete/PES16"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES17",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ismailcan Dörtkardeş participation in Event 5121",
-    "rating" : "1,14",
-    "ADR" : "81,3",
-    "FKdiff" : "4",
-    "KAST" : "65,5",
-    "assist" : "3",
-    "deaths" : "19",
-    "flashassist" : "0",
-    "headshot" : "14",
-    "kills" : "23",
-    "participationBy" : "http://example.com/Athlete/PES17"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES18",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Küpeli participation in Event 5121",
-    "rating" : "0,89",
-    "ADR" : "70,4",
-    "FKdiff" : "-4",
-    "KAST" : "69,0",
-    "assist" : "5",
-    "deaths" : "19",
-    "flashassist" : "1",
-    "headshot" : "5",
-    "kills" : "15",
-    "participationBy" : "http://example.com/Athlete/PES18"
-  }, {
-    "@id" : "http://example.com/Participation/5121-PES19",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Kor participation in Event 5121",
-    "rating" : "0,66",
-    "ADR" : "54,4",
-    "FKdiff" : "0",
-    "KAST" : "51,7",
-    "assist" : "3",
-    "deaths" : "21",
-    "flashassist" : "0",
-    "headshot" : "7",
-    "kills" : "12",
-    "participationBy" : "http://example.com/Athlete/PES19"
-  }, {
-    "@id" : "http://example.com/Participation/5121-T6134",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Kinguin participation in Event 5121",
-    "event-outcome" : "speventoutcome:win",
-    "participationBy" : "http://example.com/Team/T6134",
-    "score" : "16"
-  }, {
-    "@id" : "http://example.com/Participation/5121-T9572",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Ex-Space Soldiers participation in Event 5121",
-    "event-outcome" : "speventoutcome:loss",
-    "participationBy" : "http://example.com/Team/T9572",
-    "score" : "13"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES10",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jazek Jeziak participation in Event 5122",
-    "rating" : "0,98",
-    "ADR" : "72,5",
-    "FKdiff" : "-2",
-    "KAST" : "48,1",
-    "assist" : "3",
-    "deaths" : "18",
-    "flashassist" : "0",
-    "headshot" : "8",
-    "kills" : "19",
-    "participationBy" : "http://example.com/Athlete/PES10"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES11",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Pawet Jańczak participation in Event 5122",
-    "rating" : "0,76",
-    "ADR" : "69,8",
-    "FKdiff" : "4",
-    "KAST" : "60,0",
-    "assist" : "2",
-    "deaths" : "22",
-    "flashassist" : "0",
-    "headshot" : "8",
-    "kills" : "11",
-    "participationBy" : "http://example.com/Athlete/PES11"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES12",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Wiktor Wojtas participation in Event 5122",
-    "rating" : "0,75",
-    "ADR" : "59,6",
-    "FKdiff" : "1",
-    "KAST" : "60,0",
-    "assist" : "2",
-    "deaths" : "20",
-    "flashassist" : "0",
-    "headshot" : "7",
-    "kills" : "13",
-    "participationBy" : "http://example.com/Athlete/PES12"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES13",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Mikołaj Karolewski participation in Event 5122",
-    "rating" : "0,59",
-    "ADR" : "52,6",
-    "FKdiff" : "-2",
-    "KAST" : "44,0",
-    "assist" : "4",
-    "deaths" : "21",
-    "flashassist" : "0",
-    "headshot" : "7",
-    "kills" : "8",
-    "participationBy" : "http://example.com/Athlete/PES13"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES14",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Karol Rodowicz participation in Event 5122",
-    "rating" : "0,89",
-    "ADR" : "73,7",
-    "FKdiff" : "2",
-    "KAST" : "56,0",
-    "assist" : "4",
-    "deaths" : "20",
-    "flashassist" : "1",
-    "headshot" : "10",
-    "kills" : "16",
-    "participationBy" : "http://example.com/Athlete/PES14"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES15",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Buğra Arkın participation in Event 5122",
-    "rating" : "1,57",
-    "ADR" : "105,2",
-    "FKdiff" : "1",
-    "KAST" : "80,0",
-    "assist" : "4",
-    "deaths" : "12",
-    "flashassist" : "0",
-    "headshot" : "15",
-    "kills" : "26",
-    "participationBy" : "http://example.com/Athlete/PES15"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES16",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ahmet Karahoca participation in Event 5122",
-    "rating" : "1,37",
-    "ADR" : "90,9",
-    "FKdiff" : "1",
-    "KAST" : "80,0",
-    "assist" : "5",
-    "deaths" : "12",
-    "flashassist" : "0",
-    "headshot" : "11",
-    "kills" : "20",
-    "participationBy" : "http://example.com/Athlete/PES16"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES17",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Ismailcan Dörtkardeş participation in Event 5122",
-    "rating" : "0,94",
-    "ADR" : "66,6",
-    "FKdiff" : "-4",
-    "KAST" : "56,0",
-    "assist" : "4",
-    "deaths" : "17",
-    "flashassist" : "0",
-    "headshot" : "10",
-    "kills" : "15",
-    "participationBy" : "http://example.com/Athlete/PES17"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES18",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Küpeli participation in Event 5122",
-    "rating" : "1,35",
-    "ADR" : "81,8",
-    "FKdiff" : "-1",
-    "KAST" : "84,0",
-    "assist" : "8",
-    "deaths" : "10",
-    "flashassist" : "6",
-    "headshot" : "10",
-    "kills" : "20",
-    "participationBy" : "http://example.com/Athlete/PES18"
-  }, {
-    "@id" : "http://example.com/Participation/5122-PES19",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Engin Kor participation in Event 5122",
-    "rating" : "1,21",
-    "ADR" : "86,5",
-    "FKdiff" : "1",
-    "KAST" : "56,0",
-    "assist" : "5",
-    "deaths" : "16",
-    "flashassist" : "0",
-    "headshot" : "10",
-    "kills" : "20",
-    "participationBy" : "http://example.com/Athlete/PES19"
-  }, {
-    "@id" : "http://example.com/Participation/5122-T6134",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Kinguin participation in Event 5122",
-    "event-outcome" : "speventoutcome:loss",
-    "participationBy" : "http://example.com/Team/T6134",
-    "score" : "9"
-  }, {
-    "@id" : "http://example.com/Participation/5122-T9572",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Ex-Space Soldiers participation in Event 5122",
-    "event-outcome" : "speventoutcome:win",
-    "participationBy" : "http://example.com/Team/T9572",
-    "score" : "16"
-  }, {
-    "@id" : "http://example.com/Participation/541807-T6134",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Kinguin participation in Event 541807",
-    "event-outcome" : "speventoutcome:loss",
-    "events-played" : "539",
-    "series-score" : "299",
-    "series-score-opposing" : "214",
-    "participationBy" : "http://example.com/Team/T6134",
-    "score" : "1"
-  }, {
-    "@id" : "http://example.com/Participation/541807-T9572",
-    "@type" : "sport:TeamParticipation",
-    "label" : "Ex-Space Soldiers participation in Event 541807",
-    "event-outcome" : "speventoutcome:win",
-    "events-played" : "24",
-    "series-score" : "9",
-    "series-score-opposing" : "15",
-    "participationBy" : "http://example.com/Team/T9572",
-    "score" : "2"
-  }, {
-    "@id" : "http://example.com/Team/T6134",
-    "@type" : "sport:Team",
-    "label" : [ "Kinguin", "" ],
-    "membership" : [ "http://example.com/Membership/T6134-PES10", "http://example.com/Membership/T6134-PES11", "http://example.com/Membership/T6134-PES12", "http://example.com/Membership/T6134-PES13", "http://example.com/Membership/T6134-PES14" ]
-  }, {
-    "@id" : "http://example.com/Team/T9572",
-    "@type" : "sport:Team",
-    "label" : [ "Ex-Space Soldiers", "" ],
-    "membership" : [ "http://example.com/Membership/T9572-PES15", "http://example.com/Membership/T9572-PES16", "http://example.com/Membership/T9572-PES17", "http://example.com/Membership/T9572-PES18", "http://example.com/Membership/T9572-PES19" ]
-  } ],
-  "@context" : {
-    "score" : {
-      "@id" : "https://sportschema.org/ontologies/main/score"
-    },
-    "participationBy" : {
-      "@id" : "https://sportschema.org/ontologies/main/participationBy",
-      "@type" : "@id"
-    },
-    "event-outcome" : {
-      "@id" : "https://sportschema.org/ontologies/corestatistics/event-outcome",
-      "@type" : "@id"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
-    "headshot" : {
-      "@id" : "https://sportschema.org/ontologies/esports/headshot"
-    },
-    "deaths" : {
-      "@id" : "https://sportschema.org/ontologies/esports/deaths"
-    },
-    "kills" : {
-      "@id" : "https://sportschema.org/ontologies/esports/kills"
-    },
-    "ADR" : {
-      "@id" : "https://sportschema.org/ontologies/esports/ADR"
-    },
-    "assist" : {
-      "@id" : "https://sportschema.org/ontologies/esports/assist"
-    },
-    "KAST" : {
-      "@id" : "https://sportschema.org/ontologies/esports/KAST"
-    },
-    "FKdiff" : {
-      "@id" : "https://sportschema.org/ontologies/esports/FKdiff"
-    },
-    "rating" : {
-      "@id" : "https://sportschema.org/ontologies/corestatistics/rating"
-    },
-    "flashassist" : {
-      "@id" : "https://sportschema.org/ontologies/esports/flashassist"
-    },
-    "eventParticipation" : {
-      "@id" : "https://sportschema.org/ontologies/main/eventParticipation",
-      "@type" : "@id"
-    },
-    "startDateTime" : {
-      "@id" : "https://sportschema.org/ontologies/main/startDateTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "eventStatus" : {
-      "@id" : "https://sportschema.org/ontologies/main/eventStatus",
-      "@type" : "@id"
-    },
-    "membershipOf" : {
-      "@id" : "https://sportschema.org/ontologies/main/membershipOf",
-      "@type" : "@id"
-    },
-    "membershipBy" : {
-      "@id" : "https://sportschema.org/ontologies/main/membershipBy",
-      "@type" : "@id"
-    },
-    "nationality" : {
-      "@id" : "https://sportschema.org/ontologies/main/nationality"
-    },
-    "series-score-opposing" : {
-      "@id" : "https://sportschema.org/ontologies/corestatistics/series-score-opposing"
-    },
-    "series-score" : {
-      "@id" : "https://sportschema.org/ontologies/corestatistics/series-score"
-    },
-    "events-played" : {
-      "@id" : "https://sportschema.org/ontologies/corestatistics/events-played"
-    },
-    "membership" : {
-      "@id" : "https://sportschema.org/ontologies/main/membership",
-      "@type" : "@id"
-    },
-    "parentCompetition" : {
-      "@id" : "https://sportschema.org/ontologies/main/parentCompetition",
-      "@type" : "@id"
-    },
-    "sport" : "https://sportschema.org/ontologies/main/",
-    "subEvent" : {
-      "@id" : "https://sportschema.org/ontologies/main/subEvent",
-      "@type" : "@id"
-    },
-    "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
-    "spesaction" : "http://cv.iptc.org/newscodes/spesaction/",
-    "schemaorg" : "https://schema.org/",
-    "spsocactiontype" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "xsd" : "http://www.w3.org/2001/XMLSchema#",
-    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "spstat" : "https://sportschema.org/ontologies/corestatistics/",
-    "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
-    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spcompetitionscope" : "http://cv.iptc.org/newscodes/spcompetitionscope/",
-    "medtop" : "http://cv.iptc.org/newscodes/mediatopic/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spct" : "http://cv.iptc.org/newscodes/spct/",
-    "spsocstat" : "https://sportschema.org/ontologies/soccer/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
-  }
 }

@@ -1,10 +1,20 @@
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix schemaorg: <https://schema.org/> .
-@prefix sport:   <https://sportschema.org/ontologies/main/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
+@prefix spbblstat: <https://sportschema.org/ontologies/baseball/> .
+@prefix spbkbstat: <https://sportschema.org/ontologies/basketball/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
+@prefix spmcrstat: <https://sportschema.org/ontologies/motor-racing/> .
+@prefix sprgxstat: <https://sportschema.org/ontologies/rugby/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix sptenstat: <https://sportschema.org/ontologies/tennis/> .
+@prefix spvolstat: <https://sportschema.org/ontologies/volleyball/> .
 
 <https://sportschema.org/ontologies/main/>
     rdf:type owl:Ontology ;
@@ -447,7 +457,7 @@ sport:angle rdf:type rdf:Property ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:body-part rdf:type rdf:Property ;
+sport:bodyPart rdf:type rdf:Property ;
     rdfs:label "body part"@en ;
     rdfs:comment "Body part used to perform an action."@en ;
     rdfs:domain sport:Action ;
