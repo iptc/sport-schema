@@ -1091,7 +1091,13 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- in our source SportsML some stats have empty or NaN values so we ignore those -->
         <xsl:if test="@value != '' and @value != 'NaN'">
             <xsl:variable name="cv-name" select="substring-before(@stat-type,':')"/>
-            <xsl:variable name="value-name"><xsl:value-of select="substring-after(@stat-type,':')"/></xsl:variable>
+            <xsl:variable name="value-name">
+                <xsl:call-template name="string-walk">
+                    <xsl:with-param name="string" select="substring-after(@stat-type,':')"/>
+                    <xsl:with-param name="char" select="'-'"/>
+                    <xsl:with-param name="increment" select="0"/>
+                </xsl:call-template>
+            </xsl:variable>
             <!-- if the stat has a :, output the value as a CV term URI -->
             <xsl:variable name="value">
                 <xsl:choose>

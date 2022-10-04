@@ -1,202 +1,246 @@
 {
-  "@graph" : [ {
-    "@id" : "http://example.com/Athlete/PI1436558",
-    "@type" : "sport:Athlete",
-    "label" : "Denis Dmitriev",
-    "nationality" : "ROC"
-  }, {
-    "@id" : "http://example.com/Athlete/PI1467923",
-    "@type" : "sport:Athlete",
-    "label" : "Jeffrey Hoogland",
-    "nationality" : "NED"
-  }, {
-    "@id" : "http://example.com/Competition/OLYS",
-    "@type" : "sport:Competition",
-    "label" : "Summer Olympics",
-    "competitionType" : "spct:recurring-competition",
-    "governingBody" : "http://example.com/GoverningBody/IOC",
-    "sport:sport" : {
-      "@id" : "medtop:20001334"
+    "@graph": [
+        {
+            "@id": "http://example.com/Athlete/PI1436558",
+            "sport:nationality": "ROC",
+            "rdfs:label": "Denis Dmitriev",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-RND1",
+            "sport:competitionPhaseType": {
+                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/round"
+            },
+            "sport:competition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
+            "rdfs:label": "Round 1",
+            "@type": "sport:CompetitionPhase"
+        },
+        {
+            "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT",
+            "sport:sport": {
+                "@id": "medtop:20001334"
+            },
+            "sport:parentCompetition": {
+                "@id": "http://example.com/Competition/OLYS2020"
+            },
+            "sport:competitionType": {
+                "@id": "spct:competition"
+            },
+            "rdfs:label": "Men's Track Cycling (Sprint)",
+            "@type": "sport:Competition"
+        },
+        {
+            "@id": "http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010002",
+            "sport:startDateTime": {
+                "@value": "2021-08-06T16:52:00+09:00",
+                "@type": "xsd:dateTime"
+            },
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923"
+                },
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558"
+                }
+            ],
+            "sport:competitionPhase": {
+                "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000"
+            },
+            "rdfs:label": "Heat 1, Race 2",
+            "@type": "sport:Event"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923",
+            "sport:scoreUnits": {
+                "@id": "http://cv.iptc.org/newscodes/spscoreunits/time-absolute"
+            },
+            "sport:score": "9.786",
+            "sport:rank": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1467923"
+            },
+            "rdfs:label": "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558",
+            "sport:scoreUnits": {
+                "@id": "http://cv.iptc.org/newscodes/spscoreunits/relative"
+            },
+            "sport:score": "+0.010",
+            "sport:rank": "2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1436558"
+            },
+            "rdfs:label": "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000",
+            "sport:competitionPhaseType": {
+                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/heat"
+            },
+            "sport:competitionPhase": {
+                "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL"
+            },
+            "sport:competition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
+            "rdfs:label": "Heat 1",
+            "@type": "sport:CompetitionPhase"
+        },
+        {
+            "@id": "http://example.com/GoverningBody/IOC",
+            "rdfs:label": "International Olympic Committee",
+            "@type": "sport:GoverningBody"
+        },
+        {
+            "@id": "http://example.com/Athlete/PI1467923",
+            "sport:nationality": "NED",
+            "rdfs:label": "Jeffrey Hoogland",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010001",
+            "sport:startDateTime": {
+                "@value": "2021-08-06T16:10:00+09:00",
+                "@type": "xsd:dateTime"
+            },
+            "sport:eventParticipation": [
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923"
+                },
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558"
+                }
+            ],
+            "sport:competitionPhase": {
+                "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000"
+            },
+            "rdfs:label": "Heat 1, Race 1",
+            "@type": "sport:Event"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923",
+            "sport:scoreUnits": {
+                "@id": "http://cv.iptc.org/newscodes/spscoreunits/time-absolute"
+            },
+            "sport:score": "9.692",
+            "sport:rank": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1467923"
+            },
+            "rdfs:label": "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558",
+            "sport:scoreUnits": {
+                "@id": "http://cv.iptc.org/newscodes/spscoreunits/relative"
+            },
+            "sport:score": "+0.107",
+            "sport:rank": "2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1436558"
+            },
+            "rdfs:label": "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558",
+            "sport:rank": "2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1436558"
+            },
+            "rdfs:label": "Denis Dmitriev participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL",
+            "sport:phaseParticipation": [
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923"
+                },
+                {
+                    "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558"
+                }
+            ],
+            "sport:competitionPhaseType": {
+                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/semi-final"
+            },
+            "sport:competition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
+            "rdfs:label": "Semi-Finals",
+            "@type": "sport:CompetitionPhase"
+        },
+        {
+            "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923",
+            "sport:rank": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PI1467923"
+            },
+            "rdfs:label": "Jeffrey Hoogland participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL",
+            "@type": "sport:IndividualParticipation"
+        },
+        {
+            "@id": "http://example.com/Competition/OLYS2020",
+            "sport:sport": {
+                "@id": "medtop:20001334"
+            },
+            "sport:parentCompetition": {
+                "@id": "http://example.com/Competition/OLYS"
+            },
+            "sport:competitionType": {
+                "@id": "spct:competition"
+            },
+            "rdfs:label": "2020 Tokyo Summer Olympics",
+            "@type": "sport:Competition"
+        },
+        {
+            "@id": "http://example.com/Competition/OLYS",
+            "sport:sport": {
+                "@id": "medtop:20001334"
+            },
+            "sport:governingBody": {
+                "@id": "http://example.com/GoverningBody/IOC"
+            },
+            "sport:competitionType": {
+                "@id": "spct:recurring-competition"
+            },
+            "rdfs:label": "Summer Olympics",
+            "@type": "sport:Competition"
+        },
+        {
+            "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-FNL",
+            "sport:competitionPhaseType": {
+                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/final"
+            },
+            "sport:competition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
+            "rdfs:label": "Final",
+            "@type": "sport:CompetitionPhase"
+        }
+    ],
+    "@context": {
+        "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
+        "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
+        "schemaorg": "https://schema.org/",
+        "spsocactiontype": "http://cv.iptc.org/newscodes/spsocaction/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "spstat": "https://sportschema.org/ontologies/corestatistics/",
+        "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
+        "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
+        "spesstat": "http://cv.iptc.org/newscodes/spesstat/",
+        "spct": "http://cv.iptc.org/newscodes/spct/",
+        "sport": "https://sportschema.org/ontologies/main/",
+        "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",
+        "spsocstat": "https://sportschema.org/ontologies/soccer/"
     }
-  }, {
-    "@id" : "http://example.com/Competition/OLYS2020",
-    "@type" : "sport:Competition",
-    "label" : "2020 Tokyo Summer Olympics",
-    "competitionType" : "spct:competition",
-    "parentCompetition" : "http://example.com/Competition/OLYS",
-    "sport:sport" : {
-      "@id" : "medtop:20001334"
-    }
-  }, {
-    "@id" : "http://example.com/Competition/OLYS2020-CTRMSPRINT",
-    "@type" : "sport:Competition",
-    "label" : "Men's Track Cycling (Sprint)",
-    "competitionType" : "spct:competition",
-    "parentCompetition" : "http://example.com/Competition/OLYS2020",
-    "sport:sport" : {
-      "@id" : "medtop:20001334"
-    }
-  }, {
-    "@id" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-FNL",
-    "@type" : "sport:CompetitionPhase",
-    "label" : "Final",
-    "competition" : "http://example.com/Competition/OLYS2020-CTRMSPRINT",
-    "competitionPhaseType" : "http://cv.iptc.org/newscodes/sptournamentphase/final"
-  }, {
-    "@id" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-RND1",
-    "@type" : "sport:CompetitionPhase",
-    "label" : "Round 1",
-    "competition" : "http://example.com/Competition/OLYS2020-CTRMSPRINT",
-    "competitionPhaseType" : "http://cv.iptc.org/newscodes/sptournamentphase/round"
-  }, {
-    "@id" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL",
-    "@type" : "sport:CompetitionPhase",
-    "label" : "Semi-Finals",
-    "competition" : "http://example.com/Competition/OLYS2020-CTRMSPRINT",
-    "competitionPhaseType" : "http://cv.iptc.org/newscodes/sptournamentphase/semi-final",
-    "phaseParticipation" : [ "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923", "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558" ]
-  }, {
-    "@id" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000",
-    "@type" : "sport:CompetitionPhase",
-    "label" : "Heat 1",
-    "competition" : "http://example.com/Competition/OLYS2020-CTRMSPRINT",
-    "competitionPhase" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL",
-    "competitionPhaseType" : "http://cv.iptc.org/newscodes/sptournamentphase/heat"
-  }, {
-    "@id" : "http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010001",
-    "@type" : "sport:Event",
-    "label" : "Heat 1, Race 1",
-    "competitionPhase" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000",
-    "eventParticipation" : [ "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923", "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558" ],
-    "startDateTime" : "2021-08-06T16:10:00+09:00"
-  }, {
-    "@id" : "http://example.com/Event/OLYS2020-CTRMSPRINT-SFNL-00010002",
-    "@type" : "sport:Event",
-    "label" : "Heat 1, Race 2",
-    "competitionPhase" : "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000",
-    "eventParticipation" : [ "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923", "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558" ],
-    "startDateTime" : "2021-08-06T16:52:00+09:00"
-  }, {
-    "@id" : "http://example.com/GoverningBody/IOC",
-    "@type" : "sport:GoverningBody",
-    "label" : "International Olympic Committee"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001",
-    "participationBy" : "http://example.com/Athlete/PI1436558",
-    "rank" : "2",
-    "score" : "+0.107",
-    "scoreUnits" : "http://cv.iptc.org/newscodes/spscoreunits/relative"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010001",
-    "participationBy" : "http://example.com/Athlete/PI1467923",
-    "rank" : "1",
-    "score" : "9.692",
-    "scoreUnits" : "http://cv.iptc.org/newscodes/spscoreunits/time-absolute"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Denis Dmitriev participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002",
-    "participationBy" : "http://example.com/Athlete/PI1436558",
-    "rank" : "2",
-    "score" : "+0.010",
-    "scoreUnits" : "http://cv.iptc.org/newscodes/spscoreunits/relative"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jeffrey Hoogland participation in Event OLYS2020-CTRMSPRINT-SFNL-00010002",
-    "participationBy" : "http://example.com/Athlete/PI1467923",
-    "rank" : "1",
-    "score" : "9.786",
-    "scoreUnits" : "http://cv.iptc.org/newscodes/spscoreunits/time-absolute"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1436558",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Denis Dmitriev participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL",
-    "participationBy" : "http://example.com/Athlete/PI1436558",
-    "rank" : "2"
-  }, {
-    "@id" : "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923",
-    "@type" : "sport:IndividualParticipation",
-    "label" : "Jeffrey Hoogland participation in Competition Phase OLYS2020-CTRMSPRINT-SFNL",
-    "participationBy" : "http://example.com/Athlete/PI1467923",
-    "rank" : "1"
-  } ],
-  "@context" : {
-    "nationality" : {
-      "@id" : "https://sportschema.org/ontologies/main/nationality"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
-    "competitionPhaseType" : {
-      "@id" : "https://sportschema.org/ontologies/main/competitionPhaseType",
-      "@type" : "@id"
-    },
-    "competition" : {
-      "@id" : "https://sportschema.org/ontologies/main/competition",
-      "@type" : "@id"
-    },
-    "startDateTime" : {
-      "@id" : "https://sportschema.org/ontologies/main/startDateTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "eventParticipation" : {
-      "@id" : "https://sportschema.org/ontologies/main/eventParticipation",
-      "@type" : "@id"
-    },
-    "competitionPhase" : {
-      "@id" : "https://sportschema.org/ontologies/main/competitionPhase",
-      "@type" : "@id"
-    },
-    "rank" : {
-      "@id" : "https://sportschema.org/ontologies/main/rank"
-    },
-    "participationBy" : {
-      "@id" : "https://sportschema.org/ontologies/main/participationBy",
-      "@type" : "@id"
-    },
-    "phaseParticipation" : {
-      "@id" : "https://sportschema.org/ontologies/main/phaseParticipation",
-      "@type" : "@id"
-    },
-    "sport" : "https://sportschema.org/ontologies/main/",
-    "parentCompetition" : {
-      "@id" : "https://sportschema.org/ontologies/main/parentCompetition",
-      "@type" : "@id"
-    },
-    "competitionType" : {
-      "@id" : "https://sportschema.org/ontologies/main/competitionType",
-      "@type" : "@id"
-    },
-    "scoreUnits" : {
-      "@id" : "https://sportschema.org/ontologies/main/scoreUnits",
-      "@type" : "@id"
-    },
-    "score" : {
-      "@id" : "https://sportschema.org/ontologies/main/score"
-    },
-    "governingBody" : {
-      "@id" : "https://sportschema.org/ontologies/main/governingBody",
-      "@type" : "@id"
-    },
-    "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
-    "spesaction" : "http://cv.iptc.org/newscodes/spesaction/",
-    "schemaorg" : "https://schema.org/",
-    "spsocactiontype" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "xsd" : "http://www.w3.org/2001/XMLSchema#",
-    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "spstat" : "https://sportschema.org/ontologies/corestatistics/",
-    "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
-    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spcompetitionscope" : "http://cv.iptc.org/newscodes/spcompetitionscope/",
-    "medtop" : "http://cv.iptc.org/newscodes/mediatopic/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spct" : "http://cv.iptc.org/newscodes/spct/",
-    "spsocstat" : "https://sportschema.org/ontologies/soccer/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
-  }
 }

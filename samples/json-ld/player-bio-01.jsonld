@@ -1,132 +1,170 @@
 {
-  "@graph" : [ {
-    "@id" : "http://example.com/Athlete/p10039",
-    "@type" : "sport:Athlete",
-    "label" : "Joe Thornton",
-    "dateOfBirth" : "1979-07-02"
-  }, {
-    "@id" : "http://example.com/Membership/FLAnhl-p10039",
-    "@type" : "sport:IndividualMembership",
-    "label" : "Joe Thornton membership of Florida Panthers",
-    "membershipBy" : "http://example.com/Athlete/p10039",
-    "membershipOf" : "http://example.com/Team/FLAnhl",
-    "positionRegular" : "http://cv.iptc.org/newscodes/spichpos/center",
-    "uniformNumber" : "19"
-  }, {
-    "@id" : "http://example.com/Membership/l.nhl.com-BOS-p10039",
-    "@type" : "sport:Membership",
-    "label" : "Joe Thornton membership of Boston Bruins",
-    "endDate" : "2005-11-30",
-    "membershipBy" : "http://example.com/Athlete/p10039",
-    "membershipOf" : "http://example.com/Team/l.nhl.com-BOS",
-    "membershipStatus" : "http://cv.iptc.org/newscodes/spphasestatus/inactive",
-    "startDate" : "1997-06-21"
-  }, {
-    "@id" : "http://example.com/Membership/l.nhl.com-FLA-p10039",
-    "@type" : "sport:Membership",
-    "label" : "Joe Thornton membership of Florida Panthers",
-    "membershipBy" : "http://example.com/Athlete/p10039",
-    "membershipOf" : "http://example.com/Team/l.nhl.com-FLA",
-    "membershipStatus" : "http://cv.iptc.org/newscodes/spphasestatus/active",
-    "startDate" : "2021-08-13"
-  }, {
-    "@id" : "http://example.com/Membership/l.nhl.com-SJ-p10039",
-    "@type" : "sport:Membership",
-    "label" : "Joe Thornton membership of San Jose Sharks",
-    "endDate" : "2020-10-06",
-    "membershipBy" : "http://example.com/Athlete/p10039",
-    "membershipOf" : "http://example.com/Team/l.nhl.com-SJ",
-    "membershipStatus" : "http://cv.iptc.org/newscodes/spphasestatus/inactive",
-    "startDate" : "2005-11-30"
-  }, {
-    "@id" : "http://example.com/Membership/l.nhl.com-TOR-p10039",
-    "@type" : "sport:Membership",
-    "label" : "Joe Thornton membership of Toronto Maple Leafs",
-    "endDate" : "2021-05-31",
-    "membershipBy" : "http://example.com/Athlete/p10039",
-    "membershipOf" : "http://example.com/Team/l.nhl.com-TOR",
-    "membershipStatus" : "http://cv.iptc.org/newscodes/spphasestatus/inactive",
-    "startDate" : "2020-10-06"
-  }, {
-    "@id" : "http://example.com/Team/FLAnhl",
-    "@type" : "sport:Team",
-    "label" : "Florida Panthers",
-    "membership" : "http://example.com/Membership/FLAnhl-p10039"
-  }, {
-    "@id" : "http://example.com/Team/l.nhl.com-BOS",
-    "@type" : "sport:Team",
-    "label" : "Boston Bruins",
-    "membership" : "http://example.com/Membership/l.nhl.com-BOS-p10039"
-  }, {
-    "@id" : "http://example.com/Team/l.nhl.com-FLA",
-    "@type" : "sport:Team",
-    "label" : "Florida Panthers",
-    "membership" : "http://example.com/Membership/l.nhl.com-FLA-p10039"
-  }, {
-    "@id" : "http://example.com/Team/l.nhl.com-SJ",
-    "@type" : "sport:Team",
-    "label" : "San Jose Sharks",
-    "membership" : "http://example.com/Membership/l.nhl.com-SJ-p10039"
-  }, {
-    "@id" : "http://example.com/Team/l.nhl.com-TOR",
-    "@type" : "sport:Team",
-    "label" : "Toronto Maple Leafs",
-    "membership" : "http://example.com/Membership/l.nhl.com-TOR-p10039"
-  } ],
-  "@context" : {
-    "membership" : {
-      "@id" : "https://sportschema.org/ontologies/main/membership",
-      "@type" : "@id"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
-    },
-    "uniformNumber" : {
-      "@id" : "https://sportschema.org/ontologies/main/uniformNumber"
-    },
-    "positionRegular" : {
-      "@id" : "https://sportschema.org/ontologies/main/positionRegular",
-      "@type" : "@id"
-    },
-    "membershipOf" : {
-      "@id" : "https://sportschema.org/ontologies/main/membershipOf",
-      "@type" : "@id"
-    },
-    "membershipBy" : {
-      "@id" : "https://sportschema.org/ontologies/main/membershipBy",
-      "@type" : "@id"
-    },
-    "startDate" : {
-      "@id" : "https://sportschema.org/ontologies/main/startDate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "membershipStatus" : {
-      "@id" : "https://sportschema.org/ontologies/main/membershipStatus",
-      "@type" : "@id"
-    },
-    "endDate" : {
-      "@id" : "https://sportschema.org/ontologies/main/endDate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "dateOfBirth" : {
-      "@id" : "https://sportschema.org/ontologies/main/dateOfBirth",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "spsocrole" : "http://cv.iptc.org/newscodes/spsocrole/",
-    "spesaction" : "http://cv.iptc.org/newscodes/spesaction/",
-    "schemaorg" : "https://schema.org/",
-    "spsocactiontype" : "http://cv.iptc.org/newscodes/spsocaction/",
-    "xsd" : "http://www.w3.org/2001/XMLSchema#",
-    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "spstat" : "https://sportschema.org/ontologies/corestatistics/",
-    "spplayerstatus" : "http://cv.iptc.org/newscodes/spplayerstatus/",
-    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "spcompetitionscope" : "http://cv.iptc.org/newscodes/spcompetitionscope/",
-    "medtop" : "http://cv.iptc.org/newscodes/mediatopic/",
-    "spesstat" : "http://cv.iptc.org/newscodes/spesstat/",
-    "spct" : "http://cv.iptc.org/newscodes/spct/",
-    "sport" : "https://sportschema.org/ontologies/main/",
-    "spsocstat" : "https://sportschema.org/ontologies/soccer/",
-    "speventoutcome" : "http://cv.iptc.org/newscodes/speventoutcome/"
-  }
+    "@graph": [
+        {
+            "@id": "http://example.com/Team/l.nhl.com-SJ",
+            "sport:membership": {
+                "@id": "http://example.com/Membership/l.nhl.com-SJ-p10039"
+            },
+            "rdfs:label": "San Jose Sharks",
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Membership/l.nhl.com-SJ-p10039",
+            "sport:startDate": {
+                "@value": "2005-11-30",
+                "@type": "xsd:date"
+            },
+            "sport:membershipStatus": {
+                "@id": "http://cv.iptc.org/newscodes/spphasestatus/inactive"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/l.nhl.com-SJ"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/p10039"
+            },
+            "sport:endDate": {
+                "@value": "2020-10-06",
+                "@type": "xsd:date"
+            },
+            "rdfs:label": "Joe Thornton membership of San Jose Sharks",
+            "@type": "sport:Membership"
+        },
+        {
+            "@id": "http://example.com/Membership/FLAnhl-p10039",
+            "sport:uniformNumber": "19",
+            "sport:positionRegular": {
+                "@id": "http://cv.iptc.org/newscodes/spichpos/center"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/FLAnhl"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/p10039"
+            },
+            "rdfs:label": "Joe Thornton membership of Florida Panthers",
+            "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Team/FLAnhl",
+            "sport:membership": {
+                "@id": "http://example.com/Membership/FLAnhl-p10039"
+            },
+            "rdfs:label": "Florida Panthers",
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Athlete/p10039",
+            "sport:dateOfBirth": {
+                "@value": "1979-07-02",
+                "@type": "xsd:date"
+            },
+            "rdfs:label": "Joe Thornton",
+            "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Team/l.nhl.com-BOS",
+            "sport:membership": {
+                "@id": "http://example.com/Membership/l.nhl.com-BOS-p10039"
+            },
+            "rdfs:label": "Boston Bruins",
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Membership/l.nhl.com-BOS-p10039",
+            "sport:startDate": {
+                "@value": "1997-06-21",
+                "@type": "xsd:date"
+            },
+            "sport:membershipStatus": {
+                "@id": "http://cv.iptc.org/newscodes/spphasestatus/inactive"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/l.nhl.com-BOS"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/p10039"
+            },
+            "sport:endDate": {
+                "@value": "2005-11-30",
+                "@type": "xsd:date"
+            },
+            "rdfs:label": "Joe Thornton membership of Boston Bruins",
+            "@type": "sport:Membership"
+        },
+        {
+            "@id": "http://example.com/Team/l.nhl.com-TOR",
+            "sport:membership": {
+                "@id": "http://example.com/Membership/l.nhl.com-TOR-p10039"
+            },
+            "rdfs:label": "Toronto Maple Leafs",
+            "@type": "sport:Team"
+        },
+        {
+            "@id": "http://example.com/Membership/l.nhl.com-TOR-p10039",
+            "sport:startDate": {
+                "@value": "2020-10-06",
+                "@type": "xsd:date"
+            },
+            "sport:membershipStatus": {
+                "@id": "http://cv.iptc.org/newscodes/spphasestatus/inactive"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/l.nhl.com-TOR"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/p10039"
+            },
+            "sport:endDate": {
+                "@value": "2021-05-31",
+                "@type": "xsd:date"
+            },
+            "rdfs:label": "Joe Thornton membership of Toronto Maple Leafs",
+            "@type": "sport:Membership"
+        },
+        {
+            "@id": "http://example.com/Membership/l.nhl.com-FLA-p10039",
+            "sport:startDate": {
+                "@value": "2021-08-13",
+                "@type": "xsd:date"
+            },
+            "sport:membershipStatus": {
+                "@id": "http://cv.iptc.org/newscodes/spphasestatus/active"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/l.nhl.com-FLA"
+            },
+            "sport:membershipBy": {
+                "@id": "http://example.com/Athlete/p10039"
+            },
+            "rdfs:label": "Joe Thornton membership of Florida Panthers",
+            "@type": "sport:Membership"
+        },
+        {
+            "@id": "http://example.com/Team/l.nhl.com-FLA",
+            "sport:membership": {
+                "@id": "http://example.com/Membership/l.nhl.com-FLA-p10039"
+            },
+            "rdfs:label": "Florida Panthers",
+            "@type": "sport:Team"
+        }
+    ],
+    "@context": {
+        "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
+        "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
+        "schemaorg": "https://schema.org/",
+        "spsocactiontype": "http://cv.iptc.org/newscodes/spsocaction/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "spstat": "https://sportschema.org/ontologies/corestatistics/",
+        "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
+        "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
+        "spesstat": "http://cv.iptc.org/newscodes/spesstat/",
+        "spct": "http://cv.iptc.org/newscodes/spct/",
+        "sport": "https://sportschema.org/ontologies/main/",
+        "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",
+        "spsocstat": "https://sportschema.org/ontologies/soccer/"
+    }
 }
