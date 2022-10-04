@@ -11,18 +11,19 @@ SELECT ?teamName ?playerName ?eventPosition
 WHERE {
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-		   sport:eventParticipation ?Participation .
-    ?Participation rdf:type sport:TeamParticipation ;
+		   sport:eventParticipation ?teamParticipation ;
+		   sport:eventParticipation ?individualParticipation .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
                    sport:participationBy ?team .
     ?team rdf:type sport:Team ;
 		  rdfs:label ?teamName ;
 		  sport:membership ?playerMembership .
 	?playerMembership rdf:type sport:IndividualMembership ;
 			sport:membershipBy ?player .
-    ?tParticipation rdf:type sport:IndividualParticipation ;
+    ?individualParticipation rdf:type sport:IndividualParticipation ;
     				 sport:participationBy ?player ;
-                         sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> ;
-                         sport:positionEvent ?eventPosition .
+                     sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> ;
+                     sport:positionEvent ?eventPosition .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName . 
     FILTER (?event = <http://example.com/Event/E2128610>)
