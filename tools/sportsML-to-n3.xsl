@@ -125,7 +125,6 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                     <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/> "<xsl:value-of select="newsml:name"/>" .
                     <xsl:value-of select="$competition-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'sport','»')"/>~<xsl:value-of select="concat('«',$medtop-ns,$sport-code,'»')"/> .
 
-                    
                 <xsl:for-each select="newsml:broader">
                     <xsl:variable name="parent-competition-key" select="@qcode"/>
 
