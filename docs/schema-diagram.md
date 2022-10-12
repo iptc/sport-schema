@@ -3,7 +3,7 @@ layout: page
 title: Schema diagram
 nav_order: 4
 description: 
-permalink: /schema-overview/
+permalink: /schema-diagram/
 ---
 # IPTC Sport Model schema diagram
 

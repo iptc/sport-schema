@@ -5,6 +5,7 @@ permalink: /about/
 nav_order: 2
 ---
 
+# About the IPTC Sport Schema
 
 IPTC Sport Schema was created by the IPTC Sports Content Working group, the team behind
 [SportsML](https://iptc.org/standards/sportsml-g2/).
