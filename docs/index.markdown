@@ -39,10 +39,11 @@ We want the resulting data model and vocabulary to be:
 
 We have created a set of test data based on many of the sample files from the SportsML specification. The SportsML data, converted to RDF triples via our SportsML-to-Sport Schema XSLT stylesheet, has been uploaded to a server running the Fuseki tool which can be queried using SPARQL, the query language for RDF.
 
-If you haven't seen SPARQL before, 
+[Explore IPTC Sport Schema SPARQL Playground](http://sport.iptc.org/){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
+
+If you haven't seen SPARQL before, it's quite simmilar to SQL. We have created many sample queries that can be used without any SPARQL knowledge. 
 
 You can also run the example queries from your local machine using the arq tool from the Apache Jena project (or other SPARQL tools).
 
-See the [running example queries](running-example-queries) page
+See the [running example queries](running-example-queries) page for more detailed information.
 
-Just the Docs is built for [Jekyll](https://jekyllrb.com), a static site generator. View the [Jekyll quick start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special plugins and can run on GitHub Pages' standard Jekyll compiler. The [Jekyll SEO Tag plugin](https://github.com/jekyll/jekyll-seo-tag) is included by default (no need to run any special installation) to inject SEO and open graph metadata on docs pages. For information on how to configure SEO and open graph metadata visit the [Jekyll SEO Tag usage guide](https://jekyll.github.io/jekyll-seo-tag/usage/).
