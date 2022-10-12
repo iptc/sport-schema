@@ -20,125 +20,125 @@
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema"@en ;
     rdfs:label "IPTC Sport Schema"@en ;
-    dcterms:created "2021-07-20"^^xsd:date ;
+    dcterms:created "2022-10-17"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022"@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "A high level model to describe the core elements of competitive sport"@en .
 
 ##### Classes #####
 
-sport:Action rdf:type rdfs:Class ;
+sport:Action rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Action"@en ;
     rdfs:comment "Something that happens during an event: a kick, a goal, a foul etc"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Agent rdf:type rdfs:Class ;
+sport:Agent rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Agent"@en ;
     rdfs:comment "A participant in a sport event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Associate rdf:type rdfs:Class ;
+sport:Associate rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Associate"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Athlete rdf:type rdfs:Class ;
+sport:Athlete rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Athlete"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A competitor in an individual event or a member of a team"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Competition rdf:type rdfs:Class ;
+sport:Competition rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competition"@en ;
     rdfs:comment "A grouping of events usually based on proximity by time."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:CompetitionPhase rdf:type rdfs:Class ;
+sport:CompetitionPhase rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competition Phase"@en ;
     rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:CompetitorParticipation rdf:type rdfs:Class ;
+sport:CompetitorParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competitor Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an actor that can win or lose an event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Event rdf:type rdfs:Class ;
+sport:Event rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Event"@en ;
     rdfs:comment "A contest of competitive actions that generates statistical results."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:GoverningBody rdf:type rdfs:Class ;
+sport:GoverningBody rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Governing Body"@en ;
     rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Individual rdf:type rdfs:Class ;
+sport:Individual rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual"@en ;
     rdfs:subClassOf sport:Agent ;
     rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:IndividualMembership rdf:type rdfs:Class ;
+sport:IndividualMembership rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual Membership"@en ;
     rdfs:subClassOf sport:Membership ;
     rdfs:comment "A player's membership in a team"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:IndividualParticipation rdf:type rdfs:Class ;
+sport:IndividualParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual Participation"@en ;
     rdfs:subClassOf sport:CompetitorParticipation ;
     rdfs:comment "The participation of an individual in an event"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:AssociateParticipation rdf:type rdfs:Class ;
+sport:AssociateParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Associate Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The particpation of an associate who supports players and teams, e.g. coach, manager, trainer"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Membership rdf:type rdfs:Class ;
+sport:Membership rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Membership"@en ;
     rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Official rdf:type rdfs:Class ;
+sport:Official rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Official"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A person who ensures that the sports event is played according to its rules. Also referred to as umpire or referee."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:OfficialParticipation rdf:type rdfs:Class ;
+sport:OfficialParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Official Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an offcial in an event"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Participation rdf:type rdfs:Class ;
+sport:Participation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Participation"@en ;
     rdfs:comment "The participation of an actor in an event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:ParticipationSplit rdf:type rdfs:Class ;
+sport:ParticipationSplit rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Participation Split"@en ;
     rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Site rdf:type rdfs:Class ;
+sport:Site rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Site"@en ;
     rdfs:comment "The location where an Event takes place"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Team rdf:type rdfs:Class ;
+sport:Team rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Team"@en ;
     rdfs:subClassOf sport:Agent ;
     rdfs:comment "A group of individuals competing as one entity"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:TeamParticipation rdf:type rdfs:Class ;
+sport:TeamParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Team Participation"@en ;
     rdfs:subClassOf sport:CompetitorParticipation ;
     rdfs:comment "The participation of a team in an event"@en ;
@@ -321,9 +321,9 @@ sport:endDate rdf:type rdf:Property ;
 
 sport:endDateTime rdf:type rdf:Property ;
     rdfs:label "end datetime"@en ;
-    rdfs:comment "The date and time on which an event ends"@en ;
+    rdfs:comment "The date and time at which an event ends"@en ;
     rdfs:domain sport:Event ;
-    rdfs:range xsd:date ;
+    rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:eventOutcome rdf:type rdf:Property ;
@@ -413,9 +413,9 @@ sport:sport rdf:type rdf:Property ;
 
 sport:startDateTime rdf:type rdf:Property ;
     rdfs:label "start datetime"@en ;
-    rdfs:comment "The date on which an event begins"@en ;
+    rdfs:comment "The date and time at which an event begins"@en ;
     schemaorg:domain sport:Event ;
-    rdfs:range xsd:date ;
+    rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:startDate rdf:type rdf:Property ;
