@@ -1,3 +1,11 @@
+---
+layout: page
+title: Schema overview
+nav_order: 3
+description: "Explaining the thinking behind the structure of the IPTC Sport Schema"
+permalink: /schema-overview/
+---
+
 # IPTC Sport Schema overview
 
 The IPTC Sport Schema aims to be simple and comprehensive, while leveraging the structures already used in IPTC's 10-year-old
