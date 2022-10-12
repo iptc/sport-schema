@@ -24,6 +24,15 @@ NOTE: Please note that the schema documented on this site is _**not a production
 Sport Schema**_. We have released our initial work in order to solicit feedback and suggestions
 from others. _**Please do not rely on this model for your production work - yet!**_
 
+## Project goals and principles
+
+We want the resulting data model and vocabulary to be:
+
+* Comprehensive - it should be able to handle schedules, results and statistics for many types of sports: team, individual and head-to-head.
+* Easy to use - should be approachable by non-experts in Semantic Web technologies. For example, the JSON-LD versions should be simple enough that they can be parsed by any competent developer who is comfortable with handling JSON files.
+* Easy to query - for those who want to use the power of RDF features such as SPARQL, querying data should be as simple as possible.
+* Compatible with schema.org - we want the IPTC Sport Schema to be self-contained, but it should be possible to use it alongside schema.org in the future.
+
 ## Getting started
 
 ### Exploring the example data using SPARQL
