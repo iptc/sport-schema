@@ -29,7 +29,7 @@ capture richer information about people, teams and events.
 ### Summary
 
 The model describes three component parts that make up the domain of sports data:
-* The structure of a competition. For example matches with rounds within a competition instance that is within a competition series.
+* The structure of a competition. For example matches played in a round, which is itself within a competition instance, that is part of a competition series.
 * The participation in a competition, event or action. Teams, atheletes and officials actively particpate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
