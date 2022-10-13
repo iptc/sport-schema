@@ -26,6 +26,16 @@ The practical result of this is that when querying, we can't simply say "tell me
 This has led to us creating several generic structures which allow us to
 capture richer information about people, teams and events.
 
+### Summary
+
+The model aims to describe three component parts that make up sports data.
+* The structure of a competition. For example matches with rounds within a competion instance that is within a competion series.
+* The participation in a competition, event or action. Teams, atheletes and officials actively particpate in competitive events and generate stats about that participation.
+* Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
+
+The follow section describes the patterns used for each of these componet parts of the model.
+
+
 ### Linking people to teams: the "Membership" class
 
 In a SportsML document, it is sufficient to say "Athlete A and
