@@ -4,27 +4,27 @@
 ' IPTC Sport Model - last updated 2022-10-05
 
 ' RDF Classes defined in our ontology:
-class Action {
-  rdfs:label : string
-}
-
-class Agent {
-  rdfs:label : string
-}
-
-class Associate {
-}
-
-class Athlete {
-}
-
 class ParticipatableThing {
   sport : CV Value
 }
 
+class Action {
+}
+
 class Competition {
-  rdfs:label : string
   competitionType : CV Value
+}
+
+class CompetitionPhase {
+  competitionFormat : CV Value
+  competitionPhaseType : CV Value
+}
+
+class Event {
+  eventOutcomeType : CV Value
+  attendance : integer
+  startDateTime : dateTime
+  endDateTime : dateTime
 }
 
 class CompetitorParticipation {
@@ -34,35 +34,31 @@ class CompetitorParticipation {
   scoreUnits : CV Value 
 }
 
-class CompetitionPhase {
-  rdfs:label : string
-  sport : CV Value
-  competitionFormat : CV Value
-  competitionPhaseType : CV Value
-}
-
-class Event {
-  rdfs:label : string
-  sport : CV Value
-  eventOutcomeType : CV Value
-  attendance : integer
-  startDateTime : dateTime
-  endDateTime : dateTime
-}
-
 class GoverningBody {
-  rdfs:label : string
+}
+
+class Agent {
 }
 
 class Individual {
-  rdfs:label : string
   nationality : string
   dateOfBirth : date
 }
 
-class IndividualMembership {
-  uniformNumber : integer
-  positionRegular : CV Value
+class Associate {
+}
+
+class Athlete {
+}
+
+class Official {
+}
+
+class Team {
+}
+
+class Participation {
+  positionEvent : CV Value
 }
 
 class IndividualParticipation {
@@ -72,35 +68,28 @@ class IndividualParticipation {
 class AssociateParticipation {
 }
 
-class Membership {
-  rdfs:label : string
-  startDate : date
-  endDate : date
-}
-
-class Official {
-}
-
 class OfficialParticipation {
 }
 
-class Participation {
-  positionEvent : CV Value
+class TeamParticipation {
+  alignment : CV Value
 }
 
 class ParticipationSplit {
   participationSplitType : CV Value
 }
 
+class Membership {
+  startDate : date
+  endDate : date
+}
+
+class IndividualMembership {
+  uniformNumber : integer
+  positionRegular : CV Value
+}
+
 class Site {
-  rdfs:label : string
-}
-
-class Team {
-}
-
-class TeamParticipation {
-  alignment : CV Value
 }
 
 ' subclass relationships
@@ -126,17 +115,13 @@ Individual <|-- Official
 ParticipatableThing .. Participation : > participation
 ParticipatableThing .. ParticipatableThing : > parent
 
-' can we really get rid of all of these...??
-'CompetitionPhase .. CompetitionPhase : > competitionPhase
-'Event .. Event : > subEvent
-
 Action .. Event : > actionInEvent
 Event .. Competition : > eventInCompetition
 Event .. CompetitionPhase : > eventInCompetitionPhase
 CompetitionPhase .. Competition : > phaseInCompetition
 
 Competition .. GoverningBody : > governedBy
-Event .. Site :  > site
+Event .. Site :  > location
 IndividualMembership .. Individual : > membershipBy
 Participation .. Agent : > participationBy
 Participation .. ParticipationSplit : participationSplit

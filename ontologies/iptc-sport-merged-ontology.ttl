@@ -20,125 +20,134 @@
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema"@en ;
     rdfs:label "IPTC Sport Schema"@en ;
-    dcterms:created "2021-07-20"^^xsd:date ;
+    dcterms:created "2022-10-17"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022"@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "A high level model to describe the core elements of competitive sport"@en .
 
 ##### Classes #####
 
-sport:Action rdf:type rdfs:Class ;
+sport:Action rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Action"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
     rdfs:comment "Something that happens during an event: a kick, a goal, a foul etc"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Agent rdf:type rdfs:Class ;
+sport:Agent rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Agent"@en ;
     rdfs:comment "A participant in a sport event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Associate rdf:type rdfs:Class ;
+sport:Associate rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Associate"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Athlete rdf:type rdfs:Class ;
+sport:Athlete rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Athlete"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A competitor in an individual event or a member of a team"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Competition rdf:type rdfs:Class ;
+sport:Competition rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competition"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
     rdfs:comment "A grouping of events usually based on proximity by time."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:CompetitionPhase rdf:type rdfs:Class ;
+sport:CompetitionPhase rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competition Phase"@en ;
+    rdfs:subClassOf sport:Competition ;
     rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:CompetitorParticipation rdf:type rdfs:Class ;
+sport:CompetitorParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Competitor Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an actor that can win or lose an event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Event rdf:type rdfs:Class ;
+sport:ParticipatableThing rdf:type rdfs:Class, owl:Class ;
+    rdfs:label "Participatable Thing"@en ;
+    rdfs:comment "An abstract superclass for anything that can be participated in, such as an Event, Competition or Action."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Event rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Event"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
     rdfs:comment "A contest of competitive actions that generates statistical results."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:GoverningBody rdf:type rdfs:Class ;
+sport:GoverningBody rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Governing Body"@en ;
     rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Individual rdf:type rdfs:Class ;
+sport:Individual rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual"@en ;
     rdfs:subClassOf sport:Agent ;
     rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:IndividualMembership rdf:type rdfs:Class ;
+sport:IndividualMembership rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual Membership"@en ;
     rdfs:subClassOf sport:Membership ;
     rdfs:comment "A player's membership in a team"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:IndividualParticipation rdf:type rdfs:Class ;
+sport:IndividualParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Individual Participation"@en ;
     rdfs:subClassOf sport:CompetitorParticipation ;
     rdfs:comment "The participation of an individual in an event"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:AssociateParticipation rdf:type rdfs:Class ;
+sport:AssociateParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Associate Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The particpation of an associate who supports players and teams, e.g. coach, manager, trainer"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Membership rdf:type rdfs:Class ;
+sport:Membership rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Membership"@en ;
     rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Official rdf:type rdfs:Class ;
+sport:Official rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Official"@en ;
     rdfs:subClassOf sport:Individual ;
     rdfs:comment "A person who ensures that the sports event is played according to its rules. Also referred to as umpire or referee."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:OfficialParticipation rdf:type rdfs:Class ;
+sport:OfficialParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Official Participation"@en ;
     rdfs:subClassOf sport:Participation ;
     rdfs:comment "The participation of an offcial in an event"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Participation rdf:type rdfs:Class ;
+sport:Participation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Participation"@en ;
     rdfs:comment "The participation of an actor in an event."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:ParticipationSplit rdf:type rdfs:Class ;
+sport:ParticipationSplit rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Participation Split"@en ;
     rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Site rdf:type rdfs:Class ;
+sport:Site rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Site"@en ;
     rdfs:comment "The location where an Event takes place"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:Team rdf:type rdfs:Class ;
+sport:Team rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Team"@en ;
     rdfs:subClassOf sport:Agent ;
     rdfs:comment "A group of individuals competing as one entity"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:TeamParticipation rdf:type rdfs:Class ;
+sport:TeamParticipation rdf:type rdfs:Class, owl:Class ;
     rdfs:label "Team Participation"@en ;
     rdfs:subClassOf sport:CompetitorParticipation ;
     rdfs:comment "The participation of a team in an event"@en ;
@@ -146,89 +155,61 @@ sport:TeamParticipation rdf:type rdfs:Class ;
 
 ##### Object properties #####
 
-sport:actionParticipation rdf:type rdf:Property ;
-    rdfs:label "action participation"@en ;
-    rdfs:comment "Link to the participation by an agent in a single action"@en ;
-    rdfs:domain sport:Action ;
+sport:parent rdf:type rdf:Property ;
+    rdfs:label "parent"@en ;
+    rdfs:comment "Link from a ParticipatableThing its parent, to represent parent Event, CompetitionPhase etc"@en ;
+    rdfs:domain sport:ParticipatableThing ;
+    rdfs:range sport:ParticipatableThing ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participation rdf:type rdf:Property ;
+    rdfs:label "participation"@en ;
+    rdfs:comment "Link from a ParticipatableThing to a participation by an Agent"@en ;
+    rdfs:domain sport:ParticipatableThing ;
     rdfs:range sport:Participation ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competition rdf:type rdf:Property ;
-    rdfs:label "competition"@en ;
+sport:eventInCompetition rdf:type rdf:Property ;
+    rdfs:label "event in competition"@en ;
     rdfs:comment "The Competition that an Event is part of"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:Competition ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competitionParticipation rdf:type rdf:Property ;
-    rdfs:label "competition participation"@en ;
-    rdfs:comment "Link to the participation by an agent in a group of events"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range sport:Participation ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:competitionPhase rdf:type rdf:Property ;
-    rdfs:label "competition phase"@en ;
+sport:eventInCompetitionPhase rdf:type rdf:Property ;
+    rdfs:label "event in competition phase"@en ;
     rdfs:comment "The CompetitionPhase that an Event is part of (such as a round or a finals phase)"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:CompetitionPhase ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competitionType rdf:type rdf:Property ;
-    rdfs:label "competition type"@en ;
-    rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range xsd:anyURI ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:phaseParticipation rdf:type rdf:Property ;
-    rdfs:label "phase participation"@en ;
-    rdfs:comment "Link to the participation by an agent in a competition phase"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    rdfs:range sport:Participation ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:event rdf:type rdf:Property ;
-    rdfs:label "event"@en ;
-    rdfs:comment "The event in which an Action took place"@en ;
+sport:actionInEvent rdf:type rdf:Property ;
+    rdfs:label "action in event"@en ;
+    rdfs:comment "Link to the event in which an Action took place"@en ;
     rdfs:domain sport:Action ;
     rdfs:range sport:Event ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:eventParticipation rdf:type rdf:Property ;
-    rdfs:label "event participation"@en ;
-    rdfs:comment "Link to the participation by an agent in a single event"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Participation ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventStatus rdf:type rdf:Property ;
-    rdfs:label "event status"@en ;
-    rdfs:comment "Event's current status (e.g. post-event)"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range xsd:anyURI ;
-    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:governingBody rdf:type rdf:Property ;
+sport:governedBy rdf:type rdf:Property ;
     rdfs:label "governing body"@en ;
-    rdfs:comment "The organisation that regulates a given Parent Competition"@en ;
+    rdfs:comment "Link to the organisation that regulates a given Competition"@en ;
     rdfs:domain sport:Competition ;
     rdfs:range sport:GoverningBody ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:membership rdf:type rdf:Property ;
-    rdfs:label "membership"@en ;
-    rdfs:comment "Link between a team and a membership object"@en ;
-    rdfs:domain sport:Team ;
-    rdfs:range sport:Membership ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+# this is inverse of membershipOf so I think we don't need to define it..?
+#sport:membership rdf:type rdf:Property ;
+#    rdfs:label "membership"@en ;
+#    rdfs:comment "Link between a team and a membership object"@en ;
+#    rdfs:domain sport:Team ;
+#    rdfs:range sport:Membership ;
+#    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:membershipBy rdf:type rdf:Property ;
-    rdfs:label "membership by"@en ;
-    rdfs:comment "Link between a membership and an individual athlete"@en ;
+sport:member rdf:type rdf:Property ;
+    rdfs:label "member by"@en ;
+    rdfs:comment "Link between a membership and an individual"@en ;
     rdfs:domain sport:IndividualMembership ;
-    rdfs:range sport:Athlete ;
+    rdfs:range sport:Individual ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:membershipOf rdf:type rdf:Property ;
@@ -236,13 +217,6 @@ sport:membershipOf rdf:type rdf:Property ;
     rdfs:comment "Link between a membership and a team"@en ;
     rdfs:domain sport:IndividualMembership ;
     rdfs:range sport:Team ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:parentCompetition rdf:type rdf:Property ;
-    rdfs:label "parent competition"@en ;
-    rdfs:comment "Link to the ParentCompetition of a Competition"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range sport:Competition ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:participationBy rdf:type rdf:Property ;
@@ -259,18 +233,11 @@ sport:participationSplit rdf:type rdf:Property ;
     rdfs:range sport:ParticipationSplit ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:site rdf:type rdf:Property ;
-    rdfs:label "site"@en ;
+sport:location rdf:type rdf:Property ;
+    rdfs:label "location"@en ;
     rdfs:comment "Link to the location where an event takes place"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:Site ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:subEvent rdf:type rdf:Property ;
-    rdfs:label "subEvent"@en ;
-    rdfs:comment "A contest of competitive actions that comprises part of a competitive event."@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Event ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 ##### Data properties #####
@@ -305,6 +272,13 @@ sport:competitionPhaseType rdf:type rdf:Property ;
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:competitionType rdf:type rdf:Property ;
+    rdfs:label "competition type"@en ;
+    rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:dateOfBirth rdf:type rdf:Property ;
     rdfs:label "date of birth"@en ;
     rdfs:comment "The date of birth of a person"@en ;
@@ -321,9 +295,9 @@ sport:endDate rdf:type rdf:Property ;
 
 sport:endDateTime rdf:type rdf:Property ;
     rdfs:label "end datetime"@en ;
-    rdfs:comment "The date and time on which an event ends"@en ;
+    rdfs:comment "The date and time at which an event ends"@en ;
     rdfs:domain sport:Event ;
-    rdfs:range xsd:date ;
+    rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:eventOutcome rdf:type rdf:Property ;
@@ -340,6 +314,14 @@ sport:eventOutcomeType rdf:type rdf:Property ;
     rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: <http://cv.iptc.org/newscodes/speventoutcometype/> ;
     rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventStatus rdf:type rdf:Property ;
+    rdfs:label "event status"@en ;
+    rdfs:comment "Event's current status (e.g. post-event)"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:anyURI ;
+    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:nationality rdf:type rdf:Property ;
@@ -413,9 +395,9 @@ sport:sport rdf:type rdf:Property ;
 
 sport:startDateTime rdf:type rdf:Property ;
     rdfs:label "start datetime"@en ;
-    rdfs:comment "The date on which an event begins"@en ;
+    rdfs:comment "The date and time at which an event begins"@en ;
     schemaorg:domain sport:Event ;
-    rdfs:range xsd:date ;
+    rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:startDate rdf:type rdf:Property ;
@@ -431,7 +413,6 @@ sport:uniformNumber rdf:type rdf:Property ;
     rdfs:domain sport:IndividualMembership ;
     rdfs:range xsd:integer ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
 
 
 ## Action properties, keeping them separate for now
@@ -709,6 +690,24 @@ sport:zone rdf:type rdf:Property ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
+
+<https://sportschema.org/ontologies/american-football/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - American Football statistics"@en ;
+    rdfs:label "IPTC Sport Schema - American Football statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering american football statistics."@en .
+
 spamfstat:yardsPerAttempt rdf:type rdf:Property ; 
         rdfs:label "yardsPerAttempt"@en ; 
         rdfs:comment "The average yards gained per play."@en ; 
@@ -2460,6 +2459,24 @@ spamfstat:yardsPerAttempt rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/american-football> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spbblstat: <https://sportschema.org/ontologies/baseball/> .
+
+<https://sportschema.org/ontologies/baseball/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Baseball statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Baseball statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering baseball statistics."@en .
+
 spbblstat:average rdf:type rdf:Property ; 
         rdfs:label "average"@en ; 
         rdfs:comment "Average number of hits per at-bats"@en ; 
@@ -3266,6 +3283,24 @@ spbblstat:average rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/baseball> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spbkbstat: <https://sportschema.org/ontologies/basketball/> .
+
+<https://sportschema.org/ontologies/basketball/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Basketball statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Basketball statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering basketball statistics."@en .
+
 spbkbstat:minutesPlayed rdf:type rdf:Property ; 
         rdfs:label "minutesPlayed"@en ; 
         rdfs:comment "Number of minutes this player has spent playing during a particular game."@en ; 
@@ -3806,6 +3841,24 @@ spbkbstat:minutesPlayed rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/basketball> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spstat: <https://sportschema.org/ontologies/corestatistics/> .
+
+<https://sportschema.org/ontologies/corestatistics/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Core statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Core statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering core statistics across sports."@en .
+
 spstat:wins rdf:type rdf:Property ; 
         rdfs:label "wins"@en ; 
         rdfs:comment "Number of wins."@en ; 
@@ -4164,6 +4217,97 @@ spstat:wins rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+
+<https://sportschema.org/ontologies/esports/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - esports statistics"@en ;
+    rdfs:label "IPTC Sport Schema - esports statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering esports statistics."@en .
+
+spespstat:ADR rdf:type rdf:Property ; 
+        rdfs:label "ADR"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:FKdiff rdf:type rdf:Property ; 
+        rdfs:label "FKdiff"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:KAST rdf:type rdf:Property ; 
+        rdfs:label "KAST"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:assist rdf:type rdf:Property ; 
+        rdfs:label "assist"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:deaths rdf:type rdf:Property ; 
+        rdfs:label "deaths"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:flashassist rdf:type rdf:Property ; 
+        rdfs:label "flash assist"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:headshot rdf:type rdf:Property ; 
+        rdfs:label "headshot"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+
+spespstat:kills rdf:type rdf:Property ; 
+        rdfs:label "kills"@en ; 
+        rdfs:comment ""@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/esports> . 
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
+
+<https://sportschema.org/ontologies/golf/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Golf statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Golf statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf statistics."@en .
+
 spgolstat:rank rdf:type rdf:Property ; 
         rdfs:label "rank"@en ; 
         rdfs:comment "How this player ranks among the other competing players."@en ; 
@@ -4550,6 +4694,24 @@ spgolstat:rank rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spmcrstat: <https://sportschema.org/ontologies/motor-racing/> .
+
+<https://sportschema.org/ontologies/motor-racing/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Motor Racing statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Motor Racing statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering motor racing statistics."@en .
+
 spmcrstat:speedAverageRace rdf:type rdf:Property ; 
         rdfs:label "speedAverageRace"@en ; 
         rdfs:comment "The average speed of the race."@en ; 
@@ -4866,6 +5028,24 @@ spmcrstat:speedAverageRace rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/motor-racing> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix sprgxstat: <https://sportschema.org/ontologies/rugby/> .
+
+<https://sportschema.org/ontologies/rugby/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Rugby statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Rugby statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering rugby statistics."@en .
+
 sprgxstat:triesScored rdf:type rdf:Property ; 
         rdfs:label "triesScored"@en ; 
         rdfs:comment "Tries scored."@en ; 
@@ -5175,6 +5355,24 @@ sprgxstat:triesScored rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+
+<https://sportschema.org/ontologies/soccer/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Soccer statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Soccer statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering soccer statistics."@en .
+
 spsocstat:lineFormationRow rdf:type rdf:Property ; 
         rdfs:label "lineFormationRow"@en ; 
         rdfs:comment "Integer value ascending from closest to the goalkeeper. All players in the row closest to the goalkeeper have 1 as value, the next row 2, etc. Indicates row the player belonged to at the start of the game or when they entered the game."@en ; 
@@ -5701,6 +5899,24 @@ spsocstat:lineFormationRow rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/soccer> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix sptenstat: <https://sportschema.org/ontologies/tennis/> .
+
+<https://sportschema.org/ontologies/tennis/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Tennis statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Tennis statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering tennis statistics."@en .
+
 sptenstat:score rdf:type rdf:Property ; 
         rdfs:label "score"@en ; 
         rdfs:comment "Either love, 15, 30, 40, or game."@en ; 
@@ -6045,6 +6261,24 @@ sptenstat:score rdf:type rdf:Property ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/tennis> . 
         
 	
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spvolstat: <https://sportschema.org/ontologies/volleyball/> .
+
+<https://sportschema.org/ontologies/volleyball/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Volleyball statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Volleyball statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering volleyball statistics."@en .
+
 spvolstat:errorsOppenent rdf:type rdf:Property ; 
         rdfs:label "errorsOppenent"@en ; 
         rdfs:comment ""@en ; 
