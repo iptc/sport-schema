@@ -33,8 +33,28 @@ The model aims to describe three component parts that make up sports data.
 * The participation in a competition, event or action. Teams, atheletes and officials actively particpate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
-The follow section describes the patterns used for each of these componet parts of the model.
+The follow sections describes the patterns used for each of these componet parts of the model.
 
+
+### Competion, event and action: building blocks to describe any competition structure
+
+
+
+### Participation: A container for statistics
+
+In a similar fashion, when an athlete or a team takes part in an event, we want
+to record statistics about each athlete's individual contributions to the event:
+goals kicked, penalties received etc.
+ 
+Separately, we want to record the team's contributions, including of course the team's score.
+
+To handle this need, we have introduced the concept of a *Participation* which links people and teams to events.
+
+We define a generic parent *Participation* class and subclasses for *IndividualParticipation* and *TeamParticipation*.
+
+The TeamParticipation object comes into existence as soon as a team is scheduled to compete in an event. The IndividualParticipation comes into existence when the team member is added to the line-up for a team participating in an Event.
+
+![IPTC Sport Schema athlete and team participation example](diagrams/athlete-team-participation.png)
 
 ### Linking people to teams: the "Membership" class
 
@@ -83,18 +103,4 @@ WHERE
 
 See the [example queries](../queries/) for more examples.
 
-### Participation: A container for statistics
 
-In a similar fashion, when an athlete or a team takes part in an event, we want
-to record statistics about each athlete's individual contributions to the event:
-goals kicked, penalties received etc.
- 
-Separately, we want to record the team's contributions, including of course the team's score.
-
-To handle this need, we have introduced the concept of a *Participation* which links people and teams to events.
-
-We define a generic parent *Participation* class and subclasses for *IndividualParticipation* and *TeamParticipation*.
-
-The TeamParticipation object comes into existence as soon as a team is scheduled to compete in an event. The IndividualParticipation comes into existence when the team member is added to the line-up for a team participating in an Event.
-
-![IPTC Sport Schema athlete and team participation example](diagrams/athlete-team-participation.png)
