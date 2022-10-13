@@ -29,7 +29,7 @@ capture richer information about people, teams and events.
 ### Summary
 
 The model aims to describe three component parts that make up sports data.
-* The structure of a competition. For example matches with rounds within a competion instance that is within a competion series.
+* The structure of a competition. For example matches with rounds within a competition instance that is within a competition series.
 * The participation in a competition, event or action. Teams, atheletes and officials actively particpate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
