@@ -33,7 +33,7 @@ The model describes three component parts that make up the domain of sports data
 * The participation in a competition, event or action. Teams, atheletes and officials actively particpate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
-The follow sections describe the patterns used for each of these componet parts of the model.
+The follow sections describe the patterns used for each of these component parts of the model.
 
 
 ### Competion, event and action: building blocks to describe any competition structure
