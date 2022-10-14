@@ -36,13 +36,18 @@ The model describes three component parts that make up the domain of sports data
 The follow sections describe the patterns used for each of these component parts of the model.
 
 
-### Competion, event and action: building blocks to describe any competition structure
+### Competition, event and action: building blocks to describe any competition structure
 
+Competitions are many and varied in structure. In the process of designing the model it was clear there was a need for a flexible and modular appraoch.
+
+The key class is the event this represents the lowests partisipatable thing that has outcome. Things like matches and races that have a result. Activities are more granular than events but do not have an outcome or result in their own right. An example would be a match (event) versus a goal scored (action).
+
+Events will always be part of a competition. In rare cases a competition might have a single event but in the majority of cases a event will be part of a larger competition structure. An event is assocaited with the most granular level of competition. It might be a phase of a competition like a knockout-round or heat. This phase is then assocaited with the overaching competition which itself might be part of a recurring competition series.
 
 
 ### Participation: A container for statistics
 
-In a similar fashion, when an athlete or a team takes part in an event, we want
+When an athlete or a team takes part in an event, we want
 to record statistics about each athlete's individual contributions to the event:
 goals kicked, penalties received etc.
  
