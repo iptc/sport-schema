@@ -7,6 +7,6 @@ SELECT ?sport ?league ?season WHERE {
     ?league rdf:type sport:Competition ;
           sport:sport ?sport .
     ?season rdf:type sport:Competition ;
-            sport:parentCompetition ?league .
+            sport:parent ?league .
     FILTER (?league = <http://example.com/Competition/l.premierleague.com>)
 }

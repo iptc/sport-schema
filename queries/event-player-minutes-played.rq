@@ -8,11 +8,13 @@ PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
 
 SELECT ?playerName ?minutesPlayed
 WHERE { 
-    ?event rdf:type sport:Event .
-    ?event sport:eventParticipation ?playerperf .
-    ?playerperf sport:participationBy ?player .
-    ?player rdfs:label ?playerName . 
-    ?playerperf spstat:timePlayedTotal ?minutesPlayed .
+    ?event rdf:type sport:Event ;
+           sport:participation ?playerperf .
+    ?playerperf rdf:type sport:IndividualParticipation ;
+                sport:participationBy ?player ;
+                spstat:timePlayedTotal ?minutesPlayed .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
     FILTER (?event = <http://example.com/Event/E2128609>)
 }
 ORDER BY ?playerName

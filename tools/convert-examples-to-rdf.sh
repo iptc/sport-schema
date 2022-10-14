@@ -3,7 +3,14 @@
 # Create RDF (N3 / Turtle / JSON-LD) files from SportsML sources.
 # Processes everything in the samples/xml/sportsml folder using the original
 # base filename, so "foo.xml" becomes "foo.n3", "foo.ttl" and "foo.jsonld".
-for filename in samples/xml/sportsml/*.xml; do
+
+if [[ $# -eq 1 ]]; then
+    xmlfiles=($1)
+else
+    xmlfiles=(samples/xml/sportsml/*.xml)
+fi
+
+for filename in "${xmlfiles[@]}"; do
     # [ -e "$filename" ] || continue  # catch case where there are no matches
     # this voodoo is called shell parameter expansion:
     # https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion

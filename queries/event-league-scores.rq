@@ -12,26 +12,26 @@ SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?d
        ?homeTeamScore ?awayTeamScore
 WHERE
 {
-    ?event rdf:type sport:Event .
-    ?event sport:startDateTime ?date .
-    ?event sport:eventStatus ?eventStatus .
-    ?event sport:eventParticipation ?homeTeamParticipation .
-    ?homeTeamParticipation rdf:type sport:TeamParticipation .
-    ?homeTeamParticipation sport:participationBy ?homeTeam .
-    ?homeTeamParticipation sport:alignment "home" .
+    ?event rdf:type sport:Event ;
+           sport:startDateTime ?date ;
+           sport:eventStatus ?eventStatus ;
+           sport:participation ?homeTeamParticipation ;
+           sport:participation ?awayTeamParticipation ;
+           sport:location ?site .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?homeTeam ;
+                           sport:alignment "home" .
 	OPTIONAL { ?homeTeamParticipation sport:score ?homeTeamScore . }
-    ?homeTeam rdf:type sport:Team .
-    ?homeTeam rdfs:label ?homeTeamName .
-    ?event sport:eventParticipation ?awayTeamParticipation .
-    ?awayTeamParticipation rdf:type sport:TeamParticipation .
-    ?awayTeamParticipation sport:participationBy ?awayTeam .
-    ?awayTeamParticipation sport:alignment "away" .
+    ?homeTeam rdf:type sport:Team ;
+              rdfs:label ?homeTeamName .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?awayTeam ;
+                           sport:alignment "away" .
 	OPTIONAL { ?awayTeamParticipation sport:score ?awayTeamScore . }
-    ?awayTeam rdf:type sport:Team .
-    ?awayTeam rdfs:label ?awayTeamName .
-    ?event sport:site ?site .
-    ?site rdf:type sport:Site .
-    ?site rdfs:label ?siteName .
+    ?awayTeam rdf:type sport:Team ;
+              rdfs:label ?awayTeamName .
+    ?site rdf:type sport:Site ;
+          rdfs:label ?siteName .
     FILTER ( ?date > "2021-05-23T00:00:00Z"^^xsd:dateTime ) 
     FILTER ( ?date < "2021-05-24T00:00:00Z"^^xsd:dateTime ) 
 }

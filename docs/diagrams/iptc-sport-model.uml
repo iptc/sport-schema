@@ -87,6 +87,7 @@ class Membership {
 class IndividualMembership {
   uniformNumber : integer
   positionRegular : CV Value
+  membershipStatus : CV Value
 }
 
 class Site {
@@ -122,7 +123,7 @@ CompetitionPhase .. Competition : > phaseInCompetition
 
 Competition .. GoverningBody : > governedBy
 Event .. Site :  > location
-IndividualMembership .. Individual : > membershipBy
+IndividualMembership .. Individual : > member
 Participation .. Agent : > participationBy
 Participation .. ParticipationSplit : participationSplit
 IndividualMembership .. Team : > membershipOf

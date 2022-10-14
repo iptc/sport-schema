@@ -13,19 +13,19 @@ WHERE {
     ?action rdf:type sport:Action ;
     		spact:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
     		spact:minutesElapsed ?time ;
-            sport:actionParticipation ?playerperf ;
-            sport:event ?event .
+            sport:participation ?playerperf ;
+            sport:actionInEvent ?event .
     ?playerperf rdf:type sport:IndividualParticipation ;
                 sport:participationBy ?player ;
                 spact:role ?playerperfrole .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName . 
-    ?event sport:eventParticipation ?partic .
+    ?event sport:participation ?partic .
     ?partic rdf:type sport:TeamParticipation ;
     		sport:participationBy ?team .
     ?team rdf:type sport:Team ;
     		sport:membership ?members .
-    ?members sport:membershipBy ?player ;
+    ?members sport:member ?player ;
     		sport:membershipOf ?team .
     ?team rdfs:label ?teamName .
 

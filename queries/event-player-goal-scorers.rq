@@ -9,7 +9,7 @@ PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 SELECT ?playerName ?goals
 WHERE { 
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?playerperf .
+           sport:participation ?playerperf .
     ?playerperf rdf:type sport:IndividualParticipation ;
                 sport:participationBy ?player ;
                 spsocstat:goalsTotal ?goals .

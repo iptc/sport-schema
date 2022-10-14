@@ -13,8 +13,8 @@ SELECT ?stageName ?playerName ?rank ?time
 WHERE
 {
     ?event rdf:type sport:Event ;
-           sport:competitionPhase ?compPhase ;
-           sport:eventParticipation ?playerperf .
+           sport:eventInCompetitionPhase ?compPhase ;
+           sport:participation ?playerperf .
     ?compPhase rdf:type sport:CompetitionPhase ;
                rdfs:label ?stageName ;
                sport:competitionPhaseType <http://cv.iptc.org/newscodes/sptournamentphase/final> .

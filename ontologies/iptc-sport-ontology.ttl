@@ -197,13 +197,12 @@ sport:governedBy rdf:type rdf:Property ;
     rdfs:range sport:GoverningBody ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-# this is inverse of membershipOf so I think we don't need to define it..?
-#sport:membership rdf:type rdf:Property ;
-#    rdfs:label "membership"@en ;
-#    rdfs:comment "Link between a team and a membership object"@en ;
-#    rdfs:domain sport:Team ;
-#    rdfs:range sport:Membership ;
-#    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+sport:location rdf:type rdf:Property ;
+    rdfs:label "location"@en ;
+    rdfs:comment "Link to the location (Site) where an event takes place"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Site ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:member rdf:type rdf:Property ;
     rdfs:label "member by"@en ;
@@ -233,11 +232,11 @@ sport:participationSplit rdf:type rdf:Property ;
     rdfs:range sport:ParticipationSplit ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:location rdf:type rdf:Property ;
-    rdfs:label "location"@en ;
-    rdfs:comment "Link to the location where an event takes place"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Site ;
+sport:phaseInCompetition rdf:type rdf:Property ;
+    rdfs:label "phase in competition"@en ;
+    rdfs:comment "Link to the competition of which this CompetitionPhase is a part"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:Competition ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 ##### Data properties #####
@@ -322,6 +321,14 @@ sport:eventStatus rdf:type rdf:Property ;
     rdfs:domain sport:Event ;
     rdfs:range xsd:anyURI ;
     # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:membershipStatus rdf:type rdf:Property ;
+    rdfs:label "membership status"@en ;
+    rdfs:comment "Member's status in a team during this membership period (e.g. active or inactive)"@en ;
+    rdfs:domain sport:IndividualMembership ;
+    rdfs:range xsd:anyURI ;
+    # Recommended values: <http://cv.iptc.org/newscodes/spphasestatus/> ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:nationality rdf:type rdf:Property ;

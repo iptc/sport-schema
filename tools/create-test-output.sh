@@ -16,7 +16,13 @@ for filename in ${TTL_SAMPLES_DIR}/*.ttl; do
     DATA_STRING="${DATA_STRING} --data=$filename"
 done
 
-for queryfile in queries/*.rq; do
+if [[ $# -eq 1 ]]; then
+    queryfiles=($1)
+else
+    queryfiles=(queries/*.rq)
+fi
+
+for queryfile in "${queryfiles[@]}"; do
     name=${queryfile##*/}  # get part after last /
     base=${name%.rq}     # strip off .xml extension
     echo "Creating output file for ${base}..."

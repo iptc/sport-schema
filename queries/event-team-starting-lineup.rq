@@ -11,15 +11,15 @@ SELECT ?teamName ?playerName ?eventPosition
 WHERE {
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-		   sport:eventParticipation ?teamParticipation ;
-		   sport:eventParticipation ?individualParticipation .
+		   sport:participation ?teamParticipation ;
+		   sport:participation ?individualParticipation .
     ?teamParticipation rdf:type sport:TeamParticipation ;
                    sport:participationBy ?team .
     ?team rdf:type sport:Team ;
 		  rdfs:label ?teamName ;
 		  sport:membership ?playerMembership .
 	?playerMembership rdf:type sport:IndividualMembership ;
-			sport:membershipBy ?player .
+			sport:member ?player .
     ?individualParticipation rdf:type sport:IndividualParticipation ;
     				 sport:participationBy ?player ;
                      sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> ;
