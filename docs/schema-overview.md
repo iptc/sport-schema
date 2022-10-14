@@ -33,6 +33,8 @@ The model describes three component parts that make up the domain of sports data
 * The participation in a competition, event or action. Teams, atheletes and officials actively participate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
+![IPTC Sport Schema high level overview](diagrams/simple-high-level-sport-model.png)
+
 The follow sections describe the patterns used for each of these component parts of the model.
 
 
