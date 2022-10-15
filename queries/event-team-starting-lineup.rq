@@ -16,10 +16,10 @@ WHERE {
     ?teamParticipation rdf:type sport:TeamParticipation ;
                    sport:participationBy ?team .
     ?team rdf:type sport:Team ;
-		  rdfs:label ?teamName ;
-		  sport:membership ?playerMembership .
+		  rdfs:label ?teamName .
 	?playerMembership rdf:type sport:IndividualMembership ;
-			sport:member ?player .
+			sport:member ?player ;
+			sport:membershipOf ?team .
     ?individualParticipation rdf:type sport:IndividualParticipation ;
     				 sport:participationBy ?player ;
                      sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> ;
