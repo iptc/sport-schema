@@ -126,6 +126,10 @@
         rdfs:label         "Jack Campbell" ;
         sport:dateOfBirth  "1992-01-09"^^xsd:date .
 
+<http://example.com/TeamParticipation/l.nhl.com-l.nhl.com-t.21>
+        rdf:type               sport:TeamParticipation ;
+        sport:participationBy  <http://example.com/Team/l.nhl.com-t.21> .
+
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Trevor Daley membership of Dallas Stars" ;
@@ -625,9 +629,10 @@
         sport:dateOfBirth  "1993-02-03"^^xsd:date .
 
 <http://example.com/Competition/l.nhl.com-2015>
-        rdf:type      sport:Competition ;
-        rdfs:label    "National Hockey League 2015" ;
-        sport:parent  <http://example.com/Competition/l.nhl.com> .
+        rdf:type             sport:Competition ;
+        rdfs:label           "National Hockey League 2015" ;
+        sport:parent         <http://example.com/Competition/l.nhl.com> ;
+        sport:participation  <http://example.com/TeamParticipation/l.nhl.com-l.nhl.com-t.21> .
 
 <http://example.com/Athlete/l.nhl.com-p.3872>
         rdf:type           sport:Athlete ;

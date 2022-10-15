@@ -195,8 +195,20 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                         <xsl:when test="contains($object-id, 'Event')">
                             <xsl:value-of select="$object-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'eventInCompetition','»')"/>~<xsl:value-of select="$season-id"/> .
                         </xsl:when>
+                        <xsl:when test="contains($object-id, 'Team')">
+                            <!-- create a new TeamParticipation to link Team to Competition -->
+                            <xsl:variable name="team-key">
+                                <xsl:value-of select="substring-after(newsml:team/newsml:team-metadata/@key,':')"/>
+                            </xsl:variable>
+                            <xsl:variable name="participation-id">
+                                <xsl:value-of select="concat('«',$sport-vendor-ns,'TeamParticipation/',$competition-key,'-',$team-key,'»')"/>
+                            </xsl:variable>
+                            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$rdf-ns,'type','»')"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'TeamParticipation','»')"/> .
+                            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participationBy','»')"/>~<xsl:value-of select="$object-id"/> .
+                            <xsl:value-of select="$season-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'participation','»')"/>~<xsl:value-of select="$participation-id"/> .
+                        </xsl:when>
                         <xsl:otherwise>
-                            <!-- we don't want to output competition for eg Teams -->
+                            ERROR: unknown object type. Might need to add more code here.
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:otherwise>
