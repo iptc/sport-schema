@@ -33,10 +33,10 @@ object "TeamB <Team>" as TeamB {
   rdfs:label = "The Hitters"
 }
 
-Athlete1 .. Membership1 : < membershipBy
+Membership1 .. Athlete1 : > member
 Membership1 .. TeamA : > membershipOf
-Athlete1 .. Membership2 : < membershipBy
+Membership2 .. Athlete1 : > member
 Membership2 .. TeamB : > membershipOf
-Athlete2 .. Membership3 : < membershipBy
+Membership3 .. Athlete2 : > member
 Membership3 .. TeamB : > membershipOf
 @enduml
