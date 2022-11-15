@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schema overview
+title: Schema Overview
 nav_order: 3
 description: "Explaining the thinking behind the structure of the IPTC Sport Schema"
 permalink: /schema-overview/
