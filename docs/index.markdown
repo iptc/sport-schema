@@ -13,7 +13,7 @@ permalink: /
 Based on IPTC's SportsML and semantic web principles
 {: .fs-6 .fw-300 }
 
-IPTC Sport Schema is a high-level model that describes the core elements of competitive sport.
+IPTC Sport Schema is a high-level model that describes the core elements of competitive sports.
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View the project on GitHub](https://github.com/iptc/sport-schema){: .btn .fs-5 .mb-4 .mb-md-0 }
 
