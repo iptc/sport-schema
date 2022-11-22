@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About
-permalink: /about/
-nav_order: 2
+title: Credits
+permalink: /credits/
+nav_order: 99
 ---
 
 # About the IPTC Sport Schema

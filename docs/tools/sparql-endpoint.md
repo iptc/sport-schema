@@ -1,8 +1,15 @@
+---
+permalink: /tools/making-a-sparql-endpoint/
+title: Making a SPARQL endpoint 
+layout: page
+nav_order: 10
+parent: Working with IPTC Sport Schema
+---
 # Making a SPARQL endpoint
 
 Apache Jena contains the TDB2 engine which functions as a local datastore for RDF triples.
 
-Here we document how it can be used to create a local triple store of SportsRDF data
+Here we document how it can be used to create a local triple store of IPTC Sport Schema data
 which can then be queried to test our sample queries.
 
 ## Loading data into a TDB2 datastore
@@ -37,4 +44,4 @@ For example:
 
 ## Adding reasoning capabilities to the SPARQL engine
 
-I believe this is possible by linking to the RDF Schema file, but I haven't tried it yet...
+Still to come.
