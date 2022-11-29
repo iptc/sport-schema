@@ -2,7 +2,7 @@
 permalink: /tools/making-a-sparql-endpoint/
 title: Making a SPARQL endpoint 
 layout: page
-nav_order: 10
+nav_order: 4
 parent: Working with IPTC Sport Schema
 ---
 # Making a SPARQL endpoint
@@ -33,6 +33,11 @@ turn the TDB2 file into the data store for a SPARQL server:
 Fuseki has a Web UI, go to `http://localhost:3030/` to explore it.
 
 Through the Web UI, you can enter SPARQL queries and load more data into the system.
+
+IPTC are hosting a test instance of Fuseki at [http://sport.iptc.org/](http://sport.iptc.org/).
+This contains the
+ontology files, our test data, and some "canned queries" illustrating how to test the
+endpoint with SPARQL queries relating to our use cases.
 
 ## Querying the SPARQL endpoint over HTTP
 

@@ -9,37 +9,37 @@ nav_order: 3
 To plan and track progress, and to make sure our model solves real-world problems, we are taking a use case-driven approach when
 designing the IPTC Sport Schema.
 
-The use cases are written as questions. Each use case /question should be answered with a SPARQL query based on our sample triples generated from converted SportsML files. 
+The use cases are written as questions. Each use case/question should be answered with a SPARQL query based on our sample triples generated from converted SportsML files. 
 
 Implementing all of these use cases, along with the corresponding sample data triples, is a work in progress, but most use cases are now implemented.
 
-# All-Time Statistics and Results Questions
+## All-Time Statistics and Results Questions
 
-## Player (also known as Athlete)
+### Player (also known as Athlete)
 1. What are Player X's all-time career stats (Goals, assists, etc.)?
 1. What are Player X's biographical details (Height, weight, nationality, place and date of birth, etc.)?
 1. Which teams did Player X play for during their career?
 
-## Team
+### Team
 1. What is Team Y's overall record throughout history (or in a given date range)?
 1. Which championships/competitions has Team Y won throughout history (or in a given date range)?
 1. Which players were on Team Y at a given time (including "right now")?
 1. Handling teams that move cities and change names - e.g. New Orleans Jazz became Utah Jazz - all players were the same, it was the same legals entity, but the name and home stadium changed. (*Not yet handled*)
 
-# Season Questions 
+## Season Questions 
 
-## Player
+### Player
 1. What are Player X's stats for Season Z (Goals, assists, etc.)?
 
-## Team
+### Team
 1. Who plays for Team Y in Season Z (including jersey number, position, etc.)?
 1. What is Team Y's record so far in Season Z (games played, wins, losses, ties, clean sheets/shutouts, etc.)?
 1. What is Team Y's record for Season Z broken down into home and away events?
 1. What were the scores for and against for Team Y in Season Z?
-1. How many penalty shots were taken against Team Y and allowed?
+1. How many penalty shots were taken for and allowed against Team Y in Season Z?
 1. What infractions were committed by Team Y in Season Z, broken down by type (yellow/red, fouls, TK, particular for other sports)?
 
-## League
+### League
 1. What are the current team standings for Season Z? (Includes games played, wins, losses, ties, etc.)
 1. Who is the current scoring leader for Season Z?
 1. Which players are the top 20 scorers across all teams in Season Z?
@@ -48,9 +48,9 @@ Implementing all of these use cases, along with the corresponding sample data tr
 1. Who (players or teams?) are the infractions leaders across Sseason Z?
 1. What is the structure of the competition for Season Z (league competition, regular and post-season, groups/knockout, etc.)?
 
-# Event Questions 
+## Event Questions 
 
-## Player
+### Player
 1. Was Player X in the starting line up for Team Y at Event E?
 1. Which players scored goals and when at Event E?
 1. How many minutes did Player X play at Event E?
@@ -61,7 +61,7 @@ Implementing all of these use cases, along with the corresponding sample data tr
 1. Was Player X substituted at Event E, and if so at what time?
 1. Was Player X penalised at Event E and if so when and what for (Includes penalty level: straight red, major, minor, etc.)?
 
-## Team
+### Team
 1. What was the starting lineup for Team Y at Event E? (including positions slated)
 IN PROGRESS[link to live query](http://sport.iptc.org/dataset.html?tab=query&ds=/sport#query=prefix+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix+sport%3A+%3Chttp%3A%2F%2Fwww.iptc.org%2Fontologies%2FSport%2F%3E%0Aprefix+spstat%3A+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspstat%2F%3E%0Aprefix+spsocpos%3A+%3Cundefined%3E%0A%0A%23+Use+case%3A+Event+%2F+Team+%2F+1.+What+is+the+starting+lineup%3F+(including+position+slated)%0A%23+https%3A%2F%2Fgithub.com%2Fiptc%2Fsport-model%2Fwiki%2FUse-Cases%0ASELECT+%3FteamName+%3FplayerName+%3FplayerPos%0AWHERE+%7B+%0A++++%3Fevent+rdf%3Atype+sport%3AEvent+%3B%0A+++++++++++sport%3Aparticipation+%3Fplayerperf+.%0A++++%3Fplayerperf+sport%3AparticipationBy+%3Fplayer+%3B%0A++++++++++++++++rdf%3Atype+sport%3AIndividualParticipation+.%0A++++%3Fplayer+rdfs%3Alabel+%3FplayerName+%3B+%0A++++++++++++rdf%3Atype+sport%3AAthlete+.+%0A++++%3Fplayerperf+sport%3Astatus+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspperstatus%2Fstarter%3E+.%0A++++%3Fteam+sport%3Amembership+%3Fmembers+.+%0A++++%3Fmembers+sport%3AmembershipBy+%3Fplayer+%3B%0A+++++++++++++sport%3ApositionRegular+%3FplayerPos+%3B%0A+++++++++++++sport%3AmembershipOf+%3Fteam+.%0A++++%3Fteam+rdf%3Atype+sport%3ATeam+%3B%0A++++++++++rdfs%3Alabel+%3FteamName+.%0A%7D%0AORDER+BY+%3FteamName+%3FplayerName)
 1. Which team won the game?
@@ -71,7 +71,7 @@ IN PROGRESS [link to live query](http://sport.iptc.org/dataset.html?tab=query&ds
 1. Who was penalized?
 1. What are the stats for each team? IN PROGRESS [link to live query](http://sport.iptc.org/dataset.html?tab=query&ds=/sport#query=prefix+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix+sport%3A+%3Chttp%3A%2F%2Fwww.iptc.org%2Fontologies%2FSport%2F%3E%0Aprefix+spstat%3A+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspstat%2F%3E%0Aprefix+spsocstat%3A+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspsocstat%2F%3E%0A%0A%23+Use+case%3A+Event+%2F+Team+%2F+5.+What+were+the+stats+for+each+team%3F%0A%23+https%3A%2F%2Fgithub.com%2Fiptc%2Fsport-model%2Fwiki%2FUse-Cases%0ASELECT+%3FteamName+%3Fstat+%3FstatValue%0AWHERE+%7B+%0A++++%3Fteam+rdf%3Atype+sport%3ATeam+.+%0A++++%3Fteam+rdfs%3Alabel+%3FteamName+.+%0A++++%3FteamParticipcation+sport%3AparticipationBy+%3Fteam+.%0A++++%3FteamParticipcation+rdf%3Atype+sport%3ATeamParticipation+.%0A++++%3FteamParticipcation+%3Fstat+%3FstatValue+.%0A++++FILTER+(strStarts(str(%3Fstat)%2C+%22http%3A%2F%2Fcv.iptc.org%2Fnewscodes%2F%22))+.%0A%7D)
 
-## League
+### League
 1. What are the current scores? (Scoreboard) DONE [link to live query](http://sport.iptc.org/dataset.html?tab=query&ds=/sport#query=prefix+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix+sport%3A+%3Chttp%3A%2F%2Fwww.iptc.org%2Fontologies%2FSport%2F%3E%0Aprefix+spstat%3A+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspstat%2F%3E%0Aprefix+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0A%23+Use+case%3A+Event+%2F+League+%2F+1.+What+are+the+current+scores%3F+(Scoreboard)%0A%23+https%3A%2F%2Fgithub.com%2Fiptc%2Fsport-model%2Fwiki%2FUse-Cases%0A+%0ASELECT+(CONCAT(STR(YEAR(%3Fdate))%2C%22-%22%2CSTR(MONTH(%3Fdate))%2C%22-%22%2CSTR(DAY(%3Fdate)))+as+%3FdisplayDate)%0A+++++++(CONCAT(STR(HOURS(%3Fdate))%2C%22%3A%22%2CSTR(MINUTES(%3Fdate)))+as+%3FdisplayTime)%0A+++++++(CONCAT(%3FhomeTeamName%2C%22+v+%22%2C%3FawayTeamName)+as+%3Fmatch)%0A+++++++%3FhomeTeamScore+%3FawayTeamScore%0AWHERE%0A%7B%0A++++%3Fevent+rdf%3Atype+sport%3AEvent+.%0A++++%3Fevent+sport%3AstartDate+%3Fdate+.%0A++++%3Fevent+sport%3Aparticipation+%3FhomeTeamParticipation+.%0A++++%3FhomeTeamParticipation+rdf%3Atype+sport%3ATeamParticipation+.%0A++++%3FhomeTeamParticipation+sport%3AparticipationBy+%3FhomeTeam+.%0A++++%3FhomeTeamParticipation+sport%3Aalignment+%22home%22+.%0A++++%3FhomeTeamParticipation+spstat%3Ascore+%3FhomeTeamScore+.%0A++++%3FhomeTeam+rdf%3Atype+sport%3ATeam+.%0A++++%3FhomeTeam+rdfs%3Alabel+%3FhomeTeamName+.%0A++++%3Fevent+sport%3Aparticipation+%3FawayTeamParticipation+.%0A++++%3FawayTeamParticipation+rdf%3Atype+sport%3ATeamParticipation+.%0A++++%3FawayTeamParticipation+sport%3AparticipationBy+%3FawayTeam+.%0A++++%3FawayTeamParticipation+sport%3Aalignment+%22away%22+.%0A++++%3FawayTeamParticipation+spstat%3Ascore+%3FawayTeamScore+.%0A++++%3FawayTeam+rdf%3Atype+sport%3ATeam+.%0A++++%3FawayTeam+rdfs%3Alabel+%3FawayTeamName+.%0A++++%3Fevent+sport%3Asite+%3Fsite+.%0A++++%3Fsite+rdf%3Atype+sport%3ASite+.%0A++++%3Fsite+rdfs%3Alabel+%3FsiteName+.%0A++++FILTER+(+%3Fdate+%3E+%222021-02-15T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime+)%0A++++FILTER+(+%3Fdate+%3C+%222021-02-16T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime+)%0A%7D%0A)
 1. What is the current status of an event (pre-, mid-, post-, postponed, suspended, canceled, etc.) DONE [link to live query](http://sport.iptc.org/dataset.html?tab=query&ds=/sport#query=prefix+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aprefix+sport%3A+%3Chttp%3A%2F%2Fwww.iptc.org%2Fontologies%2FSport%2F%3E%0Aprefix+spstat%3A+%3Chttp%3A%2F%2Fcv.iptc.org%2Fnewscodes%2Fspstat%2F%3E%0Aprefix+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0A%0A%23+Use+case%3A+Event+%2F+League+%2F+2.+What+is+the+current+status+of+an+event+(pre-%2C+mid-%2C+post-%2C+postponed%2C+suspended%2C+canceled%2C+etc.)%0A%23+https%3A%2F%2Fgithub.com%2Fiptc%2Fsport-model%2Fwiki%2FUse-Cases%0ASELECT+(CONCAT(STR(YEAR(%3Fdate))%2C%22-%22%2CSTR(MONTH(%3Fdate))%2C%22-%22%2CSTR(DAY(%3Fdate)))+as+%3FdisplayDate)%0A+++++++(CONCAT(STR(HOURS(%3Fdate))%2C%22%3A%22%2CSTR(MINUTES(%3Fdate)))+as+%3FdisplayTime)%0A+++++++(CONCAT(%3FhomeTeamName%2C%22+v+%22%2C%3FawayTeamName)+as+%3Fmatch)%0A+++++++%3Fstatus%0AWHERE%0A%7B%0A++++%3Fevent+rdf%3Atype+sport%3AEvent+.%0A++++%3Fevent+sport%3AstartDate+%3Fdate+.%0A++++%3Fevent+sport%3Aparticipation+%3FhomeTeamParticipation+.%0A++++%3FhomeTeamParticipation+rdf%3Atype+sport%3ATeamParticipation+.%0A++++%3FhomeTeamParticipation+sport%3AparticipationBy+%3FhomeTeam+.%0A++++%3FhomeTeamParticipation+sport%3Aalignment+%22home%22+.%0A++++%3FhomeTeamParticipation+spstat%3Ascore+%3FhomeTeamScore+.%0A++++%3FhomeTeam+rdf%3Atype+sport%3ATeam+.%0A++++%3FhomeTeam+rdfs%3Alabel+%3FhomeTeamName+.%0A++++%3Fevent+sport%3Aparticipation+%3FawayTeamParticipation+.%0A++++%3FawayTeamParticipation+rdf%3Atype+sport%3ATeamParticipation+.%0A++++%3FawayTeamParticipation+sport%3AparticipationBy+%3FawayTeam+.%0A++++%3FawayTeamParticipation+sport%3Aalignment+%22away%22+.%0A++++%3FawayTeamParticipation+spstat%3Ascore+%3FawayTeamScore+.%0A++++%3FawayTeam+rdf%3Atype+sport%3ATeam+.%0A++++%3FawayTeam+rdfs%3Alabel+%3FawayTeamName+.%0A++++%3Fevent+sport%3AeventStatus+%3Fstatus+.%0A++++FILTER+(+%3Fdate+%3E+%222021-04-25T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime+)%0A++++FILTER+(+%3Fdate+%3C+%222021-04-26T00%3A00%3A00Z%22%5E%5Exsd%3AdateTime+)%0A%7D%0AORDER+BY+%3FdisplayDate+%3FdisplayTime%0A)
 1. What was the result the last time these two teams met? Across all competitions this season - MORE DATA NEEDED
