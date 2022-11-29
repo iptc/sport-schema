@@ -3,10 +3,10 @@ digraph regexp {
  # docs and examples at https://graphviz.org/Gallery/directed/
  node [colorscheme=dark27 style="filled"]
  ioc [label="<GoverningBody>\nIOC" color=2];
- summerolympics [label="<ParentCompetition?>\nSummer Olympics" style="filled" color=1];
- tokyo [label="<Competition?>\nTokyo 2020" color=3];
- rio [label="<Competition?>\nRio de Janeiro 2016" color=3];
- rioextra [label="<Competition?>\n..." color=4];
+ summerolympics [label="<Competition>\nSummer Olympics" style="filled" color=1];
+ tokyo [label="<Competition>\nTokyo 2020" color=3];
+ rio [label="<Competition>\nRio de Janeiro 2016" color=3];
+ rioextra [label="<Competition>\n..." color=4];
  tokyomens800m [label="<Competition>\nMen's 800m" color=5];
  tokyowomens800m [label="<Competition>\nWomen's 800m" color=5];
  tokyowomens800mextra [label="<CompetitionPhase>\n..." color=6];
@@ -15,17 +15,18 @@ digraph regexp {
  tokyomens800msemifinalheat2 [label="<Event>\nMen's 800m\nsemi-final\nheat 2" color=7];
  tokyomens800msemifinalheatx [label="<Event>\n..." color=7];
  tokyomens800mfinal [label="<CompetitionPhase>\nMen's 800m\nfinal" color=6];
- summerolympics -> ioc [xlabel="governingBody"];
- summerolympics -> tokyo [label="competition"];
- summerolympics -> rio [label="competition"];
- rio -> rioextra [label="subCompetition"];
- tokyo -> tokyomens800m [xlabel="subCompetition"];
- tokyo -> tokyowomens800m [label="subCompetition"];
- tokyowomens800m -> tokyowomens800mextra [label="competitionPhase"];
- tokyomens800m -> tokyomens800msemifinal [xlabel="competitionPhase"];
+ summerolympics -> ioc [label="governedBy"];
+ tokyo -> summerolympics [label="parent"];
+ rio -> summerolympics [label="parent"];
+ rioextra -> rio [label="parent"];
+ tokyomens800m -> tokyo [label="parent"];
+ tokyowomens800m -> tokyo [label="parent"];
+ tokyowomens800mextra -> tokyowomens800m [label="phaseInCompetition"];
+ tokyomens800msemifinal -> tokyomens800m [label="phaseInCompetition"];
  tokyomens800m -> tokyomens800mfinal [label="competitionPhase"];
- tokyomens800msemifinal -> tokyomens800msemifinalheat1 [xlabel="event"];
- tokyomens800msemifinal -> tokyomens800msemifinalheat2 [label="event"];
- tokyomens800msemifinal -> tokyomens800msemifinalheatx [label="event"];
+ tokyomens800mfinal -> tokyomens800m [label="phaseInCompetition"];
+ tokyomens800msemifinalheat1 -> tokyomens800msemifinal [label="eventInCompetitionPhase"];
+ tokyomens800msemifinalheat2 -> tokyomens800msemifinal [label="eventInCompetitionPhase"];
+ tokyomens800msemifinalheatx -> tokyomens800msemifinal [label="eventInCompetitionPhase"];
 }
 @enduml
