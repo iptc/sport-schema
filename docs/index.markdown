@@ -28,10 +28,10 @@ from others. _**Please do not rely on this model for your production work - yet!
 
 We want the resulting data model and vocabulary to be:
 
-* **Comprehensive** - it should be able to handle schedules, results and statistics for many types of sports: team, individual and head-to-head. The schema leverages the work that IPTC has done on SportsML over the past 20 years, supporting sports results and statistics for some of the world's largest news providers.
-* **Easy to use** - should be approachable by non-experts in Semantic Web technologies. For example, the JSON-LD versions should be simple enough that they can be parsed by any competent developer who is comfortable with handling JSON files.
-* **Easy to query** - for those who want to use the power of RDF features such as SPARQL, querying data should be as simple as possible.
-* **Compatible with schema.org** - we want the IPTC Sport Schema to be self-contained, but it should be possible to use it alongside schema.org in the future.
+* Comprehensive - it should be able to handle schedules, results and statistics for many types of sports, whether team, individual or head-to-head.
+* Easy to use - should be approachable by non-experts in Semantic Web technologies. For example, the JSON-LD versions should be simple enough that they can be parsed by any competent developer who is comfortable with handling JSON files.
+* Easy to query - for those who want to use the power of RDF features such as SPARQL, querying data should be as simple as possible.
+* Compatible with schema.org. We want the IPTC Sport Schema to be self-contained, but it should be possible to use it alongside schema.org in the future.
 
 ## Getting started
 
@@ -47,10 +47,3 @@ You can also run the example queries from your local machine using the arq tool 
 
 See the [running example queries](running-example-queries) page for more detailed information.
 
-### Trying IPTC Sport Schema on your local machine
-
-Right now the best way to explore IPTC Sport Schema on your own is to check out our GitHub repository and try it yourself, either from the command line or using an RDF/OWL tool such as [Protégé](https://protege.stanford.edu/products.php).
-
-`git clone git@github.com:iptc/sport-schema.git`
-
-This will let you view all sample content, convert SportsML files to IPTC Sport Schema triples, use our helper tools including the SHACL validator and unit tests, and more.
