@@ -43,6 +43,46 @@ callouts:
     title: Warning
     color: red
 
+# Aux links for the upper right navigation
+aux_links:
+  "IPTC Sport Schema on GitHub":
+    - "//github.com/iptc/sport-schema"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
+
+mermaid:
+  # Version of mermaid library
+  # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
+  version: "9.2.2"
+
+# External navigation links (rendered in left nav if included)
+#nav_external_links:
+#  - title: IPTC Sport Schema on GitHub
+#    url: https://github.com/iptc/sport-schema
+
+# Enable or disable heading anchors
+heading_anchors: true
+
+#collections:
+# # Define a collection named "tests", its documents reside in the "_tests" directory
+#ontologies:
+#    permalink: "/:collection/:path/"
+#    output: true
+
+#just_the_docs:
+#  collections:
+#    ontologies:
+#      name: Ontologies
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/iptc/sport-schema" # the github URL for your repo
+gh_edit_branch: "gh-pages" # the branch that your docs is served from
+gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -51,7 +91,9 @@ callouts:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+ - docs/README.md
+ - tools/n3_to_jsonld/README.md 
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

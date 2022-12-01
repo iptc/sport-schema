@@ -1,280 +1,22 @@
+---
+permalink: /ontologies/tennis/
+title: Tennis Ontology
+layout: page
+nav_order: 11
+parent: Ontology reference
+---
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IPTC Sport Schema - Rugby statistics</title>
-    <style>
-        #pylode {
-            position: fixed;
-            top: 130px;
-            left: -80px;
-            font-size: small;
-            transform: rotate(-90deg);
-            color: grey;
-        }
-        #pylode a {
-            font-size: 2em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #005A9C;
-        }
-        #pylode a:hover {
-            color: #333;
-        }
-        #pylode #p {
-            color: #329545;
-        }
-        #pylode #y {
-            color: #f9cb33;
-        }
-        #pylode #version {
-            font-size: 1.0em;
-        }
-
-        .cardinality {
-            font-style: italic;
-            color: #aa00aa;
-        }
-
-        dl {
-            /*border: 1px solid navy;*/
-            /*padding:5px;*/
-        }
-
-        dt {
-            font-weight: bold;
-            padding: 0;
-        }
-
-        dd {
-            margin-bottom: 10px;
-            padding-top: 7px;
-        }
-
-        #metadata ul,
-        #classes ul {
-            list-style-type: none;
-        }
-
-        #metadata ul li,
-        #classes ul li {
-            margin-left: -40px;
-        }
-
-        ul.hlist {
-            list-style-type: none;
-            border: 1px solid navy;
-            padding:5px;
-            background-color: #F4FFFF;
-        }
-
-        ul.hierarchy {
-            border: 1px solid navy;
-            padding: 5px 25px 5px 25px;
-            background-color: #F4FFFF;
-        }
-
-
-        ul.hlist li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        .entity {
-            border: 1px solid navy;
-            margin:5px 0 5px 0;
-            padding: 5px;
-        }
-
-        .entity th {
-            width: 150px;
-            vertical-align: top;
-        }
-
-        .entity th,
-        .entity td {
-            padding-bottom: 20px;
-        }
-
-        .entity table th {
-            text-align: left;
-        }
-
-        section#overview img {
-            max-width: 1000px;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            text-align: left
-        }
-        h1, h2, h3 {
-            color: #005A9C; background: white
-        }
-        h1 {
-            font: 170% sans-serif;
-            line-height: 110%;
-        }
-        h2 {
-            font: 140% sans-serif;
-            margin-top:40px;
-        }
-        h3 {
-            font: 120% sans-serif;
-            margin-top: 20px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid navy;
-        }
-        h4 { font: bold 100% sans-serif }
-        h5 { font: italic 100% sans-serif }
-        h6 { font: small-caps 100% sans-serif }
-
-        body {
-            padding: 2em 70px 2em 70px;
-            margin: 0;
-            font-family: sans-serif;
-            color: black;
-            background: white;
-            background-position: top left;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            text-align: justify;
-        }
-
-        section {
-            max-width: 1500px;
-        }
-
-        .figure {
-            margin-bottom: 20px;
-        }
-
-        :link { color: #00C; background: transparent }
-        :visited { color: #609; background: transparent }
-        a:active { color: #C00; background: transparent }
-
-        .sup-c,
-        .sup-op,
-        .sup-fp,
-        .sup-dp,
-        .sup-ap,
-        .sup-p,
-        .sup-ni,
-        .sup-con,
-        .sup-col {
-            cursor:help;
-        }
-
-        .sup-c {
-            color:orange;
-        }
-
-        .sup-op {
-            color:navy;
-        }
-
-        .sup-fp {
-            color:lightskyblue;
-        }
-
-        .sup-dp {
-            color:green;
-        }
-
-        .sup-ap {
-            color:darkred;
-        }
-
-        .sup-p {
-            color:black;
-        }
-
-        .sup-ni {
-            color:brown;
-        }
-
-        .sup-con {
-            color:orange;
-        }
-
-        .sup-col {
-            color:darkred;
-        }
-
-        sup {
-            margin-left: -3px;
-        }
-        code {
-            font-size: large;
-            color: darkred;
-        }
-
-        /* less prominent links for properties */
-        .proplink {
-            color: #336;
-            text-decoration: none;
-        }
-
-#toc {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    height: 100%;
-    overflow-y: auto;
-    padding: 10px;
-    border: solid 1px navy;
-    font-size: small;
-    width: 180px;
-}
-#toc h3 {
-    margin-top: 5px;
-}
-
-#toc ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-#toc .first > li {
-    margin-top: 5px;
-}
-
-#toc .second,
-#toc .third {
-    padding-left: 10px;
-}
-
-#content {
-    width: calc(100% - 150px);
-}
-
-.hover_property {
-    cursor: help;
-    text-decoration: none;
-    border-bottom: dashed 1px;
-}
-
-.setclass {
-    list-style-type: none;
-}
-
-code{
-    word-wrap: break-word;
-  }
-  table {
-    table-layout: fixed;
-    width: 100%;
-  }
-  td {
-    word-wrap: break-word;
-  }
-	</style>
+    <title>IPTC Sport Schema - Tennis statistics</title>
+    <link href="pylode.css" rel="stylesheet" type="text/css">
     <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
     <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://sportschema.org/ontologies/rugby/",
+    "@id": "https://sportschema.org/ontologies/tennis/",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
@@ -299,7 +41,7 @@ code{
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "Add-on ontology to IPTC Sport Schema, covering rugby statistics."
+        "@value": "Add-on ontology to IPTC Sport Schema, covering tennis statistics."
       }
     ],
     "https://schema.org/license": [
@@ -310,7 +52,7 @@ code{
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "IPTC Sport Schema - Rugby statistics"
+        "@value": "IPTC Sport Schema - Tennis statistics"
       }
     ]
   }
@@ -320,7 +62,7 @@ code{
   <body>
     <div id="content">
       <div class="section" id="metadata">
-        <h1>IPTC Sport Schema - Rugby statistics</h1>
+        <h1>IPTC Sport Schema - Tennis statistics</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -328,14 +70,14 @@ code{
               <strong>IRI</strong>
             </dt>
             <dd>
-              <code>https://sportschema.org/ontologies/rugby/</code>
+              <code>https://sportschema.org/ontologies/tennis/</code>
             </dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
             </dt>
-            <dd><p>IPTC Sport Schema - Rugby statistics</p></dd>
+            <dd><p>IPTC Sport Schema - Tennis statistics</p></dd>
           </div>
           <div>
             <dt>
@@ -367,28 +109,28 @@ code{
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
             </dt>
-            <dd><p>Add-on ontology to IPTC Sport Schema, covering rugby statistics.</p></dd>
+            <dd><p>Add-on ontology to IPTC Sport Schema, covering tennis statistics.</p></dd>
           </div>
         </dl>
       </div>
       <div class="section" id="properties">
         <h2>Properties</h2>
-        <div class="property entity" id="triesScored">
-          <h3>triesScored
+        <div class="property entity" id="score">
+          <h3>score
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/triesScored</code>
+                <code>https://sportschema.org/ontologies/tennis/score</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Tries scored.</p></td>
+              <td><p>Either love, 15, 30, 40, or game.</p></td>
             </tr>
             <tr>
               <th>
@@ -408,22 +150,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="triesScoredPerGame">
-          <h3>triesScoredPerGame
+        <div class="property entity" id="duration">
+          <h3>duration
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/triesScoredPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/duration</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average number of tries scored per match.</p></td>
+              <td><p>The length in minutes of the set or game where it is inserted.</p></td>
             </tr>
             <tr>
               <th>
@@ -443,22 +185,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltyTriesTotal">
-          <h3>penaltyTriesTotal
+        <div class="property entity" id="setNumber">
+          <h3>setNumber
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltyTriesTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/setNumber</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Penalty tries awarded.</p></td>
+              <td><p>An integer, generally 1 through 7.</p></td>
             </tr>
             <tr>
               <th>
@@ -478,22 +220,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltyTriesPerGame">
-          <h3>penaltyTriesPerGame
+        <div class="property entity" id="scoreTiebreaker">
+          <h3>scoreTiebreaker
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltyTriesPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/scoreTiebreaker</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average number of penalty tries awarded per match.</p></td>
+              <td><p>An integer. Generally 0 through 7.</p></td>
             </tr>
             <tr>
               <th>
@@ -513,22 +255,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="dropGoalAttempts">
-          <h3>dropGoalAttempts
+        <div class="property entity" id="aces">
+          <h3>aces
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/dropGoalAttempts</code>
+                <code>https://sportschema.org/ontologies/tennis/aces</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Drop goal attempts</p></td>
+              <td><p>How many serve-aces the player shot.</p></td>
             </tr>
             <tr>
               <th>
@@ -548,22 +290,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="dropGoalsScored">
-          <h3>dropGoalsScored
+        <div class="property entity" id="firstServicesGood">
+          <h3>firstServicesGood
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/dropGoalsScored</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServicesGood</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Drop goals scored</p></td>
+              <td><p>Number of first serves that were good.</p></td>
             </tr>
             <tr>
               <th>
@@ -583,22 +325,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="dropGoalsScoredPerGame">
-          <h3>dropGoalsScoredPerGame
+        <div class="property entity" id="firstServicesGoodPct">
+          <h3>firstServicesGoodPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/dropGoalsScoredPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServicesGoodPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average drop goals scored per match</p></td>
+              <td><p>The percentage of good first serves.</p></td>
             </tr>
             <tr>
               <th>
@@ -618,22 +360,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltyGoalAttempts">
-          <h3>penaltyGoalAttempts
+        <div class="property entity" id="firstServicesPointsWon">
+          <h3>firstServicesPointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltyGoalAttempts</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServicesPointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Penalty goal attempts</p></td>
+              <td><p>How many points won after the first serve was good.</p></td>
             </tr>
             <tr>
               <th>
@@ -653,22 +395,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltyGoalsScored">
-          <h3>penaltyGoalsScored
+        <div class="property entity" id="firstServicesPointsWonPct">
+          <h3>firstServicesPointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltyGoalsScored</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServicesPointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Penalty goals scored</p></td>
+              <td><p>Percentage of games won after first serve was good.</p></td>
             </tr>
             <tr>
               <th>
@@ -688,22 +430,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltyGoalsScoredPerGame">
-          <h3>penaltyGoalsScoredPerGame
+        <div class="property entity" id="secondServicesPointsWon">
+          <h3>secondServicesPointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltyGoalsScoredPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServicesPointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average penalty goals scored per match</p></td>
+              <td><p>How many points won after the second serve was good.</p></td>
             </tr>
             <tr>
               <th>
@@ -723,22 +465,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="conversionAttempts">
-          <h3>conversionAttempts
+        <div class="property entity" id="secondServicesPointsWonPct">
+          <h3>secondServicesPointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/conversionAttempts</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServicesPointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Conversion attempts</p></td>
+              <td><p>Percentage of games won after second serve was good.</p></td>
             </tr>
             <tr>
               <th>
@@ -758,22 +500,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="conversionsScored">
-          <h3>conversionsScored
+        <div class="property entity" id="serviceGamesPlayed">
+          <h3>serviceGamesPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/conversionsScored</code>
+                <code>https://sportschema.org/ontologies/tennis/serviceGamesPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Conversions scored</p></td>
+              <td><p>How many games in the match or set this player or team served.</p></td>
             </tr>
             <tr>
               <th>
@@ -793,22 +535,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="conversionsScoredPerGame">
-          <h3>conversionsScoredPerGame
+        <div class="property entity" id="serviceGamesWon">
+          <h3>serviceGamesWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/conversionsScoredPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/serviceGamesWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average conversions scored per match</p></td>
+              <td><p>Number of games won in which the player served.</p></td>
             </tr>
             <tr>
               <th>
@@ -828,22 +570,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="freeKicksTotal">
-          <h3>freeKicksTotal
+        <div class="property entity" id="serviceGamesWonPct">
+          <h3>serviceGamesWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/freeKicksTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/serviceGamesWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of free kicks</p></td>
+              <td><p>The percentage of games won in which the player served.</p></td>
             </tr>
             <tr>
               <th>
@@ -863,22 +605,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="freeKicksPerGame">
-          <h3>freeKicksPerGame
+        <div class="property entity" id="breakPointsAgainst">
+          <h3>breakPointsAgainst
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/freeKicksPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsAgainst</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average free kicks per match</p></td>
+              <td><p>How many break-points did the other team/player have against the serving player.</p></td>
             </tr>
             <tr>
               <th>
@@ -898,22 +640,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="kicksTotal">
-          <h3>kicksTotal
+        <div class="property entity" id="breakPointsSaved">
+          <h3>breakPointsSaved
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/kicksTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsSaved</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of kicks</p></td>
+              <td><p>How many of these break-points were saved by the serving player.</p></td>
             </tr>
             <tr>
               <th>
@@ -933,22 +675,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="kicksIntoTouch">
-          <h3>kicksIntoTouch
+        <div class="property entity" id="breakPointsSavedPct">
+          <h3>breakPointsSavedPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/kicksIntoTouch</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsSavedPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of kicks into touch</p></td>
+              <td><p>The percentage of breakpoints saved. (There is some discussion on whether to include all possible break-points or just the deciding ones.)</p></td>
             </tr>
             <tr>
               <th>
@@ -968,22 +710,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="runs">
-          <h3>runs
+        <div class="property entity" id="servePointsPlayed">
+          <h3>servePointsPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/runs</code>
+                <code>https://sportschema.org/ontologies/tennis/servePointsPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of runs</p></td>
+              <td><p>How many points were played with this player/team serving. New attribute and therefore using the more proper term serve instead of service.</p></td>
             </tr>
             <tr>
               <th>
@@ -1003,22 +745,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="metresGained">
-          <h3>metresGained
+        <div class="property entity" id="servicePointsWon">
+          <h3>servicePointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/metresGained</code>
+                <code>https://sportschema.org/ontologies/tennis/servicePointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Total number of metres advanced in the match</p></td>
+              <td><p>Total points won where the player served. This should be the same as a sum of first-service-points-won and second-service-points-won.</p></td>
             </tr>
             <tr>
               <th>
@@ -1038,22 +780,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="scrumsTotal">
-          <h3>scrumsTotal
+        <div class="property entity" id="servicePointsWonPct">
+          <h3>servicePointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/scrumsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/servicePointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of scrums by team.</p></td>
+              <td><p>The percentage of points won by the serving player. Should be possible to calculate from other attributes here.</p></td>
             </tr>
             <tr>
               <th>
@@ -1073,22 +815,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="scrumsWonFor">
-          <h3>scrumsWonFor
+        <div class="property entity" id="doubleFaults">
+          <h3>doubleFaults
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/scrumsWonFor</code>
+                <code>https://sportschema.org/ontologies/tennis/doubleFaults</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of own scrums won.</p></td>
+              <td><p>How many double-faults committed by the serving player.</p></td>
             </tr>
             <tr>
               <th>
@@ -1108,22 +850,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="lineOutsTotal">
-          <h3>lineOutsTotal
+        <div class="property entity" id="firstServiceTopSpeed">
+          <h3>firstServiceTopSpeed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/lineOutsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServiceTopSpeed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of line-outs by team.</p></td>
+              <td><p>The top speed recorded among the serves from this player/team.</p></td>
             </tr>
             <tr>
               <th>
@@ -1143,22 +885,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="lineOutsWonFor">
-          <h3>lineOutsWonFor
+        <div class="property entity" id="firstServeAverageSpeed">
+          <h3>firstServeAverageSpeed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/lineOutsWonFor</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServeAverageSpeed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of lineouts won on own put in</p></td>
+              <td><p>The average speed recorded among the first serves from this player/team. New attribute and therefore using the more proper term serve instead of service.</p></td>
             </tr>
             <tr>
               <th>
@@ -1178,22 +920,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="rucksTotal">
-          <h3>rucksTotal
+        <div class="property entity" id="secondServicesGood">
+          <h3>secondServicesGood
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/rucksTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServicesGood</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of rucks by team.</p></td>
+              <td><p>The number of good second serves.</p></td>
             </tr>
             <tr>
               <th>
@@ -1213,22 +955,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="rucksWonFor">
-          <h3>rucksWonFor
+        <div class="property entity" id="secondServicesGoodPct">
+          <h3>secondServicesGoodPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/rucksWonFor</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServicesGoodPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of rucks won where team brought the ball in</p></td>
+              <td><p>The percentage of good second serves.</p></td>
             </tr>
             <tr>
               <th>
@@ -1248,22 +990,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="maulsTotal">
-          <h3>maulsTotal
+        <div class="property entity" id="secondServeAverageSpeed">
+          <h3>secondServeAverageSpeed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/maulsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServeAverageSpeed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of mauls by team.</p></td>
+              <td><p>The average speed recorded among the second serves from this player/team.  New attribute and therefore using the more proper term serve instead of service.</p></td>
             </tr>
             <tr>
               <th>
@@ -1283,22 +1025,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="maulsWonFor">
-          <h3>maulsWonFor
+        <div class="property entity" id="speedUnits">
+          <h3>speedUnits
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/maulsWonFor</code>
+                <code>https://sportschema.org/ontologies/tennis/speedUnits</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of own mauls won.</p></td>
+              <td><p>The measurement unit used for the various speed attributes. Normally mph, but can be m/s or km/h or something else.</p></td>
             </tr>
             <tr>
               <th>
@@ -1318,22 +1060,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="handlingErrors">
-          <h3>handlingErrors
+        <div class="property entity" id="returnsPlayed">
+          <h3>returnsPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/handlingErrors</code>
+                <code>https://sportschema.org/ontologies/tennis/returnsPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of handling errors</p></td>
+              <td><p>How many points played where this player/team received the serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1353,22 +1095,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="handlingErrorsPerGame">
-          <h3>handlingErrorsPerGame
+        <div class="property entity" id="receivePointsWon">
+          <h3>receivePointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/handlingErrorsPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/receivePointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average handling errors per match</p></td>
+              <td><p>How many points won by the receiving player. New attribute using the term receive which is preferred to return.</p></td>
             </tr>
             <tr>
               <th>
@@ -1388,22 +1130,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="tackles">
-          <h3>tackles
+        <div class="property entity" id="receivePointsWonPct">
+          <h3>receivePointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/tackles</code>
+                <code>https://sportschema.org/ontologies/tennis/receivePointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of tackles</p></td>
+              <td><p>The percentage of points won by the receiving player. New attribute using the term receive which is preferred to return.</p></td>
             </tr>
             <tr>
               <th>
@@ -1423,22 +1165,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="tacklesMissed">
-          <h3>tacklesMissed
+        <div class="property entity" id="firstServiceReturnPointsWon">
+          <h3>firstServiceReturnPointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/tacklesMissed</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServiceReturnPointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of tackles missed</p></td>
+              <td><p>How many points won by the player after receiving the first serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1458,22 +1200,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="scrumsWonAgainst">
-          <h3>scrumsWonAgainst
+        <div class="property entity" id="firstServiceReturnPointsWonPct">
+          <h3>firstServiceReturnPointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/scrumsWonAgainst</code>
+                <code>https://sportschema.org/ontologies/tennis/firstServiceReturnPointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of scrums won on opponent's put in</p></td>
+              <td><p>The percentage of points won by the player after receiving the first serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1493,22 +1235,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="lineOutsWonAgainst">
-          <h3>lineOutsWonAgainst
+        <div class="property entity" id="secondServiceReturnPointsWon">
+          <h3>secondServiceReturnPointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/lineOutsWonAgainst</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServiceReturnPointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of lineouts won on opponent's put in</p></td>
+              <td><p>How many points won after receiving the second serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1528,22 +1270,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="rucksWonAgainst">
-          <h3>rucksWonAgainst
+        <div class="property entity" id="secondServiceReturnPointsWonPct">
+          <h3>secondServiceReturnPointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/rucksWonAgainst</code>
+                <code>https://sportschema.org/ontologies/tennis/secondServiceReturnPointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of rucks won where opponent brought the ball in</p></td>
+              <td><p>The percentage of points won after receiving the second serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1563,22 +1305,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="maulsWonAgainst">
-          <h3>maulsWonAgainst
+        <div class="property entity" id="returnGamesPlayed">
+          <h3>returnGamesPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/maulsWonAgainst</code>
+                <code>https://sportschema.org/ontologies/tennis/returnGamesPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of opposing teams's mauls won.</p></td>
+              <td><p>And how does this compare to the returns-played and matches-played above?</p></td>
             </tr>
             <tr>
               <th>
@@ -1598,22 +1340,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltiesConceded">
-          <h3>penaltiesConceded
+        <div class="property entity" id="returnGamesWon">
+          <h3>returnGamesWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltiesConceded</code>
+                <code>https://sportschema.org/ontologies/tennis/returnGamesWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of penalties conceded to opposing team.</p></td>
+              <td><p>How many games won after receiving the serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1633,22 +1375,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="penaltiesConcededPerGame">
-          <h3>penaltiesConcededPerGame
+        <div class="property entity" id="returnGamesWonPct">
+          <h3>returnGamesWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/penaltiesConcededPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/returnGamesWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average number of penalties conceded to opposing team</p></td>
+              <td><p>The percentage of games won after receiving the serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1668,22 +1410,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="cautionsTotal">
-          <h3>cautionsTotal
+        <div class="property entity" id="breakPointsPlayed">
+          <h3>breakPointsPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/cautionsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Total number of cautions recieved.</p></td>
+              <td><p>How many possible break-points the receiving player/team had.</p></td>
             </tr>
             <tr>
               <th>
@@ -1703,22 +1445,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="cautionsPerGame">
-          <h3>cautionsPerGame
+        <div class="property entity" id="breakPointsConverted">
+          <h3>breakPointsConverted
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/cautionsPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsConverted</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average number of cautions recieved per match.</p></td>
+              <td><p>The number of break-points that resulted in actually breaking the serve.</p></td>
             </tr>
             <tr>
               <th>
@@ -1738,22 +1480,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="cautionsPending">
-          <h3>cautionsPending
+        <div class="property entity" id="breakPointsConvertedPct">
+          <h3>breakPointsConvertedPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/cautionsPending</code>
+                <code>https://sportschema.org/ontologies/tennis/breakPointsConvertedPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of cautions that could result in a game suspension.</p></td>
+              <td><p>The percentage of converted break-points.</p></td>
             </tr>
             <tr>
               <th>
@@ -1773,22 +1515,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="cautionPointsTotal">
-          <h3>cautionPointsTotal
+        <div class="property entity" id="netPointsWon">
+          <h3>netPointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/cautionPointsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/netPointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Total amount of caution points. Can occur over various games in a season.</p></td>
+              <td><p>Points won after the player went forward close to the net.</p></td>
             </tr>
             <tr>
               <th>
@@ -1808,22 +1550,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="cautionPointsPending">
-          <h3>cautionPointsPending
+        <div class="property entity" id="netPointsPlayed">
+          <h3>netPointsPlayed
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/cautionPointsPending</code>
+                <code>https://sportschema.org/ontologies/tennis/netPointsPlayed</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Number of caution points that could result in a game suspension.</p></td>
+              <td><p>Number of points played where the player went forward to the net.</p></td>
             </tr>
             <tr>
               <th>
@@ -1843,22 +1585,22 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="ejectionsTotal">
-          <h3>ejectionsTotal
+        <div class="property entity" id="netPointsWonPct">
+          <h3>netPointsWonPct
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/ejectionsTotal</code>
+                <code>https://sportschema.org/ontologies/tennis/netPointsWonPct</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Total number of ejections.</p></td>
+              <td><p>Percentage of points won after the player went forward close to the net.  Should be possible to calculate from the other net-xxx attributes.</p></td>
             </tr>
             <tr>
               <th>
@@ -1878,22 +1620,197 @@ code{
             </tr>
           </table>
         </div>
-        <div class="property entity" id="ejectionsPerGame">
-          <h3>ejectionsPerGame
+        <div class="property entity" id="pointsWon">
+          <h3>pointsWon
             <sup class="sup-p" title="RDF Property">p</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://sportschema.org/ontologies/rugby/ejectionsPerGame</code>
+                <code>https://sportschema.org/ontologies/tennis/pointsWon</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Average number of ejections recieved per match.</p></td>
+              <td><p>Total number of points won.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="https://sportschema.org/ontologies/main/Participation">sport:Participation</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="winners">
+          <h3>winners
+            <sup class="sup-p" title="RDF Property">p</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://sportschema.org/ontologies/tennis/winners</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Total number of winning strokes.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="https://sportschema.org/ontologies/main/Participation">sport:Participation</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="winnersForehand">
+          <h3>winnersForehand
+            <sup class="sup-p" title="RDF Property">p</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://sportschema.org/ontologies/tennis/winnersForehand</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Total number of winning strokes using the forehand.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="https://sportschema.org/ontologies/main/Participation">sport:Participation</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="winnersBackhand">
+          <h3>winnersBackhand
+            <sup class="sup-p" title="RDF Property">p</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://sportschema.org/ontologies/tennis/winnersBackhand</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Total number of winning strokes using the backhand.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="https://sportschema.org/ontologies/main/Participation">sport:Participation</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="winnersVolley">
+          <h3>winnersVolley
+            <sup class="sup-p" title="RDF Property">p</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://sportschema.org/ontologies/tennis/winnersVolley</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Total number of winning strokes using volley.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <a href="https://sportschema.org/ontologies/main/Participation">sport:Participation</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="unforcedErrors">
+          <h3>unforcedErrors
+            <sup class="sup-p" title="RDF Property">p</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://sportschema.org/ontologies/tennis/unforcedErrors</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>Total number of unforced errors performed.</p></td>
             </tr>
             <tr>
               <th>
@@ -1937,9 +1854,9 @@ code{
           <dd>
             <code>https://sportschema.org/ontologies/main/</code>
           </dd>
-          <dt id="sprgxstat">sprgxstat</dt>
+          <dt id="sptenstat">sptenstat</dt>
           <dd>
-            <code>https://sportschema.org/ontologies/rugby/</code>
+            <code>https://sportschema.org/ontologies/tennis/</code>
           </dd>
           <dt id="xsd">xsd</dt>
           <dd>
@@ -1983,136 +1900,151 @@ code{
           </h4>
           <ul class="second">
             <li>
-              <a href="#triesScored">triesScored</a>
+              <a href="#score">score</a>
             </li>
             <li>
-              <a href="#triesScoredPerGame">triesScoredPerGame</a>
+              <a href="#duration">duration</a>
             </li>
             <li>
-              <a href="#penaltyTriesTotal">penaltyTriesTotal</a>
+              <a href="#setNumber">setNumber</a>
             </li>
             <li>
-              <a href="#penaltyTriesPerGame">penaltyTriesPerGame</a>
+              <a href="#scoreTiebreaker">scoreTiebreaker</a>
             </li>
             <li>
-              <a href="#dropGoalAttempts">dropGoalAttempts</a>
+              <a href="#aces">aces</a>
             </li>
             <li>
-              <a href="#dropGoalsScored">dropGoalsScored</a>
+              <a href="#firstServicesGood">firstServicesGood</a>
             </li>
             <li>
-              <a href="#dropGoalsScoredPerGame">dropGoalsScoredPerGame</a>
+              <a href="#firstServicesGoodPct">firstServicesGoodPct</a>
             </li>
             <li>
-              <a href="#penaltyGoalAttempts">penaltyGoalAttempts</a>
+              <a href="#firstServicesPointsWon">firstServicesPointsWon</a>
             </li>
             <li>
-              <a href="#penaltyGoalsScored">penaltyGoalsScored</a>
+              <a href="#firstServicesPointsWonPct">firstServicesPointsWonPct</a>
             </li>
             <li>
-              <a href="#penaltyGoalsScoredPerGame">penaltyGoalsScoredPerGame</a>
+              <a href="#secondServicesPointsWon">secondServicesPointsWon</a>
             </li>
             <li>
-              <a href="#conversionAttempts">conversionAttempts</a>
+              <a href="#secondServicesPointsWonPct">secondServicesPointsWonPct</a>
             </li>
             <li>
-              <a href="#conversionsScored">conversionsScored</a>
+              <a href="#serviceGamesPlayed">serviceGamesPlayed</a>
             </li>
             <li>
-              <a href="#conversionsScoredPerGame">conversionsScoredPerGame</a>
+              <a href="#serviceGamesWon">serviceGamesWon</a>
             </li>
             <li>
-              <a href="#freeKicksTotal">freeKicksTotal</a>
+              <a href="#serviceGamesWonPct">serviceGamesWonPct</a>
             </li>
             <li>
-              <a href="#freeKicksPerGame">freeKicksPerGame</a>
+              <a href="#breakPointsAgainst">breakPointsAgainst</a>
             </li>
             <li>
-              <a href="#kicksTotal">kicksTotal</a>
+              <a href="#breakPointsSaved">breakPointsSaved</a>
             </li>
             <li>
-              <a href="#kicksIntoTouch">kicksIntoTouch</a>
+              <a href="#breakPointsSavedPct">breakPointsSavedPct</a>
             </li>
             <li>
-              <a href="#runs">runs</a>
+              <a href="#servePointsPlayed">servePointsPlayed</a>
             </li>
             <li>
-              <a href="#metresGained">metresGained</a>
+              <a href="#servicePointsWon">servicePointsWon</a>
             </li>
             <li>
-              <a href="#scrumsTotal">scrumsTotal</a>
+              <a href="#servicePointsWonPct">servicePointsWonPct</a>
             </li>
             <li>
-              <a href="#scrumsWonFor">scrumsWonFor</a>
+              <a href="#doubleFaults">doubleFaults</a>
             </li>
             <li>
-              <a href="#lineOutsTotal">lineOutsTotal</a>
+              <a href="#firstServiceTopSpeed">firstServiceTopSpeed</a>
             </li>
             <li>
-              <a href="#lineOutsWonFor">lineOutsWonFor</a>
+              <a href="#firstServeAverageSpeed">firstServeAverageSpeed</a>
             </li>
             <li>
-              <a href="#rucksTotal">rucksTotal</a>
+              <a href="#secondServicesGood">secondServicesGood</a>
             </li>
             <li>
-              <a href="#rucksWonFor">rucksWonFor</a>
+              <a href="#secondServicesGoodPct">secondServicesGoodPct</a>
             </li>
             <li>
-              <a href="#maulsTotal">maulsTotal</a>
+              <a href="#secondServeAverageSpeed">secondServeAverageSpeed</a>
             </li>
             <li>
-              <a href="#maulsWonFor">maulsWonFor</a>
+              <a href="#speedUnits">speedUnits</a>
             </li>
             <li>
-              <a href="#handlingErrors">handlingErrors</a>
+              <a href="#returnsPlayed">returnsPlayed</a>
             </li>
             <li>
-              <a href="#handlingErrorsPerGame">handlingErrorsPerGame</a>
+              <a href="#receivePointsWon">receivePointsWon</a>
             </li>
             <li>
-              <a href="#tackles">tackles</a>
+              <a href="#receivePointsWonPct">receivePointsWonPct</a>
             </li>
             <li>
-              <a href="#tacklesMissed">tacklesMissed</a>
+              <a href="#firstServiceReturnPointsWon">firstServiceReturnPointsWon</a>
             </li>
             <li>
-              <a href="#scrumsWonAgainst">scrumsWonAgainst</a>
+              <a href="#firstServiceReturnPointsWonPct">firstServiceReturnPointsWonPct</a>
             </li>
             <li>
-              <a href="#lineOutsWonAgainst">lineOutsWonAgainst</a>
+              <a href="#secondServiceReturnPointsWon">secondServiceReturnPointsWon</a>
             </li>
             <li>
-              <a href="#rucksWonAgainst">rucksWonAgainst</a>
+              <a href="#secondServiceReturnPointsWonPct">secondServiceReturnPointsWonPct</a>
             </li>
             <li>
-              <a href="#maulsWonAgainst">maulsWonAgainst</a>
+              <a href="#returnGamesPlayed">returnGamesPlayed</a>
             </li>
             <li>
-              <a href="#penaltiesConceded">penaltiesConceded</a>
+              <a href="#returnGamesWon">returnGamesWon</a>
             </li>
             <li>
-              <a href="#penaltiesConcededPerGame">penaltiesConcededPerGame</a>
+              <a href="#returnGamesWonPct">returnGamesWonPct</a>
             </li>
             <li>
-              <a href="#cautionsTotal">cautionsTotal</a>
+              <a href="#breakPointsPlayed">breakPointsPlayed</a>
             </li>
             <li>
-              <a href="#cautionsPerGame">cautionsPerGame</a>
+              <a href="#breakPointsConverted">breakPointsConverted</a>
             </li>
             <li>
-              <a href="#cautionsPending">cautionsPending</a>
+              <a href="#breakPointsConvertedPct">breakPointsConvertedPct</a>
             </li>
             <li>
-              <a href="#cautionPointsTotal">cautionPointsTotal</a>
+              <a href="#netPointsWon">netPointsWon</a>
             </li>
             <li>
-              <a href="#cautionPointsPending">cautionPointsPending</a>
+              <a href="#netPointsPlayed">netPointsPlayed</a>
             </li>
             <li>
-              <a href="#ejectionsTotal">ejectionsTotal</a>
+              <a href="#netPointsWonPct">netPointsWonPct</a>
             </li>
             <li>
-              <a href="#ejectionsPerGame">ejectionsPerGame</a>
+              <a href="#pointsWon">pointsWon</a>
+            </li>
+            <li>
+              <a href="#winners">winners</a>
+            </li>
+            <li>
+              <a href="#winnersForehand">winnersForehand</a>
+            </li>
+            <li>
+              <a href="#winnersBackhand">winnersBackhand</a>
+            </li>
+            <li>
+              <a href="#winnersVolley">winnersVolley</a>
+            </li>
+            <li>
+              <a href="#unforcedErrors">unforcedErrors</a>
             </li>
           </ul>
         </li>
@@ -2137,7 +2069,7 @@ code{
               <a href="#sport">sport</a>
             </li>
             <li>
-              <a href="#sprgxstat">sprgxstat</a>
+              <a href="#sptenstat">sptenstat</a>
             </li>
             <li>
               <a href="#xsd">xsd</a>

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Schema overview
-nav_order: 3
+title: Schema Overview
+nav_order: 2
 description: "Explaining the thinking behind the structure of the IPTC Sport Schema"
 permalink: /schema-overview/
 ---
@@ -15,16 +15,27 @@ This guide explains some of the core structures and patterns used in the IPTC Sp
 
 ## Key concepts
 
-### Document-based vs open data models
+The following concepts describe the "world" described by the SportsSchema model
 
-Data models based on XML Schema, such as IPTC's SportsML, treat each data file as a standalone document which conveys a particular set of information.
+### Data versus Document
 
-On the other hand, an RDF-based data model assumes that all data exists in the database together.
+SportSchema does not model documents, but units of data that are easily transmitted in a scalable manner. Data models based on XML Schema, such as IPTC's SportsML, treat each data file as a standalone document which conveys a particular set of information. JSON data formats have tended to mimic the xml document format.
 
-The practical result of this is that when querying, we can't simply say "tell me the winner of the game." We have to be specific about exactly which game we mean. All queries must be qualified by filters to only match a given event, sport, league, date etc.
+### Competition versus Event
 
-This has led to us creating several generic structures which allow us to
-capture richer information about people, teams and events.
+A competition is a collection of events formatted to a competitive goal: a champtionship, medal, etc. Examples are the Men's 800M in the Summer Olympics, NBA's 2022 season, The Champtions Leage and the Tour de France. Each of those competitions is comprised of competitive event units (sometimes referred to as "unit competitions") within which competitive, statistics-generating sports actions take place. So while the Men's 800M is a competition (toward a medal), a race or heat in that competition is an event. The Summer Olympics can themselves be characterized as a competition within which aggregate national teams compete in the medal table (with aggregate medal counts).
+
+### Action versus Event
+
+Events are units within which competitive action takes place (and from which statistics are generated). Actions are the specific competitive events that comprise the overall event. These can be goals, kickoffs, passes, penalties or even video reviews. These are the basic units of a competitive event from which statistical reports are generated.
+
+### Participation
+
+In SportSchema athletes and teams are distinct from their performances, which are separate queryable objects.
+
+### Membership
+
+Athletes move from league to league and team to team. Some even play more than one sport. SportSchema's Membership class tracks an athlete's career across time.
 
 ### Summary
 

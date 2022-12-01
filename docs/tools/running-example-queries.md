@@ -1,3 +1,10 @@
+---
+permalink: /tools/running-example-queries/
+title: Running example queries
+layout: page
+nav_order: 1
+parent: Working with IPTC Sport Schema
+---
 # Running example queries
 
 If you install

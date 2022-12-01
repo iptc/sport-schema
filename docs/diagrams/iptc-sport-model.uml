@@ -1,27 +1,30 @@
 @startuml
-!theme cerulean-outline
+!theme reddress-lightblue
+skinparam DefaultFontSize 14
 
-' IPTC Sport Model - last updated 2022-10-05
+' IPTC Sport Model - last updated 2022-10-14
 
-' RDF Classes defined in our ontology:
+class ParticipatableThing {
+  sport : CV Value
+}
+
 class Action {
-  rdfs:label : string
-}
-
-class Agent {
-  rdfs:label : string
-}
-
-class Associate {
-}
-
-class Athlete {
 }
 
 class Competition {
-  rdfs:label : string
-  sport : CV Value
   competitionType : CV Value
+}
+
+class CompetitionPhase {
+  competitionFormat : CV Value
+  competitionPhaseType : CV Value
+}
+
+class Event {
+  eventOutcomeType : CV Value
+  attendance : integer
+  startDateTime : dateTime
+  endDateTime : dateTime
 }
 
 class CompetitorParticipation {
@@ -31,35 +34,31 @@ class CompetitorParticipation {
   scoreUnits : CV Value 
 }
 
-class CompetitionPhase {
-  rdfs:label : string
-  sport : CV Value
-  competitionFormat : CV Value
-  competitionPhaseType : CV Value
-}
-
-class Event {
-  rdfs:label : string
-  sport : CV Value
-  eventOutcomeType : CV Value
-  attendance : integer
-  startDateTime : dateTime
-  endDateTime : dateTime
-}
-
 class GoverningBody {
-  rdfs:label : string
+}
+
+class Agent {
 }
 
 class Individual {
-  rdfs:label : string
   nationality : string
   dateOfBirth : date
 }
 
-class IndividualMembership {
-  uniformNumber : integer
-  positionRegular : CV Value
+class Associate {
+}
+
+class Athlete {
+}
+
+class Official {
+}
+
+class Team {
+}
+
+class Participation {
+  positionEvent : CV Value
 }
 
 class IndividualParticipation {
@@ -69,39 +68,36 @@ class IndividualParticipation {
 class AssociateParticipation {
 }
 
-class Membership {
-  rdfs:label : string
-  startDate : date
-  endDate : date
-}
-
-class Official {
-}
-
 class OfficialParticipation {
-}
-
-class Participation {
-  positionEvent : CV Value
-}
-
-class ParticipationSplit {
-  participationSplitType : CV Value
-}
-
-class Site {
-  rdfs:label : string
-}
-
-class Team {
 }
 
 class TeamParticipation {
   alignment : CV Value
 }
 
+class ParticipationSplit {
+  participationSplitType : CV Value
+}
+
+class Membership {
+  startDate : date
+  endDate : date
+}
+
+class IndividualMembership {
+  uniformNumber : integer
+  positionRegular : CV Value
+  membershipStatus : CV Value
+}
+
+class Site {
+}
+
 ' subclass relationships
 
+ParticipatableThing <|-- Competition
+ParticipatableThing <|-- Event
+ParticipatableThing <|-- Action
 Competition <|-- CompetitionPhase
 CompetitorParticipation <|-- TeamParticipation
 CompetitorParticipation <|-- IndividualParticipation
@@ -117,21 +113,18 @@ Individual <|-- Official
 
 ' Object properties - relationships between classes
 
-Action .. Event : > event
-Action .. Participation : > actionParticipation
-Competition .. Competition : > parentCompetition
-Competition .. GoverningBody : > governingBody
-Competition .. Participation : > competitionParticipation
-CompetitionPhase .. Competition : > competition
-CompetitionPhase .. Participation : > phaseParticipation
-CompetitionPhase .. CompetitionPhase : > competitionPhase
-Event .. Competition : > competition
-Event .. CompetitionPhase : > competitionPhase
-Event .. Event : > subEvent
-Event .. Participation : > eventParticipation
-Event .. Site :  > site
-IndividualMembership .. Individual : > membershipBy
+ParticipatableThing .. Participation : > participation
+ParticipatableThing .. ParticipatableThing : > parent
+
+Action .. Event : > actionInEvent
+Event .. Competition : > eventInCompetition
+Event .. CompetitionPhase : > eventInCompetitionPhase
+CompetitionPhase .. Competition : > phaseInCompetition
+
+Competition .. GoverningBody : > governedBy
+Event .. Site :  > location
+IndividualMembership .. Individual : > member
 Participation .. Agent : > participationBy
 Participation .. ParticipationSplit : participationSplit
-Team .. IndividualMembership : < membershipOf
+IndividualMembership .. Team : > membershipOf
 @enduml
