@@ -14,12 +14,12 @@ WHERE
 {
     ?event rdf:type sport:Event ;
            sport:startDateTime ?date ;
-           sport:competitionPhase ?compPhase ;
-           sport:site ?site ;
-           sport:eventParticipation ?homeTeamParticipation .
+           sport:eventInCompetitionPhase ?compPhase ;
+           sport:location ?site ;
+           sport:participation ?homeTeamParticipation .
     ?compPhase rdf:type sport:CompetitionPhase ;
                rdfs:label ?week ;
-               sport:competition ?parentCompetition .
+               sport:phaseInCompetition ?parentCompetition .
     ?parentCompetition rdf:type sport:Competition;
                rdfs:label ?parentCompName .
     ?homeTeamParticipation rdf:type sport:TeamParticipation ;
@@ -28,7 +28,7 @@ WHERE
     ?homeTeam rdf:type sport:Team ;
               rdfs:label ?homeTeamName .
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?awayTeamParticipation .
+           sport:participation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation ;
                            sport:participationBy ?awayTeam ;
                            sport:alignment "away" .

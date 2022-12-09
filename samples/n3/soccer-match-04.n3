@@ -3,29 +3,27 @@
                     <http://example.com/Competition/l.premierleague.com> <http://www.w3.org/2000/01/rdf-schema#label> "English Premier League" .
                     <http://example.com/Competition/l.premierleague.com> <https://sportschema.org/ontologies/main/sport> <http://cv.iptc.org/newscodes/mediatopic/20001065> .
 
-                    
                 <http://example.com/Competition/l.premierleague.com-2020><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Competition> .
                     <http://example.com/Competition/l.premierleague.com-2020><https://sportschema.org/ontologies/main/competitionType><http://cv.iptc.org/newscodes/spct/competition> .
                     <http://example.com/Competition/l.premierleague.com-2020> <http://www.w3.org/2000/01/rdf-schema#label> "English Premier League 2020" .
                     <http://example.com/Competition/l.premierleague.com-2020> <https://sportschema.org/ontologies/main/sport> <http://cv.iptc.org/newscodes/mediatopic/20001065> .
 
-                    
-                <http://example.com/Competition/l.premierleague.com-2020><https://sportschema.org/ontologies/main/parentCompetition><http://example.com/Competition/l.premierleague.com> .
-                    <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/competition> <http://example.com/Competition/l.premierleague.com-2020> .
-                <http://example.com/Event/E2128609><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Event> .
+                <http://example.com/Competition/l.premierleague.com-2020><https://sportschema.org/ontologies/main/parent><http://example.com/Competition/l.premierleague.com> .
+                    <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventInCompetition> <http://example.com/Competition/l.premierleague.com-2020> .
+                        <http://example.com/Event/E2128609><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Event> .
 
         
         <http://example.com/Event/E2128609> <http://www.w3.org/2000/01/rdf-schema#label> "Event E2128609" .
           <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/startDateTime> "2021-04-25T14:00:00+01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventStatus> <http://cv.iptc.org/newscodes/speventstatus/post-event> .
         <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventOutcomeType> <http://cv.iptc.org/newscodes/speventoutcometype/regular> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/competitionPhase> <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventInCompetitionPhase> <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> .
             <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/CompetitionPhase> .
             <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> <http://www.w3.org/2000/01/rdf-schema#label> "Week 33" .
-            <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> <https://sportschema.org/ontologies/main/competition> <http://example.com/Competition/l.premierleague.com-2020> .
+            <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> <https://sportschema.org/ontologies/main/phaseInCompetition> <http://example.com/Competition/l.premierleague.com-2020> .
         <http://example.com/Site/s.29><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Site> .
         
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/site> <http://example.com/Site/s.29> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/location> <http://example.com/Site/s.29> .
         
         <http://example.com/Site/s.29> <http://www.w3.org/2000/01/rdf-schema#label> "Elland Road" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
@@ -37,7 +35,7 @@
             <http://example.com/Participation/E2128609-EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United participation in Event E2128609" .
                 <http://example.com/Participation/E2128609-EPLT2> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/EPLT2> .
         <http://example.com/Participation/E2128609-EPLT2> <https://sportschema.org/ontologies/main/alignment> "home" .
-                <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-EPLT2> .
+                <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-EPLT2> .
         <http://example.com/Participation/E2128609-EPLT2> <https://sportschema.org/ontologies/main/score> "0" .
             <http://example.com/Participation/E2128609-EPLT2> <https://sportschema.org/ontologies/corestatistics/scoreOpposing> "0" .
             <http://example.com/Participation/E2128609-EPLT2> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/tie> .
@@ -63,14 +61,13 @@
         <http://example.com/Athlete/p.437495> <http://www.w3.org/2000/01/rdf-schema#label> "Illan Meslier" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.437495> .
             <http://example.com/Membership/EPLT2-p.437495> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.437495> <http://www.w3.org/2000/01/rdf-schema#label> "Illan Meslier membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.437495><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.437495><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.437495> .
+            <http://example.com/Membership/EPLT2-p.437495><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.437495> .
             <http://example.com/Membership/EPLT2-p.437495> <https://sportschema.org/ontologies/main/uniformNumber> "1" .
             <http://example.com/Participation/E2128609-p.437495> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.437495> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.437495> .
             
             <http://example.com/Participation/E2128609-p.437495><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -99,14 +96,13 @@
         <http://example.com/Athlete/p.66588> <http://www.w3.org/2000/01/rdf-schema#label> "Luke Ayling" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.66588> .
             <http://example.com/Membership/EPLT2-p.66588> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.66588> <http://www.w3.org/2000/01/rdf-schema#label> "Luke Ayling membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.66588><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.66588><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.66588> .
+            <http://example.com/Membership/EPLT2-p.66588><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.66588> .
             <http://example.com/Membership/EPLT2-p.66588> <https://sportschema.org/ontologies/main/uniformNumber> "2" .
             <http://example.com/Participation/E2128609-p.66588> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.66588> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.66588> .
             
             <http://example.com/Participation/E2128609-p.66588><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -147,14 +143,13 @@
         <http://example.com/Athlete/p.149915> <http://www.w3.org/2000/01/rdf-schema#label> "Diego Llorente" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.149915> .
             <http://example.com/Membership/EPLT2-p.149915> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.149915> <http://www.w3.org/2000/01/rdf-schema#label> "Diego Llorente membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.149915><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.149915><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.149915> .
+            <http://example.com/Membership/EPLT2-p.149915><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.149915> .
             <http://example.com/Membership/EPLT2-p.149915> <https://sportschema.org/ontologies/main/uniformNumber> "14" .
             <http://example.com/Participation/E2128609-p.149915> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.149915> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.149915> .
             
             <http://example.com/Participation/E2128609-p.149915><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -190,14 +185,13 @@
         <http://example.com/Athlete/p.222694> <http://www.w3.org/2000/01/rdf-schema#label> "Pascal Struijk" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.222694> .
             <http://example.com/Membership/EPLT2-p.222694> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.222694> <http://www.w3.org/2000/01/rdf-schema#label> "Pascal Struijk membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.222694><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.222694><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.222694> .
+            <http://example.com/Membership/EPLT2-p.222694><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.222694> .
             <http://example.com/Membership/EPLT2-p.222694> <https://sportschema.org/ontologies/main/uniformNumber> "21" .
             <http://example.com/Participation/E2128609-p.222694> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.222694> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.222694> .
             
             <http://example.com/Participation/E2128609-p.222694><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -230,14 +224,13 @@
         <http://example.com/Athlete/p.105377> <http://www.w3.org/2000/01/rdf-schema#label> "Ezgjan Alioski" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.105377> .
             <http://example.com/Membership/EPLT2-p.105377> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.105377> <http://www.w3.org/2000/01/rdf-schema#label> "Ezgjan Alioski membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.105377><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.105377><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.105377> .
+            <http://example.com/Membership/EPLT2-p.105377><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.105377> .
             <http://example.com/Membership/EPLT2-p.105377> <https://sportschema.org/ontologies/main/uniformNumber> "10" .
             <http://example.com/Participation/E2128609-p.105377> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.105377> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.105377> .
             
             <http://example.com/Participation/E2128609-p.105377><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -272,14 +265,13 @@
         <http://example.com/Athlete/p.155405> <http://www.w3.org/2000/01/rdf-schema#label> "Kalvin Phillips" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.155405> .
             <http://example.com/Membership/EPLT2-p.155405> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.155405> <http://www.w3.org/2000/01/rdf-schema#label> "Kalvin Phillips membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.155405><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.155405><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.155405> .
+            <http://example.com/Membership/EPLT2-p.155405><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.155405> .
             <http://example.com/Membership/EPLT2-p.155405> <https://sportschema.org/ontologies/main/uniformNumber> "23" .
             <http://example.com/Participation/E2128609-p.155405> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.155405> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.155405> .
             
             <http://example.com/Participation/E2128609-p.155405><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -314,14 +306,13 @@
         <http://example.com/Athlete/p.165808> <http://www.w3.org/2000/01/rdf-schema#label> "Hélder Costa" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.165808> .
             <http://example.com/Membership/EPLT2-p.165808> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.165808> <http://www.w3.org/2000/01/rdf-schema#label> "Hélder Costa membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.165808><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.165808><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.165808> .
+            <http://example.com/Membership/EPLT2-p.165808><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.165808> .
             <http://example.com/Membership/EPLT2-p.165808> <https://sportschema.org/ontologies/main/uniformNumber> "17" .
             <http://example.com/Participation/E2128609-p.165808> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.165808> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.165808> .
             
             <http://example.com/Participation/E2128609-p.165808><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -353,14 +344,13 @@
         <http://example.com/Athlete/p.87873> <http://www.w3.org/2000/01/rdf-schema#label> "Stuart Dallas" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.87873> .
             <http://example.com/Membership/EPLT2-p.87873> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.87873> <http://www.w3.org/2000/01/rdf-schema#label> "Stuart Dallas membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.87873><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.87873><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.87873> .
+            <http://example.com/Membership/EPLT2-p.87873><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.87873> .
             <http://example.com/Membership/EPLT2-p.87873> <https://sportschema.org/ontologies/main/uniformNumber> "15" .
             <http://example.com/Participation/E2128609-p.87873> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.87873> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.87873> .
             
             <http://example.com/Participation/E2128609-p.87873><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -399,14 +389,13 @@
         <http://example.com/Athlete/p.173821> <http://www.w3.org/2000/01/rdf-schema#label> "Tyler Roberts" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.173821> .
             <http://example.com/Membership/EPLT2-p.173821> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.173821> <http://www.w3.org/2000/01/rdf-schema#label> "Tyler Roberts membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.173821><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.173821><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.173821> .
+            <http://example.com/Membership/EPLT2-p.173821><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.173821> .
             <http://example.com/Membership/EPLT2-p.173821> <https://sportschema.org/ontologies/main/uniformNumber> "11" .
             <http://example.com/Participation/E2128609-p.173821> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.173821> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.173821> .
             
             <http://example.com/Participation/E2128609-p.173821><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -437,14 +426,13 @@
         <http://example.com/Athlete/p.221399> <http://www.w3.org/2000/01/rdf-schema#label> "Jack Harrison" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.221399> .
             <http://example.com/Membership/EPLT2-p.221399> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.221399> <http://www.w3.org/2000/01/rdf-schema#label> "Jack Harrison membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.221399><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.221399><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.221399> .
+            <http://example.com/Membership/EPLT2-p.221399><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.221399> .
             <http://example.com/Membership/EPLT2-p.221399> <https://sportschema.org/ontologies/main/uniformNumber> "22" .
             <http://example.com/Participation/E2128609-p.221399> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.221399> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.221399> .
             
             <http://example.com/Participation/E2128609-p.221399><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -475,14 +463,13 @@
         <http://example.com/Athlete/p.106617> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Bamford" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.106617> .
             <http://example.com/Membership/EPLT2-p.106617> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.106617> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Bamford membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.106617><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.106617><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.106617> .
+            <http://example.com/Membership/EPLT2-p.106617><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.106617> .
             <http://example.com/Membership/EPLT2-p.106617> <https://sportschema.org/ontologies/main/uniformNumber> "9" .
             <http://example.com/Participation/E2128609-p.106617> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.106617> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.106617> .
             
             <http://example.com/Participation/E2128609-p.106617><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -512,14 +499,13 @@
         <http://example.com/Athlete/p.193645> <http://www.w3.org/2000/01/rdf-schema#label> "Robin Koch" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.193645> .
             <http://example.com/Membership/EPLT2-p.193645> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.193645> <http://www.w3.org/2000/01/rdf-schema#label> "Robin Koch membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.193645><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.193645><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.193645> .
+            <http://example.com/Membership/EPLT2-p.193645><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.193645> .
             <http://example.com/Membership/EPLT2-p.193645> <https://sportschema.org/ontologies/main/uniformNumber> "5" .
             <http://example.com/Participation/E2128609-p.193645> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.193645> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.193645> .
             
             <http://example.com/Participation/E2128609-p.193645><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -545,14 +531,13 @@
         <http://example.com/Athlete/p.215460> <http://www.w3.org/2000/01/rdf-schema#label> "Ian Poveda-Ocampo" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.215460> .
             <http://example.com/Membership/EPLT2-p.215460> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.215460> <http://www.w3.org/2000/01/rdf-schema#label> "Ian Poveda-Ocampo membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.215460><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.215460><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.215460> .
+            <http://example.com/Membership/EPLT2-p.215460><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.215460> .
             <http://example.com/Membership/EPLT2-p.215460> <https://sportschema.org/ontologies/main/uniformNumber> "7" .
             <http://example.com/Participation/E2128609-p.215460> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.215460> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.215460> .
             
             <http://example.com/Participation/E2128609-p.215460><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -578,14 +563,13 @@
         <http://example.com/Athlete/p.39790> <http://www.w3.org/2000/01/rdf-schema#label> "Kiko Casilla" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.39790> .
             <http://example.com/Membership/EPLT2-p.39790> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.39790> <http://www.w3.org/2000/01/rdf-schema#label> "Kiko Casilla membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.39790><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.39790><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.39790> .
+            <http://example.com/Membership/EPLT2-p.39790><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.39790> .
             <http://example.com/Membership/EPLT2-p.39790> <https://sportschema.org/ontologies/main/uniformNumber> "13" .
             <http://example.com/Participation/E2128609-p.39790> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.39790> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.39790> .
             
             <http://example.com/Participation/E2128609-p.39790><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -597,14 +581,13 @@
         <http://example.com/Athlete/p.28690> <http://www.w3.org/2000/01/rdf-schema#label> "Pablo Hernández" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.28690> .
             <http://example.com/Membership/EPLT2-p.28690> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.28690> <http://www.w3.org/2000/01/rdf-schema#label> "Pablo Hernández membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.28690><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.28690><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.28690> .
+            <http://example.com/Membership/EPLT2-p.28690><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.28690> .
             <http://example.com/Membership/EPLT2-p.28690> <https://sportschema.org/ontologies/main/uniformNumber> "19" .
             <http://example.com/Participation/E2128609-p.28690> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.28690> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.28690> .
             
             <http://example.com/Participation/E2128609-p.28690><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -616,14 +599,13 @@
         <http://example.com/Athlete/p.38588> <http://www.w3.org/2000/01/rdf-schema#label> "Gaetano Berardi" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.38588> .
             <http://example.com/Membership/EPLT2-p.38588> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.38588> <http://www.w3.org/2000/01/rdf-schema#label> "Gaetano Berardi membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.38588><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.38588><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.38588> .
+            <http://example.com/Membership/EPLT2-p.38588><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.38588> .
             <http://example.com/Membership/EPLT2-p.38588> <https://sportschema.org/ontologies/main/uniformNumber> "28" .
             <http://example.com/Participation/E2128609-p.38588> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.38588> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.38588> .
             
             <http://example.com/Participation/E2128609-p.38588><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -635,14 +617,13 @@
         <http://example.com/Athlete/p.450070> <http://www.w3.org/2000/01/rdf-schema#label> "Crysencio Summerville" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.450070> .
             <http://example.com/Membership/EPLT2-p.450070> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.450070> <http://www.w3.org/2000/01/rdf-schema#label> "Crysencio Summerville membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.450070><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.450070><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.450070> .
+            <http://example.com/Membership/EPLT2-p.450070><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.450070> .
             <http://example.com/Membership/EPLT2-p.450070> <https://sportschema.org/ontologies/main/uniformNumber> "38" .
             <http://example.com/Participation/E2128609-p.450070> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.450070> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.450070> .
             
             <http://example.com/Participation/E2128609-p.450070><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -654,14 +635,13 @@
         <http://example.com/Athlete/p.248937> <http://www.w3.org/2000/01/rdf-schema#label> "Sam Greenwood" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.248937> .
             <http://example.com/Membership/EPLT2-p.248937> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.248937> <http://www.w3.org/2000/01/rdf-schema#label> "Sam Greenwood membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.248937><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.248937><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.248937> .
+            <http://example.com/Membership/EPLT2-p.248937><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.248937> .
             <http://example.com/Membership/EPLT2-p.248937> <https://sportschema.org/ontologies/main/uniformNumber> "42" .
             <http://example.com/Participation/E2128609-p.248937> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.248937> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.248937> .
             
             <http://example.com/Participation/E2128609-p.248937><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -673,14 +653,13 @@
         <http://example.com/Athlete/p.72222> <http://www.w3.org/2000/01/rdf-schema#label> "Mateusz Klich" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.72222> .
             <http://example.com/Membership/EPLT2-p.72222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.72222> <http://www.w3.org/2000/01/rdf-schema#label> "Mateusz Klich membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.72222><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.72222><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.72222> .
+            <http://example.com/Membership/EPLT2-p.72222><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.72222> .
             <http://example.com/Membership/EPLT2-p.72222> <https://sportschema.org/ontologies/main/uniformNumber> "43" .
             <http://example.com/Participation/E2128609-p.72222> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.72222> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.72222> .
             
             <http://example.com/Participation/E2128609-p.72222><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -708,14 +687,13 @@
         <http://example.com/Athlete/p.221610> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Shackleton" .
         <http://example.com/Team/EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Leeds United" .
-            <http://example.com/Team/EPLT2> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT2-p.221610> .
             <http://example.com/Membership/EPLT2-p.221610> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT2-p.221610> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Shackleton membership of Leeds United" .
             <http://example.com/Membership/EPLT2-p.221610><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
-            <http://example.com/Membership/EPLT2-p.221610><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.221610> .
+            <http://example.com/Membership/EPLT2-p.221610><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.221610> .
             <http://example.com/Membership/EPLT2-p.221610> <https://sportschema.org/ontologies/main/uniformNumber> "46" .
             <http://example.com/Participation/E2128609-p.221610> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.221610> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.221610> .
             
             <http://example.com/Participation/E2128609-p.221610><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -726,7 +704,7 @@
 
         
         <http://example.com/Associate/man26> <http://www.w3.org/2000/01/rdf-schema#label> "Marcelo Bielsa" .
-        <http://example.com/Membership/man26-EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Membership> .
+        <http://example.com/Membership/man26-EPLT2><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualMembership> .
         
         <http://example.com/Membership/man26-EPLT2> <http://www.w3.org/2000/01/rdf-schema#label> "Marcelo Bielsa associate membership of Leeds United" .
 
@@ -734,7 +712,7 @@
         <http://example.com/Membership/man26-EPLT2><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT2> .
 
         
-        <http://example.com/Membership/man26-EPLT2><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Associate/man26> .
+        <http://example.com/Membership/man26-EPLT2><https://sportschema.org/ontologies/main/member><http://example.com/Associate/man26> .
 
         
         
@@ -750,7 +728,7 @@
             <http://example.com/Participation/E2128609-EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United participation in Event E2128609" .
                 <http://example.com/Participation/E2128609-EPLT1> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/EPLT1> .
         <http://example.com/Participation/E2128609-EPLT1> <https://sportschema.org/ontologies/main/alignment> "away" .
-                <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-EPLT1> .
+                <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-EPLT1> .
         <http://example.com/Participation/E2128609-EPLT1> <https://sportschema.org/ontologies/main/score> "0" .
             <http://example.com/Participation/E2128609-EPLT1> <https://sportschema.org/ontologies/corestatistics/scoreOpposing> "0" .
             <http://example.com/Participation/E2128609-EPLT1> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/tie> .
@@ -776,14 +754,13 @@
         <http://example.com/Athlete/p.172649> <http://www.w3.org/2000/01/rdf-schema#label> "Dean Henderson" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.172649> .
             <http://example.com/Membership/EPLT1-p.172649> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.172649> <http://www.w3.org/2000/01/rdf-schema#label> "Dean Henderson membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.172649><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.172649><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.172649> .
+            <http://example.com/Membership/EPLT1-p.172649><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.172649> .
             <http://example.com/Membership/EPLT1-p.172649> <https://sportschema.org/ontologies/main/uniformNumber> "26" .
             <http://example.com/Participation/E2128609-p.172649> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.172649> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.172649> .
             
             <http://example.com/Participation/E2128609-p.172649><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -813,14 +790,13 @@
         <http://example.com/Athlete/p.214590> <http://www.w3.org/2000/01/rdf-schema#label> "Aaron Wan-Bissaka" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.214590> .
             <http://example.com/Membership/EPLT1-p.214590> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.214590> <http://www.w3.org/2000/01/rdf-schema#label> "Aaron Wan-Bissaka membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.214590><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.214590><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.214590> .
+            <http://example.com/Membership/EPLT1-p.214590><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.214590> .
             <http://example.com/Membership/EPLT1-p.214590> <https://sportschema.org/ontologies/main/uniformNumber> "29" .
             <http://example.com/Participation/E2128609-p.214590> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.214590> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.214590> .
             
             <http://example.com/Participation/E2128609-p.214590><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -855,14 +831,13 @@
         <http://example.com/Athlete/p.184667> <http://www.w3.org/2000/01/rdf-schema#label> "Victor Lindelöf" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.184667> .
             <http://example.com/Membership/EPLT1-p.184667> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.184667> <http://www.w3.org/2000/01/rdf-schema#label> "Victor Lindelöf membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.184667><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.184667><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.184667> .
+            <http://example.com/Membership/EPLT1-p.184667><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.184667> .
             <http://example.com/Membership/EPLT1-p.184667> <https://sportschema.org/ontologies/main/uniformNumber> "2" .
             <http://example.com/Participation/E2128609-p.184667> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.184667> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.184667> .
             
             <http://example.com/Participation/E2128609-p.184667><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -896,14 +871,13 @@
         <http://example.com/Athlete/p.95658> <http://www.w3.org/2000/01/rdf-schema#label> "Harry Maguire" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.95658> .
             <http://example.com/Membership/EPLT1-p.95658> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.95658> <http://www.w3.org/2000/01/rdf-schema#label> "Harry Maguire membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.95658><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.95658><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.95658> .
+            <http://example.com/Membership/EPLT1-p.95658><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.95658> .
             <http://example.com/Membership/EPLT1-p.95658> <https://sportschema.org/ontologies/main/uniformNumber> "5" .
             <http://example.com/Participation/E2128609-p.95658> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.95658> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.95658> .
             
             <http://example.com/Participation/E2128609-p.95658><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -938,14 +912,13 @@
         <http://example.com/Athlete/p.106760> <http://www.w3.org/2000/01/rdf-schema#label> "Luke Shaw" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.106760> .
             <http://example.com/Membership/EPLT1-p.106760> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.106760> <http://www.w3.org/2000/01/rdf-schema#label> "Luke Shaw membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.106760><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.106760><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.106760> .
+            <http://example.com/Membership/EPLT1-p.106760><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.106760> .
             <http://example.com/Membership/EPLT1-p.106760> <https://sportschema.org/ontologies/main/uniformNumber> "23" .
             <http://example.com/Participation/E2128609-p.106760> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.106760> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.106760> .
             
             <http://example.com/Participation/E2128609-p.106760><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -977,14 +950,13 @@
         <http://example.com/Athlete/p.195851> <http://www.w3.org/2000/01/rdf-schema#label> "Scott McTominay" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.195851> .
             <http://example.com/Membership/EPLT1-p.195851> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.195851> <http://www.w3.org/2000/01/rdf-schema#label> "Scott McTominay membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.195851><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.195851><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.195851> .
+            <http://example.com/Membership/EPLT1-p.195851><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.195851> .
             <http://example.com/Membership/EPLT1-p.195851> <https://sportschema.org/ontologies/main/uniformNumber> "39" .
             <http://example.com/Participation/E2128609-p.195851> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.195851> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.195851> .
             
             <http://example.com/Participation/E2128609-p.195851><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1022,14 +994,13 @@
         <http://example.com/Athlete/p.101582> <http://www.w3.org/2000/01/rdf-schema#label> "Fred" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.101582> .
             <http://example.com/Membership/EPLT1-p.101582> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.101582> <http://www.w3.org/2000/01/rdf-schema#label> "Fred membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.101582><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.101582><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.101582> .
+            <http://example.com/Membership/EPLT1-p.101582><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.101582> .
             <http://example.com/Membership/EPLT1-p.101582> <https://sportschema.org/ontologies/main/uniformNumber> "17" .
             <http://example.com/Participation/E2128609-p.101582> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.101582> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.101582> .
             
             <http://example.com/Participation/E2128609-p.101582><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1063,14 +1034,13 @@
         <http://example.com/Athlete/p.200617> <http://www.w3.org/2000/01/rdf-schema#label> "Daniel James" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.200617> .
             <http://example.com/Membership/EPLT1-p.200617> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.200617> <http://www.w3.org/2000/01/rdf-schema#label> "Daniel James membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.200617><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.200617><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.200617> .
+            <http://example.com/Membership/EPLT1-p.200617><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.200617> .
             <http://example.com/Membership/EPLT1-p.200617> <https://sportschema.org/ontologies/main/uniformNumber> "21" .
             <http://example.com/Participation/E2128609-p.200617> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.200617> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.200617> .
             
             <http://example.com/Participation/E2128609-p.200617><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1102,14 +1072,13 @@
         <http://example.com/Athlete/p.141746> <http://www.w3.org/2000/01/rdf-schema#label> "Bruno Fernandes" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.141746> .
             <http://example.com/Membership/EPLT1-p.141746> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.141746> <http://www.w3.org/2000/01/rdf-schema#label> "Bruno Fernandes membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.141746><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.141746><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.141746> .
+            <http://example.com/Membership/EPLT1-p.141746><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.141746> .
             <http://example.com/Membership/EPLT1-p.141746> <https://sportschema.org/ontologies/main/uniformNumber> "18" .
             <http://example.com/Participation/E2128609-p.141746> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.141746> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.141746> .
             
             <http://example.com/Participation/E2128609-p.141746><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1147,14 +1116,13 @@
         <http://example.com/Athlete/p.176297> <http://www.w3.org/2000/01/rdf-schema#label> "Marcus Rashford" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.176297> .
             <http://example.com/Membership/EPLT1-p.176297> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.176297> <http://www.w3.org/2000/01/rdf-schema#label> "Marcus Rashford membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.176297><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.176297><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.176297> .
+            <http://example.com/Membership/EPLT1-p.176297><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.176297> .
             <http://example.com/Membership/EPLT1-p.176297> <https://sportschema.org/ontologies/main/uniformNumber> "10" .
             <http://example.com/Participation/E2128609-p.176297> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.176297> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.176297> .
             
             <http://example.com/Participation/E2128609-p.176297><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1188,14 +1156,13 @@
         <http://example.com/Athlete/p.220688> <http://www.w3.org/2000/01/rdf-schema#label> "Mason Greenwood" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.220688> .
             <http://example.com/Membership/EPLT1-p.220688> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.220688> <http://www.w3.org/2000/01/rdf-schema#label> "Mason Greenwood membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.220688><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.220688><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.220688> .
+            <http://example.com/Membership/EPLT1-p.220688><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.220688> .
             <http://example.com/Membership/EPLT1-p.220688> <https://sportschema.org/ontologies/main/uniformNumber> "11" .
             <http://example.com/Participation/E2128609-p.220688> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.220688> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.220688> .
             
             <http://example.com/Participation/E2128609-p.220688><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1228,14 +1195,13 @@
         <http://example.com/Athlete/p.51940> <http://www.w3.org/2000/01/rdf-schema#label> "David de Gea" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.51940> .
             <http://example.com/Membership/EPLT1-p.51940> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.51940> <http://www.w3.org/2000/01/rdf-schema#label> "David de Gea membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.51940><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.51940><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.51940> .
+            <http://example.com/Membership/EPLT1-p.51940><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.51940> .
             <http://example.com/Membership/EPLT1-p.51940> <https://sportschema.org/ontologies/main/uniformNumber> "1" .
             <http://example.com/Participation/E2128609-p.51940> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.51940> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.51940> .
             
             <http://example.com/Participation/E2128609-p.51940><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1247,14 +1213,13 @@
         <http://example.com/Athlete/p.197365> <http://www.w3.org/2000/01/rdf-schema#label> "Eric Bailly" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.197365> .
             <http://example.com/Membership/EPLT1-p.197365> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.197365> <http://www.w3.org/2000/01/rdf-schema#label> "Eric Bailly membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.197365><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.197365><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.197365> .
+            <http://example.com/Membership/EPLT1-p.197365><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.197365> .
             <http://example.com/Membership/EPLT1-p.197365> <https://sportschema.org/ontologies/main/uniformNumber> "3" .
             <http://example.com/Participation/E2128609-p.197365> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.197365> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.197365> .
             
             <http://example.com/Participation/E2128609-p.197365><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1266,14 +1231,13 @@
         <http://example.com/Athlete/p.74208> <http://www.w3.org/2000/01/rdf-schema#label> "Paul Pogba" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.74208> .
             <http://example.com/Membership/EPLT1-p.74208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.74208> <http://www.w3.org/2000/01/rdf-schema#label> "Paul Pogba membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.74208><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.74208><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.74208> .
+            <http://example.com/Membership/EPLT1-p.74208><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.74208> .
             <http://example.com/Membership/EPLT1-p.74208> <https://sportschema.org/ontologies/main/uniformNumber> "6" .
             <http://example.com/Participation/E2128609-p.74208> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.74208> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.74208> .
             
             <http://example.com/Participation/E2128609-p.74208><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1301,14 +1265,13 @@
         <http://example.com/Athlete/p.40720> <http://www.w3.org/2000/01/rdf-schema#label> "Edinson Cavani" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.40720> .
             <http://example.com/Membership/EPLT1-p.40720> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.40720> <http://www.w3.org/2000/01/rdf-schema#label> "Edinson Cavani membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.40720><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.40720><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.40720> .
+            <http://example.com/Membership/EPLT1-p.40720><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.40720> .
             <http://example.com/Membership/EPLT1-p.40720> <https://sportschema.org/ontologies/main/uniformNumber> "7" .
             <http://example.com/Participation/E2128609-p.40720> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.40720> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.40720> .
             
             <http://example.com/Participation/E2128609-p.40720><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1333,14 +1296,13 @@
         <http://example.com/Athlete/p.43670> <http://www.w3.org/2000/01/rdf-schema#label> "Juan Mata" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.43670> .
             <http://example.com/Membership/EPLT1-p.43670> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.43670> <http://www.w3.org/2000/01/rdf-schema#label> "Juan Mata membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.43670><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.43670><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.43670> .
+            <http://example.com/Membership/EPLT1-p.43670><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.43670> .
             <http://example.com/Membership/EPLT1-p.43670> <https://sportschema.org/ontologies/main/uniformNumber> "8" .
             <http://example.com/Participation/E2128609-p.43670> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.43670> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.43670> .
             
             <http://example.com/Participation/E2128609-p.43670><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1352,14 +1314,13 @@
         <http://example.com/Athlete/p.152590> <http://www.w3.org/2000/01/rdf-schema#label> "Alex Telles" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.152590> .
             <http://example.com/Membership/EPLT1-p.152590> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.152590> <http://www.w3.org/2000/01/rdf-schema#label> "Alex Telles membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.152590><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.152590><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.152590> .
+            <http://example.com/Membership/EPLT1-p.152590><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.152590> .
             <http://example.com/Membership/EPLT1-p.152590> <https://sportschema.org/ontologies/main/uniformNumber> "27" .
             <http://example.com/Participation/E2128609-p.152590> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.152590> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.152590> .
             
             <http://example.com/Participation/E2128609-p.152590><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1371,14 +1332,13 @@
         <http://example.com/Athlete/p.62398> <http://www.w3.org/2000/01/rdf-schema#label> "Nemanja Matic" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.62398> .
             <http://example.com/Membership/EPLT1-p.62398> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.62398> <http://www.w3.org/2000/01/rdf-schema#label> "Nemanja Matic membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.62398><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.62398><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.62398> .
+            <http://example.com/Membership/EPLT1-p.62398><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.62398> .
             <http://example.com/Membership/EPLT1-p.62398> <https://sportschema.org/ontologies/main/uniformNumber> "31" .
             <http://example.com/Participation/E2128609-p.62398> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.62398> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.62398> .
             
             <http://example.com/Participation/E2128609-p.62398><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1390,14 +1350,13 @@
         <http://example.com/Athlete/p.180184> <http://www.w3.org/2000/01/rdf-schema#label> "Donny van de Beek" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.180184> .
             <http://example.com/Membership/EPLT1-p.180184> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.180184> <http://www.w3.org/2000/01/rdf-schema#label> "Donny van de Beek membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.180184><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.180184><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.180184> .
+            <http://example.com/Membership/EPLT1-p.180184><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.180184> .
             <http://example.com/Membership/EPLT1-p.180184> <https://sportschema.org/ontologies/main/uniformNumber> "34" .
             <http://example.com/Participation/E2128609-p.180184> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.180184> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.180184> .
             
             <http://example.com/Participation/E2128609-p.180184><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1422,14 +1381,13 @@
         <http://example.com/Athlete/p.180804> <http://www.w3.org/2000/01/rdf-schema#label> "Axel Tuanzebe" .
         <http://example.com/Team/EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Manchester United" .
-            <http://example.com/Team/EPLT1> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/EPLT1-p.180804> .
             <http://example.com/Membership/EPLT1-p.180804> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/EPLT1-p.180804> <http://www.w3.org/2000/01/rdf-schema#label> "Axel Tuanzebe membership of Manchester United" .
             <http://example.com/Membership/EPLT1-p.180804><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
-            <http://example.com/Membership/EPLT1-p.180804><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/p.180804> .
+            <http://example.com/Membership/EPLT1-p.180804><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/p.180804> .
             <http://example.com/Membership/EPLT1-p.180804> <https://sportschema.org/ontologies/main/uniformNumber> "38" .
             <http://example.com/Participation/E2128609-p.180804> <https://sportschema.org/ontologies/main/playerStatus> <http://cv.iptc.org/newscodes/spplayerstatus/bench> .
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.180804> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.180804> .
             
             <http://example.com/Participation/E2128609-p.180804><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -1440,7 +1398,7 @@
 
         
         <http://example.com/Associate/man40342> <http://www.w3.org/2000/01/rdf-schema#label> "Ole Gunnar Solskjær" .
-        <http://example.com/Membership/man40342-EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Membership> .
+        <http://example.com/Membership/man40342-EPLT1><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualMembership> .
         
         <http://example.com/Membership/man40342-EPLT1> <http://www.w3.org/2000/01/rdf-schema#label> "Ole Gunnar Solskjær associate membership of Manchester United" .
 
@@ -1448,7 +1406,7 @@
         <http://example.com/Membership/man40342-EPLT1><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/EPLT1> .
 
         
-        <http://example.com/Membership/man40342-EPLT1><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Associate/man40342> .
+        <http://example.com/Membership/man40342-EPLT1><https://sportschema.org/ontologies/main/member><http://example.com/Associate/man40342> .
 
         
         
@@ -1468,10 +1426,10 @@
         
         <http://example.com/Participation/E2128609-p.41051> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Official/p.41051> .
 
-        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/E2128609-p.41051> .
+        <http://example.com/Event/E2128609> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-p.41051> .
         <http://example.com/Action/E2128609-a.2291265339><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291265339> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291265339 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
@@ -1480,13 +1438,17 @@
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T14:36:45+01:00" .
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/periodValue> "1" .
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/recipientType> <http://cv.iptc.org/newscodes/sprecipienttype/player> .
-        <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/recipientIdref> "p.66588" .
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/penaltyLevel> "yellow-card" .
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/penaltyType> <http://cv.iptc.org/newscodes/vendpenalty/foul> .
         <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/comment> "Foul" .
+        <http://example.com/Participation/E2128609-a.2291265339-p.66588> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.66588> .
+        <http://example.com/Action/E2128609-a.2291265339> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291265339-p.66588> .
+        <http://example.com/Participation/E2128609-a.2291265339-p.66588><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291265339-p.66588> <http://www.w3.org/2000/01/rdf-schema#label> "p.66588 participation in action a.2291265339 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291265339-p.66588> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by> .
         <http://example.com/Action/E2128609-a.2291268131><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291268131> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291268131 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
@@ -1495,13 +1457,17 @@
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T14:38:58+01:00" .
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/periodValue> "1" .
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/recipientType> <http://cv.iptc.org/newscodes/sprecipienttype/player> .
-        <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/recipientIdref> "p.173821" .
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/penaltyLevel> "yellow-card" .
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/penaltyType> <http://cv.iptc.org/newscodes/vendpenalty/foul> .
         <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/comment> "Foul" .
+        <http://example.com/Participation/E2128609-a.2291268131-p.173821> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.173821> .
+        <http://example.com/Action/E2128609-a.2291268131> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291268131-p.173821> .
+        <http://example.com/Participation/E2128609-a.2291268131-p.173821><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291268131-p.173821> <http://www.w3.org/2000/01/rdf-schema#label> "p.173821 participation in action a.2291268131 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291268131-p.173821> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by> .
         <http://example.com/Action/E2128609-a.2291311527><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291311527> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291311527 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
@@ -1510,13 +1476,17 @@
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:20:49+01:00" .
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/recipientType> <http://cv.iptc.org/newscodes/sprecipienttype/player> .
-        <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/recipientIdref> "p.105377" .
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/penaltyLevel> "yellow-card" .
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/penaltyType> <http://cv.iptc.org/newscodes/vendpenalty/foul> .
         <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/comment> "Foul" .
+        <http://example.com/Participation/E2128609-a.2291311527-p.105377> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.105377> .
+        <http://example.com/Action/E2128609-a.2291311527> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291311527-p.105377> .
+        <http://example.com/Participation/E2128609-a.2291311527-p.105377><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291311527-p.105377> <http://www.w3.org/2000/01/rdf-schema#label> "p.105377 participation in action a.2291311527 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291311527-p.105377> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by> .
         <http://example.com/Action/E2128609-a.2291318829><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291318829> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291318829 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
@@ -1525,13 +1495,17 @@
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:27:29+01:00" .
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/recipientType> <http://cv.iptc.org/newscodes/sprecipienttype/player> .
-        <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/recipientIdref> "p.106617" .
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/penaltyLevel> "yellow-card" .
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/penaltyType> <http://cv.iptc.org/newscodes/vendpenalty/dissent> .
         <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/comment> "Dissent" .
+        <http://example.com/Participation/E2128609-a.2291318829-p.106617> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.106617> .
+        <http://example.com/Action/E2128609-a.2291318829> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291318829-p.106617> .
+        <http://example.com/Participation/E2128609-a.2291318829-p.106617><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291318829-p.106617> <http://www.w3.org/2000/01/rdf-schema#label> "p.106617 participation in action a.2291318829 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291318829-p.106617> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by> .
         <http://example.com/Action/E2128609-a.2291316509><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291316509> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291316509 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1540,12 +1514,20 @@
         <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:25:16+01:00" .
         <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/personReplacingPosition> "forward" .
-        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.221399" .
-        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.215460" .
         <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/substitutionReason> "Tactical" .
+        <http://example.com/Participation/E2128609-a.2291316509-p.221399> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.221399> .
+        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291316509-p.221399> .
+        <http://example.com/Participation/E2128609-a.2291316509-p.221399><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291316509-p.221399> <http://www.w3.org/2000/01/rdf-schema#label> "p.221399 participation in action a.2291316509 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291316509-p.221399> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291316509-p.215460> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.215460> .
+        <http://example.com/Action/E2128609-a.2291316509> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291316509-p.215460> .
+        <http://example.com/Participation/E2128609-a.2291316509-p.215460><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291316509-p.215460> <http://www.w3.org/2000/01/rdf-schema#label> "p.215460 participation in action a.2291316509 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291316509-p.215460> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291320423><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291320423> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291320423 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1554,12 +1536,20 @@
         <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:29:14+01:00" .
         <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/personReplacingPosition> "midfielder" .
-        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.165808" .
-        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.72222" .
         <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/substitutionReason> "Injury" .
+        <http://example.com/Participation/E2128609-a.2291320423-p.165808> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.165808> .
+        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291320423-p.165808> .
+        <http://example.com/Participation/E2128609-a.2291320423-p.165808><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291320423-p.165808> <http://www.w3.org/2000/01/rdf-schema#label> "p.165808 participation in action a.2291320423 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291320423-p.165808> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291320423-p.72222> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.72222> .
+        <http://example.com/Action/E2128609-a.2291320423> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291320423-p.72222> .
+        <http://example.com/Participation/E2128609-a.2291320423-p.72222><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291320423-p.72222> <http://www.w3.org/2000/01/rdf-schema#label> "p.72222 participation in action a.2291320423 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291320423-p.72222> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291325685><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291325685> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291325685 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1568,12 +1558,20 @@
         <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:33:56+01:00" .
         <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/personReplacingPosition> "defender" .
-        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.173821" .
-        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.193645" .
         <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/substitutionReason> "Tactical" .
+        <http://example.com/Participation/E2128609-a.2291325685-p.173821> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.173821> .
+        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291325685-p.173821> .
+        <http://example.com/Participation/E2128609-a.2291325685-p.173821><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291325685-p.173821> <http://www.w3.org/2000/01/rdf-schema#label> "p.173821 participation in action a.2291325685 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291325685-p.173821> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291325685-p.193645> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.193645> .
+        <http://example.com/Action/E2128609-a.2291325685> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291325685-p.193645> .
+        <http://example.com/Participation/E2128609-a.2291325685-p.193645><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291325685-p.193645> <http://www.w3.org/2000/01/rdf-schema#label> "p.193645 participation in action a.2291325685 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291325685-p.193645> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291316113><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291316113> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291316113 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/infraction> .
@@ -1582,13 +1580,17 @@
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:24:48+01:00" .
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/recipientType> <http://cv.iptc.org/newscodes/sprecipienttype/player> .
-        <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/recipientIdref> "p.95658" .
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/penaltyLevel> "yellow-card" .
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/penaltyType> <http://cv.iptc.org/newscodes/vendpenalty/foul> .
         <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/comment> "Foul" .
+        <http://example.com/Participation/E2128609-a.2291316113-p.95658> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.95658> .
+        <http://example.com/Action/E2128609-a.2291316113> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291316113-p.95658> .
+        <http://example.com/Participation/E2128609-a.2291316113-p.95658><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291316113-p.95658> <http://www.w3.org/2000/01/rdf-schema#label> "p.95658 participation in action a.2291316113 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291316113-p.95658> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by> .
         <http://example.com/Action/E2128609-a.2291325173><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291325173> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291325173 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1597,12 +1599,20 @@
         <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:33:26+01:00" .
         <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/personReplacingPosition> "midfielder" .
-        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.200617" .
-        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.74208" .
         <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/substitutionReason> "Tactical" .
+        <http://example.com/Participation/E2128609-a.2291325173-p.200617> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.200617> .
+        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291325173-p.200617> .
+        <http://example.com/Participation/E2128609-a.2291325173-p.200617><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291325173-p.200617> <http://www.w3.org/2000/01/rdf-schema#label> "p.200617 participation in action a.2291325173 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291325173-p.200617> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291325173-p.74208> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.74208> .
+        <http://example.com/Action/E2128609-a.2291325173> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291325173-p.74208> .
+        <http://example.com/Participation/E2128609-a.2291325173-p.74208><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291325173-p.74208> <http://www.w3.org/2000/01/rdf-schema#label> "p.74208 participation in action a.2291325173 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291325173-p.74208> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291336033><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291336033> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291336033 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1611,12 +1621,20 @@
         <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:42:51+01:00" .
         <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/personReplacingPosition> "forward" .
-        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.176297" .
-        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.40720" .
         <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/substitutionReason> "Tactical" .
+        <http://example.com/Participation/E2128609-a.2291336033-p.176297> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.176297> .
+        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291336033-p.176297> .
+        <http://example.com/Participation/E2128609-a.2291336033-p.176297><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291336033-p.176297> <http://www.w3.org/2000/01/rdf-schema#label> "p.176297 participation in action a.2291336033 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291336033-p.176297> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291336033-p.40720> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.40720> .
+        <http://example.com/Action/E2128609-a.2291336033> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291336033-p.40720> .
+        <http://example.com/Participation/E2128609-a.2291336033-p.40720><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291336033-p.40720> <http://www.w3.org/2000/01/rdf-schema#label> "p.40720 participation in action a.2291336033 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291336033-p.40720> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291340193><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291340193> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291340193 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/substitution> .
@@ -1625,12 +1643,20 @@
         <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/actionDateTime> "2021-04-25T15:46:21+01:00" .
         <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/periodValue> "2" .
         <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/personReplacingPosition> "midfielder" .
-        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/personOriginalIdref> "p.101582" .
-        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/personReplacingIdref> "p.180184" .
         <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/substitutionReason> "Tactical" .
+        <http://example.com/Participation/E2128609-a.2291340193-p.101582> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.101582> .
+        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291340193-p.101582> .
+        <http://example.com/Participation/E2128609-a.2291340193-p.101582><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291340193-p.101582> <http://www.w3.org/2000/01/rdf-schema#label> "p.101582 participation in action a.2291340193 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291340193-p.101582> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-on> .
+        <http://example.com/Participation/E2128609-a.2291340193-p.180184> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.180184> .
+        <http://example.com/Action/E2128609-a.2291340193> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291340193-p.180184> .
+        <http://example.com/Participation/E2128609-a.2291340193-p.180184><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
+        <http://example.com/Participation/E2128609-a.2291340193-p.180184> <http://www.w3.org/2000/01/rdf-schema#label> "p.180184 participation in action a.2291340193 in event E2128609" .
+        <http://example.com/Participation/E2128609-a.2291340193-p.180184> <https://sportschema.org/ontologies/main/role> <http://cv.iptc.org/newscodes/spsocrole/sub-off> .
         <http://example.com/Action/E2128609-a.2291247481><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Action> .
         <http://example.com/Action/E2128609-a.2291247481> <http://www.w3.org/2000/01/rdf-schema#label> "Action a.2291247481 on event E2128609" .
-        <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/event> <http://example.com/Event/E2128609> .
+        <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/actionInEvent> <http://example.com/Event/E2128609> .
         
 
         <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/class> <http://cv.iptc.org/newscodes/spactionclass/play> .
@@ -1638,7 +1664,7 @@
         <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/periodValue> "1" .
         <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/actionType> <http://cv.iptc.org/newscodes/spsocaction/video-review> .
         <http://example.com/Participation/E2128609-a.2291247481-p.221399> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Athlete/p.221399> .
-        <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/actionParticipation> <http://example.com/Participation/E2128609-a.2291247481-p.221399> .
+        <http://example.com/Action/E2128609-a.2291247481> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/E2128609-a.2291247481-p.221399> .
         <http://example.com/Participation/E2128609-a.2291247481-p.221399><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
         <http://example.com/Participation/E2128609-a.2291247481-p.221399> <http://www.w3.org/2000/01/rdf-schema#label> "p.221399 participation in action a.2291247481 in event E2128609" .
         

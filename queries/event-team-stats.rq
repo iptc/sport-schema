@@ -16,7 +16,10 @@ WHERE {
                         sport:participationBy ?team ;
                         ?stat ?statValue .
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?teamParticipation .
-    FILTER ((strStarts(str(?stat), "https://sportschema.org/ontologies/corestatistics/")) || (strStarts(str(?stat), "https://sportschema.org/ontologies/soccer/")))
+           sport:participation ?teamParticipation .
+    FILTER (
+        (strStarts(str(?stat), "https://sportschema.org/ontologies/corestatistics/"))
+        || (strStarts(str(?stat), "https://sportschema.org/ontologies/soccer/"))
+    )
     FILTER (?event = <http://example.com/Event/E755363>)
 }

@@ -13,13 +13,13 @@ digraph competitionexample {
  ArsenalParticipWeek16ArsenalVLiverpool [ label= "<TeamParticipation>\nArsenal in Week 16" color=6 ];
  LiverpoolParticipWeek16ArsenalVLiverpool [ label= "<TeamParticipation>\nLiverpool in Week 16" color=6 ];
 
- PremierLeague -> TheFA [ label="governingBody" ]
- PL2020Season -> PremierLeague [label="parentCompetition" ]
- PL2020Week16 -> PL2020Season [label="competition" ]
- Week16ArsenalVLiverpool -> PL2020Week16 [label="competitionPhase" ]
- LiverpoolParticipWeek16ArsenalVLiverpool -> Week16ArsenalVLiverpool [label="eventParticipation" ]
+ PremierLeague -> TheFA [ label="governedBy" ]
+ PL2020Season -> PremierLeague [label="parent" ]
+ PL2020Week16 -> PL2020Season [label="phaseInCompetition" ]
+ Week16ArsenalVLiverpool -> PL2020Week16 [label="eventInCompetitionPhase" ]
+ LiverpoolParticipWeek16ArsenalVLiverpool -> Week16ArsenalVLiverpool [label="participation" ]
  LiverpoolParticipWeek16ArsenalVLiverpool -> Liverpool [label="participationBy" ]
- ArsenalParticipWeek16ArsenalVLiverpool -> Week16ArsenalVLiverpool [label="eventParticipation" ]
+ ArsenalParticipWeek16ArsenalVLiverpool -> Week16ArsenalVLiverpool [label="participation" ]
  ArsenalParticipWeek16ArsenalVLiverpool -> Arsenal [label="participationBy" ]
 }
 @enduml

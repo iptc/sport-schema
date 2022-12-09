@@ -12,6 +12,6 @@ WHERE
 {
     ?CompetitionID rdf:type sport:Competition ;
           rdfs:label ?Name .
-    OPTIONAL { ?CompetitionID sport:parentCompetition ?InstanceOf . }
-    OPTIONAL { ?CompetitionID sport:governingBody ?GoverningBody . }
+    OPTIONAL { ?CompetitionID sport:parent ?InstanceOf . }
+    OPTIONAL { ?CompetitionID sport:governedBy ?GoverningBody . }
 }

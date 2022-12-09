@@ -5,7 +5,7 @@ digraph competitionexample {
  rankdir="BT"
  IOC [ label = "<GoverningBody>\nIOC" color=1 ];
  SummerOlympics [ label = "<Competition>\nSummer Olympics\ncompetitionType = spct:recurring-competition" color=1 ];
- A2012Olympics [ label = "<Competition>\nLondon  2012\ncompetitionType = spct:competition" color=2 ];
+ London2012Olympics [ label = "<Competition>\nLondon  2012\ncompetitionType = spct:competition" color=2 ];
  MensTrackCyclingSprint [ label= "<Competition>\nMen's Track Cycling Sprint\ncompetitionType = spct:competition\nsport = medtop:20001334" color=2 ];
  MensTrackCyclingSprintSemifinals [ label= "<CompetitionPhase>\nMen's Track Cycling Sprint Semi-Finals\ncompetitionPhaseType = sptournamentphase:semifinal" color=3 ];
  MensTrackCyclingSprintSemifinalsHeat1 [ label= "<CompetitionPhase>\nMen's Track Cycling Sprint Semi-Finals Heat 1\n" color=3 ];
@@ -16,17 +16,17 @@ digraph competitionexample {
  TeamGB [ label= "<Team>\nTeam GB" color=6 ];
  ChrisHoyMembershipTeamGB [ label= "<IndividualMembership>\nChris Hoy membership in Team GB" color=5 ];
 
- SummerOlympics -> IOC [ label="governingBody" ];
- A2012Olympics -> SummerOlympics [ label="parentCompetition" ];
- MensTrackCyclingSprint -> A2012Olympics [label="parentCompetition" ];
- MensTrackCyclingSprintSemifinals -> MensTrackCyclingSprint [label="competition" ];
- MensTrackCyclingSprintSemifinalsHeat1 -> MensTrackCyclingSprintSemifinals [label="competitionPhase" ];
- MensTrackCyclingSprintSemifinalsHeat1Race1 -> MensTrackCyclingSprintSemifinalsHeat1 [label="competitionPhase"]
- MensTrackCyclingSprintSemifinalsHeat1Race1 -> OlympicParkVelodromeSite [label="site"]
+ SummerOlympics -> IOC [ label="governedBy" ];
+ London2012Olympics -> SummerOlympics [ label="parent" ];
+ MensTrackCyclingSprint -> London2012Olympics [label="parent" ];
+ MensTrackCyclingSprintSemifinals -> MensTrackCyclingSprint [label="phaseInCompetition" ];
+ MensTrackCyclingSprintSemifinalsHeat1 -> MensTrackCyclingSprintSemifinals [label="parent" ];
+ MensTrackCyclingSprintSemifinalsHeat1Race1 -> MensTrackCyclingSprintSemifinalsHeat1 [label="eventInCompetitionPhase"]
+ MensTrackCyclingSprintSemifinalsHeat1Race1 -> OlympicParkVelodromeSite [label="location"]
  ChrisHoyParticipation -> ChrisHoy [label="participationBy"]
- MensTrackCyclingSprintSemifinalsHeat1Race1 -> ChrisHoyParticipation [label="eventParticipation"]
+ MensTrackCyclingSprintSemifinalsHeat1Race1 -> ChrisHoyParticipation [label="participation"]
  # note: try to make the layout for this change so that the membership is above the individual
- ChrisHoyMembershipTeamGB -> ChrisHoy [label="membershipBy"]
+ ChrisHoyMembershipTeamGB -> ChrisHoy [label="member"]
  ChrisHoyMembershipTeamGB -> TeamGB [label="membershipOf"]
 }
 @enduml

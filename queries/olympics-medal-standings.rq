@@ -14,15 +14,15 @@ SELECT ?compName ?teamName ?rank
 WHERE
 {
     ?competition rdf:type sport:Competition ;
-           rdfs:label ?compName ;
-		   sport:competitionParticipation ?teamperf .
+                 rdfs:label ?compName ;
+                 sport:participation ?teamperf .
     ?teamperf sport:participationBy ?team ;
-    			rdf:type sport:TeamParticipation ;
-    			sport:rank ?rankstr .
+              rdf:type sport:TeamParticipation ;
+              sport:rank ?rankstr .
     ?team rdfs:label ?teamName ; 
-    		rdf:type sport:Team .
+          rdf:type sport:Team .
 
     FILTER (?competition = <http://example.com/Competition/OLYS2020>)
-    	BIND (xsd:integer(?rankstr) as ?rank)
+    BIND (xsd:integer(?rankstr) as ?rank)
 }
 ORDER BY ASC(?rank)

@@ -10,19 +10,18 @@ PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 SELECT ?teamName ?playerName ?foulsCommitted
 WHERE { 
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?individualParticipation ;
-           sport:eventParticipation ?teamParticipation .
+           sport:participation ?individualParticipation ;
+           sport:participation ?teamParticipation .
     ?individualParticipation rdf:type sport:IndividualParticipation ;
                              spsocstat:foulsCommited ?foulsCommitted ;
                              sport:participationBy ?player .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName .
     ?members rdf:type sport:IndividualMembership ;
-             sport:membershipBy ?player ;
+             sport:member ?player ;
     		 sport:membershipOf ?team .
     ?team rdf:type sport:Team ;
-          rdfs:label ?teamName ;
-          sport:membership ?members .
+          rdfs:label ?teamName .
     ?teamParticipation rdf:type sport:TeamParticipation ;
                        sport:participationBy ?team .
     FILTER (?foulsCommitted > "0")

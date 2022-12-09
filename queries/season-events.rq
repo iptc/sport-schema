@@ -7,8 +7,8 @@ SELECT ?league ?season ?event WHERE {
     ?league rdf:type sport:Competition ;
           sport:sport ?sport .
     ?season rdf:type sport:Competition ;
-            sport:parentCompetition ?league .
+            sport:parent ?league .
     ?event rdf:type sport:Event ;
-           sport:competition ?season .
+           sport:eventInCompetition ?season .
     FILTER (?season = <http://example.com/Competition/l.premierleague.com-2020>)
 }

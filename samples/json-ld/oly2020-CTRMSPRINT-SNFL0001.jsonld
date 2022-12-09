@@ -8,11 +8,11 @@
         },
         {
             "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-RND1",
+            "sport:phaseInCompetition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
             "sport:competitionPhaseType": {
                 "@id": "http://cv.iptc.org/newscodes/sptournamentphase/round"
-            },
-            "sport:competition": {
-                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
             },
             "rdfs:label": "Round 1",
             "@type": "sport:CompetitionPhase"
@@ -22,7 +22,7 @@
             "sport:sport": {
                 "@id": "medtop:20001334"
             },
-            "sport:parentCompetition": {
+            "sport:parent": {
                 "@id": "http://example.com/Competition/OLYS2020"
             },
             "sport:competitionType": {
@@ -37,7 +37,7 @@
                 "@value": "2021-08-06T16:52:00+09:00",
                 "@type": "xsd:dateTime"
             },
-            "sport:eventParticipation": [
+            "sport:participation": [
                 {
                     "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1467923"
                 },
@@ -45,7 +45,7 @@
                     "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010002-PI1436558"
                 }
             ],
-            "sport:competitionPhase": {
+            "sport:eventInCompetitionPhase": {
                 "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000"
             },
             "rdfs:label": "Heat 1, Race 2",
@@ -79,14 +79,14 @@
         },
         {
             "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000",
-            "sport:competitionPhaseType": {
-                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/heat"
+            "sport:phaseInCompetition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
             },
-            "sport:competitionPhase": {
+            "sport:parent": {
                 "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL"
             },
-            "sport:competition": {
-                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            "sport:competitionPhaseType": {
+                "@id": "http://cv.iptc.org/newscodes/sptournamentphase/heat"
             },
             "rdfs:label": "Heat 1",
             "@type": "sport:CompetitionPhase"
@@ -108,7 +108,7 @@
                 "@value": "2021-08-06T16:10:00+09:00",
                 "@type": "xsd:dateTime"
             },
-            "sport:eventParticipation": [
+            "sport:participation": [
                 {
                     "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1467923"
                 },
@@ -116,7 +116,7 @@
                     "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-00010001-PI1436558"
                 }
             ],
-            "sport:competitionPhase": {
+            "sport:eventInCompetitionPhase": {
                 "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL-00010000"
             },
             "rdfs:label": "Heat 1, Race 1",
@@ -159,7 +159,10 @@
         },
         {
             "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-SFNL",
-            "sport:phaseParticipation": [
+            "sport:phaseInCompetition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
+            "sport:participation": [
                 {
                     "@id": "http://example.com/Participation/OLYS2020-CTRMSPRINT-SFNL-PI1467923"
                 },
@@ -169,9 +172,6 @@
             ],
             "sport:competitionPhaseType": {
                 "@id": "http://cv.iptc.org/newscodes/sptournamentphase/semi-final"
-            },
-            "sport:competition": {
-                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
             },
             "rdfs:label": "Semi-Finals",
             "@type": "sport:CompetitionPhase"
@@ -190,7 +190,7 @@
             "sport:sport": {
                 "@id": "medtop:20001334"
             },
-            "sport:parentCompetition": {
+            "sport:parent": {
                 "@id": "http://example.com/Competition/OLYS"
             },
             "sport:competitionType": {
@@ -204,7 +204,7 @@
             "sport:sport": {
                 "@id": "medtop:20001334"
             },
-            "sport:governingBody": {
+            "sport:governedBy": {
                 "@id": "http://example.com/GoverningBody/IOC"
             },
             "sport:competitionType": {
@@ -215,11 +215,11 @@
         },
         {
             "@id": "http://example.com/CompetitionPhase/OLYS2020-CTRMSPRINT-FNL",
+            "sport:phaseInCompetition": {
+                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
+            },
             "sport:competitionPhaseType": {
                 "@id": "http://cv.iptc.org/newscodes/sptournamentphase/final"
-            },
-            "sport:competition": {
-                "@id": "http://example.com/Competition/OLYS2020-CTRMSPRINT"
             },
             "rdfs:label": "Final",
             "@type": "sport:CompetitionPhase"

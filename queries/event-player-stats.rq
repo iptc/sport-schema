@@ -11,8 +11,8 @@ SELECT DISTINCT ?teamName ?playerName ?stat ?statValue
 WHERE { 
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-           sport:eventParticipation ?teamParticipation ;
-           sport:eventParticipation ?playerParticipation .
+           sport:participation ?teamParticipation ;
+           sport:participation ?playerParticipation .
     ?playerParticipation rdf:type sport:IndividualParticipation ;
                          sport:participationBy ?player ;
                          ?stat ?statValue .
@@ -21,10 +21,10 @@ WHERE {
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName .
     ?members rdf:type sport:IndividualMembership ;
-             sport:membershipBy ?player .
+             sport:member ?player ;
+             sport:membershipOf ?team .
     ?team rdf:type sport:Team ;
-          rdfs:label ?teamName ;
-          sport:membership ?members . 
+          rdfs:label ?teamName .
     FILTER ((strStarts(str(?stat), "https://sportschema.org/ontologies/corestatistics/")) || (strStarts(str(?stat), "https://sportschema.org/ontologies/soccer/")))
     FILTER (?event = <http://example.com/Event/E2128609>)
     FILTER (?playerName = "Pascal Struijk")

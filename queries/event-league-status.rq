@@ -12,23 +12,23 @@ SELECT (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?d
        ?status
 WHERE
 {
-    ?event rdf:type sport:Event .
-    ?event sport:startDateTime ?date .
-    ?event sport:eventParticipation ?homeTeamParticipation .
-    ?homeTeamParticipation rdf:type sport:TeamParticipation .
-    ?homeTeamParticipation sport:participationBy ?homeTeam .
-    ?homeTeamParticipation sport:alignment "home" .
-    ?homeTeamParticipation sport:score ?homeTeamScore .
-    ?homeTeam rdf:type sport:Team .
-    ?homeTeam rdfs:label ?homeTeamName .
-    ?event sport:eventParticipation ?awayTeamParticipation .
-    ?awayTeamParticipation rdf:type sport:TeamParticipation .
-    ?awayTeamParticipation sport:participationBy ?awayTeam .
-    ?awayTeamParticipation sport:alignment "away" .
-    ?awayTeamParticipation sport:score ?awayTeamScore .
-    ?awayTeam rdf:type sport:Team .
-    ?awayTeam rdfs:label ?awayTeamName .
-    ?event sport:eventStatus ?status .
+    ?event rdf:type sport:Event ;
+           sport:startDateTime ?date ;
+           sport:participation ?homeTeamParticipation ;
+           sport:participation ?awayTeamParticipation ;
+           sport:eventStatus ?status .
+    ?homeTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?homeTeam ;
+                           sport:alignment "home" ;
+                           sport:score ?homeTeamScore .
+    ?homeTeam rdf:type sport:Team ;
+              rdfs:label ?homeTeamName .
+    ?awayTeamParticipation rdf:type sport:TeamParticipation ;
+                           sport:participationBy ?awayTeam ;
+                           sport:alignment "away" ;
+                           sport:score ?awayTeamScore .
+    ?awayTeam rdf:type sport:Team ;
+              rdfs:label ?awayTeamName .
     FILTER ( ?date > "2021-04-25T00:00:00Z"^^xsd:dateTime ) 
     FILTER ( ?date < "2021-04-26T00:00:00Z"^^xsd:dateTime ) 
 }

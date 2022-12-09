@@ -8,12 +8,12 @@ PREFIX sport: <https://sportschema.org/ontologies/main/>
 SELECT ?officialName ?officialPosition
 WHERE
 {
-    ?event rdf:type sport:Event .
-    ?event sport:eventParticipation ?officialParticipation .
-    ?officialParticipation rdf:type sport:OfficialParticipation .
-    ?officialParticipation sport:participationBy ?official .
-    ?officialParticipation sport:positionEvent ?officialPosition .
-    ?official rdf:type sport:Official .
-    ?official rdfs:label ?officialName .
+    ?event rdf:type sport:Event ;
+           sport:participation ?officialParticipation .
+    ?officialParticipation rdf:type sport:OfficialParticipation ;
+                           sport:participationBy ?official ;
+                           sport:positionEvent ?officialPosition .
+    ?official rdf:type sport:Official ;
+              rdfs:label ?officialName .
     FILTER ( ?event = <http://example.com/Event/E755363> )
 }

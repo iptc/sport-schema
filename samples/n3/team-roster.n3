@@ -1,12 +1,15 @@
 <http://example.com/Competition/l.nhl.com-2015><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Competition> .
                 <http://example.com/Competition/l.nhl.com-2015> <http://www.w3.org/2000/01/rdf-schema#label> "National Hockey League 2015" .
-                <http://example.com/Competition/l.nhl.com-2015> <https://sportschema.org/ontologies/main/parentCompetition> <http://example.com/Competition/l.nhl.com> .
+                <http://example.com/Competition/l.nhl.com-2015> <https://sportschema.org/ontologies/main/parent> <http://example.com/Competition/l.nhl.com> .
                 <http://example.com/Competition/l.nhl.com><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Competition> .
                 <http://example.com/Competition/l.nhl.com> <http://www.w3.org/2000/01/rdf-schema#label> "National Hockey League" .
                 <http://example.com/Competition/l.nhl.com> <https://sportschema.org/ontologies/main/sport> <http://cv.iptc.org/newscodes/mediatopic/20000965> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Team> .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/competition> <http://example.com/Competition/l.nhl.com-2015> .
-                <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
+            <http://example.com/TeamParticipation/l.nhl.com-2015-l.nhl.com-t.21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/TeamParticipation> .
+                            <http://example.com/TeamParticipation/l.nhl.com-2015-l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars participation in competition l.nhl.com-2015" .
+                            <http://example.com/TeamParticipation/l.nhl.com-2015-l.nhl.com-t.21> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/l.nhl.com-t.21> .
+                            <http://example.com/Competition/l.nhl.com-2015> <https://sportschema.org/ontologies/main/participation> <http://example.com/TeamParticipation/l.nhl.com-2015-l.nhl.com-t.21> .
+                        <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
         
         <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
 
@@ -15,11 +18,10 @@
         <http://example.com/Athlete/l.nhl.com-p.5099> <http://www.w3.org/2000/01/rdf-schema#label> "Julius Honka" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> <http://www.w3.org/2000/01/rdf-schema#label> "Julius Honka membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.5099> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.5099> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5099> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.5099> <https://sportschema.org/ontologies/main/dateOfBirth> "1995-12-03"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -28,11 +30,10 @@
         <http://example.com/Athlete/l.nhl.com-p.5121> <http://www.w3.org/2000/01/rdf-schema#label> "Brett Pollock" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> <http://www.w3.org/2000/01/rdf-schema#label> "Brett Pollock membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.5121> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.5121> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.5121> <https://sportschema.org/ontologies/main/dateOfBirth> "1996-03-17"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -41,11 +42,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4460> <http://www.w3.org/2000/01/rdf-schema#label> "Ludwig Bystrom" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> <http://www.w3.org/2000/01/rdf-schema#label> "Ludwig Bystrom membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4460> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4460> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4460> <https://sportschema.org/ontologies/main/dateOfBirth> "1994-07-20"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -54,11 +54,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4464> <http://www.w3.org/2000/01/rdf-schema#label> "Esa Lindell" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> <http://www.w3.org/2000/01/rdf-schema#label> "Esa Lindell membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4464> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4464> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4464> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4464> <https://sportschema.org/ontologies/main/dateOfBirth> "1994-05-23"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -67,11 +66,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4537> <http://www.w3.org/2000/01/rdf-schema#label> "Branden Troock" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> <http://www.w3.org/2000/01/rdf-schema#label> "Branden Troock membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4537> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4537> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4537> <https://sportschema.org/ontologies/main/dateOfBirth> "1994-03-20"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -80,11 +78,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4546> <http://www.w3.org/2000/01/rdf-schema#label> "Henri Kiviaho" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> <http://www.w3.org/2000/01/rdf-schema#label> "Henri Kiviaho membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4546> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4546> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4546> <https://sportschema.org/ontologies/main/dateOfBirth> "1994-02-26"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -93,11 +90,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4427> <http://www.w3.org/2000/01/rdf-schema#label> "Gemel Smith" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> <http://www.w3.org/2000/01/rdf-schema#label> "Gemel Smith membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4427> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4427> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4427> <https://sportschema.org/ontologies/main/dateOfBirth> "1994-04-16"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -106,11 +102,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2106> <http://www.w3.org/2000/01/rdf-schema#label> "Derek Meech" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> <http://www.w3.org/2000/01/rdf-schema#label> "Derek Meech membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2106> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2106> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.2106> <https://sportschema.org/ontologies/main/dateOfBirth> "1984-04-21"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -119,11 +114,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4328> <http://www.w3.org/2000/01/rdf-schema#label> "Matt Mangene" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> <http://www.w3.org/2000/01/rdf-schema#label> "Matt Mangene membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4328> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4328> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4328> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4328> <https://sportschema.org/ontologies/main/dateOfBirth> "1989-03-12"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -132,11 +126,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4740> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Dickinson" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Dickinson membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4740> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4740> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4740> <https://sportschema.org/ontologies/main/dateOfBirth> "1995-07-04"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -145,11 +138,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4054> <http://www.w3.org/2000/01/rdf-schema#label> "Mattias Backman" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> <http://www.w3.org/2000/01/rdf-schema#label> "Mattias Backman membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4054> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4054> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4054> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4054> <https://sportschema.org/ontologies/main/dateOfBirth> "1992-10-03"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -158,11 +150,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4158> <http://www.w3.org/2000/01/rdf-schema#label> "Emil Molin" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> <http://www.w3.org/2000/01/rdf-schema#label> "Emil Molin membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4158> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4158> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4158> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4158> <https://sportschema.org/ontologies/main/dateOfBirth> "1993-02-03"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -171,11 +162,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4878> <http://www.w3.org/2000/01/rdf-schema#label> "Mattias Janmark-Nylen" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> <http://www.w3.org/2000/01/rdf-schema#label> "Mattias Janmark-Nylen membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4878> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4878> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4878> <https://sportschema.org/ontologies/main/dateOfBirth> "1992-12-08"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -184,11 +174,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4806> <http://www.w3.org/2000/01/rdf-schema#label> "Remi Elie" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> <http://www.w3.org/2000/01/rdf-schema#label> "Remi Elie membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4806> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4806> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4806> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4806> <https://sportschema.org/ontologies/main/dateOfBirth> "1995-04-16"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -197,11 +186,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4961> <http://www.w3.org/2000/01/rdf-schema#label> "Ludwig Karlsson" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> <http://www.w3.org/2000/01/rdf-schema#label> "Ludwig Karlsson membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4961> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4961> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
                 <http://example.com/Athlete/l.nhl.com-p.4961> <https://sportschema.org/ontologies/main/dateOfBirth> "1991-01-06"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -210,11 +198,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2528> <http://www.w3.org/2000/01/rdf-schema#label> "Jhonas Enroth" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> <http://www.w3.org/2000/01/rdf-schema#label> "Jhonas Enroth membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2528> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2528> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> <https://sportschema.org/ontologies/main/uniformNumber> "1" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2528> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -224,11 +211,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3454> <http://www.w3.org/2000/01/rdf-schema#label> "Jack Campbell" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> <http://www.w3.org/2000/01/rdf-schema#label> "Jack Campbell membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3454> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3454> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> <https://sportschema.org/ontologies/main/uniformNumber> "1" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3454> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -238,11 +224,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2968> <http://www.w3.org/2000/01/rdf-schema#label> "William Wrenn" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> <http://www.w3.org/2000/01/rdf-schema#label> "William Wrenn membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2968> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2968> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> <https://sportschema.org/ontologies/main/uniformNumber> "2" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -252,11 +237,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4053> <http://www.w3.org/2000/01/rdf-schema#label> "Jyrki Jokipakka" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> <http://www.w3.org/2000/01/rdf-schema#label> "Jyrki Jokipakka membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4053> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4053> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> <https://sportschema.org/ontologies/main/uniformNumber> "2" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -266,11 +250,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3625> <http://www.w3.org/2000/01/rdf-schema#label> "John Klingberg" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> <http://www.w3.org/2000/01/rdf-schema#label> "John Klingberg membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3625> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3625> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> <https://sportschema.org/ontologies/main/uniformNumber> "3" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -280,11 +263,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2732> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Demers" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Demers membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2732> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2732> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> <https://sportschema.org/ontologies/main/uniformNumber> "4" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -294,11 +276,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3872> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Oleksiak" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Oleksiak membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3872> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3872> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> <https://sportschema.org/ontologies/main/uniformNumber> "5" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -308,11 +289,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1440> <http://www.w3.org/2000/01/rdf-schema#label> "Trevor Daley" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> <http://www.w3.org/2000/01/rdf-schema#label> "Trevor Daley membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1440> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1440> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> <https://sportschema.org/ontologies/main/uniformNumber> "6" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1440> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -322,11 +302,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4314> <http://www.w3.org/2000/01/rdf-schema#label> "Austin Smith" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> <http://www.w3.org/2000/01/rdf-schema#label> "Austin Smith membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4314> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4314> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> <https://sportschema.org/ontologies/main/uniformNumber> "9" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4314> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -336,11 +315,10 @@
         <http://example.com/Athlete/l.nhl.com-p.229> <http://www.w3.org/2000/01/rdf-schema#label> "Shawn Horcoff" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> <http://www.w3.org/2000/01/rdf-schema#label> "Shawn Horcoff membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.229> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.229> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> <https://sportschema.org/ontologies/main/uniformNumber> "10" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -350,11 +328,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3724> <http://www.w3.org/2000/01/rdf-schema#label> "Justin Dowling" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> <http://www.w3.org/2000/01/rdf-schema#label> "Justin Dowling membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3724> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3724> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> <https://sportschema.org/ontologies/main/uniformNumber> "10" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3724> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -364,11 +341,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3138> <http://www.w3.org/2000/01/rdf-schema#label> "Curtis McKenzie" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> <http://www.w3.org/2000/01/rdf-schema#label> "Curtis McKenzie membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3138> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3138> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> <https://sportschema.org/ontologies/main/uniformNumber> "11" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -378,11 +354,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2577> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Benn" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> <http://www.w3.org/2000/01/rdf-schema#label> "Jamie Benn membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2577> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2577> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> <https://sportschema.org/ontologies/main/uniformNumber> "14" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2577> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -392,11 +367,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2919> <http://www.w3.org/2000/01/rdf-schema#label> "Scott Glennie" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> <http://www.w3.org/2000/01/rdf-schema#label> "Scott Glennie membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2919> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2919> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> <https://sportschema.org/ontologies/main/uniformNumber> "15" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2919> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -406,11 +380,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4253> <http://www.w3.org/2000/01/rdf-schema#label> "Ryan Garbutt" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> <http://www.w3.org/2000/01/rdf-schema#label> "Ryan Garbutt membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4253> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4253> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> <https://sportschema.org/ontologies/main/uniformNumber> "16" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4253> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -420,11 +393,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2149> <http://www.w3.org/2000/01/rdf-schema#label> "Rich Peverley" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> <http://www.w3.org/2000/01/rdf-schema#label> "Rich Peverley membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2149> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2149> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> <https://sportschema.org/ontologies/main/uniformNumber> "17" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -434,11 +406,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1907> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Eaves" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Eaves membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1907> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1907> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> <https://sportschema.org/ontologies/main/uniformNumber> "18" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -448,11 +419,10 @@
         <http://example.com/Athlete/l.nhl.com-p.485> <http://www.w3.org/2000/01/rdf-schema#label> "Toby Petersen" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> <http://www.w3.org/2000/01/rdf-schema#label> "Toby Petersen membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.485> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.485> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> <https://sportschema.org/ontologies/main/uniformNumber> "19" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -462,11 +432,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2940> <http://www.w3.org/2000/01/rdf-schema#label> "Cody Eakin" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> <http://www.w3.org/2000/01/rdf-schema#label> "Cody Eakin membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2940> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2940> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> <https://sportschema.org/ontologies/main/uniformNumber> "20" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2940> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -476,11 +445,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3895> <http://www.w3.org/2000/01/rdf-schema#label> "Brett Ritchie" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> <http://www.w3.org/2000/01/rdf-schema#label> "Brett Ritchie membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3895> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3895> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> <https://sportschema.org/ontologies/main/uniformNumber> "20" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -490,11 +458,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3716> <http://www.w3.org/2000/01/rdf-schema#label> "Antoine Roussel" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> <http://www.w3.org/2000/01/rdf-schema#label> "Antoine Roussel membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3716> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3716> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> <https://sportschema.org/ontologies/main/uniformNumber> "21" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3716> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -504,11 +471,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2764> <http://www.w3.org/2000/01/rdf-schema#label> "Colton Sceviour" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> <http://www.w3.org/2000/01/rdf-schema#label> "Colton Sceviour membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2764> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2764> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> <https://sportschema.org/ontologies/main/uniformNumber> "22" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2764> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -518,11 +484,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4254> <http://www.w3.org/2000/01/rdf-schema#label> "Jordie Benn" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> <http://www.w3.org/2000/01/rdf-schema#label> "Jordie Benn membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4254> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4254> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> <https://sportschema.org/ontologies/main/uniformNumber> "24" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -532,11 +497,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4284> <http://www.w3.org/2000/01/rdf-schema#label> "Taylor Peters" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> <http://www.w3.org/2000/01/rdf-schema#label> "Taylor Peters membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4284> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4284> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> <https://sportschema.org/ontologies/main/uniformNumber> "25" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -546,11 +510,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4435> <http://www.w3.org/2000/01/rdf-schema#label> "Mike Hedden" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> <http://www.w3.org/2000/01/rdf-schema#label> "Mike Hedden membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4435> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4435> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> <https://sportschema.org/ontologies/main/uniformNumber> "26" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -560,11 +523,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1393> <http://www.w3.org/2000/01/rdf-schema#label> "Travis Moen" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> <http://www.w3.org/2000/01/rdf-schema#label> "Travis Moen membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1393> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1393> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> <https://sportschema.org/ontologies/main/uniformNumber> "27" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/injured> .
@@ -574,11 +536,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4187> <http://www.w3.org/2000/01/rdf-schema#label> "Matej Stransky" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> <http://www.w3.org/2000/01/rdf-schema#label> "Matej Stransky membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4187> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4187> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> <https://sportschema.org/ontologies/main/uniformNumber> "28" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4187> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -588,11 +549,10 @@
         <http://example.com/Athlete/l.nhl.com-p.5032> <http://www.w3.org/2000/01/rdf-schema#label> "Josh Robinson" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> <http://www.w3.org/2000/01/rdf-schema#label> "Josh Robinson membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.5032> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.5032> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> <https://sportschema.org/ontologies/main/uniformNumber> "30" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5032> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -602,11 +562,10 @@
         <http://example.com/Athlete/l.nhl.com-p.740> <http://www.w3.org/2000/01/rdf-schema#label> "Tim Thomas" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> <http://www.w3.org/2000/01/rdf-schema#label> "Tim Thomas membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.740> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.740> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> <https://sportschema.org/ontologies/main/uniformNumber> "30" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.740> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -616,11 +575,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1362> <http://www.w3.org/2000/01/rdf-schema#label> "Kari Lehtonen" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> <http://www.w3.org/2000/01/rdf-schema#label> "Kari Lehtonen membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1362> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1362> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> <https://sportschema.org/ontologies/main/uniformNumber> "32" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -630,11 +588,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2377> <http://www.w3.org/2000/01/rdf-schema#label> "Alex Goligoski" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> <http://www.w3.org/2000/01/rdf-schema#label> "Alex Goligoski membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2377> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2377> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> <https://sportschema.org/ontologies/main/uniformNumber> "33" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -644,11 +601,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2841> <http://www.w3.org/2000/01/rdf-schema#label> "Cameron Gaunce" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> <http://www.w3.org/2000/01/rdf-schema#label> "Cameron Gaunce membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2841> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2841> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> <https://sportschema.org/ontologies/main/uniformNumber> "36" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -658,11 +614,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3501> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Nemeth" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> <http://www.w3.org/2000/01/rdf-schema#label> "Patrick Nemeth membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3501> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3501> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> <https://sportschema.org/ontologies/main/uniformNumber> "37" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3501> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -672,11 +627,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1192> <http://www.w3.org/2000/01/rdf-schema#label> "Vernon Fiddler" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> <http://www.w3.org/2000/01/rdf-schema#label> "Vernon Fiddler membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1192> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1192> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> <https://sportschema.org/ontologies/main/uniformNumber> "38" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -686,11 +640,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2279> <http://www.w3.org/2000/01/rdf-schema#label> "Francis Wathier" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> <http://www.w3.org/2000/01/rdf-schema#label> "Francis Wathier membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2279> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2279> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> <https://sportschema.org/ontologies/main/uniformNumber> "38" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2279> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -700,11 +653,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3691> <http://www.w3.org/2000/01/rdf-schema#label> "Brendan Ranford" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> <http://www.w3.org/2000/01/rdf-schema#label> "Brendan Ranford membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3691> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3691> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/left-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> <https://sportschema.org/ontologies/main/uniformNumber> "39" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -714,11 +666,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2200> <http://www.w3.org/2000/01/rdf-schema#label> "Travis Morin" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> <http://www.w3.org/2000/01/rdf-schema#label> "Travis Morin membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2200> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2200> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> <https://sportschema.org/ontologies/main/uniformNumber> "39" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -728,11 +679,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3385> <http://www.w3.org/2000/01/rdf-schema#label> "Jussi Rynnas" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> <http://www.w3.org/2000/01/rdf-schema#label> "Jussi Rynnas membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3385> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3385> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> <https://sportschema.org/ontologies/main/uniformNumber> "40" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -742,11 +692,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4349> <http://www.w3.org/2000/01/rdf-schema#label> "Cristopher Nilstorp" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> <http://www.w3.org/2000/01/rdf-schema#label> "Cristopher Nilstorp membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4349> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4349> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> <https://sportschema.org/ontologies/main/uniformNumber> "41" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4349> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -756,11 +705,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4173> <http://www.w3.org/2000/01/rdf-schema#label> "Troy Vance" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> <http://www.w3.org/2000/01/rdf-schema#label> "Troy Vance membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4173> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4173> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> <https://sportschema.org/ontologies/main/uniformNumber> "42" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -770,11 +718,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4707> <http://www.w3.org/2000/01/rdf-schema#label> "Valeri Nichushkin" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> <http://www.w3.org/2000/01/rdf-schema#label> "Valeri Nichushkin membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4707> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4707> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> <https://sportschema.org/ontologies/main/uniformNumber> "43" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4707> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/injured> .
@@ -784,11 +731,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2934> <http://www.w3.org/2000/01/rdf-schema#label> "Ryan Button" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> <http://www.w3.org/2000/01/rdf-schema#label> "Ryan Button membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2934> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2934> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> <https://sportschema.org/ontologies/main/uniformNumber> "46" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2934> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -798,11 +744,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3398> <http://www.w3.org/2000/01/rdf-schema#label> "Tristan King" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> <http://www.w3.org/2000/01/rdf-schema#label> "Tristan King membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3398> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3398> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> <https://sportschema.org/ontologies/main/uniformNumber> "60" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3398> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -812,11 +757,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4687> <http://www.w3.org/2000/01/rdf-schema#label> "Philippe Desrosiers" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> <http://www.w3.org/2000/01/rdf-schema#label> "Philippe Desrosiers membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4687> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4687> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/goalie> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> <https://sportschema.org/ontologies/main/uniformNumber> "70" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4687> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -826,11 +770,10 @@
         <http://example.com/Athlete/l.nhl.com-p.2561> <http://www.w3.org/2000/01/rdf-schema#label> "Maxime Fortunus" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> <http://www.w3.org/2000/01/rdf-schema#label> "Maxime Fortunus membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.2561> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.2561> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/defenseman> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> <https://sportschema.org/ontologies/main/uniformNumber> "73" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2561> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .
@@ -840,11 +783,10 @@
         <http://example.com/Athlete/l.nhl.com-p.1165> <http://www.w3.org/2000/01/rdf-schema#label> "Ales Hemsky" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> <http://www.w3.org/2000/01/rdf-schema#label> "Ales Hemsky membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.1165> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.1165> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/right-forward> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> <https://sportschema.org/ontologies/main/uniformNumber> "83" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -854,11 +796,10 @@
         <http://example.com/Athlete/l.nhl.com-p.423> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Spezza" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> <http://www.w3.org/2000/01/rdf-schema#label> "Jason Spezza membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.423> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.423> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> <https://sportschema.org/ontologies/main/uniformNumber> "90" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.423> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/active> .
@@ -868,11 +809,10 @@
         <http://example.com/Athlete/l.nhl.com-p.3514> <http://www.w3.org/2000/01/rdf-schema#label> "Tyler Seguin" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> <http://www.w3.org/2000/01/rdf-schema#label> "Tyler Seguin membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.3514> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.3514> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> <https://sportschema.org/ontologies/main/uniformNumber> "91" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3514> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/injured> .
@@ -882,11 +822,10 @@
         <http://example.com/Athlete/l.nhl.com-p.4397> <http://www.w3.org/2000/01/rdf-schema#label> "Radek Faksa" .
         <http://example.com/Team/l.nhl.com-t.21><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/l.nhl.com-t.21> <http://www.w3.org/2000/01/rdf-schema#label> "Dallas Stars" .
-            <http://example.com/Team/l.nhl.com-t.21> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> <http://www.w3.org/2000/01/rdf-schema#label> "Radek Faksa membership of Dallas Stars" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/l.nhl.com-t.21> .
-            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/l.nhl.com-p.4397> .
+            <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/l.nhl.com-p.4397> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> <https://sportschema.org/ontologies/main/positionRegular> <http://cv.iptc.org/newscodes/spichposition/center> .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> <https://sportschema.org/ontologies/main/uniformNumber> "94" .
             <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4397> <https://sportschema.org/ontologies/main/membershipStatus> <http://cv.iptc.org/newscodes/spphasestatus/inactive> .

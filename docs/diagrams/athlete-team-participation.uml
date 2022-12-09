@@ -42,12 +42,12 @@ object "Athlete2ParticipationInEventX <IndividualParticipation>" as Athlete2Part
   sport:score = 3
 }
 
-EventX .. TeamAParticipationInEventX : >eventParticipation
+EventX .. TeamAParticipationInEventX : >participation
 TeamAParticipationInEventX .. TeamA : >participationBy
-EventX .. TeamBParticipationInEventX : >eventParticipation
+EventX .. TeamBParticipationInEventX : >participation
 TeamBParticipationInEventX .. TeamB : >participationBy
-EventX .. Athlete1ParticipationInEventX : >eventParticipation
+EventX .. Athlete1ParticipationInEventX : >participation
 Athlete1ParticipationInEventX .. Athlete1 : >participationBy
-EventX .. Athlete2ParticipationInEventX : >eventParticipation
+EventX .. Athlete2ParticipationInEventX : >participation
 Athlete2ParticipationInEventX .. Athlete2 : >participationBy
 @enduml

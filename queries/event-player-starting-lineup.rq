@@ -10,16 +10,14 @@ PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocposition/>
 ASK {
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-           sport:eventParticipation ?playerParticipation .
+           sport:participation ?playerParticipation .
     ?playerParticipation rdf:type sport:IndividualParticipation ;
                          sport:participationBy ?player ;
                          sport:playerStatus <http://cv.iptc.org/newscodes/spplayerstatus/starter> .
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName .
-    ?team rdf:type sport:Team ;
-          sport:membership ?members .
     ?members rdf:type sport:IndividualMembership ;
-             sport:membershipBy ?player ;
+             sport:member ?player ;
              sport:membershipOf ?team .
     ?team rdf:type sport:Team ;
           rdfs:label ?teamName .

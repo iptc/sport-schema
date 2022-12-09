@@ -3,14 +3,14 @@
                 <http://example.com/Competition/l.intelextrememasters.com> <https://sportschema.org/ontologies/main/sport> <http://cv.iptc.org/newscodes/mediatopic/20001183> .
                 <http://example.com/Competition/l.intelextrememasters.com-2019> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Competition> .
                     <http://example.com/Competition/l.intelextrememasters.com-2019> <http://www.w3.org/2000/01/rdf-schema#label> "Intel Extreme Masters 2019" .
-                    <http://example.com/Competition/l.intelextrememasters.com-2019> <https://sportschema.org/ontologies/main/parentCompetition> <http://example.com/Competition/l.intelextrememasters.com> .
+                    <http://example.com/Competition/l.intelextrememasters.com-2019> <https://sportschema.org/ontologies/main/parent> <http://example.com/Competition/l.intelextrememasters.com> .
                 <http://example.com/Event/541807><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Event> .
 
         
         <http://example.com/Event/541807> <http://www.w3.org/2000/01/rdf-schema#label> "Event 541807" .
-          <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/subEvent> <http://example.com/Event/5120> .
-        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/subEvent> <http://example.com/Event/5121> .
-        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/subEvent> <http://example.com/Event/5122> .
+          <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/parent> <http://example.com/Event/541807> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/parent> <http://example.com/Event/541807> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/parent> <http://example.com/Event/541807> .
         <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/startDateTime> "2018-12-12T14:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
         <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/eventStatus> <http://cv.iptc.org/newscodes/speventstatus/post-event> .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
@@ -21,7 +21,7 @@
 
             <http://example.com/Participation/541807-T6134> <http://www.w3.org/2000/01/rdf-schema#label> "Kinguin participation in Event 541807" .
                 <http://example.com/Participation/541807-T6134> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T6134> .
-        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/541807-T6134> .
+        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/541807-T6134> .
         <http://example.com/Participation/541807-T6134> <https://sportschema.org/ontologies/main/score> "1" .
             <http://example.com/Participation/541807-T6134> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/loss> .
             <http://example.com/Participation/541807-T6134> <https://sportschema.org/ontologies/corestatistics/eventsPlayed> "539" .
@@ -35,7 +35,7 @@
 
             <http://example.com/Participation/541807-T9572> <http://www.w3.org/2000/01/rdf-schema#label> "Ex-Space Soldiers participation in Event 541807" .
                 <http://example.com/Participation/541807-T9572> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T9572> .
-        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/541807-T9572> .
+        <http://example.com/Event/541807> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/541807-T9572> .
         <http://example.com/Participation/541807-T9572> <https://sportschema.org/ontologies/main/score> "2" .
             <http://example.com/Participation/541807-T9572> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/win> .
             <http://example.com/Participation/541807-T9572> <https://sportschema.org/ontologies/corestatistics/eventsPlayed> "24" .
@@ -55,7 +55,7 @@
 
             <http://example.com/Participation/5120-T6134> <http://www.w3.org/2000/01/rdf-schema#label> "Kinguin participation in Event 5120" .
                 <http://example.com/Participation/5120-T6134> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T6134> .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-T6134> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-T6134> .
         <http://example.com/Participation/5120-T6134> <https://sportschema.org/ontologies/main/score> "7" .
             <http://example.com/Participation/5120-T6134> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/loss> .
             <http://example.com/Athlete/PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -63,13 +63,12 @@
         <http://example.com/Athlete/PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES10> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak membership of " .
             <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES10> .
+            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES10> .
             <http://example.com/Athlete/PES10> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES10> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES10> .
             
             <http://example.com/Participation/5120-PES10><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -90,13 +89,12 @@
         <http://example.com/Athlete/PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES11> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak membership of " .
             <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES11> .
+            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES11> .
             <http://example.com/Athlete/PES11> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES11> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES11> .
             
             <http://example.com/Participation/5120-PES11><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -117,13 +115,12 @@
         <http://example.com/Athlete/PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES12> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas membership of " .
             <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES12> .
+            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES12> .
             <http://example.com/Athlete/PES12> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES12> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES12> .
             
             <http://example.com/Participation/5120-PES12><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -144,13 +141,12 @@
         <http://example.com/Athlete/PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES13> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski membership of " .
             <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES13> .
+            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES13> .
             <http://example.com/Athlete/PES13> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES13> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES13> .
             
             <http://example.com/Participation/5120-PES13><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -171,13 +167,12 @@
         <http://example.com/Athlete/PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES14> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz membership of " .
             <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES14> .
+            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES14> .
             <http://example.com/Athlete/PES14> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES14> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES14> .
             
             <http://example.com/Participation/5120-PES14><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -201,7 +196,7 @@
 
             <http://example.com/Participation/5120-T9572> <http://www.w3.org/2000/01/rdf-schema#label> "Ex-Space Soldiers participation in Event 5120" .
                 <http://example.com/Participation/5120-T9572> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T9572> .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-T9572> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-T9572> .
         <http://example.com/Participation/5120-T9572> <https://sportschema.org/ontologies/main/score> "16" .
             <http://example.com/Participation/5120-T9572> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/win> .
             <http://example.com/Athlete/PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -209,13 +204,12 @@
         <http://example.com/Athlete/PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES15> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın membership of " .
             <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES15> .
+            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES15> .
             <http://example.com/Athlete/PES15> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES15> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES15> .
             
             <http://example.com/Participation/5120-PES15><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -236,13 +230,12 @@
         <http://example.com/Athlete/PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES16> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca membership of " .
             <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES16> .
+            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES16> .
             <http://example.com/Athlete/PES16> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES16> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES16> .
             
             <http://example.com/Participation/5120-PES16><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -263,13 +256,12 @@
         <http://example.com/Athlete/PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES17> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş membership of " .
             <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES17> .
+            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES17> .
             <http://example.com/Athlete/PES17> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES17> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES17> .
             
             <http://example.com/Participation/5120-PES17><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -290,13 +282,12 @@
         <http://example.com/Athlete/PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES18> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli membership of " .
             <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES18> .
+            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES18> .
             <http://example.com/Athlete/PES18> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES18> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES18> .
             
             <http://example.com/Participation/5120-PES18><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -317,13 +308,12 @@
         <http://example.com/Athlete/PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES19> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor membership of " .
             <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES19> .
+            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES19> .
             <http://example.com/Athlete/PES19> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5120-PES19> .
+        <http://example.com/Event/5120> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5120-PES19> .
             
             <http://example.com/Participation/5120-PES19><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -353,7 +343,7 @@
 
             <http://example.com/Participation/5121-T6134> <http://www.w3.org/2000/01/rdf-schema#label> "Kinguin participation in Event 5121" .
                 <http://example.com/Participation/5121-T6134> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T6134> .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-T6134> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-T6134> .
         <http://example.com/Participation/5121-T6134> <https://sportschema.org/ontologies/main/score> "16" .
             <http://example.com/Participation/5121-T6134> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/win> .
             <http://example.com/Athlete/PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -361,13 +351,12 @@
         <http://example.com/Athlete/PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES10> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak membership of " .
             <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES10> .
+            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES10> .
             <http://example.com/Athlete/PES10> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES10> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES10> .
             
             <http://example.com/Participation/5121-PES10><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -388,13 +377,12 @@
         <http://example.com/Athlete/PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES11> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak membership of " .
             <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES11> .
+            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES11> .
             <http://example.com/Athlete/PES11> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES11> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES11> .
             
             <http://example.com/Participation/5121-PES11><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -415,13 +403,12 @@
         <http://example.com/Athlete/PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES12> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas membership of " .
             <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES12> .
+            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES12> .
             <http://example.com/Athlete/PES12> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES12> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES12> .
             
             <http://example.com/Participation/5121-PES12><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -442,13 +429,12 @@
         <http://example.com/Athlete/PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES13> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski membership of " .
             <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES13> .
+            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES13> .
             <http://example.com/Athlete/PES13> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES13> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES13> .
             
             <http://example.com/Participation/5121-PES13><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -469,13 +455,12 @@
         <http://example.com/Athlete/PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES14> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz membership of " .
             <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES14> .
+            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES14> .
             <http://example.com/Athlete/PES14> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES14> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES14> .
             
             <http://example.com/Participation/5121-PES14><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -499,7 +484,7 @@
 
             <http://example.com/Participation/5121-T9572> <http://www.w3.org/2000/01/rdf-schema#label> "Ex-Space Soldiers participation in Event 5121" .
                 <http://example.com/Participation/5121-T9572> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T9572> .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-T9572> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-T9572> .
         <http://example.com/Participation/5121-T9572> <https://sportschema.org/ontologies/main/score> "13" .
             <http://example.com/Participation/5121-T9572> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/loss> .
             <http://example.com/Athlete/PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -507,13 +492,12 @@
         <http://example.com/Athlete/PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES15> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın membership of " .
             <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES15> .
+            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES15> .
             <http://example.com/Athlete/PES15> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES15> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES15> .
             
             <http://example.com/Participation/5121-PES15><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -534,13 +518,12 @@
         <http://example.com/Athlete/PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES16> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca membership of " .
             <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES16> .
+            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES16> .
             <http://example.com/Athlete/PES16> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES16> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES16> .
             
             <http://example.com/Participation/5121-PES16><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -561,13 +544,12 @@
         <http://example.com/Athlete/PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES17> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş membership of " .
             <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES17> .
+            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES17> .
             <http://example.com/Athlete/PES17> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES17> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES17> .
             
             <http://example.com/Participation/5121-PES17><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -588,13 +570,12 @@
         <http://example.com/Athlete/PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES18> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli membership of " .
             <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES18> .
+            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES18> .
             <http://example.com/Athlete/PES18> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES18> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES18> .
             
             <http://example.com/Participation/5121-PES18><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -615,13 +596,12 @@
         <http://example.com/Athlete/PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES19> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor membership of " .
             <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES19> .
+            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES19> .
             <http://example.com/Athlete/PES19> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5121-PES19> .
+        <http://example.com/Event/5121> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5121-PES19> .
             
             <http://example.com/Participation/5121-PES19><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -651,7 +631,7 @@
 
             <http://example.com/Participation/5122-T6134> <http://www.w3.org/2000/01/rdf-schema#label> "Kinguin participation in Event 5122" .
                 <http://example.com/Participation/5122-T6134> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T6134> .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-T6134> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-T6134> .
         <http://example.com/Participation/5122-T6134> <https://sportschema.org/ontologies/main/score> "9" .
             <http://example.com/Participation/5122-T6134> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/loss> .
             <http://example.com/Athlete/PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -659,13 +639,12 @@
         <http://example.com/Athlete/PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES10> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES10> <http://www.w3.org/2000/01/rdf-schema#label> "Jazek Jeziak membership of " .
             <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES10> .
+            <http://example.com/Membership/T6134-PES10><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES10> .
             <http://example.com/Athlete/PES10> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES10> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES10> .
             
             <http://example.com/Participation/5122-PES10><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -686,13 +665,12 @@
         <http://example.com/Athlete/PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES11> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES11> <http://www.w3.org/2000/01/rdf-schema#label> "Pawet Jańczak membership of " .
             <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES11> .
+            <http://example.com/Membership/T6134-PES11><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES11> .
             <http://example.com/Athlete/PES11> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES11> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES11> .
             
             <http://example.com/Participation/5122-PES11><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -713,13 +691,12 @@
         <http://example.com/Athlete/PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES12> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES12> <http://www.w3.org/2000/01/rdf-schema#label> "Wiktor Wojtas membership of " .
             <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES12> .
+            <http://example.com/Membership/T6134-PES12><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES12> .
             <http://example.com/Athlete/PES12> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES12> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES12> .
             
             <http://example.com/Participation/5122-PES12><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -740,13 +717,12 @@
         <http://example.com/Athlete/PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES13> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES13> <http://www.w3.org/2000/01/rdf-schema#label> "Mikołaj Karolewski membership of " .
             <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES13> .
+            <http://example.com/Membership/T6134-PES13><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES13> .
             <http://example.com/Athlete/PES13> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES13> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES13> .
             
             <http://example.com/Participation/5122-PES13><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -767,13 +743,12 @@
         <http://example.com/Athlete/PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz" .
         <http://example.com/Team/T6134><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T6134> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T6134> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T6134-PES14> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T6134-PES14> <http://www.w3.org/2000/01/rdf-schema#label> "Karol Rodowicz membership of " .
             <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T6134> .
-            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES14> .
+            <http://example.com/Membership/T6134-PES14><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES14> .
             <http://example.com/Athlete/PES14> <https://sportschema.org/ontologies/main/nationality> "Polish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES14> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES14> .
             
             <http://example.com/Participation/5122-PES14><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -797,7 +772,7 @@
 
             <http://example.com/Participation/5122-T9572> <http://www.w3.org/2000/01/rdf-schema#label> "Ex-Space Soldiers participation in Event 5122" .
                 <http://example.com/Participation/5122-T9572> <https://sportschema.org/ontologies/main/participationBy> <http://example.com/Team/T9572> .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-T9572> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-T9572> .
         <http://example.com/Participation/5122-T9572> <https://sportschema.org/ontologies/main/score> "16" .
             <http://example.com/Participation/5122-T9572> <https://sportschema.org/ontologies/corestatistics/eventOutcome> <http://cv.iptc.org/newscodes/speventoutcome/win> .
             <http://example.com/Athlete/PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/Athlete> .
@@ -805,13 +780,12 @@
         <http://example.com/Athlete/PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES15> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES15> <http://www.w3.org/2000/01/rdf-schema#label> "Buğra Arkın membership of " .
             <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES15> .
+            <http://example.com/Membership/T9572-PES15><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES15> .
             <http://example.com/Athlete/PES15> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES15> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES15> .
             
             <http://example.com/Participation/5122-PES15><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -832,13 +806,12 @@
         <http://example.com/Athlete/PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES16> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES16> <http://www.w3.org/2000/01/rdf-schema#label> "Ahmet Karahoca membership of " .
             <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES16> .
+            <http://example.com/Membership/T9572-PES16><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES16> .
             <http://example.com/Athlete/PES16> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES16> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES16> .
             
             <http://example.com/Participation/5122-PES16><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -859,13 +832,12 @@
         <http://example.com/Athlete/PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES17> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES17> <http://www.w3.org/2000/01/rdf-schema#label> "Ismailcan Dörtkardeş membership of " .
             <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES17> .
+            <http://example.com/Membership/T9572-PES17><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES17> .
             <http://example.com/Athlete/PES17> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES17> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES17> .
             
             <http://example.com/Participation/5122-PES17><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -886,13 +858,12 @@
         <http://example.com/Athlete/PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES18> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES18> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Küpeli membership of " .
             <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES18> .
+            <http://example.com/Membership/T9572-PES18><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES18> .
             <http://example.com/Athlete/PES18> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES18> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES18> .
             
             <http://example.com/Participation/5122-PES18><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
@@ -913,13 +884,12 @@
         <http://example.com/Athlete/PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor" .
         <http://example.com/Team/T9572><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/Team> .
             <http://example.com/Team/T9572> <http://www.w3.org/2000/01/rdf-schema#label> "" .
-            <http://example.com/Team/T9572> <https://sportschema.org/ontologies/main/membership> <http://example.com/Membership/T9572-PES19> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://sportschema.org/ontologies/main/IndividualMembership> .
             <http://example.com/Membership/T9572-PES19> <http://www.w3.org/2000/01/rdf-schema#label> "Engin Kor membership of " .
             <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipOf><http://example.com/Team/T9572> .
-            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/membershipBy><http://example.com/Athlete/PES19> .
+            <http://example.com/Membership/T9572-PES19><https://sportschema.org/ontologies/main/member><http://example.com/Athlete/PES19> .
             <http://example.com/Athlete/PES19> <https://sportschema.org/ontologies/main/nationality> "Turkish" .
-        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/eventParticipation> <http://example.com/Participation/5122-PES19> .
+        <http://example.com/Event/5122> <https://sportschema.org/ontologies/main/participation> <http://example.com/Participation/5122-PES19> .
             
             <http://example.com/Participation/5122-PES19><http://www.w3.org/1999/02/22-rdf-syntax-ns#type><https://sportschema.org/ontologies/main/IndividualParticipation> .
             
