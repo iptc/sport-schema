@@ -1,8 +1,15 @@
+---
+permalink: /tools/making-a-sparql-endpoint/
+title: Making a SPARQL endpoint 
+layout: page
+nav_order: 4
+parent: Working with IPTC Sport Schema
+---
 # Making a SPARQL endpoint
 
 Apache Jena contains the TDB2 engine which functions as a local datastore for RDF triples.
 
-Here we document how it can be used to create a local triple store of SportsRDF data
+Here we document how it can be used to create a local triple store of IPTC Sport Schema data
 which can then be queried to test our sample queries.
 
 ## Loading data into a TDB2 datastore
@@ -27,6 +34,11 @@ Fuseki has a Web UI, go to `http://localhost:3030/` to explore it.
 
 Through the Web UI, you can enter SPARQL queries and load more data into the system.
 
+IPTC are hosting a test instance of Fuseki at [http://sport.iptc.org/](http://sport.iptc.org/).
+This contains the
+ontology files, our test data, and some "canned queries" illustrating how to test the
+endpoint with SPARQL queries relating to our use cases.
+
 ## Querying the SPARQL endpoint over HTTP
 
 When fuseki is running, you can also query the SPARQL endpoint via HTTP requests
@@ -37,4 +49,4 @@ For example:
 
 ## Adding reasoning capabilities to the SPARQL engine
 
-I believe this is possible by linking to the RDF Schema file, but I haven't tried it yet...
+Still to come.

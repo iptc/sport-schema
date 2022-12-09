@@ -1,6 +1,7 @@
 @startuml
-!theme cerulean
-' This is an example of what we DON"T do...
+!theme reddress-lightblue
+skinparam DefaultFontSize 14
+
 object Player1 {
   rdfs:label = "Jodie Bloggs"
 }
@@ -12,7 +13,9 @@ object Player2 {
 object Team {
   rdfs:label : "The Sluggers"
 }
+note right : Example of a simple player-to-team relationship:\nthis is what we DON'T do in the IPTC Sport Schema
 
 Player1 .. Team : > memberOf
 Player2 .. Team : > memberOf
+
 @enduml
