@@ -3,8 +3,8 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
@@ -14,10 +14,10 @@ WHERE
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
            sport:startDateTime ?eventDateTime ;
-           sport:eventParticipation ?playerperf ;
-           sport:competition ?competitionPhase .
+           sport:participation ?playerperf ;
+           sport:eventInCompetitionPhase ?competitionPhase .
     ?competitionPhase rdf:type sport:CompetitionPhase ;
-                      sport:parentCompetition ?parentCompetition .
+                      sport:phaseInCompetition ?parentCompetition .
     ?playerperf sport:participationBy ?player ;
                 rdf:type sport:IndividualParticipation ;
                 sport:rank ?rankstr ;

@@ -3,7 +3,7 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
 
 SELECT ?week
        (CONCAT(STR(YEAR(?date)),"-",STR(MONTH(?date)),"-",STR(DAY(?date))) as ?displayDate)
@@ -14,12 +14,12 @@ WHERE
 {
     ?event rdf:type sport:Event ;
            sport:startDateTime ?date ;
-           sport:competition ?compPhase ;
-           sport:site ?site ;
-           sport:eventParticipation ?homeTeamParticipation .
+           sport:eventInCompetitionPhase ?compPhase ;
+           sport:location ?site ;
+           sport:participation ?homeTeamParticipation .
     ?compPhase rdf:type sport:CompetitionPhase ;
                rdfs:label ?week ;
-               sport:parentCompetition ?parentCompetition .
+               sport:phaseInCompetition ?parentCompetition .
     ?parentCompetition rdf:type sport:Competition;
                rdfs:label ?parentCompName .
     ?homeTeamParticipation rdf:type sport:TeamParticipation ;
@@ -28,7 +28,7 @@ WHERE
     ?homeTeam rdf:type sport:Team ;
               rdfs:label ?homeTeamName .
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?awayTeamParticipation .
+           sport:participation ?awayTeamParticipation .
     ?awayTeamParticipation rdf:type sport:TeamParticipation ;
                            sport:participationBy ?awayTeam ;
                            sport:alignment "away" .

@@ -5,13 +5,13 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
 
-SELECT ?compName ?comp ?parentComp ?govBody
+SELECT ?Name ?CompetitionID ?InstanceOf ?GoverningBody
 WHERE
 {
-    ?comp rdf:type sport:Competition ;
-          rdfs:label ?compName .
-    OPTIONAL { ?comp sport:parentCompetition ?parentComp . }
-    OPTIONAL { ?comp sport:governingBody ?govBody . }
+    ?CompetitionID rdf:type sport:Competition ;
+          rdfs:label ?Name .
+    OPTIONAL { ?CompetitionID sport:parent ?InstanceOf . }
+    OPTIONAL { ?CompetitionID sport:governedBy ?GoverningBody . }
 }

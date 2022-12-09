@@ -1,0 +1,15 @@
+# Get a list of all sports covered in the entire triple store
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX medtop: <http://cv.iptc.org/newscodes/mediatopic/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+
+SELECT distinct ?sport ?sportLabelEn
+WHERE {
+    ?comp rdf:type ?comptype ;
+          sport:sport ?sport .
+    ?sport rdf:type skos:Concept ;
+           skos:prefLabel ?sportLabelEn .
+    FILTER (lang(?sportLabelEn) = 'en-GB')
+}

@@ -1,0 +1,327 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix sprgxstat: <https://sportschema.org/ontologies/rugby/> .
+
+<https://sportschema.org/ontologies/rugby/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Rugby statistics"@en ;
+    rdfs:label "IPTC Sport Schema - Rugby statistics"@en ;
+    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering rugby statistics."@en .
+
+sprgxstat:triesScored rdf:type rdf:Property ; 
+        rdfs:label "triesScored"@en ; 
+        rdfs:comment "Tries scored."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:triesScoredPerGame rdf:type rdf:Property ; 
+        rdfs:label "triesScoredPerGame"@en ; 
+        rdfs:comment "Average number of tries scored per match."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltyTriesTotal rdf:type rdf:Property ; 
+        rdfs:label "penaltyTriesTotal"@en ; 
+        rdfs:comment "Penalty tries awarded."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltyTriesPerGame rdf:type rdf:Property ; 
+        rdfs:label "penaltyTriesPerGame"@en ; 
+        rdfs:comment "Average number of penalty tries awarded per match."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:dropGoalAttempts rdf:type rdf:Property ; 
+        rdfs:label "dropGoalAttempts"@en ; 
+        rdfs:comment "Drop goal attempts"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:dropGoalsScored rdf:type rdf:Property ; 
+        rdfs:label "dropGoalsScored"@en ; 
+        rdfs:comment "Drop goals scored"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:dropGoalsScoredPerGame rdf:type rdf:Property ; 
+        rdfs:label "dropGoalsScoredPerGame"@en ; 
+        rdfs:comment "Average drop goals scored per match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltyGoalAttempts rdf:type rdf:Property ; 
+        rdfs:label "penaltyGoalAttempts"@en ; 
+        rdfs:comment "Penalty goal attempts"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltyGoalsScored rdf:type rdf:Property ; 
+        rdfs:label "penaltyGoalsScored"@en ; 
+        rdfs:comment "Penalty goals scored"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltyGoalsScoredPerGame rdf:type rdf:Property ; 
+        rdfs:label "penaltyGoalsScoredPerGame"@en ; 
+        rdfs:comment "Average penalty goals scored per match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:conversionAttempts rdf:type rdf:Property ; 
+        rdfs:label "conversionAttempts"@en ; 
+        rdfs:comment "Conversion attempts"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:conversionsScored rdf:type rdf:Property ; 
+        rdfs:label "conversionsScored"@en ; 
+        rdfs:comment "Conversions scored"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:conversionsScoredPerGame rdf:type rdf:Property ; 
+        rdfs:label "conversionsScoredPerGame"@en ; 
+        rdfs:comment "Average conversions scored per match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:freeKicksTotal rdf:type rdf:Property ; 
+        rdfs:label "freeKicksTotal"@en ; 
+        rdfs:comment "Number of free kicks"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:freeKicksPerGame rdf:type rdf:Property ; 
+        rdfs:label "freeKicksPerGame"@en ; 
+        rdfs:comment "Average free kicks per match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:kicksTotal rdf:type rdf:Property ; 
+        rdfs:label "kicksTotal"@en ; 
+        rdfs:comment "Number of kicks"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:kicksIntoTouch rdf:type rdf:Property ; 
+        rdfs:label "kicksIntoTouch"@en ; 
+        rdfs:comment "Number of kicks into touch"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:runs rdf:type rdf:Property ; 
+        rdfs:label "runs"@en ; 
+        rdfs:comment "Number of runs"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:metresGained rdf:type rdf:Property ; 
+        rdfs:label "metresGained"@en ; 
+        rdfs:comment "Total number of metres advanced in the match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:scrumsTotal rdf:type rdf:Property ; 
+        rdfs:label "scrumsTotal"@en ; 
+        rdfs:comment "Number of scrums by team."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:scrumsWonFor rdf:type rdf:Property ; 
+        rdfs:label "scrumsWonFor"@en ; 
+        rdfs:comment "Number of own scrums won."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:lineOutsTotal rdf:type rdf:Property ; 
+        rdfs:label "lineOutsTotal"@en ; 
+        rdfs:comment "Number of line-outs by team."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:lineOutsWonFor rdf:type rdf:Property ; 
+        rdfs:label "lineOutsWonFor"@en ; 
+        rdfs:comment "Number of lineouts won on own put in"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:rucksTotal rdf:type rdf:Property ; 
+        rdfs:label "rucksTotal"@en ; 
+        rdfs:comment "Number of rucks by team."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:rucksWonFor rdf:type rdf:Property ; 
+        rdfs:label "rucksWonFor"@en ; 
+        rdfs:comment "Number of rucks won where team brought the ball in"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:maulsTotal rdf:type rdf:Property ; 
+        rdfs:label "maulsTotal"@en ; 
+        rdfs:comment "Number of mauls by team."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:maulsWonFor rdf:type rdf:Property ; 
+        rdfs:label "maulsWonFor"@en ; 
+        rdfs:comment "Number of own mauls won."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:handlingErrors rdf:type rdf:Property ; 
+        rdfs:label "handlingErrors"@en ; 
+        rdfs:comment "Number of handling errors"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:handlingErrorsPerGame rdf:type rdf:Property ; 
+        rdfs:label "handlingErrorsPerGame"@en ; 
+        rdfs:comment "Average handling errors per match"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:tackles rdf:type rdf:Property ; 
+        rdfs:label "tackles"@en ; 
+        rdfs:comment "Number of tackles"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:tacklesMissed rdf:type rdf:Property ; 
+        rdfs:label "tacklesMissed"@en ; 
+        rdfs:comment "Number of tackles missed"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:scrumsWonAgainst rdf:type rdf:Property ; 
+        rdfs:label "scrumsWonAgainst"@en ; 
+        rdfs:comment "Number of scrums won on opponent's put in"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:lineOutsWonAgainst rdf:type rdf:Property ; 
+        rdfs:label "lineOutsWonAgainst"@en ; 
+        rdfs:comment "Number of lineouts won on opponent's put in"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:rucksWonAgainst rdf:type rdf:Property ; 
+        rdfs:label "rucksWonAgainst"@en ; 
+        rdfs:comment "Number of rucks won where opponent brought the ball in"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:maulsWonAgainst rdf:type rdf:Property ; 
+        rdfs:label "maulsWonAgainst"@en ; 
+        rdfs:comment "Number of opposing teams's mauls won."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltiesConceded rdf:type rdf:Property ; 
+        rdfs:label "penaltiesConceded"@en ; 
+        rdfs:comment "Number of penalties conceded to opposing team."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:penaltiesConcededPerGame rdf:type rdf:Property ; 
+        rdfs:label "penaltiesConcededPerGame"@en ; 
+        rdfs:comment "Average number of penalties conceded to opposing team"@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:cautionsTotal rdf:type rdf:Property ; 
+        rdfs:label "cautionsTotal"@en ; 
+        rdfs:comment "Total number of cautions recieved."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:cautionsPerGame rdf:type rdf:Property ; 
+        rdfs:label "cautionsPerGame"@en ; 
+        rdfs:comment "Average number of cautions recieved per match."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:cautionsPending rdf:type rdf:Property ; 
+        rdfs:label "cautionsPending"@en ; 
+        rdfs:comment "Number of cautions that could result in a game suspension."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:cautionPointsTotal rdf:type rdf:Property ; 
+        rdfs:label "cautionPointsTotal"@en ; 
+        rdfs:comment "Total amount of caution points. Can occur over various games in a season."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:cautionPointsPending rdf:type rdf:Property ; 
+        rdfs:label "cautionPointsPending"@en ; 
+        rdfs:comment "Number of caution points that could result in a game suspension."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:ejectionsTotal rdf:type rdf:Property ; 
+        rdfs:label "ejectionsTotal"@en ; 
+        rdfs:comment "Total number of ejections."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	sprgxstat:ejectionsPerGame rdf:type rdf:Property ; 
+        rdfs:label "ejectionsPerGame"@en ; 
+        rdfs:comment "Average number of ejections recieved per match."@en ; 
+        rdfs:domain sport:Participation ; 
+        rdfs:range xsd:integer ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
+        
+	

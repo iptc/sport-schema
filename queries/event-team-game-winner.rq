@@ -3,8 +3,8 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
 
 SELECT ?teamName ?score ?opposingScore
 WHERE {
@@ -13,9 +13,9 @@ WHERE {
     ?teamParticipation rdf:type sport:TeamParticipation ;
                        sport:participationBy ?team ;
                        sport:score ?score ;
-                       spstat:score-opposing ?opposingScore .
+                       spstat:scoreOpposing ?opposingScore .
     ?event rdf:type sport:Event ;
-           sport:eventParticipation ?teamParticipation .
+           sport:participation ?teamParticipation .
     FILTER ( ?score > ?opposingScore )
-    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128468>)
+    FILTER (?event = <http://example.com/Event/E2128468>)
 }

@@ -3,16 +3,16 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 
 SELECT DISTINCT ?teamName ?playerName ?stat ?statValue
 WHERE { 
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
-           sport:eventParticipation ?teamParticipation ;
-           sport:eventParticipation ?playerParticipation .
+           sport:participation ?teamParticipation ;
+           sport:participation ?playerParticipation .
     ?playerParticipation rdf:type sport:IndividualParticipation ;
                          sport:participationBy ?player ;
                          ?stat ?statValue .
@@ -21,12 +21,12 @@ WHERE {
     ?player rdf:type sport:Athlete ;
             rdfs:label ?playerName .
     ?members rdf:type sport:IndividualMembership ;
-             sport:membershipBy ?player .
+             sport:member ?player ;
+             sport:membershipOf ?team .
     ?team rdf:type sport:Team ;
-          rdfs:label ?teamName ;
-          sport:membership ?members . 
-    FILTER (strStarts(str(?stat), "http://cv.iptc.org/newscodes/"))
-    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128609>)
+          rdfs:label ?teamName .
+    FILTER ((strStarts(str(?stat), "https://sportschema.org/ontologies/corestatistics/")) || (strStarts(str(?stat), "https://sportschema.org/ontologies/soccer/")))
+    FILTER (?event = <http://example.com/Event/E2128609>)
     FILTER (?playerName = "Pascal Struijk")
 }
 ORDER BY ?teamName ?playerName ?stat

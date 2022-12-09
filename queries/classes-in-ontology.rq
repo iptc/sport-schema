@@ -4,7 +4,6 @@ PREFIX owl:     <http://www.w3.org/2002/07/owl#>
 
 SELECT DISTINCT ?class
 WHERE {
-  ?subject rdf:type ?class .
   ?class rdf:type rdfs:Class .
   FILTER ( ?class != rdfs:Class )
   FILTER ( ?class != rdf:Property )

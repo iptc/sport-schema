@@ -4,36 +4,38 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 
 SELECT ?teamName ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
 WHERE
 {
-    ?season rdf:type sport:Competition .
-    ?season sport:competitionParticipation ?teamParticipation . 
-    ?teamParticipation rdf:type sport:TeamParticipation .
-    ?teamParticipation sport:participationBy ?team .
-    ?team rdf:type sport:Team .
-    ?team rdfs:label ?teamName .
-    ?teamParticipation spstat:events-played ?GP .
-    ?teamParticipation spstat:standing-points ?P .
-    ?teamParticipation spstat:wins ?W .
-    ?teamParticipation spstat:losses ?L .
-    ?teamParticipation spstat:ties ?D .
-    ?teamParticipation spstat:points-scored-for ?GF .
-    ?teamParticipation spstat:points-scored-against ?GA .
-    ?teamParticipation spstat:points-difference ?GD .
-    ?teamParticipation sport:participationSplit ?splithome .
-    ?splithome rdf:type sport:ParticipationSplit .
-    ?splithome sport:participationSplitType spcompetitionscope:events-home .
-    ?splithome spstat:wins ?WHOME .
-    ?splithome spstat:losses ?LHOME .
-    ?teamParticipation sport:participationSplit ?splitaway .
-    ?splitaway rdf:type sport:ParticipationSplit .
-    ?splitaway sport:participationSplitType spcompetitionscope:events-away .
-    ?splitaway spstat:wins ?WAWAY .
+    ?season rdf:type sport:Competition ;
+            sport:competitionType <http://cv.iptc.org/newscodes/spct/competition> ;
+            sport:participation ?teamParticipation . 
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team ;
+                       sport:participationSplit ?splitaway ;
+                       spstat:eventsPlayed ?GP ;
+                       spstat:standingPoints ?P ;
+                       spstat:wins ?W ;
+                       spstat:losses ?L ;
+                       spstat:ties ?D ;
+                       spstat:pointsScoredFor ?GF ;
+                       spstat:pointsScoredAgainst ?GA ;
+                       spstat:pointsDifference ?GD ;
+                       sport:participationSplit ?splithome .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName .
+    ?splithome rdf:type sport:ParticipationSplit ;
+               sport:participationSplitType spcompetitionscope:events-home ;
+               spstat:wins ?WHOME ;
+               spstat:losses ?LHOME .
+    ?splitaway rdf:type sport:ParticipationSplit ;
+               sport:participationSplitType spcompetitionscope:events-away ;
+               spstat:wins ?WAWAY .
+    FILTER (?season = <http://example.com/Competition/l.premierleague.com-2020>)
 }
 ORDER BY DESC(?P) DESC(?W) DESC(?GD)

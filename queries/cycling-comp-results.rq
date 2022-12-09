@@ -4,7 +4,7 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT ?competitionName ?playerName ?rank ?time
@@ -12,7 +12,7 @@ WHERE
 {
     ?competition rdf:type sport:Competition ;
            rdfs:label ?competitionName ;
-           sport:competitionParticipation ?playerparticipation .
+           sport:participation ?playerparticipation .
     ?playerparticipation sport:participationBy ?player ;
                          rdf:type sport:IndividualParticipation ;
                          sport:rank ?rankstr ;

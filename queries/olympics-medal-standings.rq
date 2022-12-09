@@ -4,24 +4,25 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
-PREFIX spsocstat: <http://cv.iptc.org/newscodes/spsocstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
 
 SELECT ?compName ?teamName ?rank
 WHERE
 {
-    ?event rdf:type sport:Competition ;
-           rdfs:label ?compName ;
-		   sport:participation ?teamperf .
+    ?competition rdf:type sport:Competition ;
+                 rdfs:label ?compName ;
+                 sport:participation ?teamperf .
     ?teamperf sport:participationBy ?team ;
-    			rdf:type sport:TeamParticipation ;
-    			sport:rank ?rankstr .
+              rdf:type sport:TeamParticipation ;
+              sport:rank ?rankstr .
     ?team rdfs:label ?teamName ; 
-    		rdf:type sport:Team .
+          rdf:type sport:Team .
 
-    	BIND (xsd:integer(?rankstr) as ?rank)
+    FILTER (?competition = <http://example.com/Competition/OLYS2020>)
+    BIND (xsd:integer(?rankstr) as ?rank)
 }
 ORDER BY ASC(?rank)

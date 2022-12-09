@@ -4,59 +4,186 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix sh:      <http://www.w3.org/ns/shacl#> .
-@prefix sport:   <http://www.iptc.org/ontologies/Sport/> .
-@prefix spact:   <http://www.iptc.org/ontologies/Sport/Action/> .
+@prefix sport:   <https://sportschema.org/ontologies/main/> .
+@prefix spact:   <https://sportschema.org/ontologies/main/> .
 
 ##### SHACL Shapes for validating Sports RDF data #####
 
-sport:EventShape
-  sh:targetClass sport:Event ;
+sport:ActionShape
   a sh:NodeShape ;
+  sh:targetClass sport:Action ;
+  # sh:closed true;
+  #sh:property [
+  #  sh:path sport:actionParticipation ;
+  #  # sh:class sport:IndividualParticipation ;
+  #  sh:class sport:Participation ;
+  #  # sh:nodeKind sh:IRI ;
+  #] ;
   sh:property [
-    sh:path sport:eventStatus ;
-    sh:pattern "^http://cv.iptc.org/newscodes/speventstatus/" ;  # term is from CV
+    sh:path sport:event ;
+    sh:class sport:Event ;
+    # sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path spact:class ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;
+    sh:flags   "i"  # Ignore case
+  ] .
+
+sport:AssociateShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Associate ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:CompetitionShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Competition ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:competitionType ;
+    rdfs:domain sport:Competition ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spct/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:parentCompetition ;
+    sh:class sport:Competition
+  ] ;
+  sh:property [
+    sh:path sport:competitionParticipation ;
+    sh:class sport:Participation
+  ] ;
+  sh:property [
+    sh:path sport:governingBody ;
+    sh:class sport:GoverningBody
+  ] .
+
+sport:CompetitionPhaseShape
+  a sh:NodeShape ;
+  sh:targetClass sport:CompetitionPhase ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:phaseParticipation ;
+    sh:class sport:Participation
+  ] ;
+  sh:property [
+    sh:path sport:competitionFormat ;
+    sh:pattern "^http://cv.iptc.org/newscodes/sptournamentform/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:competitionPhase ;
+    sh:class sport:CompetitionPhase ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:competitionPhaseType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/sptournamentphase/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:competition ;
+    sh:class sport:Competition ;
+    sh:nodeKind sh:IRI ;
+  ] .
+
+sport:EventShape rdf:type sh:NodeShape ;
+  sh:targetClass sport:Event ;
+  sh:closed true ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:site ;
+    sh:class sport:Site ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:competition ;
+    sh:class sport:Competition ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:competitionPhase ;
+    sh:class sport:CompetitionPhase ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:eventParticipation ;
+    sh:class sport:Participation ;
+    # sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:attendance ;
+    sh:datatype xsd:string ;
+    # sh:datatype xsd:integer ;
+  ] ;
+  sh:property [
+    sh:path sport:startDateTime ;
+    sh:datatype xsd:dateTime ;
+  ] ;
+  sh:property [
+    sh:path sport:endDateTime ;
+    sh:datatype xsd:dateTime ;
+  ] ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;     # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:eventStatus ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventstatus/" ;  # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:subEvent ;
+    sh:class sport:Event ;
   ] .
 
 sport:ParticipationShape
   sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;
   a sh:NodeShape ;
   sh:property [
-    sh:path sport:score-units ;
+    sh:path sport:scoreUnits ;
     sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
     sh:flags   "i"                                              # Ignore case
   ] ;
   sh:property [
-    sh:path sport:event-outcome ;
+    sh:path sport:eventOutcome ;
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
-    sh:path sport:positionRegular ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spsocposition/" ;  # term is from (football) CV
+    sh:path sport:positionEvent ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
     sh:flags   "i"                                               # Ignore case
   ] .
 
-# property is from spact: ontology - should it be moved?
-sport:ActionShape
-  sh:targetClass sport:Action ;
-  a sh:NodeShape ;
-  sh:property [
-    sh:path spact:class ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;  # term is from CV
-    sh:flags   "i"                                               # Ignore case
-  ] .
-
-sport:IndividualShape
-  sh:targetClass sport:Individual ;
+sport:IndividualMembershipShape
+  sh:targetClass sport:IndividualMembership ;
   a sh:NodeShape ;
   sh:property [
     sh:path sport:positionRegular ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spsocposition/" ;  # term is from (soccer) CV
+    # we really should check for individual vocabularies...
+    # sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos)/" ;
+    # but some example data fails (needs to be fixed) so let's cheat for now
+    sh:pattern "^http://cv.iptc.org/newscodes/" ;
     sh:flags   "i"                                               # Ignore case
   ] .

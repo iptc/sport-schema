@@ -1,0 +1,12 @@
+# Get a list of all seasons in a given league
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+
+SELECT ?sport ?league ?season WHERE {
+    ?league rdf:type sport:Competition ;
+          sport:sport ?sport .
+    ?season rdf:type sport:Competition ;
+            sport:parent ?league .
+    FILTER (?league = <http://example.com/Competition/l.premierleague.com>)
+}

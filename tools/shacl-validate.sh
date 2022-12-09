@@ -11,12 +11,12 @@ REGEX_FOR_VALID_FILES='conforms  *true'
 shopt -s nullglob
 
 if [[ $# -eq 1 ]]; then
-    queryfiles=($1)
+    filestovalidate=($1)
 else
-    queryfiles=(samples/ttl/*.ttl)
+    filestovalidate=(samples/ttl/*.ttl)
 fi
 
-for filename in "${queryfiles[@]}"; do
+for filename in "${filestovalidate[@]}"; do
     [ -e "$filename" ] || continue  # catch case where there are no matches
     name=${filename##*/}  # get part after last /
     echo -n "Validating $name against SHACL constraints... "

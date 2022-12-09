@@ -3,16 +3,18 @@
 
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX sport: <http://www.iptc.org/ontologies/Sport/>
-PREFIX spstat: <http://cv.iptc.org/newscodes/spstat/>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
 
 SELECT ?playerName ?minutesPlayed
 WHERE { 
-    ?event rdf:type sport:Event .
-    ?event sport:eventParticipation ?playerperf .
-    ?playerperf sport:participationBy ?player .
-    ?player rdfs:label ?playerName . 
-    ?playerperf spstat:time-played-total ?minutesPlayed .
-    FILTER (?event = <http://example.com/Event/l.premierleague.com-2020-e.2128609>)
+    ?event rdf:type sport:Event ;
+           sport:participation ?playerperf .
+    ?playerperf rdf:type sport:IndividualParticipation ;
+                sport:participationBy ?player ;
+                spstat:timePlayedTotal ?minutesPlayed .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    FILTER (?event = <http://example.com/Event/E2128609>)
 }
 ORDER BY ?playerName

@@ -1,3 +1,11 @@
+---
+layout: page
+title: Schema Overview
+nav_order: 2
+description: "Explaining the thinking behind the structure of the IPTC Sport Schema"
+permalink: /schema-overview/
+---
+
 # IPTC Sport Schema overview
 
 The IPTC Sport Schema aims to be simple and comprehensive, while leveraging the structures already used in IPTC's 10-year-old
@@ -7,16 +15,64 @@ This guide explains some of the core structures and patterns used in the IPTC Sp
 
 ## Key concepts
 
-### Document-based vs open data models
+The following concepts describe the "world" described by the SportsSchema model
 
-Data models based on XML Schema, such as IPTC's SportsML, treat each data file as a standalone document which conveys a particular set of information.
+### Data versus Document
 
-On the other hand, an RDF-based data model assumes that all data exists in the database together.
+SportSchema does not model documents, but units of data that are easily transmitted in a scalable manner. Data models based on XML Schema, such as IPTC's SportsML, treat each data file as a standalone document which conveys a particular set of information. JSON data formats have tended to mimic the xml document format.
 
-The practical result of this is that when querying, we can't simply say "tell me the winner of the game." We have to be specific about exactly which game we mean. All queries must be qualified by filters to only match a given event, sport, league, date etc.
+### Competition versus Event
 
-This has led to us creating several generic structures which allow us to
-capture richer information about people, teams and events.
+A competition is a collection of events formatted to a competitive goal: a champtionship, medal, etc. Examples are the Men's 800M in the Summer Olympics, NBA's 2022 season, The Champtions Leage and the Tour de France. Each of those competitions is comprised of competitive event units (sometimes referred to as "unit competitions") within which competitive, statistics-generating sports actions take place. So while the Men's 800M is a competition (toward a medal), a race or heat in that competition is an event. The Summer Olympics can themselves be characterized as a competition within which aggregate national teams compete in the medal table (with aggregate medal counts).
+
+### Action versus Event
+
+Events are units within which competitive action takes place (and from which statistics are generated). Actions are the specific competitive events that comprise the overall event. These can be goals, kickoffs, passes, penalties or even video reviews. These are the basic units of a competitive event from which statistical reports are generated.
+
+### Participation
+
+In SportSchema athletes and teams are distinct from their performances, which are separate queryable objects.
+
+### Membership
+
+Athletes move from league to league and team to team. Some even play more than one sport. SportSchema's Membership class tracks an athlete's career across time.
+
+### Summary
+
+The model describes three component parts that make up the domain of sports data:
+* The structure of a competition. For example matches played in a round, which is itself within a competition instance, that is part of a competition series.
+* The participation in a competition, event or action. Teams, atheletes and officials actively participate in competitive events and generate stats about that participation.
+* Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
+
+![IPTC Sport Schema high level overview](diagrams/simple-high-level-sport-model.png)
+
+The follow sections describe the patterns used for each of these component parts of the model.
+
+
+### Competition, event and action: building blocks to describe any competition structure
+
+Competitions are many and varied in structure. In the process of designing the model it was clear there was a need for a flexible and modular appraoch.
+
+The key class is the event this represents the lowests partisipatable thing that has outcome. Things like matches and races that have a result. Activities are more granular than events but do not have an outcome or result in their own right. An example would be a match (event) versus a goal scored (action).
+
+Events will always be part of a competition. In rare cases a competition might have a single event but in the majority of cases a event will be part of a larger competition structure. An event is assocaited with the most granular level of competition. It might be a phase of a competition like a knockout-round or heat. This phase is then assocaited with the overaching competition which itself might be part of a recurring competition series.
+
+
+### Participation: A container for statistics
+
+When an athlete or a team takes part in an event, we want
+to record statistics about each athlete's individual contributions to the event:
+goals kicked, penalties received etc.
+ 
+Separately, we want to record the team's contributions, including of course the team's score.
+
+To handle this need, we have introduced the concept of a *Participation* which links people and teams to events.
+
+We define a generic parent *Participation* class and subclasses for *IndividualParticipation* and *TeamParticipation*.
+
+The TeamParticipation object comes into existence as soon as a team is scheduled to compete in an event. The IndividualParticipation comes into existence when the team member is added to the line-up for a team participating in an Event.
+
+![IPTC Sport Schema athlete and team participation example](diagrams/athlete-team-participation.png)
 
 ### Linking people to teams: the "Membership" class
 
@@ -65,18 +121,4 @@ WHERE
 
 See the [example queries](../queries/) for more examples.
 
-### Participation: A container for statistics
 
-In a similar fashion, when an athlete or a team takes part in an event, we want
-to record statistics about each athlete's individual contributions to the event:
-goals kicked, penalties received etc.
- 
-Separately, we want to record the team's contributions, including of course the team's score.
-
-To handle this need, we have introduced the concept of a *Participation* which links people and teams to events.
-
-We define a generic parent *Participation* class and subclasses for *IndividualParticipation* and *TeamParticipation*.
-
-The TeamParticipation object comes into existence as soon as a team is scheduled to compete in an event. The IndividualParticipation comes into existence when the team member is added to the line-up for a team participating in an Event.
-
-![IPTC Sport Schema athlete and team participation example](diagrams/athlete-team-participation.png)
