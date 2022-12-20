@@ -265,7 +265,7 @@ sport:governedBy rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 #
-sport:governing rdf:type owl:ObjectProperty ;
+sport:governed rdf:type owl:ObjectProperty ;
     rdfs:label "competition being governed"@en ;
     rdfs:comment "Link to the competitions that the body governs."@en ;
     rdfs:domain sport:GoverningBody ;
@@ -279,17 +279,17 @@ sport:location rdf:type owl:ObjectProperty ;
     rdfs:comment "Link to the location (Site) where an event takes place"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:Site ;
-    rdfs:subPropertyOf skos:broader ;
-    owl:inverseOf sport:sitedEvent ;
+    rdfs:subPropertyOf skos:related ;
+    owl:inverseOf sport:hosted ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 #
-sport:sitedEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "sited event"@en ;
-    rdfs:comment "Link to the event that takes place at the site"@en ;
+sport:hosted rdf:type owl:ObjectProperty ;
+    rdfs:label "hosted"@en ;
+    rdfs:comment "Link to the event that take place at the site"@en ;
     rdfs:domain sport:Site ;
     rdfs:range sport:Event ;
-    rdfs:subPropertyOf skos:narrower ;
+    rdfs:subPropertyOf skos:related ;
     owl:inverseOf: sport:location ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
