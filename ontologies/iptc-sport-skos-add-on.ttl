@@ -1,0 +1,64 @@
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+
+#######################################################
+## This add-on provides additional triples to enable ##
+## SKOS Concepts and Relationships on the core       ##
+## sport ontology.                                   ##
+#######################################################
+
+##### Classes ####
+
+sport:Agent rdfs:subClassOf skos:Concept .
+
+sport:ParticipatableThing rdfs:subClassOf skos:Concept .
+
+sport:GoverningBody rdfs:subClassOf skos:Concept .
+
+sport:Membership rdfs:subClassOf skos:Concept .
+
+sport:Participation rdfs:subClassOf skos:Concept .
+
+sport:ParticipationSplit rdfs:subClassOf skos:Concept .
+
+sport:Site rdfs:subClassOf skos:Concept .
+
+##### Object properties #####
+
+sport:parent rdfs:subPropertyOf skos:broader .
+sport:child rdfs:subPropertyOf skos:narrower .
+
+sport:participation rdfs:subPropertyOf skos:broader .
+sport:participantOf rdfs:subPropertyOf skos:narrower .
+
+sport:eventInCompetition rdfs:subPropertyOf skos:broader .
+sport:containsEvent rdfs:subPropertyOf skos:narrower .
+
+sport:eventInCompetitionPhase rdfs:subPropertyOf skos:broader .
+sport:containsCompetitionPhase rdfs:subPropertyOf skos:narrower .
+
+sport:actionInEvent rdfs:subPropertyOf skos:broader .
+sport:containsAction rdfs:subPropertyOf skos:narrower .
+
+sport:governedBy rdfs:subPropertyOf skos:broader .
+sport:governs rdfs:subPropertyOf skos:narrower .
+
+sport:location rdfs:subPropertyOf skos:related .
+sport:locationOf rdfs:subPropertyOf skos:related .
+
+sport:member rdfs:subPropertyOf skos:broader .
+sport:memberOf rdfs:subPropertyOf skos:narrower .
+
+sport:membershipOf rdfs:subPropertyOf skos:broader .
+sport:membership rdfs:subPropertyOf skos:narrower .
+
+sport:participationBy rdfs:subPropertyOf skos:broader .
+sport:participantOf rdfs:subPropertyOf skos:narrower .
+
+sport:participationSplit rdfs:subPropertyOf skos:broader .
+sport:participationSplitOf rdfs:subPropertyOf skos:narrower .
+
+sport:phaseInCompetition rdfs:subPropertyOf skos:broader .
+sport:containsCompetitionPhase rdfs:subPropertyOf skos:narrower .
