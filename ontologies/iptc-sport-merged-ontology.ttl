@@ -157,7 +157,7 @@ sport:TeamParticipation rdf:type owl:Class ;
 
 sport:parent rdf:type owl:ObjectProperty ;
     rdfs:label "parent"@en ;
-    rdfs:comment "Link from a ParticipatableThing its parent, to represent parent Event, CompetitionPhase etc"@en ;
+    rdfs:comment "Link from a ParticipatableThing to its parent, to represent parent Event, CompetitionPhase etc"@en ;
     rdfs:domain sport:ParticipatableThing ;
     rdfs:range sport:ParticipatableThing ;
     owl:inverseOf sport:child ;
@@ -165,7 +165,7 @@ sport:parent rdf:type owl:ObjectProperty ;
 
 sport:child rdf:type owl:ObjectProperty ;
     rdfs:label "child"@en ;
-    rdfs:comment "Link from a ParticipatableThing its child, to represent child Event, CompetitionPhase etc"@en ;
+    rdfs:comment "Link from a ParticipatableThing to its child, to represent child Event, CompetitionPhase etc"@en ;
     rdfs:domain sport:ParticipatableThing ;
     rdfs:range sport:ParticipatableThing ;
     owl:inverseOf sport:parent ;
@@ -179,8 +179,8 @@ sport:participation rdf:type owl:ObjectProperty ;
     owl:inverseOf  sport:participantOf ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:participantOf rdf:type owl:ObjectProperty ;
-    rdfs:label "participation of"@en ;
+sport:participationIn rdf:type owl:ObjectProperty ;
+    rdfs:label "participation in"@en ;
     rdfs:comment "Link from a participation by an Agent to a ParticipatableThing"@en ;
     rdfs:domain sport:Participation ;
     rdfs:range sport:ParticipatableThing ;
@@ -261,14 +261,14 @@ sport:location rdf:type owl:ObjectProperty ;
 
 sport:locationOf rdf:type owl:ObjectProperty ;
     rdfs:label "location of"@en ;
-    rdfs:comment "Link to the event that take place at the site"@en ;
+    rdfs:comment "Link to an event that takes place at this location (Site)"@en ;
     rdfs:domain sport:Site ;
     rdfs:range sport:Event ;
     owl:inverseOf sport:location ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:member rdf:type owl:ObjectProperty ;
-    rdfs:label "member by"@en ;
+    rdfs:label "member"@en ;
     rdfs:comment "Link between a membership and an individual"@en ;
     rdfs:domain sport:IndividualMembership ;
     rdfs:range sport:Individual ;
@@ -276,8 +276,8 @@ sport:member rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:memberOf rdf:type owl:ObjectProperty ;
-    rdfs:label "membership"@en ;
-    rdfs:comment "Link between an individual and membership"@en ;
+    rdfs:label "member of"@en ;
+    rdfs:comment "Link between an individual and a membership"@en ;
     rdfs:domain sport:Individual ;
     rdfs:range sport:IndividualMembership ;
     owl:inverseOf sport:member ;
@@ -308,8 +308,8 @@ sport:participationBy rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:participantOf rdf:type owl:ObjectProperty ;
-    rdfs:label "participation of"@en ;
-    rdfs:comment "Link from a person or team to the participation"@en ;
+    rdfs:label "participant of"@en ;
+    rdfs:comment "Link from a person or team to their participation in an event"@en ;
     rdfs:domain sport:Agent ;
     rdfs:range sport:Participation ;
     owl:inverseOf sport:participationBy ;
@@ -317,7 +317,7 @@ sport:participantOf rdf:type owl:ObjectProperty ;
 
 sport:participationSplit rdf:type owl:ObjectProperty ;
     rdfs:label "participation split"@en ;
-    rdfs:comment "Link to a representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:comment "Link to a part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
     rdfs:domain sport:Participation ;
     rdfs:range sport:ParticipationSplit ;
     owl:inverseOf sport:participationSplitOf ;
@@ -325,7 +325,7 @@ sport:participationSplit rdf:type owl:ObjectProperty ;
 
 sport:participationSplitOf rdf:type owl:ObjectProperty ;
     rdfs:label "participation split of"@en ;
-    rdfs:comment ""@en ;
+    rdfs:comment "Link to a participation of which this is a part"@en ;
     rdfs:domain sport:ParticipationSplit ;
     rdfs:range sport:Participation ;
     owl:inverseOf sport:participationSplit ;
@@ -341,7 +341,7 @@ sport:phaseInCompetition rdf:type owl:ObjectProperty ;
     
 sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
     rdfs:label "contains competition phase"@en ;
-    rdfs:comment "Link from the competition to the phases"@en ;
+    rdfs:comment "Link from the competition to its constituent phases"@en ;
     rdfs:domain sport:Competition ;
     rdfs:range sport:CompetitionPhase ;
     owl:inverseOf sport:phaseInCompetition ;
@@ -488,14 +488,14 @@ sport:rank rdf:type owl:DatatypeProperty ;
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "A team's or individual's score in a given event"@en ;
-    schemaorg:domain sport:CompetitorParticipation ;
+    rdfs:domain sport:CompetitorParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:scoreUnits rdf:type owl:DatatypeProperty ;
     rdfs:label "score units"@en ;
     rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
-    schemaorg:domain sport:CompetitorParticipation ;
+    rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: http://cv.iptc.org/newscodes/spscoreunits/
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -511,14 +511,14 @@ sport:sport rdf:type owl:DatatypeProperty ;
 sport:startDateTime rdf:type owl:DatatypeProperty ;
     rdfs:label "start datetime"@en ;
     rdfs:comment "The date and time at which an event begins"@en ;
-    schemaorg:domain sport:Event ;
+    rdfs:domain sport:Event ;
     rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:startDate rdf:type owl:DatatypeProperty ;
     rdfs:label "start date"@en ;
     rdfs:comment "The date on which a membership begins"@en ;
-    schemaorg:domain sport:Membership ;
+    rdfs:domain sport:Membership ;
     rdfs:range xsd:date ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 

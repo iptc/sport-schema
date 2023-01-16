@@ -6,13 +6,16 @@ SELECT DISTINCT ?class ?property
 WHERE {
   ?subject rdf:type ?class .
   ?subject ?property ?object .
-  FILTER NOT EXISTS { ?property rdf:type rdf:Property }
+  FILTER NOT EXISTS { ?property rdf:type owl:ObjectProperty }
+  FILTER NOT EXISTS { ?property rdf:type owl:DatatypeProperty }
   FILTER (!REGEX ( STR(?property), "^http://cv.iptc.org/newscodes", "i" ))
   FILTER (!REGEX ( STR(?class), "^http://www.w3.org/2004/02/skos/core", "i" ))
   FILTER ( ?class != rdfs:Class )
   FILTER ( ?class != rdf:Property )
   FILTER ( ?class != owl:Ontology )
   FILTER ( ?class != owl:Class )
+  FILTER ( ?class != owl:ObjectProperty )
+  FILTER ( ?class != owl:DatatypeProperty )
   FILTER ( ?property != rdf:type )
   FILTER ( ?property != rdfs:label )
 } ORDER BY ?property ?class
