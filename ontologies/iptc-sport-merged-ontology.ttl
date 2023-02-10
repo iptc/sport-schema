@@ -197,7 +197,7 @@ sport:eventInCompetition rdf:type owl:ObjectProperty ;
 
 sport:containsEvent rdf:type owl:ObjectProperty ;
     rdfs:label "contains event"@en ;
-    rdfs:comment "The Event that is in Competition"@en ;
+    rdfs:comment "An Event that is part of this Competition"@en ;
     rdfs:domain sport:Competition ;
     rdfs:range sport:Event ;
     owl:inverseOf sport:eventInCompetition ;
@@ -215,7 +215,7 @@ sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
     rdfs:label "contains competition phase"@en ;
     rdfs:comment "The Event (such as a round or a finals phase) in a CompetitionPhase"@en ;
     rdfs:domain sport:CompetitionPhase ;
-    rdfs:range sport:event ;
+    rdfs:range sport:Event ;
     owl:inverseOf sport:eventInCompetition ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
@@ -562,7 +562,7 @@ sport:bodyPart rdf:type owl:DatatypeProperty ;
 
 sport:class rdf:type owl:DatatypeProperty ;
     rdfs:label "class"@en ;
-    rdfs:comment "An open placeholder for categorization."@en ;
+    rdfs:comment "An open placeholder for categorization. Recommended vocabulary: http://cv.iptc.org/newscodes/spactionclass/"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -606,19 +606,19 @@ sport:lastModified rdf:type owl:DatatypeProperty ;
     rdfs:label "last modified"@en ;
     rdfs:comment "Date and time when this play/action record was last modified. This would be the record from the reporter's data entry system."@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range xsd:string ; # should this be dateTime?
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:minutesElapsed rdf:type owl:DatatypeProperty ;
-    rdfs:label ""@en ;
-    rdfs:comment ""@en ;
+    rdfs:label "minutes elapsed"@en ;
+    rdfs:comment "Game minutes elapsed when this action occurred"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:oppositePlay rdf:type owl:DatatypeProperty ;
-    rdfs:label ""@en ;
-    rdfs:comment ""@en ;
+    rdfs:label "opposite play"@en ;
+    rdfs:comment "opposite play"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -645,8 +645,8 @@ sport:passType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:penaltyLevel rdf:type owl:DatatypeProperty ;
-    rdfs:label ""@en ;
-    rdfs:comment ""@en ;
+    rdfs:label "penalty level"@en ;
+    rdfs:comment "Level of penalty"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -702,8 +702,8 @@ sport:saveType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:scoreAttemptDescription rdf:type owl:DatatypeProperty ;
-    rdfs:label ""@en ;
-    rdfs:comment ""@en ;
+    rdfs:label "score attempt description"@en ;
+    rdfs:comment "description of the score attempt"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
