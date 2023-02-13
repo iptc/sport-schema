@@ -19,6 +19,7 @@ class DocsGenerator:
     def __init__(self,
             ontology_file = None,
             include_inverse = None,
+            include_inherited = None,
             generate_jekyll_header = None,
             jekyll_nav_name = None,
             jekyll_nav_parent = None,
@@ -26,6 +27,7 @@ class DocsGenerator:
             jekyll_nav_link = None):
         self.ontology_file = ontology_file
         self.include_inverse = include_inverse
+        self.include_inherited = include_inherited
         self.generate_jekyll_header = generate_jekyll_header
         self.jekyll_nav_name = jekyll_nav_name
         self.jekyll_nav_parent = jekyll_nav_parent
@@ -34,6 +36,27 @@ class DocsGenerator:
         self.graph = Graph()
         self.graph.parse(self.ontology_file)
 
+    """
+    Traverse the graph of parents via subClassOf
+    to obtain all properties of all parent classes.
+    """
+    def get_inherited_properties(self, classuri):
+        g = self.graph
+        parentclasses = g.triples((classuri, RDFS.subClassOf, None))
+        parentclasseslist = [parentclassuri for (s, p, parentclassuri) in parentclasses]
+        inherited_properties = {}
+        for parentclassuri in parentclasseslist:
+            parentclassname = str(g.value(parentclassuri, RDFS.label))
+            inherited_properties[parentclassname] = []
+            parentclassproperties = g.triples((None, RDFS.domain, parentclassuri))
+            parentclasspropertieslist = [propertyuri for (propertyuri, p, o) in parentclassproperties]
+            for propertyuri in parentclasspropertieslist:
+                propertyname = str(g.value(propertyuri, RDFS.label))
+                inherited_properties[parentclassname].append(propertyname)
+            # recurse to get properties from parents of parents
+            inherited_properties.update(self.get_inherited_properties(parentclassuri))
+        return inherited_properties
+ 
     """
     Generate ontology description data set.
     """
@@ -94,12 +117,17 @@ class DocsGenerator:
                     propertyname = g.value(propertyuri, RDFS.label)
                     classdata['properties'].append(propertyname)
 
+            # include inherited properties
+            if self.include_inherited:
+                classdata['inherited_properties'] = self.get_inherited_properties(classuri)
+
             ontologydata['classes'].append(classdata)
 
         ontologydata['properties'] = []
 
         # Properties section
         # Note: here we mix object properties and data properties, like BBC docs do
+        # TODO: make this configurable with an argument
         allproperties = chain(g.triples((None, RDF.type, OWL.ObjectProperty)), g.triples((None, RDF.type, OWL.DatatypeProperty)))
         sortedpropertyuris = sorted([propertyuri for propertyuri, p, o in allproperties], key=str)
         for propertyuri in sortedpropertyuris:
@@ -133,6 +161,11 @@ class DocsGenerator:
                         propertyrangename = str(propertyrangeuri)
                     propertydata['ranges'].append(propertyrangename)
 
+            # inverse row
+            propertyinverse = g.value(propertyuri, OWL.inverseOf)
+            propertyinversename = g.value(propertyinverse, RDFS.label)
+            propertydata['inverseof'] = propertyinversename
+
             ontologydata['properties'].append(propertydata)
         return ontologydata
 
@@ -141,6 +174,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--include-inverse",
                         help="Include inverse relationships rows in property tables (default: false)",
+                        action='store_true')
+    parser.add_argument("--include-inherited",
+                        help="Include properties defined in parent classes (default: false)",
                         action='store_true')
     parser.add_argument("--jekyll",
                         help="Include Jekyll navigation header (default: false)",
@@ -164,6 +200,7 @@ if __name__ == '__main__':
     generator = DocsGenerator(
         ontology_file = args.ontologyfile,
         include_inverse = args.include_inverse,
+        include_inherited = args.include_inherited,
         generate_jekyll_header = args.jekyll,
         jekyll_nav_name = args.jekyllnavname,
         jekyll_nav_parent = args.jekyllnavparent,

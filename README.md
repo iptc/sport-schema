@@ -36,6 +36,11 @@ future.
 
 ## Repository layout
 
+`docs`:
+
+HTML documentation published to sportschema.org using GitHub Pages. Includes
+ontology documentation under docs/ontologies/.
+
 `queries`:
 
 Sample SPARQL queries exercising some of the use cases.
