@@ -26,12 +26,12 @@ from others. _**Please do not rely on this model for your production work - yet!
 
 ## Project goals and principles
 
-We want the resulting data model and vocabulary to be:
+Our goals were to ensure that the model and vocabulary is:
 
-* Comprehensive - it should be able to handle schedules, results and statistics for many types of sports, whether team, individual or head-to-head.
-* Easy to use - should be approachable by non-experts in Semantic Web technologies. For example, the JSON-LD versions should be simple enough that they can be parsed by any competent developer who is comfortable with handling JSON files.
-* Easy to query - for those who want to use the power of RDF features such as SPARQL, querying data should be as simple as possible.
-* Compatible with schema.org. We want the IPTC Sport Schema to be self-contained, but it should be possible to use it alongside schema.org in the future.
+* **Comprehensive** - it should be able to handle schedules, results and statistics for many types of sports, whether team, individual or head-to-head.
+* **Easy to use* - should be approachable by non-experts in Semantic Web technologies. For example, the JSON-LD versions should be simple enough that they can be parsed by any competent developer who is comfortable with handling JSON files.
+* **Easy to query** - for those who want to use the power of RDF features such as SPARQL, querying data should be as simple as possible.
+* **Compatible with schema.org**. We want the IPTC Sport Schema to be self-contained, but it should be possible to use it alongside schema.org in the future.
 
 ## Getting started
 
@@ -41,9 +41,9 @@ We have created a set of test data based on many of the sample files from the Sp
 
 [Explore IPTC Sport Schema SPARQL Playground](http://sport.iptc.org/dataset.html?tab=query&ds=/sport){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
-If you haven't seen SPARQL before, it's quite simmilar to SQL. We have created many sample queries that can be used without any SPARQL knowledge. 
+If you haven't seen SPARQL before, it's quite simmilar to SQL. We have created some sample queries that can be used without any SPARQL knowledge. 
 
-You can also run the example queries from your local machine using the arq tool from the Apache Jena project (or other SPARQL tools).
+You can also run the example queries from your local machine using the `arq` tool from the [Apache Jena project](https://jena.apache.org/) (or any other SPARQL-compatible tool).
 
-See the [running example queries](running-example-queries) page for more detailed information.
+See the [running example queries](/tools/running-example-queries) page for more detailed information.
 
