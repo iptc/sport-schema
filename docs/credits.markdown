@@ -31,3 +31,4 @@ development of the IPTC Sport Schema over the past few years:
 * James Edwards, Spotlight Sports Group (Associate Member)
 * Trond Huso (IPTC Individual Member)
 * Bob DuCharme, Consultant (Invited expert)
+* Chris Coffee, NBC Universal (Invited expert)
