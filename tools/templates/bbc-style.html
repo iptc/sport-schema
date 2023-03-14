@@ -94,6 +94,9 @@ parent: {{ data.jekyll_nav_parent }}
 								<p>Automatically generated documentation for the ontology terms.</p>
 								<div class="ontology-classes">
 									<h3>Classes</h3>
+                                    {% if not data.classes %}
+                                        <p>None.</p>
+                                    {% endif %}
                                     {% for class in data.classes %}
 									<div class="results-table">
 										<div class="grid header ontology-class-label-value">
