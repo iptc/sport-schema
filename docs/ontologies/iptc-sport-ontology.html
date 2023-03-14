@@ -4,13 +4,6 @@ title: Main ontology
 layout: page
 nav_order: 1
 parent: Ontology reference
-redirect_from:
-  - /ontologies/main/Action
-  - /ontologies/main/Agent
-  - /ontologies/main/Associate
-  - /ontologies/main/Athlete
-  - /ontologies/main/Competition
-  - /ontologies/main/CompetitionPhase
 ---
 
 <!DOCTYPE html>
@@ -69,7 +62,7 @@ redirect_from:
 
 <body>
 	<div id="content">
-		<div id="main">
+		<div id="main main-content">
 			<div class="container">
 				<div class="container-inner">
 					<h1 class="ontology-label">IPTC Sport Schema Ontology</h1>
@@ -101,6 +94,7 @@ redirect_from:
 								<p>Automatically generated documentation for the ontology terms.</p>
 								<div class="ontology-classes">
 									<h3>Classes</h3>
+                                    
                                     
 									<div class="results-table">
 										<div class="grid header ontology-class-label-value">
@@ -492,7 +486,7 @@ redirect_from:
 											<div class="field-label unit one-fifth">Properties</div>
 											<div class="value unit four-fifths">
                                                 
-												<a href="#terms_contains competition phase">contains competition phase</a>, 
+												<a href="#terms_phase contains event">phase contains event</a>, 
                                                 
 												<a href="#terms_phase in competition">phase in competition</a>, 
                                                 
@@ -1973,14 +1967,12 @@ redirect_from:
 										</div>
 										<div class="grid row ontology-property-description">
 											<div class="field-label unit one-fifth">Description</div>
-											<div class="value unit four-fifths">The Event (such as a round or a finals phase) in a CompetitionPhase</div>
+											<div class="value unit four-fifths">Link from the competition to its constituent phases</div>
 										</div>
                                         
 										<div class="grid row ontology-property-domain">
 											<div class="field-label unit one-fifth">Domain</div>
 											<div class="value unit four-fifths">
-                                                
-												<a href="#terms_Competition Phase">Competition Phase</a>, 
                                                 
 												<a href="#terms_Competition">Competition</a>
                                                 
@@ -1992,8 +1984,6 @@ redirect_from:
 											<div class="field-label unit one-fifth">Range</div>
 											<div class="value unit four-fifths">
                                                 
-												<a href="#terms_Event">Event</a>, 
-                                                
 												<a href="#terms_Competition Phase">Competition Phase</a>
                                                 
 											</div>
@@ -2003,7 +1993,7 @@ redirect_from:
 										<div class="grid row ontology-property-range">
 											<div class="field-label unit one-fifth">Inverse of</div>
 											<div class="value unit four-fifths">
-												<a href="#terms_event in competition">event in competition</a>
+												<a href="#terms_phase in competition">phase in competition</a>
 											</div>
 										</div>
                                         
@@ -2302,7 +2292,7 @@ redirect_from:
 										</div>
 										<div class="grid row ontology-property-description">
 											<div class="field-label unit one-fifth">Description</div>
-											<div class="value unit four-fifths">The CompetitionPhase that an Event is part of (such as a round or a finals phase)</div>
+											<div class="value unit four-fifths">The CompetitionPhase (such as a round or a finals phase) of which an Event is a part</div>
 										</div>
                                         
 										<div class="grid row ontology-property-domain">
@@ -2328,7 +2318,7 @@ redirect_from:
 										<div class="grid row ontology-property-range">
 											<div class="field-label unit one-fifth">Inverse of</div>
 											<div class="value unit four-fifths">
-												<a href="#terms_contains competition phase">contains competition phase</a>
+												<a href="#terms_phase contains event">phase contains event</a>
 											</div>
 										</div>
                                         
@@ -3652,6 +3642,51 @@ redirect_from:
 											</div>
 										</div>
                                         
+                                        
+									</div>
+                                    
+									<div class="results-table">
+										<div class="grid header ontology-property-label-value">
+                                            <a class="anchor" href="#terms_phase contains event"></a>
+											<a name="terms_phase contains event">
+												phase contains event
+											</a>
+										</div>
+										<div class="grid row ontology-property-uri">
+											<div class="field-label unit one-fifth">URI</div>
+											<div class="value unit four-fifths">https://sportschema.org/ontologies/main/phaseContainsEvent</div>
+										</div>
+										<div class="grid row ontology-property-description">
+											<div class="field-label unit one-fifth">Description</div>
+											<div class="value unit four-fifths">The Event is part of a CompetitionPhase</div>
+										</div>
+                                        
+										<div class="grid row ontology-property-domain">
+											<div class="field-label unit one-fifth">Domain</div>
+											<div class="value unit four-fifths">
+                                                
+												<a href="#terms_Competition Phase">Competition Phase</a>
+                                                
+											</div>
+										</div>
+                                        
+                                        
+										<div class="grid row ontology-property-range">
+											<div class="field-label unit one-fifth">Range</div>
+											<div class="value unit four-fifths">
+                                                
+												<a href="#terms_Event">Event</a>
+                                                
+											</div>
+										</div>
+                                        
+                                        
+										<div class="grid row ontology-property-range">
+											<div class="field-label unit one-fifth">Inverse of</div>
+											<div class="value unit four-fifths">
+												<a href="#terms_event in competition">event in competition</a>
+											</div>
+										</div>
                                         
 									</div>
                                     
