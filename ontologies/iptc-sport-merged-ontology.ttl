@@ -3,7 +3,6 @@
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
-@prefix schemaorg: <https://schema.org/> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
 @prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
 @prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
@@ -138,7 +137,7 @@ sport:ParticipationSplit rdf:type owl:Class ;
 
 sport:Site rdf:type owl:Class ;
     rdfs:label "Site"@en ;
-    rdfs:comment "The location where an Event takes place"@en ;
+    rdfs:comment "The location where an activity takes place"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:Team rdf:type owl:Class ;
@@ -170,6 +169,23 @@ sport:child rdf:type owl:ObjectProperty ;
     rdfs:range sport:ParticipatableThing ;
     owl:inverseOf sport:parent ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:parentSite rdf:type owl:ObjectProperty ;
+    rdfs:label "parent site"@en ;
+    rdfs:comment "Link from a Site to its parent, such as a link from a stadium to an Olympic Park or from a tennis court to the tennis complex"@en ;
+    rdfs:domain sport:Site ;
+    rdfs:range sport:Site ;
+    owl:inverseOf sport:childSite ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:childSite rdf:type owl:ObjectProperty ;
+    rdfs:label "child site"@en ;
+    rdfs:comment "Link from a Site to its child, such as a link from an Olympic Park to an individual stadium or from a tennis complex to an individual tennis court"@en ;
+    rdfs:domain sport:Site ;
+    rdfs:range sport:Site ;
+    owl:inverseOf sport:parentSite ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 
 sport:participation rdf:type owl:ObjectProperty ;
     rdfs:label "participation"@en ;
@@ -205,15 +221,15 @@ sport:containsEvent rdf:type owl:ObjectProperty ;
 
 sport:eventInCompetitionPhase rdf:type owl:ObjectProperty ;
     rdfs:label "event in competition phase"@en ;
-    rdfs:comment "The CompetitionPhase that an Event is part of (such as a round or a finals phase)"@en ;
+    rdfs:comment "The CompetitionPhase (such as a round or a finals phase) of which an Event is a part"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:CompetitionPhase ;
-    owl:inverseOf sport:containsCompetitionPhase ;
+    owl:inverseOf sport:phaseContainsEvent ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
-    rdfs:label "contains competition phase"@en ;
-    rdfs:comment "The Event (such as a round or a finals phase) in a CompetitionPhase"@en ;
+sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "phase contains event"@en ;
+    rdfs:comment "The Event is part of a CompetitionPhase"@en ;
     rdfs:domain sport:CompetitionPhase ;
     rdfs:range sport:Event ;
     owl:inverseOf sport:eventInCompetition ;
@@ -254,7 +270,7 @@ sport:governs rdf:type owl:ObjectProperty ;
 sport:location rdf:type owl:ObjectProperty ;
     rdfs:label "location"@en ;
     rdfs:comment "Link to the location (Site) where an event takes place"@en ;
-    rdfs:domain sport:Event ;
+    rdfs:domain sport:ParticipatableThing ;
     rdfs:range sport:Site ;
     owl:inverseOf sport:locationOf ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
