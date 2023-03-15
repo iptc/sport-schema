@@ -462,6 +462,13 @@ sport:nationality rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:outcomeResult rdf:type owl:DatatypeProperty ;
+    rdfs:label "outcome result"@en ;
+    rdfs:comment "A report on the result, if any, of the participation. Can be things like relegation, promotion, qualification etc"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:participationSplitType rdf:type owl:DatatypeProperty ;
     rdfs:label "participation split type"@en ;
     rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
@@ -504,6 +511,13 @@ sport:rank rdf:type owl:DatatypeProperty ;
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "A team's or individual's score in a given event"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreType rdf:type owl:DatatypeProperty ;
+    rdfs:label "score type"@en ;
+    rdfs:comment "Qualifies the 'score' property."@en ;
     rdfs:domain sport:CompetitorParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -4178,7 +4192,14 @@ spstat:wins rdf:type owl:DatatypeProperty ;
         rdfs:domain sport:Participation ; 
         rdfs:range xsd:integer ; 
         rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
-        
+       
+    spstat:rating rdf:type owl:DatatypeProperty ;
+        rdfs:label "rating"@en ;
+        rdfs:comment "A judged value placed on the team or individual. Often used in British soccer."@en ;
+        rdfs:domain sport:Participation ;
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> .
+
 	spstat:scoreOpposing rdf:type owl:DatatypeProperty ; 
         rdfs:label "scoreOpposing"@en ; 
         rdfs:comment "Final or current score of the opposing team or player."@en ; 
@@ -4263,6 +4284,13 @@ spstat:wins rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:integer ; 
         rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
         
+    spstat:outcomeResult rdf:type owl:DatatypeProperty ;
+        rdfs:label "outcome result"@en ;
+        rdfs:comment "A report on the result, if any, of the participation. Can be things like relegation, promotion, qualification etc"@en ;
+        rdfs:domain sport:Participation ;
+        rdfs:range xsd:string ;
+        rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 	spstat:eventStandingPoints rdf:type owl:DatatypeProperty ; 
         rdfs:label "eventStandingPoints"@en ; 
         rdfs:comment "How many points were earned as a result of the outcome of this particular event."@en ; 

@@ -462,6 +462,13 @@ sport:nationality rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:outcomeResult rdf:type owl:DatatypeProperty ;
+    rdfs:label "outcome result"@en ;
+    rdfs:comment "A report on the result, if any, of the participation. Can be things like relegation, promotion, qualification etc"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:participationSplitType rdf:type owl:DatatypeProperty ;
     rdfs:label "participation split type"@en ;
     rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
@@ -504,6 +511,13 @@ sport:rank rdf:type owl:DatatypeProperty ;
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "A team's or individual's score in a given event"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreType rdf:type owl:DatatypeProperty ;
+    rdfs:label "score type"@en ;
+    rdfs:comment "Qualifies the 'score' property."@en ;
     rdfs:domain sport:CompetitorParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
