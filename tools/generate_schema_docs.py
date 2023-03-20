@@ -52,7 +52,8 @@ class DocsGenerator:
             parentclasspropertieslist = [propertyuri for (propertyuri, p, o) in parentclassproperties]
             for propertyuri in parentclasspropertieslist:
                 propertyname = str(g.value(propertyuri, RDFS.label))
-                inherited_properties[parentclassname].append(propertyname)
+                propertykey = str(propertyuri).split('/')[-1]
+                inherited_properties[parentclassname].append({ 'name':propertyname, 'key':propertykey })
             # recurse to get properties from parents of parents
             inherited_properties.update(self.get_inherited_properties(parentclassuri))
         return inherited_properties
@@ -86,6 +87,7 @@ class DocsGenerator:
             classname = g.value(classuri, RDFS.label)
             classdata['name'] = classname
             classdata['uri'] = classuri
+            classdata['key'] = str(classuri).split('/')[-1]
 
             classdescription = g.value(classuri, RDFS.comment)
             classdata['description'] = classdescription
@@ -97,7 +99,8 @@ class DocsGenerator:
             if superclasseslist:
                 for superclassuri in superclasseslist:
                     superclassname = g.value(superclassuri, RDFS.label)
-                    classdata['superclasses'].append(superclassname)
+                    superclasskey = str(superclassuri).split('/')[-1]
+                    classdata['superclasses'].append({ 'name':superclassname, 'key':superclasskey })
 
             # subclasses row
             classdata['subclasses'] = []
@@ -106,7 +109,8 @@ class DocsGenerator:
             if subclasseslist:
                 for subclassuri in subclasseslist:
                     subclassname = g.value(subclassuri, RDFS.label)
-                    classdata['subclasses'].append(subclassname)
+                    subclasskey = str(subclassuri).split('/')[-1]
+                    classdata['subclasses'].append({ 'name':subclassname, 'key':subclasskey })
 
             # properties row
             classdata['properties'] = []
@@ -115,7 +119,8 @@ class DocsGenerator:
             if propertieslist:
                 for propertyuri in propertieslist:
                     propertyname = g.value(propertyuri, RDFS.label)
-                    classdata['properties'].append(propertyname)
+                    propertykey = str(propertyuri).split('/')[-1]
+                    classdata['properties'].append({ 'name':propertyname, 'key':propertykey })
 
             # include inherited properties
             if self.include_inherited:
@@ -135,6 +140,7 @@ class DocsGenerator:
             propertyname = g.value(propertyuri, RDFS.label)
             propertydata['name'] = propertyname
             propertydata['uri'] = propertyuri
+            propertydata['key'] = str(propertyuri).split('/')[-1]
 
             # description row
             propertydescription = g.value(propertyuri, RDFS.comment)
@@ -227,5 +233,4 @@ if __name__ == '__main__':
 #    html_filename = Path(ONTOLOGIES_DIR / Path(ttl_file.stem + "-test.html")).absolute()
 #    print(f"(re)generating {html_filename}")
 
-# TODO: add "inherited properties" 
 # Future feature idea: one page per class/property, a la schema.org docs

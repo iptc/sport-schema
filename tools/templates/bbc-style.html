@@ -100,7 +100,7 @@ parent: {{ data.jekyll_nav_parent }}
                                     {% for class in data.classes %}
 									<div class="results-table">
 										<div class="grid header ontology-class-label-value">
-											<a name="terms_{{ class.name }}">
+											<a name="{{ class.key }}">
 												{{ class.name }}
 											</a>
 										</div>
@@ -117,7 +117,7 @@ parent: {{ data.jekyll_nav_parent }}
 											<div class="field-label unit one-fifth">Superclasses</div>
 											<div class="value unit four-fifths">
                                                 {% for superclass in class.superclasses %}
-												<a href="#terms_{{ superclass }}">{{ superclass }}</a>{{ ", " if not loop.last else "" }}
+												<a href="#{{ superclass.key }}">{{ superclass.name }}</a>{{ ", " if not loop.last else "" }}
                                                 {% endfor %}
 											</div>
 										</div>
@@ -127,7 +127,7 @@ parent: {{ data.jekyll_nav_parent }}
 											<div class="field-label unit one-fifth">Subclasses</div>
 											<div class="value unit four-fifths">
                                                 {% for subclass in class.subclasses %}
-												<a href="#terms_{{ subclass }}">{{ subclass }}</a>{{ ", " if not loop.last else "" }}
+												<a href="#{{ subclass.key }}">{{ subclass.name }}</a>{{ ", " if not loop.last else "" }}
                                                 {% endfor %}
 											</div>
 										</div>
@@ -137,7 +137,7 @@ parent: {{ data.jekyll_nav_parent }}
 											<div class="field-label unit one-fifth">Properties</div>
 											<div class="value unit four-fifths">
                                                 {% for property in class.properties %}
-												<a href="#terms_{{ property }}">{{ property }}</a>{{ ", " if not loop.last else "" }}
+												<a href="#{{ property.key }}">{{ property.name }}</a>{{ ", " if not loop.last else "" }}
                                                 {% endfor %}
 											</div>
 										</div>
@@ -150,7 +150,7 @@ parent: {{ data.jekyll_nav_parent }}
                                                 <div>
                                                     From {{ parentclass }}:
                                                     {% for property in class.inherited_properties[parentclass] %}
-                                                    <a href="#terms_{{ property }}">{{ property }}</a>{{ ", " if not loop.last else "" }}
+                                                    <a href="#{{ property.key }}">{{ property.name }}</a>{{ ", " if not loop.last else "" }}
                                                     {% endfor %}
                                                 </div>
                                                 {% endfor %}
@@ -168,8 +168,8 @@ parent: {{ data.jekyll_nav_parent }}
                                     {% for property in data.properties %}
 									<div class="results-table">
 										<div class="grid header ontology-property-label-value">
-                                            <a class="anchor" href="#terms_{{ property.name }}"></a>
-											<a name="terms_{{ property.name }}">
+                                            <a class="anchor" href="#{{ property.name }}"></a>
+											<a name="{{ property.key }}">
 												{{ property.name }}
 											</a>
 										</div>
@@ -186,7 +186,7 @@ parent: {{ data.jekyll_nav_parent }}
 											<div class="field-label unit one-fifth">Domain</div>
 											<div class="value unit four-fifths">
                                                 {% for domain in property.domains %}
-												<a href="#terms_{{ domain }}">{{ domain }}</a>{{ ", " if not loop.last else "" }}
+												<a href="#{{ domain }}">{{ domain }}</a>{{ ", " if not loop.last else "" }}
                                                 {% endfor %}
 											</div>
 										</div>
@@ -196,7 +196,7 @@ parent: {{ data.jekyll_nav_parent }}
 											<div class="field-label unit one-fifth">Range</div>
 											<div class="value unit four-fifths">
                                                 {% for range in property.ranges %}
-												<a href="#terms_{{ range }}">{{ range }}</a>{{ ", " if not loop.last else "" }}
+												<a href="#{{ range }}">{{ range }}</a>{{ ", " if not loop.last else "" }}
                                                 {% endfor %}
 											</div>
 										</div>
@@ -205,7 +205,7 @@ parent: {{ data.jekyll_nav_parent }}
 										<div class="grid row ontology-property-range">
 											<div class="field-label unit one-fifth">Inverse of</div>
 											<div class="value unit four-fifths">
-												<a href="#terms_{{ property.inverseof }}">{{ property.inverseof }}</a>
+												<a href="#{{ property.inverseof }}">{{ property.inverseof }}</a>
 											</div>
 										</div>
                                         {% endif %}
