@@ -2,7 +2,7 @@
 layout: page
 title: Use Cases
 permalink: /use-cases/
-nav_order: 3
+nav_order: 4
 ---
 # IPTC Sport Schema Use Cases
 

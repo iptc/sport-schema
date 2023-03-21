@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Schema Diagram
-nav_order: 5
+nav_order: 3
 description: 
 permalink: /schema-diagram/
 ---
