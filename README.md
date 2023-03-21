@@ -97,10 +97,4 @@ If there are any discrepancies, they will be displayed inline.
 
 ## More detailed documentation
 
-We have some guides regarding how to use the IPTC Sport Schema and how the model
-is constructed.
-
-* [Running the IPTC Sports Model example queries](docs/running-example-queries.md)
-* [Running a SPARQL endpoint](docs/sparql-endpoint.md)
-* [Validating IPTC Sports Model data with SHACL](docs/validation-with-shacl.md)
-* [Overview of the IPTC Sport Schema data model](docs/schema-overview.md)
+More documentation is available at https://www.sportschema.org/
