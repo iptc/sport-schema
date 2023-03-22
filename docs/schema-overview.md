@@ -24,9 +24,9 @@ To use a simple football/soccer example,  an **Action** (e.g. a goal) is part of
 season).
 
 To use a tennis exmple, a serve (**Action**) is part of an **Event** (the tennis match) which may
-be part of a **Competition** (the French Open Women's Title). This Competition can be part of
-a "parent **Competition**" called Roland Garros (aka the French Open), which may itself be
-part of a parent **Competition** called the "ATP Tour 2023".
+be part of a **Competition** (the French Open Women's Title 2023). This Competition can be part of
+a "parent **Competition**" called Roland Garros (also known as the French Open), which may itself be
+part of a parent **Competition** called "ATP Tour 2023".
 
 ![IPTC Sport Schema high level overview - dark](diagrams/simple-high-level-sport-model-dark.png)
 
@@ -67,7 +67,7 @@ The model describes three component parts that make up the domain of sports data
 * The participation in a competition, event or action. Teams, atheletes and officials actively participate in competitive events and generate stats about that participation.
 * Membership in of a team. Particpation by individuals can be as part of a team. This is expressed in the membership part of the model.
 
-The follow sections describe the patterns used for each of these component parts of the model.
+The following sections describe the patterns used for each of these component parts of the model.
 
 
 ### Competition, event and action: building blocks to describe any competition structure
@@ -140,6 +140,4 @@ WHERE
 }
 ```
 
-See the [example queries](../queries/) for more examples.
-
-
+See the [running example queries](/tools/running-example-queries/) pages and the [actual query files](https://github.com/iptc/sport-schema/tree/main/queries) for more examples.
