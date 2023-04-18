@@ -8,10 +8,10 @@ parent: Examples
 ---
 # Examples: Soccer (football)
 
-For example, let's look at a single football match as part of the English Premier League 2020
-Season:
+Let's look at how IPTC Sport Schema can be used to represent a single football match as part of
+the English Premier League 2020 Season.
 
-![Soccer competition example](../diagrams/soccer-competition-example.png)
+![Soccer competition example](/diagrams/soccer-competition-example.png)
 
 This corresponds to the following triples representing the match.
 
