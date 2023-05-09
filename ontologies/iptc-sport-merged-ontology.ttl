@@ -510,7 +510,7 @@ sport:rank rdf:type owl:DatatypeProperty ;
 
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
-    rdfs:comment "A team's or individual's score in a given event"@en ;
+    rdfs:comment "Final or current score of the team or player"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -554,9 +554,9 @@ sport:startDate rdf:type owl:DatatypeProperty ;
 
 sport:uniformNumber rdf:type owl:DatatypeProperty ;
     rdfs:label "uniform number"@en ;
-    rdfs:comment "The number usually worn on a player's uniform (jersey etc.)"@en ;
+    rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
     rdfs:domain sport:IndividualMembership ;
-    rdfs:range xsd:integer ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 
