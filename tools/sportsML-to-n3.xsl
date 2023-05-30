@@ -1035,7 +1035,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:variable>
             <xsl:variable name="value">
                 <xsl:choose>
-                    <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed')">
+                    <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed') and not(name()='sequence-number') and not(name()='last-modified')">
                         <xsl:variable name="prefix"><xsl:value-of select="substring-before(.,':')"/></xsl:variable>
                         <xsl:value-of select="concat('«http://cv.iptc.org/newscodes/',$prefix,'/',substring-after(.,':'),'»')"/>
                     </xsl:when>
