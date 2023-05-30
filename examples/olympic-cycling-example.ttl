@@ -1,0 +1,76 @@
+<http://example.com/GoverningBody/IOC>
+        rdf:type    sport:GoverningBody ;
+        rdfs:label  "International Olympic Committee" .
+
+<http://example.com/Competition/OLYS>
+        rdf:type               sport:Competition ;
+        rdfs:label             "Summer Olympics" ;
+        sport:competitionType  spct:recurring-competition ;
+        sport:governedBy       <http://example.com/GoverningBody/IOC> ;
+        sport:sport            medtop:20000827 .
+
+<http://example.com/Competition/OLYS2012>
+        rdf:type               sport:Competition ;
+        rdfs:label             "2012 London Summer Olympics" ;
+        sport:competitionType  spct:competition ;
+        sport:parent           <http://example.com/Competition/OLYS> ;
+        sport:sport            medtop:20000827 .
+
+<http://example.com/Competition/OLYS2012-CTRMSPRINT>
+        rdf:type               sport:Competition ;
+        rdfs:label             "Men's Track Cycling (Sprint)" ;
+        sport:competitionType  spct:competition ;
+        sport:parent           <http://example.com/Competition/OLYS2012> ;
+        sport:sport            medtop:20001334 .
+
+<http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL>
+        rdf:type                    sport:CompetitionPhase ;
+        rdfs:label                  "Semi-Finals" ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> ;
+        sport:participation         <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1436558> , <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1467923> ;
+        sport:phaseInCompetition    <http://example.com/Competition/OLYS2012-CTRMSPRINT> .
+
+<http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL-00010000>
+        rdf:type                    sport:CompetitionPhase ;
+        rdfs:label                  "Heat 1" ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/heat> ;
+        sport:parent                <http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL> ;
+        sport:phaseInCompetition    <http://example.com/Competition/OLYS2012-CTRMSPRINT> .
+
+<http://example.com/Event/OLYS2012-CTRMSPRINT-SFNL-00010001>
+        rdf:type                       sport:Event ;
+        rdfs:label                     "Heat 1, Race 1" ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL-00010000> ;
+        sport:participation            <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-00010001-PI1436558> , <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-00010001-PI1467923> ;
+        sport:startDateTime            "2021-08-06T16:10:00+09:00"^^xsd:dateTime ;
+        sport:location                 <http://example.com/Site/s.29> .
+
+<http://example.com/Site/s.29>
+        rdf:type    sport:Site ;
+        rdfs:label  "Olympic Park Velodrome" .
+
+<http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-00010001-PI1436558>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Chris Hoy participation in Event OLYS2012-CTRMSPRINT-SFNL-00010001" ;
+        sport:participationBy  <http://example.com/Athlete/PI1436558> ;
+        sport:rank             "1" ;
+        sport:score            "+0.107" ;
+        sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/relative> .
+
+<http://example.com/Athlete/PI1436558>
+        rdf:type           sport:Athlete ;
+        rdfs:label         "Chris Hoy" ;
+        sport:nationality  "GB" .
+
+<http://example.com/Membership/TGBOLYS2012-PI1436558>
+        rdf:type             sport:IndividualMembership ;
+        rdfs:label           "Chris Hoy membership of Team GB" ;
+        sport:member         <http://example.com/Athlete/PI1436558> ;
+        sport:membershipOf   <http://example.com/Team/TGBOLYS2012> ;
+        sport:uniformNumber  "29" .
+
+<http://example.com/Team/TGBOLYS2012>
+        rdf:type    sport:Team ;
+        rdfs:label  "Team GB" .
+
+
