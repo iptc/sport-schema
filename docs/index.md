@@ -39,7 +39,7 @@ Our goals were to ensure that the model and vocabulary is:
 
 We have created a set of test data based on many of the sample files from the SportsML specification. The SportsML data, converted to RDF triples via our SportsML-to-Sport Schema XSLT stylesheet, has been uploaded to a server running the Fuseki tool which can be queried using SPARQL, the query language for RDF.
 
-[Explore IPTC Sport Schema SPARQL Playground](http://sport.iptc.org/dataset.html?tab=query&ds=/sport){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Explore IPTC Sport Schema SPARQL Playground](http://query.sportschema.org/dataset.html?tab=query&ds=/sport){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 If you haven't seen SPARQL before, it's quite simmilar to SQL. We have created some sample queries that can be used without any SPARQL knowledge. 
 
