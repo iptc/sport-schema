@@ -208,15 +208,15 @@ sport:eventInCompetitionPhase rdf:type owl:ObjectProperty ;
     rdfs:comment "The CompetitionPhase that an Event is part of (such as a round or a finals phase)"@en ;
     rdfs:domain sport:Event ;
     rdfs:range sport:CompetitionPhase ;
-    owl:inverseOf sport:containsCompetitionPhase ;
+    owl:inverseOf sport:phaseContainsEvent ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
-    rdfs:label "contains competition phase"@en ;
-    rdfs:comment "The Event (such as a round or a finals phase) in a CompetitionPhase"@en ;
+sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "phase contains event"@en ;
+    rdfs:comment "An Event (such as a round or a finals phase) contained in this CompetitionPhase"@en ;
     rdfs:domain sport:CompetitionPhase ;
     rdfs:range sport:event ;
-    owl:inverseOf sport:eventInCompetition ;
+    owl:inverseOf sport:eventInCompetitionPhase ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:actionInEvent rdf:type owl:ObjectProperty ;
