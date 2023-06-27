@@ -1,5 +1,5 @@
 ---
-permalink: /tools/akos-add-on/
+permalink: /tools/skos-add-on/
 title: SKOS Add-On
 layout: page
 nav_order: 6
