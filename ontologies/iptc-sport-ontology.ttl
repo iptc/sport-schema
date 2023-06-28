@@ -186,7 +186,6 @@ sport:childSite rdf:type owl:ObjectProperty ;
     owl:inverseOf sport:parentSite ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-
 sport:participation rdf:type owl:ObjectProperty ;
     rdfs:label "participation"@en ;
     rdfs:comment "Link from a ParticipatableThing to a participation by an Agent"@en ;
@@ -233,6 +232,14 @@ sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
     rdfs:domain sport:CompetitionPhase ;
     rdfs:range sport:Event ;
     owl:inverseOf sport:eventInCompetition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "phase contains event"@en ;
+    rdfs:comment "An Event (such as a round or a finals phase) contained in this CompetitionPhase"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:event ;
+    owl:inverseOf sport:eventInCompetitionPhase ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:actionInEvent rdf:type owl:ObjectProperty ;
@@ -462,13 +469,6 @@ sport:nationality rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:outcomeResult rdf:type owl:DatatypeProperty ;
-    rdfs:label "outcome result"@en ;
-    rdfs:comment "A report on the result, if any, of the participation. Can be things like relegation, promotion, qualification etc"@en ;
-    rdfs:domain sport:Participation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
 sport:participationSplitType rdf:type owl:DatatypeProperty ;
     rdfs:label "participation split type"@en ;
     rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
@@ -510,7 +510,7 @@ sport:rank rdf:type owl:DatatypeProperty ;
 
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
-    rdfs:comment "Final or current score of the team or player"@en ;
+    rdfs:comment "Final or current score of the team or individual"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
