@@ -12,22 +12,180 @@
 sport:ActionShape
   a sh:NodeShape ;
   sh:targetClass sport:Action ;
-  # sh:closed true;
-  #sh:property [
-  #  sh:path sport:actionParticipation ;
-  #  # sh:class sport:IndividualParticipation ;
-  #  sh:class sport:Participation ;
-  #  # sh:nodeKind sh:IRI ;
-  #] ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
   sh:property [
-    sh:path sport:event ;
-    sh:class sport:Event ;
-    # sh:nodeKind sh:IRI ;
+    sh:path sport:participation ;
+    sh:class sport:Participation ;
+  ] ;
+  sh:property [
+    sh:path sport:actionInEvent ;
+    sh:class sport:Event
+  ] ;
+  sh:property [
+    sh:path sport:actionDateTime ;
+    sh:datatype xsd:dateTime
+  ] ;
+  sh:property [
+    sh:path sport:actionType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/sp" ;
+    sh:nodeKind sh:IRI ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:angle ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:bodyPart ;
+    sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path spact:class ;
+    sh:nodeKind sh:IRI ;
     sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;
     sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:comment ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:distance ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:endLocation ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:fieldLocation ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:goalLocation ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:lastModified ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:minutesElapsed ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:oppositePlay ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:passDescription ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:passMethod ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:passType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:penaltyLevel ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:penaltyType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:periodValue ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:recipientType ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:result ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:role ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:saveMethod ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:saveType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptDescription ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptResult ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptSide ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptSituation ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:sequenceNumber ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:shotDistance ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:shotDistanceUnits ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:shotType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:startLocation ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:substitutionReason ;
+    sh:datatype xsd:string
+    # sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:timeAddition ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:timeAddition ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:timeElapsed ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:timeRemaining ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sport:zone ;
+    sh:nodeKind sh:IRI ;
   ] .
 
 sport:AssociateShape
@@ -48,20 +206,27 @@ sport:CompetitionShape
   ] ;
   sh:property [
     sh:path sport:competitionType ;
-    rdfs:domain sport:Competition ;
     sh:pattern "^http://cv.iptc.org/newscodes/spct/" ;
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
-    sh:path sport:parentCompetition ;
+    sh:path sport:parent ;
     sh:class sport:Competition
   ] ;
   sh:property [
-    sh:path sport:competitionParticipation ;
+    sh:path sport:participation ;
     sh:class sport:Participation
   ] ;
   sh:property [
-    sh:path sport:governingBody ;
+    sh:path sport:containsCompetitionPhase ;
+    sh:class sport:CompetitionPhase
+  ] ;
+  sh:property [
+    sh:path sport:containsEvent ;
+    sh:class sport:Event
+  ] ;
+  sh:property [
+    sh:path sport:governedBy ;
     sh:class sport:GoverningBody
   ] .
 
@@ -85,9 +250,8 @@ sport:CompetitionPhaseShape
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
-    sh:path sport:competitionPhase ;
+    sh:path sport:parent ;
     sh:class sport:CompetitionPhase ;
-    sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path sport:competitionPhaseType ;
@@ -95,9 +259,8 @@ sport:CompetitionPhaseShape
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
-    sh:path sport:competition ;
-    sh:class sport:Competition ;
-    sh:nodeKind sh:IRI ;
+    sh:path sport:phaseInCompetition ;
+    sh:class sport:Competition
   ] .
 
 sport:EventShape rdf:type sh:NodeShape ;
@@ -105,17 +268,21 @@ sport:EventShape rdf:type sh:NodeShape ;
   sh:closed true ;
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
   sh:property [
-    sh:path sport:site ;
+    sh:path sport:participation ;
+    sh:class sport:Participation ;
+  ] ;
+  sh:property [
+    sh:path sport:location ;
     sh:class sport:Site ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path sport:competition ;
+    sh:path sport:eventInCompetition ;
     sh:class sport:Competition ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path sport:competitionPhase ;
+    sh:path sport:eventInCompetitionPhase ;
     sh:class sport:CompetitionPhase ;
     sh:nodeKind sh:IRI ;
   ] ;
@@ -154,8 +321,22 @@ sport:EventShape rdf:type sh:NodeShape ;
   ] ;
   sh:property [
     sh:path sport:subEvent ;
-    sh:class sport:Event ;
+    sh:class sport:Event
   ] .
+
+#sport:ParticipatableThingShape
+#  sh:targetClass sport:ParticipatableThing ;
+#  sh:closed true ;
+#  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+#  sh:property [
+#    sh:path sport:sport ;
+#    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+#    sh:flags   "i"  # Ignore case
+#  ] ;
+#  sh:property [
+#    sh:path sport:parent ;
+#    sh:class sport:ParticipatableThing
+#  ] .
 
 sport:ParticipationShape
   sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;

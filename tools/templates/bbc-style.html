@@ -1,0 +1,225 @@
+{% if data.jekyll %}---
+permalink: {{ data.jekyll_nav_link }}
+title: {{ data.jekyll_nav_name }}
+layout: page
+nav_order: {{ data.jekyll_nav_order }}
+parent: {{ data.jekyll_nav_parent }}
+---
+{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{data.ontologyname}} ontology</title>
+	<link rel="stylesheet" href="ontology-docs-styles.css" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "https://sportschema.org/ontologies/main/",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/copyrightNotice": [
+      {
+        "@language": "en",
+        "@value": "{{ data.rights }}"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@language": "en",
+        "@value": "{{ data.creator }}"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "{{ data.createddate }}"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "{{ data.description }}"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "{{ data.license }}"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "{{ data.ontologyname }} Ontology"
+      }
+    ]
+  }
+]
+    </script>
+
+</head>
+
+<body>
+	<div id="content">
+		<div id="main" class="main-content">
+			<div class="container">
+				<div class="container-inner">
+					<h1 class="ontology-label">{{data.ontologyname}} Ontology</h1>
+					<div class="grid no-gutters">
+						<div class="unit whole">
+							<div class="ontology-metadata">
+								<p class="description">{{data.description}}</p>
+								<div class="table table-metadata">
+									<div class="grid row created-date">
+										<div class="field-label unit one-fifth">Created Date</div>
+										<div class="value unit four-fifths">{{ data.createddate }} </div>
+									</div>
+									<!-- div class="grid row version">
+										<div class="field-label unit one-fifth">Version</div>
+										<div class="value unit four-fifths">1.1</div>
+									</div -->
+									<div class="grid row licence">
+										<div class="field-label unit one-fifth">Licence</div>
+										<div class="value unit four-fifths"><a href="{{ data.license }}">{{ data.license }}</a></div>
+									</div>
+									<!-- div class="grid row download">
+										<div class="field-label unit one-fifth">Download</div>
+										<div class="value unit four-fifths">
+											<a href="fo.ttl">RDF</a>
+										</div>
+									</div -->
+								</div>
+								<h2>Ontology Terms</h2>
+								<p>Automatically generated documentation for the ontology terms.</p>
+								<div class="ontology-classes">
+									<h3>Classes</h3>
+                                    {% if not data.classes %}
+                                        <p>None.</p>
+                                    {% endif %}
+                                    {% for class in data.classes %}
+									<div class="results-table">
+										<div class="grid header ontology-class-label-value">
+											<a name="{{ class.key }}">
+												{{ class.name }}
+											</a>
+										</div>
+										<div class="grid row ontology-class-uri">
+											<div class="field-label unit one-fifth">URI</div>
+											<div class="value unit four-fifths">{{ class.uri }}</div>
+										</div>
+										<div class="grid row ontology-class-description">
+											<div class="field-label unit one-fifth">Description</div>
+											<div class="value unit four-fifths">{{ class.description }}</div>
+										</div>
+                                        {% if class.superclasses %}
+										<div class="grid row ontology-class-super">
+											<div class="field-label unit one-fifth">Superclasses</div>
+											<div class="value unit four-fifths">
+                                                {% for superclass in class.superclasses %}
+												<a href="#{{ superclass.key }}">{{ superclass.name }}</a>{{ ", " if not loop.last else "" }}
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if class.subclasses %}
+										<div class="grid row ontology-class-sub">
+											<div class="field-label unit one-fifth">Subclasses</div>
+											<div class="value unit four-fifths">
+                                                {% for subclass in class.subclasses %}
+												<a href="#{{ subclass.key }}">{{ subclass.name }}</a>{{ ", " if not loop.last else "" }}
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if class.properties %}
+                                        <div class="grid row ontology-class-sub">
+											<div class="field-label unit one-fifth">Properties</div>
+											<div class="value unit four-fifths">
+                                                {% for property in class.properties %}
+												<a href="#{{ property.key }}">{{ property.name }}</a>{{ ", " if not loop.last else "" }}
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if class.inherited_properties %}
+                                        <div class="grid row ontology-class-sub">
+											<div class="field-label unit one-fifth">Inherited Properties</div>
+											<div class="value unit four-fifths">
+                                                {% for parentclass in class.inherited_properties %}
+                                                <div>
+                                                    From {{ parentclass }}:
+                                                    {% for property in class.inherited_properties[parentclass] %}
+                                                    <a href="#{{ property.key }}">{{ property.name }}</a>{{ ", " if not loop.last else "" }}
+                                                    {% endfor %}
+                                                </div>
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+									</div>
+									<div class="clearfix"></div>
+                                    {% endfor %}
+                                </div>
+								<hr>
+
+								<div class="ontology-properties">
+									<h3>Properties</h3>
+                                    {% for property in data.properties %}
+									<div class="results-table">
+										<div class="grid header ontology-property-label-value">
+                                            <a class="anchor" href="#{{ property.name }}"></a>
+											<a name="{{ property.key }}">
+												{{ property.name }}
+											</a>
+										</div>
+										<div class="grid row ontology-property-uri">
+											<div class="field-label unit one-fifth">URI</div>
+											<div class="value unit four-fifths">{{ property.uri }}</div>
+										</div>
+										<div class="grid row ontology-property-description">
+											<div class="field-label unit one-fifth">Description</div>
+											<div class="value unit four-fifths">{{ property.description }}</div>
+										</div>
+                                        {% if property.domains %}
+										<div class="grid row ontology-property-domain">
+											<div class="field-label unit one-fifth">Domain</div>
+											<div class="value unit four-fifths">
+                                                {% for domain in property.domains %}
+												<a href="#{{ domain }}">{{ domain }}</a>{{ ", " if not loop.last else "" }}
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if property.ranges %}
+										<div class="grid row ontology-property-range">
+											<div class="field-label unit one-fifth">Range</div>
+											<div class="value unit four-fifths">
+                                                {% for range in property.ranges %}
+												<a href="#{{ range }}">{{ range }}</a>{{ ", " if not loop.last else "" }}
+                                                {% endfor %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if property.inverseof %}
+										<div class="grid row ontology-property-range">
+											<div class="field-label unit one-fifth">Inverse of</div>
+											<div class="value unit four-fifths">
+												<a href="#{{ property.inverseof }}">{{ property.inverseof }}</a>
+											</div>
+										</div>
+                                        {% endif %}
+									</div>
+                                    {% endfor %}
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

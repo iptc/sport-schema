@@ -15,7 +15,7 @@ covering sports schedules, event results and statistics.
 Our development process is based on a set of use cases documented
 at https://github.com/iptc/sport-model/wiki/Use-Cases .
 
-We are creating an RDF model that represents schedules, statistics and results
+We have created an RDF model that represents schedules, statistics and results
 for all levels of all sports, for both human and machine consumption.
 
 ## Project goals and principles
@@ -35,6 +35,14 @@ self-contained, but it should be possible to use it alongside schema.org in the
 future.
 
 ## Repository layout
+
+`docs`:
+
+HTML documentation published to sportschema.org using GitHub Pages. Includes
+ontology documentation under docs/ontologies/.
+
+The docs use the Jekyll documentation generation system. To run a local server,
+run `bundle exec jekyll serve`
 
 `queries`:
 
@@ -90,12 +98,13 @@ all the data files in the `samples/ttl` folder. It compares the output of the
 SPARQL queries against the corresponding file in the `queries/output` folder.
 If there are any discrepancies, they will be displayed inline.
 
+We have also created a test that runs using a local instance of the Fuseki
+server, comparing the results against the `queries/fuseki-output` folder.
+
+```bash
+tools/run-test-queries-fuseki.sh
+```
+
 ## More detailed documentation
 
-We have some guides regarding how to use the IPTC Sport Schema and how the model
-is constructed.
-
-* [Running the IPTC Sports Model example queries](docs/running-example-queries.md)
-* [Running a SPARQL endpoint](docs/sparql-endpoint.md)
-* [Validating IPTC Sports Model data with SHACL](docs/validation-with-shacl.md)
-* [Overview of the IPTC Sport Schema data model](docs/schema-overview.md)
+More documentation is available at https://www.sportschema.org/

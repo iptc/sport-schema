@@ -1,0 +1,45 @@
+# Use case: Season / Player / 1. Season stats (Goals, assists, etc.)
+# TODO:
+# - get sample data for the same team/players across multiple games in a season
+# - then, update this query to show aggregate statistics rather than just every value
+
+# NOTE 2023-04-11: Agreed to leave this one until we have a good season-level stats sample data file.
+
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+# PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
+# PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
+PREFIX spichposition: <http://cv.iptc.org/newscodes/spichposition/>
+
+SELECT DISTINCT ?competition ?event ?eventName ?team ?teamName ?player ?playerName ?playerParticipation ?teamParticipation ?membership ?statProperty ?statValue
+WHERE
+{
+    ?team rdf:type sport:Team ;
+		  rdfs:label ?teamName .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?membership rdf:type sport:IndividualMembership ;
+                sport:member ?player ;
+    		    sport:membershipOf ?team .
+    ?event rdf:type sport:Event ;
+           rdfs:label ?eventName ;
+           sport:eventInCompetition ?competition ;
+           sport:participation ?playerParticipation, ?teamParticipation .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+                       sport:participationBy ?team .
+    ?playerParticipation rdf:type sport:IndividualParticipation ;
+                         sport:participationBy ?player ;
+                         ?statProperty ?statValue .
+    # limit to only properties that are to do with statistics
+    FILTER (REGEX ( STR(?statProperty), "^https://sportschema.org/ontologies/(corestatistics|soccer)", "i" ))
+    # query works for either soccer...
+    FILTER (?competition = <http://example.com/Competition/l.premierleague.com-2020>)
+    #FILTER (?playerName = "Frank Lampard")
+    FILTER (?playerName = "Matheus Pereira")
+    # or hockey (except we don't yet have stats for hockey in our sample data)
+    # FILTER (?competition = <http://example.com/Competition/l.nhl.com-2015>)
+}
+ORDER BY ?teamName ?playerName

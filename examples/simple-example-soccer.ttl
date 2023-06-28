@@ -1,0 +1,97 @@
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/Competition/l.premierleague.com>
+        rdf:type               sport:Competition ;
+        rdfs:label             "English Premier League" ;
+        sport:competitionType  <http://cv.iptc.org/newscodes/spct/recurring-competition> ;
+        sport:sport            medtop:20001065 .
+
+<http://example.com/Competition/l.premierleague.com-2020>
+        rdf:type               sport:Competition ;
+        rdfs:label             "English Premier League 2020" ;
+        sport:competitionType  <http://cv.iptc.org/newscodes/spct/spct:competition> ;
+        sport:parent           <http://example.com/Competition/l.premierleague.com> .
+
+<http://example.com/CompetitionPhase/l.premierleague.com-2020-week-16>
+        rdf:type                  sport:CompetitionPhase ;
+        rdfs:label                "Week 16" ;
+        sport:phaseInCompetition  <http://example.com/Competition/l.premierleague.com-2020> .
+
+<http://example.com/Event/E2128607>
+        rdf:type                       sport:Event ;
+        rdfs:label                     "Arsenal vs Liverpool, Week 16, EPL" ;
+        sport:eventInCompetition       <http://example.com/Competition/l.premierleague.com-2020> ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-16> ;
+        sport:eventOutcomeType         <http://cv.iptc.org/newscodes/speventoutcometype/regular> ;
+        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:location                 <http://example.com/Site/s.34> ;
+        sport:participation            <http://example.com/Participation/E2128607-EPLT35> , <http://example.com/Participation/E2128607-EPLT7> ;
+        sport:startDateTime            "2021-02-25T19:00:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Participation/E2128607-EPLT35>
+        rdf:type                        sport:TeamParticipation ;
+        rdfs:label                      "Liverpool participation in Week 16, EPL" ;
+        spstat:eventOutcome             <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
+        spstat:scoreOpposing            "2" ;
+        spstat:timeOfPossessionPercentage
+                "29.8" ;
+        sport:alignment                 "away" ;
+        sport:participationBy           <http://example.com/Team/EPLT35> ;
+        sport:score                     "2" ;
+        spsocstat:cautionsTotal         "2" ;
+        spsocstat:clearancesSuccessful  "28" ;
+        spsocstat:cornerKicks           "4" ;
+        spsocstat:foulsCommited         "9" ;
+        spsocstat:freeKicks             "2" ;
+        spsocstat:goalsAgainstTotal     "2" ;
+        spsocstat:interceptions         "8" ;
+        spsocstat:lineFormation         "4141" ;
+        spsocstat:offsides              "1" ;
+        spsocstat:passesTotal           "240" ;
+        spsocstat:shotsBlocked          "1" ;
+        spsocstat:shotsOnGoalTotal      "4" ;
+        spsocstat:shotsTotal            "10" ;
+        spsocstat:tacklesLost           "5" ;
+        spsocstat:tacklesTotal          "10" ;
+        spsocstat:tacklesWon            "5" ;
+        spsocstat:tacklesWonPercentage  "0.500" .
+
+<http://example.com/Participation/E2128607-EPLT7>
+        rdf:type                        sport:TeamParticipation ;
+        rdfs:label                      "Arsenal participation in Week 16, EPL" ;
+        spstat:eventOutcome             <http://cv.iptc.org/newscodes/speventoutcome/tie> ;
+        spstat:scoreOpposing            "2" ;
+        spstat:timeOfPossessionPercentage
+                "70.2" ;
+        sport:alignment                 "home" ;
+        sport:participationBy           <http://example.com/Team/EPLT7> ;
+        sport:score                     "2" ;
+        spsocstat:clearancesSuccessful  "14" ;
+        spsocstat:cornerKicks           "11" ;
+        spsocstat:foulsCommited         "14" ;
+        spsocstat:goalsAgainstTotal     "2" ;
+        spsocstat:interceptions         "7" ;
+        spsocstat:lineFormation         "4231" ;
+        spsocstat:offsides              "2" ;
+        spsocstat:passesTotal           "551" ;
+        spsocstat:shotsBlocked          "6" ;
+        spsocstat:shotsOnGoalTotal      "11" ;
+        spsocstat:shotsTotal            "24" ;
+        spsocstat:tacklesLost           "7" ;
+        spsocstat:tacklesTotal          "13" ;
+        spsocstat:tacklesWon            "6" ;
+        spsocstat:tacklesWonPercentage  "0.462" .
+
+<http://example.com/Team/EPLT35>
+        rdf:type    sport:Team ;
+        rdfs:label  "Liverpool" .
+
+<http://example.com/Team/EPLT7>
+        rdf:type    sport:Team ;
+        rdfs:label  "Arsenal" .

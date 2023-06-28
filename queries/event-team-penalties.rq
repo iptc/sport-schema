@@ -1,0 +1,29 @@
+# Use case: Event / Team / 6. Who was penalised? (All fouls)
+
+# https://github.com/iptc/sport-model/wiki/Use-Cases
+
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sport: <https://sportschema.org/ontologies/main/>
+PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?teamName ?playerName (xsd:integer(?foulsCountStr) as ?foulsCount)
+WHERE {
+    ?event rdf:type sport:Event ;
+           sport:participation ?participation , ?teamParticipation .
+    ?player rdf:type sport:Athlete ;
+            rdfs:label ?playerName .
+    ?members rdf:type sport:IndividualMembership ;
+             sport:member ?player ;
+             sport:membershipOf ?team .
+    ?team rdf:type sport:Team ;
+          rdfs:label ?teamName .
+    ?participation rdf:type sport:IndividualParticipation ;
+            sport:participationBy ?player ;
+            spsocstat:foulsCommited ?foulsCountStr .
+    ?teamParticipation rdf:type sport:TeamParticipation ;
+            sport:participationBy ?team .
+    FILTER (?event = <http://example.com/Event/E755363>)
+    FILTER (?foulsCountStr > "0")
+} ORDER BY ?teamName ?playerName

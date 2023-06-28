@@ -34,7 +34,7 @@ Fuseki has a Web UI, go to `http://localhost:3030/` to explore it.
 
 Through the Web UI, you can enter SPARQL queries and load more data into the system.
 
-IPTC are hosting a test instance of Fuseki at [http://sport.iptc.org/](http://sport.iptc.org/).
+IPTC are hosting a test instance of Fuseki at [http://query.sportschema.org/](http://query.sportschema.org/).
 This contains the
 ontology files, our test data, and some "canned queries" illustrating how to test the
 endpoint with SPARQL queries relating to our use cases.

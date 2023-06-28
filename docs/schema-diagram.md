@@ -1,14 +1,12 @@
 ---
 layout: page
 title: Schema Diagram
-nav_order: 5
+nav_order: 3
 description: 
 permalink: /schema-diagram/
 ---
-# IPTC Sport Model schema diagram
+# IPTC Sport Schema ontology diagram
 
-Generated from this [PlantUML source file](diagrams/iptc-sport-model.uml).
+![IPTC Sport Schema ontology diagram - dark background version](diagrams/full-model-dark.png)
 
-![IPTC Sport Model class diagram](diagrams/iptc-sport-model.png)
-
-[View full-size version](https://github.com/iptc/sport-schema/blob/develop/docs/diagrams/iptc-sport-model.png?raw=true)
+[View full-size version, with a white background](https://raw.githubusercontent.com/iptc/sport-schema/main/docs/diagrams/full-model-white.png)
