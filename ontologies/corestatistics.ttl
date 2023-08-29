@@ -16,13 +16,6 @@
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering core statistics across sports."@en .
 
-spstat:outcomeResult rdf:type owl:DatatypeProperty ;
-    rdfs:label "outcome result"@en ;
-    rdfs:comment "A report on the result, if any, from the event etc. "@en ;
-    rdfs:domain sport:Participation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
 spstat:wins rdf:type owl:DatatypeProperty ; 
         rdfs:label "wins"@en ; 
         rdfs:comment "Number of wins."@en ; 
@@ -292,7 +285,7 @@ spstat:wins rdf:type owl:DatatypeProperty ;
 	spstat:resultEffect rdf:type owl:DatatypeProperty ; 
         rdfs:label "resultEffect"@en ; 
         rdfs:comment "Describes the effect that the result of the event or rank changing has had on the team. Example: Whether or not a team has qualified for the playoffs, or has been promoted or demoted to a different division. Value should come from the https://cv.iptc.org/newscodes/spresulteffect/ vocabulary"@en ; 
-        rdfs:domain sport:Participation ; 
+        rdfs:domain sport:ParticipatableThing ; 
         rdfs:range xsd:anyURI ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
 
