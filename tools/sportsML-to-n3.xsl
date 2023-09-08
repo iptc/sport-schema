@@ -1020,19 +1020,21 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- xsl:value-of select="$action-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'team','»')"/>~<xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',@team-idref,'»')"/> . -->
 
         <xsl:for-each select="@*[not(name()='team-idref') and not(name()='id') and not(name()='created')]">
-        <xsl:variable name="name-cc">
-            <xsl:choose>
-                <xsl:when test="name()='type'">actionType</xsl:when>
-                <xsl:when test="name()='date-time'">actionDateTime</xsl:when>
-                <xsl:otherwise>
-                    <xsl:call-template name="string-walk">
-                        <xsl:with-param name="string" select="name()"/>
-                        <xsl:with-param name="char" select="'-'"/>
-                        <xsl:with-param name="increment" select="0"/>
-                    </xsl:call-template>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
+            <xsl:variable name="name-cc">
+                <xsl:choose>
+                    <xsl:when test="name()='type'">actionType</xsl:when>
+                    <xsl:when test="name()='date-time'">actionDateTime</xsl:when>
+                    <xsl:when test="name()='penalty-level'">infractionLevel</xsl:when>
+                    <xsl:when test="name()='penalty-type'">infractionType</xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="string-walk">
+                            <xsl:with-param name="string" select="name()"/>
+                            <xsl:with-param name="char" select="'-'"/>
+                            <xsl:with-param name="increment" select="0"/>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="value">
                 <xsl:choose>
                     <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed') and not(name()='sequence-number') and not(name()='last-modified')">
