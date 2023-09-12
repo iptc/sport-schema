@@ -420,7 +420,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <!-- get an ID for the scope of the standing and convert to URI -->
         <xsl:variable name="object-id">
             <xsl:choose>
-                <xsl:when test="newsml:statistic-metadata/@team-coverage='spteamcoverage:single-team'">
+                <xsl:when test="newsml:statistic-metadata/@team-coverage='single-team'">
                     <xsl:variable name="team-key"><xsl:value-of select="substring-after(newsml:team/newsml:team-metadata/@key,':')"/></xsl:variable>
                     <xsl:value-of select="concat('«',$sport-vendor-ns,'Team/',$team-key,'»')"/>
                 </xsl:when>
@@ -864,7 +864,8 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
     <xsl:template match="newsml:outcome-result">
         <xsl:param name="participation-id"/>
 
-        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/outcomeResult»')"/>~<xsl:text>"</xsl:text><xsl:value-of select="@type"/><xsl:text>"</xsl:text> .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/resultEffect»')"/>~<xsl:text>"</xsl:text><xsl:value-of select="@type"/><xsl:text>"</xsl:text> .
+        <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns-prefix,'corestatistics/resultEffectTarget»')"/>~<xsl:text>"</xsl:text><xsl:value-of select="@key"/><xsl:text>"</xsl:text> .
     </xsl:template>
 
     <xsl:template match="newsml:rating">

@@ -7,7 +7,7 @@ PREFIX sport: <https://sportschema.org/ontologies/main/>
 PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
 PREFIX spsocpos: <http://cv.iptc.org/newscodes/spsocpos/>
 
-SELECT ?teamName ?playerName ?eventPosition
+SELECT DISTINCT ?teamName ?playerName ?eventPosition
 WHERE {
     ?event rdf:type sport:Event ;
            rdfs:label ?eventName ;
