@@ -1000,7 +1000,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="newsml:action[@id]">
+    <xsl:template match="newsml:action[@id | @sequence-number]">
         <xsl:param name="event-key"/>
         <xsl:param name="event-id"/>
         <xsl:variable name="action-key">
@@ -1008,8 +1008,14 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 <xsl:when test="@key">
                     <xsl:value-of select="@key"/>
                 </xsl:when>
-                <xsl:otherwise>
+                <xsl:when test="@id">
                     <xsl:value-of select="@id"/>
+                </xsl:when>
+                <xsl:when test="@sequence-number">
+                    <xsl:value-of select="@sequence-number"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    UNKNOWN
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
