@@ -17,14 +17,14 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO49440",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO49440"
             },
             "rdfs:label": "Hal Robson-Kanu participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO49440",
@@ -35,26 +35,26 @@
             "@id": "http://example.com/Membership/TFBB35-PO180294",
             "sport:uniformNumber": "29",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO180294"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Karlan Grant membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
         },
         {
-            "@id": "http://example.com/Team/TFBB35",
-            "rdfs:label": "West Bromwich Albion",
-            "@type": "sport:Team"
-        },
-        {
             "@id": "http://example.com/Athlete/PO180294",
             "rdfs:label": "Karlan Grant",
             "@type": "sport:Athlete"
+        },
+        {
+            "@id": "http://example.com/Team/TFBB35",
+            "rdfs:label": "West Bromwich Albion",
+            "@type": "sport:Team"
         },
         {
             "@id": "http://example.com/Athlete/PO88894",
@@ -71,11 +71,11 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-off"
             },
+            "rdfs:label": "PO171975 participation in action a.2291520471 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO171975"
-            },
-            "rdfs:label": "PO171975 participation in action a.2291520471 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO171975",
@@ -99,21 +99,16 @@
             "@id": "http://example.com/Membership/TFBB7-PO230046",
             "sport:uniformNumber": "6",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO230046"
             },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
+            },
             "rdfs:label": "Douglas Luiz membership of Aston Villa",
             "@type": "sport:IndividualMembership"
-        },
-        {
-            "@id": "http://example.com/Team/TFBB7",
-            "rdfs:label": "Aston Villa",
-            "@type": "sport:Team"
         },
         {
             "@id": "http://example.com/Athlete/PO230046",
@@ -121,15 +116,20 @@
             "@type": "sport:Athlete"
         },
         {
+            "@id": "http://example.com/Team/TFBB7",
+            "rdfs:label": "Aston Villa",
+            "@type": "sport:Team"
+        },
+        {
             "@id": "http://example.com/Participation/E2128607-a.2291472209-PO193488",
             "sport:role": {
                 "@id": "spsocrole:scorer"
             },
+            "rdfs:label": "PO193488 participation in action a.2291472209 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO193488"
-            },
-            "rdfs:label": "PO193488 participation in action a.2291472209 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO193488",
@@ -145,13 +145,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO50229",
             "sport:uniformNumber": "10",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO50229"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Matt Phillips membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -243,10 +243,10 @@
                     "@id": "http://example.com/Participation/E2128607-PO123354"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO210407"
+                    "@id": "http://example.com/Participation/E2128607-PO180294"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO180294"
+                    "@id": "http://example.com/Participation/E2128607-PO210407"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128607-TFBB7"
@@ -282,10 +282,10 @@
                     "@id": "http://example.com/Participation/E2128607-PO193488"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO481624"
+                    "@id": "http://example.com/Participation/E2128607-PO61600"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO61600"
+                    "@id": "http://example.com/Participation/E2128607-PO481624"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128607-PO232653"
@@ -294,10 +294,10 @@
                     "@id": "http://example.com/Participation/E2128607-PO164011"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO98980"
+                    "@id": "http://example.com/Participation/E2128607-PO221239"
                 },
                 {
-                    "@id": "http://example.com/Participation/E2128607-PO221239"
+                    "@id": "http://example.com/Participation/E2128607-PO98980"
                 },
                 {
                     "@id": "http://example.com/Participation/E2128607-PO49944"
@@ -352,8 +352,8 @@
             "spsocstat:tacklesLost": "7",
             "spstat:timeOfPossessionPercentage": "70.2",
             "spsocstat:cornerKicks": "11",
-            "spsocstat:lineFormation": "4231",
             "@type": "sport:TeamParticipation",
+            "spsocstat:lineFormation": "4231",
             "spsocstat:tacklesWonPercentage": "0.462",
             "spsocstat:offsides": "2",
             "spstat:eventOutcome": {
@@ -369,16 +369,16 @@
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291480241",
-            "sport:periodValue": "1",
             "sport:participation": {
                 "@id": "http://example.com/Participation/E2128607-a.2291480241-PO154043"
             },
+            "sport:actionType": {
+                "@id": "spsocactiontype:video-review"
+            },
+            "sport:periodValue": "1",
             "sport:minutesElapsed": "22",
             "sport:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/play"
-            },
-            "sport:actionType": {
-                "@id": "spsocactiontype:video-review"
             },
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128607"
@@ -388,23 +388,23 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-a.2291480241-PO154043",
+            "rdfs:label": "PO154043 participation in action a.2291480241 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO154043"
-            },
-            "rdfs:label": "PO154043 participation in action a.2291480241 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB35-PO49944",
             "sport:uniformNumber": "8",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO49944"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Jake Livermore membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -421,8 +421,8 @@
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291528581",
-            "sport:substitutionReason": "Tactical",
             "sport:sequenceNumber": "0425204022",
+            "sport:substitutionReason": "Tactical",
             "@type": "sport:Action",
             "sport:participation": [
                 {
@@ -449,34 +449,34 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-on"
             },
+            "rdfs:label": "PO221239 participation in action a.2291528581 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO221239"
-            },
-            "rdfs:label": "PO221239 participation in action a.2291528581 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-a.2291528581-PO88894",
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-off"
             },
+            "rdfs:label": "PO88894 participation in action a.2291528581 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO88894"
-            },
-            "rdfs:label": "PO88894 participation in action a.2291528581 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB35-PO176420",
             "sport:uniformNumber": "2",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO176420"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Darnell Furlong membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -491,23 +491,23 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/infraction-by"
             },
+            "rdfs:label": "PO101394 participation in action a.2291526473 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO101394"
-            },
-            "rdfs:label": "PO101394 participation in action a.2291526473 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB7-PO149484",
             "sport:uniformNumber": "5",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO149484"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Tyrone Mings membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -521,13 +521,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO232653",
             "sport:uniformNumber": "41",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO232653"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Jacob Ramsey membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -539,26 +539,26 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO21205",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO21205"
             },
             "rdfs:label": "Tom Heaton participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB7-PO21205",
             "sport:uniformNumber": "1",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/goalkeeper"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO21205"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Tom Heaton membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -572,22 +572,22 @@
             "spsocstat:crosses18YardPlus": "1",
             "spsocstat:tacklesWon": "0",
             "spsocstat:goalsTotal": "0",
-            "spsocstat:tacklesTotal": "1",
-            "spsocstat:tacklesLost": "1",
-            "spsocstat:passesTotal": "43",
-            "spsocstat:passesIncomplete": "2",
             "spsocstat:ejectionsTotal": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
-            "spstat:timePlayedTotal": "82",
+            "spsocstat:tacklesLost": "1",
+            "spsocstat:passesIncomplete": "2",
+            "spsocstat:tacklesTotal": "1",
             "spsocstat:passesComplete": "41",
+            "spstat:timePlayedTotal": "82",
+            "spsocstat:passesTotal": "43",
             "spsocstat:shotsTotal": "1",
             "rdfs:label": "Ross Barkley participation in Event E2128607",
             "spsocstat:assistsTotal": "0",
-            "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:foulsSuffered": "1",
+            "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:crosses18Yard": "1",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:touches": "63",
             "spsocstat:shotsOnGoalTotal": "1",
             "sport:participationBy": {
@@ -599,39 +599,39 @@
             "@id": "http://example.com/Membership/TFBB7-PO88894",
             "sport:uniformNumber": "20",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO88894"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Ross Barkley membership of Aston Villa",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO38716",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO38716"
             },
             "rdfs:label": "Lee Peltier participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB35-PO164011",
             "sport:uniformNumber": "17",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO164011"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Mbaye Diagne membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -657,12 +657,15 @@
             "spsocstat:passesIncomplete": "9",
             "spsocstat:tacklesWon": "2",
             "spstat:timePlayedTotal": "90",
-            "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:passesTotal": "59",
+            "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:shotsTotal": "2",
             "spsocstat:passesComplete3rdFinal": "19",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO37339"
+            },
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
             },
             "spsocstat:passesComplete": "50",
             "@type": "sport:IndividualParticipation",
@@ -670,16 +673,13 @@
             "rdfs:label": "Ahmed El Mohamady participation in Event E2128607",
             "spsocstat:goalsTotal": "0",
             "spsocstat:cautionsTotal": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:crosses18YardPlus": "5",
             "spsocstat:passesCompleteLong": "6",
             "spsocstat:tacklesLost": "0",
             "spsocstat:aerialsWon": "2",
             "spsocstat:goalsAgainstTotal": "2",
-            "spsocstat:tacklesTotal": "2",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:tacklesTotal": "2",
             "spsocstat:shotsOffGoalTotal": "1",
             "spsocstat:interceptions": "1",
             "spsocstat:foulsCommited": "1",
@@ -690,13 +690,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO37339",
             "sport:uniformNumber": "27",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO37339"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Ahmed El Mohamady membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -710,13 +710,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO154043",
             "sport:uniformNumber": "30",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO154043"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Ainsley Maitland-Niles membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -745,13 +745,13 @@
             "@id": "http://example.com/Participation/E2128607-PO101394",
             "spsocstat:passesComplete3rdFinal": "3",
             "spsocstat:passesCompleteLong": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
-            "rdfs:label": "Okay Yokuslu participation in Event E2128607",
-            "spsocstat:assistsTotal": "0",
             "spsocstat:passesTotal": "30",
+            "spsocstat:assistsTotal": "0",
+            "rdfs:label": "Okay Yokuslu participation in Event E2128607",
             "spsocstat:touches": "50",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:passesComplete": "23",
             "spsocstat:passesIncomplete": "7",
             "spstat:eventsStarted": "1",
@@ -760,13 +760,13 @@
             "spsocstat:interceptions": "4",
             "spsocstat:tacklesWon": "0",
             "spsocstat:clearancesSuccessful": "4",
+            "spsocstat:ejectionsTotal": "0",
             "spsocstat:shotsOffGoalTotal": "1",
-            "spsocstat:foulsCommited": "1",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO101394"
             },
             "spsocstat:aerialsWon": "1",
-            "spsocstat:ejectionsTotal": "0",
+            "spsocstat:foulsCommited": "1",
             "spsocstat:tacklesLost": "2",
             "spsocstat:tacklesTotal": "2",
             "spsocstat:goalsAgainstTotal": "2",
@@ -780,11 +780,11 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/infraction-by"
             },
+            "rdfs:label": "PO232787 participation in action a.2291510501 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO232787"
-            },
-            "rdfs:label": "PO232787 participation in action a.2291510501 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO171975",
@@ -794,20 +794,20 @@
             "rdfs:label": "Callum Robinson participation in Event E2128607",
             "spsocstat:passesIncomplete": "4",
             "spsocstat:passesTotal": "10",
-            "spsocstat:passesCompleteLong": "1",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:passesCompleteLong": "1",
             "spsocstat:passesComplete": "6",
             "spsocstat:goalsTotal": "0",
             "spsocstat:cautionsTotal": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO171975"
             },
             "@type": "sport:IndividualParticipation",
-            "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:goalsAgainstTotal": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
+            "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:assistsTotal": "0",
             "spsocstat:passesComplete3rdFinal": "2",
             "spstat:timePlayedTotal": "67",
@@ -823,8 +823,8 @@
             "spsocstat:cautionsTotal": "2",
             "spsocstat:shotsTotal": "10",
             "spsocstat:tacklesLost": "5",
-            "spsocstat:passesTotal": "240",
             "spsocstat:foulsCommited": "9",
+            "spsocstat:passesTotal": "240",
             "spsocstat:tacklesWonPercentage": "0.500",
             "spsocstat:offsides": "1",
             "spsocstat:tacklesTotal": "10",
@@ -849,6 +849,9 @@
         {
             "@id": "http://example.com/Participation/E2128607-PO149484",
             "spsocstat:tacklesWon": "1",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:passesIncomplete": "14",
             "sport:participationBy": {
@@ -857,22 +860,19 @@
             "spsocstat:passesComplete3rdFinal": "7",
             "spsocstat:assistsTotal": "0",
             "spsocstat:goalsTotal": "0",
-            "spsocstat:tacklesLost": "1",
-            "spsocstat:goalsOwn": "1",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:goalsOwn": "1",
+            "spsocstat:tacklesLost": "1",
             "spstat:eventsStarted": "1",
             "spsocstat:aerialsWon": "3",
             "rdfs:label": "Tyrone Mings participation in Event E2128607",
             "spsocstat:clearancesSuccessful": "2",
             "spsocstat:cautionsTotal": "0",
             "@type": "sport:IndividualParticipation",
-            "spsocstat:touches": "80",
             "spsocstat:foulsSuffered": "1",
+            "spsocstat:touches": "80",
             "spsocstat:passesCompleteLong": "5",
             "spstat:timePlayedTotal": "90",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:foulsCommited": "2",
             "spsocstat:tacklesTotal": "2",
             "spsocstat:interceptions": "1",
@@ -881,14 +881,14 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO184704",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO184704"
             },
             "rdfs:label": "Marvelous Nakamba participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO184704",
@@ -907,8 +907,8 @@
             "spsocstat:passesComplete": "12",
             "@type": "sport:IndividualParticipation",
             "spsocstat:shotsBlockedOutfielder": "1",
-            "spsocstat:passesComplete3rdFinal": "2",
             "spsocstat:goalsAgainstTotal": "2",
+            "spsocstat:passesComplete3rdFinal": "2",
             "spsocstat:aerialsWon": "5",
             "spsocstat:passesIncomplete": "6",
             "spstat:timePlayedTotal": "90",
@@ -920,7 +920,7 @@
             "spsocstat:interceptions": "1",
             "spsocstat:foulsSuffered": "1",
             "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
+                "@id": "spplayerstatus:starter"
             },
             "spsocstat:touches": "29",
             "spsocstat:clearancesSuccessful": "5"
@@ -957,13 +957,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO210407",
             "sport:uniformNumber": "12",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO210407"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Matheus Pereira membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -978,11 +978,11 @@
             "sport:role": {
                 "@id": "spsocrole:scorer"
             },
+            "rdfs:label": "PO221239 participation in action a.2291532577 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO221239"
-            },
-            "rdfs:label": "PO221239 participation in action a.2291532577 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291480431",
@@ -1010,11 +1010,11 @@
             "sport:role": {
                 "@id": "spsocrole:scorer"
             },
+            "rdfs:label": "PO210407 participation in action a.2291480431 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO210407"
-            },
-            "rdfs:label": "PO210407 participation in action a.2291480431 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO481624",
@@ -1031,11 +1031,11 @@
             "sport:role": {
                 "@id": "spsocrole:scorer"
             },
+            "rdfs:label": "PO149484 participation in action a.2291504361 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO149484"
-            },
-            "rdfs:label": "PO149484 participation in action a.2291504361 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291532577",
@@ -1062,13 +1062,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO50093",
             "sport:uniformNumber": "25",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/goalkeeper"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO50093"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "David Button membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -1080,11 +1080,11 @@
         },
         {
             "@id": "http://example.com/Membership/man40412-TFBB7",
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
-            },
             "sport:member": {
                 "@id": "http://example.com/Associate/man40412"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Dean Smith associate membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -1098,13 +1098,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO213345",
             "sport:uniformNumber": "9",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO213345"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Wesley membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -1118,13 +1118,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO146426",
             "sport:uniformNumber": "6",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO146426"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Semi Ajayi membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -1144,11 +1144,11 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-off"
             },
+            "rdfs:label": "PO110504 participation in action a.2291532149 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO110504"
-            },
-            "rdfs:label": "PO110504 participation in action a.2291532149 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Athlete/PO110504",
@@ -1185,34 +1185,34 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-off"
             },
+            "rdfs:label": "PO154043 participation in action a.2291530223 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO154043"
-            },
-            "rdfs:label": "PO154043 participation in action a.2291530223 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-a.2291530223-PO216616",
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-on"
             },
+            "rdfs:label": "PO216616 participation in action a.2291530223 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO216616"
-            },
-            "rdfs:label": "PO216616 participation in action a.2291530223 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB35-PO101982",
             "sport:uniformNumber": "1",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/goalkeeper"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO101982"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Sam Johnstone membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -1224,47 +1224,47 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO481624",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO481624"
             },
             "rdfs:label": "Jaden Philogene-Bidace participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO61600",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO61600"
             },
             "rdfs:label": "Romaine Sawyers participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Competition/l.premierleague.com",
             "sport:sport": {
                 "@id": "medtop:20001065"
             },
+            "rdfs:label": "English Premier League",
             "sport:competitionType": {
                 "@id": "spct:recurring-competition"
             },
-            "rdfs:label": "English Premier League",
             "@type": "sport:Competition"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO179830",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO179830"
             },
             "rdfs:label": "Grady Diangana participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33",
@@ -1284,25 +1284,25 @@
             "spsocstat:assistsTotal": "0",
             "spsocstat:goalsTotal": "0",
             "spsocstat:touches": "38",
-            "spsocstat:shotsOffGoalTotal": "1",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:shotsOffGoalTotal": "1",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO232787"
             },
             "spsocstat:passesTotal": "20",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:foulsSuffered": "3",
             "spsocstat:passesCompleteLong": "1",
             "spstat:timePlayedTotal": "90",
             "rdfs:label": "Conor Gallagher participation in Event E2128607",
-            "spsocstat:shotsTotal": "1",
             "spsocstat:passesComplete": "15",
+            "spsocstat:shotsTotal": "1",
             "spsocstat:passesIncomplete": "5",
             "spsocstat:crosses18YardPlus": "1",
             "spsocstat:aerialsWon": "1",
             "spsocstat:foulsCommited": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:cautionsTotal": "1"
         },
         {
@@ -1333,11 +1333,11 @@
             "spsocstat:passesComplete": "8",
             "spsocstat:clearancesSuccessful": "6",
             "spsocstat:tacklesWon": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:tacklesLost": "1",
             "spstat:timePlayedTotal": "90",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:touches": "38",
             "spsocstat:ejectionsTotal": "0"
         },
@@ -1348,14 +1348,11 @@
             "spsocstat:cautionsTotal": "0",
             "spsocstat:ejectionsTotal": "0",
             "spsocstat:passesComplete3rdFinal": "14",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "rdfs:label": "Bertrand Traoré participation in Event E2128607",
             "spstat:eventsStarted": "1",
             "spsocstat:aerialsWon": "2",
-            "spsocstat:shotsTotal": "3",
             "spsocstat:passesCompleteLong": "1",
+            "spsocstat:shotsTotal": "3",
             "spsocstat:crosses18YardPlus": "2",
             "spsocstat:crosses18Yard": "2",
             "sport:participationBy": {
@@ -1365,6 +1362,9 @@
             "spstat:timePlayedTotal": "89",
             "@type": "sport:IndividualParticipation",
             "spsocstat:goalsAgainstTotal": "2",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:touches": "43",
             "spsocstat:shotsOffGoalTotal": "3",
             "spsocstat:passesIncomplete": "6",
@@ -1386,27 +1386,30 @@
             "spsocstat:touches": "29",
             "spsocstat:goalsAgainstTotal": "2",
             "spstat:timePlayedTotal": "90",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:tacklesLost": "1",
             "spsocstat:passesIncomplete": "6",
             "spsocstat:passesComplete3rdFinal": "1",
             "spstat:eventsStarted": "1",
             "spsocstat:passesCompleteLong": "1",
-            "rdfs:label": "Semi Ajayi participation in Event E2128607",
             "spsocstat:aerialsWon": "2",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
+            "rdfs:label": "Semi Ajayi participation in Event E2128607",
             "spsocstat:cautionsTotal": "0",
             "spsocstat:ejectionsTotal": "0",
             "spsocstat:assistsTotal": "0",
-            "@type": "sport:IndividualParticipation",
             "spsocstat:clearancesSuccessful": "5",
+            "@type": "sport:IndividualParticipation",
             "spsocstat:passesTotal": "14"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO50229",
             "@type": "sport:IndividualParticipation",
             "spsocstat:passesTotal": "3",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
             "spstat:timePlayedTotal": "23",
             "spsocstat:passesComplete": "3",
             "spsocstat:goalsTotal": "0",
@@ -1414,9 +1417,6 @@
             "spsocstat:passesIncomplete": "0",
             "spsocstat:goalsAgainstTotal": "1",
             "spsocstat:passesComplete3rdFinal": "2",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "spsocstat:cautionsTotal": "0",
             "spsocstat:ejectionsTotal": "0",
             "spsocstat:assistsTotal": "0",
@@ -1429,8 +1429,8 @@
             "@id": "http://example.com/Participation/E2128607-PO178301",
             "spsocstat:passesIncomplete": "5",
             "spsocstat:cautionsTotal": "0",
-            "spsocstat:shotsOnGoalTotal": "2",
             "spsocstat:clearancesSuccessful": "1",
+            "spsocstat:shotsOnGoalTotal": "2",
             "spsocstat:foulsCommited": "2",
             "spsocstat:touches": "49",
             "spsocstat:aerialsWon": "3",
@@ -1443,59 +1443,73 @@
                 "@id": "http://example.com/Athlete/PO178301"
             },
             "spsocstat:passesTotal": "32",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spstat:timePlayedTotal": "90",
             "spsocstat:goalsTotal": "0",
             "rdfs:label": "Ollie Watkins participation in Event E2128607",
             "spsocstat:ejectionsTotal": "0",
             "spsocstat:crosses18YardPlus": "1",
             "spsocstat:assistsTotal": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spstat:eventsStarted": "1"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO108156",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO108156"
             },
             "rdfs:label": "Björn Engels participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO50093",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO50093"
             },
             "rdfs:label": "David Button participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO123354",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO123354"
             },
             "rdfs:label": "Kortney Hause participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
+        },
+        {
+            "@id": "http://example.com/Participation/E2128607-PO180294",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PO180294"
+            },
+            "rdfs:label": "Karlan Grant participation in Event E2128607",
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO210407",
             "spsocstat:passesIncomplete": "8",
             "spsocstat:cautionsTotal": "0",
-            "spsocstat:touches": "48",
             "spsocstat:goalsLeftFoot": "0",
+            "spsocstat:touches": "48",
             "spsocstat:goalsRightFoot": "0",
             "spsocstat:assistsTotal": "0",
             "spsocstat:shotsPenaltyShotMissed": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:tacklesTotal": "3",
             "spsocstat:goalsHead": "0",
             "spsocstat:shotsTotal": "4",
@@ -1508,33 +1522,19 @@
             "spsocstat:tacklesLost": "1",
             "spsocstat:passesTotal": "25",
             "spsocstat:shotsBlockedCross": "1",
+            "spsocstat:crosses18Yard": "1",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO210407"
             },
-            "spsocstat:crosses18Yard": "1",
             "spstat:timePlayedTotal": "90",
             "spsocstat:freeKicks": "2",
             "spsocstat:shotsOffGoalTotal": "2",
             "spsocstat:passesComplete3rdFinal": "9",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:passesComplete": "17",
             "@type": "sport:IndividualParticipation",
             "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:ejectionsTotal": "0",
             "rdfs:label": "Matheus Pereira participation in Event E2128607"
-        },
-        {
-            "@id": "http://example.com/Participation/E2128607-PO180294",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/PO180294"
-            },
-            "rdfs:label": "Karlan Grant participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO154043",
@@ -1543,6 +1543,9 @@
             "spsocstat:assistsTotal": "0",
             "spsocstat:shotsBlockedOutfielder": "1",
             "spsocstat:goalsAgainstTotal": "1",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spstat:timePlayedTotal": "86",
             "spsocstat:touches": "37",
             "spsocstat:passesIncomplete": "4",
@@ -1550,17 +1553,14 @@
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO154043"
             },
-            "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:clearancesSuccessful": "1",
+            "spsocstat:shotsOnGoalTotal": "1",
             "spstat:eventsStarted": "1",
             "spsocstat:cautionsTotal": "0",
-            "spsocstat:shotsBlockedCross": "1",
             "@type": "sport:IndividualParticipation",
-            "spsocstat:goalsTotal": "0",
             "spsocstat:ejectionsTotal": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
+            "spsocstat:goalsTotal": "0",
+            "spsocstat:shotsBlockedCross": "1",
             "rdfs:label": "Ainsley Maitland-Niles participation in Event E2128607",
             "spsocstat:passesComplete": "14",
             "spsocstat:shotsTotal": "1",
@@ -1568,21 +1568,21 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO47390",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO47390"
             },
             "rdfs:label": "Neil Taylor participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO216616",
             "@type": "sport:IndividualParticipation",
             "spstat:timePlayedTotal": "4",
             "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
+                "@id": "spplayerstatus:bench"
             },
             "spsocstat:goalsTotal": "0",
             "rdfs:label": "Dara O'Shea participation in Event E2128607",
@@ -1596,46 +1596,46 @@
         },
         {
             "@id": "http://example.com/Competition/l.premierleague.com-2020",
-            "sport:sport": {
-                "@id": "medtop:20001065"
-            },
             "sport:parent": {
                 "@id": "http://example.com/Competition/l.premierleague.com"
             },
+            "sport:sport": {
+                "@id": "medtop:20001065"
+            },
+            "rdfs:label": "English Premier League 2020",
             "sport:competitionType": {
                 "@id": "spct:competition"
             },
-            "rdfs:label": "English Premier League 2020",
             "@type": "sport:Competition"
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO169359",
             "spsocstat:crosses18Yard": "7",
             "spsocstat:crosses18YardPlus": "2",
-            "spsocstat:foulsSuffered": "2",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:cautionsTotal": "0",
-            "spsocstat:passesIncomplete": "5",
-            "spsocstat:passesComplete": "55",
+            "spsocstat:foulsSuffered": "2",
             "spsocstat:clearancesSuccessful": "3",
+            "spsocstat:passesComplete": "55",
+            "spsocstat:passesIncomplete": "5",
             "@type": "sport:IndividualParticipation",
             "spsocstat:interceptions": "1",
-            "spsocstat:tacklesTotal": "1",
-            "spsocstat:tacklesLost": "1",
             "spsocstat:foulsCommited": "1",
+            "spsocstat:tacklesLost": "1",
+            "spsocstat:tacklesTotal": "1",
             "rdfs:label": "Matt Targett participation in Event E2128607",
             "spstat:eventsStarted": "1",
             "spsocstat:goalsTotal": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:passesCompleteLong": "1",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO169359"
             },
             "spsocstat:passesComplete3rdFinal": "20",
             "spsocstat:passesTotal": "60",
-            "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:goalsAgainstTotal": "2",
             "spstat:timePlayedTotal": "90",
             "spsocstat:aerialsWon": "1",
             "spsocstat:touches": "86",
@@ -1648,13 +1648,13 @@
             "spsocstat:aerialsWon": "1",
             "spsocstat:tacklesWon": "1",
             "spstat:eventsStarted": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:passesComplete3rdFinal": "29",
             "spsocstat:crosses18Yard": "1",
             "spsocstat:passesIncomplete": "12",
             "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:foulsCommited": "2",
             "spsocstat:foulsSuffered": "1",
             "spsocstat:ejectionsTotal": "0",
@@ -1686,10 +1686,13 @@
             "spsocstat:goalsTotal": "0",
             "spsocstat:shotsBlockedOutfielder": "2",
             "spsocstat:passesTotal": "20",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:assistsTotal": "0",
-            "spsocstat:touches": "38",
-            "spsocstat:passesComplete3rdFinal": "3",
             "spsocstat:cautionsTotal": "0",
+            "spsocstat:passesComplete3rdFinal": "3",
+            "spsocstat:touches": "38",
             "spsocstat:tacklesWon": "2",
             "spstat:timePlayedTotal": "90",
             "spsocstat:goalsAgainstTotal": "2",
@@ -1700,9 +1703,6 @@
             "spsocstat:tacklesLost": "0",
             "spsocstat:ejectionsTotal": "0",
             "spstat:eventsStarted": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "@type": "sport:IndividualParticipation",
             "spsocstat:aerialsWon": "2",
             "rdfs:label": "Conor Townsend participation in Event E2128607",
@@ -1714,15 +1714,18 @@
             "spsocstat:passesIncomplete": "12",
             "spsocstat:passesComplete": "35",
             "spsocstat:goalsTotal": "1",
-            "spsocstat:shotsPenaltyShotScored": "1",
             "spsocstat:clearancesSuccessful": "1",
+            "spsocstat:shotsPenaltyShotScored": "1",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO193488"
             },
             "spsocstat:shotsTotal": "2",
+            "spsocstat:cautionsTotal": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:goalsRightFoot": "0",
             "spsocstat:crosses18YardPlus": "1",
-            "spsocstat:cautionsTotal": "0",
             "spsocstat:shotsOnGoalTotal": "2",
             "spsocstat:crosses18Yard": "3",
             "spsocstat:ejectionsTotal": "0",
@@ -1732,13 +1735,10 @@
             "spsocstat:passesTotal": "47",
             "spsocstat:shotsBlockedCross": "1",
             "rdfs:label": "Anwar El Ghazi participation in Event E2128607",
-            "spsocstat:shotsPenaltyShotMissed": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
+            "spsocstat:assistsTotal": "0",
             "spstat:timePlayedTotal": "90",
             "spstat:eventsStarted": "1",
-            "spsocstat:assistsTotal": "0",
+            "spsocstat:shotsPenaltyShotMissed": "0",
             "spsocstat:passesComplete3rdFinal": "16",
             "spsocstat:passesCompleteLong": "1",
             "spsocstat:touches": "63"
@@ -1747,9 +1747,6 @@
             "@id": "http://example.com/Participation/E2128607-PO232653",
             "@type": "sport:IndividualParticipation",
             "spsocstat:passesTotal": "9",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "spsocstat:foulsCommited": "1",
             "spstat:timePlayedTotal": "12",
             "rdfs:label": "Jacob Ramsey participation in Event E2128607",
@@ -1762,9 +1759,12 @@
                 "@id": "http://example.com/Athlete/PO232653"
             },
             "spsocstat:passesCompleteLong": "1",
-            "spsocstat:assistsTotal": "0",
             "spsocstat:goalsAgainstTotal": "0",
+            "spsocstat:assistsTotal": "0",
             "spsocstat:goalsTotal": "0",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
             "spsocstat:passesComplete3rdFinal": "4"
         },
         {
@@ -1772,15 +1772,15 @@
             "spsocstat:touches": "45",
             "spstat:eventsStarted": "1",
             "spsocstat:passesTotal": "28",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO164011"
             },
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:passesComplete3rdFinal": "5",
             "spsocstat:passesComplete": "13",
-            "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:clearancesSuccessful": "2",
             "spsocstat:crosses18Yard": "1",
             "spsocstat:passesCompleteLong": "1",
@@ -1799,45 +1799,14 @@
             "spsocstat:aerialsWon": "4"
         },
         {
-            "@id": "http://example.com/Participation/E2128607-PO98980",
-            "@type": "sport:IndividualParticipation",
-            "spsocstat:cautionsTotal": "0",
-            "spsocstat:aerialsWon": "1",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/PO98980"
-            },
-            "spsocstat:goalsTotal": "0",
-            "spsocstat:passesIncomplete": "4",
-            "spsocstat:passesComplete3rdFinal": "2",
-            "spsocstat:clearancesSuccessful": "1",
-            "spsocstat:catchesPunches": "1",
-            "spsocstat:touches": "36",
-            "spsocstat:saves": "3",
-            "spsocstat:passesTotal": "27",
-            "spsocstat:goalsPenaltyShotAllowed": "1",
-            "spsocstat:shotsPenaltyShotAllowed": "1",
-            "spsocstat:assistsTotal": "0",
-            "spsocstat:savePercentage": "0.600",
-            "spsocstat:goalsAgainstTotal": "2",
-            "spstat:timePlayedTotal": "90",
-            "spsocstat:passesCompleteLong": "3",
-            "spsocstat:passesComplete": "23",
-            "spsocstat:ejectionsTotal": "0",
-            "spstat:eventsStarted": "1",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
-            "rdfs:label": "Emiliano Martínez participation in Event E2128607"
-        },
-        {
             "@id": "http://example.com/Participation/E2128607-PO221239",
             "spsocstat:passesComplete3rdFinal": "2",
             "rdfs:label": "Keinan Davis participation in Event E2128607",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
             "@type": "sport:IndividualParticipation",
             "spsocstat:ejectionsTotal": "0",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "spsocstat:goalsHead": "0",
             "spstat:timePlayedTotal": "8",
             "spsocstat:aerialsWon": "2",
@@ -1859,29 +1828,60 @@
             "spsocstat:shotsTotal": "3"
         },
         {
-            "@id": "http://example.com/Participation/E2128607-PO49944",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
+            "@id": "http://example.com/Participation/E2128607-PO98980",
+            "@type": "sport:IndividualParticipation",
+            "spsocstat:cautionsTotal": "0",
+            "spsocstat:aerialsWon": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PO98980"
             },
+            "spsocstat:goalsTotal": "0",
+            "spsocstat:passesIncomplete": "4",
+            "spsocstat:passesComplete3rdFinal": "2",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
+            "spsocstat:clearancesSuccessful": "1",
+            "spsocstat:catchesPunches": "1",
+            "spsocstat:touches": "36",
+            "spsocstat:saves": "3",
+            "spsocstat:passesTotal": "27",
+            "spsocstat:goalsPenaltyShotAllowed": "1",
+            "spsocstat:shotsPenaltyShotAllowed": "1",
+            "spsocstat:assistsTotal": "0",
+            "spsocstat:savePercentage": "0.600",
+            "spsocstat:goalsAgainstTotal": "2",
+            "spstat:timePlayedTotal": "90",
+            "spsocstat:passesCompleteLong": "3",
+            "spsocstat:passesComplete": "23",
+            "spsocstat:ejectionsTotal": "0",
+            "spstat:eventsStarted": "1",
+            "rdfs:label": "Emiliano Martínez participation in Event E2128607"
+        },
+        {
+            "@id": "http://example.com/Participation/E2128607-PO49944",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO49944"
             },
             "rdfs:label": "Jake Livermore participation in Event E2128607",
-            "@type": "sport:IndividualParticipation"
+            "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO230046",
             "spsocstat:passesComplete": "53",
             "spsocstat:goalsAgainstTotal": "2",
-            "spstat:timePlayedTotal": "78",
             "rdfs:label": "Douglas Luiz participation in Event E2128607",
+            "spstat:timePlayedTotal": "78",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:passesTotal": "60",
             "spsocstat:passesComplete3rdFinal": "24",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
-            "spsocstat:goalsTotal": "0",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:goalsTotal": "0",
             "spsocstat:touches": "72",
             "spstat:eventsStarted": "1",
             "spsocstat:passesCompleteLong": "3",
@@ -1890,8 +1890,8 @@
             "@type": "sport:IndividualParticipation",
             "spsocstat:foulsSuffered": "2",
             "spsocstat:tacklesLost": "2",
-            "spsocstat:interceptions": "2",
             "spsocstat:foulsCommited": "3",
+            "spsocstat:interceptions": "2",
             "spsocstat:cautionsTotal": "0",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO230046"
@@ -1901,9 +1901,6 @@
         },
         {
             "@id": "http://example.com/Participation/E2128607-PO213345",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/bench"
-            },
             "spsocstat:shotsOnGoalTotal": "1",
             "spsocstat:passesIncomplete": "0",
             "spsocstat:ejectionsTotal": "0",
@@ -1913,6 +1910,9 @@
             "spsocstat:passesComplete": "1",
             "spsocstat:cautionsTotal": "0",
             "spsocstat:passesComplete3rdFinal": "1",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:bench"
+            },
             "rdfs:label": "Wesley participation in Event E2128607",
             "spstat:timePlayedTotal": "1",
             "spsocstat:goalsTotal": "0",
@@ -1929,6 +1929,9 @@
             "spstat:eventsStarted": "1",
             "spsocstat:assistsTotal": "0",
             "spsocstat:saves": "9",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "spsocstat:cautionsTotal": "0",
             "spsocstat:passesTotal": "37",
             "spsocstat:savePercentage": "0.818",
@@ -1937,16 +1940,13 @@
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO101982"
             },
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:catchesPunches": "3",
             "spstat:timePlayedTotal": "90",
             "spsocstat:passesIncomplete": "30",
             "spsocstat:touches": "49",
             "spsocstat:passesComplete3rdFinal": "1",
-            "spsocstat:passesComplete": "7",
             "spsocstat:goalsPenaltyShotAllowed": "1",
+            "spsocstat:passesComplete": "7",
             "rdfs:label": "Sam Johnstone participation in Event E2128607",
             "spsocstat:shotsPenaltyShotAllowed": "1",
             "spsocstat:goalsTotal": "0",
@@ -1961,15 +1961,12 @@
             "rdfs:label": "Ezri Konsa Ngoyo participation in Event E2128607",
             "spsocstat:tacklesWon": "0",
             "spstat:timePlayedTotal": "90",
-            "sport:playerStatus": {
-                "@id": "http://cv.iptc.org/newscodes/spperstatus/starter"
-            },
             "spsocstat:passesTotal": "47",
             "spsocstat:touches": "69",
             "spsocstat:shotsOffGoalTotal": "1",
             "spsocstat:passesCompleteLong": "1",
-            "spsocstat:passesComplete3rdFinal": "2",
             "spsocstat:ejectionsTotal": "0",
+            "spsocstat:passesComplete3rdFinal": "2",
             "spsocstat:goalsAgainstTotal": "2",
             "spsocstat:passesComplete": "42",
             "spstat:eventsStarted": "1",
@@ -1977,6 +1974,9 @@
             "spsocstat:cautionsTotal": "0",
             "spsocstat:shotsOnGoalTotal": "1",
             "@type": "sport:IndividualParticipation",
+            "sport:playerStatus": {
+                "@id": "spplayerstatus:starter"
+            },
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO199798"
             },
@@ -1993,13 +1993,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO49440",
             "sport:uniformNumber": "4",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO49440"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Hal Robson-Kanu membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2016,11 +2016,11 @@
         },
         {
             "@id": "http://example.com/Membership/man83-TFBB35",
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
-            },
             "sport:member": {
                 "@id": "http://example.com/Associate/man83"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Sam Allardyce associate membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2060,13 +2060,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO193488",
             "sport:uniformNumber": "21",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO193488"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Anwar El Ghazi membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2080,13 +2080,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO38716",
             "sport:uniformNumber": "22",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO38716"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Lee Peltier membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2121,23 +2121,23 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-on"
             },
+            "rdfs:label": "PO50229 participation in action a.2291520471 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO50229"
-            },
-            "rdfs:label": "PO50229 participation in action a.2291520471 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB7-PO184704",
             "sport:uniformNumber": "19",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO184704"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Marvelous Nakamba membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2149,9 +2149,9 @@
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291532149",
-            "sport:periodValue": "2",
-            "sport:minutesElapsed": "91",
             "sport:personReplacingPosition": "forward",
+            "sport:minutesElapsed": "91",
+            "sport:periodValue": "2",
             "sport:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
@@ -2177,23 +2177,23 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-on"
             },
+            "rdfs:label": "PO213345 participation in action a.2291532149 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO213345"
-            },
-            "rdfs:label": "PO213345 participation in action a.2291532149 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB7-PO108156",
             "sport:uniformNumber": "22",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO108156"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Björn Engels membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2202,23 +2202,19 @@
             "@id": "http://example.com/Membership/TFBB7-PO122806",
             "sport:uniformNumber": "7",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO122806"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "John McGinn membership of Aston Villa",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/E2128607-a.2291526699",
-            "sport:substitutionReason": "Tactical",
-            "sport:class": {
-                "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
-            },
             "sport:participation": [
                 {
                     "@id": "http://example.com/Participation/E2128607-a.2291526699-PO230046"
@@ -2227,6 +2223,10 @@
                     "@id": "http://example.com/Participation/E2128607-a.2291526699-PO232653"
                 }
             ],
+            "sport:class": {
+                "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
+            },
+            "sport:substitutionReason": "Tactical",
             "@type": "sport:Action",
             "sport:minutesElapsed": "78",
             "sport:periodValue": "2",
@@ -2243,34 +2243,34 @@
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-off"
             },
+            "rdfs:label": "PO230046 participation in action a.2291526699 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO230046"
-            },
-            "rdfs:label": "PO230046 participation in action a.2291526699 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Participation/E2128607-a.2291526699-PO232653",
             "sport:role": {
                 "@id": "http://cv.iptc.org/newscodes/soc/sub-on"
             },
+            "rdfs:label": "PO232653 participation in action a.2291526699 in event E2128607",
+            "@type": "sport:IndividualParticipation",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PO232653"
-            },
-            "rdfs:label": "PO232653 participation in action a.2291526699 in event E2128607",
-            "@type": "sport:IndividualParticipation"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB35-PO216616",
             "sport:uniformNumber": "27",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO216616"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Dara O'Shea membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2279,13 +2279,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO59940",
             "sport:uniformNumber": "5",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO59940"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Kyle Bartley membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2322,13 +2322,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO47390",
             "sport:uniformNumber": "3",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO47390"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Neil Taylor membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2337,13 +2337,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO108053",
             "sport:uniformNumber": "14",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO108053"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Conor Townsend membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2352,13 +2352,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO481624",
             "sport:uniformNumber": "52",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO481624"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Jaden Philogene-Bidace membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2367,13 +2367,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO199798",
             "sport:uniformNumber": "4",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO199798"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Ezri Konsa Ngoyo membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2382,13 +2382,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO110504",
             "sport:uniformNumber": "15",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO110504"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Bertrand Traoré membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2397,13 +2397,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO178301",
             "sport:uniformNumber": "11",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO178301"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Ollie Watkins membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2412,13 +2412,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO101394",
             "sport:uniformNumber": "35",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO101394"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Okay Yokuslu membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2427,13 +2427,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO169359",
             "sport:uniformNumber": "18",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO169359"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Matt Targett membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2442,13 +2442,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO171975",
             "sport:uniformNumber": "7",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO171975"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Callum Robinson membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2457,13 +2457,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO61600",
             "sport:uniformNumber": "19",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO61600"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Romaine Sawyers membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2472,13 +2472,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO221239",
             "sport:uniformNumber": "39",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/forward"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/forward"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO221239"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Keinan Davis membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2487,13 +2487,13 @@
             "@id": "http://example.com/Membership/TFBB7-PO123354",
             "sport:uniformNumber": "30",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/defender"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/defender"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO123354"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Kortney Hause membership of Aston Villa",
             "@type": "sport:IndividualMembership"
@@ -2502,13 +2502,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO179830",
             "sport:uniformNumber": "11",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO179830"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Grady Diangana membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2517,13 +2517,13 @@
             "@id": "http://example.com/Membership/TFBB35-PO232787",
             "sport:uniformNumber": "18",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/midfielder"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB35"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/midfielder"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO232787"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB35"
             },
             "rdfs:label": "Conor Gallagher membership of West Bromwich Albion",
             "@type": "sport:IndividualMembership"
@@ -2532,28 +2532,28 @@
             "@id": "http://example.com/Membership/TFBB7-PO98980",
             "sport:uniformNumber": "26",
             "sport:positionRegular": {
-                "@id": "http://cv.iptc.org/newscodes/spsocpos/goalkeeper"
-            },
-            "sport:membershipOf": {
-                "@id": "http://example.com/Team/TFBB7"
+                "@id": "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"
             },
             "sport:member": {
                 "@id": "http://example.com/Athlete/PO98980"
+            },
+            "sport:membershipOf": {
+                "@id": "http://example.com/Team/TFBB7"
             },
             "rdfs:label": "Emiliano Martínez membership of Aston Villa",
             "@type": "sport:IndividualMembership"
         }
     ],
     "@context": {
-        "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
         "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
+        "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
         "schemaorg": "https://schema.org/",
         "spsocactiontype": "http://cv.iptc.org/newscodes/spsocaction/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "spstat": "https://sportschema.org/ontologies/corestatistics/",
-        "speventoutcometype": "http://cv.iptc.org/newscodes/speventoutcometype/",
         "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
+        "speventoutcometype": "http://cv.iptc.org/newscodes/speventoutcometype/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
         "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
