@@ -508,6 +508,14 @@ sport:rank rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:role rdf:type owl:DatatypeProperty ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A team's or individual's role in a given action"@en ;
+    rdfs:domain sport:Participation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "Final or current score of the team or individual"@en ;
@@ -707,14 +715,6 @@ sport:result rdf:type owl:DatatypeProperty ;
     rdfs:comment "The result of the play or action. See 'result' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfresult/ http://cv.iptc.org/newscodes/spsocresult/"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:role rdf:type owl:DatatypeProperty ;
-    rdfs:label "role"@en ;
-    rdfs:comment "A team's or individual's role in a given action"@en ;
-    rdfs:domain sport:Action ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
-    rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:saveMethod rdf:type owl:DatatypeProperty ;
