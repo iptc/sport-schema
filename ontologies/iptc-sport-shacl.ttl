@@ -5,7 +5,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix sh:      <http://www.w3.org/ns/shacl#> .
 @prefix sport:   <https://sportschema.org/ontologies/main/> .
-@prefix spact:   <https://sportschema.org/ontologies/main/> .
+@prefix spstat:   <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix spsocstat:   <https://sportschema.org/ontologies/soccer/> .
 
 ##### SHACL Shapes for validating Sports RDF data #####
 
@@ -24,7 +26,8 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:actionDateTime ;
-    sh:datatype xsd:dateTime
+    sh:datatype xsd:string
+    # sh:datatype xsd:dateTime
   ] ;
   sh:property [
     sh:path sport:actionType ;
@@ -34,49 +37,49 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:angle ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:bodyPart ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path spact:class ;
+    sh:path sport:class ;
     sh:nodeKind sh:IRI ;
     sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
     sh:path sport:comment ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:distance ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:endLocation ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:fieldLocation ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:goalLocation ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:lastModified ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:minutesElapsed ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:oppositePlay ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:passDescription ;
@@ -91,27 +94,28 @@ sport:ActionShape
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path sport:penaltyLevel ;
+    sh:path sport:infractionLevel ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path sport:penaltyType ;
+    sh:path sport:infractionType ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path sport:periodValue ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:personReplacingPosition ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:recipientType ;
-    sh:datatype xsd:string
-  ] ;
-  sh:property [
-    sh:path sport:result ;
+    # sh:datatype xsd:string ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
-    sh:path sport:role ;
+    sh:path sport:result ;
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
@@ -124,7 +128,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:scoreAttemptDescription ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptResult ;
@@ -132,7 +136,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:scoreAttemptSide ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptSituation ;
@@ -144,15 +148,15 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:sequenceNumber ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:shotDistance ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:shotDistanceUnits ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:shotType ;
@@ -160,33 +164,49 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:startLocation ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:substitutionReason ;
-    sh:datatype xsd:string
-    # sh:nodeKind sh:IRI ;
+    # TODO decide whether this sh:or is a cool feature or a dirty hack...
+    # really values should be only URIs or strings
+    sh:or (
+      [ sh:datatype xsd:string ]
+      [ sh:nodeKind sh:IRI ]
+    )
   ] ;
   sh:property [
     sh:path sport:timeAddition ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:timeAddition ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:timeElapsed ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:timeRemaining ;
-    sh:datatype xsd:string
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:zone ;
     sh:nodeKind sh:IRI ;
   ] .
+
+sport:AgentShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Agent ;
+  # sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:AssociateParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:AssociateParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
 
 sport:AssociateShape
   a sh:NodeShape ;
@@ -194,10 +214,25 @@ sport:AssociateShape
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) .
 
+sport:AthleteShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Athlete ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # Properties inherited from Individual
+  sh:property [
+    sh:path sport:dateOfBirth ;
+    sh:datatype xsd:date ;
+  ] ;
+  sh:property [
+    sh:path sport:nationality ;
+    sh:datatype xsd:string ;
+  ] .
+
 sport:CompetitionShape
   a sh:NodeShape ;
   sh:targetClass sport:Competition ;
-  sh:closed true;
+  # sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
   sh:property [
     sh:path sport:sport ;
@@ -263,6 +298,58 @@ sport:CompetitionPhaseShape
     sh:class sport:Competition
   ] .
 
+sport:CompetitorParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:CompetitorParticipation ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties inherited from sport:Participation
+  # TODO decide whether we have sport:eventOutcome or spstat:eventOutcome
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path spstat:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  #sh:property [
+  #  sh:path sport:participationBy ;
+  #  sh:class sport:Agent ;
+  #] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:role ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
+    sh:flags   "i"                                              # Ignore case
+  ] .
+ 
 sport:EventShape rdf:type sh:NodeShape ;
   sh:targetClass sport:Event ;
   sh:closed true ;
@@ -320,41 +407,24 @@ sport:EventShape rdf:type sh:NodeShape ;
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
-    sh:path sport:subEvent ;
+    sh:path sport:parent ;
     sh:class sport:Event
   ] .
 
-#sport:ParticipatableThingShape
-#  sh:targetClass sport:ParticipatableThing ;
-#  sh:closed true ;
-#  sh:ignoredProperties ( rdf:type rdfs:label ) ;
-#  sh:property [
-#    sh:path sport:sport ;
-#    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
-#    sh:flags   "i"  # Ignore case
-#  ] ;
-#  sh:property [
-#    sh:path sport:parent ;
-#    sh:class sport:ParticipatableThing
-#  ] .
-
-sport:ParticipationShape
-  sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;
+sport:GoverningBodyShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
+  sh:targetClass sport:GoverningBody ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:IndividualShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Individual ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # Properties defined on Individual
   sh:property [
-    sh:path sport:scoreUnits ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
-    sh:flags   "i"                                              # Ignore case
-  ] ;
-  sh:property [
-    sh:path sport:eventOutcome ;
-    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
-    sh:flags   "i"                                               # Ignore case
-  ] ;
-  sh:property [
-    sh:path sport:positionEvent ;
-    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
-    sh:flags   "i"                                               # Ignore case
+    sh:path sport:nationality ;
+    sh:datatype xsd:string ;
   ] .
 
 sport:IndividualMembershipShape
@@ -362,9 +432,536 @@ sport:IndividualMembershipShape
   a sh:NodeShape ;
   sh:property [
     sh:path sport:positionRegular ;
-    # we really should check for individual vocabularies...
-    # sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos)/" ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|sphorpos)/" ;
+    # TODO we really should check for individual vocabularies...
     # but some example data fails (needs to be fixed) so let's cheat for now
-    sh:pattern "^http://cv.iptc.org/newscodes/" ;
+    # sh:pattern "^http://cv.iptc.org/newscodes/" ;
     sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:uniformNumber ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:IndividualParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties defined on IndividualParticipation
+  sh:property [
+    sh:path sport:playerStatus ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spplayerstatus/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  # properties defined on CompetitorParticipation
+  sh:property [
+    sh:path sport:playerStatus ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spplayerstatus/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  # properties defined on Participation
+  # TODO decide whether we have sport:eventOutcome or spstat:eventOutcome
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path spstat:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Athlete ;
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:role ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
+    sh:flags   "i"                                              # Ignore case
+  ] ;
+  # properties defined on CompetitorParticipation by core statistics ontology
+  sh:property [
+    sh:path spstat:eventsStarted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:rating ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:timePlayedTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  # properties defined on CompetitorParticipation by soccer ontology
+  sh:property [
+    sh:path spsocstat:aerialsWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:assistsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:catchesPunches ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cautionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:clearancesSuccessful ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cornerKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:crosses18Yard ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:crosses18YardPlus ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:ejectionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:freeKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO remove typo (from SportsML)
+  sh:property [
+    sh:path spsocstat:foulsCommited ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsCommitted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsSuffered ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsAgainstTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsHead ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsLeftFoot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsOwn ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsPenaltyShotAllowed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsRightFoot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:interceptions ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesComplete ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesCompleteLong ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesComplete3rdFinal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesIncomplete ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:saves ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:savePercentage ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlockedCross ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlockedOutfielder ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOffGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOnGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotAllowed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotMissed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotScored ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shutouts ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesLost ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:touches ;
+    sh:datatype xsd:string ;
+  ] ;
+  # properties defined on CompetitorParticipation by esports ontology
+  sh:property [
+    sh:path spespstat:ADR ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:assist ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:deaths ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:FKdiff ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:flashassist ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:headshot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:KAST ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:kills ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:MembershipShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Membership ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:OfficialShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Official ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:OfficialParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:OfficialParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Official
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
+  ] .
+
+sport:ParticipatableThingShape
+  sh:targetClass sport:ParticipatableThing ;
+  # sh:closed true ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:parent ;
+    sh:class sport:ParticipatableThing
+  ] .
+
+sport:ParticipationShape
+  sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path spstat:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  #sh:property [
+  #  sh:path sport:participationBy ;
+  #  sh:class sport:Agent ;
+  #] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
+    sh:flags   "i"                                              # Ignore case
+  ] .
+ 
+sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:ParticipationSplit ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:SiteShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Site ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:TeamShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Team ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:TeamParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:TeamParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:alignment ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO decide whether we want sport:eventOutcome or spstat:eventOutcome
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path spstat:eventOutcome ;
+    sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Team ;
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:eventsPlayed ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO should be sport:score, still some instances of spstat:score
+  sh:property [
+    sh:path spstat:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:scoreOpposing ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:seriesScore ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:seriesScoreOpposing ;
+    sh:datatype xsd:string ;
+  ] ;
+  # soccer stats properties
+  sh:property [
+    sh:path spsocstat:cautionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:clearancesSuccessful ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cornerKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO remove typo (from SportsML)
+  sh:property [
+    sh:path spsocstat:foulsCommited ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsCommitted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:freeKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsAgainstTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:interceptions ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:lineFormation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:offsides ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlocked ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOffGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOnGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shutouts ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesLost ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWonPercentage ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:timeOfPossessionPercentage ;
+    sh:datatype xsd:string ;
   ] .
