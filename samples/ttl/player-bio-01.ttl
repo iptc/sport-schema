@@ -16,32 +16,60 @@
 @prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.com/Membership/FLAnhl-p10039>
-        rdf:type               sport:IndividualMembership ;
-        rdfs:label             "Joe Thornton membership of Florida Panthers" ;
-        sport:member           <http://example.com/Athlete/p10039> ;
-        sport:membershipOf     <http://example.com/Team/FLAnhl> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spichpos/center> ;
-        sport:uniformNumber    "19" .
+<http://example.com/Team/l.nhl.com-SJ>
+        rdf:type    sport:Team ;
+        rdfs:label  "San Jose Sharks" .
+
+<http://example.com/Membership/l.nhl.com-FLA-p10039-20210813>
+        rdf:type                sport:IndividualMembership ;
+        rdfs:label              "Joe Thornton membership of Florida Panthers" ;
+        sport:member            <http://example.com/Athlete/p10039> ;
+        sport:membershipOf      <http://example.com/Team/l.nhl.com-FLA> ;
+        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
+        sport:positionRegular   <http://cv.iptc.org/newscodes/spichpos/center> ;
+        sport:startDate         "2021-08-13"^^xsd:date ;
+        sport:uniformNumber     "19" .
+
+<http://example.com/Membership/l.nhl.com-SJ-p10039-20051130>
+        rdf:type                sport:IndividualMembership ;
+        rdfs:label              "Joe Thornton membership of San Jose Sharks" ;
+        sport:endDate           "2020-10-06"^^xsd:date ;
+        sport:member            <http://example.com/Athlete/p10039> ;
+        sport:membershipOf      <http://example.com/Team/l.nhl.com-SJ> ;
+        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:startDate         "2005-11-30"^^xsd:date .
 
 <http://example.com/Team/l.nhl.com-BOS>
         rdf:type    sport:Team ;
-        rdfs:label  "" .
-
-<http://example.com/Membership/l.nhl.com-BOS-p10039>
-        rdf:type                sport:IndividualMembership ;
-        rdfs:label              "Joe Thornton membership of " ;
-        sport:endDate           "2005-11-30"^^xsd:date ;
-        sport:member            <http://example.com/Athlete/p10039> ;
-        sport:membershipOf      <http://example.com/Team/l.nhl.com-BOS> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:startDate         "1997-06-21"^^xsd:date .
+        rdfs:label  "Boston Bruins" .
 
 <http://example.com/Athlete/p10039>
         rdf:type           sport:Athlete ;
         rdfs:label         "Joe Thornton" ;
         sport:dateOfBirth  "1979-07-02"^^xsd:date .
 
-<http://example.com/Team/FLAnhl>
+<http://example.com/Membership/l.nhl.com-BOS-p10039-19970621>
+        rdf:type                sport:IndividualMembership ;
+        rdfs:label              "Joe Thornton membership of Boston Bruins" ;
+        sport:endDate           "2005-11-30"^^xsd:date ;
+        sport:member            <http://example.com/Athlete/p10039> ;
+        sport:membershipOf      <http://example.com/Team/l.nhl.com-BOS> ;
+        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:startDate         "1997-06-21"^^xsd:date .
+
+<http://example.com/Team/l.nhl.com-TOR>
+        rdf:type    sport:Team ;
+        rdfs:label  "Toronto Maple Leafs" .
+
+<http://example.com/Team/l.nhl.com-FLA>
         rdf:type    sport:Team ;
         rdfs:label  "Florida Panthers" .
+
+<http://example.com/Membership/l.nhl.com-TOR-p10039-20201006>
+        rdf:type                sport:IndividualMembership ;
+        rdfs:label              "Joe Thornton membership of Toronto Maple Leafs" ;
+        sport:endDate           "2021-05-31"^^xsd:date ;
+        sport:member            <http://example.com/Athlete/p10039> ;
+        sport:membershipOf      <http://example.com/Team/l.nhl.com-TOR> ;
+        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:startDate         "2020-10-06"^^xsd:date .
