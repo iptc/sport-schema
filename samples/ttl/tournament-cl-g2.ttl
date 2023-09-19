@@ -5,7 +5,7 @@
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
 @prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
 @prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
@@ -22,16 +22,16 @@
         sport:member        <http://example.com/Athlete/p.149828> ;
         sport:membershipOf  <http://example.com/Team/TFBB255> .
 
+<http://example.com/Participation/EFBO782791-p.42995>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.42995> participation in Event EFBO782791" ;
+        sport:participationBy  <http://example.com/Athlete/p.42995> .
+
 <http://example.com/Membership/TFBB1341-p.19627>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.19627> membership of Zenit St Petersburg" ;
         sport:member        <http://example.com/Athlete/p.19627> ;
         sport:membershipOf  <http://example.com/Team/TFBB1341> .
-
-<http://example.com/Participation/EFBO782791-p.42995>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.42995> participation in Event EFBO782791" ;
-        sport:participationBy  <http://example.com/Athlete/p.42995> .
 
 <http://example.com/Participation/EFBO782739-p.19927>
         rdf:type               sport:IndividualParticipation ;
@@ -56,6 +56,10 @@
         sport:member        <http://example.com/Athlete/p.36903> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
 
+<http://example.com/Athlete/p.59046>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.59046>" .
+
 <http://example.com/Participation/EFBO782782-p.80582>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.80582> participation in Event EFBO782782" ;
@@ -69,6 +73,18 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB6128> ;
         sport:score            "2" .
+
+<http://example.com/Athlete/p.57134>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.57134>" .
+
+<http://example.com/Athlete/p.63623>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.63623>" .
+
+<http://example.com/Athlete/p.18018>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18018>" .
 
 <http://example.com/Membership/TFBB156-p.3508>
         rdf:type            sport:IndividualMembership ;
@@ -164,6 +180,20 @@
         rdfs:label             "Player <http://example.com/Athlete/p.20312> participation in Event EFBO800858" ;
         sport:participationBy  <http://example.com/Athlete/p.20312> .
 
+<http://example.com/Event/EFBO782736>
+        rdf:type                       sport:Event ;
+        rdfs:label                     "Event EFBO782736" ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/UEFACL20142014S1R8> ;
+        sport:eventOutcomeType         speventoutcometype:regular ;
+        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:location                 <http://example.com/Site/VFBB2710> ;
+        sport:participation            <http://example.com/Participation/EFBO782736-p.14938> , <http://example.com/Participation/EFBO782736-TFBB201> , <http://example.com/Participation/EFBO782736-TFBB174> , <http://example.com/Participation/EFBO782736-p.92500> , <http://example.com/Participation/EFBO782736-p.102578> ;
+        sport:startDateTime            "2014-10-21T19:45:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.18221>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18221>" .
+
 <http://example.com/Membership/TFBB481-p.167197>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.167197> membership of FC Basel" ;
@@ -175,6 +205,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.111732> participation in Event EFBO782725" ;
         sport:participationBy  <http://example.com/Athlete/p.111732> .
 
+<http://example.com/Athlete/p.19624>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19624>" .
+
 <http://example.com/Participation/EFBO782775-TFBB3>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Arsenal participation in Event EFBO782775" ;
@@ -184,15 +218,9 @@
         sport:participationBy  <http://example.com/Team/TFBB3> ;
         sport:score            "2" .
 
-<http://example.com/Event/EFBO782736>
-        rdf:type                       sport:Event ;
-        rdfs:label                     "Event EFBO782736" ;
-        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/UEFACL20142014S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:location                 <http://example.com/Site/VFBB2710> ;
-        sport:participation            <http://example.com/Participation/EFBO782736-p.14938> , <http://example.com/Participation/EFBO782736-TFBB201> , <http://example.com/Participation/EFBO782736-TFBB174> , <http://example.com/Participation/EFBO782736-p.92500> , <http://example.com/Participation/EFBO782736-p.102578> ;
-        sport:startDateTime            "2014-10-21T19:45:00+01:00"^^xsd:dateTime .
+<http://example.com/Athlete/p.50523>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.50523>" .
 
 <http://example.com/Team/TFBB1341>
         rdf:type    sport:Team ;
@@ -240,6 +268,14 @@
         sport:member        <http://example.com/Athlete/p.18221> ;
         sport:membershipOf  <http://example.com/Team/TFBB178> .
 
+<http://example.com/Athlete/p.19891>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19891>" .
+
+<http://example.com/Athlete/p.56979>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.56979>" .
+
 <http://example.com/Event/EFBO782750>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782750" ;
@@ -249,6 +285,14 @@
         sport:location                 <http://example.com/Site/VFBB2493> ;
         sport:participation            <http://example.com/Participation/EFBO782750-p.85971> , <http://example.com/Participation/EFBO782750-TFBB164> , <http://example.com/Participation/EFBO782750-TFBB1341> , <http://example.com/Participation/EFBO782750-p.57134> ;
         sport:startDateTime            "2014-11-04T17:00:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.42564>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42564>" .
+
+<http://example.com/Athlete/p.19568>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19568>" .
 
 <http://example.com/Participation/EFBO782702-p.19624>
         rdf:type               sport:IndividualParticipation ;
@@ -322,6 +366,10 @@
         sport:member        <http://example.com/Athlete/p.28340> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
 
+<http://example.com/Athlete/p.50656>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.50656>" .
+
 <http://example.com/Participation/EFBO782741-TFBB164>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Bayer 04 Leverkusen participation in Event EFBO782741" ;
@@ -342,6 +390,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.53392> membership of Chelsea" ;
         sport:member        <http://example.com/Athlete/p.53392> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
+
+<http://example.com/Athlete/p.17347>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.17347>" .
 
 <http://example.com/Participation/EFBO788109-p.20312>
         rdf:type               sport:IndividualParticipation ;
@@ -380,6 +432,10 @@
         sport:participationBy  <http://example.com/Team/TFBB14> ;
         sport:score            "2" .
 
+<http://example.com/Athlete/p.41792>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41792>" .
+
 <http://example.com/Participation/EFBO782779-TFBB14>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Liverpool participation in Event EFBO782779" ;
@@ -403,6 +459,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.55634> participation in Event EFBO799723" ;
         sport:participationBy  <http://example.com/Athlete/p.55634> .
 
+<http://example.com/Athlete/p.15403>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.15403>" .
+
 <http://example.com/Participation/EFBO782743-TFBB157>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Borussia Dortmund participation in Event EFBO782743" ;
@@ -412,6 +472,14 @@
         sport:participationBy  <http://example.com/Team/TFBB157> ;
         sport:score            "4" .
 
+<http://example.com/Athlete/p.38419>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.38419>" .
+
+<http://example.com/Athlete/p.62398>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.62398>" .
+
 <http://example.com/Participation/EFBO782747-TFBB6128>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Ludogorets Razgrad participation in Event EFBO782747" ;
@@ -420,6 +488,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB6128> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.69600>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.69600>" .
 
 <http://example.com/Event/EFBO782749>
         rdf:type                       sport:Event ;
@@ -447,6 +519,10 @@
         rdfs:label                  "Champions League Champions League" ;
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/elimination> ;
         sport:phaseInCompetition    <http://example.com/Competition/UEFACL2014> .
+
+<http://example.com/Athlete/p.39473>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39473>" .
 
 <http://example.com/Event/EFBO782717>
         rdf:type                       sport:Event ;
@@ -476,6 +552,10 @@
         sport:participationBy  <http://example.com/Team/TFBB186> ;
         sport:score            "4" .
 
+<http://example.com/Athlete/p.153816>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.153816>" .
+
 <http://example.com/Event/EFBO782763>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782763" ;
@@ -485,6 +565,14 @@
         sport:location                 <http://example.com/Site/VFBB2861> ;
         sport:participation            <http://example.com/Participation/EFBO782763-TFBB479> , <http://example.com/Participation/EFBO782763-TFBB178> , <http://example.com/Participation/EFBO782763-p.39336> , <http://example.com/Participation/EFBO782763-p.19054> ;
         sport:startDateTime            "2014-11-25T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.86169>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.86169>" .
+
+<http://example.com/Athlete/p.39441>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39441>" .
 
 <http://example.com/Participation/EFBO782707-p.40720>
         rdf:type               sport:IndividualParticipation ;
@@ -520,6 +608,10 @@
         sport:participation            <http://example.com/Participation/EFBO782731-TFBB149> , <http://example.com/Participation/EFBO782731-p.40720> , <http://example.com/Participation/EFBO782731-TFBB479> ;
         sport:startDateTime            "2014-10-21T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.53645>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.53645>" .
+
 <http://example.com/Participation/EFBO788111-p.40691>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.40691> participation in Event EFBO788111" ;
@@ -536,6 +628,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.41189> membership of Zenit St Petersburg" ;
         sport:member        <http://example.com/Athlete/p.41189> ;
         sport:membershipOf  <http://example.com/Team/TFBB1341> .
+
+<http://example.com/Athlete/p.90714>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.90714>" .
 
 <http://example.com/Participation/EFBO782782-TFBB146>
         rdf:type               sport:TeamParticipation ;
@@ -566,12 +662,6 @@
         rdfs:label             "Player <http://example.com/Athlete/p.51310> participation in Event EFBO788113" ;
         sport:participationBy  <http://example.com/Athlete/p.51310> .
 
-<http://example.com/Membership/TFBB202-p.40908>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/p.40908> membership of Olympiakos" ;
-        sport:member        <http://example.com/Athlete/p.40908> ;
-        sport:membershipOf  <http://example.com/Team/TFBB202> .
-
 <http://example.com/Participation/EFBO782718-TFBB8>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Chelsea participation in Event EFBO782718" ;
@@ -580,6 +670,12 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB8> ;
         sport:score            "1" .
+
+<http://example.com/Membership/TFBB202-p.40908>
+        rdf:type            sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/p.40908> membership of Olympiakos" ;
+        sport:member        <http://example.com/Athlete/p.40908> ;
+        sport:membershipOf  <http://example.com/Team/TFBB202> .
 
 <http://example.com/Membership/TFBB43-p.28554>
         rdf:type            sport:IndividualMembership ;
@@ -612,23 +708,27 @@
         sport:participationBy  <http://example.com/Team/TFBB251> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.19927>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19927>" .
+
 <http://example.com/Membership/TFBB175-p.28160>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.28160> membership of Atlético de Madrid" ;
         sport:member        <http://example.com/Athlete/p.28160> ;
         sport:membershipOf  <http://example.com/Team/TFBB175> .
 
-<http://example.com/Membership/TFBB201-p.86169>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/p.86169> membership of FC Porto" ;
-        sport:member        <http://example.com/Athlete/p.86169> ;
-        sport:membershipOf  <http://example.com/Team/TFBB201> .
-
 <http://example.com/Membership/TFBB3033-p.101967>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.101967> membership of NK Maribor" ;
         sport:member        <http://example.com/Athlete/p.101967> ;
         sport:membershipOf  <http://example.com/Team/TFBB3033> .
+
+<http://example.com/Membership/TFBB201-p.86169>
+        rdf:type            sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/p.86169> membership of FC Porto" ;
+        sport:member        <http://example.com/Athlete/p.86169> ;
+        sport:membershipOf  <http://example.com/Team/TFBB201> .
 
 <http://example.com/Participation/EFBO782766-TFBB255>
         rdf:type               sport:TeamParticipation ;
@@ -638,6 +738,10 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB255> ;
         sport:score            "3" .
+
+<http://example.com/Athlete/p.60025>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.60025>" .
 
 <http://example.com/Membership/TFBB993-p.26806>
         rdf:type            sport:IndividualMembership ;
@@ -654,6 +758,10 @@
         sport:participationBy  <http://example.com/Team/TFBB149> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.95194>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.95194>" .
+
 <http://example.com/Participation/EFBO782754-p.14664>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.14664> participation in Event EFBO782754" ;
@@ -668,6 +776,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.42786> participation in Event EFBO788106" ;
         sport:participationBy  <http://example.com/Athlete/p.42786> .
+
+<http://example.com/Athlete/p.77064>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.77064>" .
 
 <http://example.com/Participation/EFBO782714-p.37572>
         rdf:type               sport:IndividualParticipation ;
@@ -821,6 +933,10 @@
         sport:participationBy  <http://example.com/Team/TFBB208> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.26806>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.26806>" .
+
 <http://example.com/Participation/EFBO782726-TFBB146>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Monaco participation in Event EFBO782726" ;
@@ -923,6 +1039,10 @@
         sport:participation            <http://example.com/Participation/EFBO788108-p.10233> , <http://example.com/Participation/EFBO788108-TFBB175> , <http://example.com/Participation/EFBO788108-p.76650> , <http://example.com/Participation/EFBO788108-p.19560> , <http://example.com/Participation/EFBO788108-p.28160> , <http://example.com/Participation/EFBO788108-TFBB164> , <http://example.com/Participation/EFBO788108-p.14402> ;
         sport:startDateTime            "2015-03-17T19:45:00+00:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.12303>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.12303>" .
+
 <http://example.com/Participation/EFBO782766-p.149828>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.149828> participation in Event EFBO782766" ;
@@ -933,6 +1053,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.50635> membership of Ludogorets Razgrad" ;
         sport:member        <http://example.com/Athlete/p.50635> ;
         sport:membershipOf  <http://example.com/Team/TFBB6128> .
+
+<http://example.com/Athlete/p.16141>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.16141>" .
 
 <http://example.com/Membership/TFBB174-p.42995>
         rdf:type            sport:IndividualMembership ;
@@ -954,6 +1078,10 @@
         sport:participationBy  <http://example.com/Team/TFBB178> ;
         sport:score            "2" .
 
+<http://example.com/Athlete/p.41270>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41270>" .
+
 <http://example.com/Membership/TFBB146-p.88754>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.88754> membership of Monaco" ;
@@ -969,6 +1097,16 @@
         sport:location                 <http://example.com/Site/VFBB35> ;
         sport:participation            <http://example.com/Participation/EFBO782789-p.66842> , <http://example.com/Participation/EFBO782789-TFBB255> , <http://example.com/Participation/EFBO782789-TFBB8> , <http://example.com/Participation/EFBO782789-p.17878> , <http://example.com/Participation/EFBO782789-p.116132> , <http://example.com/Participation/EFBO782789-p.28495> ;
         sport:startDateTime            "2014-12-10T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Event/EFBO782757>
+        rdf:type                       sport:Event ;
+        rdfs:label                     "Event EFBO782757" ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/UEFACL20142014S1R7> ;
+        sport:eventOutcomeType         speventoutcometype:regular ;
+        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:location                 <http://example.com/Site/VFBB3328> ;
+        sport:participation            <http://example.com/Participation/EFBO782757-TFBB3033> , <http://example.com/Participation/EFBO782757-p.67378> , <http://example.com/Participation/EFBO782757-TFBB8> , <http://example.com/Participation/EFBO782757-p.62398> ;
+        sport:startDateTime            "2014-11-05T19:45:00+00:00"^^xsd:dateTime .
 
 <http://example.com/Membership/TFBB157-p.39476>
         rdf:type            sport:IndividualMembership ;
@@ -989,24 +1127,34 @@
         rdf:type    sport:Site ;
         rdfs:label  "Vasil Levski National Stadium" .
 
-<http://example.com/Event/EFBO782757>
-        rdf:type                       sport:Event ;
-        rdfs:label                     "Event EFBO782757" ;
-        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/UEFACL20142014S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
-        sport:location                 <http://example.com/Site/VFBB3328> ;
-        sport:participation            <http://example.com/Participation/EFBO782757-TFBB3033> , <http://example.com/Participation/EFBO782757-p.67378> , <http://example.com/Participation/EFBO782757-TFBB8> , <http://example.com/Participation/EFBO782757-p.62398> ;
-        sport:startDateTime            "2014-11-05T19:45:00+00:00"^^xsd:dateTime .
+<http://example.com/Athlete/p.17733>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.17733>" .
 
 <http://example.com/Team/TFBB241>
         rdf:type    sport:Team ;
         rdfs:label  "RSC Anderlecht" .
 
+<http://example.com/Athlete/p.28160>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28160>" .
+
+<http://example.com/Athlete/p.40484>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40484>" .
+
+<http://example.com/Athlete/p.106837>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.106837>" .
+
 <http://example.com/Participation/EFBO782724-p.14937>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.14937> participation in Event EFBO782724" ;
         sport:participationBy  <http://example.com/Athlete/p.14937> .
+
+<http://example.com/Athlete/p.80149>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.80149>" .
 
 <http://example.com/Membership/TFBB8-p.38419>
         rdf:type            sport:IndividualMembership ;
@@ -1020,12 +1168,6 @@
         sport:member        <http://example.com/Athlete/p.62398> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
 
-<http://example.com/Membership/TFBB2155-p.157749>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/p.157749> membership of BATE Borisov" ;
-        sport:member        <http://example.com/Athlete/p.157749> ;
-        sport:membershipOf  <http://example.com/Team/TFBB2155> .
-
 <http://example.com/Participation/EFBO782717-TFBB167>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "FC Schalke 04 participation in Event EFBO782717" ;
@@ -1034,6 +1176,12 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB167> ;
         sport:score            "1" .
+
+<http://example.com/Membership/TFBB2155-p.157749>
+        rdf:type            sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/p.157749> membership of BATE Borisov" ;
+        sport:member        <http://example.com/Athlete/p.157749> ;
+        sport:membershipOf  <http://example.com/Team/TFBB2155> .
 
 <http://example.com/Event/EFBO782725>
         rdf:type                       sport:Event ;
@@ -1093,6 +1241,10 @@
         sport:location                 <http://example.com/Site/VFBB1349> ;
         sport:participation            <http://example.com/Participation/EFBO799718-TFBB149> , <http://example.com/Participation/EFBO799718-p.61278> , <http://example.com/Participation/EFBO799718-TFBB178> ;
         sport:startDateTime            "2015-04-21T19:45:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.37402>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.37402>" .
 
 <http://example.com/Participation/EFBO782698-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -1167,6 +1319,10 @@
         rdf:type    sport:Team ;
         rdfs:label  "Roma" .
 
+<http://example.com/Athlete/p.42995>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42995>" .
+
 <http://example.com/Membership/TFBB255-p.52294>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.52294> membership of Sporting Lisbon" ;
@@ -1213,6 +1369,10 @@
         sport:participationBy  <http://example.com/Team/TFBB175> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.19760>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19760>" .
+
 <http://example.com/Participation/EFBO782730-p.43274>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.43274> participation in Event EFBO782730" ;
@@ -1245,6 +1405,10 @@
         sport:location                 <http://example.com/Site/VFBB7761> ;
         sport:participation            <http://example.com/Participation/EFBO788103-TFBB156> , <http://example.com/Participation/EFBO788103-TFBB455> ;
         sport:startDateTime            "2015-02-17T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.55634>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.55634>" .
 
 <http://example.com/Participation/EFBO782735-p.47429>
         rdf:type               sport:IndividualParticipation ;
@@ -1303,6 +1467,10 @@
         sport:location                 <http://example.com/Site/VFBB7241> ;
         sport:participation            <http://example.com/Participation/EFBO782784-p.41792> , <http://example.com/Participation/EFBO782784-p.15403> , <http://example.com/Participation/EFBO782784-p.17733> , <http://example.com/Participation/EFBO782784-TFBB208> , <http://example.com/Participation/EFBO782784-TFBB3> ;
         sport:startDateTime            "2014-12-09T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.43573>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.43573>" .
 
 <http://example.com/Event/EFBO782706>
         rdf:type                       sport:Event ;
@@ -1422,6 +1590,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.46197> participation in Event EFBO782737" ;
         sport:participationBy  <http://example.com/Athlete/p.46197> .
 
+<http://example.com/Athlete/p.57195>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.57195>" .
+
 <http://example.com/Participation/EFBO782742-TFBB146>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Monaco participation in Event EFBO782742" ;
@@ -1431,10 +1603,26 @@
         sport:participationBy  <http://example.com/Team/TFBB146> ;
         sport:score            "0" .
 
+<http://example.com/Athlete/p.28495>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28495>" .
+
+<http://example.com/Athlete/p.19054>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19054>" .
+
 <http://example.com/Participation/EFBO782755-p.19054>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.19054> participation in Event EFBO782755" ;
         sport:participationBy  <http://example.com/Athlete/p.19054> .
+
+<http://example.com/Athlete/p.39563>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39563>" .
+
+<http://example.com/Athlete/p.74208>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.74208>" .
 
 <http://example.com/Membership/TFBB215-p.95194>
         rdf:type            sport:IndividualMembership ;
@@ -1493,6 +1681,18 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB174> ;
         sport:score            "2" .
+
+<http://example.com/Athlete/p.47434>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.47434>" .
+
+<http://example.com/Athlete/p.116132>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.116132>" .
+
+<http://example.com/Athlete/p.80711>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.80711>" .
 
 <http://example.com/Participation/EFBO782737-TFBB993>
         rdf:type               sport:TeamParticipation ;
@@ -1595,6 +1795,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.39441> participation in Event EFBO782721" ;
         sport:participationBy  <http://example.com/Athlete/p.39441> .
 
+<http://example.com/Athlete/p.49977>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.49977>" .
+
 <http://example.com/Membership/TFBB8-p.41135>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.41135> membership of Chelsea" ;
@@ -1660,6 +1864,10 @@
         sport:member        <http://example.com/Athlete/p.18573> ;
         sport:membershipOf  <http://example.com/Team/TFBB121> .
 
+<http://example.com/Athlete/p.46528>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.46528>" .
+
 <http://example.com/Participation/EFBO782728-p.57254>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.57254> participation in Event EFBO782728" ;
@@ -1681,6 +1889,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.55634> participation in Event EFBO800859" ;
         sport:participationBy  <http://example.com/Athlete/p.55634> .
 
+<http://example.com/Athlete/p.56492>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.56492>" .
+
 <http://example.com/Participation/EFBO799717-p.14095>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.14095> participation in Event EFBO799717" ;
@@ -1689,6 +1901,10 @@
 <http://example.com/Team/TFBB2155>
         rdf:type    sport:Team ;
         rdfs:label  "BATE Borisov" .
+
+<http://example.com/Athlete/p.116643>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.116643>" .
 
 <http://example.com/Participation/EFBO782769-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -1704,6 +1920,14 @@
         rdfs:label             "Player <http://example.com/Athlete/p.62398> participation in Event EFBO782718" ;
         sport:participationBy  <http://example.com/Athlete/p.62398> .
 
+<http://example.com/Athlete/p.42427>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42427>" .
+
+<http://example.com/Athlete/p.193488>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.193488>" .
+
 <http://example.com/Participation/EFBO782745-TFBB202>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Olympiakos participation in Event EFBO782745" ;
@@ -1717,6 +1941,11 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.3508> participation in Event EFBO799723" ;
         sport:participationBy  <http://example.com/Athlete/p.3508> .
+
+<http://example.com/Participation/EFBO799720-p.14938>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.14938> participation in Event EFBO799720" ;
+        sport:participationBy  <http://example.com/Athlete/p.14938> .
 
 <http://example.com/Membership/TFBB186-p.18759>
         rdf:type            sport:IndividualMembership ;
@@ -1738,11 +1967,6 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.109065> participation in Event EFBO782787" ;
         sport:participationBy  <http://example.com/Athlete/p.109065> .
-
-<http://example.com/Participation/EFBO799720-p.14938>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.14938> participation in Event EFBO799720" ;
-        sport:participationBy  <http://example.com/Athlete/p.14938> .
 
 <http://example.com/Event/EFBO788111>
         rdf:type                       sport:Event ;
@@ -1781,6 +2005,11 @@
         sport:participationBy  <http://example.com/Team/TFBB251> ;
         sport:score            "0" .
 
+<http://example.com/Participation/EFBO782751-p.128389>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.128389> participation in Event EFBO782751" ;
+        sport:participationBy  <http://example.com/Athlete/p.128389> .
+
 <http://example.com/Event/EFBO782778>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782778" ;
@@ -1791,10 +2020,9 @@
         sport:participation            <http://example.com/Participation/EFBO782778-p.40908> , <http://example.com/Participation/EFBO782778-p.19568> , <http://example.com/Participation/EFBO782778-TFBB202> , <http://example.com/Participation/EFBO782778-TFBB993> , <http://example.com/Participation/EFBO782778-p.20121> , <http://example.com/Participation/EFBO782778-p.26806> , <http://example.com/Participation/EFBO782778-p.47434> , <http://example.com/Participation/EFBO782778-p.100588> ;
         sport:startDateTime            "2014-12-09T19:45:00+00:00"^^xsd:dateTime .
 
-<http://example.com/Participation/EFBO782751-p.128389>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.128389> participation in Event EFBO782751" ;
-        sport:participationBy  <http://example.com/Athlete/p.128389> .
+<http://example.com/Athlete/p.41189>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41189>" .
 
 <http://example.com/Participation/EFBO782784-p.15403>
         rdf:type               sport:IndividualParticipation ;
@@ -1815,6 +2043,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.44346> membership of Arsenal" ;
         sport:member        <http://example.com/Athlete/p.44346> ;
         sport:membershipOf  <http://example.com/Team/TFBB3> .
+
+<http://example.com/Athlete/p.3508>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.3508>" .
 
 <http://example.com/Participation/EFBO788112-p.44346>
         rdf:type               sport:IndividualParticipation ;
@@ -1893,6 +2125,24 @@
         sport:participation            <http://example.com/Participation/EFBO782714-TFBB43> , <http://example.com/Participation/EFBO782714-TFBB121> , <http://example.com/Participation/EFBO782714-p.4177> , <http://example.com/Participation/EFBO782714-p.37572> ;
         sport:startDateTime            "2014-09-30T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Participation/EFBO800858-p.88482>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.88482> participation in Event EFBO800858" ;
+        sport:participationBy  <http://example.com/Athlete/p.88482> .
+
+<http://example.com/Athlete/p.40694>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40694>" .
+
+<http://example.com/Participation/EFBO782789-TFBB255>
+        rdf:type               sport:TeamParticipation ;
+        rdfs:label             "Sporting Lisbon participation in Event EFBO782789" ;
+        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:scoreOpposing   "3" ;
+        sport:alignment        "away" ;
+        sport:participationBy  <http://example.com/Team/TFBB255> ;
+        sport:score            "1" .
+
 <http://example.com/Membership/TFBB202-p.20121>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.20121> membership of Olympiakos" ;
@@ -1904,10 +2154,9 @@
         rdfs:label             "Player <http://example.com/Athlete/p.40908> participation in Event EFBO782778" ;
         sport:participationBy  <http://example.com/Athlete/p.40908> .
 
-<http://example.com/Participation/EFBO800858-p.88482>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.88482> participation in Event EFBO800858" ;
-        sport:participationBy  <http://example.com/Athlete/p.88482> .
+<http://example.com/Athlete/p.130773>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.130773>" .
 
 <http://example.com/Event/EFBO782760>
         rdf:type                       sport:Event ;
@@ -1919,14 +2168,9 @@
         sport:participation            <http://example.com/Participation/EFBO782760-p.52304> , <http://example.com/Participation/EFBO782760-TFBB2155> , <http://example.com/Participation/EFBO782760-p.47429> , <http://example.com/Participation/EFBO782760-TFBB455> , <http://example.com/Participation/EFBO782760-p.17347> ;
         sport:startDateTime            "2014-11-05T19:45:00+00:00"^^xsd:dateTime .
 
-<http://example.com/Participation/EFBO782789-TFBB255>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Sporting Lisbon participation in Event EFBO782789" ;
-        spstat:eventOutcome    speventoutcome:loss ;
-        spstat:scoreOpposing   "3" ;
-        sport:alignment        "away" ;
-        sport:participationBy  <http://example.com/Team/TFBB255> ;
-        sport:score            "1" .
+<http://example.com/Athlete/p.66842>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.66842>" .
 
 <http://example.com/Team/TFBB128>
         rdf:type    sport:Team ;
@@ -1954,6 +2198,10 @@
         rdf:type    sport:Team ;
         rdfs:label  "Athletic Club" .
 
+<http://example.com/Athlete/p.20121>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.20121>" .
+
 <http://example.com/Membership/TFBB202-p.81025>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.81025> membership of Olympiakos" ;
@@ -1970,6 +2218,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.4177> membership of Roma" ;
         sport:member        <http://example.com/Athlete/p.4177> ;
         sport:membershipOf  <http://example.com/Team/TFBB121> .
+
+<http://example.com/Athlete/p.39336>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39336>" .
 
 <http://example.com/Participation/EFBO799715-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -1988,6 +2240,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB455> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.119718>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.119718>" .
 
 <http://example.com/Participation/EFBO782717-p.14941>
         rdf:type               sport:IndividualParticipation ;
@@ -2028,6 +2284,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.90714> membership of CSKA Moscow" ;
         sport:member        <http://example.com/Athlete/p.90714> ;
         sport:membershipOf  <http://example.com/Team/TFBB1340> .
+
+<http://example.com/Athlete/p.19560>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19560>" .
 
 <http://example.com/Participation/EFBO782768-p.42995>
         rdf:type               sport:IndividualParticipation ;
@@ -2163,16 +2423,6 @@
         sport:participationBy  <http://example.com/Team/TFBB178> ;
         sport:score            "3" .
 
-<http://example.com/Participation/EFBO782787-p.19891>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.19891> participation in Event EFBO782787" ;
-        sport:participationBy  <http://example.com/Athlete/p.19891> .
-
-<http://example.com/Participation/EFBO782736-p.14938>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.14938> participation in Event EFBO782736" ;
-        sport:participationBy  <http://example.com/Athlete/p.14938> .
-
 <http://example.com/Event/EFBO782759>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782759" ;
@@ -2182,6 +2432,16 @@
         sport:location                 <http://example.com/Site/VFBB8973> ;
         sport:participation            <http://example.com/Participation/EFBO782759-TFBB174> , <http://example.com/Participation/EFBO782759-TFBB201> , <http://example.com/Participation/EFBO782759-p.51310> , <http://example.com/Participation/EFBO782759-p.77064> ;
         sport:startDateTime            "2014-11-05T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Participation/EFBO782787-p.19891>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.19891> participation in Event EFBO782787" ;
+        sport:participationBy  <http://example.com/Athlete/p.19891> .
+
+<http://example.com/Participation/EFBO782736-p.14938>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.14938> participation in Event EFBO782736" ;
+        sport:participationBy  <http://example.com/Athlete/p.14938> .
 
 <http://example.com/Membership/TFBB3-p.50175>
         rdf:type            sport:IndividualMembership ;
@@ -2207,6 +2467,10 @@
         sport:participationBy  <http://example.com/Team/TFBB251> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.54694>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.54694>" .
+
 <http://example.com/Participation/EFBO782730-p.69600>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.69600> participation in Event EFBO782730" ;
@@ -2228,6 +2492,10 @@
         sport:participation            <http://example.com/Participation/EFBO782727-p.50175> , <http://example.com/Participation/EFBO782727-p.37265> , <http://example.com/Participation/EFBO782727-TFBB3> , <http://example.com/Participation/EFBO782727-TFBB208> , <http://example.com/Participation/EFBO782727-p.39931> ;
         sport:startDateTime            "2014-10-01T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.18686>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18686>" .
+
 <http://example.com/Participation/EFBO782772-p.40269>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.40269> participation in Event EFBO782772" ;
@@ -2242,6 +2510,10 @@
         sport:location                 <http://example.com/Site/VFBB1368> ;
         sport:participation            <http://example.com/Participation/EFBO782773-TFBB164> , <http://example.com/Participation/EFBO782773-p.121117> , <http://example.com/Participation/EFBO782773-TFBB146> ;
         sport:startDateTime            "2014-11-26T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.49266>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.49266>" .
 
 <http://example.com/Membership/TFBB3033-p.67378>
         rdf:type            sport:IndividualMembership ;
@@ -2269,6 +2541,19 @@
         sport:member        <http://example.com/Athlete/p.141020> ;
         sport:membershipOf  <http://example.com/Team/TFBB167> .
 
+<http://example.com/Participation/EFBO782734-p.42564>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.42564> participation in Event EFBO782734" ;
+        sport:participationBy  <http://example.com/Athlete/p.42564> .
+
+<http://example.com/CompetitionPhase/UEFACL20142014S1R1>
+        rdf:type                    sport:CompetitionPhase ;
+        rdfs:label                  "Champions League Champions League" ;
+        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
+        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:parent                <http://example.com/CompetitionPhase/UEFACL20142014S1> ;
+        sport:phaseInCompetition    <http://example.com/Competition/UEFACL2014> .
+
 <http://example.com/Event/EFBO782741>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782741" ;
@@ -2279,19 +2564,6 @@
         sport:participation            <http://example.com/Participation/EFBO782741-TFBB164> , <http://example.com/Participation/EFBO782741-TFBB1341> , <http://example.com/Participation/EFBO782741-p.49012> , <http://example.com/Participation/EFBO782741-p.80149> ;
         sport:startDateTime            "2014-10-22T19:45:00+01:00"^^xsd:dateTime .
 
-<http://example.com/CompetitionPhase/UEFACL20142014S1R1>
-        rdf:type                    sport:CompetitionPhase ;
-        rdfs:label                  "Champions League Champions League" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
-        sport:parent                <http://example.com/CompetitionPhase/UEFACL20142014S1> ;
-        sport:phaseInCompetition    <http://example.com/Competition/UEFACL2014> .
-
-<http://example.com/Participation/EFBO782734-p.42564>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.42564> participation in Event EFBO782734" ;
-        sport:participationBy  <http://example.com/Athlete/p.42564> .
-
 <http://example.com/Participation/EFBO782738-TFBB128>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Juventus participation in Event EFBO782738" ;
@@ -2300,6 +2572,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB128> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.61558>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.61558>" .
 
 <http://example.com/Participation/EFBO782752-p.39476>
         rdf:type               sport:IndividualParticipation ;
@@ -2375,6 +2651,10 @@
         sport:participationBy  <http://example.com/Team/TFBB8> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.4177>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.4177>" .
+
 <http://example.com/Participation/EFBO788102-TFBB167>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "FC Schalke 04 participation in Event EFBO788102" ;
@@ -2392,6 +2672,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB157> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.53392>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.53392>" .
 
 <http://example.com/Membership/TFBB202-p.52748>
         rdf:type            sport:IndividualMembership ;
@@ -2652,6 +2936,10 @@
         sport:member        <http://example.com/Athlete/p.46528> ;
         sport:membershipOf  <http://example.com/Team/TFBB208> .
 
+<http://example.com/Athlete/p.100180>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.100180>" .
+
 <http://example.com/Participation/EFBO782743-p.57254>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.57254> participation in Event EFBO782743" ;
@@ -2756,6 +3044,10 @@
         sport:participationBy  <http://example.com/Team/TFBB208> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.182156>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.182156>" .
+
 <http://example.com/Event/EFBO800865>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO800865" ;
@@ -2799,6 +3091,14 @@
         rdfs:label             "Player <http://example.com/Athlete/p.46197> participation in Event EFBO782698" ;
         sport:participationBy  <http://example.com/Athlete/p.46197> .
 
+<http://example.com/Athlete/p.41921>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41921>" .
+
+<http://example.com/Athlete/p.20658>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.20658>" .
+
 <http://example.com/Event/EFBO788100>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO788100" ;
@@ -2809,9 +3109,10 @@
         sport:participation            <http://example.com/Participation/EFBO788100-p.111732> , <http://example.com/Participation/EFBO788100-TFBB175> , <http://example.com/Participation/EFBO788100-TFBB164> ;
         sport:startDateTime            "2015-02-25T19:45:00+00:00"^^xsd:dateTime .
 
-<http://example.com/Team/TFBB251>
-        rdf:type    sport:Team ;
-        rdfs:label  "Benfica" .
+<http://example.com/Participation/EFBO800860-p.14937>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.14937> participation in Event EFBO800860" ;
+        sport:participationBy  <http://example.com/Athlete/p.14937> .
 
 <http://example.com/Event/EFBO782767>
         rdf:type                       sport:Event ;
@@ -2823,14 +3124,13 @@
         sport:participation            <http://example.com/Participation/EFBO782767-p.86169> , <http://example.com/Participation/EFBO782767-p.102578> , <http://example.com/Participation/EFBO782767-TFBB2155> , <http://example.com/Participation/EFBO782767-TFBB201> , <http://example.com/Participation/EFBO782767-p.77064> ;
         sport:startDateTime            "2014-11-25T17:00:00+00:00"^^xsd:dateTime .
 
+<http://example.com/Team/TFBB251>
+        rdf:type    sport:Team ;
+        rdfs:label  "Benfica" .
+
 <http://example.com/Site/VFBB2208>
         rdf:type    sport:Site ;
         rdfs:label  "St Jakob-Park" .
-
-<http://example.com/Participation/EFBO800860-p.14937>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.14937> participation in Event EFBO800860" ;
-        sport:participationBy  <http://example.com/Athlete/p.14937> .
 
 <http://example.com/Participation/EFBO800859-TFBB178>
         rdf:type               sport:TeamParticipation ;
@@ -2840,6 +3140,14 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB178> ;
         sport:score            "2" .
+
+<http://example.com/Athlete/p.32281>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.32281>" .
+
+<http://example.com/Athlete/p.8595>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.8595>" .
 
 <http://example.com/Team/TFBB14>
         rdf:type    sport:Team ;
@@ -2888,6 +3196,10 @@
         rdf:type    sport:Team ;
         rdfs:label  "Paris Saint-Germain" .
 
+<http://example.com/Athlete/p.61170>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.61170>" .
+
 <http://example.com/Event/EFBO782703>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782703" ;
@@ -2897,6 +3209,10 @@
         sport:location                 <http://example.com/Site/VFBB1369> ;
         sport:participation            <http://example.com/Participation/EFBO782703-p.54694> , <http://example.com/Participation/EFBO782703-p.59046> , <http://example.com/Participation/EFBO782703-TFBB3> , <http://example.com/Participation/EFBO782703-TFBB157> ;
         sport:startDateTime            "2014-09-16T19:45:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.47362>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.47362>" .
 
 <http://example.com/Participation/EFBO782789-TFBB8>
         rdf:type               sport:TeamParticipation ;
@@ -2912,6 +3228,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.10233> membership of Bayer 04 Leverkusen" ;
         sport:member        <http://example.com/Athlete/p.10233> ;
         sport:membershipOf  <http://example.com/Team/TFBB164> .
+
+<http://example.com/Athlete/p.36903>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.36903>" .
 
 <http://example.com/Participation/EFBO788110-TFBB186>
         rdf:type               sport:TeamParticipation ;
@@ -2931,6 +3251,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.19054> participation in Event EFBO782732" ;
         sport:participationBy  <http://example.com/Athlete/p.19054> .
+
+<http://example.com/Athlete/p.88754>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.88754>" .
+
+<http://example.com/Athlete/p.14095>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14095>" .
 
 <http://example.com/Participation/EFBO782727-TFBB3>
         rdf:type               sport:TeamParticipation ;
@@ -2960,6 +3288,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.17878> participation in Event EFBO782789" ;
         sport:participationBy  <http://example.com/Athlete/p.17878> .
 
+<http://example.com/Athlete/p.1718>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.1718>" .
+
 <http://example.com/Participation/EFBO788099-p.39336>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.39336> participation in Event EFBO788099" ;
@@ -2981,6 +3313,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.149736> membership of RSC Anderlecht" ;
         sport:member        <http://example.com/Athlete/p.149736> ;
         sport:membershipOf  <http://example.com/Team/TFBB241> .
+
+<http://example.com/Athlete/p.15157>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.15157>" .
 
 <http://example.com/Participation/EFBO782735-p.52304>
         rdf:type               sport:IndividualParticipation ;
@@ -3020,6 +3356,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.14937> membership of Real Madrid" ;
         sport:member        <http://example.com/Athlete/p.14937> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
+
+<http://example.com/Athlete/p.47431>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.47431>" .
 
 <http://example.com/Membership/TFBB164-p.16141>
         rdf:type            sport:IndividualMembership ;
@@ -3065,6 +3405,10 @@
         sport:participationBy  <http://example.com/Team/TFBB178> ;
         sport:score            "2" .
 
+<http://example.com/Athlete/p.40720>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40720>" .
+
 <http://example.com/Event/EFBO782748>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782748" ;
@@ -3074,6 +3418,10 @@
         sport:location                 <http://example.com/Site/VFBB1360> ;
         sport:participation            <http://example.com/Participation/EFBO782748-TFBB186> , <http://example.com/Participation/EFBO782748-TFBB14> , <http://example.com/Participation/EFBO782748-p.19927> ;
         sport:startDateTime            "2014-11-04T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.51090>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.51090>" .
 
 <http://example.com/Participation/EFBO788111-p.28559>
         rdf:type               sport:IndividualParticipation ;
@@ -3089,6 +3437,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.80149> participation in Event EFBO782741" ;
         sport:participationBy  <http://example.com/Athlete/p.80149> .
+
+<http://example.com/Athlete/p.149736>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.149736>" .
 
 <http://example.com/CompetitionPhase/UEFACL20142014S1>
         rdf:type                    sport:CompetitionPhase ;
@@ -3140,6 +3492,10 @@
         sport:member        <http://example.com/Athlete/p.103483> ;
         sport:membershipOf  <http://example.com/Team/TFBB6128> .
 
+<http://example.com/Athlete/p.28340>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28340>" .
+
 <http://example.com/Participation/EFBO788112-TFBB3>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Arsenal participation in Event EFBO788112" ;
@@ -3182,10 +3538,23 @@
         sport:participationBy  <http://example.com/Team/TFBB455> ;
         sport:score            "0" .
 
+<http://example.com/Participation/EFBO788110-TFBB167>
+        rdf:type               sport:TeamParticipation ;
+        rdfs:label             "FC Schalke 04 participation in Event EFBO788110" ;
+        spstat:eventOutcome    speventoutcome:win ;
+        spstat:scoreOpposing   "3" ;
+        sport:alignment        "away" ;
+        sport:participationBy  <http://example.com/Team/TFBB167> ;
+        sport:score            "4" .
+
 <http://example.com/Participation/EFBO788104-p.119718>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.119718> participation in Event EFBO788104" ;
         sport:participationBy  <http://example.com/Athlete/p.119718> .
+
+<http://example.com/Athlete/p.41316>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41316>" .
 
 <http://example.com/Participation/EFBO782725-p.56492>
         rdf:type               sport:IndividualParticipation ;
@@ -3198,14 +3567,9 @@
         sport:member        <http://example.com/Athlete/p.39473> ;
         sport:membershipOf  <http://example.com/Team/TFBB479> .
 
-<http://example.com/Participation/EFBO788110-TFBB167>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "FC Schalke 04 participation in Event EFBO788110" ;
-        spstat:eventOutcome    speventoutcome:win ;
-        spstat:scoreOpposing   "3" ;
-        sport:alignment        "away" ;
-        sport:participationBy  <http://example.com/Team/TFBB167> ;
-        sport:score            "4" .
+<http://example.com/Athlete/p.43274>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.43274>" .
 
 <http://example.com/Participation/EFBO782746-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -3241,6 +3605,14 @@
         sport:member        <http://example.com/Athlete/p.182156> ;
         sport:membershipOf  <http://example.com/Team/TFBB167> .
 
+<http://example.com/Athlete/p.82533>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.82533>" .
+
+<http://example.com/Athlete/p.20312>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.20312>" .
+
 <http://example.com/Participation/EFBO782722-TFBB202>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Olympiakos participation in Event EFBO782722" ;
@@ -3259,6 +3631,10 @@
         sport:participationBy  <http://example.com/Team/TFBB479> ;
         sport:score            "0" .
 
+<http://example.com/Athlete/p.19064>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19064>" .
+
 <http://example.com/Participation/EFBO788110-p.182156>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.182156> participation in Event EFBO788110" ;
@@ -3272,6 +3648,10 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB14> ;
         sport:score            "2" .
+
+<http://example.com/Athlete/p.14938>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14938>" .
 
 <http://example.com/Participation/EFBO782788-p.19054>
         rdf:type               sport:IndividualParticipation ;
@@ -3321,6 +3701,10 @@
         rdf:type    sport:Site ;
         rdfs:label  "Olympiastadion" .
 
+<http://example.com/Athlete/p.37572>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.37572>" .
+
 <http://example.com/Participation/EFBO782766-TFBB3033>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "NK Maribor participation in Event EFBO782766" ;
@@ -3335,10 +3719,22 @@
         rdfs:label             "Player <http://example.com/Athlete/p.37572> participation in Event EFBO782762" ;
         sport:participationBy  <http://example.com/Athlete/p.37572> .
 
+<http://example.com/Athlete/p.47665>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.47665>" .
+
 <http://example.com/Participation/EFBO782778-p.20121>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.20121> participation in Event EFBO782778" ;
         sport:participationBy  <http://example.com/Athlete/p.20121> .
+
+<http://example.com/Athlete/p.40908>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40908>" .
+
+<http://example.com/Athlete/p.46483>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.46483>" .
 
 <http://example.com/Participation/EFBO782748-p.19927>
         rdf:type               sport:IndividualParticipation ;
@@ -3359,15 +3755,19 @@
         rdf:type    sport:Site ;
         rdfs:label  "Parc des Princes" .
 
+<http://example.com/Participation/EFBO788097-p.40720>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.40720> participation in Event EFBO788097" ;
+        sport:participationBy  <http://example.com/Athlete/p.40720> .
+
 <http://example.com/Participation/EFBO782758-p.149828>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.149828> participation in Event EFBO782758" ;
         sport:participationBy  <http://example.com/Athlete/p.149828> .
 
-<http://example.com/Participation/EFBO788097-p.40720>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.40720> participation in Event EFBO788097" ;
-        sport:participationBy  <http://example.com/Athlete/p.40720> .
+<http://example.com/Athlete/p.11037>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.11037>" .
 
 <http://example.com/Participation/EFBO800858-TFBB128>
         rdf:type               sport:TeamParticipation ;
@@ -3452,14 +3852,18 @@
         sport:participationBy  <http://example.com/Team/TFBB174> ;
         sport:score            "0" .
 
-<http://example.com/Team/TFBB157>
-        rdf:type    sport:Team ;
-        rdfs:label  "Borussia Dortmund" .
-
 <http://example.com/Participation/EFBO782760-p.17347>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.17347> participation in Event EFBO782760" ;
         sport:participationBy  <http://example.com/Athlete/p.17347> .
+
+<http://example.com/Team/TFBB157>
+        rdf:type    sport:Team ;
+        rdfs:label  "Borussia Dortmund" .
+
+<http://example.com/Athlete/p.1814>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.1814>" .
 
 <http://example.com/Membership/TFBB43-p.20658>
         rdf:type            sport:IndividualMembership ;
@@ -3487,6 +3891,10 @@
         sport:competitionType  spct:recurring-competition ;
         sport:governedBy       <http://example.com/GoverningBody/UEFA> ;
         sport:sport            medtop:20001065 .
+
+<http://example.com/Athlete/p.40691>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40691>" .
 
 <http://example.com/Participation/EFBO799714-TFBB146>
         rdf:type               sport:TeamParticipation ;
@@ -3545,6 +3953,14 @@
         rdfs:label             "Player <http://example.com/Athlete/p.102578> participation in Event EFBO782767" ;
         sport:participationBy  <http://example.com/Athlete/p.102578> .
 
+<http://example.com/Athlete/p.10233>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.10233>" .
+
+<http://example.com/Athlete/p.146360>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.146360>" .
+
 <http://example.com/Participation/EFBO782744-p.17733>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.17733> participation in Event EFBO782744" ;
@@ -3560,6 +3976,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.69600> participation in Event EFBO782753" ;
         sport:participationBy  <http://example.com/Athlete/p.69600> .
 
+<http://example.com/Athlete/p.83465>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.83465>" .
+
 <http://example.com/Participation/EFBO788109-TFBB128>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Juventus participation in Event EFBO788109" ;
@@ -3568,6 +3988,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB128> ;
         sport:score            "3" .
+
+<http://example.com/Athlete/p.9808>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.9808>" .
 
 <http://example.com/Site/VFBB2861>
         rdf:type    sport:Site ;
@@ -3683,6 +4107,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.61558> participation in Event EFBO799720" ;
         sport:participationBy  <http://example.com/Athlete/p.61558> .
 
+<http://example.com/Athlete/p.39498>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39498>" .
+
 <http://example.com/Membership/TFBB167-p.37402>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.37402> membership of FC Schalke 04" ;
@@ -3693,6 +4121,10 @@
         rdf:type    sport:Team ;
         rdfs:label  "APOEL Nicosia" .
 
+<http://example.com/Athlete/p.92500>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.92500>" .
+
 <http://example.com/Event/EFBO782788>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782788" ;
@@ -3702,6 +4134,11 @@
         sport:location                 <http://example.com/Site/VFBB1349> ;
         sport:participation            <http://example.com/Participation/EFBO782788-TFBB149> , <http://example.com/Participation/EFBO782788-p.61278> , <http://example.com/Participation/EFBO782788-p.19054> , <http://example.com/Participation/EFBO782788-TFBB178> , <http://example.com/Participation/EFBO782788-p.9808> , <http://example.com/Participation/EFBO782788-p.39336> ;
         sport:startDateTime            "2014-12-10T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Participation/EFBO800857-p.61278>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.61278> participation in Event EFBO800857" ;
+        sport:participationBy  <http://example.com/Athlete/p.61278> .
 
 <http://example.com/Participation/EFBO788112-p.41792>
         rdf:type               sport:IndividualParticipation ;
@@ -3726,11 +4163,6 @@
         sport:participationBy  <http://example.com/Team/TFBB167> ;
         sport:score            "2" .
 
-<http://example.com/Participation/EFBO800857-p.61278>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.61278> participation in Event EFBO800857" ;
-        sport:participationBy  <http://example.com/Athlete/p.61278> .
-
 <http://example.com/Participation/EFBO782765-TFBB167>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "FC Schalke 04 participation in Event EFBO782765" ;
@@ -3739,6 +4171,10 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB167> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.102578>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.102578>" .
 
 <http://example.com/Participation/EFBO782776-p.149736>
         rdf:type               sport:IndividualParticipation ;
@@ -3829,6 +4265,10 @@
         sport:participation            <http://example.com/Participation/EFBO782724-TFBB186> , <http://example.com/Participation/EFBO782724-TFBB6128> , <http://example.com/Participation/EFBO782724-p.19927> , <http://example.com/Participation/EFBO782724-p.103483> , <http://example.com/Participation/EFBO782724-p.14937> ;
         sport:startDateTime            "2014-10-01T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.41135>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.41135>" .
+
 <http://example.com/Participation/EFBO782732-TFBB178>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Barcelona participation in Event EFBO782732" ;
@@ -3907,6 +4347,10 @@
         sport:participationBy  <http://example.com/Team/TFBB1340> ;
         sport:score            "0" .
 
+<http://example.com/Athlete/p.68046>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.68046>" .
+
 <http://example.com/Participation/EFBO782722-TFBB993>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Malmö FF participation in Event EFBO782722" ;
@@ -3925,6 +4369,10 @@
         sport:participationBy  <http://example.com/Team/TFBB251> ;
         sport:score            "0" .
 
+<http://example.com/Athlete/p.93538>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.93538>" .
+
 <http://example.com/Participation/EFBO782761-p.4177>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.4177> participation in Event EFBO782761" ;
@@ -3934,6 +4382,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.37402> participation in Event EFBO788110" ;
         sport:participationBy  <http://example.com/Athlete/p.37402> .
+
+<http://example.com/Athlete/p.61278>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.61278>" .
 
 <http://example.com/Participation/EFBO788108-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -3949,6 +4401,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.18221> participation in Event EFBO782708" ;
         sport:participationBy  <http://example.com/Athlete/p.18221> .
 
+<http://example.com/Athlete/p.34703>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.34703>" .
+
 <http://example.com/Membership/TFBB175-p.39441>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.39441> membership of Atlético de Madrid" ;
@@ -3961,14 +4417,14 @@
         sport:member        <http://example.com/Athlete/p.8595> ;
         sport:membershipOf  <http://example.com/Team/TFBB146> .
 
-<http://example.com/Participation/EFBO782721-TFBB128>
+<http://example.com/Participation/EFBO782736-TFBB201>
         rdf:type               sport:TeamParticipation ;
-        rdfs:label             "Juventus participation in Event EFBO782721" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        rdfs:label             "FC Porto participation in Event EFBO782736" ;
+        spstat:eventOutcome    speventoutcome:win ;
         spstat:scoreOpposing   "1" ;
-        sport:alignment        "away" ;
-        sport:participationBy  <http://example.com/Team/TFBB128> ;
-        sport:score            "0" .
+        sport:alignment        "home" ;
+        sport:participationBy  <http://example.com/Team/TFBB201> ;
+        sport:score            "2" .
 
 <http://example.com/Participation/EFBO782750-TFBB1341>
         rdf:type               sport:TeamParticipation ;
@@ -3979,14 +4435,14 @@
         sport:participationBy  <http://example.com/Team/TFBB1341> ;
         sport:score            "1" .
 
-<http://example.com/Participation/EFBO782736-TFBB201>
+<http://example.com/Participation/EFBO782721-TFBB128>
         rdf:type               sport:TeamParticipation ;
-        rdfs:label             "FC Porto participation in Event EFBO782736" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        rdfs:label             "Juventus participation in Event EFBO782721" ;
+        spstat:eventOutcome    speventoutcome:loss ;
         spstat:scoreOpposing   "1" ;
-        sport:alignment        "home" ;
-        sport:participationBy  <http://example.com/Team/TFBB201> ;
-        sport:score            "2" .
+        sport:alignment        "away" ;
+        sport:participationBy  <http://example.com/Team/TFBB128> ;
+        sport:score            "0" .
 
 <http://example.com/Site/VFBB1369>
         rdf:type    sport:Site ;
@@ -4018,6 +4474,10 @@
         sport:participationBy  <http://example.com/Team/TFBB156> ;
         sport:score            "7" .
 
+<http://example.com/Athlete/p.76650>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.76650>" .
+
 <http://example.com/Participation/EFBO782772-p.70217>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.70217> participation in Event EFBO782772" ;
@@ -4037,6 +4497,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.76650> participation in Event EFBO788108" ;
         sport:participationBy  <http://example.com/Athlete/p.76650> .
 
+<http://example.com/Athlete/p.52304>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.52304>" .
+
 <http://example.com/Participation/EFBO788107-TFBB43>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Manchester City participation in Event EFBO788107" ;
@@ -4050,6 +4514,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.69600> participation in Event EFBO788111" ;
         sport:participationBy  <http://example.com/Athlete/p.69600> .
+
+<http://example.com/Athlete/p.51310>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.51310>" .
 
 <http://example.com/Event/EFBO788102>
         rdf:type                       sport:Event ;
@@ -4075,6 +4543,10 @@
         sport:participationBy  <http://example.com/Team/TFBB1340> ;
         sport:score            "1" .
 
+<http://example.com/Team/TFBB3033>
+        rdf:type    sport:Team ;
+        rdfs:label  "NK Maribor" .
+
 <http://example.com/Participation/EFBO782760-TFBB2155>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "BATE Borisov participation in Event EFBO782760" ;
@@ -4094,9 +4566,9 @@
         sport:participation            <http://example.com/Participation/EFBO782769-TFBB202> , <http://example.com/Participation/EFBO782769-p.18498> , <http://example.com/Participation/EFBO782769-p.46197> , <http://example.com/Participation/EFBO782769-TFBB175> ;
         sport:startDateTime            "2014-11-26T19:45:00+00:00"^^xsd:dateTime .
 
-<http://example.com/Team/TFBB3033>
-        rdf:type    sport:Team ;
-        rdfs:label  "NK Maribor" .
+<http://example.com/Athlete/p.157749>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.157749>" .
 
 <http://example.com/Membership/TFBB202-p.19568>
         rdf:type            sport:IndividualMembership ;
@@ -4183,6 +4655,14 @@
         sport:participation            <http://example.com/Participation/EFBO782737-TFBB175> , <http://example.com/Participation/EFBO782737-TFBB993> , <http://example.com/Participation/EFBO782737-p.77390> , <http://example.com/Participation/EFBO782737-p.18018> , <http://example.com/Participation/EFBO782737-p.76650> , <http://example.com/Participation/EFBO782737-p.46197> , <http://example.com/Participation/EFBO782737-p.32281> ;
         sport:startDateTime            "2014-10-22T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.159422>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.159422>" .
+
+<http://example.com/Athlete/p.52294>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.52294>" .
+
 <http://example.com/Event/EFBO782783>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782783" ;
@@ -4214,10 +4694,18 @@
         sport:participation            <http://example.com/Participation/EFBO782705-TFBB156> , <http://example.com/Participation/EFBO782705-p.40691> , <http://example.com/Participation/EFBO782705-TFBB43> ;
         sport:startDateTime            "2014-09-17T19:45:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.8533>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.8533>" .
+
 <http://example.com/Participation/EFBO782733-p.67514>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.67514> participation in Event EFBO782733" ;
         sport:participationBy  <http://example.com/Athlete/p.67514> .
+
+<http://example.com/Athlete/p.85971>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.85971>" .
 
 <http://example.com/Participation/EFBO788097-p.41135>
         rdf:type               sport:IndividualParticipation ;
@@ -4233,6 +4721,10 @@
         sport:location                 <http://example.com/Site/VFBB3250> ;
         sport:participation            <http://example.com/Participation/EFBO782751-p.81880> , <http://example.com/Participation/EFBO782751-p.37265> , <http://example.com/Participation/EFBO782751-p.18679> , <http://example.com/Participation/EFBO782751-TFBB241> , <http://example.com/Participation/EFBO782751-p.8758> , <http://example.com/Participation/EFBO782751-TFBB3> , <http://example.com/Participation/EFBO782751-p.128389> ;
         sport:startDateTime            "2014-11-04T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.42565>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42565>" .
 
 <http://example.com/Participation/EFBO782749-p.159422>
         rdf:type               sport:IndividualParticipation ;
@@ -4252,6 +4744,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.34703> participation in Event EFBO788107" ;
         sport:participationBy  <http://example.com/Athlete/p.34703> .
+
+<http://example.com/Athlete/p.42786>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42786>" .
 
 <http://example.com/Participation/EFBO799723-p.61558>
         rdf:type               sport:IndividualParticipation ;
@@ -4276,6 +4772,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.19891> participation in Event EFBO782707" ;
         sport:participationBy  <http://example.com/Athlete/p.19891> .
+
+<http://example.com/Athlete/p.17878>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.17878>" .
 
 <http://example.com/Participation/EFBO782780-TFBB6128>
         rdf:type               sport:TeamParticipation ;
@@ -4384,6 +4884,14 @@
         rdfs:label             "Player <http://example.com/Athlete/p.8595> participation in Event EFBO788104" ;
         sport:participationBy  <http://example.com/Athlete/p.8595> .
 
+<http://example.com/Athlete/p.14941>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14941>" .
+
+<http://example.com/Athlete/p.128389>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.128389>" .
+
 <http://example.com/Participation/EFBO782764-TFBB149>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Paris Saint-Germain participation in Event EFBO782764" ;
@@ -4398,6 +4906,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.19927> membership of Real Madrid" ;
         sport:member        <http://example.com/Athlete/p.19927> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
+
+<http://example.com/Athlete/p.14664>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14664>" .
 
 <http://example.com/Participation/EFBO782733-TFBB8>
         rdf:type               sport:TeamParticipation ;
@@ -4461,6 +4973,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.100588> participation in Event EFBO782778" ;
         sport:participationBy  <http://example.com/Athlete/p.100588> .
+
+<http://example.com/Athlete/p.37971>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.37971>" .
 
 <http://example.com/Participation/EFBO782744-p.42427>
         rdf:type               sport:IndividualParticipation ;
@@ -4593,11 +5109,19 @@
         rdfs:label             "Player <http://example.com/Athlete/p.52294> participation in Event EFBO782758" ;
         sport:participationBy  <http://example.com/Athlete/p.52294> .
 
+<http://example.com/Athlete/p.14488>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14488>" .
+
 <http://example.com/Membership/TFBB208-p.39931>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.39931> membership of Galatasaray" ;
         sport:member        <http://example.com/Athlete/p.39931> ;
         sport:membershipOf  <http://example.com/Team/TFBB208> .
+
+<http://example.com/Athlete/p.105717>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.105717>" .
 
 <http://example.com/Participation/EFBO782729-TFBB43>
         rdf:type               sport:TeamParticipation ;
@@ -4607,6 +5131,14 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB43> ;
         sport:score            "2" .
+
+<http://example.com/Athlete/p.141020>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.141020>" .
+
+<http://example.com/Athlete/p.40269>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.40269>" .
 
 <http://example.com/Membership/TFBB993-p.100588>
         rdf:type            sport:IndividualMembership ;
@@ -4669,24 +5201,24 @@
         sport:participationBy  <http://example.com/Team/TFBB215> ;
         sport:score            "4" .
 
-<http://example.com/Team/TFBB215>
-        rdf:type    sport:Team ;
-        rdfs:label  "Ajax" .
-
 <http://example.com/Membership/TFBB8-p.1718>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.1718> membership of Chelsea" ;
         sport:member        <http://example.com/Athlete/p.1718> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
 
-<http://example.com/Site/VFBB1313>
-        rdf:type    sport:Site ;
-        rdfs:label  "Stade Louis II" .
-
 <http://example.com/Participation/EFBO782767-p.77064>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.77064> participation in Event EFBO782767" ;
         sport:participationBy  <http://example.com/Athlete/p.77064> .
+
+<http://example.com/Site/VFBB1313>
+        rdf:type    sport:Site ;
+        rdfs:label  "Stade Louis II" .
+
+<http://example.com/Team/TFBB215>
+        rdf:type    sport:Team ;
+        rdfs:label  "Ajax" .
 
 <http://example.com/Participation/EFBO782745-p.49266>
         rdf:type               sport:IndividualParticipation ;
@@ -4703,6 +5235,10 @@
         sport:participation            <http://example.com/Participation/EFBO788110-p.37402> , <http://example.com/Participation/EFBO788110-p.14941> , <http://example.com/Participation/EFBO788110-p.19927> , <http://example.com/Participation/EFBO788110-TFBB167> , <http://example.com/Participation/EFBO788110-TFBB186> , <http://example.com/Participation/EFBO788110-p.182156> , <http://example.com/Participation/EFBO788110-p.14937> ;
         sport:startDateTime            "2015-03-10T19:45:00+00:00"^^xsd:dateTime .
 
+<http://example.com/Athlete/p.37265>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.37265>" .
+
 <http://example.com/Event/EFBO782777>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782777" ;
@@ -4712,6 +5248,10 @@
         sport:location                 <http://example.com/Site/VFBB7598> ;
         sport:participation            <http://example.com/Participation/EFBO782777-TFBB175> , <http://example.com/Participation/EFBO782777-TFBB128> ;
         sport:startDateTime            "2014-12-09T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.103076>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.103076>" .
 
 <http://example.com/Membership/TFBB156-p.28559>
         rdf:type            sport:IndividualMembership ;
@@ -4810,11 +5350,19 @@
         sport:member        <http://example.com/Athlete/p.56764> ;
         sport:membershipOf  <http://example.com/Team/TFBB156> .
 
+<http://example.com/Athlete/p.7313>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.7313>" .
+
 <http://example.com/Membership/TFBB455-p.17347>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.17347> membership of Shakhtar Donetsk" ;
         sport:member        <http://example.com/Athlete/p.17347> ;
         sport:membershipOf  <http://example.com/Team/TFBB455> .
+
+<http://example.com/Athlete/p.68312>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.68312>" .
 
 <http://example.com/Participation/EFBO782710-p.38530>
         rdf:type               sport:IndividualParticipation ;
@@ -4838,6 +5386,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.146360> membership of Sporting Lisbon" ;
         sport:member        <http://example.com/Athlete/p.146360> ;
         sport:membershipOf  <http://example.com/Team/TFBB255> .
+
+<http://example.com/Athlete/p.181007>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.181007>" .
 
 <http://example.com/Participation/EFBO782743-TFBB208>
         rdf:type               sport:TeamParticipation ;
@@ -4930,6 +5482,10 @@
         sport:member        <http://example.com/Athlete/p.17878> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
 
+<http://example.com/Athlete/p.18759>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18759>" .
+
 <http://example.com/Event/EFBO788109>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO788109" ;
@@ -4939,6 +5495,14 @@
         sport:location                 <http://example.com/Site/VFBB1369> ;
         sport:participation            <http://example.com/Participation/EFBO788109-p.20312> , <http://example.com/Participation/EFBO788109-TFBB128> , <http://example.com/Participation/EFBO788109-TFBB157> , <http://example.com/Participation/EFBO788109-p.88482> ;
         sport:startDateTime            "2015-03-18T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.38530>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.38530>" .
+
+<http://example.com/Athlete/p.81025>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.81025>" .
 
 <http://example.com/Site/VFBB3063>
         rdf:type    sport:Site ;
@@ -5062,16 +5626,16 @@
         sport:member        <http://example.com/Athlete/p.100180> ;
         sport:membershipOf  <http://example.com/Team/TFBB201> .
 
+<http://example.com/Participation/EFBO782791-p.47665>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.47665> participation in Event EFBO782791" ;
+        sport:participationBy  <http://example.com/Athlete/p.47665> .
+
 <http://example.com/Membership/TFBB3-p.80711>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.80711> membership of Arsenal" ;
         sport:member        <http://example.com/Athlete/p.80711> ;
         sport:membershipOf  <http://example.com/Team/TFBB3> .
-
-<http://example.com/Participation/EFBO782791-p.47665>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.47665> participation in Event EFBO782791" ;
-        sport:participationBy  <http://example.com/Athlete/p.47665> .
 
 <http://example.com/Membership/TFBB174-p.14464>
         rdf:type            sport:IndividualMembership ;
@@ -5103,6 +5667,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.47362> participation in Event EFBO782734" ;
         sport:participationBy  <http://example.com/Athlete/p.47362> .
+
+<http://example.com/Athlete/p.49012>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.49012>" .
 
 <http://example.com/Team/TFBB186>
         rdf:type    sport:Team ;
@@ -5179,6 +5747,10 @@
         sport:member        <http://example.com/Athlete/p.50523> ;
         sport:membershipOf  <http://example.com/Team/TFBB157> .
 
+<http://example.com/Athlete/p.52117>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.52117>" .
+
 <http://example.com/Participation/EFBO788109-TFBB157>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Borussia Dortmund participation in Event EFBO788109" ;
@@ -5201,6 +5773,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.77390> participation in Event EFBO782746" ;
         sport:participationBy  <http://example.com/Athlete/p.77390> .
+
+<http://example.com/Athlete/p.44346>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.44346>" .
+
+<http://example.com/Athlete/p.88482>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.88482>" .
 
 <http://example.com/Participation/EFBO782716-p.37971>
         rdf:type               sport:IndividualParticipation ;
@@ -5225,6 +5805,10 @@
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-of-16> ;
         sport:parent                <http://example.com/CompetitionPhase/UEFACL20142014S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/UEFACL2014> .
+
+<http://example.com/Athlete/p.14464>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14464>" .
 
 <http://example.com/Participation/EFBO782709-TFBB8>
         rdf:type               sport:TeamParticipation ;
@@ -5255,11 +5839,23 @@
         sport:member        <http://example.com/Athlete/p.39563> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
 
+<http://example.com/Athlete/p.52748>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.52748>" .
+
+<http://example.com/Athlete/p.109065>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.109065>" .
+
 <http://example.com/Membership/TFBB1341-p.57134>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.57134> membership of Zenit St Petersburg" ;
         sport:member        <http://example.com/Athlete/p.57134> ;
         sport:membershipOf  <http://example.com/Team/TFBB1341> .
+
+<http://example.com/Athlete/p.19627>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19627>" .
 
 <http://example.com/Membership/TFBB3-p.42427>
         rdf:type            sport:IndividualMembership ;
@@ -5295,6 +5891,10 @@
         sport:location                 <http://example.com/Site/VFBB2775> ;
         sport:participation            <http://example.com/Participation/EFBO782785-p.55634> , <http://example.com/Participation/EFBO782785-TFBB1340> , <http://example.com/Participation/EFBO782785-p.49977> , <http://example.com/Participation/EFBO782785-p.69600> , <http://example.com/Participation/EFBO782785-TFBB156> ;
         sport:startDateTime            "2014-12-10T19:45:00+00:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.57736>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.57736>" .
 
 <http://example.com/Participation/EFBO782734-TFBB255>
         rdf:type               sport:TeamParticipation ;
@@ -5349,6 +5949,10 @@
         rdf:type    sport:Site ;
         rdfs:label  "Petrovski Stadium" .
 
+<http://example.com/Team/TFBB167>
+        rdf:type    sport:Team ;
+        rdfs:label  "FC Schalke 04" .
+
 <http://example.com/Participation/EFBO782763-TFBB479>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "APOEL Nicosia participation in Event EFBO782763" ;
@@ -5357,10 +5961,6 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB479> ;
         sport:score            "0" .
-
-<http://example.com/Team/TFBB167>
-        rdf:type    sport:Team ;
-        rdfs:label  "FC Schalke 04" .
 
 <http://example.com/Participation/EFBO782754-p.52117>
         rdf:type               sport:IndividualParticipation ;
@@ -5382,6 +5982,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.41316> participation in Event EFBO782734" ;
         sport:participationBy  <http://example.com/Athlete/p.41316> .
 
+<http://example.com/Athlete/p.28552>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28552>" .
+
 <http://example.com/Participation/EFBO782790-TFBB3033>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "NK Maribor participation in Event EFBO782790" ;
@@ -5396,6 +6000,15 @@
         rdfs:label             "Player <http://example.com/Athlete/p.61278> participation in Event EFBO782732" ;
         sport:participationBy  <http://example.com/Athlete/p.61278> .
 
+<http://example.com/Participation/EFBO782734-TFBB167>
+        rdf:type               sport:TeamParticipation ;
+        rdfs:label             "FC Schalke 04 participation in Event EFBO782734" ;
+        spstat:eventOutcome    speventoutcome:win ;
+        spstat:scoreOpposing   "3" ;
+        sport:alignment        "home" ;
+        sport:participationBy  <http://example.com/Team/TFBB167> ;
+        sport:score            "4" .
+
 <http://example.com/Event/EFBO782697>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782697" ;
@@ -5405,15 +6018,6 @@
         sport:location                 <http://example.com/Site/VFBB7598> ;
         sport:participation            <http://example.com/Participation/EFBO782697-TFBB993> , <http://example.com/Participation/EFBO782697-TFBB128> , <http://example.com/Participation/EFBO782697-p.20312> ;
         sport:startDateTime            "2014-09-16T19:45:00+01:00"^^xsd:dateTime .
-
-<http://example.com/Participation/EFBO782734-TFBB167>
-        rdf:type               sport:TeamParticipation ;
-        rdfs:label             "FC Schalke 04 participation in Event EFBO782734" ;
-        spstat:eventOutcome    speventoutcome:win ;
-        spstat:scoreOpposing   "3" ;
-        sport:alignment        "home" ;
-        sport:participationBy  <http://example.com/Team/TFBB167> ;
-        sport:score            "4" .
 
 <http://example.com/Membership/TFBB202-p.47434>
         rdf:type            sport:IndividualMembership ;
@@ -5467,6 +6071,10 @@
         sport:participationBy  <http://example.com/Team/TFBB3033> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.149828>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.149828>" .
+
 <http://example.com/Participation/EFBO782708-TFBB479>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "APOEL Nicosia participation in Event EFBO782708" ;
@@ -5490,6 +6098,10 @@
         sport:participationBy  <http://example.com/Team/TFBB208> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.50175>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.50175>" .
+
 <http://example.com/Participation/EFBO782699-p.40269>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.40269> participation in Event EFBO782699" ;
@@ -5500,6 +6112,10 @@
         rdfs:label          "Player <http://example.com/Athlete/p.12303> membership of Chelsea" ;
         sport:member        <http://example.com/Athlete/p.12303> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
+
+<http://example.com/Athlete/p.42493>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.42493>" .
 
 <http://example.com/Participation/EFBO782777-TFBB175>
         rdf:type               sport:TeamParticipation ;
@@ -5520,6 +6136,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.18498> participation in Event EFBO782746" ;
         sport:participationBy  <http://example.com/Athlete/p.18498> .
 
+<http://example.com/Athlete/p.19419>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.19419>" .
+
 <http://example.com/Participation/EFBO782713-p.55634>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.55634> participation in Event EFBO782713" ;
@@ -5530,11 +6150,20 @@
         rdfs:label             "Player <http://example.com/Athlete/p.42565> participation in Event EFBO799713" ;
         sport:participationBy  <http://example.com/Athlete/p.42565> .
 
+<http://example.com/Athlete/p.167197>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.167197>" .
+
 <http://example.com/Membership/TFBB167-p.47362>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.47362> membership of FC Schalke 04" ;
         sport:member        <http://example.com/Athlete/p.47362> ;
         sport:membershipOf  <http://example.com/Team/TFBB167> .
+
+<http://example.com/Participation/EFBO782734-p.46483>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.46483> participation in Event EFBO782734" ;
+        sport:participationBy  <http://example.com/Athlete/p.46483> .
 
 <http://example.com/Participation/EFBO782736-TFBB174>
         rdf:type               sport:TeamParticipation ;
@@ -5554,20 +6183,27 @@
         sport:participationBy  <http://example.com/Team/TFBB455> ;
         sport:score            "5" .
 
-<http://example.com/Participation/EFBO782734-p.46483>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.46483> participation in Event EFBO782734" ;
-        sport:participationBy  <http://example.com/Athlete/p.46483> .
-
 <http://example.com/Participation/EFBO799717-p.61278>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.61278> participation in Event EFBO799717" ;
         sport:participationBy  <http://example.com/Athlete/p.61278> .
 
+<http://example.com/Athlete/p.121117>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.121117>" .
+
+<http://example.com/Athlete/p.39476>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39476>" .
+
 <http://example.com/Participation/EFBO782725-p.85971>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.85971> participation in Event EFBO782725" ;
         sport:participationBy  <http://example.com/Athlete/p.85971> .
+
+<http://example.com/Athlete/p.18679>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18679>" .
 
 <http://example.com/Event/EFBO782766>
         rdf:type                       sport:Event ;
@@ -5601,6 +6237,10 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB201> ;
         sport:score            "6" .
+
+<http://example.com/Athlete/p.46197>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.46197>" .
 
 <http://example.com/Event/EFBO782734>
         rdf:type                       sport:Event ;
@@ -5651,6 +6291,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.116643> participation in Event EFBO782782" ;
         sport:participationBy  <http://example.com/Athlete/p.116643> .
 
+<http://example.com/Athlete/p.67514>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.67514>" .
+
 <http://example.com/Membership/TFBB149-p.37971>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.37971> membership of Paris Saint-Germain" ;
@@ -5666,6 +6310,10 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.26806> participation in Event EFBO782722" ;
         sport:participationBy  <http://example.com/Athlete/p.26806> .
+
+<http://example.com/Athlete/p.100588>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.100588>" .
 
 <http://example.com/Participation/EFBO782710-p.153816>
         rdf:type               sport:IndividualParticipation ;
@@ -5734,6 +6382,10 @@
         sport:member        <http://example.com/Athlete/p.53645> ;
         sport:membershipOf  <http://example.com/Team/TFBB1341> .
 
+<http://example.com/Athlete/p.80582>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.80582>" .
+
 <http://example.com/Membership/TFBB128-p.88482>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.88482> membership of Juventus" ;
@@ -5759,6 +6411,10 @@
         rdfs:label             "Player <http://example.com/Athlete/p.61278> participation in Event EFBO782788" ;
         sport:participationBy  <http://example.com/Athlete/p.61278> .
 
+<http://example.com/Athlete/p.61256>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.61256>" .
+
 <http://example.com/Participation/EFBO788104-p.81880>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.81880> participation in Event EFBO788104" ;
@@ -5769,6 +6425,14 @@
         rdfs:label             "Player <http://example.com/Athlete/p.81880> participation in Event EFBO782751" ;
         sport:participationBy  <http://example.com/Athlete/p.81880> .
 
+<http://example.com/Athlete/p.18573>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18573>" .
+
+<http://example.com/Athlete/p.165796>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.165796>" .
+
 <http://example.com/Participation/EFBO782748-TFBB186>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Real Madrid participation in Event EFBO782748" ;
@@ -5777,6 +6441,10 @@
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TFBB186> ;
         sport:score            "1" .
+
+<http://example.com/Athlete/p.77390>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.77390>" .
 
 <http://example.com/Participation/EFBO788112-TFBB146>
         rdf:type               sport:TeamParticipation ;
@@ -5792,16 +6460,16 @@
         rdfs:label             "Player <http://example.com/Athlete/p.41921> participation in Event EFBO782747" ;
         sport:participationBy  <http://example.com/Athlete/p.41921> .
 
-<http://example.com/Participation/EFBO782752-p.56013>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.56013> participation in Event EFBO782752" ;
-        sport:participationBy  <http://example.com/Athlete/p.56013> .
-
 <http://example.com/Membership/TFBB167-p.41316>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.41316> membership of FC Schalke 04" ;
         sport:member        <http://example.com/Athlete/p.41316> ;
         sport:membershipOf  <http://example.com/Team/TFBB167> .
+
+<http://example.com/Participation/EFBO782752-p.56013>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.56013> participation in Event EFBO782752" ;
+        sport:participationBy  <http://example.com/Athlete/p.56013> .
 
 <http://example.com/Event/EFBO788112>
         rdf:type                       sport:Event ;
@@ -5957,6 +6625,10 @@
         rdf:type    sport:Site ;
         rdfs:label  "Ljudski vrt" .
 
+<http://example.com/Athlete/p.43020>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.43020>" .
+
 <http://example.com/Participation/EFBO782741-TFBB1341>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Zenit St Petersburg participation in Event EFBO782741" ;
@@ -5965,6 +6637,10 @@
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TFBB1341> ;
         sport:score            "0" .
+
+<http://example.com/Athlete/p.81880>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.81880>" .
 
 <http://example.com/Participation/EFBO782761-TFBB121>
         rdf:type               sport:TeamParticipation ;
@@ -6010,6 +6686,10 @@
         sport:participationBy  <http://example.com/Team/TFBB156> ;
         sport:score            "6" .
 
+<http://example.com/Athlete/p.50635>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.50635>" .
+
 <http://example.com/Participation/EFBO782771-TFBB481>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "FC Basel participation in Event EFBO782771" ;
@@ -6019,16 +6699,16 @@
         sport:participationBy  <http://example.com/Team/TFBB481> ;
         sport:score            "0" .
 
-<http://example.com/Participation/EFBO782733-p.12303>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.12303> participation in Event EFBO782733" ;
-        sport:participationBy  <http://example.com/Athlete/p.12303> .
-
 <http://example.com/Membership/TFBB175-p.14402>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.14402> membership of Atlético de Madrid" ;
         sport:member        <http://example.com/Athlete/p.14402> ;
         sport:membershipOf  <http://example.com/Team/TFBB175> .
+
+<http://example.com/Participation/EFBO782733-p.12303>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.12303> participation in Event EFBO782733" ;
+        sport:participationBy  <http://example.com/Athlete/p.12303> .
 
 <http://example.com/Participation/EFBO782783-TFBB157>
         rdf:type               sport:TeamParticipation ;
@@ -6039,6 +6719,15 @@
         sport:participationBy  <http://example.com/Team/TFBB157> ;
         sport:score            "1" .
 
+<http://example.com/Participation/EFBO782778-p.26806>
+        rdf:type               sport:IndividualParticipation ;
+        rdfs:label             "Player <http://example.com/Athlete/p.26806> participation in Event EFBO782778" ;
+        sport:participationBy  <http://example.com/Athlete/p.26806> .
+
+<http://example.com/Athlete/p.14937>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14937>" .
+
 <http://example.com/Participation/EFBO782764-TFBB215>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Ajax participation in Event EFBO782764" ;
@@ -6048,21 +6737,20 @@
         sport:participationBy  <http://example.com/Team/TFBB215> ;
         sport:score            "1" .
 
-<http://example.com/Participation/EFBO782778-p.26806>
+<http://example.com/Athlete/p.47429>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.47429>" .
+
+<http://example.com/Participation/EFBO782792-p.83465>
         rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.26806> participation in Event EFBO782778" ;
-        sport:participationBy  <http://example.com/Athlete/p.26806> .
+        rdfs:label             "Player <http://example.com/Athlete/p.83465> participation in Event EFBO782792" ;
+        sport:participationBy  <http://example.com/Athlete/p.83465> .
 
 <http://example.com/Membership/TFBB481-p.181007>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.181007> membership of FC Basel" ;
         sport:member        <http://example.com/Athlete/p.181007> ;
         sport:membershipOf  <http://example.com/Team/TFBB481> .
-
-<http://example.com/Participation/EFBO782792-p.83465>
-        rdf:type               sport:IndividualParticipation ;
-        rdfs:label             "Player <http://example.com/Athlete/p.83465> participation in Event EFBO782792" ;
-        sport:participationBy  <http://example.com/Athlete/p.83465> .
 
 <http://example.com/Participation/EFBO782729-TFBB1340>
         rdf:type               sport:TeamParticipation ;
@@ -6143,6 +6831,10 @@
         sport:participationBy  <http://example.com/Team/TFBB149> ;
         sport:score            "0" .
 
+<http://example.com/Athlete/p.18498>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.18498>" .
+
 <http://example.com/Participation/EFBO782708-TFBB178>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Barcelona participation in Event EFBO782708" ;
@@ -6190,6 +6882,10 @@
 <http://example.com/Site/VFBB2713>
         rdf:type    sport:Site ;
         rdfs:label  "Estádio da Luz" .
+
+<http://example.com/Athlete/p.28559>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28559>" .
 
 <http://example.com/Participation/EFBO782698-TFBB202>
         rdf:type               sport:TeamParticipation ;
@@ -6262,6 +6958,14 @@
         sport:member        <http://example.com/Athlete/p.159422> ;
         sport:membershipOf  <http://example.com/Team/TFBB251> .
 
+<http://example.com/Athlete/p.56764>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.56764>" .
+
+<http://example.com/Athlete/p.11225>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.11225>" .
+
 <http://example.com/Membership/TFBB164-p.85971>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.85971> membership of Bayer 04 Leverkusen" ;
@@ -6291,6 +6995,10 @@
         sport:participationBy  <http://example.com/Team/TFBB164> ;
         sport:score            "3" .
 
+<http://example.com/Athlete/p.56013>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.56013>" .
+
 <http://example.com/Membership/TFBB175-p.18018>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.18018> membership of Atlético de Madrid" ;
@@ -6300,6 +7008,14 @@
 <http://example.com/Site/VFBB112>
         rdf:type    sport:Site ;
         rdfs:label  "Amsterdam ArenA" .
+
+<http://example.com/Athlete/p.103483>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.103483>" .
+
+<http://example.com/Athlete/p.70217>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.70217>" .
 
 <http://example.com/Participation/EFBO782792-p.68046>
         rdf:type               sport:IndividualParticipation ;
@@ -6312,23 +7028,27 @@
         sport:member        <http://example.com/Athlete/p.92500> ;
         sport:membershipOf  <http://example.com/Team/TFBB174> .
 
-<http://example.com/Membership/TFBB241-p.82533>
-        rdf:type            sport:IndividualMembership ;
-        rdfs:label          "Player <http://example.com/Athlete/p.82533> membership of RSC Anderlecht" ;
-        sport:member        <http://example.com/Athlete/p.82533> ;
-        sport:membershipOf  <http://example.com/Team/TFBB241> .
-
 <http://example.com/Membership/TFBB8-p.67514>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.67514> membership of Chelsea" ;
         sport:member        <http://example.com/Athlete/p.67514> ;
         sport:membershipOf  <http://example.com/Team/TFBB8> .
 
+<http://example.com/Membership/TFBB241-p.82533>
+        rdf:type            sport:IndividualMembership ;
+        rdfs:label          "Player <http://example.com/Athlete/p.82533> membership of RSC Anderlecht" ;
+        sport:member        <http://example.com/Athlete/p.82533> ;
+        sport:membershipOf  <http://example.com/Team/TFBB241> .
+
 <http://example.com/Membership/TFBB3-p.8758>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Player <http://example.com/Athlete/p.8758> membership of Arsenal" ;
         sport:member        <http://example.com/Athlete/p.8758> ;
         sport:membershipOf  <http://example.com/Team/TFBB3> .
+
+<http://example.com/Athlete/p.101967>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.101967>" .
 
 <http://example.com/Participation/EFBO782699-p.42493>
         rdf:type               sport:IndividualParticipation ;
@@ -6422,6 +7142,18 @@
         sport:participationBy  <http://example.com/Team/TFBB3033> ;
         sport:score            "1" .
 
+<http://example.com/Athlete/p.14402>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.14402>" .
+
+<http://example.com/Athlete/p.111732>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.111732>" .
+
+<http://example.com/Athlete/p.67378>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.67378>" .
+
 <http://example.com/Event/EFBO782787>
         rdf:type                       sport:Event ;
         rdfs:label                     "Event EFBO782787" ;
@@ -6450,6 +7182,10 @@
         sport:location                 <http://example.com/Site/VFBB35> ;
         sport:participation            <http://example.com/Participation/EFBO782709-p.14941> , <http://example.com/Participation/EFBO782709-TFBB167> , <http://example.com/Participation/EFBO782709-TFBB8> , <http://example.com/Participation/EFBO782709-p.17878> ;
         sport:startDateTime            "2014-09-17T19:45:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.39931>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.39931>" .
 
 <http://example.com/Participation/EFBO782700-p.28340>
         rdf:type               sport:IndividualParticipation ;
@@ -6481,6 +7217,10 @@
         sport:member        <http://example.com/Athlete/p.165796> ;
         sport:membershipOf  <http://example.com/Team/TFBB186> .
 
+<http://example.com/Athlete/p.8758>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.8758>" .
+
 <http://example.com/Participation/EFBO782773-TFBB146>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Monaco participation in Event EFBO782773" ;
@@ -6504,6 +7244,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Player <http://example.com/Athlete/p.76650> participation in Event EFBO782737" ;
         sport:participationBy  <http://example.com/Athlete/p.76650> .
+
+<http://example.com/Athlete/p.57254>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.57254>" .
+
+<http://example.com/Athlete/p.28554>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.28554>" .
 
 <http://example.com/Participation/EFBO782703-p.59046>
         rdf:type               sport:IndividualParticipation ;
@@ -6569,6 +7317,10 @@
         sport:location                 <http://example.com/Site/VFBB39> ;
         sport:participation            <http://example.com/Participation/EFBO782699-p.1814> , <http://example.com/Participation/EFBO782699-TFBB6128> , <http://example.com/Participation/EFBO782699-p.40269> , <http://example.com/Participation/EFBO782699-TFBB14> , <http://example.com/Participation/EFBO782699-p.42493> ;
         sport:startDateTime            "2014-09-16T19:45:00+01:00"^^xsd:dateTime .
+
+<http://example.com/Athlete/p.108438>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Player <http://example.com/Athlete/p.108438>" .
 
 <http://example.com/Event/EFBO799716>
         rdf:type                       sport:Event ;

@@ -647,13 +647,11 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         </xsl:variable>
 
         <!-- <player> rdf:type Athlete -->
-        <xsl:if test="string(newsml:player-metadata/newsml:name[@role='nrol:full']) or string(newsml:player-metadata/newsml:name[@part='nprt:first'])">
         <xsl:value-of select="$player-id"/>~<xsl:value-of select="concat('«',$rdf-ns,'type','»')"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'Athlete','»')"/> .
-        <!-- <player> rdfs:label "name". Make sure it's actual name for Athlete type as opposed to fallback in $player-name -->
+        <!-- <player> rdfs:label player-name -->
         <xsl:value-of select="$player-id"/>~<xsl:value-of select="concat('«',$rdfs-ns,'label','»')"/>~"<xsl:value-of select="$player-name"/>" .
-        </xsl:if>
 
-        <!-- <team> sport:athlete <player> -->
+        <!-- <player> membership of <team> -->
         <xsl:if test="ancestor::newsml:team">
             <xsl:variable name="player-team-key"><xsl:value-of select="substring-after(ancestor::newsml:team/newsml:team-metadata/@key,':')"/></xsl:variable>
             <xsl:variable name="player-team-name"><xsl:value-of select="ancestor::newsml:team/newsml:team-metadata/newsml:name[@role='nrol:full']"/></xsl:variable>
