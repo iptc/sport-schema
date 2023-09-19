@@ -821,7 +821,42 @@ sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
   sh:targetClass sport:ParticipationSplit ;
   sh:closed true;
-  sh:ignoredProperties ( rdf:type rdfs:label ) .
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties defined on participationSplit
+  sh:property [
+    sh:path sport:participationSplitType ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spcompetitionscope/" ;
+    sh:flags   "i"                                               # Ignore case
+  ] ;
+  # core statistics properties
+  sh:property [
+    sh:path spstat:eventsPlayed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:losses ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredAgainst ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredFor ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:standingPoints ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:ties ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:wins ;
+    sh:datatype xsd:string ;
+  ] .
 
 sport:SiteShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
@@ -860,8 +895,24 @@ sport:TeamParticipationShape rdf:type sh:NodeShape  ;
     sh:class sport:Team ;
   ] ;
   sh:property [
+    sh:path sport:participationSplit ;
+    sh:class sport:ParticipationSplit ;
+  ] ;
+  sh:property [
     sh:path sport:rank ;
     sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:resultEffect ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spresulteffect/" ;
+    sh:flags   "i"                                               # Ignore case
+   ] ;
+  sh:property [
+    sh:path spstat:resultEffectTarget ;
+    sh:or (
+     [ sh:datatype xsd:string ; ]
+     [ sh:class sport:ParticipatableThing ; ]
+    )
   ] ;
   sh:property [
     sh:path sport:score ;
