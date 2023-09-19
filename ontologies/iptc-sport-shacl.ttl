@@ -276,7 +276,7 @@ sport:CompetitionPhaseShape
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
-    sh:path sport:phaseParticipation ;
+    sh:path sport:participation ;
     sh:class sport:Participation
   ] ;
   sh:property [
@@ -432,7 +432,7 @@ sport:IndividualMembershipShape
   a sh:NodeShape ;
   sh:property [
     sh:path sport:positionRegular ;
-    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|sphorpos)/" ;
+    sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|sphorpos|spichposition)/" ;
     # TODO we really should check for individual vocabularies...
     # but some example data fails (needs to be fixed) so let's cheat for now
     # sh:pattern "^http://cv.iptc.org/newscodes/" ;
@@ -449,6 +449,10 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
   # properties defined on IndividualParticipation
+  sh:property [
+    sh:path sport:uniformNumber ;
+    sh:datatype xsd:string ;
+  ] ;
   sh:property [
     sh:path sport:playerStatus ;
     sh:pattern "^http://cv.iptc.org/newscodes/spplayerstatus/" ;
@@ -515,6 +519,15 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path spstat:rating ;
     sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:resultEffect ;
+    sh:pattern "^http://cv.iptc.org/newscodes/spresulteffect/" ;
+    sh:flags   "i"                                               # Ignore case
+   ] ;
+  sh:property [
+    sh:path spstat:resultEffectTarget ;
+    sh:class sport:ParticipatableThing ;
   ] ;
   sh:property [
     sh:path spstat:timePlayedTotal ;
@@ -858,6 +871,22 @@ sport:TeamParticipationShape rdf:type sh:NodeShape  ;
     sh:path spstat:eventsPlayed ;
     sh:datatype xsd:string ;
   ] ;
+  sh:property [
+    sh:path spstat:losses ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsDifference ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredAgainst ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredFor ;
+    sh:datatype xsd:string ;
+  ] ;
   # TODO should be sport:score, still some instances of spstat:score
   sh:property [
     sh:path spstat:score ;
@@ -873,6 +902,18 @@ sport:TeamParticipationShape rdf:type sh:NodeShape  ;
   ] ;
   sh:property [
     sh:path spstat:seriesScoreOpposing ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:standingPoints ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:ties ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:wins ;
     sh:datatype xsd:string ;
   ] ;
   # soccer stats properties
