@@ -563,8 +563,14 @@ sport:startDate rdf:type owl:DatatypeProperty ;
 sport:uniformNumber rdf:type owl:DatatypeProperty ;
     rdfs:label "uniform number"@en ;
     rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
-    # TODO domain could be IndividualMembership or IndividualParticipation? (athletics example)
-    # rdfs:domain sport:IndividualMembership ;
+    rdfs:domain sport:IndividualMembership ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:uniformNumberEvent rdf:type owl:DatatypeProperty ;
+    rdfs:label "uniform number event"@en ;
+    rdfs:comment "The number worn on a player's uniform (jersey etc.) for an individual event. Note that the value may be a string such as 'unknown'."@en ;
+    rdfs:domain sport:IndividualParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
