@@ -11,8 +11,8 @@ PREFIX spsocrole: <http://cv.iptc.org/newscodes/spsocrole/>
 SELECT DISTINCT ?playerName ?time ?teamName ?playerperfrole
 WHERE { 
     ?action rdf:type sport:Action ;
-    		spact:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
-    		spact:minutesElapsed ?time ;
+    		sport:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
+    		sport:minutesElapsed ?time ;
             sport:participation ?playerperf ;
             sport:actionInEvent ?event .
     ?playerperf rdf:type sport:IndividualParticipation ;

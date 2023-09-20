@@ -5,7 +5,7 @@
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
 @prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
 @prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spesstat:           <http://cv.iptc.org/newscodes/spesstat/> .
+@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
@@ -27,44 +27,28 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5122" ;
         spstat:rating          "0,59" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "52,6" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-2" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "44,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "21" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "7" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "8" ;
+        spespstat:ADR          "52,6" ;
+        spespstat:FKdiff       "-2" ;
+        spespstat:KAST         "44,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "21" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "7" ;
+        spespstat:kills        "8" ;
         sport:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5121-PES11>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5121" ;
         spstat:rating          "1,36" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "89,7" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "75,9" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "18" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "14" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "28" ;
+        spespstat:ADR          "89,7" ;
+        spespstat:FKdiff       "3" ;
+        spespstat:KAST         "75,9" ;
+        spespstat:assist       "2" ;
+        spespstat:deaths       "18" ;
+        spespstat:flashassist  "2" ;
+        spespstat:headshot     "14" ;
+        spespstat:kills        "28" ;
         sport:participationBy  <http://example.com/Athlete/PES11> .
 
 <http://example.com/Event/5122>
@@ -80,6 +64,14 @@
         rdfs:label          "Engin Kor membership of " ;
         sport:member        <http://example.com/Athlete/PES19> ;
         sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Action/541807-4>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 4 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:choose ;
+        sport:comment         "Train" ;
+        sport:sequenceNumber  "4" .
 
 <http://example.com/Membership/T6134-PES14>
         rdf:type            sport:IndividualMembership ;
@@ -106,44 +98,28 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5122" ;
         spstat:rating          "1,35" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "81,8" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "84,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "10" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "6" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "10" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "20" ;
+        spespstat:ADR          "81,8" ;
+        spespstat:FKdiff       "-1" ;
+        spespstat:KAST         "84,0" ;
+        spespstat:assist       "8" ;
+        spespstat:deaths       "10" ;
+        spespstat:flashassist  "6" ;
+        spespstat:headshot     "10" ;
+        spespstat:kills        "20" ;
         sport:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Participation/5121-PES16>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5121" ;
         spstat:rating          "0,87" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "66,2" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-4" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "62,1" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "22" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "14" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "22" ;
+        spespstat:ADR          "66,2" ;
+        spespstat:FKdiff       "-4" ;
+        spespstat:KAST         "62,1" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "22" ;
+        spespstat:flashassist  "2" ;
+        spespstat:headshot     "14" ;
+        spespstat:kills        "22" ;
         sport:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Athlete/PES12>
@@ -155,22 +131,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5120" ;
         spstat:rating          "0,62" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "46,3" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "47,8" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "19" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "6" ;
+        spespstat:ADR          "46,3" ;
+        spespstat:FKdiff       "-1" ;
+        spespstat:KAST         "47,8" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "19" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "3" ;
+        spespstat:kills        "6" ;
         sport:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Participation/541807-T9572>
@@ -187,44 +155,28 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5122" ;
         spstat:rating          "0,75" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "59,6" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "60,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "20" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "7" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "13" ;
+        spespstat:ADR          "59,6" ;
+        spespstat:FKdiff       "1" ;
+        spespstat:KAST         "60,0" ;
+        spespstat:assist       "2" ;
+        spespstat:deaths       "20" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "7" ;
+        spespstat:kills        "13" ;
         sport:participationBy  <http://example.com/Athlete/PES12> .
 
 <http://example.com/Participation/5121-PES10>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5121" ;
         spstat:rating          "1,14" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "84,8" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-2" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "62,1" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "20" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "22" ;
+        spespstat:ADR          "84,8" ;
+        spespstat:FKdiff       "-2" ;
+        spespstat:KAST         "62,1" ;
+        spespstat:assist       "2" ;
+        spespstat:deaths       "20" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "4" ;
+        spespstat:kills        "22" ;
         sport:participationBy  <http://example.com/Athlete/PES10> .
 
 <http://example.com/Event/5121>
@@ -241,6 +193,14 @@
         sport:member        <http://example.com/Athlete/PES18> ;
         sport:membershipOf  <http://example.com/Team/T9572> .
 
+<http://example.com/Action/541807-3>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 3 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:choose ;
+        sport:comment         "Cache" ;
+        sport:sequenceNumber  "3" .
+
 <http://example.com/Membership/T6134-PES13>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Mikołaj Karolewski membership of " ;
@@ -256,22 +216,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5120" ;
         spstat:rating          "1,11" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "68,4" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "78,3" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "11" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "6" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "15" ;
+        spespstat:ADR          "68,4" ;
+        spespstat:FKdiff       "0" ;
+        spespstat:KAST         "78,3" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "11" ;
+        spespstat:flashassist  "2" ;
+        spespstat:headshot     "6" ;
+        spespstat:kills        "15" ;
         sport:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Participation/5121-T6134>
@@ -289,44 +241,28 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5122" ;
         spstat:rating          "0,94" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "66,6" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-4" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "56,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "17" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "10" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "15" ;
+        spespstat:ADR          "66,6" ;
+        spespstat:FKdiff       "-4" ;
+        spespstat:KAST         "56,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "17" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "10" ;
+        spespstat:kills        "15" ;
         sport:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Participation/5121-PES15>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5121" ;
         spstat:rating          "1,15" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "80,1" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "69,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "22" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "12" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "21" ;
+        spespstat:ADR          "80,1" ;
+        spespstat:FKdiff       "5" ;
+        spespstat:KAST         "69,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "22" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "12" ;
+        spespstat:kills        "21" ;
         sport:participationBy  <http://example.com/Athlete/PES15> .
 
 <http://example.com/Athlete/PES11>
@@ -338,22 +274,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5120" ;
         spstat:rating          "0,85" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "63,6" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "60,9" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "17" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "13" ;
+        spespstat:ADR          "63,6" ;
+        spespstat:FKdiff       "-3" ;
+        spespstat:KAST         "60,9" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "17" ;
+        spespstat:flashassist  "1" ;
+        spespstat:headshot     "8" ;
+        spespstat:kills        "13" ;
         sport:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5121-T9572>
@@ -367,22 +295,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5122" ;
         spstat:rating          "0,76" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "69,8" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "60,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "22" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "11" ;
+        spespstat:ADR          "69,8" ;
+        spespstat:FKdiff       "4" ;
+        spespstat:KAST         "60,0" ;
+        spespstat:assist       "2" ;
+        spespstat:deaths       "22" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "8" ;
+        spespstat:kills        "11" ;
         sport:participationBy  <http://example.com/Athlete/PES11> .
 
 <http://example.com/Event/5120>
@@ -399,6 +319,14 @@
         sport:member        <http://example.com/Athlete/PES17> ;
         sport:membershipOf  <http://example.com/Team/T9572> .
 
+<http://example.com/Action/541807-2>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 2 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:remove ;
+        sport:comment         "Inferno" ;
+        sport:sequenceNumber  "2" .
+
 <http://example.com/Membership/T6134-PES12>
         rdf:type            sport:IndividualMembership ;
         rdfs:label          "Wiktor Wojtas membership of " ;
@@ -414,66 +342,42 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5120" ;
         spstat:rating          "1,08" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "89,7" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "78,3" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "11" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "13" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "6" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "12" ;
+        spespstat:ADR          "89,7" ;
+        spespstat:FKdiff       "-1" ;
+        spespstat:KAST         "78,3" ;
+        spespstat:assist       "11" ;
+        spespstat:deaths       "13" ;
+        spespstat:flashassist  "3" ;
+        spespstat:headshot     "6" ;
+        spespstat:kills        "12" ;
         sport:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Participation/5122-PES16>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5122" ;
         spstat:rating          "1,37" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "90,9" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "80,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "12" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "11" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "20" ;
+        spespstat:ADR          "90,9" ;
+        spespstat:FKdiff       "1" ;
+        spespstat:KAST         "80,0" ;
+        spespstat:assist       "5" ;
+        spespstat:deaths       "12" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "11" ;
+        spespstat:kills        "20" ;
         sport:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Participation/5121-PES14>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5121" ;
         spstat:rating          "1,21" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "78,4" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "75,9" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "15" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "24" ;
+        spespstat:ADR          "78,4" ;
+        spespstat:FKdiff       "0" ;
+        spespstat:KAST         "75,9" ;
+        spespstat:assist       "1" ;
+        spespstat:deaths       "15" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "8" ;
+        spespstat:kills        "24" ;
         sport:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Athlete/PES10>
@@ -485,44 +389,36 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5120" ;
         spstat:rating          "0,86" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "66,9" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "56,5" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "19" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "11" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "16" ;
+        spespstat:ADR          "66,9" ;
+        spespstat:FKdiff       "-1" ;
+        spespstat:KAST         "56,5" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "19" ;
+        spespstat:flashassist  "1" ;
+        spespstat:headshot     "11" ;
+        spespstat:kills        "16" ;
         sport:participationBy  <http://example.com/Athlete/PES12> .
+
+<http://example.com/Action/541807-7>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 7 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:remaining ;
+        sport:comment         "Mirage" ;
+        sport:sequenceNumber  "7" .
 
 <http://example.com/Participation/5122-PES10>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5122" ;
         spstat:rating          "0,98" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "72,5" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-2" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "48,1" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "18" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "19" ;
+        spespstat:ADR          "72,5" ;
+        spespstat:FKdiff       "-2" ;
+        spespstat:KAST         "48,1" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "18" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "8" ;
+        spespstat:kills        "19" ;
         sport:participationBy  <http://example.com/Athlete/PES10> .
 
 <http://example.com/Membership/T9572-PES16>
@@ -530,6 +426,14 @@
         rdfs:label          "Ahmet Karahoca membership of " ;
         sport:member        <http://example.com/Athlete/PES16> ;
         sport:membershipOf  <http://example.com/Team/T9572> .
+
+<http://example.com/Action/541807-1>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 1 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:remove ;
+        sport:comment         "Nuke" ;
+        sport:sequenceNumber  "1" .
 
 <http://example.com/Membership/T6134-PES11>
         rdf:type            sport:IndividualMembership ;
@@ -541,22 +445,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5121" ;
         spstat:rating          "0,66" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "54,4" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "51,7" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "21" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "7" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "12" ;
+        spespstat:ADR          "54,4" ;
+        spespstat:FKdiff       "0" ;
+        spespstat:KAST         "51,7" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "21" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "7" ;
+        spespstat:kills        "12" ;
         sport:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Athlete/PES15>
@@ -568,22 +464,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5120" ;
         spstat:rating          "1,43" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "104,9" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "73,9" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "6" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "16" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "6" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "22" ;
+        spespstat:ADR          "104,9" ;
+        spespstat:FKdiff       "3" ;
+        spespstat:KAST         "73,9" ;
+        spespstat:assist       "6" ;
+        spespstat:deaths       "16" ;
+        spespstat:flashassist  "2" ;
+        spespstat:headshot     "6" ;
+        spespstat:kills        "22" ;
         sport:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Participation/5122-T6134>
@@ -602,67 +490,51 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5122" ;
         spstat:rating          "1,57" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "105,2" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "80,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "12" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "15" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "26" ;
+        spespstat:ADR          "105,2" ;
+        spespstat:FKdiff       "1" ;
+        spespstat:KAST         "80,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "12" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "15" ;
+        spespstat:kills        "26" ;
         sport:participationBy  <http://example.com/Athlete/PES15> .
 
 <http://example.com/Participation/5121-PES13>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Mikołaj Karolewski participation in Event 5121" ;
         spstat:rating          "0,82" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "66,3" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "69,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "22" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "8" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "16" ;
+        spespstat:ADR          "66,3" ;
+        spespstat:FKdiff       "-3" ;
+        spespstat:KAST         "69,0" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "22" ;
+        spespstat:flashassist  "1" ;
+        spespstat:headshot     "8" ;
+        spespstat:kills        "16" ;
         sport:participationBy  <http://example.com/Athlete/PES13> .
 
 <http://example.com/Participation/5120-PES11>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Pawet Jańczak participation in Event 5120" ;
         spstat:rating          "0,92" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "65,9" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "65,2" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "16" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "9" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "15" ;
+        spespstat:ADR          "65,9" ;
+        spespstat:FKdiff       "-3" ;
+        spespstat:KAST         "65,2" ;
+        spespstat:assist       "1" ;
+        spespstat:deaths       "16" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "9" ;
+        spespstat:kills        "15" ;
         sport:participationBy  <http://example.com/Athlete/PES11> .
+
+<http://example.com/Action/541807-6>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 6 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:remove ;
+        sport:comment         "Dust2" ;
+        sport:sequenceNumber  "6" .
 
 <http://example.com/Membership/T9572-PES15>
         rdf:type            sport:IndividualMembership ;
@@ -680,22 +552,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Küpeli participation in Event 5121" ;
         spstat:rating          "0,89" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "70,4" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "-4" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "69,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "19" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "15" ;
+        spespstat:ADR          "70,4" ;
+        spespstat:FKdiff       "-4" ;
+        spespstat:KAST         "69,0" ;
+        spespstat:assist       "5" ;
+        spespstat:deaths       "19" ;
+        spespstat:flashassist  "1" ;
+        spespstat:headshot     "5" ;
+        spespstat:kills        "15" ;
         sport:participationBy  <http://example.com/Athlete/PES18> .
 
 <http://example.com/Athlete/PES14>
@@ -707,22 +571,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ahmet Karahoca participation in Event 5120" ;
         spstat:rating          "1,53" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "87,6" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "78,3" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "12" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "11" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "24" ;
+        spespstat:ADR          "87,6" ;
+        spespstat:FKdiff       "2" ;
+        spespstat:KAST         "78,3" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "12" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "11" ;
+        spespstat:kills        "24" ;
         sport:participationBy  <http://example.com/Athlete/PES16> .
 
 <http://example.com/Competition/l.intelextrememasters.com>
@@ -734,67 +590,51 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Karol Rodowicz participation in Event 5122" ;
         spstat:rating          "0,89" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "73,7" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "56,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "20" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "10" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "16" ;
+        spespstat:ADR          "73,7" ;
+        spespstat:FKdiff       "2" ;
+        spespstat:KAST         "56,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "20" ;
+        spespstat:flashassist  "1" ;
+        spespstat:headshot     "10" ;
+        spespstat:kills        "16" ;
         sport:participationBy  <http://example.com/Athlete/PES14> .
 
 <http://example.com/Participation/5121-PES12>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Wiktor Wojtas participation in Event 5121" ;
         spstat:rating          "0,88" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "59,2" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "69,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "18" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "9" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "13" ;
+        spespstat:ADR          "59,2" ;
+        spespstat:FKdiff       "1" ;
+        spespstat:KAST         "69,0" ;
+        spespstat:assist       "4" ;
+        spespstat:deaths       "18" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "9" ;
+        spespstat:kills        "13" ;
         sport:participationBy  <http://example.com/Athlete/PES12> .
 
 <http://example.com/Participation/5120-PES10>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jazek Jeziak participation in Event 5120" ;
         spstat:rating          "1,06" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "65,9" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "65,2" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "17" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "7" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "16" ;
+        spespstat:ADR          "65,9" ;
+        spespstat:FKdiff       "3" ;
+        spespstat:KAST         "65,2" ;
+        spespstat:assist       "5" ;
+        spespstat:deaths       "17" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "7" ;
+        spespstat:kills        "16" ;
         sport:participationBy  <http://example.com/Athlete/PES10> .
+
+<http://example.com/Action/541807-5>
+        rdf:type              sport:Action ;
+        rdfs:label            "Action 5 on event 541807" ;
+        sport:actionInEvent   <http://example.com/Event/541807> ;
+        sport:actionType      spesaction:remove ;
+        sport:comment         "Overpass" ;
+        sport:sequenceNumber  "5" .
 
 <http://example.com/Event/541807>
         rdf:type             sport:Event ;
@@ -826,44 +666,28 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Engin Kor participation in Event 5122" ;
         spstat:rating          "1,21" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "86,5" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "1" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "56,0" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "16" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "10" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "20" ;
+        spespstat:ADR          "86,5" ;
+        spespstat:FKdiff       "1" ;
+        spespstat:KAST         "56,0" ;
+        spespstat:assist       "5" ;
+        spespstat:deaths       "16" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "10" ;
+        spespstat:kills        "20" ;
         sport:participationBy  <http://example.com/Athlete/PES19> .
 
 <http://example.com/Participation/5121-PES17>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ismailcan Dörtkardeş participation in Event 5121" ;
         spstat:rating          "1,14" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "81,3" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "4" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "65,5" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "19" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "0" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "14" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "23" ;
+        spespstat:ADR          "81,3" ;
+        spespstat:FKdiff       "4" ;
+        spespstat:KAST         "65,5" ;
+        spespstat:assist       "3" ;
+        spespstat:deaths       "19" ;
+        spespstat:flashassist  "0" ;
+        spespstat:headshot     "14" ;
+        spespstat:kills        "23" ;
         sport:participationBy  <http://example.com/Athlete/PES17> .
 
 <http://example.com/Team/T6134>
@@ -879,20 +703,12 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Buğra Arkın participation in Event 5120" ;
         spstat:rating          "1,15" ;
-        <https://sportschema.org/ontologies/esports/ADR>
-                "64,4" ;
-        <https://sportschema.org/ontologies/esports/FKdiff>
-                "3" ;
-        <https://sportschema.org/ontologies/esports/KAST>
-                "82,6" ;
-        <https://sportschema.org/ontologies/esports/assist>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/deaths>
-                "14" ;
-        <https://sportschema.org/ontologies/esports/flashassist>
-                "2" ;
-        <https://sportschema.org/ontologies/esports/headshot>
-                "5" ;
-        <https://sportschema.org/ontologies/esports/kills>
-                "14" ;
+        spespstat:ADR          "64,4" ;
+        spespstat:FKdiff       "3" ;
+        spespstat:KAST         "82,6" ;
+        spespstat:assist       "5" ;
+        spespstat:deaths       "14" ;
+        spespstat:flashassist  "2" ;
+        spespstat:headshot     "5" ;
+        spespstat:kills        "14" ;
         sport:participationBy  <http://example.com/Athlete/PES15> .

@@ -19,11 +19,14 @@
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema"@en ;
     rdfs:label "IPTC Sport Schema"@en ;
-    dcterms:created "2022-10-17"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
-    dcterms:description "A high level model to describe the core elements of competitive sport"@en .
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2023. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "A high-level model to describe the core elements of competitive sport"@en ;
+    rdfs:isDefinedBy sport: ;
+    owl:versionIRI <https://sportschema.org/ontologies/main/1.0> ;
+    owl:versionInfo "1.0"^^xsd:string .
 
 ##### Classes #####
 
@@ -508,6 +511,14 @@ sport:rank rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:role rdf:type owl:DatatypeProperty ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A team's or individual's role in a given action"@en ;
+    rdfs:domain sport:Participation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
+    rdfs:range xsd:anyURI ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "Final or current score of the team or individual"@en ;
@@ -556,6 +567,13 @@ sport:uniformNumber rdf:type owl:DatatypeProperty ;
     rdfs:label "uniform number"@en ;
     rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
     rdfs:domain sport:IndividualMembership ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:uniformNumberEvent rdf:type owl:DatatypeProperty ;
+    rdfs:label "uniform number event"@en ;
+    rdfs:comment "The number worn on a player's uniform (jersey etc.) for an individual event. Note that the value may be a string such as 'unknown'."@en ;
+    rdfs:domain sport:IndividualParticipation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
@@ -646,13 +664,6 @@ sport:minutesElapsed rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:oppositePlay rdf:type owl:DatatypeProperty ;
-    rdfs:label "opposite play"@en ;
-    rdfs:comment "opposite play"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
 sport:passDescription rdf:type owl:DatatypeProperty ;
     rdfs:label "pass description"@en ;
     rdfs:comment "description of the pass taken in this action"@en ;
@@ -695,6 +706,13 @@ sport:periodValue rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:personReplacingPosition rdf:type owl:DatatypeProperty ;
+    rdfs:label "person replacing position"@en ;
+    rdfs:comment "The position role assumed by the substitute."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:recipientType rdf:type owl:DatatypeProperty ;
     rdfs:label "recipient type"@en ;
     rdfs:comment "Whether the receiver of the penalty was the team, the player, a coach, a ref, etc. SportsML vocab uri: http://cv.iptc.org/newscodes/sprecipienttype/"@en ;
@@ -709,14 +727,6 @@ sport:result rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:role rdf:type owl:DatatypeProperty ;
-    rdfs:label "role"@en ;
-    rdfs:comment "A team's or individual's role in a given action"@en ;
-    rdfs:domain sport:Action ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
-    rdfs:range xsd:anyURI ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
 sport:saveMethod rdf:type owl:DatatypeProperty ;
     rdfs:label "save method"@en ;
     rdfs:comment "method used for this save"@en ;
@@ -727,13 +737,6 @@ sport:saveMethod rdf:type owl:DatatypeProperty ;
 sport:saveType rdf:type owl:DatatypeProperty ;
     rdfs:label "save type"@en ;
     rdfs:comment "type of save performed in this action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreAttemptDescription rdf:type owl:DatatypeProperty ;
-    rdfs:label "score attempt description"@en ;
-    rdfs:comment "description of the score attempt"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .

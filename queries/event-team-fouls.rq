@@ -7,7 +7,7 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <https://sportschema.org/ontologies/main/>
 PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
 
-SELECT ?teamName ?playerName ?foulsCommitted
+SELECT DISTINCT ?teamName ?playerName ?foulsCommitted
 WHERE { 
     ?event rdf:type sport:Event ;
            sport:participation ?individualParticipation ;

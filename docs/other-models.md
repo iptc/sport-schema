@@ -11,35 +11,35 @@ While planning and working on IPTC Sport Schema, we of course consulted similar 
 
 ## Competition Structure General
 
-|IPTC      |IOC      |OpenAthletics      |BBC      |Oly Example      |EPL Example      |Note
-|---|---|---|---|---|---|---|
-|GoverningBody    |Organization    |SportsGoverningBody        | GoverningBody        |IOC      |UEFA(?)      |
-|Competition    |    |CompetitionSeries        |RecurringCompetition      |Summer Olympics      |N/A      |
-|Competition    |Competition    |Competition        |DivisionalCompetition      |Tokyo 2020      |EPL      |New term needed? Think of overall medal standings and NOC "Participation"
-|Competition    |Event    |Competition        |MultiStageCompetition       |Men's 800M      |EPL 2021-22      |Results in award (medal) at end
-|CompetitionPhase    |Phase    |Round        |Round      |Men's 800M Semi-Final      |Week 1      |
-|Event  |Event Unit       |UnitCompetition        |UnitCompetition      |Men's 800M Semi-Final Heat 1     |ManU vs Chelsea Dec. 4       |
+|IPTC Sport Schema      | IPTC SportsML |  IOC      |OpenAthletics      |BBC      |Oly Example      |EPL Example      |Note
+|---|---|---|---|---|---|---|---|
+|GoverningBody    | n/a | Organization    |SportsGoverningBody        | GoverningBody        |IOC      |UEFA(?)      |
+|Competition    | |    |CompetitionSeries        |RecurringCompetition      |Summer Olympics      |N/A      |
+|Competition    | tournament | Competition    |Competition        |DivisionalCompetition      |Tokyo 2020      |EPL      |New term needed? Think of overall medal standings and NOC "Participation"
+|Competition    | tournament | Event    |Competition        |MultiStageCompetition       |Men's 800M      |EPL 2021-22      |Results in award (medal) at end
+|CompetitionPhase    | tournament-part | Phase    |Round        |Round      |Men's 800M Semi-Final      |Week 1      |
+|Event  | sports-event | Event Unit       |UnitCompetition        |UnitCompetition      |Men's 800M Semi-Final Heat 1     |ManU vs Chelsea Dec. 4       |
 
 ## Competition Structure Olympic Men's Track Cycling (Sprint)
 
-|IPTC      |IOC      |OpenAthletics      |BBC      |Event/Phase/Comp
-|---|---|---|---|---|---|
-|GoverningBody    |Organization    |SportsGoverningBody        | GoverningBody        |IOC
-|Competition    |    |CompetitionSeries        |RecurringCompetition      |Summer Olympics
-|Competition    |Competition    |Competition        |DivisionalCompetition      |Tokyo 2020
-|Competition  |Event       |Competition        |MultiStageCompetition      |Men's Sprint
-|CompetitionPhase  |Phase       |Round        |KnockoutCompetition      |Men's Sprint Semi-Finals
-|CompetitionPhase  |Event Unit       |UnitCompetition (?)       |Round      |Men's Sprint Semi-Finals Heat 1
-|Event  |Event Unit       |UnitCompetition        |UnitCompetition      |Men's Sprint Semi-Finals Heat 1, Race 1
+|IPTC Sport Schema      | IPTC SportsML | IOC      |OpenAthletics      |BBC      |Event/Phase/Comp
+|---|---|---|---|---|---|---|
+|GoverningBody    | n/a | Organization    |SportsGoverningBody        | GoverningBody        |IOC
+|Competition    | |     |CompetitionSeries        |RecurringCompetition      |Summer Olympics
+|Competition    | tournament | Competition    |Competition        |DivisionalCompetition      |Tokyo 2020
+|Competition  | tournament | Event       |Competition        |MultiStageCompetition      |Men's Sprint
+|CompetitionPhase  | tournament-part | Phase       |Round        |KnockoutCompetition      |Men's Sprint Semi-Finals
+|CompetitionPhase  | tournament-part | Event Unit       |UnitCompetition (?)       |Round      |Men's Sprint Semi-Finals Heat 1
+|Event  | sports-event | Event Unit       |UnitCompetition        |UnitCompetition      |Men's Sprint Semi-Finals Heat 1, Race 1
 
 
 ## Competitors and Membership
 
-|IPTC      |IOC      |OpenAthletics      |BBC      |Oly Example      |EPL Example      |Note
-|---|---|---|---|---|---|---|
-|GoverningBody    |Organization    |GoverningBody, Federation, Organization        |GoverningBody         |Canadian Olympic Committee, Badminton World Federation     |UEFA      |IOC Organization is NOC and/or International Federation
-|Team    |Team    |Team    |CompetitiveSportingOrganisation          |Peru Men's Hockey      |Chelsea      |BBC includes NOC
-|Athlete    |Athlete    |Athlete    |Person          |Eileen Gu      |Mohamed Salah      |
+|IPTC Sport Schema      |IPTC SportsML | IOC      |OpenAthletics      |BBC      |Oly Example      |EPL Example      |Note
+|---|---|---|---|---|---|---|---|
+|GoverningBody    | | Organization    |GoverningBody, Federation, Organization        |GoverningBody         |Canadian Olympic Committee, Badminton World Federation     |UEFA      |IOC Organization is NOC and/or International Federation
+|Team    | team | Team    |Team    |CompetitiveSportingOrganisation          |Peru Men's Hockey      |Chelsea      |BBC includes NOC
+|Athlete    | player | Athlete    |Athlete    |Person          |Eileen Gu      |Mohamed Salah      |
 
 
 References:
