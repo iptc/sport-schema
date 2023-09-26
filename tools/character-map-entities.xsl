@@ -3,8 +3,10 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
     xmlns:local="http://www.bbc.co.uk/tom.grahame@bbc.co.uk">
     <xsl:character-map name="entities">
-        <xsl:output-character character="«" string="&lt;"/>   
+        <xsl:output-character character="«" string="&lt;"/>
         <xsl:output-character character="»" string="&gt;"/>
+        <xsl:output-character character="≤" string='"'/>
+        <xsl:output-character character="≥" string='"^^&lt;http://www.w3.org/2001/XMLSchema#anyURI&gt;'/>
         <xsl:output-character character="±" string="&amp;"/>
         <xsl:output-character character="~" string="&#32;"/>
     </xsl:character-map>

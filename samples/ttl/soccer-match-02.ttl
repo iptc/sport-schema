@@ -1,20 +1,11 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Athlete/p.155569>
         rdf:type    sport:Athlete ;
@@ -27,7 +18,7 @@
 <http://example.com/Participation/E2128610-EPLT13>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Leicester City participation in Event E2128610" ;
-        spstat:eventOutcome             speventoutcome:win ;
+        spstat:eventOutcome             "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing            "1" ;
         spstat:timeOfPossessionPercentage
                 "67.1" ;
@@ -64,8 +55,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.218031> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "1" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -96,8 +87,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.101668> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:aerialsWon            "1" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -122,7 +113,7 @@
         rdfs:label                "Action a.2291888213 on event E2128610" ;
         sport:actionDateTime      "2021-04-26T21:28:41+01:00" ;
         sport:actionInEvent       <http://example.com/Event/E2128610> ;
-        sport:class               <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:class               "http://cv.iptc.org/newscodes/spactionclass/substitution"^^xsd:anyURI ;
         sport:minutesElapsed      "70" ;
         sport:participation       <http://example.com/Participation/E2128610-a.2291888213-p.244619> , <http://example.com/Participation/E2128610-a.2291888213-p.51938> ;
         sport:periodValue         "2" ;
@@ -140,7 +131,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.50472 participation in action a.2291892531 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.50472> ;
-        sport:role             spsocrole:sub-off .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-off"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.105666>
         rdf:type    sport:Athlete ;
@@ -163,8 +154,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.17745> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"^^xsd:anyURI ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:catchesPunches        "1" ;
         spsocstat:cautionsTotal         "0" ;
@@ -184,7 +175,7 @@
         rdf:type               sport:OfficialParticipation ;
         rdfs:label             "Graham Scott participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Official/p.O41049> ;
-        sport:positionEvent    <http://cv.iptc.org/newscodes/vendoffpos/main-official> .
+        sport:positionEvent    "http://cv.iptc.org/newscodes/vendoffpos/main-official"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT31-p.94245>
         rdf:type             sport:IndividualMembership ;
@@ -203,8 +194,8 @@
         spstat:eventsStarted          "1" ;
         spstat:timePlayedTotal        "90" ;
         sport:participationBy         <http://example.com/Athlete/p.40836> ;
-        sport:playerStatus            spplayerstatus:starter ;
-        sport:positionEvent           <http://cv.iptc.org/newscodes/spsocposition/goalkeeper> ;
+        sport:playerStatus            "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent           "http://cv.iptc.org/newscodes/spsocposition/goalkeeper"^^xsd:anyURI ;
         spsocstat:assistsTotal        "0" ;
         spsocstat:cautionsTotal       "0" ;
         spsocstat:ejectionsTotal      "0" ;
@@ -231,8 +222,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.166477> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon            "3" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -287,7 +278,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Ricardo Pereira participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.111931> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.54861>
         rdf:type    sport:Athlete ;
@@ -297,7 +288,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.82403 participation in action a.2291848623 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.82403> ;
-        sport:role             spsocrole:scorer .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/scorer"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.95463>
         rdf:type    sport:Athlete ;
@@ -309,8 +300,8 @@
         spstat:eventsStarted          "1" ;
         spstat:timePlayedTotal        "90" ;
         sport:participationBy         <http://example.com/Athlete/p.232413> ;
-        sport:playerStatus            spplayerstatus:starter ;
-        sport:positionEvent           <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus            "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent           "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon          "1" ;
         spsocstat:assistsTotal        "1" ;
         spsocstat:cautionsTotal       "0" ;
@@ -333,8 +324,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.444463> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "2" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -360,7 +351,7 @@
         rdfs:label                "Action a.2291892531 on event E2128610" ;
         sport:actionDateTime      "2021-04-26T21:41:24+01:00" ;
         sport:actionInEvent       <http://example.com/Event/E2128610> ;
-        sport:class               <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:class               "http://cv.iptc.org/newscodes/spactionclass/substitution"^^xsd:anyURI ;
         sport:minutesElapsed      "83" ;
         sport:participation       <http://example.com/Participation/E2128610-a.2291892531-p.66975> , <http://example.com/Participation/E2128610-a.2291892531-p.50472> ;
         sport:periodValue         "2" ;
@@ -373,8 +364,8 @@
         spstat:eventsStarted         "1" ;
         spstat:timePlayedTotal       "85" ;
         sport:participationBy        <http://example.com/Athlete/p.173954> ;
-        sport:playerStatus           spplayerstatus:starter ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "1" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -416,8 +407,8 @@
         rdfs:label                   "Marc Albrighton participation in Event E2128610" ;
         spstat:timePlayedTotal       "20" ;
         sport:participationBy        <http://example.com/Athlete/p.51938> ;
-        sport:playerStatus           spplayerstatus:bench ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon         "1" ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
@@ -454,7 +445,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.80146 participation in action a.2291891243 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.80146> ;
-        sport:role             spsocrole:sub-on .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-on"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.231747>
         rdf:type    sport:Athlete ;
@@ -465,7 +456,7 @@
         rdfs:label             "Brendan Rodgers associate membership of Leicester City" ;
         sport:member           <http://example.com/Associate/man38197> ;
         sport:membershipOf     <http://example.com/Team/EPLT13> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        sport:positionRegular  "http://cv.iptc.org/newscodes/spsocascpos/Manager"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT13-p.228798>
         rdf:type             sport:IndividualMembership ;
@@ -485,7 +476,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Nampalys Mendy participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.86881> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.74230>
         rdf:type                        sport:IndividualParticipation ;
@@ -493,8 +484,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.74230> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
         spsocstat:clearancesSuccessful  "2" ;
@@ -519,8 +510,8 @@
         spstat:eventsStarted          "1" ;
         spstat:timePlayedTotal        "90" ;
         sport:participationBy         <http://example.com/Athlete/p.173515> ;
-        sport:playerStatus            spplayerstatus:starter ;
-        sport:positionEvent           <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus            "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent           "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:assistsTotal        "1" ;
         spsocstat:cautionsTotal       "0" ;
         spsocstat:ejectionsTotal      "0" ;
@@ -563,7 +554,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Daniel Amartey participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.155569> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.168580>
         rdf:type    sport:Athlete ;
@@ -574,13 +565,13 @@
         rdfs:label             "Roy Hodgson associate membership of Crystal Palace" ;
         sport:member           <http://example.com/Associate/man1280> ;
         sport:membershipOf     <http://example.com/Team/EPLT31> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/spsocascpos/Manager> .
+        sport:positionRegular  "http://cv.iptc.org/newscodes/spsocascpos/Manager"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-a.2291892531-p.66975>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.66975 participation in action a.2291892531 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.66975> ;
-        sport:role             spsocrole:sub-on .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-on"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.173954>
         rdf:type    sport:Athlete ;
@@ -590,33 +581,33 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Danny Ward participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.95463> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.228798>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Cengiz Ünder participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.228798> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-a.2291888213-p.51938>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.51938 participation in action a.2291888213 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.51938> ;
-        sport:role             spsocrole:sub-off .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-off"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-a.2291881105-p.173515>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.173515 participation in action a.2291881105 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.173515> ;
-        sport:role             spsocrole:assist .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/assist"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.50472>
         rdf:type                     sport:IndividualParticipation ;
         rdfs:label                   "James McCarthy participation in Event E2128610" ;
         spstat:timePlayedTotal       "7" ;
         sport:participationBy        <http://example.com/Athlete/p.50472> ;
-        sport:playerStatus           spplayerstatus:bench ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -639,11 +630,11 @@
         rdfs:label              "Action a.2291881105 on event E2128610" ;
         sport:actionDateTime    "2021-04-26T21:08:04+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128610> ;
-        sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        sport:class             "http://cv.iptc.org/newscodes/spactionclass/score"^^xsd:anyURI ;
         sport:minutesElapsed    "50" ;
         sport:participation     <http://example.com/Participation/E2128610-a.2291881105-p.166477> , <http://example.com/Participation/E2128610-a.2291881105-p.173515> ;
         sport:periodValue       "2" ;
-        sport:scoreAttemptType  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        sport:scoreAttemptType  "http://cv.iptc.org/newscodes/spsocscore/regular"^^xsd:anyURI ;
         sport:sequenceNumber    "0426210804" .
 
 <http://example.com/Participation/E2128610-p.172780>
@@ -652,8 +643,8 @@
         spstat:eventsStarted          "1" ;
         spstat:timePlayedTotal        "70" ;
         sport:participationBy         <http://example.com/Athlete/p.172780> ;
-        sport:playerStatus            spplayerstatus:starter ;
-        sport:positionEvent           <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus            "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent           "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:assistsTotal        "0" ;
         spsocstat:cautionsTotal       "0" ;
         spsocstat:ejectionsTotal      "0" ;
@@ -683,8 +674,8 @@
         spstat:eventsStarted         "1" ;
         spstat:timePlayedTotal       "90" ;
         sport:participationBy        <http://example.com/Athlete/p.82403> ;
-        sport:playerStatus           spplayerstatus:starter ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -719,8 +710,8 @@
         spstat:eventsStarted         "1" ;
         spstat:timePlayedTotal       "78" ;
         sport:participationBy        <http://example.com/Athlete/p.80146> ;
-        sport:playerStatus           spplayerstatus:starter ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -743,7 +734,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.173515 participation in action a.2291891767 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.173515> ;
-        sport:role             spsocrole:scorer .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/scorer"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.197469>
         rdf:type    sport:Athlete ;
@@ -781,8 +772,8 @@
 <http://example.com/Competition/l.premierleague.com>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League" ;
-        sport:competitionType  spct:recurring-competition ;
-        sport:sport            medtop:20001065 .
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/recurring-competition"^^xsd:anyURI ;
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT31-p.173954>
         rdf:type             sport:IndividualMembership ;
@@ -802,7 +793,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Martin Kelly participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.58786> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT13-p.101668>
         rdf:type             sport:IndividualMembership ;
@@ -822,8 +813,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.203341> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon            "3" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -849,7 +840,7 @@
         rdfs:label                "Action a.2291893075 on event E2128610" ;
         sport:actionDateTime      "2021-04-26T21:43:23+01:00" ;
         sport:actionInEvent       <http://example.com/Event/E2128610> ;
-        sport:class               <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:class               "http://cv.iptc.org/newscodes/spactionclass/substitution"^^xsd:anyURI ;
         sport:minutesElapsed      "85" ;
         sport:participation       <http://example.com/Participation/E2128610-a.2291893075-p.173954> , <http://example.com/Participation/E2128610-a.2291893075-p.86417> ;
         sport:periodValue         "2" ;
@@ -860,7 +851,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.173954 participation in action a.2291852343 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.173954> ;
-        sport:role             spsocrole:infraction-committed-by .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/infraction-committed-by"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.55494>
         rdf:type                        sport:IndividualParticipation ;
@@ -868,8 +859,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.55494> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "1" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -895,7 +886,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Tyrick Mitchell participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.244723> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT31-p.55037>
         rdf:type             sport:IndividualMembership ;
@@ -920,13 +911,13 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jean-Philippe Mateta participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.231747> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-a.2291888189-p.168580>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.168580 participation in action a.2291888189 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.168580> ;
-        sport:role             spsocrole:sub-on .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-on"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.228798>
         rdf:type    sport:Athlete ;
@@ -936,7 +927,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Dennis Praet participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.106837> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.37642>
         rdf:type    sport:Athlete ;
@@ -957,8 +948,8 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action a.2291870573 on event E2128610" ;
         sport:actionInEvent   <http://example.com/Event/E2128610> ;
-        sport:actionType      spsocactiontype:video-review ;
-        sport:class           <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spsocaction/video-review"^^xsd:anyURI ;
+        sport:class           "http://cv.iptc.org/newscodes/spactionclass/play"^^xsd:anyURI ;
         sport:minutesElapsed  "46" ;
         sport:participation   <http://example.com/Participation/E2128610-a.2291870573-p.173515> ;
         sport:periodValue     "1" .
@@ -968,14 +959,14 @@
         rdfs:label             "Action a.2291852343 on event E2128610" ;
         sport:actionDateTime   "2021-04-26T20:17:54+01:00" ;
         sport:actionInEvent    <http://example.com/Event/E2128610> ;
-        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
+        sport:class            "http://cv.iptc.org/newscodes/spactionclass/infraction"^^xsd:anyURI ;
         sport:comment          "Foul" ;
-        sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionLevel  "http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card"^^xsd:anyURI ;
+        sport:infractionType   "http://cv.iptc.org/newscodes/vendpenalty/foul"^^xsd:anyURI ;
         sport:minutesElapsed   "18" ;
         sport:participation    <http://example.com/Participation/E2128610-a.2291852343-p.173954> ;
         sport:periodValue      "1" ;
-        sport:recipientType    <http://cv.iptc.org/newscodes/sprecipienttype/player> ;
+        sport:recipientType    "http://cv.iptc.org/newscodes/sprecipienttype/player"^^xsd:anyURI ;
         sport:sequenceNumber   "0426201754" .
 
 <http://example.com/Membership/EPLT13-p.37642>
@@ -990,8 +981,8 @@
         rdfs:label                   "Ayoze Pérez participation in Event E2128610" ;
         spstat:timePlayedTotal       "20" ;
         sport:participationBy        <http://example.com/Athlete/p.168580> ;
-        sport:playerStatus           spplayerstatus:bench ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -1009,16 +1000,16 @@
 <http://example.com/Competition/l.premierleague.com-2020>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League 2020" ;
-        sport:competitionType  spct:competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/competition"^^xsd:anyURI ;
         sport:parent           <http://example.com/Competition/l.premierleague.com> ;
-        sport:sport            medtop:20001065 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/Action/E2128610-a.2291891243>
         rdf:type                  sport:Action ;
         rdfs:label                "Action a.2291891243 on event E2128610" ;
         sport:actionDateTime      "2021-04-26T21:36:31+01:00" ;
         sport:actionInEvent       <http://example.com/Event/E2128610> ;
-        sport:class               <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:class               "http://cv.iptc.org/newscodes/spactionclass/substitution"^^xsd:anyURI ;
         sport:minutesElapsed      "78" ;
         sport:participation       <http://example.com/Participation/E2128610-a.2291891243-p.60252> , <http://example.com/Participation/E2128610-a.2291891243-p.80146> ;
         sport:periodValue         "2" ;
@@ -1034,8 +1025,8 @@
         rdfs:label                     "Event E2128610" ;
         sport:eventInCompetition       <http://example.com/Competition/l.premierleague.com-2020> ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2516> ;
         sport:participation            <http://example.com/Participation/E2128610-p.94245> , <http://example.com/Participation/E2128610-p.244619> , <http://example.com/Participation/E2128610-p.40836> , <http://example.com/Participation/E2128610-p.203341> , <http://example.com/Participation/E2128610-p.168580> , <http://example.com/Participation/E2128610-p.111931> , <http://example.com/Participation/E2128610-p.80146> , <http://example.com/Participation/E2128610-p.86881> , <http://example.com/Participation/E2128610-p.166989> , <http://example.com/Participation/E2128610-p.232413> , <http://example.com/Participation/E2128610-p.231747> , <http://example.com/Participation/E2128610-p.155569> , <http://example.com/Participation/E2128610-p.197469> , <http://example.com/Participation/E2128610-EPLT13> , <http://example.com/Participation/E2128610-p.95463> , <http://example.com/Participation/E2128610-p.50472> , <http://example.com/Participation/E2128610-p.54861> , <http://example.com/Participation/E2128610-p.58786> , <http://example.com/Participation/E2128610-p.37642> , <http://example.com/Participation/E2128610-EPLT31> , <http://example.com/Participation/E2128610-p.228798> , <http://example.com/Participation/E2128610-p.60252> , <http://example.com/Participation/E2128610-p.166477> , <http://example.com/Participation/E2128610-p.444463> , <http://example.com/Participation/E2128610-p.57328> , <http://example.com/Participation/E2128610-p.218031> , <http://example.com/Participation/E2128610-p.17745> , <http://example.com/Participation/E2128610-p.244723> , <http://example.com/Participation/E2128610-p.74230> , <http://example.com/Participation/E2128610-p.51938> , <http://example.com/Participation/E2128610-p.O41049> , <http://example.com/Participation/E2128610-p.55037> , <http://example.com/Participation/E2128610-p.19188> , <http://example.com/Participation/E2128610-p.82403> , <http://example.com/Participation/E2128610-p.106837> , <http://example.com/Participation/E2128610-p.86417> , <http://example.com/Participation/E2128610-p.66975> , <http://example.com/Participation/E2128610-p.173515> , <http://example.com/Participation/E2128610-p.173954> , <http://example.com/Participation/E2128610-p.172780> , <http://example.com/Participation/E2128610-p.105666> , <http://example.com/Participation/E2128610-p.55494> , <http://example.com/Participation/E2128610-p.101668> ;
         sport:startDateTime            "2021-04-26T20:00:00+01:00"^^xsd:dateTime .
@@ -1071,8 +1062,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.19188> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "3" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -1111,7 +1102,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Nathaniel Clyne participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.57328> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT13-p.86881>
         rdf:type             sport:IndividualMembership ;
@@ -1146,7 +1137,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.173954 participation in action a.2291893075 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.173954> ;
-        sport:role             spsocrole:sub-on .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-on"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT31-p.60252>
         rdf:type             sport:IndividualMembership ;
@@ -1163,13 +1154,13 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.60252 participation in action a.2291891243 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.60252> ;
-        sport:role             spsocrole:sub-off .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-off"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-a.2291848623-p.232413>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.232413 participation in action a.2291848623 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.232413> ;
-        sport:role             spsocrole:assist .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/assist"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.55037>
         rdf:type                        sport:IndividualParticipation ;
@@ -1177,8 +1168,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.55037> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "2" ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
@@ -1213,8 +1204,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "83" ;
         sport:participationBy           <http://example.com/Athlete/p.66975> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:assistsTotal          "0" ;
         spsocstat:cautionsTotal         "0" ;
         spsocstat:clearancesSuccessful  "4" ;
@@ -1241,7 +1232,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Hamza Choudhury participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.197469> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT13-p.155569>
         rdf:type             sport:IndividualMembership ;
@@ -1260,8 +1251,8 @@
         spstat:eventsStarted            "1" ;
         spstat:timePlayedTotal          "90" ;
         sport:participationBy           <http://example.com/Athlete/p.37642> ;
-        sport:playerStatus              spplayerstatus:starter ;
-        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        sport:playerStatus              "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent             "http://cv.iptc.org/newscodes/spsocposition/defender"^^xsd:anyURI ;
         spsocstat:aerialsWon            "4" ;
         spsocstat:assistsTotal          "1" ;
         spsocstat:cautionsTotal         "0" ;
@@ -1290,14 +1281,14 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.37642 participation in action a.2291891767 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.37642> ;
-        sport:role             spsocrole:assist .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/assist"^^xsd:anyURI .
 
 <http://example.com/Action/E2128610-a.2291881461>
         rdf:type              sport:Action ;
         rdfs:label            "Action a.2291881461 on event E2128610" ;
         sport:actionInEvent   <http://example.com/Event/E2128610> ;
-        sport:actionType      spsocactiontype:video-review ;
-        sport:class           <http://cv.iptc.org/newscodes/spactionclass/play> ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spsocaction/video-review"^^xsd:anyURI ;
+        sport:class           "http://cv.iptc.org/newscodes/spactionclass/play"^^xsd:anyURI ;
         sport:minutesElapsed  "50" ;
         sport:participation   <http://example.com/Participation/E2128610-a.2291881461-p.173515> ;
         sport:periodValue     "2" .
@@ -1308,8 +1299,8 @@
         spstat:eventsStarted          "1" ;
         spstat:timePlayedTotal        "90" ;
         sport:participationBy         <http://example.com/Athlete/p.166989> ;
-        sport:playerStatus            spplayerstatus:starter ;
-        sport:positionEvent           <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus            "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent           "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon          "1" ;
         spsocstat:assistsTotal        "0" ;
         spsocstat:cautionsTotal       "0" ;
@@ -1338,7 +1329,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.166477 participation in action a.2291881105 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.166477> ;
-        sport:role             spsocrole:scorer .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/scorer"^^xsd:anyURI .
 
 <http://example.com/Membership/EPLT31-p.231747>
         rdf:type             sport:IndividualMembership ;
@@ -1352,11 +1343,11 @@
         rdfs:label              "Action a.2291848623 on event E2128610" ;
         sport:actionDateTime    "2021-04-26T20:12:14+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128610> ;
-        sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        sport:class             "http://cv.iptc.org/newscodes/spactionclass/score"^^xsd:anyURI ;
         sport:minutesElapsed    "12" ;
         sport:participation     <http://example.com/Participation/E2128610-a.2291848623-p.232413> , <http://example.com/Participation/E2128610-a.2291848623-p.82403> ;
         sport:periodValue       "1" ;
-        sport:scoreAttemptType  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        sport:scoreAttemptType  "http://cv.iptc.org/newscodes/spsocscore/regular"^^xsd:anyURI ;
         sport:sequenceNumber    "0426201214" .
 
 <http://example.com/Team/EPLT31>
@@ -1367,15 +1358,15 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.172780 participation in action a.2291888189 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.172780> ;
-        sport:role             spsocrole:sub-off .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-off"^^xsd:anyURI .
 
 <http://example.com/Participation/E2128610-p.86417>
         rdf:type                     sport:IndividualParticipation ;
         rdfs:label                   "Jeffrey Schlupp participation in Event E2128610" ;
         spstat:timePlayedTotal       "5" ;
         sport:participationBy        <http://example.com/Athlete/p.86417> ;
-        sport:playerStatus           spplayerstatus:bench ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon         "1" ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
@@ -1394,7 +1385,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Michy Batshuayi participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.94245> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.166477>
         rdf:type    sport:Athlete ;
@@ -1405,18 +1396,18 @@
         rdfs:label              "Action a.2291891767 on event E2128610" ;
         sport:actionDateTime    "2021-04-26T21:38:21+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128610> ;
-        sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
+        sport:class             "http://cv.iptc.org/newscodes/spactionclass/score"^^xsd:anyURI ;
         sport:minutesElapsed    "80" ;
         sport:participation     <http://example.com/Participation/E2128610-a.2291891767-p.37642> , <http://example.com/Participation/E2128610-a.2291891767-p.173515> ;
         sport:periodValue       "2" ;
-        sport:scoreAttemptType  <http://cv.iptc.org/newscodes/spsocscore/regular> ;
+        sport:scoreAttemptType  "http://cv.iptc.org/newscodes/spsocscore/regular"^^xsd:anyURI ;
         sport:sequenceNumber    "0426213821" .
 
 <http://example.com/Participation/E2128610-a.2291893075-p.86417>
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.86417 participation in action a.2291893075 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.86417> ;
-        sport:role             spsocrole:sub-off .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-off"^^xsd:anyURI .
 
 <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33>
         rdf:type                  sport:CompetitionPhase ;
@@ -1433,7 +1424,7 @@
 <http://example.com/Participation/E2128610-EPLT31>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Crystal Palace participation in Event E2128610" ;
-        spstat:eventOutcome             speventoutcome:loss ;
+        spstat:eventOutcome             "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "32.9" ;
@@ -1481,8 +1472,8 @@
         rdfs:label                   "Andros Townsend participation in Event E2128610" ;
         spstat:timePlayedTotal       "12" ;
         sport:participationBy        <http://example.com/Athlete/p.60252> ;
-        sport:playerStatus           spplayerstatus:bench ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
         spsocstat:ejectionsTotal     "0" ;
@@ -1497,7 +1488,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "Jack Butland participation in Event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.105666> ;
-        sport:playerStatus     spplayerstatus:bench .
+        sport:playerStatus     "http://cv.iptc.org/newscodes/spplayerstatus/bench"^^xsd:anyURI .
 
 <http://example.com/Athlete/p.232413>
         rdf:type    sport:Athlete ;
@@ -1520,8 +1511,8 @@
         spstat:eventsStarted         "1" ;
         spstat:timePlayedTotal       "90" ;
         sport:participationBy        <http://example.com/Athlete/p.54861> ;
-        sport:playerStatus           spplayerstatus:starter ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/forward> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/forward"^^xsd:anyURI ;
         spsocstat:aerialsWon         "12" ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;
@@ -1553,7 +1544,7 @@
         rdf:type               sport:IndividualParticipation ;
         rdfs:label             "p.244619 participation in action a.2291888213 in event E2128610" ;
         sport:participationBy  <http://example.com/Athlete/p.244619> ;
-        sport:role             spsocrole:sub-on .
+        sport:role             "http://cv.iptc.org/newscodes/spsocrole/sub-on"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT13>
         rdf:type    sport:Team ;
@@ -1564,7 +1555,7 @@
         rdfs:label                "Action a.2291888189 on event E2128610" ;
         sport:actionDateTime      "2021-04-26T21:28:36+01:00" ;
         sport:actionInEvent       <http://example.com/Event/E2128610> ;
-        sport:class               <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
+        sport:class               "http://cv.iptc.org/newscodes/spactionclass/substitution"^^xsd:anyURI ;
         sport:minutesElapsed      "70" ;
         sport:participation       <http://example.com/Participation/E2128610-a.2291888189-p.172780> , <http://example.com/Participation/E2128610-a.2291888189-p.168580> ;
         sport:periodValue         "2" ;
@@ -1584,8 +1575,8 @@
         spstat:eventsStarted         "1" ;
         spstat:timePlayedTotal       "70" ;
         sport:participationBy        <http://example.com/Athlete/p.244619> ;
-        sport:playerStatus           spplayerstatus:starter ;
-        sport:positionEvent          <http://cv.iptc.org/newscodes/spsocposition/midfielder> ;
+        sport:playerStatus           "http://cv.iptc.org/newscodes/spplayerstatus/starter"^^xsd:anyURI ;
+        sport:positionEvent          "http://cv.iptc.org/newscodes/spsocposition/midfielder"^^xsd:anyURI ;
         spsocstat:aerialsWon         "1" ;
         spsocstat:assistsTotal       "0" ;
         spsocstat:cautionsTotal      "0" ;

@@ -1,20 +1,11 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Team/l.nhl.com-SJ>
         rdf:type    sport:Team ;
@@ -25,8 +16,8 @@
         rdfs:label              "Joe Thornton membership of Florida Panthers" ;
         sport:member            <http://example.com/Athlete/p10039> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-FLA> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:startDate         "2021-08-13"^^xsd:date ;
         sport:uniformNumber     "19" .
 
@@ -36,7 +27,7 @@
         sport:endDate           "2020-10-06"^^xsd:date ;
         sport:member            <http://example.com/Athlete/p10039> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-SJ> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
         sport:startDate         "2005-11-30"^^xsd:date .
 
 <http://example.com/Team/l.nhl.com-BOS>
@@ -54,7 +45,7 @@
         sport:endDate           "2005-11-30"^^xsd:date ;
         sport:member            <http://example.com/Athlete/p10039> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-BOS> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
         sport:startDate         "1997-06-21"^^xsd:date .
 
 <http://example.com/Team/l.nhl.com-TOR>
@@ -71,5 +62,5 @@
         sport:endDate           "2021-05-31"^^xsd:date ;
         sport:member            <http://example.com/Athlete/p10039> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-TOR> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
         sport:startDate         "2020-10-06"^^xsd:date .

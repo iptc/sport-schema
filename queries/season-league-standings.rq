@@ -7,13 +7,12 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <https://sportschema.org/ontologies/main/>
 PREFIX spstat: <https://sportschema.org/ontologies/corestatistics/>
 PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
-PREFIX spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/>
 
 SELECT ?teamName ?GP ?P ?W ?L ?D ?GF ?GA ?GD ?WHOME ?LHOME ?WAWAY
 WHERE
 {
     ?season rdf:type sport:Competition ;
-            sport:competitionType <http://cv.iptc.org/newscodes/spct/competition> ;
+            sport:competitionType "http://cv.iptc.org/newscodes/spct/competition"^^xsd:anyURI ;
             sport:participation ?teamParticipation . 
     ?teamParticipation rdf:type sport:TeamParticipation ;
                        sport:participationBy ?team ;
@@ -30,11 +29,11 @@ WHERE
     ?team rdf:type sport:Team ;
           rdfs:label ?teamName .
     ?splithome rdf:type sport:ParticipationSplit ;
-               sport:participationSplitType spcompetitionscope:events-home ;
+               sport:participationSplitType "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI ;
                spstat:wins ?WHOME ;
                spstat:losses ?LHOME .
     ?splitaway rdf:type sport:ParticipationSplit ;
-               sport:participationSplitType spcompetitionscope:events-away ;
+               sport:participationSplitType http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI ;
                spstat:wins ?WAWAY .
     FILTER (?season = <http://example.com/Competition/l.premierleague.com-2020>)
 }

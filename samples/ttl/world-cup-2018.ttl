@@ -1,20 +1,11 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Participation/WC2018-e.958078-p.90152>
         rdf:type               sport:IndividualParticipation ;
@@ -69,7 +60,7 @@
 <http://example.com/Participation/WC2018-e.958068-t.511>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Poland participation in Event WC2018-e.958068" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.511> ;
@@ -95,7 +86,7 @@
 <http://example.com/Participation/WC2018-e.958039-t.834>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Peru participation in Event WC2018-e.958039" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.834> ;
@@ -105,8 +96,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958069" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12589> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958069-T641> , <http://example.com/Participation/WC2018-e.958069-p.158206> , <http://example.com/Participation/WC2018-e.958069-TPJ1> , <http://example.com/Participation/WC2018-e.958069-p.83090> , <http://example.com/Participation/WC2018-e.958069-p.126437> ;
         sport:startDateTime            "2018-06-19T13:00:00+01:00"^^xsd:dateTime .
@@ -120,7 +111,7 @@
 <http://example.com/Participation/WC2018-e.958072-T276>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Russia participation in Event WC2018-e.958072" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T276> ;
@@ -133,7 +124,7 @@
 <http://example.com/Participation/WC2018-e.958024-t.1225>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Egypt participation in Event WC2018-e.958024" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1225> ;
@@ -143,8 +134,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958037" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958037-t.369> , <http://example.com/Participation/WC2018-e.958037-p.80607> , <http://example.com/Participation/WC2018-e.958037-p.59115> , <http://example.com/Participation/WC2018-e.958037-T313> ;
         sport:startDateTime            "2018-06-21T13:00:00+01:00"^^xsd:dateTime .
@@ -157,8 +148,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958083" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R3> ;
-        sport:eventOutcomeType         speventoutcometype:extra-time ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/extra-time"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958083-T258> , <http://example.com/Participation/WC2018-e.958083-p.77794> , <http://example.com/Participation/WC2018-e.958083-p.45034> , <http://example.com/Participation/WC2018-e.958083-p.46197> , <http://example.com/Participation/WC2018-e.958083-T200> ;
         sport:startDateTime            "2018-07-11T19:00:00+01:00"^^xsd:dateTime .
@@ -167,8 +158,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958051" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958051-T280> , <http://example.com/Participation/WC2018-e.958051-T591> , <http://example.com/Participation/WC2018-e.958051-p.193906> , <http://example.com/Participation/WC2018-e.958051-p.34683> , <http://example.com/Participation/WC2018-e.958051-p.81048> , <http://example.com/Participation/WC2018-e.958051-p.32269> ;
         sport:startDateTime            "2018-06-27T19:00:00+01:00"^^xsd:dateTime .
@@ -188,7 +179,7 @@
 <http://example.com/Participation/WC2018-e.958083-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958083" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -211,7 +202,7 @@
 <http://example.com/Participation/WC2018-e.958056-T644>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Korea Republic participation in Event WC2018-e.958056" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T644> ;
@@ -243,7 +234,7 @@
 <http://example.com/Participation/WC2018-e.958050-T550>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Brazil participation in Event WC2018-e.958050" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T550> ;
@@ -275,8 +266,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958064" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958064-t.1226> , <http://example.com/Participation/WC2018-e.958064-p.164511> , <http://example.com/Participation/WC2018-e.958064-TPJ1> ;
         sport:startDateTime            "2018-06-28T15:00:00+01:00"^^xsd:dateTime .
@@ -314,8 +305,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958032" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12590> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958032-T249> , <http://example.com/Participation/WC2018-e.958032-t.1057> , <http://example.com/Participation/WC2018-e.958032-p.119681> , <http://example.com/Participation/WC2018-e.958032-p.40270> , <http://example.com/Participation/WC2018-e.958032-p.234991> , <http://example.com/Participation/WC2018-e.958032-p.80209> ;
         sport:startDateTime            "2018-06-25T19:00:00+01:00"^^xsd:dateTime .
@@ -323,7 +314,7 @@
 <http://example.com/Participation/WC2018-e.958033-T639>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "IR Iran participation in Event WC2018-e.958033" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T639> ;
@@ -355,7 +346,7 @@
 <http://example.com/Participation/WC2018-e.958030-T249>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Spain participation in Event WC2018-e.958030" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T249> ;
@@ -368,7 +359,7 @@
 <http://example.com/Participation/WC2018-e.958044-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958044" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -381,7 +372,7 @@
 <http://example.com/Participation/WC2018-e.958053-T644>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Korea Republic participation in Event WC2018-e.958053" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T644> ;
@@ -399,7 +390,7 @@
 <http://example.com/Participation/WC2018-e.958045-T623>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Argentina participation in Event WC2018-e.958045" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T623> ;
@@ -415,8 +406,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958077" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958077-t.361> , <http://example.com/Participation/WC2018-e.958077-p.66579> , <http://example.com/Participation/WC2018-e.958077-T280> ;
         sport:startDateTime            "2018-07-03T15:00:00+01:00"^^xsd:dateTime .
@@ -441,8 +432,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958045" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958045-T1567> , <http://example.com/Participation/WC2018-e.958045-p.19054> , <http://example.com/Participation/WC2018-e.958045-p.58893> , <http://example.com/Participation/WC2018-e.958045-T623> , <http://example.com/Participation/WC2018-e.958045-p.49013> ;
         sport:startDateTime            "2018-06-26T19:00:00+01:00"^^xsd:dateTime .
@@ -455,7 +446,7 @@
 <http://example.com/Participation/WC2018-e.958040-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958040" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -487,7 +478,7 @@
 <http://example.com/Participation/WC2018-e.958073-t.369>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Denmark participation in Event WC2018-e.958073" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.369> ;
@@ -511,7 +502,7 @@
 <http://example.com/Participation/WC2018-e.958041-T623>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Argentina participation in Event WC2018-e.958041" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T623> ;
@@ -545,8 +536,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R4>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group D" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R4-T503> , <http://example.com/Participation/WC2018S1R4-T258> , <http://example.com/Participation/WC2018S1R4-T1567> , <http://example.com/Participation/WC2018S1R4-T623> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -578,7 +569,7 @@
 <http://example.com/Participation/WC2018-e.958070-T623>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Argentina participation in Event WC2018-e.958070" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "4" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T623> ;
@@ -587,7 +578,7 @@
 <http://example.com/Participation/WC2018-e.958069-T641>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Japan participation in Event WC2018-e.958069" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T641> ;
@@ -602,7 +593,7 @@
 <http://example.com/Participation/WC2018-e.958034-T313>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Australia participation in Event WC2018-e.958034" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T313> ;
@@ -623,7 +614,7 @@
 <http://example.com/Participation/WC2018-e.958056-t.361>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Sweden participation in Event WC2018-e.958056" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.361> ;
@@ -641,7 +632,7 @@
 <http://example.com/Participation/WC2018-e.958039-T313>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Australia participation in Event WC2018-e.958039" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T313> ;
@@ -651,8 +642,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958058" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958058-t.1869> , <http://example.com/Participation/WC2018-e.958058-T252> , <http://example.com/Participation/WC2018-e.958058-p.54917> , <http://example.com/Participation/WC2018-e.958058-p.66749> ;
         sport:startDateTime            "2018-06-18T16:00:00+01:00"^^xsd:dateTime .
@@ -686,8 +677,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958026" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958026-p.88489> , <http://example.com/Participation/WC2018-e.958026-T276> , <http://example.com/Participation/WC2018-e.958026-T2300> , <http://example.com/Participation/WC2018-e.958026-p.39336> , <http://example.com/Participation/WC2018-e.958026-p.40720> ;
         sport:startDateTime            "2018-06-25T15:00:00+01:00"^^xsd:dateTime .
@@ -705,8 +696,8 @@
 <http://example.com/CompetitionPhase/WC2018S2R5>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2R5> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-elimination> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/final> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-elimination"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/final"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
@@ -714,8 +705,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958072" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:shootout ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/shootout"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958072-p.88489> , <http://example.com/Participation/WC2018-e.958072-p.12237> , <http://example.com/Participation/WC2018-e.958072-p.18221> , <http://example.com/Participation/WC2018-e.958072-p.161950> , <http://example.com/Participation/WC2018-e.958072-T276> , <http://example.com/Participation/WC2018-e.958072-p.51129> , <http://example.com/Participation/WC2018-e.958072-p.11225> , <http://example.com/Participation/WC2018-e.958072-p.40398> , <http://example.com/Participation/WC2018-e.958072-p.17861> , <http://example.com/Participation/WC2018-e.958072-T249> ;
         sport:startDateTime            "2018-07-01T15:00:00+01:00"^^xsd:dateTime .
@@ -734,7 +725,7 @@
 <http://example.com/Participation/WC2018-e.958041-t.503>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Iceland participation in Event WC2018-e.958041" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.503> ;
@@ -744,8 +735,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958040" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12590> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958040-p.227560> , <http://example.com/Participation/WC2018-e.958040-T258> , <http://example.com/Participation/WC2018-e.958040-T1567> , <http://example.com/Participation/WC2018-e.958040-p.37055> ;
         sport:startDateTime            "2018-06-16T20:00:00+01:00"^^xsd:dateTime .
@@ -758,7 +749,7 @@
 <http://example.com/Participation/WC2018-e.958065-T641>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Japan participation in Event WC2018-e.958065" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T641> ;
@@ -767,7 +758,7 @@
 <http://example.com/Participation/WC2018-e.958048-T280>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Switzerland participation in Event WC2018-e.958048" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T280> ;
@@ -781,7 +772,7 @@
 <http://example.com/Participation/WC2018-e.958046-T550>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Brazil participation in Event WC2018-e.958046" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T550> ;
@@ -790,7 +781,7 @@
 <http://example.com/Participation/WC2018-e.958025-t.1264>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Saudi Arabia participation in Event WC2018-e.958025" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1264> ;
@@ -805,7 +796,7 @@
 <http://example.com/Participation/WC2018-e.958040-T1567>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Nigeria participation in Event WC2018-e.958040" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T1567> ;
@@ -836,7 +827,7 @@
 <http://example.com/Participation/WC2018-e.958028-t.1057>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Morocco participation in Event WC2018-e.958028" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1057> ;
@@ -845,7 +836,7 @@
 <http://example.com/Participation/WC2018-e.958058-t.1869>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Panama participation in Event WC2018-e.958058" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1869> ;
@@ -879,7 +870,7 @@
 <http://example.com/Participation/WC2018-e.958059-t.1224>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Tunisia participation in Event WC2018-e.958059" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1224> ;
@@ -920,8 +911,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958039" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958039-p.100412> , <http://example.com/Participation/WC2018-e.958039-p.17484> , <http://example.com/Participation/WC2018-e.958039-t.834> , <http://example.com/Participation/WC2018-e.958039-T313> ;
         sport:startDateTime            "2018-06-26T15:00:00+01:00"^^xsd:dateTime .
@@ -930,8 +921,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958085" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958085-p.74208> , <http://example.com/Participation/WC2018-e.958085-T248> , <http://example.com/Participation/WC2018-e.958085-p.76650> , <http://example.com/Participation/WC2018-e.958085-p.45034> , <http://example.com/Participation/WC2018-e.958085-p.220160> , <http://example.com/Participation/WC2018-e.958085-T258> , <http://example.com/Participation/WC2018-e.958085-p.46197> ;
         sport:startDateTime            "2018-07-15T16:00:00+01:00"^^xsd:dateTime .
@@ -944,7 +935,7 @@
 <http://example.com/Participation/WC2018-e.958035-t.369>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Denmark participation in Event WC2018-e.958035" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.369> ;
@@ -954,8 +945,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958053" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958053-p.98762> , <http://example.com/Participation/WC2018-e.958053-p.85971> , <http://example.com/Participation/WC2018-e.958053-T644> , <http://example.com/Participation/WC2018-e.958053-T268> ;
         sport:startDateTime            "2018-06-27T15:00:00+01:00"^^xsd:dateTime .
@@ -967,7 +958,7 @@
 <http://example.com/Participation/WC2018-e.958022-t.1264>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Saudi Arabia participation in Event WC2018-e.958022" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "5" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1264> ;
@@ -980,7 +971,7 @@
 <http://example.com/Participation/WC2018-e.958078-T2300>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Uruguay participation in Event WC2018-e.958078" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T2300> ;
@@ -989,7 +980,7 @@
 <http://example.com/Participation/WC2018-e.958044-t.503>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Iceland participation in Event WC2018-e.958044" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.503> ;
@@ -1019,7 +1010,7 @@
 <http://example.com/Participation/WC2018-e.958052-T545>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Mexico participation in Event WC2018-e.958052" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T545> ;
@@ -1033,7 +1024,7 @@
 <http://example.com/Participation/WC2018-e.958043-T1567>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Nigeria participation in Event WC2018-e.958043" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T1567> ;
@@ -1060,7 +1051,7 @@
 <http://example.com/Participation/WC2018-e.958077-t.361>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Sweden participation in Event WC2018-e.958077" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.361> ;
@@ -1078,7 +1069,7 @@
 <http://example.com/Participation/WC2018-e.958062-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958062" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -1092,13 +1083,13 @@
 <http://example.com/CompetitionPhase/WC2018S2>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/elimination> ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/elimination"^^xsd:anyURI ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
 <http://example.com/Participation/WC2018-e.958057-T545>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Mexico participation in Event WC2018-e.958057" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T545> ;
@@ -1134,7 +1125,7 @@
 <http://example.com/Participation/WC2018-e.958057-T268>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Germany participation in Event WC2018-e.958057" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T268> ;
@@ -1169,8 +1160,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958066" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.8001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958066-p.103263> , <http://example.com/Participation/WC2018-e.958066-p.210186> , <http://example.com/Participation/WC2018-e.958066-t.1226> , <http://example.com/Participation/WC2018-e.958066-p.49657> , <http://example.com/Participation/WC2018-e.958066-T641> , <http://example.com/Participation/WC2018-e.958066-p.110979> ;
         sport:startDateTime            "2018-06-24T16:00:00+01:00"^^xsd:dateTime .
@@ -1178,7 +1169,7 @@
 <http://example.com/Participation/WC2018-e.958026-T276>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Russia participation in Event WC2018-e.958026" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T276> ;
@@ -1187,7 +1178,7 @@
 <http://example.com/Participation/WC2018-e.958085-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958085" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -1207,8 +1198,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958034" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958034-p.156290> , <http://example.com/Participation/WC2018-e.958034-p.76650> , <http://example.com/Participation/WC2018-e.958034-T248> , <http://example.com/Participation/WC2018-e.958034-p.59115> , <http://example.com/Participation/WC2018-e.958034-T313> ;
         sport:startDateTime            "2018-06-16T11:00:00+01:00"^^xsd:dateTime .
@@ -1216,7 +1207,7 @@
 <http://example.com/Participation/WC2018-e.958038-t.369>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Denmark participation in Event WC2018-e.958038" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.369> ;
@@ -1226,8 +1217,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958080" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R2> ;
-        sport:eventOutcomeType         speventoutcometype:shootout ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/shootout"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958080-p.88489> , <http://example.com/Participation/WC2018-e.958080-p.11225> , <http://example.com/Participation/WC2018-e.958080-p.34703> , <http://example.com/Participation/WC2018-e.958080-T276> , <http://example.com/Participation/WC2018-e.958080-p.94425> , <http://example.com/Participation/WC2018-e.958080-T258> , <http://example.com/Participation/WC2018-e.958080-p.37055> , <http://example.com/Participation/WC2018-e.958080-p.180529> , <http://example.com/Participation/WC2018-e.958080-p.51437> , <http://example.com/Participation/WC2018-e.958080-p.65854> , <http://example.com/Participation/WC2018-e.958080-p.68582> , <http://example.com/Participation/WC2018-e.958080-p.68394> ;
         sport:startDateTime            "2018-07-07T19:00:00+01:00"^^xsd:dateTime .
@@ -1268,7 +1259,7 @@
 <http://example.com/Participation/WC2018-e.958053-T268>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Germany participation in Event WC2018-e.958053" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T268> ;
@@ -1295,7 +1286,7 @@
 <http://example.com/Participation/WC2018-e.958068-t.1226>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Senegal participation in Event WC2018-e.958068" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1226> ;
@@ -1304,7 +1295,7 @@
 <http://example.com/Participation/WC2018-e.958076-TPJ1>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Colombia participation in Event WC2018-e.958076" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TPJ1> ;
@@ -1317,7 +1308,7 @@
 <http://example.com/Participation/WC2018-e.958022-T276>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Russia participation in Event WC2018-e.958022" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T276> ;
@@ -1331,7 +1322,7 @@
 <http://example.com/Participation/WC2018-e.958060-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958060" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -1379,8 +1370,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958079" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958079-p.51538> , <http://example.com/Participation/WC2018-e.958079-p.61366> , <http://example.com/Participation/WC2018-e.958079-T252> , <http://example.com/Participation/WC2018-e.958079-T550> , <http://example.com/Participation/WC2018-e.958079-p.27789> ;
         sport:startDateTime            "2018-07-06T19:00:00+01:00"^^xsd:dateTime .
@@ -1410,8 +1401,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958047" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958047-p.42593> , <http://example.com/Participation/WC2018-e.958047-T591> , <http://example.com/Participation/WC2018-e.958047-t.364> ;
         sport:startDateTime            "2018-06-17T13:00:00+01:00"^^xsd:dateTime .
@@ -1440,8 +1431,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958061" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958061-T200> , <http://example.com/Participation/WC2018-e.958061-p.97299> , <http://example.com/Participation/WC2018-e.958061-p.78830> , <http://example.com/Participation/WC2018-e.958061-p.109322> , <http://example.com/Participation/WC2018-e.958061-p.99119> , <http://example.com/Participation/WC2018-e.958061-t.1869> ;
         sport:startDateTime            "2018-06-24T13:00:00+01:00"^^xsd:dateTime .
@@ -1455,7 +1446,7 @@
 <http://example.com/Participation/WC2018-e.958031-T265>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Portugal participation in Event WC2018-e.958031" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T265> ;
@@ -1506,8 +1497,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R6>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group F" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R6-T644> , <http://example.com/Participation/WC2018S1R6-T361> , <http://example.com/Participation/WC2018S1R6-T268> , <http://example.com/Participation/WC2018S1R6-T545> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -1585,8 +1576,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958028" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958028-T639> , <http://example.com/Participation/WC2018-e.958028-p.50500> , <http://example.com/Participation/WC2018-e.958028-t.1057> ;
         sport:startDateTime            "2018-06-15T16:00:00+01:00"^^xsd:dateTime .
@@ -1607,8 +1598,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958074" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12587> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958074-p.54908> , <http://example.com/Participation/WC2018-e.958074-p.39194> , <http://example.com/Participation/WC2018-e.958074-T252> , <http://example.com/Participation/WC2018-e.958074-p.41184> , <http://example.com/Participation/WC2018-e.958074-p.54078> , <http://example.com/Participation/WC2018-e.958074-T641> , <http://example.com/Participation/WC2018-e.958074-p.103263> ;
         sport:startDateTime            "2018-07-02T19:00:00+01:00"^^xsd:dateTime .
@@ -1631,8 +1622,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958042" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958042-p.34703> , <http://example.com/Participation/WC2018-e.958042-p.98456> , <http://example.com/Participation/WC2018-e.958042-T623> , <http://example.com/Participation/WC2018-e.958042-p.37055> , <http://example.com/Participation/WC2018-e.958042-T258> ;
         sport:startDateTime            "2018-06-21T19:00:00+01:00"^^xsd:dateTime .
@@ -1651,7 +1642,7 @@
 <http://example.com/Participation/WC2018-e.958071-T2300>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Uruguay participation in Event WC2018-e.958071" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T2300> ;
@@ -1714,7 +1705,7 @@
 <http://example.com/Participation/WC2018-e.958023-t.1225>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Egypt participation in Event WC2018-e.958023" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1225> ;
@@ -1723,7 +1714,7 @@
 <http://example.com/Participation/WC2018-e.958081-t.361>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Sweden participation in Event WC2018-e.958081" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.361> ;
@@ -1732,8 +1723,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R1>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group A" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R1-T2300> , <http://example.com/Participation/WC2018S1R1-t.1264> , <http://example.com/Participation/WC2018S1R1-T276> , <http://example.com/Participation/WC2018S1R1-t.1225> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -1752,7 +1743,7 @@
 <http://example.com/Participation/WC2018-e.958049-T591>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Costa Rica participation in Event WC2018-e.958049" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T591> ;
@@ -1775,7 +1766,7 @@
 <http://example.com/Participation/WC2018-e.958059-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958059" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -1803,7 +1794,7 @@
 <http://example.com/Participation/WC2018-e.958032-t.1057>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Morocco participation in Event WC2018-e.958032" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1057> ;
@@ -1813,8 +1804,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958055" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958055-p.44989> , <http://example.com/Participation/WC2018-e.958055-t.361> , <http://example.com/Participation/WC2018-e.958055-p.52154> , <http://example.com/Participation/WC2018-e.958055-T268> , <http://example.com/Participation/WC2018-e.958055-p.50523> ;
         sport:startDateTime            "2018-06-23T19:00:00+01:00"^^xsd:dateTime .
@@ -1856,8 +1847,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958023" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.8001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958023-t.1225> , <http://example.com/Participation/WC2018-e.958023-p.151883> , <http://example.com/Participation/WC2018-e.958023-T2300> ;
         sport:startDateTime            "2018-06-15T13:00:00+01:00"^^xsd:dateTime .
@@ -1865,8 +1856,8 @@
 <http://example.com/CompetitionPhase/WC2018S2R2>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2R2> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-elimination> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/quarter-final> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-elimination"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/quarter-final"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
@@ -1914,7 +1905,7 @@
 <http://example.com/Participation/WC2018-e.958027-t.1225>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Egypt participation in Event WC2018-e.958027" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1225> ;
@@ -1934,7 +1925,7 @@
 <http://example.com/Participation/WC2018-e.958084-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958084" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -1970,8 +1961,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958068" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9824> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958068-p.73494> , <http://example.com/Participation/WC2018-e.958068-t.1226> , <http://example.com/Participation/WC2018-e.958068-p.71799> , <http://example.com/Participation/WC2018-e.958068-p.96764> , <http://example.com/Participation/WC2018-e.958068-t.511> ;
         sport:startDateTime            "2018-06-19T16:00:00+01:00"^^xsd:dateTime .
@@ -1991,7 +1982,7 @@
 <http://example.com/Participation/WC2018-e.958060-t.1224>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Tunisia participation in Event WC2018-e.958060" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "5" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1224> ;
@@ -2011,8 +2002,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958036" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.8001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958036-T248> , <http://example.com/Participation/WC2018-e.958036-t.834> , <http://example.com/Participation/WC2018-e.958036-p.220160> ;
         sport:startDateTime            "2018-06-21T16:00:00+01:00"^^xsd:dateTime .
@@ -2030,8 +2021,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958082" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958082-p.88580> , <http://example.com/Participation/WC2018-e.958082-T248> , <http://example.com/Participation/WC2018-e.958082-T252> ;
         sport:startDateTime            "2018-07-10T19:00:00+01:00"^^xsd:dateTime .
@@ -2039,7 +2030,7 @@
 <http://example.com/Participation/WC2018-e.958064-TPJ1>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Colombia participation in Event WC2018-e.958064" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TPJ1> ;
@@ -2049,8 +2040,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958050" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9824> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958050-p.51090> , <http://example.com/Participation/WC2018-e.958050-p.100534> , <http://example.com/Participation/WC2018-e.958050-t.364> , <http://example.com/Participation/WC2018-e.958050-T550> ;
         sport:startDateTime            "2018-06-27T19:00:00+01:00"^^xsd:dateTime .
@@ -2058,7 +2049,7 @@
 <http://example.com/Participation/WC2018-e.958075-T545>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Mexico participation in Event WC2018-e.958075" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T545> ;
@@ -2092,7 +2083,7 @@
 <http://example.com/Participation/WC2018-e.958069-TPJ1>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Colombia participation in Event WC2018-e.958069" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/TPJ1> ;
@@ -2117,7 +2108,7 @@
 <http://example.com/Participation/WC2018-e.958038-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958038" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -2150,7 +2141,7 @@
 <http://example.com/Participation/WC2018-e.958063-t.1869>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Panama participation in Event WC2018-e.958063" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1869> ;
@@ -2165,7 +2156,7 @@
 <http://example.com/Participation/WC2018-e.958082-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958082" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -2203,7 +2194,7 @@
 <http://example.com/Participation/WC2018-e.958081-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958081" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -2213,8 +2204,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958049" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958049-p.84583> , <http://example.com/Participation/WC2018-e.958049-T591> , <http://example.com/Participation/WC2018-e.958049-T550> , <http://example.com/Participation/WC2018-e.958049-p.61278> ;
         sport:startDateTime            "2018-06-22T13:00:00+01:00"^^xsd:dateTime .
@@ -2232,7 +2223,7 @@
 <http://example.com/Participation/WC2018-e.958034-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958034" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -2245,7 +2236,7 @@
 <http://example.com/Participation/WC2018-e.958025-T2300>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Uruguay participation in Event WC2018-e.958025" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T2300> ;
@@ -2271,8 +2262,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958063" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12589> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958063-p.144015> , <http://example.com/Participation/WC2018-e.958063-t.1869> , <http://example.com/Participation/WC2018-e.958063-p.60165> , <http://example.com/Participation/WC2018-e.958063-p.219625> , <http://example.com/Participation/WC2018-e.958063-t.1224> ;
         sport:startDateTime            "2018-06-28T19:00:00+01:00"^^xsd:dateTime .
@@ -2298,7 +2289,7 @@
 <http://example.com/Participation/WC2018-e.958074-T641>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Japan participation in Event WC2018-e.958074" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T641> ;
@@ -2313,8 +2304,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958031" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958031-T265> , <http://example.com/Participation/WC2018-e.958031-p.14937> , <http://example.com/Participation/WC2018-e.958031-t.1057> ;
         sport:startDateTime            "2018-06-20T13:00:00+01:00"^^xsd:dateTime .
@@ -2345,8 +2336,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R8>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group H" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R8-TPJ1> , <http://example.com/Participation/WC2018S1R8-T641> , <http://example.com/Participation/WC2018S1R8-T511> , <http://example.com/Participation/WC2018S1R8-T1226> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -2440,7 +2431,7 @@
 <http://example.com/Participation/WC2018-e.958080-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958080" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -2466,8 +2457,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958076" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:shootout ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/shootout"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9824> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958076-p.66733> , <http://example.com/Participation/WC2018-e.958076-TPJ1> , <http://example.com/Participation/WC2018-e.958076-T200> , <http://example.com/Participation/WC2018-e.958076-p.176297> , <http://example.com/Participation/WC2018-e.958076-p.78830> , <http://example.com/Participation/WC2018-e.958076-p.77794> , <http://example.com/Participation/WC2018-e.958076-p.93264> , <http://example.com/Participation/WC2018-e.958076-p.87750> , <http://example.com/Participation/WC2018-e.958076-p.164511> , <http://example.com/Participation/WC2018-e.958076-p.48847> ;
         sport:startDateTime            "2018-07-03T19:00:00+01:00"^^xsd:dateTime .
@@ -2501,7 +2492,7 @@
 <http://example.com/Participation/WC2018-e.958085-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958085" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "4" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -2511,8 +2502,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958044" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12587> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958044-t.503> , <http://example.com/Participation/WC2018-e.958044-p.55422> , <http://example.com/Participation/WC2018-e.958044-p.45034> , <http://example.com/Participation/WC2018-e.958044-T258> , <http://example.com/Participation/WC2018-e.958044-p.56999> ;
         sport:startDateTime            "2018-06-26T19:00:00+01:00"^^xsd:dateTime .
@@ -2552,9 +2543,9 @@
 <http://example.com/Competition/WC2018>
         rdf:type               sport:Competition ;
         rdfs:label             "World Cup 2018" ;
-        sport:competitionType  spct:competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/competition"^^xsd:anyURI ;
         sport:parent           <http://example.com/Competition/WC> ;
-        sport:sport            medtop:20001065 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/Membership/T252-p.154976>
         rdf:type            sport:IndividualMembership ;
@@ -2578,8 +2569,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R3>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group C" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R3-T248> , <http://example.com/Participation/WC2018S1R3-T834> , <http://example.com/Participation/WC2018S1R3-T313> , <http://example.com/Participation/WC2018S1R3-T369> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -2611,7 +2602,7 @@
 <http://example.com/Participation/WC2018-e.958076-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958076" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -2625,7 +2616,7 @@
 <http://example.com/Participation/WC2018-e.958054-T644>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Korea Republic participation in Event WC2018-e.958054" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T644> ;
@@ -2634,7 +2625,7 @@
 <http://example.com/Participation/WC2018-e.958030-T639>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "IR Iran participation in Event WC2018-e.958030" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T639> ;
@@ -2671,8 +2662,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958057" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958057-T545> , <http://example.com/Participation/WC2018-e.958057-T268> , <http://example.com/Participation/WC2018-e.958057-p.179361> ;
         sport:startDateTime            "2018-06-17T16:00:00+01:00"^^xsd:dateTime .
@@ -2685,8 +2676,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958025" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12587> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958025-T2300> , <http://example.com/Participation/WC2018-e.958025-p.39336> , <http://example.com/Participation/WC2018-e.958025-t.1264> ;
         sport:startDateTime            "2018-06-20T16:00:00+01:00"^^xsd:dateTime .
@@ -2699,8 +2690,8 @@
 <http://example.com/CompetitionPhase/WC2018S2R4>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2R4> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-elimination> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/third-place-playoff> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-elimination"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/third-place-playoff"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
@@ -2725,8 +2716,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958071" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958071-T265> , <http://example.com/Participation/WC2018-e.958071-p.40720> , <http://example.com/Participation/WC2018-e.958071-p.18522> , <http://example.com/Participation/WC2018-e.958071-T2300> ;
         sport:startDateTime            "2018-06-30T19:00:00+01:00"^^xsd:dateTime .
@@ -2745,7 +2736,7 @@
 <http://example.com/Participation/WC2018-e.958032-T249>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Spain participation in Event WC2018-e.958032" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T249> ;
@@ -2762,7 +2753,7 @@
 <http://example.com/Participation/WC2018-e.958042-T623>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Argentina participation in Event WC2018-e.958042" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T623> ;
@@ -2851,7 +2842,7 @@
 <http://example.com/Participation/WC2018-e.958051-T280>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Switzerland participation in Event WC2018-e.958051" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T280> ;
@@ -2869,7 +2860,7 @@
 <http://example.com/Participation/WC2018-e.958074-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958074" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -2878,7 +2869,7 @@
 <http://example.com/Participation/WC2018-e.958042-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958042" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -2905,8 +2896,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958038" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958038-T248> , <http://example.com/Participation/WC2018-e.958038-t.369> ;
         sport:startDateTime            "2018-06-26T15:00:00+01:00"^^xsd:dateTime .
@@ -2918,7 +2909,7 @@
 <http://example.com/Participation/WC2018-e.958047-t.364>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Serbia participation in Event WC2018-e.958047" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.364> ;
@@ -2928,8 +2919,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958084" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958084-p.42786> , <http://example.com/Participation/WC2018-e.958084-T252> , <http://example.com/Participation/WC2018-e.958084-p.93605> , <http://example.com/Participation/WC2018-e.958084-T200> ;
         sport:startDateTime            "2018-07-14T15:00:00+01:00"^^xsd:dateTime .
@@ -2937,7 +2928,7 @@
 <http://example.com/Participation/WC2018-e.958079-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958079" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -2979,8 +2970,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958052" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.8001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958052-T545> , <http://example.com/Participation/WC2018-e.958052-p.37146> , <http://example.com/Participation/WC2018-e.958052-t.361> , <http://example.com/Participation/WC2018-e.958052-p.213999> , <http://example.com/Participation/WC2018-e.958052-p.155561> ;
         sport:startDateTime            "2018-06-27T15:00:00+01:00"^^xsd:dateTime .
@@ -2988,7 +2979,7 @@
 <http://example.com/Participation/WC2018-e.958035-t.834>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Peru participation in Event WC2018-e.958035" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.834> ;
@@ -3001,7 +2992,7 @@
 <http://example.com/Participation/WC2018-e.958066-T641>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Japan participation in Event WC2018-e.958066" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T641> ;
@@ -3098,7 +3089,7 @@
 <http://example.com/CompetitionPhase/WC2018S1>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S1> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/group> ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/group"^^xsd:anyURI ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
 <http://example.com/Site/s.2311>
@@ -3108,7 +3099,7 @@
 <http://example.com/Participation/WC2018-e.958064-t.1226>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Senegal participation in Event WC2018-e.958064" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1226> ;
@@ -3177,8 +3168,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958065" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.5001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958065-p.171771> , <http://example.com/Participation/WC2018-e.958065-T641> , <http://example.com/Participation/WC2018-e.958065-t.511> ;
         sport:startDateTime            "2018-06-28T15:00:00+01:00"^^xsd:dateTime .
@@ -3191,7 +3182,7 @@
 <http://example.com/Participation/WC2018-e.958067-t.511>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Poland participation in Event WC2018-e.958067" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.511> ;
@@ -3206,8 +3197,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958033" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12589> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958033-p.179950> , <http://example.com/Participation/WC2018-e.958033-p.14938> , <http://example.com/Participation/WC2018-e.958033-T265> , <http://example.com/Participation/WC2018-e.958033-T639> ;
         sport:startDateTime            "2018-06-25T19:00:00+01:00"^^xsd:dateTime .
@@ -3221,7 +3212,7 @@
 <http://example.com/Participation/WC2018-e.958037-T313>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Australia participation in Event WC2018-e.958037" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T313> ;
@@ -3277,7 +3268,7 @@
 <http://example.com/Participation/WC2018-e.958046-T280>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Switzerland participation in Event WC2018-e.958046" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T280> ;
@@ -3295,7 +3286,7 @@
 <http://example.com/Participation/WC2018-e.958073-T258>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Croatia participation in Event WC2018-e.958073" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T258> ;
@@ -3325,7 +3316,7 @@
 <http://example.com/Participation/WC2018-e.958049-T550>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Brazil participation in Event WC2018-e.958049" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T550> ;
@@ -3352,8 +3343,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958078" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958078-p.76650> , <http://example.com/Participation/WC2018-e.958078-T2300> , <http://example.com/Participation/WC2018-e.958078-T248> , <http://example.com/Participation/WC2018-e.958078-p.90152> ;
         sport:startDateTime            "2018-07-06T15:00:00+01:00"^^xsd:dateTime .
@@ -3375,7 +3366,7 @@
 <http://example.com/Participation/WC2018-e.958071-T265>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Portugal participation in Event WC2018-e.958071" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T265> ;
@@ -3390,8 +3381,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958046" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12587> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958046-T550> , <http://example.com/Participation/WC2018-e.958046-p.52046> , <http://example.com/Participation/WC2018-e.958046-p.84583> , <http://example.com/Participation/WC2018-e.958046-T280> ;
         sport:startDateTime            "2018-06-17T19:00:00+01:00"^^xsd:dateTime .
@@ -3448,7 +3439,7 @@
 <http://example.com/Participation/WC2018-e.958054-T545>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Mexico participation in Event WC2018-e.958054" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T545> ;
@@ -3462,8 +3453,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958060" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9824> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958060-p.94245> , <http://example.com/Participation/WC2018-e.958060-p.60165> , <http://example.com/Participation/WC2018-e.958060-p.231058> , <http://example.com/Participation/WC2018-e.958060-T252> , <http://example.com/Participation/WC2018-e.958060-p.66749> , <http://example.com/Participation/WC2018-e.958060-p.42786> , <http://example.com/Participation/WC2018-e.958060-t.1224> ;
         sport:startDateTime            "2018-06-23T13:00:00+01:00"^^xsd:dateTime .
@@ -3508,7 +3499,7 @@
 <http://example.com/Participation/WC2018-e.958029-T249>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Spain participation in Event WC2018-e.958029" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T249> ;
@@ -3522,8 +3513,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R5>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group E" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R5-T591> , <http://example.com/Participation/WC2018S1R5-T364> , <http://example.com/Participation/WC2018S1R5-T550> , <http://example.com/Participation/WC2018S1R5-T280> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -3531,7 +3522,7 @@
 <http://example.com/Participation/WC2018-e.958082-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958082" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -3552,7 +3543,7 @@
 <http://example.com/Participation/WC2018-e.958031-t.1057>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Morocco participation in Event WC2018-e.958031" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1057> ;
@@ -3561,7 +3552,7 @@
 <http://example.com/Participation/WC2018-e.958061-t.1869>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Panama participation in Event WC2018-e.958061" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "6" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1869> ;
@@ -3595,7 +3586,7 @@
 <http://example.com/Participation/WC2018-e.958028-T639>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "IR Iran participation in Event WC2018-e.958028" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T639> ;
@@ -3610,7 +3601,7 @@
 <http://example.com/Participation/WC2018-e.958079-T550>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Brazil participation in Event WC2018-e.958079" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T550> ;
@@ -3630,8 +3621,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958059" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.5001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958059-t.1224> , <http://example.com/Participation/WC2018-e.958059-p.175054> , <http://example.com/Participation/WC2018-e.958059-T200> , <http://example.com/Participation/WC2018-e.958059-p.78830> ;
         sport:startDateTime            "2018-06-18T19:00:00+01:00"^^xsd:dateTime .
@@ -3648,7 +3639,7 @@
 <http://example.com/Participation/WC2018-e.958055-T268>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Germany participation in Event WC2018-e.958055" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T268> ;
@@ -3658,8 +3649,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958027" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.5001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958027-p.109759> , <http://example.com/Participation/WC2018-e.958027-t.1225> , <http://example.com/Participation/WC2018-e.958027-p.109763> , <http://example.com/Participation/WC2018-e.958027-p.118748> , <http://example.com/Participation/WC2018-e.958027-t.1264> ;
         sport:startDateTime            "2018-06-25T15:00:00+01:00"^^xsd:dateTime .
@@ -3673,8 +3664,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958073" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:shootout ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/shootout"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958073-p.34703> , <http://example.com/Participation/WC2018-e.958073-p.37055> , <http://example.com/Participation/WC2018-e.958073-T258> , <http://example.com/Participation/WC2018-e.958073-t.369> , <http://example.com/Participation/WC2018-e.958073-p.48760> , <http://example.com/Participation/WC2018-e.958073-p.46197> , <http://example.com/Participation/WC2018-e.958073-p.16099> , <http://example.com/Participation/WC2018-e.958073-p.48714> , <http://example.com/Participation/WC2018-e.958073-p.68582> ;
         sport:startDateTime            "2018-07-01T19:00:00+01:00"^^xsd:dateTime .
@@ -3688,7 +3679,7 @@
 <http://example.com/Participation/WC2018-e.958052-t.361>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Sweden participation in Event WC2018-e.958052" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.361> ;
@@ -3698,8 +3689,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958041" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9824> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958041-p.37572> , <http://example.com/Participation/WC2018-e.958041-T623> , <http://example.com/Participation/WC2018-e.958041-p.62980> , <http://example.com/Participation/WC2018-e.958041-t.503> ;
         sport:startDateTime            "2018-06-16T14:00:00+01:00"^^xsd:dateTime .
@@ -3718,7 +3709,7 @@
 <http://example.com/Participation/WC2018-e.958024-T276>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Russia participation in Event WC2018-e.958024" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T276> ;
@@ -3727,7 +3718,7 @@
 <http://example.com/Participation/WC2018-e.958077-T280>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Switzerland participation in Event WC2018-e.958077" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T280> ;
@@ -3736,7 +3727,7 @@
 <http://example.com/Participation/WC2018-e.958075-T550>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Brazil participation in Event WC2018-e.958075" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T550> ;
@@ -3750,7 +3741,7 @@
 <http://example.com/Participation/WC2018-e.958062-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958062" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -3765,7 +3756,7 @@
 <http://example.com/Participation/WC2018-e.958051-T591>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Costa Rica participation in Event WC2018-e.958051" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T591> ;
@@ -3796,7 +3787,7 @@
 <http://example.com/Participation/WC2018-e.958061-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958061" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -3805,7 +3796,7 @@
 <http://example.com/Participation/WC2018-e.958023-T2300>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Uruguay participation in Event WC2018-e.958023" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T2300> ;
@@ -3859,7 +3850,7 @@
 <http://example.com/Participation/WC2018-e.958033-T265>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Portugal participation in Event WC2018-e.958033" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T265> ;
@@ -3875,8 +3866,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958054" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12587> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958054-p.38401> , <http://example.com/Participation/WC2018-e.958054-p.43020> , <http://example.com/Participation/WC2018-e.958054-p.85971> , <http://example.com/Participation/WC2018-e.958054-T644> , <http://example.com/Participation/WC2018-e.958054-T545> ;
         sport:startDateTime            "2018-06-23T16:00:00+01:00"^^xsd:dateTime .
@@ -3884,7 +3875,7 @@
 <http://example.com/Participation/WC2018-e.958055-t.361>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Sweden participation in Event WC2018-e.958055" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.361> ;
@@ -3908,8 +3899,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958022" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.2311> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958022-p.161950> , <http://example.com/Participation/WC2018-e.958022-t.1264> , <http://example.com/Participation/WC2018-e.958022-p.166015> , <http://example.com/Participation/WC2018-e.958022-T276> , <http://example.com/Participation/WC2018-e.958022-p.88489> , <http://example.com/Participation/WC2018-e.958022-p.40398> ;
         sport:startDateTime            "2018-06-14T16:00:00+01:00"^^xsd:dateTime .
@@ -3917,8 +3908,8 @@
 <http://example.com/CompetitionPhase/WC2018S2R1>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2R1> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-elimination> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-of-16> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-elimination"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-of-16"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
@@ -3953,7 +3944,7 @@
 <http://example.com/Participation/WC2018-e.958063-t.1224>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Tunisia participation in Event WC2018-e.958063" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1224> ;
@@ -4000,7 +3991,7 @@
 <http://example.com/Participation/WC2018-e.958026-T2300>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Uruguay participation in Event WC2018-e.958026" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T2300> ;
@@ -4009,7 +4000,7 @@
 <http://example.com/Participation/WC2018-e.958050-t.364>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Serbia participation in Event WC2018-e.958050" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.364> ;
@@ -4051,8 +4042,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958067" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R8> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958067-p.164511> , <http://example.com/Participation/WC2018-e.958067-p.48847> , <http://example.com/Participation/WC2018-e.958067-p.66733> , <http://example.com/Participation/WC2018-e.958067-TPJ1> , <http://example.com/Participation/WC2018-e.958067-t.511> ;
         sport:startDateTime            "2018-06-24T19:00:00+01:00"^^xsd:dateTime .
@@ -4074,8 +4065,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958035" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R3> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12589> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958035-t.834> , <http://example.com/Participation/WC2018-e.958035-p.166028> , <http://example.com/Participation/WC2018-e.958035-t.369> ;
         sport:startDateTime            "2018-06-16T17:00:00+01:00"^^xsd:dateTime .
@@ -4093,7 +4084,7 @@
 <http://example.com/Participation/WC2018-e.958078-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958078" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -4103,8 +4094,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958081" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958081-t.361> , <http://example.com/Participation/WC2018-e.958081-p.95658> , <http://example.com/Participation/WC2018-e.958081-T200> , <http://example.com/Participation/WC2018-e.958081-p.108823> ;
         sport:startDateTime            "2018-07-07T15:00:00+01:00"^^xsd:dateTime .
@@ -4147,7 +4138,7 @@
 <http://example.com/Participation/WC2018-e.958043-t.503>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Iceland participation in Event WC2018-e.958043" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.503> ;
@@ -4201,14 +4192,14 @@
 <http://example.com/Competition/WC>
         rdf:type               sport:Competition ;
         rdfs:label             "World Cup" ;
-        sport:competitionType  spct:recurring-competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/recurring-competition"^^xsd:anyURI ;
         sport:governedBy       <http://example.com/GoverningBody/FIFA> ;
-        sport:sport            medtop:20001065 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/Participation/WC2018-e.958080-T276>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Russia participation in Event WC2018-e.958080" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T276> ;
@@ -4227,7 +4218,7 @@
 <http://example.com/Participation/WC2018-e.958058-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958058" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -4237,8 +4228,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958048" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R5> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12590> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958048-p.128389> , <http://example.com/Participation/WC2018-e.958048-p.68312> , <http://example.com/Participation/WC2018-e.958048-t.364> , <http://example.com/Participation/WC2018-e.958048-T280> , <http://example.com/Participation/WC2018-e.958048-p.84450> ;
         sport:startDateTime            "2018-06-22T19:00:00+01:00"^^xsd:dateTime .
@@ -4246,7 +4237,7 @@
 <http://example.com/Participation/WC2018-e.958047-T591>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Costa Rica participation in Event WC2018-e.958047" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T591> ;
@@ -4270,8 +4261,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958062" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R7> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12590> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958062-p.154976> , <http://example.com/Participation/WC2018-e.958062-T200> , <http://example.com/Participation/WC2018-e.958062-T252> ;
         sport:startDateTime            "2018-06-28T19:00:00+01:00"^^xsd:dateTime .
@@ -4285,7 +4276,7 @@
 <http://example.com/Participation/WC2018-e.958070-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958070" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -4299,8 +4290,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958030" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958030-p.18507> , <http://example.com/Participation/WC2018-e.958030-T249> , <http://example.com/Participation/WC2018-e.958030-T639> ;
         sport:startDateTime            "2018-06-20T19:00:00+01:00"^^xsd:dateTime .
@@ -4341,7 +4332,7 @@
 <http://example.com/Participation/WC2018-e.958027-t.1264>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Saudi Arabia participation in Event WC2018-e.958027" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.1264> ;
@@ -4350,7 +4341,7 @@
 <http://example.com/Participation/WC2018-e.958037-t.369>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Denmark participation in Event WC2018-e.958037" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.369> ;
@@ -4359,8 +4350,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R7>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group G" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R7-T200> , <http://example.com/Participation/WC2018S1R7-T252> , <http://example.com/Participation/WC2018S1R7-T1224> , <http://example.com/Participation/WC2018S1R7-T1869> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -4372,7 +4363,7 @@
 <http://example.com/Participation/WC2018-e.958029-T265>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Portugal participation in Event WC2018-e.958029" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "3" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T265> ;
@@ -4404,7 +4395,7 @@
 <http://example.com/Participation/WC2018-e.958045-T1567>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Nigeria participation in Event WC2018-e.958045" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T1567> ;
@@ -4430,8 +4421,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958029" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R2> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11655> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958029-p.88477> , <http://example.com/Participation/WC2018-e.958029-p.18507> , <http://example.com/Participation/WC2018-e.958029-T249> , <http://example.com/Participation/WC2018-e.958029-T265> , <http://example.com/Participation/WC2018-e.958029-p.14937> ;
         sport:startDateTime            "2018-06-15T19:00:00+01:00"^^xsd:dateTime .
@@ -4469,8 +4460,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958075" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12588> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958075-p.61278> , <http://example.com/Participation/WC2018-e.958075-T545> , <http://example.com/Participation/WC2018-e.958075-p.92217> , <http://example.com/Participation/WC2018-e.958075-T550> ;
         sport:startDateTime            "2018-07-02T15:00:00+01:00"^^xsd:dateTime .
@@ -4489,8 +4480,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958043" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R4> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.5001> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958043-p.90714> , <http://example.com/Participation/WC2018-e.958043-t.503> , <http://example.com/Participation/WC2018-e.958043-T1567> ;
         sport:startDateTime            "2018-06-22T16:00:00+01:00"^^xsd:dateTime .
@@ -4566,7 +4557,7 @@
 <http://example.com/Participation/WC2018-e.958084-T252>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Belgium participation in Event WC2018-e.958084" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T252> ;
@@ -4595,7 +4586,7 @@
 <http://example.com/Participation/WC2018-e.958066-t.1226>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Senegal participation in Event WC2018-e.958066" ;
-        spstat:eventOutcome    speventoutcome:tie ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/tie"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.1226> ;
@@ -4604,7 +4595,7 @@
 <http://example.com/Participation/WC2018-e.958067-TPJ1>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Colombia participation in Event WC2018-e.958067" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/TPJ1> ;
@@ -4613,8 +4604,8 @@
 <http://example.com/CompetitionPhase/WC2018S1R2>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "Group B" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-group> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/round-robin> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-group"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/round-robin"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S1> ;
         sport:participation         <http://example.com/Participation/WC2018S1R2-T639> , <http://example.com/Participation/WC2018S1R2-T249> , <http://example.com/Participation/WC2018S1R2-T1057> , <http://example.com/Participation/WC2018S1R2-T265> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
@@ -4622,7 +4613,7 @@
 <http://example.com/Participation/WC2018-e.958083-T200>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "England participation in Event WC2018-e.958083" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/T200> ;
@@ -4631,7 +4622,7 @@
 <http://example.com/Participation/WC2018-e.958048-t.364>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Serbia participation in Event WC2018-e.958048" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "2" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/t.364> ;
@@ -4646,7 +4637,7 @@
 <http://example.com/Participation/WC2018-e.958036-T248>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "France participation in Event WC2018-e.958036" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T248> ;
@@ -4655,7 +4646,7 @@
 <http://example.com/Participation/WC2018-e.958065-t.511>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Poland participation in Event WC2018-e.958065" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:scoreOpposing   "0" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.511> ;
@@ -4664,7 +4655,7 @@
 <http://example.com/Participation/WC2018-e.958036-t.834>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Peru participation in Event WC2018-e.958036" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "away" ;
         sport:participationBy  <http://example.com/Team/t.834> ;
@@ -4687,7 +4678,7 @@
 <http://example.com/Participation/WC2018-e.958072-T249>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Spain participation in Event WC2018-e.958072" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:scoreOpposing   "1" ;
         sport:alignment        "home" ;
         sport:participationBy  <http://example.com/Team/T249> ;
@@ -4712,8 +4703,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958056" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R6> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.12591> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958056-T644> , <http://example.com/Participation/WC2018-e.958056-t.361> , <http://example.com/Participation/WC2018-e.958056-p.37146> ;
         sport:startDateTime            "2018-06-18T13:00:00+01:00"^^xsd:dateTime .
@@ -4756,8 +4747,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958024" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S1R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.11654> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958024-t.1225> , <http://example.com/Participation/WC2018-e.958024-p.33730> , <http://example.com/Participation/WC2018-e.958024-p.40398> , <http://example.com/Participation/WC2018-e.958024-T276> , <http://example.com/Participation/WC2018-e.958024-p.118748> , <http://example.com/Participation/WC2018-e.958024-p.88489> ;
         sport:startDateTime            "2018-06-19T19:00:00+01:00"^^xsd:dateTime .
@@ -4765,8 +4756,8 @@
 <http://example.com/CompetitionPhase/WC2018S2R3>
         rdf:type                    sport:CompetitionPhase ;
         rdfs:label                  "CompetitionPhase <http://example.com/CompetitionPhase/WC2018S2R3> of competition <http://example.com/Competition/WC2018>" ;
-        sport:competitionFormat     <http://cv.iptc.org/newscodes/sptournamentform/single-elimination> ;
-        sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> ;
+        sport:competitionFormat     "http://cv.iptc.org/newscodes/sptournamentform/single-elimination"^^xsd:anyURI ;
+        sport:competitionPhaseType  "http://cv.iptc.org/newscodes/sptournamentphase/semi-final"^^xsd:anyURI ;
         sport:parent                <http://example.com/CompetitionPhase/WC2018S2> ;
         sport:phaseInCompetition    <http://example.com/Competition/WC2018> .
 
@@ -4785,8 +4776,8 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Event WC2018-e.958070" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/WC2018S2R1> ;
-        sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventOutcomeType         "http://cv.iptc.org/newscodes/speventoutcometype/regular"^^xsd:anyURI ;
+        sport:eventStatus              "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:location                 <http://example.com/Site/s.9564> ;
         sport:participation            <http://example.com/Participation/WC2018-e.958070-p.37572> , <http://example.com/Participation/WC2018-e.958070-p.55826> , <http://example.com/Participation/WC2018-e.958070-p.220160> , <http://example.com/Participation/WC2018-e.958070-p.46497> , <http://example.com/Participation/WC2018-e.958070-T248> , <http://example.com/Participation/WC2018-e.958070-p.76650> , <http://example.com/Participation/WC2018-e.958070-T623> , <http://example.com/Participation/WC2018-e.958070-p.202675> ;
         sport:startDateTime            "2018-06-30T15:00:00+01:00"^^xsd:dateTime .
