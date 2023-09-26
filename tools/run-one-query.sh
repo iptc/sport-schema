@@ -4,7 +4,7 @@
 
 TTL_SAMPLES_DIR='samples/ttl'
 SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-merged-ontology.ttl'
-MEDIATOPIC_FILE='tools/iptc-mediatopic.ttl'
+MEDIATOPIC_FILE='vocabularies/mediatopic.ttl'
 
 if [[ $# -eq 0 ]]; then
     echo "Usage: $0 <query file>"
