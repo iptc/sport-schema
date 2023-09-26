@@ -1,0 +1,50 @@
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#>.
+@prefix owl:	<http://www.w3.org/2002/07/owl#>.
+@prefix spplayerstatus:	<http://cv.iptc.org/newscodes/spplayerstatus/>
+		
+<http://cv.iptc.org/newscodes/spplayerstatus/> 
+	rdf:type skos:ConceptScheme;
+	skos:HasTopConcept		spplayerstatus:starter;
+	skos:HasTopConcept		spplayerstatus:bench;
+	skos:HasTopConcept		spplayerstatus:scratched;
+	skos:HasTopConcept		spplayerstatus:injured;
+	skos:HasTopConcept		spplayerstatus:suspended;
+	skos:HasTopConcept		spplayerstatus:sidelined.
+
+spplayerstatus:starter
+	rdf:type skos:Concept;
+	skos:prefLabel	"starter"@en-GB;
+	skos:definition	"A member of the lineup that enters the field at the commencement of play."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
+
+spplayerstatus:bench
+	rdf:type skos:Concept;
+	skos:prefLabel	"bench"@en-GB;
+	skos:definition	"Does not enter field at commencement of play, is substituted in or remains on bench."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
+
+spplayerstatus:scratched
+	rdf:type skos:Concept;
+	skos:prefLabel	"scratched"@en-GB;
+	skos:definition	"Does not dress for event, usually for having not earned a slot in the lineup."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
+
+spplayerstatus:injured
+	rdf:type skos:Concept;
+	skos:prefLabel	"injured"@en-GB;
+	skos:definition	"Unable to play due to injury."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
+
+spplayerstatus:suspended
+	rdf:type skos:Concept;
+	skos:prefLabel	"suspended"@en-GB;
+	skos:definition	"Unable to play due to suspension due to transgression."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
+
+spplayerstatus:sidelined
+	rdf:type skos:Concept;
+	skos:prefLabel	"sidelined"@en-GB;
+	skos:definition	"Does not play for other reason."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spplayerstatus/>.
