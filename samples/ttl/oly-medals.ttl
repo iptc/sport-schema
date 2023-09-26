@@ -1,20 +1,11 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Participation/OLYS2020-TIIND>
         rdf:type               sport:TeamParticipation ;
@@ -125,10 +116,10 @@
 <http://example.com/Competition/OLYS2020>
         rdf:type               sport:Competition ;
         rdfs:label             "2020 Tokyo Summer Olympics" ;
-        sport:competitionType  spct:competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/competition"^^xsd:anyURI ;
         sport:parent           <http://example.com/Competition/OLYS> ;
         sport:participation    <http://example.com/Participation/OLYS2020-TIFRA> , <http://example.com/Participation/OLYS2020-TIMEX> , <http://example.com/Participation/OLYS2020-TINED> , <http://example.com/Participation/OLYS2020-TITPE> , <http://example.com/Participation/OLYS2020-TICHN> , <http://example.com/Participation/OLYS2020-TIJPN> , <http://example.com/Participation/OLYS2020-TIITA> , <http://example.com/Participation/OLYS2020-TIIND> , <http://example.com/Participation/OLYS2020-TISUI> , <http://example.com/Participation/OLYS2020-TIBEL> , <http://example.com/Participation/OLYS2020-TISRB> , <http://example.com/Participation/OLYS2020-TIIRI> , <http://example.com/Participation/OLYS2020-TIKAZ> , <http://example.com/Participation/OLYS2020-TIROC> , <http://example.com/Participation/OLYS2020-TIKOR> , <http://example.com/Participation/OLYS2020-TIUKR> , <http://example.com/Participation/OLYS2020-TIEST> , <http://example.com/Participation/OLYS2020-TIROU> , <http://example.com/Participation/OLYS2020-TIECU> , <http://example.com/Participation/OLYS2020-TIINA> , <http://example.com/Participation/OLYS2020-TIKOS> , <http://example.com/Participation/OLYS2020-TIHUN> , <http://example.com/Participation/OLYS2020-TISLO> , <http://example.com/Participation/OLYS2020-TIISR> , <http://example.com/Participation/OLYS2020-TIMGL> ;
-        sport:sport            medtop:20001177 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001177"^^xsd:anyURI .
 
 <http://example.com/Team/TIHUN>
         rdf:type    sport:Team ;
@@ -281,6 +272,6 @@
 <http://example.com/Competition/OLYS>
         rdf:type               sport:Competition ;
         rdfs:label             "Summer Olympics" ;
-        sport:competitionType  spct:recurring-competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/recurring-competition"^^xsd:anyURI ;
         sport:governedBy       <http://example.com/GoverningBody/IOC> ;
-        sport:sport            medtop:20001177 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001177"^^xsd:anyURI .

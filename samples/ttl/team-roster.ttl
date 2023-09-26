@@ -1,28 +1,19 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4537>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Branden Troock membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4537> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.1192>
         rdf:type           sport:Athlete ;
@@ -39,8 +30,8 @@
         rdfs:label              "Justin Dowling membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3724> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "10" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2732>
@@ -48,8 +39,8 @@
         rdfs:label              "Jason Demers membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2732> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "4" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4173>
@@ -57,8 +48,8 @@
         rdfs:label              "Troy Vance membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4173> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "42" .
 
 <http://example.com/Athlete/l.nhl.com-p.3691>
@@ -76,16 +67,16 @@
         rdfs:label              "Emil Molin membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4158> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3872>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Jamie Oleksiak membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3872> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "5" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3138>
@@ -93,8 +84,8 @@
         rdfs:label              "Curtis McKenzie membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3138> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "11" .
 
 <http://example.com/Athlete/l.nhl.com-p.2841>
@@ -112,8 +103,8 @@
         rdfs:label              "Antoine Roussel membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3716> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "21" .
 
 <http://example.com/Athlete/l.nhl.com-p.4314>
@@ -131,8 +122,8 @@
         rdfs:label              "Trevor Daley membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1440> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "6" .
 
 <http://example.com/Athlete/l.nhl.com-p.3514>
@@ -150,8 +141,8 @@
         rdfs:label              "Francis Wathier membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2279> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "38" .
 
 <http://example.com/Athlete/l.nhl.com-p.4961>
@@ -168,8 +159,8 @@
         rdfs:label              "Esa Lindell membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4464> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.485>
         rdf:type           sport:Athlete ;
@@ -196,8 +187,8 @@
         rdfs:label              "Cristopher Nilstorp membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4349> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "41" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3385>
@@ -205,8 +196,8 @@
         rdfs:label              "Jussi Rynnas membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3385> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "40" .
 
 <http://example.com/Athlete/l.nhl.com-p.423>
@@ -224,8 +215,8 @@
         rdfs:label              "Tristan King membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3398> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "60" .
 
 <http://example.com/Athlete/l.nhl.com-p.2200>
@@ -238,8 +229,8 @@
         rdfs:label              "Valeri Nichushkin membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4707> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/injured> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/injured"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "43" .
 
 <http://example.com/Athlete/l.nhl.com-p.1362>
@@ -257,8 +248,8 @@
         rdfs:label              "Colton Sceviour membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2764> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "22" .
 
 <http://example.com/Athlete/l.nhl.com-p.4687>
@@ -281,8 +272,8 @@
         rdfs:label              "Matt Mangene membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4328> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.4254>
         rdf:type           sport:Athlete ;
@@ -294,8 +285,8 @@
         rdfs:label              "Radek Faksa membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4397> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "94" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4284>
@@ -303,8 +294,8 @@
         rdfs:label              "Taylor Peters membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4284> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "25" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1393>
@@ -312,8 +303,8 @@
         rdfs:label              "Travis Moen membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1393> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/injured> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/injured"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "27" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4435>
@@ -321,8 +312,8 @@
         rdfs:label              "Mike Hedden membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4435> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "26" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.485>
@@ -330,8 +321,8 @@
         rdfs:label              "Toby Petersen membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.485> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "19" .
 
 <http://example.com/Athlete/l.nhl.com-p.2732>
@@ -344,8 +335,8 @@
         rdfs:label              "Jamie Benn membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2577> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "14" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3691>
@@ -353,14 +344,14 @@
         rdfs:label              "Brendan Ranford membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3691> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "39" .
 
 <http://example.com/Competition/l.nhl.com>
         rdf:type     sport:Competition ;
         rdfs:label   "National Hockey League" ;
-        sport:sport  medtop:20000965 .
+        sport:sport  "http://cv.iptc.org/newscodes/mediatopic/20000965"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.4054>
         rdf:type           sport:Athlete ;
@@ -372,8 +363,8 @@
         rdfs:label              "Remi Elie membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4806> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.3138>
         rdf:type           sport:Athlete ;
@@ -385,8 +376,8 @@
         rdfs:label              "Jason Spezza membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.423> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "90" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1165>
@@ -394,8 +385,8 @@
         rdfs:label              "Ales Hemsky membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1165> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "83" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.229>
@@ -403,8 +394,8 @@
         rdfs:label              "Shawn Horcoff membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.229> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "10" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2377>
@@ -412,8 +403,8 @@
         rdfs:label              "Alex Goligoski membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2377> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "33" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4427>
@@ -421,8 +412,8 @@
         rdfs:label              "Gemel Smith membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4427> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.4187>
         rdf:type           sport:Athlete ;
@@ -434,8 +425,8 @@
         rdfs:label              "Jhonas Enroth membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2528> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "1" .
 
 <http://example.com/Athlete/l.nhl.com-p.3625>
@@ -448,8 +439,8 @@
         rdfs:label              "Austin Smith membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4314> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "9" .
 
 <http://example.com/Athlete/l.nhl.com-p.1440>
@@ -467,8 +458,8 @@
         rdfs:label              "Patrick Nemeth membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3501> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "37" .
 
 <http://example.com/Athlete/l.nhl.com-p.4253>
@@ -496,8 +487,8 @@
         rdfs:label              "Tyler Seguin membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3514> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/injured> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/injured"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "91" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.5121>
@@ -505,16 +496,16 @@
         rdfs:label              "Brett Pollock membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.5121> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2968>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "William Wrenn membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2968> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "2" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1907>
@@ -522,8 +513,8 @@
         rdfs:label              "Patrick Eaves membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1907> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "18" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4961>
@@ -531,16 +522,16 @@
         rdfs:label              "Ludwig Karlsson membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4961> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2149>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Rich Peverley membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2149> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "17" .
 
 <http://example.com/Athlete/l.nhl.com-p.5032>
@@ -558,8 +549,8 @@
         rdfs:label              "Ryan Button membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2934> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "46" .
 
 <http://example.com/Athlete/l.nhl.com-p.4537>
@@ -582,8 +573,8 @@
         rdfs:label              "Scott Glennie membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2919> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "15" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1192>
@@ -591,8 +582,8 @@
         rdfs:label              "Vernon Fiddler membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1192> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "38" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3895>
@@ -600,8 +591,8 @@
         rdfs:label              "Brett Ritchie membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3895> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "20" .
 
 <http://example.com/Athlete/l.nhl.com-p.3724>
@@ -645,8 +636,8 @@
         rdfs:label              "Philippe Desrosiers membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4687> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "70" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4740>
@@ -654,16 +645,16 @@
         rdfs:label              "Jason Dickinson membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4740> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2841>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Cameron Gaunce membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2841> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "36" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4546>
@@ -671,16 +662,16 @@
         rdfs:label              "Henri Kiviaho membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4546> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4254>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Jordie Benn membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4254> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "24" .
 
 <http://example.com/Athlete/l.nhl.com-p.3716>
@@ -698,8 +689,8 @@
         rdfs:label              "Jack Campbell membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3454> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "1" .
 
 <http://example.com/Athlete/l.nhl.com-p.2577>
@@ -717,8 +708,8 @@
         rdfs:label              "Mattias Backman membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4054> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.4464>
         rdf:type           sport:Athlete ;
@@ -740,8 +731,8 @@
         rdfs:label              "Cody Eakin membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2940> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "20" .
 
 <http://example.com/Athlete/l.nhl.com-p.2528>
@@ -754,8 +745,8 @@
         rdfs:label              "Matej Stransky membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4187> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/right-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/right-forward"^^xsd:anyURI ;
         sport:uniformNumber     "28" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.3625>
@@ -763,8 +754,8 @@
         rdfs:label              "John Klingberg membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.3625> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "3" .
 
 <http://example.com/Athlete/l.nhl.com-p.4349>
@@ -787,8 +778,8 @@
         rdfs:label              "Ryan Garbutt membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4253> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/left-forward> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/left-forward"^^xsd:anyURI ;
         sport:uniformNumber     "16" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2106>
@@ -796,24 +787,24 @@
         rdfs:label              "Derek Meech membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2106> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4460>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Ludwig Bystrom membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4460> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4878>
         rdf:type                sport:IndividualMembership ;
         rdfs:label              "Mattias Janmark-Nylen membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4878> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI .
 
 <http://example.com/Athlete/l.nhl.com-p.2968>
         rdf:type           sport:Athlete ;
@@ -830,8 +821,8 @@
         rdfs:label              "Maxime Fortunus membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2561> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "73" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.2200>
@@ -839,8 +830,8 @@
         rdfs:label              "Travis Morin membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.2200> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/center> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/center"^^xsd:anyURI ;
         sport:uniformNumber     "39" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.1362>
@@ -848,8 +839,8 @@
         rdfs:label              "Kari Lehtonen membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.1362> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "32" .
 
 <http://example.com/Athlete/l.nhl.com-p.2149>
@@ -862,8 +853,8 @@
         rdfs:label              "Josh Robinson membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.5032> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "30" .
 
 <http://example.com/Athlete/l.nhl.com-p.4397>
@@ -886,8 +877,8 @@
         rdfs:label              "Tim Thomas membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.740> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/goalie> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/goalie"^^xsd:anyURI ;
         sport:uniformNumber     "30" .
 
 <http://example.com/Membership/l.nhl.com-t.21-l.nhl.com-p.4053>
@@ -895,8 +886,8 @@
         rdfs:label              "Jyrki Jokipakka membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.4053> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/active> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> ;
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/active"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI ;
         sport:uniformNumber     "2" .
 
 <http://example.com/Athlete/l.nhl.com-p.4284>
@@ -914,5 +905,5 @@
         rdfs:label              "Julius Honka membership of Dallas Stars" ;
         sport:member            <http://example.com/Athlete/l.nhl.com-p.5099> ;
         sport:membershipOf      <http://example.com/Team/l.nhl.com-t.21> ;
-        sport:membershipStatus  <http://cv.iptc.org/newscodes/spphasestatus/inactive> ;
-        sport:positionRegular   <http://cv.iptc.org/newscodes/spichposition/defenseman> .
+        sport:membershipStatus  "http://cv.iptc.org/newscodes/spphasestatus/inactive"^^xsd:anyURI ;
+        sport:positionRegular   "http://cv.iptc.org/newscodes/spichposition/defenseman"^^xsd:anyURI .

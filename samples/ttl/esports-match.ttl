@@ -1,25 +1,16 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Participation/5120-T9572>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5120" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T9572> ;
         sport:score            "16" .
 
@@ -54,7 +45,7 @@
 <http://example.com/Event/5122>
         rdf:type             sport:Event ;
         rdfs:label           "Event 5122" ;
-        sport:eventStatus    <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventStatus    "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:parent         <http://example.com/Event/541807> ;
         sport:participation  <http://example.com/Participation/5122-PES13> , <http://example.com/Participation/5122-PES14> , <http://example.com/Participation/5122-T9572> , <http://example.com/Participation/5122-PES11> , <http://example.com/Participation/5122-PES12> , <http://example.com/Participation/5122-PES15> , <http://example.com/Participation/5122-PES16> , <http://example.com/Participation/5122-PES17> , <http://example.com/Participation/5122-PES18> , <http://example.com/Participation/5122-T6134> , <http://example.com/Participation/5122-PES19> , <http://example.com/Participation/5122-PES10> ;
         sport:startDateTime  "2018-12-12T14:00:00"^^xsd:dateTime .
@@ -69,7 +60,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 4 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:choose ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/choose"^^xsd:anyURI ;
         sport:comment         "Train" ;
         sport:sequenceNumber  "4" .
 
@@ -87,7 +78,7 @@
 <http://example.com/Participation/541807-T6134>
         rdf:type                    sport:TeamParticipation ;
         rdfs:label                  "Kinguin participation in Event 541807" ;
-        spstat:eventOutcome         speventoutcome:loss ;
+        spstat:eventOutcome         "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         spstat:eventsPlayed         "539" ;
         spstat:seriesScore          "299" ;
         spstat:seriesScoreOpposing  "214" ;
@@ -144,7 +135,7 @@
 <http://example.com/Participation/541807-T9572>
         rdf:type                    sport:TeamParticipation ;
         rdfs:label                  "Ex-Space Soldiers participation in Event 541807" ;
-        spstat:eventOutcome         speventoutcome:win ;
+        spstat:eventOutcome         "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         spstat:eventsPlayed         "24" ;
         spstat:seriesScore          "9" ;
         spstat:seriesScoreOpposing  "15" ;
@@ -182,7 +173,7 @@
 <http://example.com/Event/5121>
         rdf:type             sport:Event ;
         rdfs:label           "Event 5121" ;
-        sport:eventStatus    <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventStatus    "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:parent         <http://example.com/Event/541807> ;
         sport:participation  <http://example.com/Participation/5121-PES18> , <http://example.com/Participation/5121-PES12> , <http://example.com/Participation/5121-PES15> , <http://example.com/Participation/5121-PES17> , <http://example.com/Participation/5121-T6134> , <http://example.com/Participation/5121-PES11> , <http://example.com/Participation/5121-PES14> , <http://example.com/Participation/5121-T9572> , <http://example.com/Participation/5121-PES16> , <http://example.com/Participation/5121-PES19> , <http://example.com/Participation/5121-PES13> , <http://example.com/Participation/5121-PES10> ;
         sport:startDateTime  "2018-12-12T14:00:00"^^xsd:dateTime .
@@ -197,7 +188,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 3 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:choose ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/choose"^^xsd:anyURI ;
         sport:comment         "Cache" ;
         sport:sequenceNumber  "3" .
 
@@ -229,7 +220,7 @@
 <http://example.com/Participation/5121-T6134>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5121" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T6134> ;
         sport:score            "16" .
 
@@ -287,7 +278,7 @@
 <http://example.com/Participation/5121-T9572>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5121" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T9572> ;
         sport:score            "13" .
 
@@ -308,7 +299,7 @@
 <http://example.com/Event/5120>
         rdf:type             sport:Event ;
         rdfs:label           "Event 5120" ;
-        sport:eventStatus    <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventStatus    "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:parent         <http://example.com/Event/541807> ;
         sport:participation  <http://example.com/Participation/5120-PES15> , <http://example.com/Participation/5120-T6134> , <http://example.com/Participation/5120-PES18> , <http://example.com/Participation/5120-PES10> , <http://example.com/Participation/5120-PES13> , <http://example.com/Participation/5120-T9572> , <http://example.com/Participation/5120-PES17> , <http://example.com/Participation/5120-PES12> , <http://example.com/Participation/5120-PES19> , <http://example.com/Participation/5120-PES14> , <http://example.com/Participation/5120-PES16> , <http://example.com/Participation/5120-PES11> ;
         sport:startDateTime  "2018-12-12T14:00:00"^^xsd:dateTime .
@@ -323,7 +314,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 2 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:remove ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/remove"^^xsd:anyURI ;
         sport:comment         "Inferno" ;
         sport:sequenceNumber  "2" .
 
@@ -403,7 +394,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 7 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:remaining ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/remaining"^^xsd:anyURI ;
         sport:comment         "Mirage" ;
         sport:sequenceNumber  "7" .
 
@@ -431,7 +422,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 1 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:remove ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/remove"^^xsd:anyURI ;
         sport:comment         "Nuke" ;
         sport:sequenceNumber  "1" .
 
@@ -477,7 +468,7 @@
 <http://example.com/Participation/5122-T6134>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5122" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T6134> ;
         sport:score            "9" .
 
@@ -532,7 +523,7 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 6 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:remove ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/remove"^^xsd:anyURI ;
         sport:comment         "Dust2" ;
         sport:sequenceNumber  "6" .
 
@@ -584,7 +575,7 @@
 <http://example.com/Competition/l.intelextrememasters.com>
         rdf:type     sport:Competition ;
         rdfs:label   "Intel Extreme Masters" ;
-        sport:sport  medtop:20001183 .
+        sport:sport  "http://cv.iptc.org/newscodes/mediatopic/20001183"^^xsd:anyURI .
 
 <http://example.com/Participation/5122-PES14>
         rdf:type               sport:IndividualParticipation ;
@@ -632,14 +623,14 @@
         rdf:type              sport:Action ;
         rdfs:label            "Action 5 on event 541807" ;
         sport:actionInEvent   <http://example.com/Event/541807> ;
-        sport:actionType      spesaction:remove ;
+        sport:actionType      "http://cv.iptc.org/newscodes/spesaction/remove"^^xsd:anyURI ;
         sport:comment         "Overpass" ;
         sport:sequenceNumber  "5" .
 
 <http://example.com/Event/541807>
         rdf:type             sport:Event ;
         rdfs:label           "Event 541807" ;
-        sport:eventStatus    <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventStatus    "http://cv.iptc.org/newscodes/speventstatus/post-event"^^xsd:anyURI ;
         sport:participation  <http://example.com/Participation/541807-T9572> , <http://example.com/Participation/541807-T6134> ;
         sport:startDateTime  "2018-12-12T14:00:00"^^xsd:dateTime .
 
@@ -651,14 +642,14 @@
 <http://example.com/Participation/5120-T6134>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Kinguin participation in Event 5120" ;
-        spstat:eventOutcome    speventoutcome:loss ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/loss"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T6134> ;
         sport:score            "7" .
 
 <http://example.com/Participation/5122-T9572>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Ex-Space Soldiers participation in Event 5122" ;
-        spstat:eventOutcome    speventoutcome:win ;
+        spstat:eventOutcome    "http://cv.iptc.org/newscodes/speventoutcome/win"^^xsd:anyURI ;
         sport:participationBy  <http://example.com/Team/T9572> ;
         sport:score            "16" .
 

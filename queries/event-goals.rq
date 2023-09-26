@@ -6,12 +6,12 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sport: <https://sportschema.org/ontologies/main/>
 PREFIX spact: <https://sportschema.org/ontologies/main/>
 PREFIX spsocstat: <https://sportschema.org/ontologies/soccer/>
-PREFIX spsocrole: <http://cv.iptc.org/newscodes/spsocrole/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT DISTINCT ?playerName ?time ?teamName ?playerperfrole
 WHERE { 
     ?action rdf:type sport:Action ;
-    		sport:class <http://cv.iptc.org/newscodes/spactionclass/score> ;
+    		sport:class "http://cv.iptc.org/newscodes/spactionclass/score"^^xsd:anyURI ;
     		sport:minutesElapsed ?time ;
             sport:participation ?playerperf ;
             sport:actionInEvent ?event .
@@ -27,6 +27,6 @@ WHERE {
     		sport:membershipOf ?team .
     ?team rdfs:label ?teamName .
 
-    FILTER (?playerperfrole = spsocrole:scorer) .
+    FILTER (?playerperfrole = "http://cv.iptc.org/newscodes/spsocrole/scorer"^^xsd:anyURI) .
 
 } ORDER BY ?time

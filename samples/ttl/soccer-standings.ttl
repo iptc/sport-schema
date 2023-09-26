@@ -1,20 +1,11 @@
-@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
-@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schemaorg:          <https://schema.org/> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
-@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
-@prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
-@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
-@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
-@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemaorg: <https://schema.org/> .
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT36-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -26,7 +17,7 @@
         spstat:standingPoints         "10" ;
         spstat:ties                   "7" ;
         spstat:wins                   "1" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT20>
         rdf:type                    sport:TeamParticipation ;
@@ -53,7 +44,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "3" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT14-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -65,7 +56,7 @@
         spstat:standingPoints         "23" ;
         spstat:ties                   "2" ;
         spstat:wins                   "7" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -77,7 +68,7 @@
         spstat:standingPoints         "21" ;
         spstat:ties                   "3" ;
         spstat:wins                   "6" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT1>
         rdf:type    sport:Team ;
@@ -93,7 +84,7 @@
         spstat:standingPoints         "6" ;
         spstat:ties                   "3" ;
         spstat:wins                   "1" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT4-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -105,7 +96,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT4>
         rdf:type                    sport:TeamParticipation ;
@@ -132,7 +123,7 @@
         spstat:standingPoints         "16" ;
         spstat:ties                   "4" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT6>
         rdf:type    sport:Team ;
@@ -152,13 +143,13 @@
         spstat:standingPoints         "16" ;
         spstat:ties                   "4" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Competition/l.premierleague.com>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League" ;
-        sport:competitionType  spct:recurring-competition ;
-        sport:sport            medtop:20001065 .
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/recurring-competition"^^xsd:anyURI ;
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT3>
         rdf:type                    sport:TeamParticipation ;
@@ -204,7 +195,7 @@
         spstat:standingPoints         "28" ;
         spstat:ties                   "4" ;
         spstat:wins                   "8" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT43-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -216,7 +207,7 @@
         spstat:standingPoints         "29" ;
         spstat:ties                   "2" ;
         spstat:wins                   "9" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -228,7 +219,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT2-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -240,7 +231,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "0" ;
         spstat:wins                   "6" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -252,7 +243,7 @@
         spstat:standingPoints         "27" ;
         spstat:ties                   "3" ;
         spstat:wins                   "8" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT31>
         rdf:type                    sport:TeamParticipation ;
@@ -277,7 +268,7 @@
         spstat:pointsDifference     "14" ;
         spstat:pointsScoredAgainst  "24" ;
         spstat:pointsScoredFor      "38" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/qualification> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/qualification"^^xsd:anyURI ;
         spstat:resultEffectTarget   "league:l.uefa.org.cup" ;
         spstat:standingPoints       "39" ;
         spstat:ties                 "6" ;
@@ -296,7 +287,7 @@
         spstat:standingPoints         "4" ;
         spstat:ties                   "1" ;
         spstat:wins                   "1" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT36>
         rdf:type    sport:Team ;
@@ -312,7 +303,7 @@
         spstat:standingPoints         "15" ;
         spstat:ties                   "3" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT3-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -324,7 +315,7 @@
         spstat:standingPoints         "16" ;
         spstat:ties                   "1" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT49>
         rdf:type    sport:Team ;
@@ -340,7 +331,7 @@
         spstat:standingPoints         "17" ;
         spstat:ties                   "5" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT2>
         rdf:type                    sport:TeamParticipation ;
@@ -367,15 +358,15 @@
         spstat:standingPoints         "7" ;
         spstat:ties                   "4" ;
         spstat:wins                   "1" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Competition/l.premierleague.com-2020>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League 2020" ;
-        sport:competitionType  spct:competition ;
+        sport:competitionType  "http://cv.iptc.org/newscodes/spct/competition"^^xsd:anyURI ;
         sport:parent           <http://example.com/Competition/l.premierleague.com> ;
         sport:participation    <http://example.com/Participation/l.premierleague.com-2020-EPLT35> , <http://example.com/Participation/l.premierleague.com-2020-EPLT7> , <http://example.com/Participation/l.premierleague.com-2020-EPLT90> , <http://example.com/Participation/l.premierleague.com-2020-EPLT11> , <http://example.com/Participation/l.premierleague.com-2020-EPLT14> , <http://example.com/Participation/l.premierleague.com-2020-EPLT31> , <http://example.com/Participation/l.premierleague.com-2020-EPLT1> , <http://example.com/Participation/l.premierleague.com-2020-EPLT4> , <http://example.com/Participation/l.premierleague.com-2020-EPLT54> , <http://example.com/Participation/l.premierleague.com-2020-EPLT6> , <http://example.com/Participation/l.premierleague.com-2020-EPLT49> , <http://example.com/Participation/l.premierleague.com-2020-EPLT13> , <http://example.com/Participation/l.premierleague.com-2020-EPLT3> , <http://example.com/Participation/l.premierleague.com-2020-EPLT36> , <http://example.com/Participation/l.premierleague.com-2020-EPLT39> , <http://example.com/Participation/l.premierleague.com-2020-EPLT20> , <http://example.com/Participation/l.premierleague.com-2020-EPLT8> , <http://example.com/Participation/l.premierleague.com-2020-EPLT2> , <http://example.com/Participation/l.premierleague.com-2020-EPLT43> , <http://example.com/Participation/l.premierleague.com-2020-EPLT21> ;
-        sport:sport            medtop:20001065 .
+        sport:sport            "http://cv.iptc.org/newscodes/mediatopic/20001065"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT6-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -387,7 +378,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "3" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT43>
         rdf:type    sport:Team ;
@@ -403,7 +394,7 @@
         spstat:standingPoints         "11" ;
         spstat:ties                   "2" ;
         spstat:wins                   "3" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT36>
         rdf:type                    sport:TeamParticipation ;
@@ -432,7 +423,7 @@
         spstat:pointsDifference     "-22" ;
         spstat:pointsScoredAgainst  "37" ;
         spstat:pointsScoredFor      "15" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/demotion> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/demotion"^^xsd:anyURI ;
         spstat:resultEffectTarget   "l.efl.com" ;
         spstat:standingPoints       "11" ;
         spstat:ties                 "2" ;
@@ -451,7 +442,7 @@
         spstat:standingPoints         "16" ;
         spstat:ties                   "1" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT20-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -463,7 +454,7 @@
         spstat:standingPoints         "16" ;
         spstat:ties                   "1" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT7>
         rdf:type                    sport:TeamParticipation ;
@@ -492,7 +483,7 @@
         spstat:pointsDifference     "32" ;
         spstat:pointsScoredAgainst  "14" ;
         spstat:pointsScoredFor      "46" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/qualification> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/qualification"^^xsd:anyURI ;
         spstat:resultEffectTarget   "league:l.uefa.org.champions" ;
         spstat:standingPoints       "53" ;
         spstat:ties                 "5" ;
@@ -511,7 +502,7 @@
         spstat:standingPoints         "11" ;
         spstat:ties                   "5" ;
         spstat:wins                   "2" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT39-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -523,7 +514,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT8-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -535,7 +526,7 @@
         spstat:standingPoints         "19" ;
         spstat:ties                   "4" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT1>
         rdf:type                    sport:TeamParticipation ;
@@ -545,7 +536,7 @@
         spstat:pointsDifference     "19" ;
         spstat:pointsScoredAgainst  "31" ;
         spstat:pointsScoredFor      "50" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/qualification> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/qualification"^^xsd:anyURI ;
         spstat:resultEffectTarget   "league:l.uefa.org.champions" ;
         spstat:standingPoints       "46" ;
         spstat:ties                 "7" ;
@@ -564,7 +555,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "3" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT21-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -576,7 +567,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "3" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT14>
         rdf:type    sport:Team ;
@@ -590,7 +581,7 @@
         spstat:pointsDifference     "-36" ;
         spstat:pointsScoredAgainst  "55" ;
         spstat:pointsScoredFor      "19" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/demotion> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/demotion"^^xsd:anyURI ;
         spstat:resultEffectTarget   "l.efl.com" ;
         spstat:standingPoints       "13" ;
         spstat:ties                 "7" ;
@@ -609,7 +600,7 @@
         spstat:standingPoints         "20" ;
         spstat:ties                   "2" ;
         spstat:wins                   "6" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT3>
         rdf:type    sport:Team ;
@@ -625,7 +616,7 @@
         spstat:standingPoints         "13" ;
         spstat:ties                   "4" ;
         spstat:wins                   "3" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT6>
         rdf:type                    sport:TeamParticipation ;
@@ -656,7 +647,7 @@
         spstat:standingPoints         "24" ;
         spstat:ties                   "3" ;
         spstat:wins                   "7" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT90>
         rdf:type    sport:Team ;
@@ -672,7 +663,7 @@
         spstat:standingPoints         "20" ;
         spstat:ties                   "2" ;
         spstat:wins                   "6" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT90-events-away>
         rdf:type                      sport:ParticipationSplit ;
@@ -684,7 +675,7 @@
         spstat:standingPoints         "12" ;
         spstat:ties                   "3" ;
         spstat:wins                   "3" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT14>
         rdf:type                    sport:TeamParticipation ;
@@ -694,7 +685,7 @@
         spstat:pointsDifference     "13" ;
         spstat:pointsScoredAgainst  "32" ;
         spstat:pointsScoredFor      "45" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/qualification> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/qualification"^^xsd:anyURI ;
         spstat:resultEffectTarget   "league:l.uefa.org.champions" ;
         spstat:standingPoints       "40" ;
         spstat:ties                 "7" ;
@@ -717,7 +708,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT11-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -729,7 +720,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT13>
         rdf:type    sport:Team ;
@@ -787,7 +778,7 @@
         spstat:standingPoints         "18" ;
         spstat:ties                   "3" ;
         spstat:wins                   "5" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT20>
         rdf:type    sport:Team ;
@@ -803,7 +794,7 @@
         spstat:standingPoints         "7" ;
         spstat:ties                   "4" ;
         spstat:wins                   "1" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT13>
         rdf:type                    sport:TeamParticipation ;
@@ -813,7 +804,7 @@
         spstat:pointsDifference     "16" ;
         spstat:pointsScoredAgainst  "26" ;
         spstat:pointsScoredFor      "42" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/qualification> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/qualification"^^xsd:anyURI ;
         spstat:resultEffectTarget   "league:l.uefa.org.champions" ;
         spstat:standingPoints       "46" ;
         spstat:ties                 "4" ;
@@ -830,7 +821,7 @@
         spstat:pointsDifference     "-12" ;
         spstat:pointsScoredAgainst  "31" ;
         spstat:pointsScoredFor      "19" ;
-        spstat:resultEffect         <http://cv.iptc.org/newscodes/spresulteffect/demotion> ;
+        spstat:resultEffect         "http://cv.iptc.org/newscodes/spresulteffect/demotion"^^xsd:anyURI ;
         spstat:resultEffectTarget   "l.efl.com" ;
         spstat:standingPoints       "18" ;
         spstat:ties                 "9" ;
@@ -849,7 +840,7 @@
         spstat:standingPoints         "14" ;
         spstat:ties                   "2" ;
         spstat:wins                   "4" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT13-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -861,7 +852,7 @@
         spstat:standingPoints         "19" ;
         spstat:ties                   "1" ;
         spstat:wins                   "6" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Participation/l.premierleague.com-2020-EPLT39>
         rdf:type                    sport:TeamParticipation ;
@@ -888,7 +879,7 @@
         spstat:standingPoints         "23" ;
         spstat:ties                   "2" ;
         spstat:wins                   "7" ;
-        sport:participationSplitType  spcompetitionscope:events-away .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-away"^^xsd:anyURI .
 
 <http://example.com/ParticipationSplit/l.premierleague.com-2020-EPLT49-events-home>
         rdf:type                      sport:ParticipationSplit ;
@@ -900,7 +891,7 @@
         spstat:standingPoints         "7" ;
         spstat:ties                   "1" ;
         spstat:wins                   "2" ;
-        sport:participationSplitType  spcompetitionscope:events-home .
+        sport:participationSplitType  "http://cv.iptc.org/newscodes/spcompetitionscope/events-home"^^xsd:anyURI .
 
 <http://example.com/Team/EPLT7>
         rdf:type    sport:Team ;
