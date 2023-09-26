@@ -729,7 +729,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:value-of select="$player-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'nationality','»')"/>~<xsl:value-of select="concat('&quot;',newsml:player-metadata/@nationality,'&quot;')"/> .
         </xsl:if>
         <xsl:if test="string(newsml:player-metadata/@uniform-number) and not(ancestor::newsml:team)">
-            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'uniformNumber','»')"/>~<xsl:value-of select="concat('&quot;',newsml:player-metadata/@uniform-number,'&quot;')"/> .
+            <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'uniformNumberEvent','»')"/>~<xsl:value-of select="concat('&quot;',newsml:player-metadata/@uniform-number,'&quot;')"/> .
         </xsl:if>
 
         <xsl:if test="ancestor::newsml:sports-event">
