@@ -1,0 +1,43 @@
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#>.
+@prefix owl:	<http://www.w3.org/2002/07/owl#>.
+@prefix sptournamentform:	<http://cv.iptc.org/newscodes/sptournamentform/>
+		
+<http://cv.iptc.org/newscodes/sptournamentform/> 
+	rdf:type skos:ConceptScheme;
+	skos:HasTopConcept		sptournamentform:hosted;
+	skos:HasTopConcept		sptournamentform:single-group;
+	skos:HasTopConcept		sptournamentform:series;
+	skos:HasTopConcept		sptournamentform:single-elimination;
+	skos:HasTopConcept		sptournamentform:home-and-home.
+
+sptournamentform:hosted
+	rdf:type skos:Concept;
+	skos:prefLabel	"hosted"@en-GB;
+	skos:definition	"For a tournament that holds stages in different locations. Eg. different host cities/countries for PGA, FIS, Diamond League (IAAF) and even Tour de France"@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/sptournamentform/>.
+
+sptournamentform:single-group
+	rdf:type skos:Concept;
+	skos:prefLabel	"single-group"@en-GB;
+	skos:definition	"The stage involves only a single group of competitors. For example Italian Serie A where teams vie for placement in the league table. Also, a single group competition in a multi-group stage, such as the World Cup group stage."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/sptournamentform/>.
+
+sptournamentform:series
+	rdf:type skos:Concept;
+	skos:prefLabel	"series"@en-GB;
+	skos:definition	"A stage in which two competitors face off in a series of games (eg. best 3 of 5) the winner of which proceeds to the next stage, or wins the tournament."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/sptournamentform/>.
+
+sptournamentform:single-elimination
+	rdf:type skos:Concept;
+	skos:prefLabel	"single-elimination"@en-GB;
+	skos:definition	"A stage in which two competitors face off in a single match to determine who proceeds to the next stage, or wins the tournament. Eg. elimination stage of World Cup of Soccer or NFL playoffs."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/sptournamentform/>.
+
+sptournamentform:home-and-home
+	rdf:type skos:Concept;
+	skos:prefLabel	"home-and-home"@en-GB;
+	skos:definition	"A stage in which two competitors face off in a two matches (or legs) at each team's home location. The overall winner proceeds ahead. Usually culiminates in a single-elimination match at a neutral location i.e. UEFA Champions League."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/sptournamentform/>.

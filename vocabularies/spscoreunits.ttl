@@ -1,0 +1,28 @@
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#>.
+@prefix owl:	<http://www.w3.org/2002/07/owl#>.
+@prefix spscoreunits:	<http://cv.iptc.org/newscodes/spscoreunits/>
+		
+<http://cv.iptc.org/newscodes/spscoreunits/> 
+	rdf:type skos:ConceptScheme;
+	skos:HasTopConcept		spscoreunits:time-absolute;
+	skos:HasTopConcept		spscoreunits:time-relative;
+	skos:HasTopConcept		spscoreunits:against-par.
+
+spscoreunits:time-absolute
+	rdf:type skos:Concept;
+	skos:prefLabel	"time-absolute"@en-GB;
+	skos:definition	"Total time to complete competition, not measured in comparison to other competitors"@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spscoreunits/>.
+
+spscoreunits:time-relative
+	rdf:type skos:Concept;
+	skos:prefLabel	"time-relative"@en-GB;
+	skos:definition	"Time difference compared (usually) to closest competitor or first-place finalist. First place commonly has absolute value."@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spscoreunits/>.
+
+spscoreunits:against-par
+	rdf:type skos:Concept;
+	skos:prefLabel	"against-par"@en-GB;
+	skos:inScheme <http://cv.iptc.org/newscodes/spscoreunits/>.

@@ -4,7 +4,7 @@
 
 TTL_SAMPLES_DIR='samples/ttl'
 SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-merged-ontology.ttl'
-MEDIATOPIC_FILE='tools/iptc-mediatopic.ttl'
+MEDIATOPIC_FILE='vocabularies/mediatopic.ttl'
 TIMEOUT=600000 # global timeout - 600s
 
 if [[ $# -eq 0 ]]; then
