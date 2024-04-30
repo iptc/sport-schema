@@ -10,9 +10,10 @@ nav_order: 99
 IPTC Sport Schema was created by the IPTC Sports Content Working group, the team behind
 [SportsML](https://iptc.org/standards/sportsml-g2/).
 
-Please note that the schema documented on this site is _**not a production ready version of the
-Sport Schema**_. We have released our initial work in order to solicit feedback and suggestions
-from others. _**Please do not rely on this model for your production work - yet!**_
+Version 1.0 of the schema was approved by the IPTC Standards Committee on 4 October 2023.
+
+Version 1.0.1, an erratum update fixing some property definitions and ranges, was released
+on 30 April 2024.
 
 Thanks to the following IPTC member delegates and invited experts who have contributed to the
 development of the IPTC Sport Schema over the past few years:
