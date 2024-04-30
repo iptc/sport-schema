@@ -20,14 +20,14 @@
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema"@en ;
     rdfs:label "IPTC Sport Schema"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2023. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "A high-level model to describe the core elements of competitive sport"@en ;
     rdfs:isDefinedBy sport: ;
-    owl:versionIRI <https://sportschema.org/ontologies/main/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/main/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 ##### Classes #####
 
@@ -380,7 +380,7 @@ sport:alignment rdf:type owl:DatatypeProperty ;
     rdfs:label "alignment"@en ;
     rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"@en ;
     rdfs:domain sport:TeamParticipation ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:attendance rdf:type owl:DatatypeProperty ;
@@ -390,7 +390,7 @@ sport:attendance rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competitionFormat rdf:type owl:DatatypeProperty ;
+sport:competitionFormat rdf:type owl:ObjectProperty ;
     rdfs:label "competition form"@en ;
     rdfs:comment "Competition format: round robin, sudden death etc"@en ;
     rdfs:domain sport:CompetitionPhase ;
@@ -398,7 +398,7 @@ sport:competitionFormat rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competitionPhaseType rdf:type owl:DatatypeProperty ;
+sport:competitionPhaseType rdf:type owl:ObjectProperty ;
     rdfs:label "competition phase type"@en ;
     rdfs:comment "Type of the competition phase - regular week, final etc"@en ;
     rdfs:domain sport:CompetitionPhase ;
@@ -406,7 +406,7 @@ sport:competitionPhaseType rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:competitionType rdf:type owl:DatatypeProperty ;
+sport:competitionType rdf:type owl:ObjectProperty ;
     rdfs:label "competition type"@en ;
     rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
     rdfs:domain sport:Competition ;
@@ -434,7 +434,7 @@ sport:endDateTime rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:eventOutcome rdf:type owl:DatatypeProperty ;
+sport:eventOutcome rdf:type owl:ObjectProperty ;
     rdfs:label "event outcome"@en ;
     rdfs:comment "The outcome of an event (win, loss etc)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
@@ -442,7 +442,7 @@ sport:eventOutcome rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:eventOutcomeType rdf:type owl:DatatypeProperty ;
+sport:eventOutcomeType rdf:type owl:ObjectProperty ;
     rdfs:label "event outcome type"@en ;
     rdfs:comment "The type of outcome of an event (win, loss etc)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
@@ -450,7 +450,7 @@ sport:eventOutcomeType rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:eventStatus rdf:type owl:DatatypeProperty ;
+sport:eventStatus rdf:type owl:ObjectProperty ;
     rdfs:label "event status"@en ;
     rdfs:comment "Event's current status (e.g. post-event)"@en ;
     rdfs:domain sport:Event ;
@@ -458,7 +458,7 @@ sport:eventStatus rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:membershipStatus rdf:type owl:DatatypeProperty ;
+sport:membershipStatus rdf:type owl:ObjectProperty ;
     rdfs:label "membership status"@en ;
     rdfs:comment "Member's status in a team during this membership period (e.g. active or inactive)"@en ;
     rdfs:domain sport:IndividualMembership ;
@@ -477,19 +477,18 @@ sport:participationSplitType rdf:type owl:DatatypeProperty ;
     rdfs:label "participation split type"@en ;
     rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
     rdfs:domain sport:ParticipationSplit ;
-    # Recommended CV: ???
-    rdfs:range xsd:anyURI ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:playerStatus rdf:type owl:DatatypeProperty ;
+sport:playerStatus rdf:type owl:ObjectProperty ;
     rdfs:label "player status"@en ;
     rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
     rdfs:domain sport:IndividualParticipation ;
-    # Recommended values: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:positionEvent rdf:type owl:DatatypeProperty ;
+sport:positionEvent rdf:type owl:ObjectProperty ;
     rdfs:label "position (event)"@en ;
     rdfs:comment "The position in a team taken for an individual event"@en ;
     rdfs:domain sport:CompetitorParticipation ;
@@ -497,7 +496,7 @@ sport:positionEvent rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:positionRegular rdf:type owl:DatatypeProperty ;
+sport:positionRegular rdf:type owl:ObjectProperty ;
     rdfs:label "position (regular)"@en ;
     rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
     rdfs:domain sport:IndividualMembership ;
@@ -512,7 +511,7 @@ sport:rank rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:role rdf:type owl:DatatypeProperty ;
+sport:role rdf:type owl:ObjectProperty ;
     rdfs:label "role"@en ;
     rdfs:comment "A team's or individual's role in a given action"@en ;
     rdfs:domain sport:Participation ;
@@ -534,7 +533,7 @@ sport:scoreType rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:scoreUnits rdf:type owl:DatatypeProperty ;
+sport:scoreUnits rdf:type owl:ObjectProperty ;
     rdfs:label "score units"@en ;
     rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
@@ -542,13 +541,12 @@ sport:scoreUnits rdf:type owl:DatatypeProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:sport rdf:type owl:DatatypeProperty ;
+sport:sport rdf:type owl:ObjectProperty ;
     rdfs:label "sport"@en ;
     rdfs:comment "The sport which this competition represents"@en;
     rdfs:domain sport:Competition ;
     # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
     rdfs:range skos:Concept ;
-    rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:startDateTime rdf:type owl:DatatypeProperty ;
@@ -589,7 +587,7 @@ sport:actionDateTime rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:actionType rdf:type owl:DatatypeProperty ;
+sport:actionType rdf:type owl:ObjectProperty ;
     rdfs:label "action type"@en ;
     rdfs:comment "The type of competitive action taken on the field of play. See 'action' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfaction/ http://cv.iptc.org/newscodes/spbblaction/ http://cv.iptc.org/newscodes/spbkbaction/ http://cv.iptc.org/newscodes/spichaction/ http://cv.iptc.org/newscodes/spmcraction/ http://cv.iptc.org/newscodes/rgxaction/ http://cv.iptc.org/newscodes/spsocaction/ http://cv.iptc.org/newscodes/sptenaction/"@en ;
     rdfs:domain sport:Action ;
@@ -610,7 +608,7 @@ sport:bodyPart rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:class rdf:type owl:DatatypeProperty ;
+sport:class rdf:type owl:ObjectProperty ;
     rdfs:label "class"@en ;
     rdfs:comment "An open placeholder for categorization. Recommended vocabulary: http://cv.iptc.org/newscodes/spactionclass/"@en ;
     rdfs:domain sport:Action ;
@@ -694,7 +692,7 @@ sport:infractionLevel rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:infractionType rdf:type owl:DatatypeProperty ;
+sport:infractionType rdf:type owl:ObjectProperty ;
     rdfs:label "infraction type"@en ;
     rdfs:comment "The degree of punishment for the infraction/penalty eg. yellow or red card, major, minor, game misconduct, etc. See 'penaltylevel' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbpenaltylevel/ http://cv.iptc.org/newscodes/spichpenaltylevel/ http://cv.iptc.org/newscodes/sprgxpenaltylevel/ http://cv.iptc.org/newscodes/spsocpenaltylevel/"@en ;
     rdfs:domain sport:Action ;
@@ -715,14 +713,14 @@ sport:personReplacingPosition rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:recipientType rdf:type owl:DatatypeProperty ;
+sport:recipientType rdf:type owl:ObjectProperty ;
     rdfs:label "recipient type"@en ;
     rdfs:comment "Whether the receiver of the penalty was the team, the player, a coach, a ref, etc. SportsML vocab uri: http://cv.iptc.org/newscodes/sprecipienttype/"@en ;
     rdfs:domain sport:Action ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:result rdf:type owl:DatatypeProperty ;
+sport:result rdf:type owl:ObjectProperty ;
     rdfs:label "result"@en ;
     rdfs:comment "The result of the play or action. See 'result' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfresult/ http://cv.iptc.org/newscodes/spsocresult/"@en ;
     rdfs:domain sport:Action ;
@@ -743,7 +741,7 @@ sport:saveType rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:scoreAttemptResult rdf:type owl:DatatypeProperty ;
+sport:scoreAttemptResult rdf:type owl:ObjectProperty ;
     rdfs:label "score attempt result"@en ;
     rdfs:comment "The result of the score attempt eg. blocked, missed, etc. See 'scoreattemptresult' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattemptresult/ http://cv.iptc.org/newscodes/spichscoreattemtresult/ http://cv.iptc.org/newscodes/sprgxscoreattemptresult/ http://cv.iptc.org/newscodes/spsocscoreattemptresult/"@en ;
     rdfs:domain sport:Action ;
@@ -764,7 +762,7 @@ sport:scoreAttemptSituation rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:scoreAttemptType rdf:type owl:DatatypeProperty ;
+sport:scoreAttemptType rdf:type owl:ObjectProperty ;
     rdfs:label "score attempt type"@en ;
     rdfs:comment "The type of score that was attempted. See 'scoreattempt' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattempt/ http://cv.iptc.org/newscodes/spichscoreattempt/ http://cv.iptc.org/newscodes/sprgxscoreattempt/ http://cv.iptc.org/newscodes/spsocscoreattempt/"@en ;
     rdfs:domain sport:Action ;
@@ -785,14 +783,14 @@ sport:shotDistance rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:shotDistanceUnits rdf:type owl:DatatypeProperty ;
+sport:shotDistanceUnits rdf:type owl:ObjectProperty ;
     rdfs:label "shot distance units"@en ;
     rdfs:comment "SportsML vocab uri: http://cv.iptc.org/newscodes/spdistanceunits/"@en ;
     rdfs:domain sport:Action ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:shotType rdf:type owl:DatatypeProperty ;
+sport:shotType rdf:type owl:ObjectProperty ;
     rdfs:label "shot type"@en ;
     rdfs:comment "The type of shot taken. See 'shot' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spgolshot/ http://cv.iptc.org/newscodes/sptenshot/ http://cv.iptc.org/newscodes/spcurshot/"@en ;
     rdfs:domain sport:Action ;
@@ -852,14 +850,14 @@ sport:zone rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - American Football statistics"@en ;
     rdfs:label "IPTC Sport Schema - American Football statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering american football statistics."@en ;
     rdfs:isDefinedBy spamfstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/american-football/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/american-football/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spamfstat:yardsPerAttempt rdf:type owl:DatatypeProperty ; 
         rdfs:label "yardsPerAttempt"@en ; 
@@ -2624,14 +2622,14 @@ spamfstat:yardsPerAttempt rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Baseball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Baseball statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering baseball statistics."@en ;
     rdfs:isDefinedBy spbblstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/baseball/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/baseball/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spbblstat:average rdf:type owl:DatatypeProperty ; 
         rdfs:label "average"@en ; 
@@ -3451,14 +3449,14 @@ spbblstat:average rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Basketball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Basketball statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering basketball statistics."@en ;
     rdfs:isDefinedBy spbkbstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/basketball/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/basketball/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spbkbstat:minutesPlayed rdf:type owl:DatatypeProperty ; 
         rdfs:label "minutesPlayed"@en ; 
@@ -4004,22 +4002,23 @@ spbkbstat:minutesPlayed rdf:type owl:DatatypeProperty ;
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix spstat: <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
 
 <https://sportschema.org/ontologies/corestatistics/>
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Core statistics"@en ;
     rdfs:label "IPTC Sport Schema - Core statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering core statistics across sports."@en ;
     rdfs:isDefinedBy spstat: ;
     owl:versionIRI <https://sportschema.org/ontologies/corestatistics/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spstat:wins rdf:type owl:DatatypeProperty ; 
     rdfs:label "wins"@en ; 
@@ -4287,11 +4286,11 @@ spstat:scorePercentageOpposing rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:integer ; 
     rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
 
-spstat:resultEffect rdf:type owl:DatatypeProperty ; 
+spstat:resultEffect rdf:type owl:ObjectProperty ; 
     rdfs:label "resultEffect"@en ; 
     rdfs:comment "Describes the effect that the result of the event or rank changing has had on the team. Example: Whether or not a team has qualified for the playoffs, or has been promoted or demoted to a different division. Value should come from the https://cv.iptc.org/newscodes/spresulteffect/ vocabulary"@en ; 
     rdfs:domain sport:Participation ; 
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
 
 spstat:resultEffectTarget rdf:type owl:DatatypeProperty ; 
@@ -4403,14 +4402,14 @@ spstat:adjustedScoreAgainst rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - esports statistics"@en ;
     rdfs:label "IPTC Sport Schema - esports statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering esports statistics."@en ;
     rdfs:isDefinedBy spespstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/esports/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/esports/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spespstat:ADR rdf:type owl:DatatypeProperty ; 
         rdfs:label "ADR"@en ; 
@@ -4479,14 +4478,14 @@ spespstat:kills rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Golf statistics"@en ;
     rdfs:label "IPTC Sport Schema - Golf statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf statistics."@en ;
     rdfs:isDefinedBy spgolstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/golf/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/golf/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spgolstat:rank rdf:type owl:DatatypeProperty ; 
         rdfs:label "rank"@en ; 
@@ -4886,14 +4885,14 @@ spgolstat:rank rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Motor Racing statistics"@en ;
     rdfs:label "IPTC Sport Schema - Motor Racing statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering motor racing statistics."@en ;
     rdfs:isDefinedBy spmcrstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/motor-racing/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/motor-racing/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spmcrstat:speedAverageRace rdf:type owl:DatatypeProperty ; 
         rdfs:label "speedAverageRace"@en ; 
@@ -5223,14 +5222,14 @@ spmcrstat:speedAverageRace rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Rugby statistics"@en ;
     rdfs:label "IPTC Sport Schema - Rugby statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering rugby statistics."@en ;
     rdfs:isDefinedBy sprgxstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/rugby/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/rugby/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 sprgxstat:triesScored rdf:type owl:DatatypeProperty ; 
         rdfs:label "triesScored"@en ; 
@@ -5553,14 +5552,14 @@ sprgxstat:triesScored rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Soccer statistics"@en ;
     rdfs:label "IPTC Sport Schema - Soccer statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering soccer statistics."@en ;
     rdfs:isDefinedBy spsocstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/soccer/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/soccer/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spsocstat:lineFormationRow rdf:type owl:DatatypeProperty ; 
         rdfs:label "lineFormationRow"@en ; 
@@ -6100,14 +6099,14 @@ spsocstat:lineFormationRow rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Tennis statistics"@en ;
     rdfs:label "IPTC Sport Schema - Tennis statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering tennis statistics."@en ;
     rdfs:isDefinedBy sptenstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/tennis/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/tennis/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 sptenstat:score rdf:type owl:DatatypeProperty ; 
         rdfs:label "score"@en ; 
@@ -6465,14 +6464,14 @@ sptenstat:score rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Volleyball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Volleyball statistics"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:created "2024-04-30"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering volleyball statistics."@en ;
     rdfs:isDefinedBy spvolstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/volleyball/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/volleyball/1.0.1> ;
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spvolstat:errorsOppenent rdf:type owl:DatatypeProperty ; 
         rdfs:label "errorsOppenent"@en ; 
