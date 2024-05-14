@@ -3,6 +3,7 @@
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
 @prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
 @prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
@@ -23,7 +24,10 @@
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2023. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
-    dcterms:description "A high level model to describe the core elements of competitive sport"@en .
+    dcterms:description "A high-level model to describe the core elements of competitive sport"@en ;
+    rdfs:isDefinedBy sport: ;
+    owl:versionIRI <https://sportschema.org/ontologies/main/1.0> ;
+    owl:versionInfo "1.0"^^xsd:string .
 
 ##### Classes #####
 
@@ -391,7 +395,7 @@ sport:competitionFormat rdf:type owl:DatatypeProperty ;
     rdfs:comment "Competition format: round robin, sudden death etc"@en ;
     rdfs:domain sport:CompetitionPhase ;
     # Recommended CV: http://cv.iptc.org/newscodes/sptournamentform/
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:competitionPhaseType rdf:type owl:DatatypeProperty ;
@@ -399,14 +403,14 @@ sport:competitionPhaseType rdf:type owl:DatatypeProperty ;
     rdfs:comment "Type of the competition phase - regular week, final etc"@en ;
     rdfs:domain sport:CompetitionPhase ;
     # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (doesn't exist yet)
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:competitionType rdf:type owl:DatatypeProperty ;
     rdfs:label "competition type"@en ;
     rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
     rdfs:domain sport:Competition ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:dateOfBirth rdf:type owl:DatatypeProperty ;
@@ -435,7 +439,7 @@ sport:eventOutcome rdf:type owl:DatatypeProperty ;
     rdfs:comment "The outcome of an event (win, loss etc)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: https://cv.iptc.org/newscodes/speventoutcome/
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:eventOutcomeType rdf:type owl:DatatypeProperty ;
@@ -443,23 +447,23 @@ sport:eventOutcomeType rdf:type owl:DatatypeProperty ;
     rdfs:comment "The type of outcome of an event (win, loss etc)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: <http://cv.iptc.org/newscodes/speventoutcometype/> ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:eventStatus rdf:type owl:DatatypeProperty ;
     rdfs:label "event status"@en ;
     rdfs:comment "Event's current status (e.g. post-event)"@en ;
     rdfs:domain sport:Event ;
-    rdfs:range xsd:anyURI ;
     # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:membershipStatus rdf:type owl:DatatypeProperty ;
     rdfs:label "membership status"@en ;
     rdfs:comment "Member's status in a team during this membership period (e.g. active or inactive)"@en ;
     rdfs:domain sport:IndividualMembership ;
-    rdfs:range xsd:anyURI ;
     # Recommended values: <http://cv.iptc.org/newscodes/spphasestatus/> ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:nationality rdf:type owl:DatatypeProperty ;
@@ -481,8 +485,8 @@ sport:playerStatus rdf:type owl:DatatypeProperty ;
     rdfs:label "player status"@en ;
     rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
     rdfs:domain sport:IndividualParticipation ;
-    rdfs:range xsd:anyURI ;
     # Recommended values: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:positionEvent rdf:type owl:DatatypeProperty ;
@@ -490,7 +494,7 @@ sport:positionEvent rdf:type owl:DatatypeProperty ;
     rdfs:comment "The position in a team taken for an individual event"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/> ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:positionRegular rdf:type owl:DatatypeProperty ;
@@ -498,7 +502,7 @@ sport:positionRegular rdf:type owl:DatatypeProperty ;
     rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
     rdfs:domain sport:IndividualMembership ;
     # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/>
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:rank rdf:type owl:DatatypeProperty ;
@@ -513,7 +517,7 @@ sport:role rdf:type owl:DatatypeProperty ;
     rdfs:comment "A team's or individual's role in a given action"@en ;
     rdfs:domain sport:Participation ;
     # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:score rdf:type owl:DatatypeProperty ;
@@ -535,7 +539,7 @@ sport:scoreUnits rdf:type owl:DatatypeProperty ;
     rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
     rdfs:domain sport:CompetitorParticipation ;
     # Recommended CV: http://cv.iptc.org/newscodes/spscoreunits/
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:sport rdf:type owl:DatatypeProperty ;
@@ -543,6 +547,7 @@ sport:sport rdf:type owl:DatatypeProperty ;
     rdfs:comment "The sport which this competition represents"@en;
     rdfs:domain sport:Competition ;
     # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
+    rdfs:range skos:Concept ;
     rdfs:range xsd:anyURI ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
@@ -588,7 +593,7 @@ sport:actionType rdf:type owl:DatatypeProperty ;
     rdfs:label "action type"@en ;
     rdfs:comment "The type of competitive action taken on the field of play. See 'action' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfaction/ http://cv.iptc.org/newscodes/spbblaction/ http://cv.iptc.org/newscodes/spbkbaction/ http://cv.iptc.org/newscodes/spichaction/ http://cv.iptc.org/newscodes/spmcraction/ http://cv.iptc.org/newscodes/rgxaction/ http://cv.iptc.org/newscodes/spsocaction/ http://cv.iptc.org/newscodes/sptenaction/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:angle rdf:type owl:DatatypeProperty ;
@@ -609,7 +614,7 @@ sport:class rdf:type owl:DatatypeProperty ;
     rdfs:label "class"@en ;
     rdfs:comment "An open placeholder for categorization. Recommended vocabulary: http://cv.iptc.org/newscodes/spactionclass/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:comment rdf:type owl:DatatypeProperty ;
@@ -693,7 +698,7 @@ sport:infractionType rdf:type owl:DatatypeProperty ;
     rdfs:label "infraction type"@en ;
     rdfs:comment "The degree of punishment for the infraction/penalty eg. yellow or red card, major, minor, game misconduct, etc. See 'penaltylevel' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbpenaltylevel/ http://cv.iptc.org/newscodes/spichpenaltylevel/ http://cv.iptc.org/newscodes/sprgxpenaltylevel/ http://cv.iptc.org/newscodes/spsocpenaltylevel/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:periodValue rdf:type owl:DatatypeProperty ;
@@ -714,14 +719,14 @@ sport:recipientType rdf:type owl:DatatypeProperty ;
     rdfs:label "recipient type"@en ;
     rdfs:comment "Whether the receiver of the penalty was the team, the player, a coach, a ref, etc. SportsML vocab uri: http://cv.iptc.org/newscodes/sprecipienttype/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:result rdf:type owl:DatatypeProperty ;
     rdfs:label "result"@en ;
     rdfs:comment "The result of the play or action. See 'result' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfresult/ http://cv.iptc.org/newscodes/spsocresult/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:saveMethod rdf:type owl:DatatypeProperty ;
@@ -742,7 +747,7 @@ sport:scoreAttemptResult rdf:type owl:DatatypeProperty ;
     rdfs:label "score attempt result"@en ;
     rdfs:comment "The result of the score attempt eg. blocked, missed, etc. See 'scoreattemptresult' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattemptresult/ http://cv.iptc.org/newscodes/spichscoreattemtresult/ http://cv.iptc.org/newscodes/sprgxscoreattemptresult/ http://cv.iptc.org/newscodes/spsocscoreattemptresult/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:scoreAttemptSide rdf:type owl:DatatypeProperty ;
@@ -763,7 +768,7 @@ sport:scoreAttemptType rdf:type owl:DatatypeProperty ;
     rdfs:label "score attempt type"@en ;
     rdfs:comment "The type of score that was attempted. See 'scoreattempt' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattempt/ http://cv.iptc.org/newscodes/spichscoreattempt/ http://cv.iptc.org/newscodes/sprgxscoreattempt/ http://cv.iptc.org/newscodes/spsocscoreattempt/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:sequenceNumber rdf:type owl:DatatypeProperty ;
@@ -784,14 +789,14 @@ sport:shotDistanceUnits rdf:type owl:DatatypeProperty ;
     rdfs:label "shot distance units"@en ;
     rdfs:comment "SportsML vocab uri: http://cv.iptc.org/newscodes/spdistanceunits/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:shotType rdf:type owl:DatatypeProperty ;
     rdfs:label "shot type"@en ;
     rdfs:comment "The type of shot taken. See 'shot' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spgolshot/ http://cv.iptc.org/newscodes/sptenshot/ http://cv.iptc.org/newscodes/spcurshot/"@en ;
     rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:startLocation rdf:type owl:DatatypeProperty ;

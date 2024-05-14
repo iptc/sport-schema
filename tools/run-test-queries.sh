@@ -6,7 +6,7 @@
 
 TTL_SAMPLES_DIR='samples/ttl'
 SPORT_ONTOLOGY_FILE='ontologies/iptc-sport-merged-ontology.ttl'
-MEDIATOPIC_FILE='tools/iptc-mediatopic.ttl'
+MEDIATOPIC_FILE='vocabularies/mediatopic.ttl'
 
 # handle error in the case that the glob returns null
 shopt -s nullglob

@@ -5,17 +5,13 @@ principles.
 
 ## About the IPTC Sport Schema
 
-It is currently a work in progress. We have developed an RDF-based data model
+The IPTC is proud to present the result of years of work: an RDF-based data model
 covering sports schedules, event results and statistics.
-
-> :warning: Please note that we are making the IPTC Sport Schema available for
-> comment before release, and the schema may change at any time based on
-> feedback. Please do not use this schema for production applications (yet).
 
 Our development process is based on a set of use cases documented
 at https://github.com/iptc/sport-model/wiki/Use-Cases .
 
-We have created an RDF model that represents schedules, statistics and results
+We have created an RDFS/OWL ontology that represents schedules, statistics and results
 for all levels of all sports, for both human and machine consumption.
 
 ## Project goals and principles
