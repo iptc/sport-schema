@@ -19,11 +19,6 @@ IPTC Sport Schema is a high-level model that describes the core elements of comp
 
 ---
 
-{: .warning }
-NOTE: Please note that the schema documented on this site is _**not a production ready version of the
-Sport Schema**_. We have released our initial work in order to solicit feedback and suggestions
-from others. _**Please do not rely on this model for your production work - yet!**_
-
 ## Project goals and principles
 
 Our goals were to ensure that the model and vocabulary is:
