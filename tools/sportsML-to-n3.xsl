@@ -544,7 +544,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             </xsl:choose>
         </xsl:if>
 
-        <xsl:if test="newsml:award">
+        <!--xsl:if test="newsml:award">
         <xsl:for-each select="newsml:award">
             <xsl:choose>
                 <xsl:when test="newsml:rank[contains(@type,'final-result')]">
@@ -555,7 +555,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
-        </xsl:if>
+        </xsl:if -->
 
         <xsl:apply-templates select="@* | node()">
             <xsl:with-param name="participation-id" select="$participation-id"/>

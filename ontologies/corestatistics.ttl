@@ -2,22 +2,24 @@
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix spstat: <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
 
 <https://sportschema.org/ontologies/corestatistics/>
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Core statistics"@en ;
     rdfs:label "IPTC Sport Schema - Core statistics"@en ;
     dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-05-14"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2022. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering core statistics across sports."@en ;
     rdfs:isDefinedBy spstat: ;
     owl:versionIRI <https://sportschema.org/ontologies/corestatistics/1.0> ;
-    owl:versionInfo "1.0"^^xsd:string .
+    owl:versionInfo "1.0.1"^^xsd:string .
 
 spstat:wins rdf:type owl:DatatypeProperty ; 
     rdfs:label "wins"@en ; 
@@ -285,11 +287,11 @@ spstat:scorePercentageOpposing rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:integer ; 
     rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
 
-spstat:resultEffect rdf:type owl:DatatypeProperty ; 
+spstat:resultEffect rdf:type owl:ObjectProperty ; 
     rdfs:label "resultEffect"@en ; 
     rdfs:comment "Describes the effect that the result of the event or rank changing has had on the team. Example: Whether or not a team has qualified for the playoffs, or has been promoted or demoted to a different division. Value should come from the https://cv.iptc.org/newscodes/spresulteffect/ vocabulary"@en ; 
     rdfs:domain sport:Participation ; 
-    rdfs:range xsd:anyURI ;
+    rdfs:range skos:Concept ;
     rdf:isDefinedBy <https://sportschema.org/ontologies/corestatistics> . 
 
 spstat:resultEffectTarget rdf:type owl:DatatypeProperty ; 

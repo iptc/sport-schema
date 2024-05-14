@@ -2,12 +2,12 @@
     "@graph": [
         {
             "@id": "http://example.com/Participation/5120-T9572",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:win"
-            },
             "sport:score": "16",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
             },
             "rdfs:label": "Ex-Space Soldiers participation in Event 5120",
             "@type": "sport:TeamParticipation"
@@ -15,8 +15,8 @@
         {
             "@id": "http://example.com/Team/T9572",
             "rdfs:label": [
-                "",
-                "Ex-Space Soldiers"
+                "Ex-Space Soldiers",
+                ""
             ],
             "@type": "sport:Team"
         },
@@ -138,12 +138,12 @@
         },
         {
             "@id": "http://example.com/Participation/5122-T9572",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:win"
-            },
             "sport:score": "16",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
             },
             "rdfs:label": "Ex-Space Soldiers participation in Event 5122",
             "@type": "sport:TeamParticipation"
@@ -190,8 +190,8 @@
             "spespstat:flashassist": "0",
             "@type": "sport:IndividualParticipation",
             "spespstat:headshot": "15",
-            "spespstat:ADR": "105,2",
             "spespstat:deaths": "12",
+            "spespstat:ADR": "105,2",
             "rdfs:label": "Buğra Arkın participation in Event 5122",
             "spespstat:kills": "26",
             "spstat:rating": "1,57",
@@ -201,20 +201,20 @@
         },
         {
             "@id": "http://example.com/Event/541807",
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:participation": [
                 {
-                    "@id": "http://example.com/Participation/541807-T9572"
+                    "@id": "http://example.com/Participation/541807-T6134"
                 },
                 {
-                    "@id": "http://example.com/Participation/541807-T6134"
+                    "@id": "http://example.com/Participation/541807-T9572"
                 }
             ],
             "sport:eventStatus": {
                 "@id": "http://cv.iptc.org/newscodes/speventstatus/post-event"
-            },
-            "sport:startDateTime": {
-                "@value": "2018-12-12T14:00:00",
-                "@type": "xsd:dateTime"
             },
             "rdfs:label": "Event 541807",
             "@type": "sport:Event"
@@ -223,8 +223,8 @@
             "@id": "http://example.com/Participation/5122-PES16",
             "spespstat:KAST": "80,0",
             "@type": "sport:IndividualParticipation",
-            "spespstat:FKdiff": "1",
             "spespstat:ADR": "90,9",
+            "spespstat:FKdiff": "1",
             "spespstat:kills": "20",
             "spstat:rating": "1,37",
             "spespstat:deaths": "12",
@@ -272,12 +272,12 @@
         },
         {
             "@id": "http://example.com/Participation/5122-T6134",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:loss"
-            },
             "sport:score": "9",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
             },
             "rdfs:label": "Kinguin participation in Event 5122",
             "@type": "sport:TeamParticipation"
@@ -290,12 +290,12 @@
             "spespstat:assist": "5",
             "spespstat:KAST": "56,0",
             "spstat:rating": "1,21",
-            "spespstat:ADR": "86,5",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PES19"
             },
-            "rdfs:label": "Engin Kor participation in Event 5122",
+            "spespstat:ADR": "86,5",
             "spespstat:kills": "20",
+            "rdfs:label": "Engin Kor participation in Event 5122",
             "@type": "sport:IndividualParticipation",
             "spespstat:deaths": "16"
         },
@@ -318,11 +318,11 @@
         },
         {
             "@id": "http://example.com/Membership/T9572-PES19",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES19"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES19"
             },
             "rdfs:label": "Engin Kor membership of ",
             "@type": "sport:IndividualMembership"
@@ -335,11 +335,11 @@
         },
         {
             "@id": "http://example.com/Action/541807-4",
+            "sport:sequenceNumber": "4",
             "sport:comment": "Train",
             "sport:actionType": {
                 "@id": "spesaction:choose"
             },
-            "sport:sequenceNumber": "4",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -348,28 +348,28 @@
         },
         {
             "@id": "http://example.com/Membership/T6134-PES14",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES14"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T6134"
             },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES14"
+            },
             "rdfs:label": "Karol Rodowicz membership of ",
             "@type": "sport:IndividualMembership"
+        },
+        {
+            "@id": "http://example.com/Team/T6134",
+            "rdfs:label": [
+                "Kinguin",
+                ""
+            ],
+            "@type": "sport:Team"
         },
         {
             "@id": "http://example.com/Athlete/PES14",
             "sport:nationality": "Polish",
             "rdfs:label": "Karol Rodowicz",
             "@type": "sport:Athlete"
-        },
-        {
-            "@id": "http://example.com/Team/T6134",
-            "rdfs:label": [
-                "",
-                "Kinguin"
-            ],
-            "@type": "sport:Team"
         },
         {
             "@id": "http://example.com/Athlete/PES18",
@@ -379,15 +379,15 @@
         },
         {
             "@id": "http://example.com/Participation/541807-T6134",
+            "sport:score": "1",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T6134"
+            },
             "spstat:seriesScoreOpposing": "214",
             "spstat:seriesScore": "299",
             "spstat:eventsPlayed": "539",
             "spstat:eventOutcome": {
                 "@id": "speventoutcome:loss"
-            },
-            "sport:score": "1",
-            "sport:participationBy": {
-                "@id": "http://example.com/Team/T6134"
             },
             "rdfs:label": "Kinguin participation in Event 541807",
             "@type": "sport:TeamParticipation"
@@ -440,15 +440,15 @@
         },
         {
             "@id": "http://example.com/Participation/541807-T9572",
+            "sport:score": "2",
+            "sport:participationBy": {
+                "@id": "http://example.com/Team/T9572"
+            },
             "spstat:seriesScoreOpposing": "15",
             "spstat:seriesScore": "9",
             "spstat:eventsPlayed": "24",
             "spstat:eventOutcome": {
                 "@id": "speventoutcome:win"
-            },
-            "sport:score": "2",
-            "sport:participationBy": {
-                "@id": "http://example.com/Team/T9572"
             },
             "rdfs:label": "Ex-Space Soldiers participation in Event 541807",
             "@type": "sport:TeamParticipation"
@@ -478,6 +478,10 @@
         },
         {
             "@id": "http://example.com/Event/5121",
+            "sport:startDateTime": {
+                "@value": "2018-12-12T14:00:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:participation": [
                 {
                     "@id": "http://example.com/Participation/5121-PES18"
@@ -516,10 +520,6 @@
                     "@id": "http://example.com/Participation/5121-PES10"
                 }
             ],
-            "sport:startDateTime": {
-                "@value": "2018-12-12T14:00:00",
-                "@type": "xsd:dateTime"
-            },
             "sport:parent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -542,8 +542,8 @@
                 "@id": "http://example.com/Athlete/PES18"
             },
             "spespstat:KAST": "69,0",
-            "@type": "sport:IndividualParticipation",
             "spespstat:flashassist": "1",
+            "@type": "sport:IndividualParticipation",
             "spespstat:assist": "5"
         },
         {
@@ -599,12 +599,12 @@
         },
         {
             "@id": "http://example.com/Participation/5121-T6134",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:win"
-            },
             "sport:score": "16",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:win"
             },
             "rdfs:label": "Kinguin participation in Event 5121",
             "@type": "sport:TeamParticipation"
@@ -628,12 +628,12 @@
         },
         {
             "@id": "http://example.com/Participation/5121-T9572",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:loss"
-            },
             "sport:score": "13",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
             },
             "rdfs:label": "Ex-Space Soldiers participation in Event 5121",
             "@type": "sport:TeamParticipation"
@@ -674,22 +674,22 @@
         },
         {
             "@id": "http://example.com/Membership/T9572-PES18",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES18"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES18"
             },
             "rdfs:label": "Engin Küpeli membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/541807-3",
+            "sport:sequenceNumber": "3",
             "sport:comment": "Cache",
             "sport:actionType": {
                 "@id": "spesaction:choose"
             },
-            "sport:sequenceNumber": "3",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -698,11 +698,11 @@
         },
         {
             "@id": "http://example.com/Membership/T6134-PES13",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES13"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES13"
             },
             "rdfs:label": "Mikołaj Karolewski membership of ",
             "@type": "sport:IndividualMembership"
@@ -811,8 +811,8 @@
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PES15"
             },
-            "spespstat:FKdiff": "3",
             "spespstat:kills": "14",
+            "spespstat:FKdiff": "3",
             "spespstat:deaths": "14",
             "spespstat:flashassist": "2",
             "spstat:rating": "1,15",
@@ -825,21 +825,21 @@
         },
         {
             "@id": "http://example.com/Participation/5120-T6134",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:loss"
-            },
             "sport:score": "7",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "spstat:eventOutcome": {
+                "@id": "speventoutcome:loss"
             },
             "rdfs:label": "Kinguin participation in Event 5120",
             "@type": "sport:TeamParticipation"
         },
         {
             "@id": "http://example.com/Participation/5120-PES18",
+            "spespstat:kills": "12",
             "spespstat:assist": "11",
             "spstat:rating": "1,08",
-            "spespstat:kills": "12",
             "spespstat:FKdiff": "-1",
             "rdfs:label": "Engin Küpeli participation in Event 5120",
             "spespstat:ADR": "89,7",
@@ -854,11 +854,9 @@
         },
         {
             "@id": "http://example.com/Participation/5120-PES10",
-            "spespstat:flashassist": "0",
-            "sport:participationBy": {
-                "@id": "http://example.com/Athlete/PES10"
-            },
+            "spespstat:FKdiff": "3",
             "spespstat:deaths": "17",
+            "spespstat:ADR": "65,9",
             "spespstat:kills": "16",
             "spespstat:headshot": "7",
             "spespstat:KAST": "65,2",
@@ -866,8 +864,10 @@
             "@type": "sport:IndividualParticipation",
             "spespstat:assist": "5",
             "spstat:rating": "1,06",
-            "spespstat:FKdiff": "3",
-            "spespstat:ADR": "65,9"
+            "sport:participationBy": {
+                "@id": "http://example.com/Athlete/PES10"
+            },
+            "spespstat:flashassist": "0"
         },
         {
             "@id": "http://example.com/Participation/5120-PES17",
@@ -911,10 +911,10 @@
             "rdfs:label": "Ahmet Karahoca participation in Event 5120",
             "spespstat:FKdiff": "2",
             "spespstat:flashassist": "0",
-            "spespstat:ADR": "87,6",
             "sport:participationBy": {
                 "@id": "http://example.com/Athlete/PES16"
             },
+            "spespstat:ADR": "87,6",
             "spstat:rating": "1,53",
             "spespstat:deaths": "12",
             "spespstat:KAST": "78,3",
@@ -926,8 +926,8 @@
                 "@id": "http://example.com/Athlete/PES11"
             },
             "spespstat:KAST": "65,2",
-            "spespstat:ADR": "65,9",
             "spespstat:deaths": "16",
+            "spespstat:ADR": "65,9",
             "@type": "sport:IndividualParticipation",
             "rdfs:label": "Pawet Jańczak participation in Event 5120",
             "spespstat:headshot": "9",
@@ -939,22 +939,22 @@
         },
         {
             "@id": "http://example.com/Membership/T9572-PES17",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES17"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES17"
             },
             "rdfs:label": "Ismailcan Dörtkardeş membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/541807-2",
+            "sport:sequenceNumber": "2",
             "sport:comment": "Inferno",
             "sport:actionType": {
                 "@id": "spesaction:remove"
             },
-            "sport:sequenceNumber": "2",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -963,22 +963,22 @@
         },
         {
             "@id": "http://example.com/Membership/T6134-PES12",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES12"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES12"
             },
             "rdfs:label": "Wiktor Wojtas membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/541807-7",
+            "sport:sequenceNumber": "7",
             "sport:comment": "Mirage",
             "sport:actionType": {
                 "@id": "spesaction:remaining"
             },
-            "sport:sequenceNumber": "7",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -987,22 +987,22 @@
         },
         {
             "@id": "http://example.com/Membership/T9572-PES16",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES16"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES16"
             },
             "rdfs:label": "Ahmet Karahoca membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/541807-1",
+            "sport:sequenceNumber": "1",
             "sport:comment": "Nuke",
             "sport:actionType": {
                 "@id": "spesaction:remove"
             },
-            "sport:sequenceNumber": "1",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -1011,11 +1011,11 @@
         },
         {
             "@id": "http://example.com/Membership/T6134-PES11",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES11"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES11"
             },
             "rdfs:label": "Pawet Jańczak membership of ",
             "@type": "sport:IndividualMembership"
@@ -1038,11 +1038,11 @@
         },
         {
             "@id": "http://example.com/Action/541807-6",
+            "sport:sequenceNumber": "6",
             "sport:comment": "Dust2",
             "sport:actionType": {
                 "@id": "spesaction:remove"
             },
-            "sport:sequenceNumber": "6",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -1051,33 +1051,33 @@
         },
         {
             "@id": "http://example.com/Membership/T9572-PES15",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES15"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T9572"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES15"
             },
             "rdfs:label": "Buğra Arkın membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Membership/T6134-PES10",
-            "sport:member": {
-                "@id": "http://example.com/Athlete/PES10"
-            },
             "sport:membershipOf": {
                 "@id": "http://example.com/Team/T6134"
+            },
+            "sport:member": {
+                "@id": "http://example.com/Athlete/PES10"
             },
             "rdfs:label": "Jazek Jeziak membership of ",
             "@type": "sport:IndividualMembership"
         },
         {
             "@id": "http://example.com/Action/541807-5",
+            "sport:sequenceNumber": "5",
             "sport:comment": "Overpass",
             "sport:actionType": {
                 "@id": "spesaction:remove"
             },
-            "sport:sequenceNumber": "5",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/541807"
             },
@@ -1086,22 +1086,22 @@
         }
     ],
     "@context": {
-        "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
         "spesaction": "http://cv.iptc.org/newscodes/spesaction/",
+        "spsocrole": "http://cv.iptc.org/newscodes/spsocrole/",
         "schemaorg": "https://schema.org/",
         "spsocactiontype": "http://cv.iptc.org/newscodes/spsocaction/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "spstat": "https://sportschema.org/ontologies/corestatistics/",
         "spespstat": "https://sportschema.org/ontologies/esports/",
-        "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
         "speventoutcometype": "http://cv.iptc.org/newscodes/speventoutcometype/",
+        "spplayerstatus": "http://cv.iptc.org/newscodes/spplayerstatus/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
         "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
         "spct": "http://cv.iptc.org/newscodes/spct/",
         "sport": "https://sportschema.org/ontologies/main/",
-        "spsocstat": "https://sportschema.org/ontologies/soccer/",
-        "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/"
+        "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",
+        "spsocstat": "https://sportschema.org/ontologies/soccer/"
     }
 }
