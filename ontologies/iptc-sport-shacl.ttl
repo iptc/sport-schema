@@ -32,6 +32,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:actionType ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/sp" ;
     sh:nodeKind sh:IRI ;
     sh:flags   "i"  # Ignore case
@@ -47,6 +48,7 @@ sport:ActionShape
   sh:property [
     sh:path sport:class ;
     sh:nodeKind sh:IRI ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spactionclass/" ;
     sh:flags   "i"  # Ignore case
   ] ;
@@ -237,14 +239,14 @@ sport:CompetitionShape
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
   sh:property [
     sh:path sport:sport ;
-    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
-    sh:flags   "i"  # Ignore case
+    sh:class skos:Concept ;
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:MediaTopicShape ;
   ] ;
   sh:property [
     sh:path sport:competitionType ;
     sh:class skos:Concept ;
-    sh:pattern "^http://cv.iptc.org/newscodes/spct/" ;
-    sh:flags   "i"  # Ignore case
+    sh:node sport:SportConceptShape
   ] ;
   sh:property [
     sh:path sport:parent ;
@@ -275,8 +277,8 @@ sport:CompetitionPhaseShape
   sh:property [
     sh:path sport:sport ;
     sh:class skos:Concept ;
-    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
-    sh:flags   "i"  # Ignore case
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:MediaTopicShape ;
   ] ;
   sh:property [
     sh:path sport:participation ;
@@ -285,6 +287,7 @@ sport:CompetitionPhaseShape
   sh:property [
     sh:path sport:competitionFormat ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/sptournamentform/" ;
     sh:flags   "i"  # Ignore case
   ] ;
@@ -295,6 +298,7 @@ sport:CompetitionPhaseShape
   sh:property [
     sh:path sport:competitionPhaseType ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/sptournamentphase/" ;
     sh:flags   "i"  # Ignore case
   ] ;
@@ -312,24 +316,28 @@ sport:CompetitorParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path spstat:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
     sh:path sport:positionEvent ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -356,6 +364,7 @@ sport:CompetitorParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:scoreUnits ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
     sh:flags   "i"                                              # Ignore case
   ] .
@@ -404,18 +413,20 @@ sport:EventShape rdf:type sh:NodeShape ;
   sh:property [
     sh:path sport:sport ;
     sh:class skos:Concept ;
-    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;     # term is from CV
-    sh:flags   "i"                                               # Ignore case
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:MediaTopicShape ;
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path sport:eventStatus ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventstatus/" ;  # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -446,10 +457,8 @@ sport:IndividualMembershipShape
   sh:property [
     sh:path sport:positionRegular ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|sphorposition|spichposition)/" ;
-    # TODO we really should check for individual vocabularies...
-    # but some example data fails (needs to be fixed) so let's cheat for now
-    # sh:pattern "^http://cv.iptc.org/newscodes/" ;
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
@@ -470,6 +479,7 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:playerStatus ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spplayerstatus/" ;
     sh:flags   "i"  # Ignore case
   ] ;
@@ -477,6 +487,7 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:playerStatus ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spplayerstatus/" ;
     sh:flags   "i"  # Ignore case
   ] ;
@@ -485,24 +496,28 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path spstat:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
     sh:path sport:positionEvent ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -529,6 +544,7 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:scoreUnits ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
     sh:flags   "i"                                              # Ignore case
   ] ;
@@ -544,6 +560,7 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path spstat:resultEffect ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spresulteffect/" ;
     sh:flags   "i"                                               # Ignore case
    ] ;
@@ -755,6 +772,13 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
     sh:datatype xsd:string ;
   ] .
 
+sport:MediaTopicShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/mediatopic/> ;
+        sh:maxCount 1 ;
+    ] .
+
 sport:MembershipShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
   sh:targetClass sport:Membership ;
@@ -778,6 +802,7 @@ sport:OfficialParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:positionEvent ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
   ] .
 
@@ -788,8 +813,8 @@ sport:ParticipatableThingShape
   sh:property [
     sh:path sport:sport ;
     sh:class skos:Concept ;
-    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
-    sh:flags   "i"  # Ignore case
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:MediaTopicShape ;
   ] ;
   sh:property [
     sh:path sport:parent ;
@@ -802,24 +827,28 @@ sport:ParticipationShape
   sh:property [
     sh:path sport:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path spstat:eventOutcome ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcometype/" ;
     sh:flags   "i"  # Ignore case
   ] ;
   sh:property [
     sh:path sport:positionEvent ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/(spsocposition|spsocascpos|vendoffpos)/" ;
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -842,6 +871,7 @@ sport:ParticipationShape
   sh:property [
     sh:path sport:scoreUnits ;
     sh:class skos:Concept ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
     sh:flags   "i"                                              # Ignore case
   ] .
@@ -854,6 +884,7 @@ sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
   # properties defined on participationSplit
   sh:property [
     sh:path sport:participationSplitType ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spcompetitionscope/" ;
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -893,6 +924,13 @@ sport:SiteShape rdf:type sh:NodeShape  ;
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) .
 
+sport:SportConceptShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spct/> ;
+        sh:maxCount 1 ;
+    ] .
+
 sport:TeamShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
   sh:targetClass sport:Team ;
@@ -911,11 +949,13 @@ sport:TeamParticipationShape rdf:type sh:NodeShape  ;
   # TODO decide whether we want sport:eventOutcome or spstat:eventOutcome
   sh:property [
     sh:path sport:eventOutcome ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
   sh:property [
     sh:path spstat:eventOutcome ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/speventoutcome/" ; # term is from CV
     sh:flags   "i"                                               # Ignore case
   ] ;
@@ -933,6 +973,7 @@ sport:TeamParticipationShape rdf:type sh:NodeShape  ;
   ] ;
   sh:property [
     sh:path spstat:resultEffect ;
+    # TODO
     sh:pattern "^http://cv.iptc.org/newscodes/spresulteffect/" ;
     sh:flags   "i"                                               # Ignore case
    ] ;
