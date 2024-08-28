@@ -49,6 +49,12 @@ sport:Associate rdf:type owl:Class ;
     rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:AssociateRelationship rdf:type owl:Class ;
+    rdfs:label "Associate Relationship"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "The tenure of an Associate working with an Athlete or a Team."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:Athlete rdf:type owl:Class ;
     rdfs:label "Athlete"@en ;
     rdfs:subClassOf sport:Individual ;
@@ -253,6 +259,22 @@ sport:actionInEvent rdf:type owl:ObjectProperty ;
     rdfs:domain sport:Action ;
     rdfs:range sport:Event ;
     owl:inverseOf sport:containsAction ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:associate rdf:type owl:ObjectProperty ;
+    rdfs:label "associate"@en ;
+    rdfs:comment "Connects AssociateRelationship to the Associate that has the relationship"@en ;
+    rdfs:domain sport:AssociateRelationship ;
+    rdfs:range sport:Associate ;
+    # owl:inverseOf sport:associateInRelationship ; # TODO check name with WG??
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:associateFor rdf:type owl:ObjectProperty ;
+    rdfs:label "associate"@en ;
+    rdfs:comment "Connects AssociateRelationship to the Agent (Athlete or Team) for whom the Associate is working"@en ;
+    rdfs:domain sport:AssociateRelationship ;
+    rdfs:range sport:Agent ;
+    # owl:inverseOf sport:associateInRelationship ; # TODO check name with WG??
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:containsAction rdf:type owl:ObjectProperty ;

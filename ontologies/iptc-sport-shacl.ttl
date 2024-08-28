@@ -215,6 +215,20 @@ sport:AssociateShape
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) .
 
+sport:AssociateRelationshipShape
+  a sh:NodeShape ;
+  sh:targetClass sport:AssociateRelationship ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:associate ;
+    sh:class sport:Associate ;
+  ] ;
+  sh:property [
+    sh:path sport:associateFor ;
+    sh:class sport:Agent ;
+  ] .
+
 sport:AthleteShape
   a sh:NodeShape ;
   sh:targetClass sport:Athlete ;
