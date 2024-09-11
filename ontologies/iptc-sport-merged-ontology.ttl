@@ -61,6 +61,12 @@ sport:Athlete rdf:type owl:Class ;
     rdfs:comment "A competitor in an individual event or a member of a team"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:Club rdf:type owl:Class ;
+    rdfs:label "Club"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "An organisation of which a Team is a part"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:Competition rdf:type owl:Class ;
     rdfs:label "Competition"@en ;
     rdfs:subClassOf sport:ParticipatableThing ;
@@ -155,6 +161,12 @@ sport:Team rdf:type owl:Class ;
     rdfs:label "Team"@en ;
     rdfs:subClassOf sport:Agent ;
     rdfs:comment "A group of individuals competing as one entity"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:TeamMembership rdf:type owl:Class ;
+    rdfs:label "Team Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A team's membership in a Club or Competition"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:TeamParticipation rdf:type owl:Class ;
@@ -319,7 +331,7 @@ sport:memberOf rdf:type owl:ObjectProperty ;
 
 sport:membershipOf rdf:type owl:ObjectProperty ;
     rdfs:label "membership of"@en ;
-    rdfs:comment "Link between a membership and a team or club"@en ;
+    rdfs:comment "Link between a Membership and a Team or Club"@en ;
     rdfs:domain sport:Membership ;
     rdfs:range sport:Agent ;
     owl:inverseOf sport:membership ;
@@ -405,11 +417,18 @@ sport:competitionFormat rdf:type owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:competitionMembership rdf:type owl:ObjectProperty ;
+    rdfs:label "competition membership"@en ;
+    rdfs:comment "Competition in which this Team is taking part"@en ;
+    rdfs:domain sport:TeamMembership ;
+    rdfs:range sport:Competition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:competitionPhaseType rdf:type owl:ObjectProperty ;
     rdfs:label "competition phase type"@en ;
     rdfs:comment "Type of the competition phase - regular week, final etc"@en ;
     rdfs:domain sport:CompetitionPhase ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (doesn't exist yet)
+    # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (TODO: doesn't exist yet)
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 

@@ -469,6 +469,14 @@ sport:IndividualMembershipShape
   sh:property [
     sh:path sport:uniformNumber ;
     sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:member ;
+    sh:class sport:Individual ;
+  ] ;
+  sh:property [
+    sh:path sport:membershipOf ;
+    sh:class sport:Team ;
   ] .
 
 sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
@@ -772,7 +780,11 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
 sport:MembershipShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
   sh:targetClass sport:Membership ;
-  sh:ignoredProperties ( rdf:type rdfs:label ) .
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:competitionMembership ;
+    sh:class sport:Competition ;
+  ] .
 
 sport:OfficialShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
@@ -912,6 +924,19 @@ sport:TeamShape rdf:type sh:NodeShape  ;
   sh:targetClass sport:Team ;
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:TeamMembershipShape
+  sh:targetClass sport:TeamMembership ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:member ;
+    sh:class sport:Team ;
+  ] ;
+  sh:property [
+    sh:path sport:membershipOf ;
+    sh:class sport:Club ;
+  ] .
+
 
 sport:TeamParticipationShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
