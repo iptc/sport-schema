@@ -49,8 +49,8 @@ sport:Associate rdf:type owl:Class ;
     rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:AssociateRelationship rdf:type owl:Class ;
-    rdfs:label "Associate Relationship"@en ;
+sport:AssociateMembership rdf:type owl:Class ;
+    rdfs:label "Associate Membership"@en ;
     rdfs:subClassOf sport:Membership ;
     rdfs:comment "The tenure of an Associate working with an Athlete or a Team."@en ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -311,33 +311,33 @@ sport:locationOf rdf:type owl:ObjectProperty ;
 
 sport:member rdf:type owl:ObjectProperty ;
     rdfs:label "member"@en ;
-    rdfs:comment "Link between a membership and an individual"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    rdfs:range sport:Individual ;
+    rdfs:comment "Link between a membership and a member (individual or team)"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range sport:Agent ;
     owl:inverseOf sport:memberOf ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:memberOf rdf:type owl:ObjectProperty ;
     rdfs:label "member of"@en ;
-    rdfs:comment "Link between an individual and a membership"@en ;
-    rdfs:domain sport:Individual ;
-    rdfs:range sport:IndividualMembership ;
+    rdfs:comment "Link between a member (individual or team) and a membership"@en ;
+    rdfs:domain sport:Agent ;
+    rdfs:range sport:Membership ;
     owl:inverseOf sport:member ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:membershipOf rdf:type owl:ObjectProperty ;
     rdfs:label "membership of"@en ;
-    rdfs:comment "Link between a membership and a team"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    rdfs:range sport:Team ;
+    rdfs:comment "Link between a membership and a team or club"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range sport:Agent ;
     owl:inverseOf sport:membership ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:membership rdf:type owl:ObjectProperty ;
     rdfs:label "membership"@en ;
-    rdfs:comment "Link between a team and a membership"@en ;
-    rdfs:domain sport:Team ;
-    rdfs:range sport:IndividualMembership ;
+    rdfs:comment "Link between a team or club and a membership"@en ;
+    rdfs:domain sport:Agent ;
+    rdfs:range sport:Membership ;
     owl:inverseOf sport:membershipOf ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
@@ -475,8 +475,8 @@ sport:eventStatus rdf:type owl:ObjectProperty ;
 
 sport:membershipStatus rdf:type owl:ObjectProperty ;
     rdfs:label "membership status"@en ;
-    rdfs:comment "Member's status in a team during this membership period (e.g. active or inactive)"@en ;
-    rdfs:domain sport:IndividualMembership ;
+    rdfs:comment "Member's status during this membership period (e.g. active or inactive)"@en ;
+    rdfs:domain sport:Membership ;
     # Recommended values: <http://cv.iptc.org/newscodes/spphasestatus/> ;
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
@@ -513,8 +513,8 @@ sport:positionEvent rdf:type owl:ObjectProperty ;
 
 sport:positionRegular rdf:type owl:ObjectProperty ;
     rdfs:label "position (regular)"@en ;
-    rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
-    rdfs:domain sport:IndividualMembership ;
+    rdfs:comment "The position (role) usually taken by a given player or associate"@en ;
+    rdfs:domain sport:Membership ;
     # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/>
     rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
