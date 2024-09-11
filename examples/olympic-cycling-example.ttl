@@ -1,7 +1,9 @@
 @prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spfacet:            <https://sportschema.org/ontologies/sport-facets/> .
 @prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
+@prefix aspfacetvalue:      <http://cv.iptc.org/newscodes/asportfacetvalue/> .
 @prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
@@ -28,7 +30,9 @@
         rdfs:label             "Men's Track Cycling (Sprint)" ;
         sport:competitionType  spct:competition ;
         sport:parent           <http://example.com/Competition/OLYS2012> ;
-        sport:sport            medtop:20001334 .
+        sport:sport            medtop:20001334 ;
+        spfacet:gender         aspfacetvalue:men ;
+        spfacet:cyclingType    aspfacetvalue:track .
 
 <http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL>
         rdf:type                    sport:CompetitionPhase ;
@@ -36,6 +40,12 @@
         sport:competitionPhaseType  <http://cv.iptc.org/newscodes/sptournamentphase/semi-final> ;
         sport:participation         <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1436558> , <http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1467923> ;
         sport:phaseInCompetition    <http://example.com/Competition/OLYS2012-CTRMSPRINT> .
+
+<http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1436558>
+        rdf:type                    sport:Participation .
+
+<http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-PI1467923>
+        rdf:type                    sport:Participation .
 
 <http://example.com/CompetitionPhase/OLYS2012-CTRMSPRINT-SFNL-00010000>
         rdf:type                    sport:CompetitionPhase ;
@@ -52,6 +62,9 @@
         sport:startDateTime            "2021-08-06T16:10:00+09:00"^^xsd:dateTime ;
         sport:location                 <http://example.com/Site/s.29> .
 
+<http://example.com/Participation/OLYS2012-CTRMSPRINT-SFNL-00010001-PI1467923>
+        rdf:type    sport:Participation .
+
 <http://example.com/Site/s.29>
         rdf:type    sport:Site ;
         rdfs:label  "Olympic Park Velodrome" .
@@ -62,7 +75,7 @@
         sport:participationBy  <http://example.com/Athlete/PI1436558> ;
         sport:rank             "1" ;
         sport:score            "+0.107" ;
-        sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/relative> .
+        sport:scoreUnits       <http://cv.iptc.org/newscodes/spscoreunits/time-relative> .
 
 <http://example.com/Athlete/PI1436558>
         rdf:type           sport:Athlete ;
