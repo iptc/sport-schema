@@ -1,12 +1,14 @@
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:     <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix sh:      <http://www.w3.org/ns/shacl#> .
-@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
-@prefix sport:   <https://sportschema.org/ontologies/main/> .
-@prefix spstat:   <https://sportschema.org/ontologies/corestatistics/> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix sh:        <http://www.w3.org/ns/shacl#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spfacet:   <https://sportschema.org/ontologies/sport-facets/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+# sport-specific ontologies:
 @prefix spespstat: <https://sportschema.org/ontologies/esports/> .
 @prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
 
@@ -275,6 +277,201 @@ sport:CompetitionShape
   sh:property [
     sh:path sport:governedBy ;
     sh:class sport:GoverningBody
+  ] ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  # sport facets on Competition from https://sportschema.org/ontologies/sport-facets/
+  sh:property [
+    sh:path spfacet:ageclass ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:alpineskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:artisticgymtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:billiardtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:bmxfreestyletype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:canoekayaktype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:cyclingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:distance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:dogracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:equestriantype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:horseracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:fencingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:figureskatingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:flyingdisctype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:freestyleskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:gender ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:jaialaitype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:motorcarracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:motorcyclingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:mountainbikingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:nordicskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:crosscountryskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:parasport ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:parasporttype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:platformheight ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:racetime ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:racetype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:rhythmgymtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:rowingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:sailingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:shootingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:soccertype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:snowboardingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:swimmingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:teamsize ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:waterskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:weightclasstype ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:weightliftingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:windsurfingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
   ] .
 
 sport:CompetitionPhaseShape
@@ -416,6 +613,13 @@ sport:EventShape rdf:type sh:NodeShape ;
     sh:path sport:parent ;
     sh:class sport:Event
   ] .
+
+sport:FacetValueShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/asportfacetvalue/> ;
+        sh:maxCount 1 ;
+    ] .
 
 sport:GoverningBodyShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;

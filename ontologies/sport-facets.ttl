@@ -1,0 +1,295 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spfacet:   <https://sportschema.org/ontologies/sport-facets/> .
+
+<https://sportschema.org/ontologies/sport-facets/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Sport Facets"@en ;
+    rdfs:label "IPTC Sport Schema - Sport Facets"@en ;
+    dcterms:created "2024-08-30"^^xsd:date ;
+    dcterms:modified "2024-08-30"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, adding facets that can be used to refine sport definitions."@en ;
+    rdfs:isDefinedBy spfacet: ;
+    owl:versionIRI <https://sportschema.org/ontologies/sport-facets/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
+
+spfacet:ageclass rdf:type owl:DatatypeProperty ; 
+        rdfs:label "age class"@en ; 
+        rdfs:comment "The age range of a competition"@en ; 
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:alpineskiingtype rdf:type owl:DatatypeProperty ;
+        rdfs:label "alpine skiing type"@en ;
+        rdfs:comment "A type of alpine skiing competion"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:artisticgymtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "artistic gymnastics type"@en ;
+        rdfs:comment "A type of artistic gymnastics competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:billiardtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "billiards type"@en ;
+        rdfs:comment "A type of billiards, snooker or pool"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:bmxfreestyletype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "BMX freestyle type"@en ;
+        rdfs:comment "A type of BMX Freestyle"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:canoekayaktype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "canoe or kayak type"@en ;
+        rdfs:comment "A type of canoeing or kayaking competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:cyclingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "cycling type"@en ;
+        rdfs:comment "A type of cycling race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+        
+spfacet:distance rdf:type owl:DatatypeProperty ; 
+        rdfs:label "distance"@en ;
+        rdfs:comment "The spatial distance of a competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:dogracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "dog racing type"@en ;
+        rdfs:comment "A type of dog race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:equestriantype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "equestrian type"@en ;
+        rdfs:comment "A type of equestrian competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:horseracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "horse racing type"@en ;
+        rdfs:comment "A type of horse racing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:fencingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "fencing type"@en ;
+        rdfs:comment "A type of fencing style"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+
+spfacet:figureskatingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "figure skating type"@en ;
+        rdfs:comment "A type of figure skating competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:flyingdisctype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "flying disc type"@en ;
+        rdfs:comment "A type of flying disc competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:freestyleskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "freestyle skiing type"@en ;
+        rdfs:comment "A type of freestyle skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:gender rdf:type owl:DatatypeProperty ; 
+        rdfs:label "gender"@en ;
+        rdfs:comment "The gender categories as defined by the governing body of the sport"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:jaialaitype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "jai alai type"@en ;
+        rdfs:comment "A type of fronton/pelota/jai alai"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:motorcarracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "motor car racing type"@en ;
+        rdfs:comment "A type of motor car race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:motorcyclingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "motorcycling type"@en ;
+        rdfs:comment "A type of motorcycling event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:mountainbikingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "mountain biking type"@en ;
+        rdfs:comment "A type of mountain biking event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:nordicskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "nordic skiing type"@en ;
+        rdfs:comment "A type of nordic skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:crosscountryskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "cross country skiing type"@en ;
+        rdfs:comment "A type of cross country skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:parasport rdf:type owl:DatatypeProperty ; 
+        rdfs:label "parasport"@en ;
+        rdfs:comment "Indicates that the sport is a sport for people with disabilities"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:boolean ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:parasporttype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "parasport type"@en ;
+        rdfs:comment "Indicates the type of parasport"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:platformheight rdf:type owl:DatatypeProperty ; 
+        rdfs:label "height of platform"@en ;
+        rdfs:comment "The height of the platform used for diving, etc."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:racetime rdf:type owl:DatatypeProperty ; 
+        rdfs:label "race time"@en ;
+        rdfs:comment "The temporal limit of a race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:racetype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "race type"@en ;
+        rdfs:comment "A race type used across many different sports"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:rhythmgymtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "rhythmic gymnastics type"@en ;
+        rdfs:comment "A type of rhythmic gymnastics competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:rowingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "rowing type"@en ;
+        rdfs:comment "A type of rowing style"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:sailingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "sailing type"@en ;
+        rdfs:comment "A type of sailing designated by boat class"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:shootingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "shooting type"@en ;
+        rdfs:comment "A type of competitive shooting event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:soccertype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "soccer type"@en ;
+        rdfs:comment "A type of soccer/football"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:snowboardingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "snowboarding type"@en ;
+        rdfs:comment "A type of snowboarding competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:swimmingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "swimming type"@en ;
+        rdfs:comment "A type of swimming competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:teamsize rdf:type owl:DatatypeProperty ; 
+        rdfs:label "team size"@en ;
+        rdfs:comment "The number of people on a team involved in the sporting event."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:waterskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "water skiing type"@en ;
+        rdfs:comment "A type of water skiing event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:weightclasstype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "weight-class type"@en ;
+        rdfs:comment "The weight class of an athlete as defined by sport or federation."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:weightliftingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "weightlifting type"@en ;
+        rdfs:comment "A type of weightlifting event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:windsurfingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "windsurfing type"@en ;
+        rdfs:comment "A type of windsurfing race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
