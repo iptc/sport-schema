@@ -1,3 +1,14 @@
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spactionclass:      <http://cv.iptc.org/newscodes/spactionclass> .
+@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope> .
+@prefix spgolstat:          <http://cv.iptc.org/newscodes/spgolstat> .
+@prefix spgolshot:          <http://cv.iptc.org/newscodes/spgolshot> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+
 <http://pga.com/Event/masters-2022>
         rdf:type                       sport:Event ;
         rdfs:label                     "Masters 2022" ;
@@ -14,7 +25,7 @@
         spstat:score                "-7" ;
         spstat:rank         		"2" ;  
         sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
-        sport:participationSplit    <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
+        sport:participationSplit    <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15> ;
         sport:participationSplitType  spcompetitionscope:round .
 
 <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
@@ -31,7 +42,7 @@
         sport:actionDateTime           "2022-04-07T10:33:57-05:00"^^xsd:dateTime ;
         sport:actionInEvent            <http://pga.com/Event/masters-2022> ;
         sport:class           		   spactionclass:play ;
-        sport:actionType               spgolfactiontype:shot ;
+#        sport:actionType               spgolfactiontype:shot ;
         golf:shotType              	   spgolshot:chip ;
         golf:round  				   "4" ;
         golf:hole  					   "15" ;
