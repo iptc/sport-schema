@@ -26,7 +26,8 @@ for filename in "${filestovalidate[@]}"; do
     # So we create a temp file containing both, and then validate that.
     temp_dir=$(mktemp -d)
     temp_file=${temp_dir}/${name}  # we keep the same name so Jena can understand the file extension..
-    cat ${RDF_SCHEMA} ${VOCABULARIES[@]} ${TTL_SAMPLES_DIR}/${name} >${temp_file}
+    # old: cat ${RDF_SCHEMA} ${VOCABULARIES[@]} ${TTL_SAMPLES_DIR}/${name} >${temp_file}
+    cat ${RDF_SCHEMA} ${VOCABULARIES[@]} ${filename} >${temp_file}
     # create the command we need to run, but save it because we might run it twice.
     shacl_command="shacl validate --shapes ${SHACL_FILE} --data ${temp_file}"
     # run it for the first time...
