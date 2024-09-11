@@ -554,6 +554,10 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
     sh:pattern "^http://cv.iptc.org/newscodes/spscoreunits/" ;  # term is from CV
     sh:flags   "i"                                              # Ignore case
   ] ;
+  sh:property [
+    sh:path sport:teamParticipation ;
+    sh:class sport:TeamParticipation ;
+  ] ;
   # properties defined on CompetitorParticipation by core statistics ontology
   sh:property [
     sh:path spstat:eventsStarted ;
@@ -781,6 +785,14 @@ sport:MembershipShape rdf:type sh:NodeShape  ;
   a sh:NodeShape ;
   sh:targetClass sport:Membership ;
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:startDate ;
+    sh:datatype xsd:date ;
+  ] ;
+  sh:property [
+    sh:path sport:endDate ;
+    sh:datatype xsd:date ;
+  ] ;
   sh:property [
     sh:path sport:competitionMembership ;
     sh:class sport:Competition ;

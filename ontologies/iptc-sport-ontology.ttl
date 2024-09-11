@@ -589,6 +589,13 @@ sport:startDate rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:date ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
+sport:teamParticipation rdf:type owl:ObjectProperty ;
+    rdfs:label "team participation"@en ;
+    rdfs:comment "Link to the team of which this individual is a member, with respect to this Participation"@en;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range sport:TeamParticipation ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
 sport:uniformNumber rdf:type owl:DatatypeProperty ;
     rdfs:label "uniform number"@en ;
     rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
