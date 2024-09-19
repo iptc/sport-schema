@@ -3,10 +3,11 @@
 @prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
-@prefix spactionclass:      <http://cv.iptc.org/newscodes/spactionclass> .
-@prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope> .
-@prefix spgolstat:          <http://cv.iptc.org/newscodes/spgolstat> .
-@prefix spgolshot:          <http://cv.iptc.org/newscodes/spgolshot> .
+@prefix golf:               <https://sportschema.org/ontologies/golf/> .
+@prefix spgolstat:          <https://sportschema.org/ontologies/golf-statistics/> .
+@prefix spactionclass:      <http://cv.iptc.org/newscodes/spactionclass/> .
+@prefix sptournamentphase:  <http://cv.iptc.org/newscodes/sptournamentphase/> .
+@prefix spgolshot:          <http://cv.iptc.org/newscodes/spgolshot/> .
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://pga.com/Event/masters-2022>
@@ -18,45 +19,67 @@
         sport:participation            <http://pga.com/Participation/masters-2022_33204>;
         sport:startDateTime            "2022-04-07T10:00:01-05:00"^^xsd:dateTime .
 
+<http://pga.com/Competition/pga.com-2022>
+        rdf:type                       sport:Competition ;
+        rdfs:label                     "PGA Tournament 2022" .
+
+<http://example.com/Site/s.34>
+        rdf:type                       golf:GolfCourse ;
+        rdfs:label                     "Augusta National Golf Club"@en .
+
+<http://pga.com/Participation/masters-2022_33204>
+        rdf:type                       sport:IndividualParticipation ;
+        rdfs:label                     "Rory McIlroy Participation in Masters 2022" ;
+        sport:participationBy          <http://pga.com/Athlete/roryMcIlroy> .
+
+<http://pga.com/Participation/masters-2022_r4_33204>
+        rdf:type                       sport:IndividualParticipation ;
+        rdfs:label                     "Rory McIlroy Participation in Round 4 at Masters 2022" ;
+        sport:participationBy          <http://pga.com/Athlete/roryMcIlroy> .
+
 <http://pga.com/Participation/masters-2022_r4_roryMcIlroy>
-        rdf:type                      sport:ParticipationSplit ;
-        rdfs:label             		  "Rory McIlroy Participation in Round 4 at Masters 2022" ;
-        spgolstat:totalStrokes      "64" ;
-        spstat:score                "-7" ;
-        spstat:rank         		"2" ;  
-        sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
-        sport:participationSplit    <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15> ;
-        sport:participationSplitType  spcompetitionscope:round .
+        rdf:type                       sport:ParticipationSplit ;
+        rdfs:label                     "Rory McIlroy Participation in Round 4 at Masters 2022" ;
+        spgolstat:totalStrokes         "64" ;
+        golf:score                     "-7" ;
+        sport:rank                     "2" ;  
+        sport:participationBy          <http://pga.com/Athlete/roryMcIlroy> ;
+        sport:participationSplit       <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15> ;
+        sport:participationSplitType   sptournamentphase:round .
 
 <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
-        rdf:type                      sport:ParticipationSplit ;
-        rdfs:label             		  "Rory McIlroy Participation in Hole 15, Round 4 at Masters 2022" ;
-        spgolstat:totalStrokes      "5" ;
-        spstat:score                "E" ;
-        sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
-        sport:participationSplitType  spcompetitionscope:hole .
+        rdf:type                       sport:ParticipationSplit ;
+        rdfs:label                     "Rory McIlroy Participation in Hole 15, Round 4 at Masters 2022" ;
+        spgolstat:totalStrokes         "5" ;
+        golf:score                     "E" ;
+        sport:participationBy          <http://pga.com/Athlete/roryMcIlroy> .
+        # sport:participationSplitType  spcompetitionscope:hole .  # TODO add to a special golf tournament phase type??
+
+<http://pga.com/Athlete/roryMcIlroy>
+        rdf:type                        sport:Athlete ;
+        rdfs:label                      "Rory McIlroy" .
 
 <http://pga.com/Action/masters-2022_r4_33204_15_3>
         rdf:type                       sport:Action ;
         rdfs:label                     "Rory McIlroy Shot 3, Hole 15, Round 4 at Masters 2022" ;
         sport:actionDateTime           "2022-04-07T10:33:57-05:00"^^xsd:dateTime ;
         sport:actionInEvent            <http://pga.com/Event/masters-2022> ;
-        sport:class           		   spactionclass:play ;
+        sport:class                    spactionclass:play ;
 #        sport:actionType               spgolfactiontype:shot ;
-        sport:shotType             	   spgolshot:chip ;
-        golf:round  				   "4" ;
-        golf:hole  					   "15" ;
-        golf:stroke  				   "3" ;
-        golf:zone  				   	   "4" ;
-        golf:shotLocation  		       "700083.907,1274390.481,317.248" ;
-        golf:shotDistance  		       "10171.500" ;
-        golf:distanceRemaining  	   "6230.200" ;
-        sport:participation   <http://pga.com/Participation/masters-2022_r4_33204_15_3> .
+        sport:shotType                 spgolshot:chip ;
+        golf:round                     "4" ;
+        golf:hole                      "15" ;
+        golf:stroke                    "3" ;
+        sport:zone                     "4" ;
+        golf:shotLocation              "700083.907,1274390.481,317.248" ;
+        golf:shotDistance              "10171.500" ;
+        golf:distanceRemaining         "6230.200" ;
+        sport:participation            <http://pga.com/Participation/masters-2022_r4_33204_15_3> .
 
 <http://pga.com/Participation/masters-2022_r4_33204_15_3>
         rdf:type                      sport:IndividualParticipation ;
-        rdfs:label             		  "Rory McIlroy Participation in  Shot 3, Hole 15, Round 4 at Masters 2022" ;
-        sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
+        rdfs:label                    "Rory McIlroy Participation in  Shot 3, Hole 15, Round 4 at Masters 2022" ;
+        sport:participationBy         <http://pga.com/Athlete/roryMcIlroy> .
 
 <http://example.com/Athlete/roryMcIlroy>
         rdf:type           sport:Athlete ;
