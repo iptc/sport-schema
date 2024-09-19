@@ -1,3 +1,14 @@
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
+@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+
 <http://example.com/Competition/l.premierleague.com>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League" ;
@@ -20,17 +31,21 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Arsenal vs Liverpool, Week 16, EPL" ;
         sport:eventInCompetition       <http://example.com/Competition/l.premierleague.com-2020> ;
-        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-16> ;
         sport:eventOutcomeType         speventoutcometype:regular ;
         sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
         sport:location                 <http://example.com/Site/s.34> ;
         sport:participation            <http://example.com/Participation/E2128607-EPLT35> , <http://example.com/Participation/E2128607-EPLT7> ;
         sport:startDateTime            "2021-02-25T19:00:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Site/s.34>
+        rdf:type                       sport:Site ;
+        rdfs:label                     "Emirates Stadium, London" .
+
 <http://example.com/Participation/E2128607-EPLT35>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Liverpool participation in Week 16, EPL" ;
-        spstat:eventOutcome             speventoutcome:tie ;
+        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "29.8" ;
@@ -58,7 +73,7 @@
 <http://example.com/Participation/E2128607-EPLT7>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Arsenal participation in Week 16, EPL" ;
-        spstat:eventOutcome             speventoutcome:tie ;
+        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "70.2" ;

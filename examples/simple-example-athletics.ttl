@@ -2,6 +2,7 @@
 @prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spfacet:            <https://sportschema.org/ontologies/sports-facet/> .
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/GoverningBody/IOC>
@@ -26,7 +27,9 @@
         rdfs:label             "Men's 800m, 2020 Tokyo" ;
         sport:competitionType  <http://cv.iptc.org/newscodes/spct/competition> ;
         sport:parent           <http://example.com/Competition/OLYS2020> ;
-        sport:sport            medtop:20000827 .
+        sport:sport            medtop:20000827 ;
+        spfacet:gender         <http://cv.iptc.org/newscodes/asportfacet/men> ;
+        spfacet:distance       "800m" .
 
 <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-FNL>
         rdf:type                    sport:CompetitionPhase ;
@@ -42,8 +45,26 @@
 
 <http://example.com/Event/OLYS2020-ATHM800M-SFNL000100>
         rdf:type                       sport:Event ;
-        rdfs:label                     "Heat 1" ;
+        rdfs:label                     "Men's 800m, Semi-Final, Heat 1" ;
         sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/OLYS2020-ATHM800M-SFNL> ;
         sport:participation            <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> , <http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450> ;
         sport:startDateTime            "2021-08-01T20:26:00+09:00"^^xsd:dateTime .
 
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1373936>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1453173>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1402343>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1393393>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1307604>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1553500>
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1421671> 
+        rdf:type                    sport:Participation .
+<http://example.com/Participation/OLYS2020-ATHM800M-SFNL000100-PI1324450>
+        rdf:type                    sport:Participation .

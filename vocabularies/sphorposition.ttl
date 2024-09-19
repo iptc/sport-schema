@@ -1,21 +1,34 @@
 
-@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix skos:	<http://www.w3.org/2004/02/skos/core#>.
-@prefix owl:	<http://www.w3.org/2002/07/owl#>.
-@prefix sphorpos:	<http://cv.iptc.org/newscodes/sphorpos/>
-		
-<http://cv.iptc.org/newscodes/sphorpos/> 
-	rdf:type skos:ConceptScheme;
-	skos:hasTopConcept		sphorpos:horse ;
-	skos:hasTopConcept		sphorpos:jockey .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sphorposition: <http://cv.iptc.org/newscodes/sphorposition/>
 
-sphorpos:horse
-	rdf:type skos:Concept;
-	skos:prefLabel	"horse"@en-GB;
-	skos:inScheme <http://cv.iptc.org/newscodes/sphorpos/>.
+<http://cv.iptc.org/newscodes/sphorposition/> 
+	rdf:type skos:ConceptScheme ; 
+  dct:rightsHolder "IPTC, International Press Telecommunications Council - https://iptc.org" ;
+  dct:dateSubmitted "2024-06-30T12:00:00+00:00"^^xsd:dateTime ;
+  skos:prefLabel "Horse Racing Positions"@en-GB ;
+  skos:definition "Positions in horse racing"@en-GB ;
+	skos:hasTopConcept		sphorposition:horse ;
+	skos:hasTopConcept		sphorposition:jockey ;
+	skos:hasTopConcept		sphorposition:trainer .
 
-sphorpos:jockey
-	rdf:type skos:Concept;
-	skos:prefLabel	"jockey"@en-GB;
-	skos:inScheme <http://cv.iptc.org/newscodes/sphorpos/>.
+sphorposition:horse
+	rdf:type skos:Concept ;
+	skos:prefLabel	"horse"@en-GB ;
+	skos:inScheme <http://cv.iptc.org/newscodes/sphorposition/>  ;
+	dct:created "2024-02-13T12:00:00+00:00"^^xsd:dateTime .
 
+sphorposition:jockey
+	rdf:type skos:Concept ;
+	skos:prefLabel	"jockey"@en-GB ;
+	skos:inScheme <http://cv.iptc.org/newscodes/sphorposition/>  ;
+	dct:created "2024-02-13T12:00:00+00:00"^^xsd:dateTime .
+
+sphorposition:trainer
+	rdf:type skos:Concept ;
+	skos:prefLabel	"trainer"@en-GB ;
+	skos:inScheme <http://cv.iptc.org/newscodes/sphorposition/>  ;
+	dct:created "2024-06-28T12:00:00+00:00"^^xsd:dateTime .

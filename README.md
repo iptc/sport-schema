@@ -30,6 +30,20 @@ as SPARQL, querying data should be as simple as possible.
 self-contained, but it should be possible to use it alongside schema.org in the
 future.
 
+## Latest version: Sport Schema 1.1
+
+Released in October 2024, Sport Schema 1.1 contains the following changes:
+* Adds Club and TeamMembership types (so a Team can be a member of a Club)
+* Add facets support (based on SportsML / NewsCodes facets) so we can now say
+that an event is "women's 400 metres relay swimming", not just "swimming"
+* Added the ability to link from Athlete to Team via a new teamParticipation
+property
+* Add an AssociateMembership type so an Associate (such as a coach) can have a
+tenure relating to any Agent, including an Athlete or a Team. Previously
+Associates were linked to Teams via Participation objects which wasn't
+satisfactory.
+* Many cleanups to the SHACL Shapes used for validation of data.
+
 ## Repository layout
 
 `docs`:
