@@ -3,7 +3,8 @@
 # Validate the Turtle example files against our SHACL validation constraints.
 
 SHACL_FILE='ontologies/iptc-sport-shacl.ttl'
-RDF_SCHEMA='ontologies/iptc-sport-ontology.ttl'
+RDF_SCHEMA='ontologies/iptc-sport-merged-ontology.ttl'
+# RDF_SCHEMA='ontologies/iptc-sport-ontology.ttl'
 VOCABULARIES=(vocabularies/*.ttl)
 TTL_SAMPLES_DIR='samples/ttl'
 REGEX_FOR_VALID_FILES='conforms  *true'
@@ -11,10 +12,13 @@ REGEX_FOR_VALID_FILES='conforms  *true'
 # handle error in the case that the glob returns null
 shopt -s nullglob
 
-if [[ $# -eq 1 ]]; then
-    filestovalidate=($1)
-else
+# If we have one or more command-line arguments, use that as the filename.
+# Otherwise, load all media files in the parent directory.
+if [[ $# -eq 0 ]]; then
     filestovalidate=(samples/ttl/*.ttl)
+    mediafiles=(${THISDIR}/../*.${MEDIATYPES_REGEX})
+else
+    filestovalidate=($@)
 fi
 
 for filename in "${filestovalidate[@]}"; do
