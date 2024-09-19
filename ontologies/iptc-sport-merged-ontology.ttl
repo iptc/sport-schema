@@ -4510,9 +4510,9 @@ spespstat:kills rdf:type owl:DatatypeProperty ;
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf-statistics/> .
 
-<https://sportschema.org/ontologies/golf/>
+<https://sportschema.org/ontologies/golf-statistics/>
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Golf statistics"@en ;
     rdfs:label "IPTC Sport Schema - Golf statistics"@en ;
@@ -4523,395 +4523,393 @@ spespstat:kills rdf:type owl:DatatypeProperty ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf statistics."@en ;
     rdfs:isDefinedBy spgolstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/golf/1.0.1> ;
+    owl:versionIRI <https://sportschema.org/ontologies/golf-statistics/1.0.1> ;
     owl:versionInfo "1.0.1"^^xsd:string .
 
 spgolstat:rank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "rank"@en ; 
-        rdfs:comment "How this player ranks among the other competing players."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:handicap rdf:type owl:DatatypeProperty ; 
-        rdfs:label "handicap"@en ; 
-        rdfs:comment "The handicap-value of this player. This will normally not be used in professional tournaments."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:rounds rdf:type owl:DatatypeProperty ; 
-        rdfs:label "rounds"@en ; 
-        rdfs:comment "How many rounds the player or team has completed in this particular tournament."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:average rdf:type owl:DatatypeProperty ; 
-        rdfs:label "average"@en ; 
-        rdfs:comment "Average score of the player or team. Number of shots devided by number of holes??"@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:distanceLongest rdf:type owl:DatatypeProperty ; 
-        rdfs:label "distanceLongest"@en ; 
-        rdfs:comment "The longest distance the player shot."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:distanceRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "distanceRank"@en ; 
-        rdfs:comment "The rank in the round or tournament for the player when comparing the longest distance shot."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:drives rdf:type owl:DatatypeProperty ; 
-        rdfs:label "drives"@en ; 
-        rdfs:comment "The number of drives made by the player."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalRounds rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalRounds"@en ; 
-        rdfs:comment "Total number of rounds played during the current tournament."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalStrokes rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalStrokes"@en ; 
-        rdfs:comment "Total number of strokes (or swings) (or shots) made."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalHoles rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalHoles"@en ; 
-        rdfs:comment "Total number of holes played."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalPutts rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalPutts"@en ; 
-        rdfs:comment "Total number of putts attempted."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalPoints rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalPoints"@en ; 
-        rdfs:comment "Total score of the player. Depending on the system used in the tournament the score could be something other than the actual number of strokes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalDriving rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalDriving"@en ; 
-        rdfs:comment "Total driving distance."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalParOrLess rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalParOrLess"@en ; 
-        rdfs:comment "Total number of holes played by the player at par or less than par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:birdies rdf:type owl:DatatypeProperty ; 
-        rdfs:label "birdies"@en ; 
-        rdfs:comment "Number of birdies."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:birdiesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "birdiesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding birdies."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eagles rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eagles"@en ; 
-        rdfs:comment "Number of eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eaglesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eaglesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:saves rdf:type owl:DatatypeProperty ; 
-        rdfs:label "saves"@en ; 
-        rdfs:comment "Number of saves when the ball landed in a sand bunker."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:savesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "savesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding saves from the bunker."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bunkers rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bunkers"@en ; 
-        rdfs:comment "Number of bunker shots the player took."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eaglePerHolesFrequency rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eaglePerHolesFrequency"@en ; 
-        rdfs:comment "Frequency of hitting eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensHit rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensHit"@en ; 
-        rdfs:comment "This is a very special golf term. To reach a green in regulation (GIR) the player must place the ball on the green with two strokes less than the par of the course. The attribute holds the number of times the player or team has achieved this in the timeframe the stats cover."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensHitRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensHitRank"@en ; 
-        rdfs:comment "How the player ranks in the tournament or round regarding greens hit in regulation."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationMissed rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationMissed"@en ; 
-        rdfs:comment "Number of greens missed during regulation play."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationPutting rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationPutting"@en ; 
-        rdfs:comment "The average number of puts needed to finish holes after hitting the green in regulation (GIR)."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationRank"@en ; 
-        rdfs:comment "Rank of player in terms of the greens-in-regulation putting."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:fairwaysHit rdf:type owl:DatatypeProperty ; 
-        rdfs:label "fairwaysHit"@en ; 
-        rdfs:comment "Number of fairways hit."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:fairwaysPossible rdf:type owl:DatatypeProperty ; 
-        rdfs:label "fairwaysPossible"@en ; 
-        rdfs:comment "Maximum number of fairways it was possible to hit."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:puttsPerRound rdf:type owl:DatatypeProperty ; 
-        rdfs:label "puttsPerRound"@en ; 
-        rdfs:comment "The average number of putts needed per complete round."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:puttsPerRoundRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "puttsPerRoundRank"@en ; 
-        rdfs:comment "How the player ranks when comparing the average putts-per-round."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:holesUnderPar rdf:type owl:DatatypeProperty ; 
-        rdfs:label "holesUnderPar"@en ; 
-        rdfs:comment "Number of holes finished under par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:scoringAdjustment rdf:type owl:DatatypeProperty ; 
-        rdfs:label "scoringAdjustment"@en ; 
-        rdfs:comment "Scoring adjustment."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesTop10 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesTop10"@en ; 
-        rdfs:comment "Number of finishes the player had in the top ten."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesFirstPlace rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesFirstPlace"@en ; 
-        rdfs:comment "Number of first-place finishes the player had."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesSecondPlace rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesSecondPlace"@en ; 
-        rdfs:comment "Number of second-place finishes the player had."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar3 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar3"@en ; 
-        rdfs:comment "The performance of the player on par-3 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar4 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar4"@en ; 
-        rdfs:comment "The performance of the player on par-4 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar5 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar5"@en ; 
-        rdfs:comment "The performance of the player on par-5 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:money rdf:type owl:DatatypeProperty ; 
-        rdfs:label "money"@en ; 
-        rdfs:comment "Amount of money earned by the player."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:moneyValue rdf:type owl:DatatypeProperty ; 
-        rdfs:label "moneyValue"@en ; 
-        rdfs:comment "Money value."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:points rdf:type owl:DatatypeProperty ; 
-        rdfs:label "points"@en ; 
-        rdfs:comment "Number of points."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pointsLost rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pointsLost"@en ; 
-        rdfs:comment "Number of points lost."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pointsGained rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pointsGained"@en ; 
-        rdfs:comment "Number of points gained."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:driveAccuracy rdf:type owl:DatatypeProperty ; 
-        rdfs:label "driveAccuracy"@en ; 
-        rdfs:comment "A percentage of how good the drives from the player or team has been in the given frame the stats cover."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:driveAccuracyRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "driveAccuracyRank"@en ; 
-        rdfs:comment "How the player ranks when comparing drive-accuracy."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:roundsUnderPar rdf:type owl:DatatypeProperty ; 
-        rdfs:label "roundsUnderPar"@en ; 
-        rdfs:comment "The number of rounds the player has completed a course under par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bogeys rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bogeys"@en ; 
-        rdfs:comment "The number of holes finished one above par for that hole."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bogeysRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bogeysRank"@en ; 
-        rdfs:comment "How the player ranks when comparing bogeys."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:doubleBogeys rdf:type owl:DatatypeProperty ; 
-        rdfs:label "doubleBogeys"@en ; 
-        rdfs:comment "The number of holes finished two above par for that hole."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:doubleBogeysRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "doubleBogeysRank"@en ; 
-        rdfs:comment "How the player ranks when comparing double-bogeys."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishOther rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishOther"@en ; 
-        rdfs:comment "The number of holes finished with either more than two under par or two over par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishOtherRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishOtherRank"@en ; 
-        rdfs:comment "How the player ranks when comparing finish-other."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pars rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pars"@en ; 
-        rdfs:comment "The number of holes finished on par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:parsRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "parsRank"@en ; 
-        rdfs:comment "How the player ranks when comparing pars."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	
+    rdfs:label "rank"@en ; 
+    rdfs:comment "How this player ranks among the other competing players."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:handicap rdf:type owl:DatatypeProperty ; 
+    rdfs:label "handicap"@en ; 
+    rdfs:comment "The handicap-value of this player. This will normally not be used in professional tournaments."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:rounds rdf:type owl:DatatypeProperty ; 
+    rdfs:label "rounds"@en ; 
+    rdfs:comment "How many rounds the player or team has completed in this particular tournament."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:average rdf:type owl:DatatypeProperty ; 
+    rdfs:label "average"@en ; 
+    rdfs:comment "Average score of the player or team. Number of shots devided by number of holes??"@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:distanceLongest rdf:type owl:DatatypeProperty ; 
+    rdfs:label "distanceLongest"@en ; 
+    rdfs:comment "The longest distance the player shot."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:distanceRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "distanceRank"@en ; 
+    rdfs:comment "The rank in the round or tournament for the player when comparing the longest distance shot."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:drives rdf:type owl:DatatypeProperty ; 
+    rdfs:label "drives"@en ; 
+    rdfs:comment "The number of drives made by the player."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalRounds rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalRounds"@en ; 
+    rdfs:comment "Total number of rounds played during the current tournament."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalStrokes rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalStrokes"@en ; 
+    rdfs:comment "Total number of strokes (or swings) (or shots) made."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalHoles rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalHoles"@en ; 
+    rdfs:comment "Total number of holes played."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalPutts rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalPutts"@en ; 
+    rdfs:comment "Total number of putts attempted."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalPoints rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalPoints"@en ; 
+    rdfs:comment "Total score of the player. Depending on the system used in the tournament the score could be something other than the actual number of strokes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalDriving rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalDriving"@en ; 
+    rdfs:comment "Total driving distance."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalParOrLess rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalParOrLess"@en ; 
+    rdfs:comment "Total number of holes played by the player at par or less than par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:birdies rdf:type owl:DatatypeProperty ; 
+    rdfs:label "birdies"@en ; 
+    rdfs:comment "Number of birdies."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:birdiesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "birdiesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding birdies."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eagles rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eagles"@en ; 
+    rdfs:comment "Number of eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eaglesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eaglesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:saves rdf:type owl:DatatypeProperty ; 
+    rdfs:label "saves"@en ; 
+    rdfs:comment "Number of saves when the ball landed in a sand bunker."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:savesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "savesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding saves from the bunker."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bunkers rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bunkers"@en ; 
+    rdfs:comment "Number of bunker shots the player took."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eaglePerHolesFrequency rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eaglePerHolesFrequency"@en ; 
+    rdfs:comment "Frequency of hitting eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensHit rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensHit"@en ; 
+    rdfs:comment "This is a very special golf term. To reach a green in regulation (GIR) the player must place the ball on the green with two strokes less than the par of the course. The attribute holds the number of times the player or team has achieved this in the timeframe the stats cover."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensHitRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensHitRank"@en ; 
+    rdfs:comment "How the player ranks in the tournament or round regarding greens hit in regulation."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationMissed rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationMissed"@en ; 
+    rdfs:comment "Number of greens missed during regulation play."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationPutting rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationPutting"@en ; 
+    rdfs:comment "The average number of puts needed to finish holes after hitting the green in regulation (GIR)."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationRank"@en ; 
+    rdfs:comment "Rank of player in terms of the greens-in-regulation putting."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:fairwaysHit rdf:type owl:DatatypeProperty ; 
+    rdfs:label "fairwaysHit"@en ; 
+    rdfs:comment "Number of fairways hit."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:fairwaysPossible rdf:type owl:DatatypeProperty ; 
+    rdfs:label "fairwaysPossible"@en ; 
+    rdfs:comment "Maximum number of fairways it was possible to hit."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:puttsPerRound rdf:type owl:DatatypeProperty ; 
+    rdfs:label "puttsPerRound"@en ; 
+    rdfs:comment "The average number of putts needed per complete round."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:puttsPerRoundRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "puttsPerRoundRank"@en ; 
+    rdfs:comment "How the player ranks when comparing the average putts-per-round."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:holesUnderPar rdf:type owl:DatatypeProperty ; 
+    rdfs:label "holesUnderPar"@en ; 
+    rdfs:comment "Number of holes finished under par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:scoringAdjustment rdf:type owl:DatatypeProperty ; 
+    rdfs:label "scoringAdjustment"@en ; 
+    rdfs:comment "Scoring adjustment."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesTop10 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesTop10"@en ; 
+    rdfs:comment "Number of finishes the player had in the top ten."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesFirstPlace rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesFirstPlace"@en ; 
+    rdfs:comment "Number of first-place finishes the player had."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesSecondPlace rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesSecondPlace"@en ; 
+    rdfs:comment "Number of second-place finishes the player had."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar3 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar3"@en ; 
+    rdfs:comment "The performance of the player on par-3 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar4 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar4"@en ; 
+    rdfs:comment "The performance of the player on par-4 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar5 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar5"@en ; 
+    rdfs:comment "The performance of the player on par-5 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:money rdf:type owl:DatatypeProperty ; 
+    rdfs:label "money"@en ; 
+    rdfs:comment "Amount of money earned by the player."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:moneyValue rdf:type owl:DatatypeProperty ; 
+    rdfs:label "moneyValue"@en ; 
+    rdfs:comment "Money value."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:points rdf:type owl:DatatypeProperty ; 
+    rdfs:label "points"@en ; 
+    rdfs:comment "Number of points."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pointsLost rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pointsLost"@en ; 
+    rdfs:comment "Number of points lost."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pointsGained rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pointsGained"@en ; 
+    rdfs:comment "Number of points gained."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:driveAccuracy rdf:type owl:DatatypeProperty ; 
+    rdfs:label "driveAccuracy"@en ; 
+    rdfs:comment "A percentage of how good the drives from the player or team has been in the given frame the stats cover."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:driveAccuracyRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "driveAccuracyRank"@en ; 
+    rdfs:comment "How the player ranks when comparing drive-accuracy."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:roundsUnderPar rdf:type owl:DatatypeProperty ; 
+    rdfs:label "roundsUnderPar"@en ; 
+    rdfs:comment "The number of rounds the player has completed a course under par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bogeys rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bogeys"@en ; 
+    rdfs:comment "The number of holes finished one above par for that hole."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bogeysRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bogeysRank"@en ; 
+    rdfs:comment "How the player ranks when comparing bogeys."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:doubleBogeys rdf:type owl:DatatypeProperty ; 
+    rdfs:label "doubleBogeys"@en ; 
+    rdfs:comment "The number of holes finished two above par for that hole."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:doubleBogeysRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "doubleBogeysRank"@en ; 
+    rdfs:comment "How the player ranks when comparing double-bogeys."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishOther rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishOther"@en ; 
+    rdfs:comment "The number of holes finished with either more than two under par or two over par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishOtherRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishOtherRank"@en ; 
+    rdfs:comment "How the player ranks when comparing finish-other."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pars rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pars"@en ; 
+    rdfs:comment "The number of holes finished on par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:parsRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "parsRank"@en ; 
+    rdfs:comment "How the player ranks when comparing pars."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
 @prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
