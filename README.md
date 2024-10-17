@@ -118,3 +118,11 @@ tools/run-test-queries-fuseki.sh
 ## More detailed documentation
 
 More documentation is available at https://www.sportschema.org/
+
+To see a local version of the sportschema.org site, do the following:
+
+    cd docs         # go to documentation folder
+    bundle install  # install Jekyll for GitHub Pages locally
+    bundle exec jekyll serve --baseurl=""  # run local Jekyll server
+
+then the site appears as http://localhost:4000/
