@@ -1,844 +1,3 @@
-@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:       <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms:   <http://purl.org/dc/terms/> .
-@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
-@prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
-@prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
-@prefix spbblstat: <https://sportschema.org/ontologies/baseball/> .
-@prefix spbkbstat: <https://sportschema.org/ontologies/basketball/> .
-@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
-@prefix spmcrstat: <https://sportschema.org/ontologies/motor-racing/> .
-@prefix sprgxstat: <https://sportschema.org/ontologies/rugby/> .
-@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
-@prefix sptenstat: <https://sportschema.org/ontologies/tennis/> .
-@prefix spvolstat: <https://sportschema.org/ontologies/volleyball/> .
-
-<https://sportschema.org/ontologies/main/>
-    rdf:type owl:Ontology ;
-    dcterms:title "IPTC Sport Schema"@en ;
-    rdfs:label "IPTC Sport Schema"@en ;
-    dcterms:created "2023-10-04"^^xsd:date ;
-    dcterms:modified "2024-05-14"^^xsd:date ;
-    dcterms:creator "IPTC Sports Content Working Group"@en ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
-    dcterms:description "A high-level model to describe the core elements of competitive sport"@en ;
-    rdfs:isDefinedBy sport: ;
-    owl:versionIRI <https://sportschema.org/ontologies/main/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
-
-##### Classes #####
-
-sport:Action rdf:type owl:Class ;
-    rdfs:label "Action"@en ;
-    rdfs:subClassOf sport:ParticipatableThing ;
-    rdfs:comment "Something that happens during an event: a kick, a goal, a foul etc"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Agent rdf:type owl:Class ;
-    rdfs:label "Agent"@en ;
-    rdfs:comment "A participant in a sport event."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Associate rdf:type owl:Class ;
-    rdfs:label "Associate"@en ;
-    rdfs:subClassOf sport:Individual ;
-    rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Athlete rdf:type owl:Class ;
-    rdfs:label "Athlete"@en ;
-    rdfs:subClassOf sport:Individual ;
-    rdfs:comment "A competitor in an individual event or a member of a team"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Competition rdf:type owl:Class ;
-    rdfs:label "Competition"@en ;
-    rdfs:subClassOf sport:ParticipatableThing ;
-    rdfs:comment "A grouping of events usually based on proximity by time."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:CompetitionPhase rdf:type owl:Class ;
-    rdfs:label "Competition Phase"@en ;
-    rdfs:subClassOf sport:Competition ;
-    rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:CompetitorParticipation rdf:type owl:Class ;
-    rdfs:label "Competitor Participation"@en ;
-    rdfs:subClassOf sport:Participation ;
-    rdfs:comment "The participation of an actor that can win or lose an event."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:ParticipatableThing rdf:type owl:Class ;
-    rdfs:label "Participatable Thing"@en ;
-    rdfs:comment "An abstract superclass for anything that can be participated in, such as an Event, Competition or Action."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Event rdf:type owl:Class ;
-    rdfs:label "Event"@en ;
-    rdfs:subClassOf sport:ParticipatableThing ;
-    rdfs:comment "A contest of competitive actions that generates statistical results."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:GoverningBody rdf:type owl:Class ;
-    rdfs:label "Governing Body"@en ;
-    rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Individual rdf:type owl:Class ;
-    rdfs:label "Individual"@en ;
-    rdfs:subClassOf sport:Agent ;
-    rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:IndividualMembership rdf:type owl:Class ;
-    rdfs:label "Individual Membership"@en ;
-    rdfs:subClassOf sport:Membership ;
-    rdfs:comment "A player's membership in a team"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:IndividualParticipation rdf:type owl:Class ;
-    rdfs:label "Individual Participation"@en ;
-    rdfs:subClassOf sport:CompetitorParticipation ;
-    rdfs:comment "The participation of an individual in an event"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:AssociateParticipation rdf:type owl:Class ;
-    rdfs:label "Associate Participation"@en ;
-    rdfs:subClassOf sport:Participation ;
-    rdfs:comment "The particpation of an associate who supports players and teams, e.g. coach, manager, trainer"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Membership rdf:type owl:Class ;
-    rdfs:label "Membership"@en ;
-    rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Official rdf:type owl:Class ;
-    rdfs:label "Official"@en ;
-    rdfs:subClassOf sport:Individual ;
-    rdfs:comment "A person who ensures that the sports event is played according to its rules. Also referred to as umpire or referee."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:OfficialParticipation rdf:type owl:Class ;
-    rdfs:label "Official Participation"@en ;
-    rdfs:subClassOf sport:Participation ;
-    rdfs:comment "The participation of an offcial in an event"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Participation rdf:type owl:Class ;
-    rdfs:label "Participation"@en ;
-    rdfs:comment "The participation of an actor in an event."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:ParticipationSplit rdf:type owl:Class ;
-    rdfs:label "Participation Split"@en ;
-    rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Site rdf:type owl:Class ;
-    rdfs:label "Site"@en ;
-    rdfs:comment "The location where an activity takes place"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:Team rdf:type owl:Class ;
-    rdfs:label "Team"@en ;
-    rdfs:subClassOf sport:Agent ;
-    rdfs:comment "A group of individuals competing as one entity"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:TeamParticipation rdf:type owl:Class ;
-    rdfs:label "Team Participation"@en ;
-    rdfs:subClassOf sport:CompetitorParticipation ;
-    rdfs:comment "The participation of a team in an event"@en ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-##### Object properties #####
-
-sport:parent rdf:type owl:ObjectProperty ;
-    rdfs:label "parent"@en ;
-    rdfs:comment "Link from a ParticipatableThing to its parent, to represent parent Event, CompetitionPhase etc"@en ;
-    rdfs:domain sport:ParticipatableThing ;
-    rdfs:range sport:ParticipatableThing ;
-    owl:inverseOf sport:child ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:child rdf:type owl:ObjectProperty ;
-    rdfs:label "child"@en ;
-    rdfs:comment "Link from a ParticipatableThing to its child, to represent child Event, CompetitionPhase etc"@en ;
-    rdfs:domain sport:ParticipatableThing ;
-    rdfs:range sport:ParticipatableThing ;
-    owl:inverseOf sport:parent ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:parentSite rdf:type owl:ObjectProperty ;
-    rdfs:label "parent site"@en ;
-    rdfs:comment "Link from a Site to its parent, such as a link from a stadium to an Olympic Park or from a tennis court to the tennis complex"@en ;
-    rdfs:domain sport:Site ;
-    rdfs:range sport:Site ;
-    owl:inverseOf sport:childSite ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:childSite rdf:type owl:ObjectProperty ;
-    rdfs:label "child site"@en ;
-    rdfs:comment "Link from a Site to its child, such as a link from an Olympic Park to an individual stadium or from a tennis complex to an individual tennis court"@en ;
-    rdfs:domain sport:Site ;
-    rdfs:range sport:Site ;
-    owl:inverseOf sport:parentSite ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participation rdf:type owl:ObjectProperty ;
-    rdfs:label "participation"@en ;
-    rdfs:comment "Link from a ParticipatableThing to a participation by an Agent"@en ;
-    rdfs:domain sport:ParticipatableThing ;
-    rdfs:range sport:Participation ;
-    owl:inverseOf  sport:participantOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participationIn rdf:type owl:ObjectProperty ;
-    rdfs:label "participation in"@en ;
-    rdfs:comment "Link from a participation by an Agent to a ParticipatableThing"@en ;
-    rdfs:domain sport:Participation ;
-    rdfs:range sport:ParticipatableThing ;
-    owl:inverseOf sport:participation ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventInCompetition rdf:type owl:ObjectProperty ;
-    rdfs:label "event in competition"@en ;
-    rdfs:comment "The Competition that an Event is part of"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Competition ;
-    owl:inverseOf sport:containsEvent ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:containsEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "contains event"@en ;
-    rdfs:comment "An Event that is part of this Competition"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range sport:Event ;
-    owl:inverseOf sport:eventInCompetition ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventInCompetitionPhase rdf:type owl:ObjectProperty ;
-    rdfs:label "event in competition phase"@en ;
-    rdfs:comment "The CompetitionPhase (such as a round or a finals phase) of which an Event is a part"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:CompetitionPhase ;
-    owl:inverseOf sport:phaseContainsEvent ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "phase contains event"@en ;
-    rdfs:comment "The Event is part of a CompetitionPhase"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    rdfs:range sport:Event ;
-    owl:inverseOf sport:eventInCompetition ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "phase contains event"@en ;
-    rdfs:comment "An Event (such as a round or a finals phase) contained in this CompetitionPhase"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    rdfs:range sport:Event ;
-    owl:inverseOf sport:eventInCompetitionPhase ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:actionInEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "action in event"@en ;
-    rdfs:comment "Link to the event in which an Action took place"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range sport:Event ;
-    owl:inverseOf sport:containsAction ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:containsAction rdf:type owl:ObjectProperty ;
-    rdfs:label "contains action"@en ;
-    rdfs:comment "Link to action in that took place at the Event"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range sport:Action ;
-    owl:inverseOf sport:actionInEvent ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:governedBy rdf:type owl:ObjectProperty ;
-    rdfs:label "governing body"@en ;
-    rdfs:comment "Link to the organisation that regulates a given Competition"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range sport:GoverningBody ;
-    owl:inverseOf sport:governs ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:governs rdf:type owl:ObjectProperty ;
-    rdfs:label "governs"@en ;
-    rdfs:comment "Link to the competitions that the body governs."@en ;
-    rdfs:domain sport:GoverningBody ;
-    rdfs:range sport:Competition ;
-    owl:inverseOf sport:governedBy ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:location rdf:type owl:ObjectProperty ;
-    rdfs:label "location"@en ;
-    rdfs:comment "Link to the location (Site) where an event takes place"@en ;
-    rdfs:domain sport:ParticipatableThing ;
-    rdfs:range sport:Site ;
-    owl:inverseOf sport:locationOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:locationOf rdf:type owl:ObjectProperty ;
-    rdfs:label "location of"@en ;
-    rdfs:comment "Link to an event that takes place at this location (Site)"@en ;
-    rdfs:domain sport:Site ;
-    rdfs:range sport:Event ;
-    owl:inverseOf sport:location ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:member rdf:type owl:ObjectProperty ;
-    rdfs:label "member"@en ;
-    rdfs:comment "Link between a membership and an individual"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    rdfs:range sport:Individual ;
-    owl:inverseOf sport:memberOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:memberOf rdf:type owl:ObjectProperty ;
-    rdfs:label "member of"@en ;
-    rdfs:comment "Link between an individual and a membership"@en ;
-    rdfs:domain sport:Individual ;
-    rdfs:range sport:IndividualMembership ;
-    owl:inverseOf sport:member ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:membershipOf rdf:type owl:ObjectProperty ;
-    rdfs:label "membership of"@en ;
-    rdfs:comment "Link between a membership and a team"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    rdfs:range sport:Team ;
-    owl:inverseOf sport:membership ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:membership rdf:type owl:ObjectProperty ;
-    rdfs:label "membership"@en ;
-    rdfs:comment "Link between a team and a membership"@en ;
-    rdfs:domain sport:Team ;
-    rdfs:range sport:IndividualMembership ;
-    owl:inverseOf sport:membershipOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participationBy rdf:type owl:ObjectProperty ;
-    rdfs:label "participation by"@en ;
-    rdfs:comment "Link to a person or team participating in an event, season or action"@en ;
-    rdfs:domain sport:Participation ;
-    rdfs:range sport:Agent ;
-    owl:inverseOf sport:participantOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participantOf rdf:type owl:ObjectProperty ;
-    rdfs:label "participant of"@en ;
-    rdfs:comment "Link from a person or team to their participation in an event"@en ;
-    rdfs:domain sport:Agent ;
-    rdfs:range sport:Participation ;
-    owl:inverseOf sport:participationBy ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participationSplit rdf:type owl:ObjectProperty ;
-    rdfs:label "participation split"@en ;
-    rdfs:comment "Link to a part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
-    rdfs:domain sport:Participation ;
-    rdfs:range sport:ParticipationSplit ;
-    owl:inverseOf sport:participationSplitOf ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participationSplitOf rdf:type owl:ObjectProperty ;
-    rdfs:label "participation split of"@en ;
-    rdfs:comment "Link to a participation of which this is a part"@en ;
-    rdfs:domain sport:ParticipationSplit ;
-    rdfs:range sport:Participation ;
-    owl:inverseOf sport:participationSplit ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:phaseInCompetition rdf:type owl:ObjectProperty ;
-    rdfs:label "phase in competition"@en ;
-    rdfs:comment "Link to the competition of which this CompetitionPhase is a part"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    rdfs:range sport:Competition ;
-    owl:inverseOf  sport:containsCompetitionPhase ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-    
-sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
-    rdfs:label "contains competition phase"@en ;
-    rdfs:comment "Link from the competition to its constituent phases"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range sport:CompetitionPhase ;
-    owl:inverseOf sport:phaseInCompetition ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-##### Data properties #####
-
-sport:alignment rdf:type owl:DatatypeProperty ;
-    rdfs:label "alignment"@en ;
-    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"@en ;
-    rdfs:domain sport:TeamParticipation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:attendance rdf:type owl:DatatypeProperty ;
-    rdfs:label "attendance"@en ;
-    rdfs:comment "The number of people attending an event"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:competitionFormat rdf:type owl:ObjectProperty ;
-    rdfs:label "competition form"@en ;
-    rdfs:comment "Competition format: round robin, sudden death etc"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    # Recommended CV: http://cv.iptc.org/newscodes/sptournamentform/
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:competitionPhaseType rdf:type owl:ObjectProperty ;
-    rdfs:label "competition phase type"@en ;
-    rdfs:comment "Type of the competition phase - regular week, final etc"@en ;
-    rdfs:domain sport:CompetitionPhase ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spcompetitionphasetype/ (doesn't exist yet)
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:competitionType rdf:type owl:ObjectProperty ;
-    rdfs:label "competition type"@en ;
-    rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
-    rdfs:domain sport:Competition ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:dateOfBirth rdf:type owl:DatatypeProperty ;
-    rdfs:label "date of birth"@en ;
-    rdfs:comment "The date of birth of a person"@en ;
-    rdfs:domain sport:Individual ;
-    rdfs:range xsd:date ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:endDate rdf:type owl:DatatypeProperty ;
-    rdfs:label "end date"@en ;
-    rdfs:comment "The date on which a membership ends"@en ;
-    rdfs:domain sport:Membership ;
-    rdfs:range xsd:date ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:endDateTime rdf:type owl:DatatypeProperty ;
-    rdfs:label "end datetime"@en ;
-    rdfs:comment "The date and time at which an event ends"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range xsd:dateTime ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventOutcome rdf:type owl:ObjectProperty ;
-    rdfs:label "event outcome"@en ;
-    rdfs:comment "The outcome of an event (win, loss etc)"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    # Recommended CV: https://cv.iptc.org/newscodes/speventoutcome/
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventOutcomeType rdf:type owl:ObjectProperty ;
-    rdfs:label "event outcome type"@en ;
-    rdfs:comment "The type of outcome of an event (win, loss etc)"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    # Recommended CV: <http://cv.iptc.org/newscodes/speventoutcometype/> ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:eventStatus rdf:type owl:ObjectProperty ;
-    rdfs:label "event status"@en ;
-    rdfs:comment "Event's current status (e.g. post-event)"@en ;
-    rdfs:domain sport:Event ;
-    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:membershipStatus rdf:type owl:ObjectProperty ;
-    rdfs:label "membership status"@en ;
-    rdfs:comment "Member's status in a team during this membership period (e.g. active or inactive)"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    # Recommended values: <http://cv.iptc.org/newscodes/spphasestatus/> ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:nationality rdf:type owl:DatatypeProperty ;
-    rdfs:label "nationality"@en ;
-    rdfs:comment "The country an individual is identified with"@en ;
-    rdfs:domain sport:Individual ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:participationSplitType rdf:type owl:DatatypeProperty ;
-    rdfs:label "participation split type"@en ;
-    rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
-    rdfs:domain sport:ParticipationSplit ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:playerStatus rdf:type owl:ObjectProperty ;
-    rdfs:label "player status"@en ;
-    rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
-    rdfs:domain sport:IndividualParticipation ;
-    # Recommended CV: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:positionEvent rdf:type owl:ObjectProperty ;
-    rdfs:label "position (event)"@en ;
-    rdfs:comment "The position in a team taken for an individual event"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/> ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:positionRegular rdf:type owl:ObjectProperty ;
-    rdfs:label "position (regular)"@en ;
-    rdfs:comment "The position in a team usually taken by a given player or associate"@en ;
-    rdfs:domain sport:IndividualMembership ;
-    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/>
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:rank rdf:type owl:DatatypeProperty ;
-    rdfs:label "rank"@en ;
-    rdfs:comment "The rank of a player or team in standings etc."@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:role rdf:type owl:ObjectProperty ;
-    rdfs:label "role"@en ;
-    rdfs:comment "A team's or individual's role in a given action"@en ;
-    rdfs:domain sport:Participation ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:score rdf:type owl:DatatypeProperty ;
-    rdfs:label "score"@en ;
-    rdfs:comment "Final or current score of the team or individual"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreType rdf:type owl:DatatypeProperty ;
-    rdfs:label "score type"@en ;
-    rdfs:comment "Qualifies the 'score' property."@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreUnits rdf:type owl:ObjectProperty ;
-    rdfs:label "score units"@en ;
-    rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
-    # Recommended CV: http://cv.iptc.org/newscodes/spscoreunits/
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:sport rdf:type owl:ObjectProperty ;
-    rdfs:label "sport"@en ;
-    rdfs:comment "The sport which this competition represents"@en;
-    rdfs:domain sport:Competition ;
-    # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:startDateTime rdf:type owl:DatatypeProperty ;
-    rdfs:label "start datetime"@en ;
-    rdfs:comment "The date and time at which an event begins"@en ;
-    rdfs:domain sport:Event ;
-    rdfs:range xsd:dateTime ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:startDate rdf:type owl:DatatypeProperty ;
-    rdfs:label "start date"@en ;
-    rdfs:comment "The date on which a membership begins"@en ;
-    rdfs:domain sport:Membership ;
-    rdfs:range xsd:date ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:uniformNumber rdf:type owl:DatatypeProperty ;
-    rdfs:label "uniform number"@en ;
-    rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
-    rdfs:domain sport:IndividualMembership ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:uniformNumberEvent rdf:type owl:DatatypeProperty ;
-    rdfs:label "uniform number event"@en ;
-    rdfs:comment "The number worn on a player's uniform (jersey etc.) for an individual event. Note that the value may be a string such as 'unknown'."@en ;
-    rdfs:domain sport:IndividualParticipation ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-
-## Action properties, keeping them separate for now
-
-sport:actionDateTime rdf:type owl:DatatypeProperty ;
-    rdfs:label "action date-time"@en ;
-    rdfs:comment "Date and time when this play/action took place on the field."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:dateTime ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:actionType rdf:type owl:ObjectProperty ;
-    rdfs:label "action type"@en ;
-    rdfs:comment "The type of competitive action taken on the field of play. See 'action' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfaction/ http://cv.iptc.org/newscodes/spbblaction/ http://cv.iptc.org/newscodes/spbkbaction/ http://cv.iptc.org/newscodes/spichaction/ http://cv.iptc.org/newscodes/spmcraction/ http://cv.iptc.org/newscodes/rgxaction/ http://cv.iptc.org/newscodes/spsocaction/ http://cv.iptc.org/newscodes/sptenaction/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:angle rdf:type owl:DatatypeProperty ;
-    rdfs:label "angle"@en ;
-    rdfs:comment "Angle on the field of the play."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:bodyPart rdf:type owl:DatatypeProperty ;
-    rdfs:label "body part"@en ;
-    rdfs:comment "Body part used to perform an action."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:class rdf:type owl:ObjectProperty ;
-    rdfs:label "class"@en ;
-    rdfs:comment "An open placeholder for categorization. Recommended vocabulary: http://cv.iptc.org/newscodes/spactionclass/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:comment rdf:type owl:DatatypeProperty ;
-    rdfs:label "comment"@en ;
-    rdfs:comment "Textual comment of the action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:distance rdf:type owl:DatatypeProperty ;
-    rdfs:label "distance"@en ;
-    rdfs:comment "Distance of the action."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:endLocation rdf:type owl:DatatypeProperty ;
-    rdfs:label "end location"@en ;
-    rdfs:comment "A string indicating where on the court the action occured. Could be an approximate region, or a more complex value adhering to some elaborate coordinate system."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:fieldLocation rdf:type owl:DatatypeProperty ;
-    rdfs:label "field location"@en ;
-    rdfs:comment "Recommended x,y 0-100. The location of the action on the field of play represented as a grid."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:goalLocation rdf:type owl:DatatypeProperty ;
-    rdfs:label "goal location"@en ;
-    rdfs:comment "Recommended x,y 0-100. The location on goal-mouth grid in which the ball/puck entered."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:lastModified rdf:type owl:DatatypeProperty ;
-    rdfs:label "last modified"@en ;
-    rdfs:comment "Date and time when this play/action record was last modified. This would be the record from the reporter's data entry system."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ; # should this be dateTime?
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:minutesElapsed rdf:type owl:DatatypeProperty ;
-    rdfs:label "minutes elapsed"@en ;
-    rdfs:comment "Game minutes elapsed when this action occurred"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:passDescription rdf:type owl:DatatypeProperty ;
-    rdfs:label "pass description"@en ;
-    rdfs:comment "description of the pass taken in this action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:passMethod rdf:type owl:DatatypeProperty ;
-    rdfs:label "pass method"@en ;
-    rdfs:comment "Method used in this pass"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:passType rdf:type owl:DatatypeProperty ;
-    rdfs:label "pass type"@en ;
-    rdfs:comment "Type of this pass"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:infractionLevel rdf:type owl:DatatypeProperty ;
-    rdfs:label "infraction level"@en ;
-    rdfs:comment "Level of infraction (aka penalty)"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:infractionType rdf:type owl:ObjectProperty ;
-    rdfs:label "infraction type"@en ;
-    rdfs:comment "The degree of punishment for the infraction/penalty eg. yellow or red card, major, minor, game misconduct, etc. See 'penaltylevel' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbpenaltylevel/ http://cv.iptc.org/newscodes/spichpenaltylevel/ http://cv.iptc.org/newscodes/sprgxpenaltylevel/ http://cv.iptc.org/newscodes/spsocpenaltylevel/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:periodValue rdf:type owl:DatatypeProperty ;
-    rdfs:label "period value"@en ;
-    rdfs:comment "Used for tracking stats and events by period."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:personReplacingPosition rdf:type owl:DatatypeProperty ;
-    rdfs:label "person replacing position"@en ;
-    rdfs:comment "The position role assumed by the substitute."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:recipientType rdf:type owl:ObjectProperty ;
-    rdfs:label "recipient type"@en ;
-    rdfs:comment "Whether the receiver of the penalty was the team, the player, a coach, a ref, etc. SportsML vocab uri: http://cv.iptc.org/newscodes/sprecipienttype/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:result rdf:type owl:ObjectProperty ;
-    rdfs:label "result"@en ;
-    rdfs:comment "The result of the play or action. See 'result' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfresult/ http://cv.iptc.org/newscodes/spsocresult/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:saveMethod rdf:type owl:DatatypeProperty ;
-    rdfs:label "save method"@en ;
-    rdfs:comment "method used for this save"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:saveType rdf:type owl:DatatypeProperty ;
-    rdfs:label "save type"@en ;
-    rdfs:comment "type of save performed in this action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreAttemptResult rdf:type owl:ObjectProperty ;
-    rdfs:label "score attempt result"@en ;
-    rdfs:comment "The result of the score attempt eg. blocked, missed, etc. See 'scoreattemptresult' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattemptresult/ http://cv.iptc.org/newscodes/spichscoreattemtresult/ http://cv.iptc.org/newscodes/sprgxscoreattemptresult/ http://cv.iptc.org/newscodes/spsocscoreattemptresult/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreAttemptSide rdf:type owl:DatatypeProperty ;
-    rdfs:label "score attempt side"@en ;
-    rdfs:comment "Side of the body of the player attempting to score"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreAttemptSituation rdf:type owl:DatatypeProperty ;
-    rdfs:label "score attempt situation"@en ;
-    rdfs:comment "Describing the situation surrounding the score attempt"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:scoreAttemptType rdf:type owl:ObjectProperty ;
-    rdfs:label "score attempt type"@en ;
-    rdfs:comment "The type of score that was attempted. See 'scoreattempt' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattempt/ http://cv.iptc.org/newscodes/spichscoreattempt/ http://cv.iptc.org/newscodes/sprgxscoreattempt/ http://cv.iptc.org/newscodes/spsocscoreattempt/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:sequenceNumber rdf:type owl:DatatypeProperty ;
-    rdfs:label "sequence number"@en ;
-    rdfs:comment "Sequence-number. Should be separate sequences for sub-actions inside an action"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:shotDistance rdf:type owl:DatatypeProperty ;
-    rdfs:label "shot distance"@en ;
-    rdfs:comment "Distance of the shot"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:shotDistanceUnits rdf:type owl:ObjectProperty ;
-    rdfs:label "shot distance units"@en ;
-    rdfs:comment "SportsML vocab uri: http://cv.iptc.org/newscodes/spdistanceunits/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:shotType rdf:type owl:ObjectProperty ;
-    rdfs:label "shot type"@en ;
-    rdfs:comment "The type of shot taken. See 'shot' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spgolshot/ http://cv.iptc.org/newscodes/sptenshot/ http://cv.iptc.org/newscodes/spcurshot/"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range skos:Concept ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:startLocation rdf:type owl:DatatypeProperty ;
-    rdfs:label "start location"@en ;
-    rdfs:comment ">A string indicating where on the court the action began. Could be an approximate region, or a more complex value adhering to some elaborate coordinate system."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:substitutionReason rdf:type owl:DatatypeProperty ;
-    rdfs:label "substitution reason"@en ;
-    rdfs:comment "The reason for the substitution of a player"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:timeAddition rdf:type owl:DatatypeProperty ;
-    rdfs:label "time addition"@en ;
-    rdfs:comment "time added to period."@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:timeElapsed rdf:type owl:DatatypeProperty ;
-    rdfs:label "time elapsed"@en ;
-    rdfs:comment "Total time elapsed of event"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:timeRemaining rdf:type owl:DatatypeProperty ;
-    rdfs:label "time remaining"@en ;
-    rdfs:comment "Time remaining of event"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
-
-sport:zone rdf:type owl:DatatypeProperty ;
-    rdfs:label "zone"@en ;
-    rdfs:comment "The zone on the playing field where the action took place. Value can be sport specific"@en ;
-    rdfs:domain sport:Action ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -851,14 +10,15 @@ sport:zone rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - American Football statistics"@en ;
     rdfs:label "IPTC Sport Schema - American Football statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering american football statistics."@en ;
     rdfs:isDefinedBy spamfstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/american-football/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/american-football/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spamfstat:yardsPerAttempt rdf:type owl:DatatypeProperty ; 
         rdfs:label "yardsPerAttempt"@en ; 
@@ -2623,14 +1783,15 @@ spamfstat:yardsPerAttempt rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Baseball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Baseball statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering baseball statistics."@en ;
     rdfs:isDefinedBy spbblstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/baseball/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/baseball/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spbblstat:average rdf:type owl:DatatypeProperty ; 
         rdfs:label "average"@en ; 
@@ -3450,14 +2611,15 @@ spbblstat:average rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Basketball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Basketball statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering basketball statistics."@en ;
     rdfs:isDefinedBy spbkbstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/basketball/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/basketball/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spbkbstat:minutesPlayed rdf:type owl:DatatypeProperty ; 
         rdfs:label "minutesPlayed"@en ; 
@@ -4012,14 +3174,15 @@ spbkbstat:minutesPlayed rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Core statistics"@en ;
     rdfs:label "IPTC Sport Schema - Core statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering core statistics across sports."@en ;
     rdfs:isDefinedBy spstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/corestatistics/1.0> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/corestatistics/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spstat:wins rdf:type owl:DatatypeProperty ; 
     rdfs:label "wins"@en ; 
@@ -4403,14 +3566,15 @@ spstat:adjustedScoreAgainst rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - esports statistics"@en ;
     rdfs:label "IPTC Sport Schema - esports statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering esports statistics."@en ;
     rdfs:isDefinedBy spespstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/esports/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/esports/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spespstat:ADR rdf:type owl:DatatypeProperty ; 
         rdfs:label "ADR"@en ; 
@@ -4473,407 +3637,799 @@ spespstat:kills rdf:type owl:DatatypeProperty ;
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
+@prefix spfacet:   <https://sportschema.org/ontologies/sport-facets/> .
 
-<https://sportschema.org/ontologies/golf/>
+<https://sportschema.org/ontologies/sport-facets/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Sport Facets"@en ;
+    rdfs:label "IPTC Sport Schema - Sport Facets"@en ;
+    dcterms:created "2024-10-02"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, adding facets that can be used to refine sport definitions."@en ;
+    rdfs:isDefinedBy spfacet: ;
+    owl:versionIRI <https://sportschema.org/ontologies/sport-facets/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
+
+spfacet:ageclass rdf:type owl:DatatypeProperty ; 
+        rdfs:label "age class"@en ; 
+        rdfs:comment "The age range of a competition"@en ; 
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ; 
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:alpineskiingtype rdf:type owl:DatatypeProperty ;
+        rdfs:label "alpine skiing type"@en ;
+        rdfs:comment "A type of alpine skiing competion"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:artisticgymtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "artistic gymnastics type"@en ;
+        rdfs:comment "A type of artistic gymnastics competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:billiardtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "billiards type"@en ;
+        rdfs:comment "A type of billiards, snooker or pool"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:bmxfreestyletype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "BMX freestyle type"@en ;
+        rdfs:comment "A type of BMX Freestyle"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:canoekayaktype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "canoe or kayak type"@en ;
+        rdfs:comment "A type of canoeing or kayaking competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:cyclingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "cycling type"@en ;
+        rdfs:comment "A type of cycling race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+        
+spfacet:distance rdf:type owl:DatatypeProperty ; 
+        rdfs:label "distance"@en ;
+        rdfs:comment "The spatial distance of a competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:dogracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "dog racing type"@en ;
+        rdfs:comment "A type of dog race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:equestriantype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "equestrian type"@en ;
+        rdfs:comment "A type of equestrian competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:horseracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "horse racing type"@en ;
+        rdfs:comment "A type of horse racing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:fencingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "fencing type"@en ;
+        rdfs:comment "A type of fencing style"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+
+spfacet:figureskatingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "figure skating type"@en ;
+        rdfs:comment "A type of figure skating competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:flyingdisctype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "flying disc type"@en ;
+        rdfs:comment "A type of flying disc competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:freestyleskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "freestyle skiing type"@en ;
+        rdfs:comment "A type of freestyle skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:gender rdf:type owl:DatatypeProperty ; 
+        rdfs:label "gender"@en ;
+        rdfs:comment "The gender categories as defined by the governing body of the sport"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:jaialaitype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "jai alai type"@en ;
+        rdfs:comment "A type of fronton/pelota/jai alai"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:motorcarracingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "motor car racing type"@en ;
+        rdfs:comment "A type of motor car race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:motorcyclingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "motorcycling type"@en ;
+        rdfs:comment "A type of motorcycling event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:mountainbikingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "mountain biking type"@en ;
+        rdfs:comment "A type of mountain biking event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:nordicskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "nordic skiing type"@en ;
+        rdfs:comment "A type of nordic skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:crosscountryskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "cross country skiing type"@en ;
+        rdfs:comment "A type of cross country skiing competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:parasport rdf:type owl:DatatypeProperty ; 
+        rdfs:label "parasport"@en ;
+        rdfs:comment "Indicates that the sport is a sport for people with disabilities"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:boolean ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:parasporttype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "parasport type"@en ;
+        rdfs:comment "Indicates the type of parasport"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:platformheight rdf:type owl:DatatypeProperty ; 
+        rdfs:label "height of platform"@en ;
+        rdfs:comment "The height of the platform used for diving, etc."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:racetime rdf:type owl:DatatypeProperty ; 
+        rdfs:label "race time"@en ;
+        rdfs:comment "The temporal limit of a race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:racetype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "race type"@en ;
+        rdfs:comment "A race type used across many different sports"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:rhythmgymtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "rhythmic gymnastics type"@en ;
+        rdfs:comment "A type of rhythmic gymnastics competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:rowingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "rowing type"@en ;
+        rdfs:comment "A type of rowing style"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:sailingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "sailing type"@en ;
+        rdfs:comment "A type of sailing designated by boat class"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:shootingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "shooting type"@en ;
+        rdfs:comment "A type of competitive shooting event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:soccertype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "soccer type"@en ;
+        rdfs:comment "A type of soccer/football"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:snowboardingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "snowboarding type"@en ;
+        rdfs:comment "A type of snowboarding competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:swimmingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "swimming type"@en ;
+        rdfs:comment "A type of swimming competition"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:teamsize rdf:type owl:DatatypeProperty ; 
+        rdfs:label "team size"@en ;
+        rdfs:comment "The number of people on a team involved in the sporting event."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:waterskiingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "water skiing type"@en ;
+        rdfs:comment "A type of water skiing event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:weightclasstype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "weight-class type"@en ;
+        rdfs:comment "The weight class of an athlete as defined by sport or federation."@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range xsd:string ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:weightliftingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "weightlifting type"@en ;
+        rdfs:comment "A type of weightlifting event"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+
+spfacet:windsurfingtype rdf:type owl:DatatypeProperty ; 
+        rdfs:label "windsurfing type"@en ;
+        rdfs:comment "A type of windsurfing race"@en ;
+        rdfs:domain sport:Competition ; 
+        rdfs:range skos:Concept ;
+        rdf:isDefinedBy <https://sportschema.org/ontologies/sport-facets> . 
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf-statistics/> .
+
+<https://sportschema.org/ontologies/golf-statistics/>
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Golf statistics"@en ;
     rdfs:label "IPTC Sport Schema - Golf statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf statistics."@en ;
     rdfs:isDefinedBy spgolstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/golf/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/golf-statistics/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spgolstat:rank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "rank"@en ; 
-        rdfs:comment "How this player ranks among the other competing players."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:handicap rdf:type owl:DatatypeProperty ; 
-        rdfs:label "handicap"@en ; 
-        rdfs:comment "The handicap-value of this player. This will normally not be used in professional tournaments."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:rounds rdf:type owl:DatatypeProperty ; 
-        rdfs:label "rounds"@en ; 
-        rdfs:comment "How many rounds the player or team has completed in this particular tournament."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:average rdf:type owl:DatatypeProperty ; 
-        rdfs:label "average"@en ; 
-        rdfs:comment "Average score of the player or team. Number of shots devided by number of holes??"@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:distanceLongest rdf:type owl:DatatypeProperty ; 
-        rdfs:label "distanceLongest"@en ; 
-        rdfs:comment "The longest distance the player shot."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:distanceRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "distanceRank"@en ; 
-        rdfs:comment "The rank in the round or tournament for the player when comparing the longest distance shot."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:drives rdf:type owl:DatatypeProperty ; 
-        rdfs:label "drives"@en ; 
-        rdfs:comment "The number of drives made by the player."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalRounds rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalRounds"@en ; 
-        rdfs:comment "Total number of rounds played during the current tournament."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalStrokes rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalStrokes"@en ; 
-        rdfs:comment "Total number of strokes (or swings) (or shots) made."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalHoles rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalHoles"@en ; 
-        rdfs:comment "Total number of holes played."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalPutts rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalPutts"@en ; 
-        rdfs:comment "Total number of putts attempted."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalPoints rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalPoints"@en ; 
-        rdfs:comment "Total score of the player. Depending on the system used in the tournament the score could be something other than the actual number of strokes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalDriving rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalDriving"@en ; 
-        rdfs:comment "Total driving distance."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:totalParOrLess rdf:type owl:DatatypeProperty ; 
-        rdfs:label "totalParOrLess"@en ; 
-        rdfs:comment "Total number of holes played by the player at par or less than par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:birdies rdf:type owl:DatatypeProperty ; 
-        rdfs:label "birdies"@en ; 
-        rdfs:comment "Number of birdies."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:birdiesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "birdiesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding birdies."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eagles rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eagles"@en ; 
-        rdfs:comment "Number of eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eaglesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eaglesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:saves rdf:type owl:DatatypeProperty ; 
-        rdfs:label "saves"@en ; 
-        rdfs:comment "Number of saves when the ball landed in a sand bunker."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:savesRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "savesRank"@en ; 
-        rdfs:comment "How the player ranks in the round or tournament regarding saves from the bunker."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bunkers rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bunkers"@en ; 
-        rdfs:comment "Number of bunker shots the player took."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:eaglePerHolesFrequency rdf:type owl:DatatypeProperty ; 
-        rdfs:label "eaglePerHolesFrequency"@en ; 
-        rdfs:comment "Frequency of hitting eagles."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensHit rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensHit"@en ; 
-        rdfs:comment "This is a very special golf term. To reach a green in regulation (GIR) the player must place the ball on the green with two strokes less than the par of the course. The attribute holds the number of times the player or team has achieved this in the timeframe the stats cover."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensHitRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensHitRank"@en ; 
-        rdfs:comment "How the player ranks in the tournament or round regarding greens hit in regulation."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationMissed rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationMissed"@en ; 
-        rdfs:comment "Number of greens missed during regulation play."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationPutting rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationPutting"@en ; 
-        rdfs:comment "The average number of puts needed to finish holes after hitting the green in regulation (GIR)."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:greensInRegulationRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "greensInRegulationRank"@en ; 
-        rdfs:comment "Rank of player in terms of the greens-in-regulation putting."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:fairwaysHit rdf:type owl:DatatypeProperty ; 
-        rdfs:label "fairwaysHit"@en ; 
-        rdfs:comment "Number of fairways hit."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:fairwaysPossible rdf:type owl:DatatypeProperty ; 
-        rdfs:label "fairwaysPossible"@en ; 
-        rdfs:comment "Maximum number of fairways it was possible to hit."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:puttsPerRound rdf:type owl:DatatypeProperty ; 
-        rdfs:label "puttsPerRound"@en ; 
-        rdfs:comment "The average number of putts needed per complete round."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:puttsPerRoundRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "puttsPerRoundRank"@en ; 
-        rdfs:comment "How the player ranks when comparing the average putts-per-round."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:holesUnderPar rdf:type owl:DatatypeProperty ; 
-        rdfs:label "holesUnderPar"@en ; 
-        rdfs:comment "Number of holes finished under par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:scoringAdjustment rdf:type owl:DatatypeProperty ; 
-        rdfs:label "scoringAdjustment"@en ; 
-        rdfs:comment "Scoring adjustment."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesTop10 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesTop10"@en ; 
-        rdfs:comment "Number of finishes the player had in the top ten."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesFirstPlace rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesFirstPlace"@en ; 
-        rdfs:comment "Number of first-place finishes the player had."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishesSecondPlace rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishesSecondPlace"@en ; 
-        rdfs:comment "Number of second-place finishes the player had."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar3 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar3"@en ; 
-        rdfs:comment "The performance of the player on par-3 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar4 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar4"@en ; 
-        rdfs:comment "The performance of the player on par-4 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:performancePar5 rdf:type owl:DatatypeProperty ; 
-        rdfs:label "performancePar5"@en ; 
-        rdfs:comment "The performance of the player on par-5 holes."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:money rdf:type owl:DatatypeProperty ; 
-        rdfs:label "money"@en ; 
-        rdfs:comment "Amount of money earned by the player."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:moneyValue rdf:type owl:DatatypeProperty ; 
-        rdfs:label "moneyValue"@en ; 
-        rdfs:comment "Money value."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:points rdf:type owl:DatatypeProperty ; 
-        rdfs:label "points"@en ; 
-        rdfs:comment "Number of points."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pointsLost rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pointsLost"@en ; 
-        rdfs:comment "Number of points lost."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pointsGained rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pointsGained"@en ; 
-        rdfs:comment "Number of points gained."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:driveAccuracy rdf:type owl:DatatypeProperty ; 
-        rdfs:label "driveAccuracy"@en ; 
-        rdfs:comment "A percentage of how good the drives from the player or team has been in the given frame the stats cover."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:driveAccuracyRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "driveAccuracyRank"@en ; 
-        rdfs:comment "How the player ranks when comparing drive-accuracy."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:roundsUnderPar rdf:type owl:DatatypeProperty ; 
-        rdfs:label "roundsUnderPar"@en ; 
-        rdfs:comment "The number of rounds the player has completed a course under par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bogeys rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bogeys"@en ; 
-        rdfs:comment "The number of holes finished one above par for that hole."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:bogeysRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "bogeysRank"@en ; 
-        rdfs:comment "How the player ranks when comparing bogeys."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:doubleBogeys rdf:type owl:DatatypeProperty ; 
-        rdfs:label "doubleBogeys"@en ; 
-        rdfs:comment "The number of holes finished two above par for that hole."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:doubleBogeysRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "doubleBogeysRank"@en ; 
-        rdfs:comment "How the player ranks when comparing double-bogeys."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishOther rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishOther"@en ; 
-        rdfs:comment "The number of holes finished with either more than two under par or two over par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:finishOtherRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "finishOtherRank"@en ; 
-        rdfs:comment "How the player ranks when comparing finish-other."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:pars rdf:type owl:DatatypeProperty ; 
-        rdfs:label "pars"@en ; 
-        rdfs:comment "The number of holes finished on par."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	spgolstat:parsRank rdf:type owl:DatatypeProperty ; 
-        rdfs:label "parsRank"@en ; 
-        rdfs:comment "How the player ranks when comparing pars."@en ; 
-        rdfs:domain sport:Participation ; 
-        rdfs:range xsd:integer ; 
-        rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
-        
-	
+    rdfs:label "rank"@en ; 
+    rdfs:comment "How this player ranks among the other competing players."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:handicap rdf:type owl:DatatypeProperty ; 
+    rdfs:label "handicap"@en ; 
+    rdfs:comment "The handicap-value of this player. This will normally not be used in professional tournaments."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:rounds rdf:type owl:DatatypeProperty ; 
+    rdfs:label "rounds"@en ; 
+    rdfs:comment "How many rounds the player or team has completed in this particular tournament."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:average rdf:type owl:DatatypeProperty ; 
+    rdfs:label "average"@en ; 
+    rdfs:comment "Average score of the player or team. Number of shots devided by number of holes??"@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:distanceLongest rdf:type owl:DatatypeProperty ; 
+    rdfs:label "distanceLongest"@en ; 
+    rdfs:comment "The longest distance the player shot."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:distanceRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "distanceRank"@en ; 
+    rdfs:comment "The rank in the round or tournament for the player when comparing the longest distance shot."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:drives rdf:type owl:DatatypeProperty ; 
+    rdfs:label "drives"@en ; 
+    rdfs:comment "The number of drives made by the player."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalRounds rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalRounds"@en ; 
+    rdfs:comment "Total number of rounds played during the current tournament."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalStrokes rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalStrokes"@en ; 
+    rdfs:comment "Total number of strokes (or swings) (or shots) made."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalHoles rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalHoles"@en ; 
+    rdfs:comment "Total number of holes played."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalPutts rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalPutts"@en ; 
+    rdfs:comment "Total number of putts attempted."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalPoints rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalPoints"@en ; 
+    rdfs:comment "Total score of the player. Depending on the system used in the tournament the score could be something other than the actual number of strokes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalDriving rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalDriving"@en ; 
+    rdfs:comment "Total driving distance."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:totalParOrLess rdf:type owl:DatatypeProperty ; 
+    rdfs:label "totalParOrLess"@en ; 
+    rdfs:comment "Total number of holes played by the player at par or less than par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:birdies rdf:type owl:DatatypeProperty ; 
+    rdfs:label "birdies"@en ; 
+    rdfs:comment "Number of birdies."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:birdiesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "birdiesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding birdies."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eagles rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eagles"@en ; 
+    rdfs:comment "Number of eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eaglesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eaglesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:saves rdf:type owl:DatatypeProperty ; 
+    rdfs:label "saves"@en ; 
+    rdfs:comment "Number of saves when the ball landed in a sand bunker."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:savesRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "savesRank"@en ; 
+    rdfs:comment "How the player ranks in the round or tournament regarding saves from the bunker."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bunkers rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bunkers"@en ; 
+    rdfs:comment "Number of bunker shots the player took."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:eaglePerHolesFrequency rdf:type owl:DatatypeProperty ; 
+    rdfs:label "eaglePerHolesFrequency"@en ; 
+    rdfs:comment "Frequency of hitting eagles."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensHit rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensHit"@en ; 
+    rdfs:comment "This is a very special golf term. To reach a green in regulation (GIR) the player must place the ball on the green with two strokes less than the par of the course. The attribute holds the number of times the player or team has achieved this in the timeframe the stats cover."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensHitRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensHitRank"@en ; 
+    rdfs:comment "How the player ranks in the tournament or round regarding greens hit in regulation."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationMissed rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationMissed"@en ; 
+    rdfs:comment "Number of greens missed during regulation play."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationPutting rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationPutting"@en ; 
+    rdfs:comment "The average number of puts needed to finish holes after hitting the green in regulation (GIR)."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:greensInRegulationRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "greensInRegulationRank"@en ; 
+    rdfs:comment "Rank of player in terms of the greens-in-regulation putting."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:fairwaysHit rdf:type owl:DatatypeProperty ; 
+    rdfs:label "fairwaysHit"@en ; 
+    rdfs:comment "Number of fairways hit."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:fairwaysPossible rdf:type owl:DatatypeProperty ; 
+    rdfs:label "fairwaysPossible"@en ; 
+    rdfs:comment "Maximum number of fairways it was possible to hit."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:puttsPerRound rdf:type owl:DatatypeProperty ; 
+    rdfs:label "puttsPerRound"@en ; 
+    rdfs:comment "The average number of putts needed per complete round."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:puttsPerRoundRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "puttsPerRoundRank"@en ; 
+    rdfs:comment "How the player ranks when comparing the average putts-per-round."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:holesUnderPar rdf:type owl:DatatypeProperty ; 
+    rdfs:label "holesUnderPar"@en ; 
+    rdfs:comment "Number of holes finished under par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:scoringAdjustment rdf:type owl:DatatypeProperty ; 
+    rdfs:label "scoringAdjustment"@en ; 
+    rdfs:comment "Scoring adjustment."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesTop10 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesTop10"@en ; 
+    rdfs:comment "Number of finishes the player had in the top ten."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesFirstPlace rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesFirstPlace"@en ; 
+    rdfs:comment "Number of first-place finishes the player had."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishesSecondPlace rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishesSecondPlace"@en ; 
+    rdfs:comment "Number of second-place finishes the player had."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar3 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar3"@en ; 
+    rdfs:comment "The performance of the player on par-3 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar4 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar4"@en ; 
+    rdfs:comment "The performance of the player on par-4 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:performancePar5 rdf:type owl:DatatypeProperty ; 
+    rdfs:label "performancePar5"@en ; 
+    rdfs:comment "The performance of the player on par-5 holes."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:money rdf:type owl:DatatypeProperty ; 
+    rdfs:label "money"@en ; 
+    rdfs:comment "Amount of money earned by the player."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:moneyValue rdf:type owl:DatatypeProperty ; 
+    rdfs:label "moneyValue"@en ; 
+    rdfs:comment "Money value."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:points rdf:type owl:DatatypeProperty ; 
+    rdfs:label "points"@en ; 
+    rdfs:comment "Number of points."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pointsLost rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pointsLost"@en ; 
+    rdfs:comment "Number of points lost."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pointsGained rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pointsGained"@en ; 
+    rdfs:comment "Number of points gained."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:driveAccuracy rdf:type owl:DatatypeProperty ; 
+    rdfs:label "driveAccuracy"@en ; 
+    rdfs:comment "A percentage of how good the drives from the player or team has been in the given frame the stats cover."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:driveAccuracyRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "driveAccuracyRank"@en ; 
+    rdfs:comment "How the player ranks when comparing drive-accuracy."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:roundsUnderPar rdf:type owl:DatatypeProperty ; 
+    rdfs:label "roundsUnderPar"@en ; 
+    rdfs:comment "The number of rounds the player has completed a course under par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bogeys rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bogeys"@en ; 
+    rdfs:comment "The number of holes finished one above par for that hole."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:bogeysRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "bogeysRank"@en ; 
+    rdfs:comment "How the player ranks when comparing bogeys."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:doubleBogeys rdf:type owl:DatatypeProperty ; 
+    rdfs:label "doubleBogeys"@en ; 
+    rdfs:comment "The number of holes finished two above par for that hole."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:doubleBogeysRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "doubleBogeysRank"@en ; 
+    rdfs:comment "How the player ranks when comparing double-bogeys."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishOther rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishOther"@en ; 
+    rdfs:comment "The number of holes finished with either more than two under par or two over par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:finishOtherRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "finishOtherRank"@en ; 
+    rdfs:comment "How the player ranks when comparing finish-other."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:pars rdf:type owl:DatatypeProperty ; 
+    rdfs:label "pars"@en ; 
+    rdfs:comment "The number of holes finished on par."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+
+spgolstat:parsRank rdf:type owl:DatatypeProperty ; 
+    rdfs:label "parsRank"@en ; 
+    rdfs:comment "How the player ranks when comparing pars."@en ; 
+    rdfs:domain sport:Participation ; 
+    rdfs:range xsd:integer ; 
+    rdf:isDefinedBy <https://sportschema.org/ontologies/golf> . 
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix golf:      <https://sportschema.org/ontologies/golf/> .
+
+<https://sportschema.org/ontologies/golf/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Golf properties"@en ;
+    rdfs:label "IPTC Sport Schema - Golf properties"@en ;
+    dcterms:created "2024-10-02"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf."@en ;
+    rdfs:isDefinedBy golf: ;
+    owl:versionIRI <https://sportschema.org/ontologies/golf/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
+
+golf:GolfCourse rdf:type owl:Class ;
+    rdfs:label "Golf Course"@en ;
+    rdfs:subClassOf sport:Site ;
+    rdfs:comment "The location of a golf tournament"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:courseYardage rdf:type owl:DatatypeProperty ;
+    rdfs:label "course yardage"@en ;
+    rdfs:comment "How many yards the course is, measured from tees to holes."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:coursePar rdf:type owl:DatatypeProperty ;
+    rdfs:label "course par"@en ;
+    rdfs:comment "The total par value of all holes."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:courseRating rdf:type owl:DatatypeProperty ;
+    rdfs:label "course rating"@en ;
+    rdfs:comment "A Course Rating is a mark of the USGA representing a number which describes the difficulty of a golf course from a particular set of tees for a scratch (zero handicap) player. Course Ratings are established by an evaluation of the course by members of a committee, usually from your regional golf association. Course Ratings are numbers like 68.5, 71.2, etc. In some golf jurisdictions, course ratings might be called something else, and may be expressed to a tenth or as whole numbers."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:slopeRating rdf:type owl:DatatypeProperty ;
+    rdfs:label "slope rating"@en ;
+    rdfs:comment "A Slope Rating is a mark of the USGA representing an integer number which describes the difficulty of a golf course from a particular set of tees for a bogey (average) golfer. Slope Ratings vary from 55 (very easy) to 155 (very difficult). The Slope Rating of a course which has not officially been rated is 113, the Slope Rating of a course of average difficulty."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:round rdf:type owl:DatatypeProperty ;
+    rdfs:label "round"@en ;
+    rdfs:comment "Generally an integer, 1 through 18. Could be 19, for a playoff hole"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:strokes rdf:type owl:DatatypeProperty ;
+    rdfs:label "strokes"@en ;
+    rdfs:comment "Total number of strokes in this round."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:score rdf:type owl:DatatypeProperty ;
+    rdfs:label "score"@en ;
+    rdfs:comment "Total score this round. The score can be the same as strokes but it can also be some other type of scoring system used in golf."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:scoreAgainstPar rdf:type owl:DatatypeProperty ;
+    rdfs:label "score against par"@en ;
+    rdfs:comment "The score compared to par on the hole. So a score equal par would put a 0 here and a score under par a negative value."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:holeType rdf:type owl:DatatypeProperty ;
+    rdfs:label "hole type"@en ;
+    rdfs:comment "The type of hole played."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spgolholetype/
+    rdfs:range xsd:uri ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:hole rdf:type owl:DatatypeProperty ;
+    rdfs:label "hole"@en ;
+    rdfs:comment "A number, generally from 1 to 18. Alternately, the keyword finished."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -4886,14 +4442,15 @@ spgolstat:rank rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Motor Racing statistics"@en ;
     rdfs:label "IPTC Sport Schema - Motor Racing statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering motor racing statistics."@en ;
     rdfs:isDefinedBy spmcrstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/motor-racing/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/motor-racing/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spmcrstat:speedAverageRace rdf:type owl:DatatypeProperty ; 
         rdfs:label "speedAverageRace"@en ; 
@@ -5211,6 +4768,879 @@ spmcrstat:speedAverageRace rdf:type owl:DatatypeProperty ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/motor-racing> . 
         
 	
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+@prefix spamfstat: <https://sportschema.org/ontologies/american-football/> .
+@prefix spbblstat: <https://sportschema.org/ontologies/baseball/> .
+@prefix spbkbstat: <https://sportschema.org/ontologies/basketball/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf/> .
+@prefix spmcrstat: <https://sportschema.org/ontologies/motor-racing/> .
+@prefix sprgxstat: <https://sportschema.org/ontologies/rugby/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix sptenstat: <https://sportschema.org/ontologies/tennis/> .
+@prefix spvolstat: <https://sportschema.org/ontologies/volleyball/> .
+
+<https://sportschema.org/ontologies/main/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema"@en ;
+    rdfs:label "IPTC Sport Schema"@en ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "A high-level model to describe the core elements of competitive sport"@en ;
+    rdfs:isDefinedBy sport: ;
+    owl:versionIRI <https://sportschema.org/ontologies/main/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
+
+##### Classes #####
+
+sport:Action rdf:type owl:Class ;
+    rdfs:label "Action"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
+    rdfs:comment "Something that happens during an event: a kick, a goal, a foul etc"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Agent rdf:type owl:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "A participant in a sport event."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Associate rdf:type owl:Class ;
+    rdfs:label "Associate"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A person assisting competitor(s) in an event but not competing themselves, e.g. a football manager or coach"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:AssociateMembership rdf:type owl:Class ;
+    rdfs:label "Associate Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "The tenure of an Associate working with an Athlete or a Team."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Athlete rdf:type owl:Class ;
+    rdfs:label "Athlete"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A competitor in an individual event or a member of a team"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Club rdf:type owl:Class ;
+    rdfs:label "Club"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "An organisation of which a Team is a part"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Competition rdf:type owl:Class ;
+    rdfs:label "Competition"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
+    rdfs:comment "A grouping of events usually based on proximity by time."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:CompetitionPhase rdf:type owl:Class ;
+    rdfs:label "Competition Phase"@en ;
+    rdfs:subClassOf sport:Competition ;
+    rdfs:comment "A sub-group of events within a Competition such as the semi-finals."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:CompetitorParticipation rdf:type owl:Class ;
+    rdfs:label "Competitor Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an actor that can win or lose an event."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:ParticipatableThing rdf:type owl:Class ;
+    rdfs:label "Participatable Thing"@en ;
+    rdfs:comment "An abstract superclass for anything that can be participated in, such as an Event, Competition or Action."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Event rdf:type owl:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:subClassOf sport:ParticipatableThing ;
+    rdfs:comment "A contest of competitive actions that generates statistical results."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:GoverningBody rdf:type owl:Class ;
+    rdfs:label "Governing Body"@en ;
+    rdfs:comment "The organisation that creates and polices the rules of a sports competition."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Individual rdf:type owl:Class ;
+    rdfs:label "Individual"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "An individual taking part in an event on their own or as part of a team. Could be a person or an animal such as a dog or horse."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:IndividualMembership rdf:type owl:Class ;
+    rdfs:label "Individual Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A player's membership in a team"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:IndividualParticipation rdf:type owl:Class ;
+    rdfs:label "Individual Participation"@en ;
+    rdfs:subClassOf sport:CompetitorParticipation ;
+    rdfs:comment "The participation of an individual in an event"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:AssociateParticipation rdf:type owl:Class ;
+    rdfs:label "Associate Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The particpation of an associate who supports players and teams, e.g. coach, manager, trainer"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Membership rdf:type owl:Class ;
+    rdfs:label "Membership"@en ;
+    rdfs:comment "The membership of an entity in another entity for a given period of time"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Official rdf:type owl:Class ;
+    rdfs:label "Official"@en ;
+    rdfs:subClassOf sport:Individual ;
+    rdfs:comment "A person who ensures that the sports event is played according to its rules. Also referred to as umpire or referee."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:OfficialParticipation rdf:type owl:Class ;
+    rdfs:label "Official Participation"@en ;
+    rdfs:subClassOf sport:Participation ;
+    rdfs:comment "The participation of an offcial in an event"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Participation rdf:type owl:Class ;
+    rdfs:label "Participation"@en ;
+    rdfs:comment "The participation of an actor in an event."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:ParticipationSplit rdf:type owl:Class ;
+    rdfs:label "Participation Split"@en ;
+    rdfs:comment "Representation of part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Site rdf:type owl:Class ;
+    rdfs:label "Site"@en ;
+    rdfs:comment "The location where an activity takes place"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:Team rdf:type owl:Class ;
+    rdfs:label "Team"@en ;
+    rdfs:subClassOf sport:Agent ;
+    rdfs:comment "A group of individuals competing as one entity"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:TeamMembership rdf:type owl:Class ;
+    rdfs:label "Team Membership"@en ;
+    rdfs:subClassOf sport:Membership ;
+    rdfs:comment "A team's membership in a Club or Competition"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:TeamParticipation rdf:type owl:Class ;
+    rdfs:label "Team Participation"@en ;
+    rdfs:subClassOf sport:CompetitorParticipation ;
+    rdfs:comment "The participation of a team in an event"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+##### Object properties #####
+
+sport:parent rdf:type owl:ObjectProperty ;
+    rdfs:label "parent"@en ;
+    rdfs:comment "Link from a ParticipatableThing to its parent, to represent parent Event, CompetitionPhase etc"@en ;
+    rdfs:domain sport:ParticipatableThing ;
+    rdfs:range sport:ParticipatableThing ;
+    owl:inverseOf sport:child ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:child rdf:type owl:ObjectProperty ;
+    rdfs:label "child"@en ;
+    rdfs:comment "Link from a ParticipatableThing to its child, to represent child Event, CompetitionPhase etc"@en ;
+    rdfs:domain sport:ParticipatableThing ;
+    rdfs:range sport:ParticipatableThing ;
+    owl:inverseOf sport:parent ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:parentSite rdf:type owl:ObjectProperty ;
+    rdfs:label "parent site"@en ;
+    rdfs:comment "Link from a Site to its parent, such as a link from a stadium to an Olympic Park or from a tennis court to the tennis complex"@en ;
+    rdfs:domain sport:Site ;
+    rdfs:range sport:Site ;
+    owl:inverseOf sport:childSite ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:childSite rdf:type owl:ObjectProperty ;
+    rdfs:label "child site"@en ;
+    rdfs:comment "Link from a Site to its child, such as a link from an Olympic Park to an individual stadium or from a tennis complex to an individual tennis court"@en ;
+    rdfs:domain sport:Site ;
+    rdfs:range sport:Site ;
+    owl:inverseOf sport:parentSite ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participation rdf:type owl:ObjectProperty ;
+    rdfs:label "participation"@en ;
+    rdfs:comment "Link from a ParticipatableThing to a participation by an Agent"@en ;
+    rdfs:domain sport:ParticipatableThing ;
+    rdfs:range sport:Participation ;
+    owl:inverseOf  sport:participantOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participationIn rdf:type owl:ObjectProperty ;
+    rdfs:label "participation in"@en ;
+    rdfs:comment "Link from a participation by an Agent to a ParticipatableThing"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:ParticipatableThing ;
+    owl:inverseOf sport:participation ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventInCompetition rdf:type owl:ObjectProperty ;
+    rdfs:label "event in competition"@en ;
+    rdfs:comment "The Competition that an Event is part of"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Competition ;
+    owl:inverseOf sport:containsEvent ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:containsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "contains event"@en ;
+    rdfs:comment "An Event that is part of this Competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:Event ;
+    owl:inverseOf sport:eventInCompetition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventInCompetitionPhase rdf:type owl:ObjectProperty ;
+    rdfs:label "event in competition phase"@en ;
+    rdfs:comment "The CompetitionPhase (such as a round or a finals phase) of which an Event is a part"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:CompetitionPhase ;
+    owl:inverseOf sport:phaseContainsEvent ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "phase contains event"@en ;
+    rdfs:comment "The Event is part of a CompetitionPhase"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:Event ;
+    owl:inverseOf sport:eventInCompetition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:phaseContainsEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "phase contains event"@en ;
+    rdfs:comment "An Event (such as a round or a finals phase) contained in this CompetitionPhase"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:Event ;
+    owl:inverseOf sport:eventInCompetitionPhase ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:actionInEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "action in event"@en ;
+    rdfs:comment "Link to the event in which an Action took place"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range sport:Event ;
+    owl:inverseOf sport:containsAction ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:containsAction rdf:type owl:ObjectProperty ;
+    rdfs:label "contains action"@en ;
+    rdfs:comment "Link to action in that took place at the Event"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range sport:Action ;
+    owl:inverseOf sport:actionInEvent ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:governedBy rdf:type owl:ObjectProperty ;
+    rdfs:label "governing body"@en ;
+    rdfs:comment "Link to the organisation that regulates a given Competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:GoverningBody ;
+    owl:inverseOf sport:governs ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:governs rdf:type owl:ObjectProperty ;
+    rdfs:label "governs"@en ;
+    rdfs:comment "Link to the competitions that the body governs."@en ;
+    rdfs:domain sport:GoverningBody ;
+    rdfs:range sport:Competition ;
+    owl:inverseOf sport:governedBy ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:location rdf:type owl:ObjectProperty ;
+    rdfs:label "location"@en ;
+    rdfs:comment "Link to the location (Site) where an event takes place"@en ;
+    rdfs:domain sport:ParticipatableThing ;
+    rdfs:range sport:Site ;
+    owl:inverseOf sport:locationOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:locationOf rdf:type owl:ObjectProperty ;
+    rdfs:label "location of"@en ;
+    rdfs:comment "Link to an event that takes place at this location (Site)"@en ;
+    rdfs:domain sport:Site ;
+    rdfs:range sport:Event ;
+    owl:inverseOf sport:location ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:member rdf:type owl:ObjectProperty ;
+    rdfs:label "member"@en ;
+    rdfs:comment "Link between a membership and a member (individual or team)"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range sport:Agent ;
+    owl:inverseOf sport:memberOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:memberOf rdf:type owl:ObjectProperty ;
+    rdfs:label "member of"@en ;
+    rdfs:comment "Link between a member (individual or team) and a membership"@en ;
+    rdfs:domain sport:Agent ;
+    rdfs:range sport:Membership ;
+    owl:inverseOf sport:member ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:membershipOf rdf:type owl:ObjectProperty ;
+    rdfs:label "membership of"@en ;
+    rdfs:comment "Link between a Membership and a Team or Club"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range sport:Agent ;
+    owl:inverseOf sport:membership ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:membership rdf:type owl:ObjectProperty ;
+    rdfs:label "membership"@en ;
+    rdfs:comment "Link between a team or club and a membership"@en ;
+    rdfs:domain sport:Agent ;
+    rdfs:range sport:Membership ;
+    owl:inverseOf sport:membershipOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participationBy rdf:type owl:ObjectProperty ;
+    rdfs:label "participation by"@en ;
+    rdfs:comment "Link to a person or team participating in an event, season or action"@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:Agent ;
+    owl:inverseOf sport:participantOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participantOf rdf:type owl:ObjectProperty ;
+    rdfs:label "participant of"@en ;
+    rdfs:comment "Link from a person or team to their participation in an event"@en ;
+    rdfs:domain sport:Agent ;
+    rdfs:range sport:Participation ;
+    owl:inverseOf sport:participationBy ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participationSplit rdf:type owl:ObjectProperty ;
+    rdfs:label "participation split"@en ;
+    rdfs:comment "Link to a part of a participation of an actor in an event or season, such as one half of a football match or all home games."@en ;
+    rdfs:domain sport:Participation ;
+    rdfs:range sport:ParticipationSplit ;
+    owl:inverseOf sport:participationSplitOf ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participationSplitOf rdf:type owl:ObjectProperty ;
+    rdfs:label "participation split of"@en ;
+    rdfs:comment "Link to a participation of which this is a part"@en ;
+    rdfs:domain sport:ParticipationSplit ;
+    rdfs:range sport:Participation ;
+    owl:inverseOf sport:participationSplit ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:phaseInCompetition rdf:type owl:ObjectProperty ;
+    rdfs:label "phase in competition"@en ;
+    rdfs:comment "Link to the competition of which this CompetitionPhase is a part"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    rdfs:range sport:Competition ;
+    owl:inverseOf  sport:containsCompetitionPhase ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+    
+sport:containsCompetitionPhase rdf:type owl:ObjectProperty ;
+    rdfs:label "contains competition phase"@en ;
+    rdfs:comment "Link from the competition to its constituent phases"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range sport:CompetitionPhase ;
+    owl:inverseOf sport:phaseInCompetition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+##### Data properties #####
+
+sport:alignment rdf:type owl:DatatypeProperty ;
+    rdfs:label "alignment"@en ;
+    rdfs:comment "The association between a Team and a Site, e.g. 'home' or 'away'"@en ;
+    rdfs:domain sport:TeamParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:attendance rdf:type owl:DatatypeProperty ;
+    rdfs:label "attendance"@en ;
+    rdfs:comment "The number of people attending an event"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:competitionFormat rdf:type owl:ObjectProperty ;
+    rdfs:label "competition form"@en ;
+    rdfs:comment "Competition format: round robin, sudden death etc"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/sptournamentform/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:competitionMembership rdf:type owl:ObjectProperty ;
+    rdfs:label "competition membership"@en ;
+    rdfs:comment "Competition in which this Team is taking part"@en ;
+    rdfs:domain sport:TeamMembership ;
+    rdfs:range sport:Competition ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:competitionPhaseType rdf:type owl:ObjectProperty ;
+    rdfs:label "competition phase type"@en ;
+    rdfs:comment "Type of the competition phase - regular round, final etc"@en ;
+    rdfs:domain sport:CompetitionPhase ;
+    # Recommended CV: http://cv.iptc.org/newscodes/sptournamentphase/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:competitionType rdf:type owl:ObjectProperty ;
+    rdfs:label "competition type"@en ;
+    rdfs:comment "The type of a Competition, e.g. spct:recurring-competition or spct:competition"@en ;
+    rdfs:domain sport:Competition ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:dateOfBirth rdf:type owl:DatatypeProperty ;
+    rdfs:label "date of birth"@en ;
+    rdfs:comment "The date of birth of a person"@en ;
+    rdfs:domain sport:Individual ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:endDate rdf:type owl:DatatypeProperty ;
+    rdfs:label "end date"@en ;
+    rdfs:comment "The date on which a membership ends"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:endDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:label "end datetime"@en ;
+    rdfs:comment "The date and time at which an event ends"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventOutcome rdf:type owl:ObjectProperty ;
+    rdfs:label "event outcome"@en ;
+    rdfs:comment "The outcome of an event (win, loss etc)"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: https://cv.iptc.org/newscodes/speventoutcome/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventOutcomeType rdf:type owl:ObjectProperty ;
+    rdfs:label "event outcome type"@en ;
+    rdfs:comment "The type of outcome of an event (win, loss etc)"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/speventoutcometype/> ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:eventStatus rdf:type owl:ObjectProperty ;
+    rdfs:label "event status"@en ;
+    rdfs:comment "Event's current status (e.g. post-event)"@en ;
+    rdfs:domain sport:Event ;
+    # Recommended values: <http://cv.iptc.org/newscodes/speventstatus/> ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:membershipStatus rdf:type owl:ObjectProperty ;
+    rdfs:label "membership status"@en ;
+    rdfs:comment "Member's status during this membership period (e.g. active or inactive)"@en ;
+    rdfs:domain sport:Membership ;
+    # Recommended values: <http://cv.iptc.org/newscodes/spphasestatus/> ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:nationality rdf:type owl:DatatypeProperty ;
+    rdfs:label "nationality"@en ;
+    rdfs:comment "The country an individual is identified with"@en ;
+    rdfs:domain sport:Individual ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:participationSplitType rdf:type owl:DatatypeProperty ;
+    rdfs:label "participation split type"@en ;
+    rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
+    rdfs:domain sport:ParticipationSplit ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:playerStatus rdf:type owl:ObjectProperty ;
+    rdfs:label "player status"@en ;
+    rdfs:comment "Player status for a given event (e.g. starter or bench)"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spplayerstatus/> ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:positionEvent rdf:type owl:ObjectProperty ;
+    rdfs:label "position (event)"@en ;
+    rdfs:comment "The position in a team taken for an individual event"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/> ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:positionRegular rdf:type owl:ObjectProperty ;
+    rdfs:label "position (regular)"@en ;
+    rdfs:comment "The position (role) usually taken by a given player or associate"@en ;
+    rdfs:domain sport:Membership ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spsocposition/>
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:rank rdf:type owl:DatatypeProperty ;
+    rdfs:label "rank"@en ;
+    rdfs:comment "The rank of a player or team in standings etc."@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:role rdf:type owl:ObjectProperty ;
+    rdfs:label "role"@en ;
+    rdfs:comment "A team's or individual's role in a given action"@en ;
+    rdfs:domain sport:Participation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spsocrole/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:score rdf:type owl:DatatypeProperty ;
+    rdfs:label "score"@en ;
+    rdfs:comment "Final or current score of the team or individual"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreType rdf:type owl:DatatypeProperty ;
+    rdfs:label "score type"@en ;
+    rdfs:comment "Qualifies the 'score' property."@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreUnits rdf:type owl:ObjectProperty ;
+    rdfs:label "score units"@en ;
+    rdfs:comment "The units of a team's or individual's score in a given event (e.g. metres or seconds)"@en ;
+    rdfs:domain sport:CompetitorParticipation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spscoreunits/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:sport rdf:type owl:ObjectProperty ;
+    rdfs:label "sport"@en ;
+    rdfs:comment "The sport which this competition represents"@en;
+    rdfs:domain sport:Competition ;
+    # Recommended CV: http://cv.iptc.org/newscodes/mediatopic/
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:startDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:label "start datetime"@en ;
+    rdfs:comment "The date and time at which an event begins"@en ;
+    rdfs:domain sport:Event ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:startDate rdf:type owl:DatatypeProperty ;
+    rdfs:label "start date"@en ;
+    rdfs:comment "The date on which a membership begins"@en ;
+    rdfs:domain sport:Membership ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:teamParticipation rdf:type owl:ObjectProperty ;
+    rdfs:label "team participation"@en ;
+    rdfs:comment "Link to the team of which this individual is a member, with respect to this Participation"@en;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range sport:TeamParticipation ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:uniformNumber rdf:type owl:DatatypeProperty ;
+    rdfs:label "uniform number"@en ;
+    rdfs:comment "The number usually worn on a player's uniform (jersey etc.) Note that the value may be a string such as 'unknown'."@en ;
+    rdfs:domain sport:IndividualMembership ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:uniformNumberEvent rdf:type owl:DatatypeProperty ;
+    rdfs:label "uniform number event"@en ;
+    rdfs:comment "The number worn on a player's uniform (jersey etc.) for an individual event. Note that the value may be a string such as 'unknown'."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+
+## Action properties, keeping them separate for now
+
+sport:actionDateTime rdf:type owl:DatatypeProperty ;
+    rdfs:label "action date-time"@en ;
+    rdfs:comment "Date and time when this play/action took place on the field."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:actionType rdf:type owl:ObjectProperty ;
+    rdfs:label "action type"@en ;
+    rdfs:comment "The type of competitive action taken on the field of play. See 'action' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfaction/ http://cv.iptc.org/newscodes/spbblaction/ http://cv.iptc.org/newscodes/spbkbaction/ http://cv.iptc.org/newscodes/spichaction/ http://cv.iptc.org/newscodes/spmcraction/ http://cv.iptc.org/newscodes/rgxaction/ http://cv.iptc.org/newscodes/spsocaction/ http://cv.iptc.org/newscodes/sptenaction/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:angle rdf:type owl:DatatypeProperty ;
+    rdfs:label "angle"@en ;
+    rdfs:comment "Angle on the field of the play."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:bodyPart rdf:type owl:DatatypeProperty ;
+    rdfs:label "body part"@en ;
+    rdfs:comment "Body part used to perform an action."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:class rdf:type owl:ObjectProperty ;
+    rdfs:label "class"@en ;
+    rdfs:comment "An open placeholder for categorization. Recommended vocabulary: http://cv.iptc.org/newscodes/spactionclass/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:comment rdf:type owl:DatatypeProperty ;
+    rdfs:label "comment"@en ;
+    rdfs:comment "Textual comment of the action"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:distance rdf:type owl:DatatypeProperty ;
+    rdfs:label "distance"@en ;
+    rdfs:comment "Distance of the action."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:endLocation rdf:type owl:DatatypeProperty ;
+    rdfs:label "end location"@en ;
+    rdfs:comment "A string indicating where on the court the action occured. Could be an approximate region, or a more complex value adhering to some elaborate coordinate system."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:fieldLocation rdf:type owl:DatatypeProperty ;
+    rdfs:label "field location"@en ;
+    rdfs:comment "Recommended x,y 0-100. The location of the action on the field of play represented as a grid."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:goalLocation rdf:type owl:DatatypeProperty ;
+    rdfs:label "goal location"@en ;
+    rdfs:comment "Recommended x,y 0-100. The location on goal-mouth grid in which the ball/puck entered."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:lastModified rdf:type owl:DatatypeProperty ;
+    rdfs:label "last modified"@en ;
+    rdfs:comment "Date and time when this play/action record was last modified. This would be the record from the reporter's data entry system."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ; # should this be dateTime?
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:minutesElapsed rdf:type owl:DatatypeProperty ;
+    rdfs:label "minutes elapsed"@en ;
+    rdfs:comment "Game minutes elapsed when this action occurred"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:passDescription rdf:type owl:DatatypeProperty ;
+    rdfs:label "pass description"@en ;
+    rdfs:comment "description of the pass taken in this action"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:passMethod rdf:type owl:DatatypeProperty ;
+    rdfs:label "pass method"@en ;
+    rdfs:comment "Method used in this pass"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:passType rdf:type owl:DatatypeProperty ;
+    rdfs:label "pass type"@en ;
+    rdfs:comment "Type of this pass"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:infractionLevel rdf:type owl:DatatypeProperty ;
+    rdfs:label "infraction level"@en ;
+    rdfs:comment "Level of infraction (aka penalty)"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:infractionType rdf:type owl:ObjectProperty ;
+    rdfs:label "infraction type"@en ;
+    rdfs:comment "The degree of punishment for the infraction/penalty eg. yellow or red card, major, minor, game misconduct, etc. See 'penaltylevel' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbpenaltylevel/ http://cv.iptc.org/newscodes/spichpenaltylevel/ http://cv.iptc.org/newscodes/sprgxpenaltylevel/ http://cv.iptc.org/newscodes/spsocpenaltylevel/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:periodValue rdf:type owl:DatatypeProperty ;
+    rdfs:label "period value"@en ;
+    rdfs:comment "Used for tracking stats and events by period."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:personReplacingPosition rdf:type owl:DatatypeProperty ;
+    rdfs:label "person replacing position"@en ;
+    rdfs:comment "The position role assumed by the substitute."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:recipientType rdf:type owl:ObjectProperty ;
+    rdfs:label "recipient type"@en ;
+    rdfs:comment "Whether the receiver of the penalty was the team, the player, a coach, a ref, etc. SportsML vocab uri: http://cv.iptc.org/newscodes/sprecipienttype/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:result rdf:type owl:ObjectProperty ;
+    rdfs:label "result"@en ;
+    rdfs:comment "The result of the play or action. See 'result' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spamfresult/ http://cv.iptc.org/newscodes/spsocresult/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:saveMethod rdf:type owl:DatatypeProperty ;
+    rdfs:label "save method"@en ;
+    rdfs:comment "method used for this save"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:saveType rdf:type owl:DatatypeProperty ;
+    rdfs:label "save type"@en ;
+    rdfs:comment "type of save performed in this action"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreAttemptResult rdf:type owl:ObjectProperty ;
+    rdfs:label "score attempt result"@en ;
+    rdfs:comment "The result of the score attempt eg. blocked, missed, etc. See 'scoreattemptresult' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattemptresult/ http://cv.iptc.org/newscodes/spichscoreattemtresult/ http://cv.iptc.org/newscodes/sprgxscoreattemptresult/ http://cv.iptc.org/newscodes/spsocscoreattemptresult/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreAttemptSide rdf:type owl:DatatypeProperty ;
+    rdfs:label "score attempt side"@en ;
+    rdfs:comment "Side of the body of the player attempting to score"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreAttemptSituation rdf:type owl:DatatypeProperty ;
+    rdfs:label "score attempt situation"@en ;
+    rdfs:comment "Describing the situation surrounding the score attempt"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:scoreAttemptType rdf:type owl:ObjectProperty ;
+    rdfs:label "score attempt type"@en ;
+    rdfs:comment "The type of score that was attempted. See 'scoreattempt' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbscoreattempt/ http://cv.iptc.org/newscodes/spichscoreattempt/ http://cv.iptc.org/newscodes/sprgxscoreattempt/ http://cv.iptc.org/newscodes/spsocscoreattempt/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:sequenceNumber rdf:type owl:DatatypeProperty ;
+    rdfs:label "sequence number"@en ;
+    rdfs:comment "Sequence-number. Should be separate sequences for sub-actions inside an action"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:shotDistance rdf:type owl:DatatypeProperty ;
+    rdfs:label "shot distance"@en ;
+    rdfs:comment "Distance of the shot"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:shotDistanceUnits rdf:type owl:ObjectProperty ;
+    rdfs:label "shot distance units"@en ;
+    rdfs:comment "SportsML vocab uri: http://cv.iptc.org/newscodes/spdistanceunits/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:shotType rdf:type owl:ObjectProperty ;
+    rdfs:label "shot type"@en ;
+    rdfs:comment "The type of shot taken. See 'shot' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spgolshot/ http://cv.iptc.org/newscodes/sptenshot/ http://cv.iptc.org/newscodes/spcurshot/"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range skos:Concept ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:startLocation rdf:type owl:DatatypeProperty ;
+    rdfs:label "start location"@en ;
+    rdfs:comment ">A string indicating where on the court the action began. Could be an approximate region, or a more complex value adhering to some elaborate coordinate system."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:substitutionReason rdf:type owl:DatatypeProperty ;
+    rdfs:label "substitution reason"@en ;
+    rdfs:comment "The reason for the substitution of a player"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:timeAddition rdf:type owl:DatatypeProperty ;
+    rdfs:label "time addition"@en ;
+    rdfs:comment "time added to period."@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:timeElapsed rdf:type owl:DatatypeProperty ;
+    rdfs:label "time elapsed"@en ;
+    rdfs:comment "Total time elapsed of event"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:timeRemaining rdf:type owl:DatatypeProperty ;
+    rdfs:label "time remaining"@en ;
+    rdfs:comment "Time remaining of event"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
+
+sport:zone rdf:type owl:DatatypeProperty ;
+    rdfs:label "zone"@en ;
+    rdfs:comment "The zone on the playing field where the action took place. Value can be sport specific"@en ;
+    rdfs:domain sport:Action ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -5223,14 +5653,15 @@ spmcrstat:speedAverageRace rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Rugby statistics"@en ;
     rdfs:label "IPTC Sport Schema - Rugby statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering rugby statistics."@en ;
     rdfs:isDefinedBy sprgxstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/rugby/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/rugby/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 sprgxstat:triesScored rdf:type owl:DatatypeProperty ; 
         rdfs:label "triesScored"@en ; 
@@ -5541,7 +5972,1599 @@ sprgxstat:triesScored rdf:type owl:DatatypeProperty ;
         rdf:isDefinedBy <https://sportschema.org/ontologies/rugby> . 
         
 	
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix sh:        <http://www.w3.org/ns/shacl#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix golf:      <https://sportschema.org/ontologies/golf/> .
+@prefix spfacet:   <https://sportschema.org/ontologies/sport-facets/> .
+@prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
+# sport-specific ontologies:
+@prefix spespstat: <https://sportschema.org/ontologies/esports/> .
+@prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
+@prefix spgolstat: <https://sportschema.org/ontologies/golf-statistics/> .
+
+##### SHACL Shapes for validating Sports RDF data #####
+
+sport:ActionShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Action ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:participation ;
+    sh:or (
+      [ sh:class sport:Participation ]
+      [ sh:class sport:IndividualParticipation]
+      [ sh:class sport:TeamParticipation ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:actionInEvent ;
+    sh:class sport:Event
+  ] ;
+  sh:property [
+    sh:path sport:actionDateTime ;
+    sh:datatype xsd:dateTime
+  ] ;
+  sh:property [
+    sh:path sport:actionType ;
+    sh:node sport:NewsCodesSportActionTypeShape
+  ] ;
+  sh:property [
+    sh:path sport:angle ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:bodyPart ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:class ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportActionClassShape ;
+  ] ;
+  sh:property [
+    sh:path sport:comment ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:distance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:endLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:fieldLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:goalLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:lastModified ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:minutesElapsed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:oppositePlay ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:passDescription ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:passMethod ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:passType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:infractionLevel ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:infractionType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:periodValue ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:personReplacingPosition ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:recipientType ;
+    # sh:datatype xsd:string ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:result ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:saveMethod ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:saveType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptDescription ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptResult ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptSide ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptSituation ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreAttemptType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:sequenceNumber ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:shotDistance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:shotDistanceUnits ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:shotType ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:startLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:substitutionReason ;
+    # TODO decide whether this sh:or is a cool feature or a dirty hack...
+    # really values should be only URIs or strings
+    sh:or (
+      [ sh:datatype xsd:string ]
+      [ sh:nodeKind sh:IRI ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:timeAddition ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:timeAddition ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:timeElapsed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:timeRemaining ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:zone ;
+    sh:datatype xsd:string ;
+  ] ;
+  # golf properties (these should inherit from ParticipatableThing...)
+  sh:property [
+    sh:path golf:distanceRemaining ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:hole ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:round ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:stroke ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:shotDistance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:shotLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spgolstat:totalStrokes ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:AgentShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Agent ;
+  # sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:AssociateParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:AssociateParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:AssociateShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Associate ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:AssociateRelationshipShape
+  a sh:NodeShape ;
+  sh:targetClass sport:AssociateRelationship ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:associate ;
+    sh:class sport:Associate ;
+  ] ;
+  sh:property [
+    sh:path sport:associateFor ;
+    sh:class sport:Agent ;
+  ] .
+
+sport:AthleteShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Athlete ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # Properties inherited from Individual
+  sh:property [
+    sh:path sport:dateOfBirth ;
+    sh:datatype xsd:date ;
+  ] ;
+  sh:property [
+    sh:path sport:nationality ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:CompetitionShape
+  a sh:NodeShape ;
+  sh:targetClass sport:Competition ;
+  # sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:class skos:Concept ;
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:NewsCodesMediaTopicShape ;
+  ] ;
+  sh:property [
+    sh:path sport:competitionType ;
+    sh:class skos:Concept ;
+    sh:node sport:SportConceptShape
+  ] ;
+  sh:property [
+    sh:path sport:parent ;
+    sh:class sport:Competition
+  ] ;
+  sh:property [
+    sh:path sport:participation ;
+    sh:class sport:Participation
+  ] ;
+  sh:property [
+    sh:path sport:containsCompetitionPhase ;
+    sh:class sport:CompetitionPhase
+  ] ;
+  sh:property [
+    sh:path sport:containsEvent ;
+    sh:class sport:Event
+  ] ;
+  sh:property [
+    sh:path sport:governedBy ;
+    sh:class sport:GoverningBody
+  ] ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:pattern "^http://cv.iptc.org/newscodes/mediatopic/" ;
+    sh:flags   "i"  # Ignore case
+  ] ;
+  # sport facets on Competition from https://sportschema.org/ontologies/sport-facets/
+  sh:property [
+    sh:path spfacet:ageclass ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:alpineskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:artisticgymtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:billiardtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:bmxfreestyletype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:canoekayaktype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:cyclingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:distance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:dogracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:equestriantype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:horseracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:fencingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:figureskatingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:flyingdisctype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:freestyleskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:gender ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:jaialaitype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:motorcarracingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:motorcyclingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:mountainbikingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:nordicskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:crosscountryskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:parasport ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:parasporttype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:platformheight ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:racetime ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:racetype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:rhythmgymtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:rowingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:sailingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:shootingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:soccertype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:snowboardingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:swimmingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:teamsize ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spfacet:waterskiingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:weightclasstype ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path spfacet:weightliftingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] ;
+  sh:property [
+    sh:path spfacet:windsurfingtype ;
+    sh:class skos:Concept ;
+    sh:node sport:FacetValueShape
+  ] .
+
+sport:CompetitionPhaseShape
+  a sh:NodeShape ;
+  sh:targetClass sport:CompetitionPhase ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:class skos:Concept ;
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:NewsCodesMediaTopicShape ;
+  ] ;
+  sh:property [
+    sh:path sport:participation ;
+    sh:class sport:Participation
+  ] ;
+  sh:property [
+    sh:path sport:competitionFormat ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportCompetitionFormatShape
+  ] ;
+  sh:property [
+    sh:path sport:parent ;
+    sh:class sport:CompetitionPhase ;
+  ] ;
+  sh:property [
+    sh:path sport:competitionPhaseType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportCompetitionPhaseTypeShape
+  ] ;
+  sh:property [
+    sh:path sport:phaseInCompetition ;
+    sh:class sport:Competition
+  ] .
+
+sport:CompetitorParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:CompetitorParticipation ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties inherited from sport:Participation
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeShape
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportPositionShape
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:or (
+      [ sh:class sport:Agent ]
+      [ sh:class sport:Individual ]
+      [ sh:class sport:Associate ]
+      [ sh:class sport:Athlete ]
+      [ sh:class sport:Official ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:role ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportScoreUnitsShape
+  ] .
+ 
+sport:EventShape rdf:type sh:NodeShape ;
+  sh:targetClass sport:Event ;
+  sh:closed true ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:participation ;
+    sh:or (
+      [ sh:class sport:Participation ]
+      [ sh:class sport:IndividualParticipation ]
+      [ sh:class sport:TeamParticipation ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:location ;
+    sh:class sport:Site ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:eventInCompetition ;
+    sh:class sport:Competition ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:eventInCompetitionPhase ;
+    sh:class sport:CompetitionPhase ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:eventParticipation ;
+    sh:class sport:Participation ;
+    # sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:attendance ;
+    sh:datatype xsd:string ;
+    # sh:datatype xsd:integer ;
+  ] ;
+  sh:property [
+    sh:path sport:startDateTime ;
+    sh:datatype xsd:dateTime ;
+  ] ;
+  sh:property [
+    sh:path sport:endDateTime ;
+    sh:datatype xsd:dateTime ;
+  ] ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:class skos:Concept ;
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:NewsCodesMediaTopicShape ;
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape ;
+  ] ;
+  sh:property [
+    sh:path sport:eventStatus ;
+    sh:node sport:NewsCodesSportEventStatusShape ;
+  ] ;
+  sh:property [
+    sh:path sport:parent ;
+    sh:class sport:Event
+  ] .
+
+sport:FacetValueShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/asportfacetvalue/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:GoverningBodyShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:GoverningBody ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:IndividualShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Individual ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # Properties defined on Individual
+  sh:property [
+    sh:path sport:nationality ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:IndividualMembershipShape
+  sh:targetClass sport:IndividualMembership ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:positionRegular ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportPositionShape ;
+  ] ;
+  sh:property [
+    sh:path sport:uniformNumber ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:member ;
+    sh:or (
+      [ sh:class sport:Individual ]
+      [ sh:class sport:Associate ]
+      [ sh:class sport:Athlete ]
+      [ sh:class sport:Official ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:membershipOf ;
+    sh:class sport:Team ;
+  ] .
+
+sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:IndividualParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties defined on IndividualParticipation
+  sh:property [
+    sh:path sport:uniformNumberEvent ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:playerStatus ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportPlayerStatusShape
+  ] ;
+  # properties defined on Participation
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeShape
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportPositionShape
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Athlete ;
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:role ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportScoreUnitsShape
+  ] ;
+  sh:property [
+    sh:path sport:teamParticipation ;
+    sh:class sport:TeamParticipation ;
+  ] ;
+  # properties defined on CompetitorParticipation by core statistics ontology
+  sh:property [
+    sh:path spstat:eventsStarted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:rating ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:resultEffect ;
+    sh:node sport:NewsCodesSportResultEffectShape
+   ] ;
+  sh:property [
+    sh:path spstat:resultEffectTarget ;
+    sh:class sport:ParticipatableThing ;
+  ] ;
+  sh:property [
+    sh:path spstat:timePlayedTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  # properties defined on CompetitorParticipation by soccer ontology
+  sh:property [
+    sh:path spsocstat:aerialsWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:assistsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:catchesPunches ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cautionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:clearancesSuccessful ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cornerKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:crosses18Yard ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:crosses18YardPlus ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:ejectionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:freeKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO remove typo (from SportsML)
+  sh:property [
+    sh:path spsocstat:foulsCommited ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsCommitted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsSuffered ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsAgainstTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsHead ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsLeftFoot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsOwn ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsPenaltyShotAllowed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsRightFoot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:interceptions ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesComplete ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesCompleteLong ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesComplete3rdFinal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesIncomplete ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:saves ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:savePercentage ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlockedCross ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlockedOutfielder ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOffGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOnGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotAllowed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotMissed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsPenaltyShotScored ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shutouts ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesLost ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:touches ;
+    sh:datatype xsd:string ;
+  ] ;
+  # properties defined on CompetitorParticipation by esports ontology
+  sh:property [
+    sh:path spespstat:ADR ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:assist ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:deaths ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:FKdiff ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:flashassist ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:headshot ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:KAST ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spespstat:kills ;
+    sh:datatype xsd:string ;
+  ] ;
+  # Properties defined on IndividualParticipation by golf ontology
+  sh:property [
+    sh:path spgolstat:totalStrokes ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:round ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:strokes ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:scoreAgainstPar ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:holeType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportGolfHoleTypeShape
+  ] ;
+  sh:property [
+    sh:path golf:hole;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:MembershipShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Membership ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:startDate ;
+    sh:datatype xsd:date ;
+  ] ;
+  sh:property [
+    sh:path sport:endDate ;
+    sh:datatype xsd:date ;
+  ] ;
+  sh:property [
+    sh:path sport:competitionMembership ;
+    sh:class sport:Competition ;
+  ] .
+
+sport:NewsCodesMediaTopicShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/mediatopic/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportActionClassShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spactionclass/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportCompetitionFormatShape
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/sptournamentform/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportCompetitionPhaseTypeShape
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/sptournamentphase/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportCompetitionScopeShape
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spcompetitionscope/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportConceptShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spct/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportEventOutcomeShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/speventoutcome/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportEventOutcomeTypeShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/speventoutcometype/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportGolfHoleType rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spgolholetype/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportPlayerStatusShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spplayerstatus/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportPositionShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:in (
+            <http://cv.iptc.org/newscodes/sphorposition/>
+            <http://cv.iptc.org/newscodes/spichposition/>
+            <http://cv.iptc.org/newscodes/spsocposition/>
+            <http://cv.iptc.org/newscodes/spsocascpos/>
+            <http://cv.iptc.org/newscodes/vendoffpos/>
+        ) ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportResultEffectShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spresulteffect/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:NewsCodesSportScoreUnitsShape rdf:type sh:NodeShape;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue <http://cv.iptc.org/newscodes/spscoreunits/> ;
+        sh:maxCount 1 ;
+    ] .
+
+sport:OfficialShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Official ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:OfficialParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:OfficialParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Official
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:node sport:NewsCodesSportPositionShape
+  ] .
+
+sport:ParticipatableThingShape
+  sh:targetClass sport:ParticipatableThing ;
+  # sh:closed true ;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:sport ;
+    sh:class skos:Concept ;
+    # sh:minCount 1 ; # removed for now because it breaks most of our examples!
+    sh:node sport:NewsCodesMediaTopicShape ;
+  ] ;
+  sh:property [
+    sh:path sport:parent ;
+    sh:class sport:ParticipatableThing
+  ] ;
+  # golf-specific ParticipatableThing properties
+  sh:property [
+    sh:path golf:round ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:hole ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:shotLocation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:shotDistance ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:distanceRemnaining ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:ParticipationShape
+  sh:targetClass sport:TeamParticipation, sport:IndividualParticipation, sport:AssociateParticipation, sport:OfficialParticipation ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeShape
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape
+  ] ;
+  sh:property [
+    sh:path sport:positionEvent ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportPositionShape
+  ] ;
+  # If we define this here, it breaks the validation on the subclasses (eg TeamParticipation participationBy Team)
+  #sh:property [
+  #  sh:path sport:participationBy ;
+  #  sh:class sport:Agent ;
+  #] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:scoreUnits ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportScoreUnitsShape
+  ] .
+ 
+sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:ParticipationSplit ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  # properties defined on participationSplit
+  sh:property [
+    sh:path sport:participationSplitType ;
+    sh:node sport:NewsCodesSportCompetitionScopeShape
+  ] ;
+  # we can have splits within splits (defined on Participation parent)
+  sh:property [
+    sh:path sport:participationSplit ;
+    sh:class sport:ParticipationSplit ;
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:or (
+      [ sh:class sport:Agent ]
+      [ sh:class sport:Individual ]
+      [ sh:class sport:Associate ]
+      [ sh:class sport:Athlete ]
+      [ sh:class sport:Official ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  # core statistics properties
+  sh:property [
+    sh:path spstat:eventsPlayed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:losses ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredAgainst ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredFor ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:standingPoints ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:ties ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:wins ;
+    sh:datatype xsd:string ;
+  ] ;
+  # golf properties
+  sh:property [
+    sh:path golf:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spgolstat:totalStrokes ;
+    sh:datatype xsd:string ;
+  ] .
+
+sport:SiteShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Site ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:TeamShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:Team ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) .
+
+sport:TeamMembershipShape
+  sh:targetClass sport:TeamMembership ;
+  a sh:NodeShape ;
+  sh:property [
+    sh:path sport:member ;
+    sh:class sport:Team ;
+  ] ;
+  sh:property [
+    sh:path sport:membershipOf ;
+    sh:class sport:Club ;
+  ] .
+
+
+sport:TeamParticipationShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:TeamParticipation ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path sport:alignment ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcome ;
+    sh:node sport:NewsCodesSportEventOutcomeShape
+  ] ;
+  sh:property [
+    sh:path sport:participationBy ;
+    sh:class sport:Team ;
+  ] ;
+  sh:property [
+    sh:path sport:participationSplit ;
+    sh:class sport:ParticipationSplit ;
+  ] ;
+  sh:property [
+    sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:resultEffect ;
+    sh:node sport:NewsCodesSportResultEffectShape
+   ] ;
+  sh:property [
+    sh:path spstat:resultEffectTarget ;
+    sh:or (
+     [ sh:datatype xsd:string ; ]
+     [ sh:class sport:ParticipatableThing ; ]
+    )
+  ] ;
+  sh:property [
+    sh:path sport:score ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:eventsPlayed ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:losses ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsDifference ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredAgainst ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:pointsScoredFor ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:scoreOpposing ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:seriesScore ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:seriesScoreOpposing ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:standingPoints ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:ties ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:wins ;
+    sh:datatype xsd:string ;
+  ] ;
+  # soccer stats properties
+  sh:property [
+    sh:path spsocstat:cautionsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:clearancesSuccessful ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:cornerKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  # TODO remove typo (inherited from SportsML)
+  sh:property [
+    sh:path spsocstat:foulsCommited ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:foulsCommitted ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:freeKicks ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:goalsAgainstTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:interceptions ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:lineFormation ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:offsides ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:passesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsBlocked ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOffGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsOnGoalTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shotsTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:shutouts ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesLost ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWon ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesWonPercentage ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spsocstat:tacklesTotal ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spstat:timeOfPossessionPercentage ;
+    sh:datatype xsd:string ;
+  ] .
+
+# sport-specific objects and properties
+
+# golf - iptc-sport-golf.ttl
+
+sport:GolfCourseShape rdf:type sh:NodeShape  ;
+  a sh:NodeShape ;
+  sh:targetClass sport:GolfCourse ;
+  sh:closed true;
+  sh:ignoredProperties ( rdf:type rdfs:label ) ;
+  sh:property [
+    sh:path golf:courseYardage ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:coursePar ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:courseRating ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path golf:slopeRating ;
+    sh:datatype xsd:string ;
+  ] .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+
+#######################################################
+## This add-on provides additional triples to enable ##
+## SKOS Concepts and Relationships on the core       ##
+## sport ontology.                                   ##
+#######################################################
+
+##### Classes ####
+
+sport:Agent rdfs:subClassOf skos:Concept .
+
+sport:ParticipatableThing rdfs:subClassOf skos:Concept .
+
+sport:GoverningBody rdfs:subClassOf skos:Concept .
+
+sport:Membership rdfs:subClassOf skos:Concept .
+
+sport:Participation rdfs:subClassOf skos:Concept .
+
+sport:ParticipationSplit rdfs:subClassOf skos:Concept .
+
+sport:Site rdfs:subClassOf skos:Concept .
+
+##### Object properties #####
+
+sport:parent rdfs:subPropertyOf skos:broader .
+sport:child rdfs:subPropertyOf skos:narrower .
+
+sport:participation rdfs:subPropertyOf skos:broader .
+sport:participantOf rdfs:subPropertyOf skos:narrower .
+
+sport:eventInCompetition rdfs:subPropertyOf skos:broader .
+sport:containsEvent rdfs:subPropertyOf skos:narrower .
+
+sport:eventInCompetitionPhase rdfs:subPropertyOf skos:broader .
+sport:containsCompetitionPhase rdfs:subPropertyOf skos:narrower .
+
+sport:actionInEvent rdfs:subPropertyOf skos:broader .
+sport:containsAction rdfs:subPropertyOf skos:narrower .
+
+sport:governedBy rdfs:subPropertyOf skos:broader .
+sport:governs rdfs:subPropertyOf skos:narrower .
+
+sport:location rdfs:subPropertyOf skos:related .
+sport:locationOf rdfs:subPropertyOf skos:related .
+
+sport:member rdfs:subPropertyOf skos:broader .
+sport:memberOf rdfs:subPropertyOf skos:narrower .
+
+sport:membershipOf rdfs:subPropertyOf skos:broader .
+sport:membership rdfs:subPropertyOf skos:narrower .
+
+sport:participationBy rdfs:subPropertyOf skos:broader .
+sport:participantOf rdfs:subPropertyOf skos:narrower .
+
+sport:participationSplit rdfs:subPropertyOf skos:broader .
+sport:participationSplitOf rdfs:subPropertyOf skos:narrower .
+
+sport:phaseInCompetition rdfs:subPropertyOf skos:broader .
+sport:containsCompetitionPhase rdfs:subPropertyOf skos:narrower .@prefix dcterms:   <http://purl.org/dc/terms/> .
 @prefix owl:       <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
@@ -5553,14 +7576,15 @@ sprgxstat:triesScored rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Soccer statistics"@en ;
     rdfs:label "IPTC Sport Schema - Soccer statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering soccer statistics."@en ;
     rdfs:isDefinedBy spsocstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/soccer/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/soccer/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spsocstat:lineFormationRow rdf:type owl:DatatypeProperty ; 
         rdfs:label "lineFormationRow"@en ; 
@@ -6100,14 +8124,15 @@ spsocstat:lineFormationRow rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Tennis statistics"@en ;
     rdfs:label "IPTC Sport Schema - Tennis statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering tennis statistics."@en ;
     rdfs:isDefinedBy sptenstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/tennis/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/tennis/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 sptenstat:score rdf:type owl:DatatypeProperty ; 
         rdfs:label "score"@en ; 
@@ -6465,14 +8490,15 @@ sptenstat:score rdf:type owl:DatatypeProperty ;
     rdf:type owl:Ontology ;
     dcterms:title "IPTC Sport Schema - Volleyball statistics"@en ;
     rdfs:label "IPTC Sport Schema - Volleyball statistics"@en ;
-    dcterms:created "2024-04-30"^^xsd:date ;
+    dcterms:created "2023-10-04"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
     dcterms:creator "IPTC Sports Content Working Group"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
     dcterms:description "Add-on ontology to IPTC Sport Schema, covering volleyball statistics."@en ;
     rdfs:isDefinedBy spvolstat: ;
-    owl:versionIRI <https://sportschema.org/ontologies/volleyball/1.0.1> ;
-    owl:versionInfo "1.0.1"^^xsd:string .
+    owl:versionIRI <https://sportschema.org/ontologies/volleyball/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
 
 spvolstat:errorsOppenent rdf:type owl:DatatypeProperty ; 
         rdfs:label "errorsOppenent"@en ; 

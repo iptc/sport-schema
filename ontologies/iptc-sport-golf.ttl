@@ -1,0 +1,98 @@
+@prefix dcterms:   <http://purl.org/dc/terms/> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:       <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:     <https://sportschema.org/ontologies/main/> .
+@prefix golf:      <https://sportschema.org/ontologies/golf/> .
+
+<https://sportschema.org/ontologies/golf/>
+    rdf:type owl:Ontology ;
+    dcterms:title "IPTC Sport Schema - Golf properties"@en ;
+    rdfs:label "IPTC Sport Schema - Golf properties"@en ;
+    dcterms:created "2024-10-02"^^xsd:date ;
+    dcterms:modified "2024-10-02"^^xsd:date ;
+    dcterms:creator "IPTC Sports Content Working Group"@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights "Copyright (C) International Press Telecommunications Council 2024. Released under the Creative Commons Attribution (CC-BY) 4.0 licence."@en ;
+    dcterms:description "Add-on ontology to IPTC Sport Schema, covering golf."@en ;
+    rdfs:isDefinedBy golf: ;
+    owl:versionIRI <https://sportschema.org/ontologies/golf/1.1> ;
+    owl:versionInfo "1.1"^^xsd:string .
+
+golf:GolfCourse rdf:type owl:Class ;
+    rdfs:label "Golf Course"@en ;
+    rdfs:subClassOf sport:Site ;
+    rdfs:comment "The location of a golf tournament"@en ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:courseYardage rdf:type owl:DatatypeProperty ;
+    rdfs:label "course yardage"@en ;
+    rdfs:comment "How many yards the course is, measured from tees to holes."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:coursePar rdf:type owl:DatatypeProperty ;
+    rdfs:label "course par"@en ;
+    rdfs:comment "The total par value of all holes."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:courseRating rdf:type owl:DatatypeProperty ;
+    rdfs:label "course rating"@en ;
+    rdfs:comment "A Course Rating is a mark of the USGA representing a number which describes the difficulty of a golf course from a particular set of tees for a scratch (zero handicap) player. Course Ratings are established by an evaluation of the course by members of a committee, usually from your regional golf association. Course Ratings are numbers like 68.5, 71.2, etc. In some golf jurisdictions, course ratings might be called something else, and may be expressed to a tenth or as whole numbers."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:slopeRating rdf:type owl:DatatypeProperty ;
+    rdfs:label "slope rating"@en ;
+    rdfs:comment "A Slope Rating is a mark of the USGA representing an integer number which describes the difficulty of a golf course from a particular set of tees for a bogey (average) golfer. Slope Ratings vary from 55 (very easy) to 155 (very difficult). The Slope Rating of a course which has not officially been rated is 113, the Slope Rating of a course of average difficulty."@en ;
+    rdfs:domain sport:GolfCourse ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:round rdf:type owl:DatatypeProperty ;
+    rdfs:label "round"@en ;
+    rdfs:comment "Generally an integer, 1 through 18. Could be 19, for a playoff hole"@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:strokes rdf:type owl:DatatypeProperty ;
+    rdfs:label "strokes"@en ;
+    rdfs:comment "Total number of strokes in this round."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:score rdf:type owl:DatatypeProperty ;
+    rdfs:label "score"@en ;
+    rdfs:comment "Total score this round. The score can be the same as strokes but it can also be some other type of scoring system used in golf."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:scoreAgainstPar rdf:type owl:DatatypeProperty ;
+    rdfs:label "score against par"@en ;
+    rdfs:comment "The score compared to par on the hole. So a score equal par would put a 0 here and a score under par a negative value."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:holeType rdf:type owl:DatatypeProperty ;
+    rdfs:label "hole type"@en ;
+    rdfs:comment "The type of hole played."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    # Recommended CV: http://cv.iptc.org/newscodes/spgolholetype/
+    rdfs:range xsd:uri ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
+
+golf:hole rdf:type owl:DatatypeProperty ;
+    rdfs:label "hole"@en ;
+    rdfs:comment "A number, generally from 1 to 18. Alternately, the keyword finished."@en ;
+    rdfs:domain sport:IndividualParticipation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://sportschema.org/ontologies/golf/> .
