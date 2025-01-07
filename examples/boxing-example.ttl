@@ -17,7 +17,13 @@
         sport:location                 <http://example.com/Site/att-stadium-arlington> ;
         sport:participation            <http://example.com/Participation/taylor-serrano-2024/ktaylor>;
         sport:participation            <http://example.com/Participation/taylor-serrano-2024/aserrano>;
+        sport:participation            <http://example.com/Participation/taylor-serrano-2024-judge1/Hayes>;
+        sport:participation            <http://example.com/Participation/taylor-serrano-2024-judge2/Palmer>;
+        sport:participation            <http://example.com/Participation/taylor-serrano-2024-judge3/Reyes>;
+        sport:participation            <http://example.com/Participation/taylor-serrano-2024-referee/Schorle>;
         sport:startDateTime            "2024-11-15T20:00:00-05:00"^^xsd:dateTime .
+        
+        # add in main event (also called "Taylor vs. Serrano II"?)with above nested within
 
 <http://example.com/Athlete/ktaylor>
         rdf:type           sport:Athlete ;
@@ -39,6 +45,10 @@
         rdf:type    sport:Associate ;
         rdfs:label  "Jordan Maldonado" .
 
+<http://example.com/Official/Hayes>
+        rdf:type    sport:Official ;
+        rdfs:label  "Hayes" .
+
 <http://example.com/Membership/man257-EPLT43>
         rdf:type               sport:AssociateMembership ;
         rdfs:label             "Jordan Maldonado associate of Amanda Serrano" ;
@@ -56,42 +66,47 @@
         sport:positionRegular  <http://cv.iptc.org/newscodes/spposition/trainer> .
 
 <http://example.com/Participation/taylor-serrano-2024/ktaylor>
-        rdf:type                    sport:Participation ;
+        rdf:type                    sport:IndividualParticipation ;
         rdfs:label             		"Katie Taylor Participation in Taylor vs. Serrano II" ;
         spstat:score                "95" ;
 		sport:eventOutcome          speventoutcome:win ;
 		sport:eventOutcomeType      speventoutcometype:decision-unanimous ;  # term not in cv
         sport:participationBy       <http://example.com/Athlete/ktaylor> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r01> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r02> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r03> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r04> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r05> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r06> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r07> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r08> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r09> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/ktaylor_r10> .
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r01> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r02> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r03> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r04> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r05> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r06> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r07> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r08> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r09> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r10> .
 
 <http://example.com/Participation/taylor-serrano-2024/aserrano>
-        rdf:type                    sport:Participation ;
+        rdf:type                    sport:IndividualParticipation ;
         rdfs:label             		"Amanda Serrano Participation in Taylor vs. Serrano II" ;
         spstat:score                "94" ;
 		sport:eventOutcome          speventoutcome:loss ;
 		sport:eventOutcomeType      speventoutcometype:decision-unanimous ;  # term not in cv
         sport:participationBy       <http://example.com/Athlete/aserrano> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r01> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r02> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r03> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r04> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r05> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r06> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r07> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r08> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r09> ;
-        sport:participationSplit    <http://example.com/Participation/taylor-serrano-2024/aserrano_r10> .
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r01> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r02> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r03> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r04> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r05> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r06> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r07> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r08> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r09> ;
+        sport:participationSplit    <http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r10> .
 
-<http://example.com/Participation/taylor-serrano-2024/ktaylor_r01>
+<http://example.com/Participation/taylor-serrano-2024-judge1/Hayes>
+        rdf:type                    sport:OfficialParticipation ;
+        rdfs:label             		"Official Hayes Participation in Taylor vs. Serrano II" ;
+        sport:participationBy       <http://example.com/Official/Hayes> .
+
+<http://example.com/ParticipationSplit/taylor-serrano-2024/ktaylor_r01>
         rdf:type                       sport:ParticipationSplit ;
         rdfs:label             		  "Katie Taylor Participation in Taylor vs. Serrano II, Round 1" ;
         spstat:score                  "9" ;
@@ -99,12 +114,12 @@
         sport:participationBy         <http://example.com/Athlete/ktaylor> ;
         sport:participationSplitType  spcompetitionscope:round .
 
-<http://example.com/Participation/taylor-serrano-2024/aserrano_r01>
+<http://example.com/ParticipationSplit/taylor-serrano-2024/aserrano_r01>
         rdf:type                       sport:ParticipationSplit ;
         rdfs:label             		  "Amanda Serrano Participation in Taylor vs. Serrano II, Round 1" ;
         spstat:score                  "10" ;
 		sport:eventOutcome            speventoutcome:win ;
-        sport:participationBy         <http://example.com/Athlete/ktaylor> ;
+        sport:participationBy         <http://example.com/Athlete/serrano> ;
         sport:participationSplitType  spcompetitionscope:round .
 
 
