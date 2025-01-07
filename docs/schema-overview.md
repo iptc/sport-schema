@@ -20,19 +20,19 @@ The following concepts comprise the "world" described by the IPTC Sport Schema m
 ### Competitions, Events and Actions
 
 To use a simple football/soccer example,  an **Action** (e.g. a goal) is part of an **Event**
- (e.g. a football match) which itself is part of a **Competition** (e.g. the Premier League 2023
+ (e.g. a football match) which itself is part of a **Competition** (e.g. the Premier League 2025
 season).
 
 To use a tennis exmple, a serve (**Action**) is part of an **Event** (the tennis match) which may
-be part of a **Competition** (the French Open Women's Title 2023). This Competition can be part of
+be part of a **Competition** (the French Open Women's Title 2025). This Competition can be part of
 a "parent **Competition**" called Roland Garros (also known as the French Open), which may itself be
-part of a parent **Competition** called "ATP Tour 2023".
+part of a parent **Competition** called "ATP Tour 2025".
 
 ![IPTC Sport Schema high level overview - dark](diagrams/simple-high-level-sport-model-dark.png)
 
 More formally, a **Competition** is a collection of **Events** culminating in a competitive goal: a
-championship, a medal etc. Examples are the Men's 800M in the Summer Olympics, the NBA 2023 season,
-the Champions League 2023 season and the 2023 Tour de France.
+championship, a medal etc. Examples are the Men's 800M in the Summer Olympics, the NBA 2025 season,
+the Champions League 2025 season and the 2025 Tour de France.
 
 Each of those **Competition**s is comprised of competitive events within which competitive,
 statistics-generating sports actions take place. So while the Men's 800M is a Competition (toward a
