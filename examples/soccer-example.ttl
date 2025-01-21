@@ -1,3 +1,15 @@
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
+@prefix medtop:             <http://cv.iptc.org/newscodes/mediatopic/> .
+@prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
+@prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
+@prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix speventstatus:      <http://cv.iptc.org/newscodes/speventstatus/> .
+
 <http://example.com/Competition/l.premierleague.com>
         rdf:type               sport:Competition ;
         rdfs:label             "English Premier League" ;
@@ -20,16 +32,20 @@
         rdf:type                       sport:Event ;
         rdfs:label                     "Arsenal vs Liverpool, Week 16, EPL" ;
         sport:eventInCompetition       <http://example.com/Competition/l.premierleague.com-2020> ;
-        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-33> ;
+        sport:eventInCompetitionPhase  <http://example.com/CompetitionPhase/l.premierleague.com-2020-week-16> ;
         sport:eventOutcomeType         speventoutcometype:regular ;
-        sport:eventStatus              <http://cv.iptc.org/newscodes/speventstatus/post-event> ;
+        sport:eventStatus              speventstatus:post-event ;
         sport:location                 <http://example.com/Site/s.34> ;
         sport:participation            <http://example.com/Participation/E2128607-EPLT35> , <http://example.com/Participation/E2128607-EPLT7> ;
         sport:startDateTime            "2021-02-25T19:00:00+01:00"^^xsd:dateTime .
 
+<http://example.com/Site/s.34>
+        rdf:type                       sport:Site ;
+        rdfs:label                     "Emirates Stadium, London" .
+
 <http://example.com/Participation/E2128607-EPLT35>
         rdf:type                        sport:TeamParticipation ;
-        rdfs:label                      "Liverpool participation in Week 16, EPL" ;
+        rdfs:label                      "Liverpool participation in Event EPLT7 (Week 16, EPL)" ;
         spstat:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
@@ -57,7 +73,7 @@
 
 <http://example.com/Participation/E2128607-EPLT7>
         rdf:type                        sport:TeamParticipation ;
-        rdfs:label                      "Arsenal participation in Week 16, EPL" ;
+        rdfs:label                      "Arsenal participation in Event EPLT7 (Week 16, EPL)" ;
         spstat:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
@@ -81,11 +97,71 @@
         spsocstat:tacklesWon            "6" ;
         spsocstat:tacklesWonPercentage  "0.462" .
 
+<http://example.com/Participation/E2128607-p.44354>
+        rdf:type                        sport:IndividualParticipation ;
+        rdfs:label                      "Aly Cissokho participation in Event E2128607" ;
+        sport:teamParticipation         <http://example.com/Participation/E2128607-EPLT7> ;
+        spstat:eventsStarted            "1" ;
+        spstat:timePlayedTotal          "90" ;
+        sport:participationBy           <http://example.com/Athlete/p.44354> ;
+        sport:playerStatus              spplayerstatus:starter ;
+        sport:positionEvent             <http://cv.iptc.org/newscodes/spsocposition/defender> ;
+        spsocstat:clearancesSuccessful  "1" ;
+        spsocstat:foulsCommited         "1" ;
+        spsocstat:goalsAgainstTotal     "2" ;
+        spsocstat:interceptions         "3" ;
+        spsocstat:passesComplete        "15" ;
+        spsocstat:passesComplete3rdFinal
+                "5" ;
+        spsocstat:passesCompleteLong    "1" ;
+        spsocstat:passesIncomplete      "11" ;
+        spsocstat:passesTotal           "26" ;
+        spsocstat:shotsBlockedCross     "4" ;
+        spsocstat:shotsBlockedOutfielder
+                "3" ;
+        spsocstat:touches               "50" .
+
+<http://example.com/Athlete/p.44354>
+        rdf:type    sport:Athlete ;
+        rdfs:label  "Aly Cissokho" .
+
+<http://example.com/Membership/l.premierleague.com-2020-EPLT7>
+        rdf:type             sport:TeamMembership ;
+        rdfs:label           "Arsenal FC Men membership of 2020 English Premier League" ;
+        sport:member         <http://example.com/Team/EPLT7> ;
+        sport:competitionMembership   <http://example.com/Competition/l.premierleague.com-2020> .
+
+<http://example.com/Membership/l.premierleague.com-2020-EPLT35>
+        rdf:type             sport:TeamMembership ;
+        rdfs:label           "Liverpool FC Men membership of 2020 English Premier League" ;
+        sport:member         <http://example.com/Team/EPLT35> ;
+        sport:competitionMembership   <http://example.com/Competition/l.premierleague.com-2020> .
+
+<http://example.com/Membership/C1-EPLT7>
+        rdf:type             sport:TeamMembership ;
+        rdfs:label           "Arsenal FC Men membership of Arsenal Football Club" ;
+        sport:member         <http://example.com/Team/EPLT7> ;
+        sport:membershipOf   <http://example.com/Club/C1> .
+
+<http://example.com/Membership/C2-EPLT35>
+        rdf:type             sport:TeamMembership ;
+        rdfs:label           "Liverpool FC Men membership of Liverpool Football Club" ;
+        sport:member         <http://example.com/Team/EPLT35> ;
+        sport:membershipOf   <http://example.com/Club/C2> .
+
 <http://example.com/Team/EPLT35>
         rdf:type    sport:Team ;
-        rdfs:label  "Liverpool" .
+        rdfs:label  "Liverpool FC Men" .
+
+<http://example.com/Club/C2>
+        rdf:type    sport:Club ;
+        rdfs:label  "Liverpool Football Club" .
 
 <http://example.com/Team/EPLT7>
         rdf:type    sport:Team ;
-        rdfs:label  "Arsenal" .
+        rdfs:label  "Arsenal FC Men" .
+
+<http://example.com/Club/C1>
+        rdf:type    sport:Club ;
+        rdfs:label  "Arsenal Football Club" .
 

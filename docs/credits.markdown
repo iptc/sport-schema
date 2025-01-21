@@ -15,6 +15,8 @@ Version 1.0 of the schema was approved by the IPTC Standards Committee on 4 Octo
 Version 1.0.1, an erratum update fixing some property definitions and ranges, was released
 on 30 April 2024.
 
+Version 1.1 was approved by the IPTC Standards Committee on 2 October 2024.
+
 Thanks to the following IPTC member delegates and invited experts who have contributed to the
 development of the IPTC Sport Schema over the past few years:
 
