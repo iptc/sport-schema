@@ -14,8 +14,6 @@ echo "Generating schema docs for esports-statistics.ttl"
 tools/generate_schema_docs.py --include-inherited --include-inverse --jekyll --jekyllnavname "esports ontology" --jekyllnavparent "Ontology reference" --jekyllnavlink "/ontologies/esports" --jekyllnavorder 6 ontologies/iptc-sport-esports-statistics.ttl docs/ontologies/esports-statistics.html
 echo "Generating schema docs for golf.ttl"
 tools/generate_schema_docs.py --include-inherited --include-inverse --jekyll --jekyllnavname "Golf ontology" --jekyllnavparent "Ontology reference" --jekyllnavlink "/ontologies/golf" --jekyllnavorder 7 ontologies/iptc-sport-golf.ttl docs/ontologies/golf.html
-echo "Generating schema docs for golf-statistics.ttl"
-tools/generate_schema_docs.py --include-inherited --include-inverse --jekyll --jekyllnavname "Golf ontology" --jekyllnavparent "Ontology reference" --jekyllnavlink "/ontologies/golf" --jekyllnavorder 8 ontologies/iptc-sport-golf-statistics.ttl docs/ontologies/golf-statistics.html
 echo "Generating schema docs for motor-racing-statistics.ttl"
 tools/generate_schema_docs.py --include-inherited --include-inverse --jekyll --jekyllnavname "Motor Racing ontology" --jekyllnavparent "Ontology reference" --jekyllnavlink "/ontologies/motor-racing" --jekyllnavorder 9 ontologies/iptc-sport-motor-racing-statistics.ttl docs/ontologies/motor-racing-statistics.html
 echo "Generating schema docs for rugby-statistics.ttl"
