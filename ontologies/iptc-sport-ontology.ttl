@@ -503,7 +503,8 @@ sport:participationSplitType rdf:type owl:DatatypeProperty ;
     rdfs:label "participation split type"@en ;
     rdfs:comment "The type of a participation split, e.g. 'home games' or 'first half'"@en ;
     rdfs:domain sport:ParticipationSplit ;
-    rdfs:range xsd:string ;
+    # Recommended CV: <http://cv.iptc.org/newscodes/spcompetitionscope/> ;
+    rdfs:range skos:Concept ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:playerStatus rdf:type owl:ObjectProperty ;
@@ -548,14 +549,14 @@ sport:role rdf:type owl:ObjectProperty ;
 sport:score rdf:type owl:DatatypeProperty ;
     rdfs:label "score"@en ;
     rdfs:comment "Final or current score of the team or individual"@en ;
-    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:domain sport:Participation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
 sport:scoreType rdf:type owl:DatatypeProperty ;
     rdfs:label "score type"@en ;
     rdfs:comment "Qualifies the 'score' property."@en ;
-    rdfs:domain sport:CompetitorParticipation ;
+    rdfs:domain sport:Participation ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
