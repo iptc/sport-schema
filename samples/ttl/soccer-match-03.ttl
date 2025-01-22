@@ -8,6 +8,7 @@
 @prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix sphorposition:      <http://cv.iptc.org/newscodes/sphorposition/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -90,7 +91,7 @@
 <http://example.com/Action/E2128607-a.2291472209>
         rdf:type                sport:Action ;
         rdfs:label              "Action a.2291472209 on event E2128607" ;
-        sport:actionDateTime    "2021-04-25T19:09:19+01:00"^^xsd:dateTime ;
+        sport:actionDateTime    "2021-04-25T19:09:19+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128607> ;
         sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
         sport:minutesElapsed    "9" ;
@@ -102,11 +103,11 @@
 <http://example.com/Participation/E2128607-TFBB7>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Aston Villa participation in Event E2128607" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "70.2" ;
         sport:alignment                 "home" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB7> ;
         sport:score                     "2" ;
         spsocstat:clearancesSuccessful  "14" ;
@@ -150,7 +151,7 @@
 <http://example.com/Action/E2128607-a.2291528581>
         rdf:type                       sport:Action ;
         rdfs:label                     "Action a.2291528581 on event E2128607" ;
-        sport:actionDateTime           "2021-04-25T20:40:22+01:00"^^xsd:dateTime ;
+        sport:actionDateTime           "2021-04-25T20:40:22+01:00" ;
         sport:actionInEvent            <http://example.com/Event/E2128607> ;
         sport:class                    <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         sport:minutesElapsed           "82" ;
@@ -400,11 +401,11 @@
 <http://example.com/Participation/E2128607-TFBB35>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "West Bromwich Albion participation in Event E2128607" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "29.8" ;
         sport:alignment                 "away" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB35> ;
         sport:score                     "2" ;
         spsocstat:cautionsTotal         "2" ;
@@ -494,12 +495,12 @@
 <http://example.com/Action/E2128607-a.2291510501>
         rdf:type               sport:Action ;
         rdfs:label             "Action a.2291510501 on event E2128607" ;
-        sport:actionDateTime   "2021-04-25T20:12:44+01:00"^^xsd:dateTime ;
+        sport:actionDateTime   "2021-04-25T20:12:44+01:00" ;
         sport:actionInEvent    <http://example.com/Event/E2128607> ;
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "54" ;
         sport:participation    <http://example.com/Participation/E2128607-a.2291510501-PO232787> ;
         sport:periodValue      "2" ;
@@ -523,7 +524,7 @@
 <http://example.com/Action/E2128607-a.2291480431>
         rdf:type                sport:Action ;
         rdfs:label              "Action a.2291480431 on event E2128607" ;
-        sport:actionDateTime    "2021-04-25T19:23:13+01:00"^^xsd:dateTime ;
+        sport:actionDateTime    "2021-04-25T19:23:13+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128607> ;
         sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
         sport:minutesElapsed    "23" ;
@@ -553,7 +554,7 @@
 <http://example.com/Action/E2128607-a.2291532577>
         rdf:type                sport:Action ;
         rdfs:label              "Action a.2291532577 on event E2128607" ;
-        sport:actionDateTime    "2021-04-25T20:49:47+01:00"^^xsd:dateTime ;
+        sport:actionDateTime    "2021-04-25T20:49:47+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128607> ;
         sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
         sport:minutesElapsed    "92" ;
@@ -623,7 +624,7 @@
 <http://example.com/Action/E2128607-a.2291530223>
         rdf:type                       sport:Action ;
         rdfs:label                     "Action a.2291530223 on event E2128607" ;
-        sport:actionDateTime           "2021-04-25T20:43:57+01:00"^^xsd:dateTime ;
+        sport:actionDateTime           "2021-04-25T20:43:57+01:00" ;
         sport:actionInEvent            <http://example.com/Event/E2128607> ;
         sport:class                    <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         sport:minutesElapsed           "86" ;
@@ -854,7 +855,7 @@
 <http://example.com/Action/E2128607-a.2291504361>
         rdf:type                sport:Action ;
         rdfs:label              "Action a.2291504361 on event E2128607" ;
-        sport:actionDateTime    "2021-04-25T20:05:28+01:00"^^xsd:dateTime ;
+        sport:actionDateTime    "2021-04-25T20:05:28+01:00" ;
         sport:actionInEvent     <http://example.com/Event/E2128607> ;
         sport:class             <http://cv.iptc.org/newscodes/spactionclass/score> ;
         sport:minutesElapsed    "47" ;
@@ -981,7 +982,7 @@
 <http://example.com/Action/E2128607-a.2291520471>
         rdf:type                       sport:Action ;
         rdfs:label                     "Action a.2291520471 on event E2128607" ;
-        sport:actionDateTime           "2021-04-25T20:24:57+01:00"^^xsd:dateTime ;
+        sport:actionDateTime           "2021-04-25T20:24:57+01:00" ;
         sport:actionInEvent            <http://example.com/Event/E2128607> ;
         sport:class                    <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         sport:minutesElapsed           "67" ;
@@ -1024,7 +1025,7 @@
 <http://example.com/Action/E2128607-a.2291532149>
         rdf:type                       sport:Action ;
         rdfs:label                     "Action a.2291532149 on event E2128607" ;
-        sport:actionDateTime           "2021-04-25T20:48:47+01:00"^^xsd:dateTime ;
+        sport:actionDateTime           "2021-04-25T20:48:47+01:00" ;
         sport:actionInEvent            <http://example.com/Event/E2128607> ;
         sport:class                    <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         sport:minutesElapsed           "91" ;
@@ -1126,7 +1127,7 @@
 <http://example.com/Action/E2128607-a.2291526699>
         rdf:type                       sport:Action ;
         rdfs:label                     "Action a.2291526699 on event E2128607" ;
-        sport:actionDateTime           "2021-04-25T20:35:47+01:00"^^xsd:dateTime ;
+        sport:actionDateTime           "2021-04-25T20:35:47+01:00" ;
         sport:actionInEvent            <http://example.com/Event/E2128607> ;
         sport:class                    <http://cv.iptc.org/newscodes/spactionclass/substitution> ;
         sport:minutesElapsed           "78" ;
@@ -1224,12 +1225,12 @@
 <http://example.com/Action/E2128607-a.2291526473>
         rdf:type               sport:Action ;
         rdfs:label             "Action a.2291526473 on event E2128607" ;
-        sport:actionDateTime   "2021-04-25T20:35:26+01:00"^^xsd:dateTime ;
+        sport:actionDateTime   "2021-04-25T20:35:26+01:00" ;
         sport:actionInEvent    <http://example.com/Event/E2128607> ;
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "77" ;
         sport:participation    <http://example.com/Participation/E2128607-a.2291526473-PO101394> ;
         sport:periodValue      "2" ;

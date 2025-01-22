@@ -994,6 +994,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             <xsl:when test="name()='score-units'">
                 <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'scoreUnits','»')"/>~<xsl:value-of select="$value"/> .
             </xsl:when>
+            <xsl:when test="name()='event-outcome'">
+                <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'eventOutcome','»')"/>~<xsl:value-of select="$value"/> .
+            </xsl:when>
             <xsl:when test="$cv-name=''">
                 <!-- general properties not in CVs -->
                 <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,$cv-name,$element-name-cc,'»')"/>~<xsl:value-of select="$value"/> .
@@ -1071,7 +1074,7 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
             </xsl:variable>
             <xsl:variable name="value">
                 <xsl:choose>
-                    <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed') and not(name()='sequence-number') and not(name()='last-modified')">
+                    <xsl:when test="contains(.,':') and not(name()='date-time') and not(name()='time-elapsed') and not(name()='sequence-number') and not(name()='last-modified') and not(contains(.,'vend'))">
                         <xsl:variable name="prefix"><xsl:value-of select="substring-before(.,':')"/></xsl:variable>
                         <xsl:value-of select="concat('«http://cv.iptc.org/newscodes/',$prefix,'/',substring-after(.,':'),'»')"/>
                     </xsl:when>

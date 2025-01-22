@@ -13,7 +13,7 @@ THISDIR="$(dirname "$0")"
 # This tool uses Saxon as the XSLT engine. Download the free, open source
 # Saxon-HE from https://sourceforge.net/projects/saxon/files/Saxon-HE/
 # This path will need to change based on your local setup.
-SAXON_PATH="$THISDIR/../../../saxon/saxon-he-11.3.jar"
+SAXON_PATH="$THISDIR/../../../../saxon/saxon-he-11.3.jar"
 #
 XSLT="$THISDIR/sportsML-to-n3.xsl"
 #

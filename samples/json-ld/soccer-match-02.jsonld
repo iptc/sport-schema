@@ -24,9 +24,6 @@
             "spsocstat:tacklesTotal": "18",
             "@type": "sport:TeamParticipation",
             "spsocstat:passesTotal": "597",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:win"
-            },
             "spsocstat:tacklesLost": "7",
             "spsocstat:offsides": "2",
             "sport:alignment": "home",
@@ -39,7 +36,10 @@
             "sport:participationBy": {
                 "@id": "http://example.com/Team/EPLT13"
             },
-            "spsocstat:shotsTotal": "13"
+            "spsocstat:shotsTotal": "13",
+            "sport:eventOutcome": {
+                "@id": "speventoutcome:win"
+            }
         },
         {
             "@id": "http://example.com/Team/EPLT13",
@@ -1647,11 +1647,9 @@
             "sport:participation": {
                 "@id": "http://example.com/Participation/E2128610-a.2291852343-p.173954"
             },
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
-            },
             "sport:actionDateTime": "2021-04-26T20:17:54+01:00",
             "sport:minutesElapsed": "18",
+            "sport:infractionType": "vendpenalty:foul",
             "rdfs:label": "Action a.2291852343 on event E2128610"
         },
         {
@@ -1953,7 +1951,7 @@
             "spsocstat:goalsAgainstTotal": "2",
             "@type": "sport:TeamParticipation",
             "spstat:scoreOpposing": "2",
-            "spstat:eventOutcome": {
+            "sport:eventOutcome": {
                 "@id": "speventoutcome:loss"
             }
         },
@@ -2487,6 +2485,7 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
         "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
+        "sphorposition": "http://cv.iptc.org/newscodes/sphorposition/",
         "spct": "http://cv.iptc.org/newscodes/spct/",
         "sport": "https://sportschema.org/ontologies/main/",
         "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",

@@ -2,16 +2,19 @@
 @prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schemaorg:          <https://schema.org/> .
-@prefix sport:              <https://sportschema.org/ontologies/main/> .
-@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
-@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
-@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
 @prefix spcompetitionscope: <http://cv.iptc.org/newscodes/spcompetitionscope/> .
 @prefix spct:               <http://cv.iptc.org/newscodes/spct/> .
 @prefix spesaction:         <http://cv.iptc.org/newscodes/spesaction/> .
+@prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
 @prefix sphorposition:      <http://cv.iptc.org/newscodes/sphorposition/> .
+@prefix sport:              <https://sportschema.org/ontologies/main/> .
+@prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
+@prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
+@prefix spsocrole:          <http://cv.iptc.org/newscodes/spsocrole/> .
+@prefix spsocstat:          <https://sportschema.org/ontologies/soccer/> .
+@prefix spstat:             <https://sportschema.org/ontologies/corestatistics/> .
 @prefix xsd:                <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/Membership/t.2005646-13961>
@@ -19,12 +22,12 @@
         rdfs:label             "R Johnson membership of River Clare" ;
         sport:member           <http://example.com/Athlete/13961> ;
         sport:membershipOf     <http://example.com/Team/t.2005646> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1965312>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Celtique Beau participation in Event l.horse-racing.uk-2021-e.527912" ;
-        sport:eventOutcome    speventoutcome:show ;
+        sport:eventOutcome     speventoutcome:show ;
         sport:participationBy  <http://example.com/Team/t.1965312> ;
         sport:rank             "3" .
 
@@ -100,7 +103,7 @@
         rdfs:label             "Sam Twiston-Davies membership of Hawdyerwheesht" ;
         sport:member           <http://example.com/Athlete/1106000> ;
         sport:membershipOf     <http://example.com/Team/t.1531310> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-PHRP2014359>
         rdf:type               sport:IndividualParticipation ;
@@ -126,21 +129,21 @@
         rdfs:label             "A P Cawley membership of Celtique Beau" ;
         sport:member           <http://example.com/Athlete/31701> ;
         sport:membershipOf     <http://example.com/Team/t.1965312> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Membership/t.2026148-22064>
         rdf:type               sport:IndividualMembership ;
         rdfs:label             "D Crosse membership of Sing Alone" ;
         sport:member           <http://example.com/Athlete/22064> ;
         sport:membershipOf     <http://example.com/Team/t.2026148> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Membership/t.2026148-PHRP2026148>
         rdf:type               sport:IndividualMembership ;
         rdfs:label             "Sing Alone membership of Sing Alone" ;
         sport:member           <http://example.com/Athlete/PHRP2026148> ;
         sport:membershipOf     <http://example.com/Team/t.2026148> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "8" .
 
 <http://example.com/Team/t.1531310>
@@ -166,7 +169,7 @@
         rdfs:label             "Brigstock Seabra membership of Brigstock Seabra" ;
         sport:member           <http://example.com/Athlete/PHRP2040519> ;
         sport:membershipOf     <http://example.com/Team/t.2040519> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "9" .
 
 <http://example.com/Athlete/77406>
@@ -204,7 +207,7 @@
         rdfs:label             "G Sheehan membership of Deadly Sting" ;
         sport:member           <http://example.com/Athlete/1138364> ;
         sport:membershipOf     <http://example.com/Team/t.1937042> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Membership/12002-t.2026148>
         rdf:type            sport:IndividualMembership ;
@@ -217,7 +220,7 @@
         rdfs:label             "Hawdyerwheesht membership of Hawdyerwheesht" ;
         sport:member           <http://example.com/Athlete/PHRP1531310> ;
         sport:membershipOf     <http://example.com/Team/t.1531310> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "5" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-PHRP2040519>
@@ -255,7 +258,7 @@
         rdfs:label             "Deadly Sting membership of Deadly Sting" ;
         sport:member           <http://example.com/Athlete/PHRP1937042> ;
         sport:membershipOf     <http://example.com/Team/t.1937042> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "3" .
 
 <http://example.com/Athlete/PHRP1712831>
@@ -270,7 +273,7 @@
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1531310>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Hawdyerwheesht participation in Event l.horse-racing.uk-2021-e.527912" ;
-        sport:eventOutcome    speventoutcome:win ;
+        sport:eventOutcome     speventoutcome:win ;
         sport:participationBy  <http://example.com/Team/t.1531310> ;
         sport:rank             "1" .
 
@@ -306,7 +309,7 @@
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-t.1937042>
         rdf:type               sport:TeamParticipation ;
         rdfs:label             "Deadly Sting participation in Event l.horse-racing.uk-2021-e.527912" ;
-        sport:eventOutcome    speventoutcome:place ;
+        sport:eventOutcome     speventoutcome:place ;
         sport:participationBy  <http://example.com/Team/t.1937042> ;
         sport:rank             "2" .
 
@@ -320,7 +323,7 @@
         rdfs:label             "Brendan Powell membership of Graphical" ;
         sport:member           <http://example.com/Athlete/1141749> ;
         sport:membershipOf     <http://example.com/Team/t.2039637> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Site/Uttoxeter>
         rdf:type    sport:Site ;
@@ -331,14 +334,14 @@
         rdfs:label             "Adam Wedge membership of Abbeygrey" ;
         sport:member           <http://example.com/Athlete/77406> ;
         sport:membershipOf     <http://example.com/Team/t.2014359> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Membership/t.2040519-42108>
         rdf:type               sport:IndividualMembership ;
         rdfs:label             "T Messenger membership of Brigstock Seabra" ;
         sport:member           <http://example.com/Athlete/42108> ;
         sport:membershipOf     <http://example.com/Team/t.2040519> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Athlete/1141749>
         rdf:type    sport:Athlete ;
@@ -373,7 +376,7 @@
         rdfs:label             "River Clare membership of River Clare" ;
         sport:member           <http://example.com/Athlete/PHRP2005646> ;
         sport:membershipOf     <http://example.com/Team/t.2005646> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "7" .
 
 <http://example.com/Athlete/31701>
@@ -424,7 +427,7 @@
         rdfs:label             "Presenting The Way membership of Presenting The Way" ;
         sport:member           <http://example.com/Athlete/PHRP1712831> ;
         sport:membershipOf     <http://example.com/Team/t.1712831> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "6" .
 
 <http://example.com/Participation/l.horse-racing.uk-2021-e.527912-13961>
@@ -446,7 +449,7 @@
         rdfs:label             "Celtique Beau membership of Celtique Beau" ;
         sport:member           <http://example.com/Athlete/PHRP1965312> ;
         sport:membershipOf     <http://example.com/Team/t.1965312> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "2" .
 
 <http://example.com/Membership/t.1712831-1139083>
@@ -454,7 +457,7 @@
         rdfs:label             "M J McIntyre membership of Presenting The Way" ;
         sport:member           <http://example.com/Athlete/1139083> ;
         sport:membershipOf     <http://example.com/Team/t.1712831> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/jockey> .
+        sport:positionRegular  sphorposition:jockey .
 
 <http://example.com/Athlete/PHRP1531310>
         rdf:type           sport:Athlete ;
@@ -476,7 +479,7 @@
         rdfs:label             "Graphical membership of Graphical" ;
         sport:member           <http://example.com/Athlete/PHRP2039637> ;
         sport:membershipOf     <http://example.com/Team/t.2039637> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "4" .
 
 <http://example.com/Membership/t.2014359-PHRP2014359>
@@ -484,7 +487,7 @@
         rdfs:label             "Abbeygrey membership of Abbeygrey" ;
         sport:member           <http://example.com/Athlete/PHRP2014359> ;
         sport:membershipOf     <http://example.com/Team/t.2014359> ;
-        sport:positionRegular  <http://cv.iptc.org/newscodes/sphorposition/horse> ;
+        sport:positionRegular  sphorposition:horse ;
         sport:uniformNumber    "1" .
 
 <http://example.com/Athlete/PHRP1937042>
