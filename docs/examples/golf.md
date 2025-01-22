@@ -36,19 +36,19 @@ Each player's ...
 <http://pga.com/Participation/masters-2022_r4_roryMcIlroy>
         rdf:type                      sport:ParticipationSplit ;
         rdfs:label             		  "Rory McIlroy Participation in Round 4 at Masters 2022" ;
-        spgolstat:totalStrokes      "64" ;
-        spstat:score                "-7" ;
-        spstat:rank         		"2" ;  
-        sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
-        sport:participationSplit    <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
+        spgolf:totalStrokes           "64" ;
+        spstat:score                  "-7" ;
+        spstat:rank         	  	  "2" ;  
+        sport:participationBy         <http://pga.com/Athlete/roryMcIlroy> ;
+        sport:participationSplit      <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
         sport:participationSplitType  spcompetitionscope:round .
 
 <http://pga.com/Participation/masters-2022_r4_roryMcIlroy_15>
         rdf:type                      sport:ParticipationSplit ;
         rdfs:label             		  "Rory McIlroy Participation in Hole 15, Round 4 at Masters 2022" ;
-        spgolstat:totalStrokes      "5" ;
-        spstat:score                "E" ;
-        sport:participationBy       <http://pga.com/Athlete/roryMcIlroy> ;
+        spgolf:totalStrokes           "5" ;
+        spstat:score                  "E" ;
+        sport:participationBy         <http://pga.com/Athlete/roryMcIlroy> ;
         sport:participationSplitType  spcompetitionscope:hole .
 
 <http://pga.com/Action/masters-2022_r4_33204_15_3>
