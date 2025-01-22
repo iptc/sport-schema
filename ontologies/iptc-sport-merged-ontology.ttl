@@ -5482,15 +5482,15 @@ sport:passType rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:infractionLevel rdf:type owl:DatatypeProperty ;
-    rdfs:label "infraction level"@en ;
-    rdfs:comment "Level of infraction (aka penalty)"@en ;
+sport:infractionType rdf:type owl:DatatypeProperty ;
+    rdfs:label "infraction type"@en ;
+    rdfs:comment "Type of infraction (aka penalty)"@en ;
     rdfs:domain sport:Action ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://sportschema.org/ontologies/main/> .
 
-sport:infractionType rdf:type owl:ObjectProperty ;
-    rdfs:label "infraction type"@en ;
+sport:infractionLevel rdf:type owl:ObjectProperty ;
+    rdfs:label "infraction level"@en ;
     rdfs:comment "The degree of punishment for the infraction/penalty eg. yellow or red card, major, minor, game misconduct, etc. See 'penaltylevel' SportsML vocabs for various sports: http://cv.iptc.org/newscodes/spbkbpenaltylevel/ http://cv.iptc.org/newscodes/spichpenaltylevel/ http://cv.iptc.org/newscodes/sprgxpenaltylevel/ http://cv.iptc.org/newscodes/spsocpenaltylevel/"@en ;
     rdfs:domain sport:Action ;
     rdfs:range skos:Concept ;
@@ -6014,7 +6014,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:bodyPart ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:class ;
@@ -6055,15 +6055,15 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:passDescription ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:passMethod ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:passType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:infractionLevel ;
@@ -6071,7 +6071,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:infractionType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:periodValue ;
@@ -6088,15 +6088,15 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:result ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:saveMethod ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:saveType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptDescription ;
@@ -6112,7 +6112,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:scoreAttemptSituation ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptType ;
@@ -6132,7 +6132,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:shotType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:startLocation ;

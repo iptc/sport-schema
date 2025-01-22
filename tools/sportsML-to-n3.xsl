@@ -1078,6 +1078,9 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
                         <xsl:variable name="prefix"><xsl:value-of select="substring-before(.,':')"/></xsl:variable>
                         <xsl:value-of select="concat('«http://cv.iptc.org/newscodes/',$prefix,'/',substring-after(.,':'),'»')"/>
                     </xsl:when>
+                    <xsl:when test="name()='date-time'">
+                        <xsl:text>"</xsl:text><xsl:value-of select="."/><xsl:text>"^^«http://www.w3.org/2001/XMLSchema#dateTime»</xsl:text>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:text>"</xsl:text><xsl:value-of select="."/><xsl:text>"</xsl:text>
                     </xsl:otherwise>
@@ -1145,10 +1148,10 @@ select="substring-after(newsml:newsItem/newsml:contentMeta/newsml:subject[newsml
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'eventOutcome','»')"/>~<xsl:value-of select="concat('«',$newscode-ns,substring-before(@value,':'),'/',substring-after(@value,':'),'»')"/> .
     </xsl:template>
 
-    <!-- xsl:template match="newsml:stat[@stat-type='spstat:score']">
+    <xsl:template match="newsml:stat[@stat-type='spstat:score']">
         <xsl:param name="participation-id"/>
         <xsl:value-of select="$participation-id"/>~<xsl:value-of select="concat('«',$sport-ontology-ns,'score','»')"/>~"<xsl:value-of select="@value"/>" .
-    </xsl:template -->
+    </xsl:template>
 
     <xsl:template match="newsml:stat">
         <xsl:param name="participation-id"/>
