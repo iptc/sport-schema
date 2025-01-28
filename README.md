@@ -33,7 +33,7 @@ future.
 ## Latest version: Sport Schema 1.1
 
 Released in October 2024, Sport Schema 1.1 contains the following changes:
-* Adds Club and TeamMembership types (so a Team can be a member of a Club)
+* Adds Club and TeamMembership types (so a Team can be a member of a Club). This can also be used to express a Team's membership of a Competition, e.g. Arsenal FC's membership of the UK Premier League.
 * Add facets support (based on SportsML / NewsCodes facets) so we can now say
 that an event is "women's 400 metres relay swimming", not just "swimming"
 * Added the ability to link from Athlete to Team via a new teamParticipation
