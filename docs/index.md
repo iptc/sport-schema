@@ -44,7 +44,7 @@ See the [running example queries](/tools/running-example-queries) page for more 
 
 ## Latest version: Sport Schema 1.1
 
-Released in October 2024, Sport Schema 1.1 contains the following changes:
+Approved in October 2024, Sport Schema 1.1 contains the following changes:
 * Adds Club and TeamMembership types (so a Team can be a member of a Club)
 * Add facets support (based on SportsML / NewsCodes facets) so we can now say
 that an event is "women's 400 metres relay swimming", not just "swimming"
