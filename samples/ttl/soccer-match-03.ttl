@@ -8,6 +8,7 @@
 @prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix sphorposition:      <http://cv.iptc.org/newscodes/sphorposition/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -102,11 +103,11 @@
 <http://example.com/Participation/E2128607-TFBB7>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Aston Villa participation in Event E2128607" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "70.2" ;
         sport:alignment                 "home" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB7> ;
         sport:score                     "2" ;
         spsocstat:clearancesSuccessful  "14" ;
@@ -400,11 +401,11 @@
 <http://example.com/Participation/E2128607-TFBB35>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "West Bromwich Albion participation in Event E2128607" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "29.8" ;
         sport:alignment                 "away" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB35> ;
         sport:score                     "2" ;
         spsocstat:cautionsTotal         "2" ;
@@ -499,7 +500,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "54" ;
         sport:participation    <http://example.com/Participation/E2128607-a.2291510501-PO232787> ;
         sport:periodValue      "2" ;
@@ -1229,7 +1230,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "77" ;
         sport:participation    <http://example.com/Participation/E2128607-a.2291526473-PO101394> ;
         sport:periodValue      "2" ;

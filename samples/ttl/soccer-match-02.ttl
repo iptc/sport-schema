@@ -8,6 +8,7 @@
 @prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix sphorposition:      <http://cv.iptc.org/newscodes/sphorposition/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -27,11 +28,11 @@
 <http://example.com/Participation/E2128610-EPLT13>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Leicester City participation in Event E2128610" ;
-        sport:eventOutcome             speventoutcome:win ;
         spstat:scoreOpposing            "1" ;
         spstat:timeOfPossessionPercentage
                 "67.1" ;
         sport:alignment                 "home" ;
+        sport:eventOutcome              speventoutcome:win ;
         sport:participationBy           <http://example.com/Team/EPLT13> ;
         sport:score                     "2" ;
         spsocstat:clearancesSuccessful  "12" ;
@@ -968,10 +969,10 @@
         rdfs:label             "Action a.2291852343 on event E2128610" ;
         sport:actionDateTime   "2021-04-26T20:17:54+01:00"^^xsd:dateTime ;
         sport:actionInEvent    <http://example.com/Event/E2128610> ;
-        sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
+        sport:class            <http://cv.iptc.org/newscodes/spactionclass/infraction> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "18" ;
         sport:participation    <http://example.com/Participation/E2128610-a.2291852343-p.173954> ;
         sport:periodValue      "1" ;
@@ -1433,11 +1434,11 @@
 <http://example.com/Participation/E2128610-EPLT31>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Crystal Palace participation in Event E2128610" ;
-        sport:eventOutcome             speventoutcome:loss ;
         spstat:scoreOpposing            "2" ;
         spstat:timeOfPossessionPercentage
                 "32.9" ;
         sport:alignment                 "away" ;
+        sport:eventOutcome              speventoutcome:loss ;
         sport:participationBy           <http://example.com/Team/EPLT31> ;
         sport:score                     "1" ;
         spsocstat:cautionsTotal         "1" ;

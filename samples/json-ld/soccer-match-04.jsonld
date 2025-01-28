@@ -201,6 +201,9 @@
             "spstat:timeOfPossessionPercentage": "44.2",
             "sport:alignment": "home",
             "rdfs:label": "Leeds United participation in Event E2128609",
+            "sport:eventOutcome": {
+                "@id": "speventoutcome:tie"
+            },
             "sport:participationBy": {
                 "@id": "http://example.com/Team/TFBB2"
             },
@@ -221,9 +224,6 @@
             "spsocstat:offsides": "2",
             "sport:score": "0",
             "spsocstat:shotsTotal": "6",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:tie"
-            },
             "spstat:scoreOpposing": "0",
             "spsocstat:interceptions": "8"
         },
@@ -741,6 +741,9 @@
             "spsocstat:tacklesTotal": "16",
             "spsocstat:shotsOnGoalTotal": "4",
             "spsocstat:shotsBlocked": "5",
+            "sport:eventOutcome": {
+                "@id": "speventoutcome:tie"
+            },
             "spsocstat:tacklesLost": "5",
             "sport:participationBy": {
                 "@id": "http://example.com/Team/TFBB1"
@@ -759,10 +762,7 @@
             "spsocstat:interceptions": "10",
             "spstat:timeOfPossessionPercentage": "55.8",
             "@type": "sport:TeamParticipation",
-            "spsocstat:shutouts": "1",
-            "spstat:eventOutcome": {
-                "@id": "speventoutcome:tie"
-            }
+            "spsocstat:shutouts": "1"
         },
         {
             "@id": "http://example.com/Participation/E2128609-PO184667",
@@ -1614,8 +1614,11 @@
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128609"
             },
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:42:51+01:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:sequenceNumber": "0425154251",
-            "sport:actionDateTime": "2021-04-25T15:42:51+01:00",
             "rdfs:label": "Action a.2291336033 on event E2128609",
             "sport:periodValue": "2",
             "@type": "sport:Action",
@@ -1678,15 +1681,16 @@
             "@id": "http://example.com/Action/E2128609-a.2291268131",
             "sport:periodValue": "1",
             "sport:sequenceNumber": "0425143858",
-            "sport:actionDateTime": "2021-04-25T14:38:58+01:00",
-            "rdfs:label": "Action a.2291268131 on event E2128609",
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T14:38:58+01:00",
+                "@type": "xsd:dateTime"
             },
+            "rdfs:label": "Action a.2291268131 on event E2128609",
             "sport:participation": {
                 "@id": "http://example.com/Participation/E2128609-a.2291268131-PO173821"
             },
             "sport:comment": "Foul",
+            "sport:infractionType": "vendpenalty:foul",
             "sport:recipientType": {
                 "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
             },
@@ -1783,10 +1787,11 @@
             "sport:recipientType": {
                 "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
             },
-            "sport:actionDateTime": "2021-04-25T15:24:48+01:00",
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:24:48+01:00",
+                "@type": "xsd:dateTime"
             },
+            "sport:infractionType": "vendpenalty:foul",
             "sport:periodValue": "2",
             "sport:sequenceNumber": "0425152448",
             "sport:participation": {
@@ -1881,7 +1886,10 @@
                     "@id": "http://example.com/Participation/E2128609-a.2291325685-PO193645"
                 }
             ],
-            "sport:actionDateTime": "2021-04-25T15:33:56+01:00",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:33:56+01:00",
+                "@type": "xsd:dateTime"
+            },
             "rdfs:label": "Action a.2291325685 on event E2128609",
             "sport:sequenceNumber": "0425153356",
             "sport:personReplacingPosition": "defender",
@@ -1958,6 +1966,7 @@
         },
         {
             "@id": "http://example.com/Action/E2128609-a.2291265339",
+            "sport:infractionType": "vendpenalty:foul",
             "rdfs:label": "Action a.2291265339 on event E2128609",
             "sport:infractionLevel": {
                 "@id": "http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card"
@@ -1970,7 +1979,6 @@
             },
             "@type": "sport:Action",
             "sport:minutesElapsed": "37",
-            "sport:actionDateTime": "2021-04-25T14:36:45+01:00",
             "sport:recipientType": {
                 "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
             },
@@ -1980,8 +1988,9 @@
             },
             "sport:periodValue": "1",
             "sport:comment": "Foul",
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T14:36:45+01:00",
+                "@type": "xsd:dateTime"
             }
         },
         {
@@ -2010,10 +2019,13 @@
                 "@id": "http://example.com/Event/E2128609"
             },
             "sport:personReplacingPosition": "midfielder",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:29:14+01:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
-            "sport:actionDateTime": "2021-04-25T15:29:14+01:00",
             "sport:minutesElapsed": "72",
             "@type": "sport:Action",
             "rdfs:label": "Action a.2291320423 on event E2128609",
@@ -2112,19 +2124,20 @@
                 "@id": "http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card"
             },
             "sport:sequenceNumber": "0425152049",
+            "sport:infractionType": "vendpenalty:foul",
             "sport:minutesElapsed": "64",
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/foul"
-            },
             "sport:periodValue": "2",
             "rdfs:label": "Action a.2291311527 on event E2128609",
             "sport:participation": {
                 "@id": "http://example.com/Participation/E2128609-a.2291311527-PO105377"
             },
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:20:49+01:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:recipientType": {
                 "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
-            },
-            "sport:actionDateTime": "2021-04-25T15:20:49+01:00"
+            }
         },
         {
             "@id": "http://example.com/Membership/TFBB2-PO72222",
@@ -2286,7 +2299,6 @@
             "@id": "http://example.com/Action/E2128609-a.2291325173",
             "sport:personReplacingPosition": "midfielder",
             "sport:periodValue": "2",
-            "sport:actionDateTime": "2021-04-25T15:33:26+01:00",
             "sport:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
             },
@@ -2301,6 +2313,10 @@
             ],
             "rdfs:label": "Action a.2291325173 on event E2128609",
             "sport:minutesElapsed": "76",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:33:26+01:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:substitutionReason": "Tactical",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128609"
@@ -2443,8 +2459,11 @@
             "sport:minutesElapsed": "89",
             "sport:personReplacingPosition": "midfielder",
             "sport:substitutionReason": "Tactical",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:46:21+01:00",
+                "@type": "xsd:dateTime"
+            },
             "@type": "sport:Action",
-            "sport:actionDateTime": "2021-04-25T15:46:21+01:00",
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128609"
             },
@@ -2483,7 +2502,6 @@
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128609"
             },
-            "sport:actionDateTime": "2021-04-25T15:27:29+01:00",
             "sport:recipientType": {
                 "@id": "http://cv.iptc.org/newscodes/sprecipienttype/player"
             },
@@ -2492,11 +2510,13 @@
                 "@id": "http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card"
             },
             "@type": "sport:Action",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:27:29+01:00",
+                "@type": "xsd:dateTime"
+            },
+            "sport:infractionType": "vendpenalty:dissent",
             "sport:participation": {
                 "@id": "http://example.com/Participation/E2128609-a.2291318829-PO106617"
-            },
-            "sport:infractionType": {
-                "@id": "http://cv.iptc.org/newscodes/vendpenalty/dissent"
             },
             "sport:sequenceNumber": "0425152729",
             "rdfs:label": "Action a.2291318829 on event E2128609",
@@ -2537,13 +2557,16 @@
                 }
             ],
             "sport:substitutionReason": "Tactical",
+            "sport:actionDateTime": {
+                "@value": "2021-04-25T15:25:16+01:00",
+                "@type": "xsd:dateTime"
+            },
             "sport:actionInEvent": {
                 "@id": "http://example.com/Event/E2128609"
             },
             "sport:sequenceNumber": "0425152516",
             "sport:periodValue": "2",
             "@type": "sport:Action",
-            "sport:actionDateTime": "2021-04-25T15:25:16+01:00",
             "sport:personReplacingPosition": "forward",
             "sport:class": {
                 "@id": "http://cv.iptc.org/newscodes/spactionclass/substitution"
@@ -2610,6 +2633,7 @@
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "spcompetitionscope": "http://cv.iptc.org/newscodes/spcompetitionscope/",
         "medtop": "http://cv.iptc.org/newscodes/mediatopic/",
+        "sphorposition": "http://cv.iptc.org/newscodes/sphorposition/",
         "spct": "http://cv.iptc.org/newscodes/spct/",
         "sport": "https://sportschema.org/ontologies/main/",
         "speventoutcome": "http://cv.iptc.org/newscodes/speventoutcome/",

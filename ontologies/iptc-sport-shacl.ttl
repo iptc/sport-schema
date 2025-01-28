@@ -6,13 +6,12 @@
 @prefix sh:        <http://www.w3.org/ns/shacl#> .
 @prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
 @prefix sport:     <https://sportschema.org/ontologies/main/> .
-@prefix golf:      <https://sportschema.org/ontologies/golf/> .
+@prefix spgolf:    <https://sportschema.org/ontologies/golf/> .
 @prefix spfacet:   <https://sportschema.org/ontologies/sport-facets/> .
 @prefix spstat:    <https://sportschema.org/ontologies/corestatistics/> .
 # sport-specific ontologies:
 @prefix spespstat: <https://sportschema.org/ontologies/esports/> .
 @prefix spsocstat: <https://sportschema.org/ontologies/soccer/> .
-@prefix spgolstat: <https://sportschema.org/ontologies/golf-statistics/> .
 
 ##### SHACL Shapes for validating Sports RDF data #####
 
@@ -47,7 +46,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:bodyPart ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:class ;
@@ -88,15 +87,15 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:passDescription ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:passMethod ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:passType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:infractionLevel ;
@@ -104,7 +103,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:infractionType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:periodValue ;
@@ -121,15 +120,15 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:result ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:saveMethod ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:saveType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptDescription ;
@@ -145,7 +144,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:scoreAttemptSituation ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:scoreAttemptType ;
@@ -165,7 +164,7 @@ sport:ActionShape
   ] ;
   sh:property [
     sh:path sport:shotType ;
-    sh:nodeKind sh:IRI ;
+    sh:datatype xsd:string ;
   ] ;
   sh:property [
     sh:path sport:startLocation ;
@@ -202,35 +201,35 @@ sport:ActionShape
   ] ;
   # golf properties (these should inherit from ParticipatableThing...)
   sh:property [
-    sh:path golf:distanceRemaining ;
+    sh:path spgolf:distanceRemaining ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:hole ;
+    sh:path spgolf:hole ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:round ;
+    sh:path spgolf:round ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:score ;
+    sh:path spgolf:score ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:stroke ;
+    sh:path spgolf:stroke ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:shotDistance ;
+    sh:path spgolf:shotDistance ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:shotLocation ;
+    sh:path spgolf:shotLocation ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path spgolstat:totalStrokes ;
+    sh:path spgolf:totalStrokes ;
     sh:datatype xsd:string ;
   ] .
 
@@ -652,15 +651,20 @@ sport:EventShape rdf:type sh:NodeShape ;
   ] ;
   sh:property [
     sh:path sport:eventOutcomeType ;
-    sh:node sport:NewsCodesSportEventOutcomeTypeShape ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape
   ] ;
   sh:property [
     sh:path sport:eventStatus ;
-    sh:node sport:NewsCodesSportEventStatusShape ;
+    sh:node sport:NewsCodesSportEventStatusShape
   ] ;
   sh:property [
     sh:path sport:parent ;
     sh:class sport:Event
+  ] ;
+  # sport facet properties
+  sh:property [
+    sh:path spfacet:weightClassType ;
+    sh:datatype xsd:string
   ] .
 
 sport:FacetValueShape rdf:type sh:NodeShape;
@@ -746,6 +750,10 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   sh:property [
     sh:path sport:participationBy ;
     sh:class sport:Athlete ;
+  ] ;
+  sh:property [
+    sh:path sport:participationSplit ;
+    sh:class sport:ParticipationSplit ;
   ] ;
   sh:property [
     sh:path sport:rank ;
@@ -994,32 +1002,32 @@ sport:IndividualParticipationShape rdf:type sh:NodeShape  ;
   ] ;
   # Properties defined on IndividualParticipation by golf ontology
   sh:property [
-    sh:path spgolstat:totalStrokes ;
+    sh:path spgolf:totalStrokes ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:round ;
+    sh:path spgolf:round ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:strokes ;
+    sh:path spgolf:strokes ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:score ;
+    sh:path spgolf:score ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:scoreAgainstPar ;
+    sh:path spgolf:scoreAgainstPar ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:holeType ;
+    sh:path spgolf:holeType ;
     sh:class skos:Concept ;
     sh:node sport:NewsCodesSportGolfHoleTypeShape
   ] ;
   sh:property [
-    sh:path golf:hole;
+    sh:path spgolf:hole;
     sh:datatype xsd:string ;
   ] .
 
@@ -1173,23 +1181,23 @@ sport:ParticipatableThingShape
   ] ;
   # golf-specific ParticipatableThing properties
   sh:property [
-    sh:path golf:round ;
+    sh:path spgolf:round ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:hole ;
+    sh:path spgolf:hole ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:shotLocation ;
+    sh:path spgolf:shotLocation ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:shotDistance ;
+    sh:path spgolf:shotDistance ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:distanceRemnaining ;
+    sh:path spgolf:distanceRemnaining ;
     sh:datatype xsd:string ;
   ] .
 
@@ -1260,7 +1268,21 @@ sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
     )
   ] ;
   sh:property [
+    sh:path sport:eventOutcome ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeShape
+  ] ;
+  sh:property [
+    sh:path sport:eventOutcomeType ;
+    sh:class skos:Concept ;
+    sh:node sport:NewsCodesSportEventOutcomeTypeShape
+  ] ;
+  sh:property [
     sh:path sport:rank ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path sport:score ;
     sh:datatype xsd:string ;
   ] ;
   # core statistics properties
@@ -1294,11 +1316,11 @@ sport:ParticipationSplitShape rdf:type sh:NodeShape  ;
   ] ;
   # golf properties
   sh:property [
-    sh:path golf:score ;
+    sh:path spgolf:score ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path spgolstat:totalStrokes ;
+    sh:path spgolf:totalStrokes ;
     sh:datatype xsd:string ;
   ] .
 
@@ -1512,18 +1534,18 @@ sport:GolfCourseShape rdf:type sh:NodeShape  ;
   sh:closed true;
   sh:ignoredProperties ( rdf:type rdfs:label ) ;
   sh:property [
-    sh:path golf:courseYardage ;
+    sh:path spgolf:courseYardage ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:coursePar ;
+    sh:path spgolf:coursePar ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:courseRating ;
+    sh:path spgolf:courseRating ;
     sh:datatype xsd:string ;
   ] ;
   sh:property [
-    sh:path golf:slopeRating ;
+    sh:path spgolf:slopeRating ;
     sh:datatype xsd:string ;
   ] .

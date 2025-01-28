@@ -8,6 +8,7 @@
 @prefix spespstat:          <https://sportschema.org/ontologies/esports/> .
 @prefix speventoutcome:     <http://cv.iptc.org/newscodes/speventoutcome/> .
 @prefix speventoutcometype: <http://cv.iptc.org/newscodes/speventoutcometype/> .
+@prefix sphorposition:      <http://cv.iptc.org/newscodes/sphorposition/> .
 @prefix sport:              <https://sportschema.org/ontologies/main/> .
 @prefix spplayerstatus:     <http://cv.iptc.org/newscodes/spplayerstatus/> .
 @prefix spsocactiontype:    <http://cv.iptc.org/newscodes/spsocaction/> .
@@ -132,11 +133,11 @@
 <http://example.com/Participation/E2128609-TFBB2>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Leeds United participation in Event E2128609" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "0" ;
         spstat:timeOfPossessionPercentage
                 "44.2" ;
         sport:alignment                 "home" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB2> ;
         sport:score                     "0" ;
         spsocstat:cautionsTotal         "4" ;
@@ -517,7 +518,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "39" ;
         sport:participation    <http://example.com/Participation/E2128609-a.2291268131-PO173821> ;
         sport:periodValue      "1" ;
@@ -615,7 +616,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "68" ;
         sport:participation    <http://example.com/Participation/E2128609-a.2291316113-PO95658> ;
         sport:periodValue      "2" ;
@@ -858,7 +859,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "37" ;
         sport:participation    <http://example.com/Participation/E2128609-a.2291265339-PO66588> ;
         sport:periodValue      "1" ;
@@ -1008,7 +1009,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Foul" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/foul> ;
+        sport:infractionType   "vendpenalty:foul" ;
         sport:minutesElapsed   "64" ;
         sport:participation    <http://example.com/Participation/E2128609-a.2291311527-PO105377> ;
         sport:periodValue      "2" ;
@@ -1255,11 +1256,11 @@
 <http://example.com/Participation/E2128609-TFBB1>
         rdf:type                        sport:TeamParticipation ;
         rdfs:label                      "Manchester United participation in Event E2128609" ;
-        sport:eventOutcome             speventoutcome:tie ;
         spstat:scoreOpposing            "0" ;
         spstat:timeOfPossessionPercentage
                 "55.8" ;
         sport:alignment                 "away" ;
+        sport:eventOutcome              speventoutcome:tie ;
         sport:participationBy           <http://example.com/Team/TFBB1> ;
         sport:score                     "0" ;
         spsocstat:cautionsTotal         "1" ;
@@ -1535,7 +1536,7 @@
         sport:class            <http://cv.iptc.org/newscodes/spactionclass/penalty> ;
         sport:comment          "Dissent" ;
         sport:infractionLevel  <http://cv.iptc.org/newscodes/spsocpenaltylevel/yellow-card> ;
-        sport:infractionType   <http://cv.iptc.org/newscodes/vendpenalty/dissent> ;
+        sport:infractionType   "vendpenalty:dissent" ;
         sport:minutesElapsed   "70" ;
         sport:participation    <http://example.com/Participation/E2128609-a.2291318829-PO106617> ;
         sport:periodValue      "2" ;
